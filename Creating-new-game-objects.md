@@ -27,18 +27,14 @@ j_example:register()
 ### Functions
 After registering your joker, it is possible to further define its behavior by declaring these functions on the joker object.
 ```lua
-function SMODS.Jokers.j_example:loc_def(card)
-    if card.ability.name == 'Example Joker' then
-        return {card.ability.test}
-    end
+function SMODS.Jokers.j_example.loc_def(card)
+    return {card.ability.test}
 end
-function SMODS.Jokers.j_example:set_ability(card, initial, delay_sprites)
-    if card.ability.name == 'Example Joker' then
-        card.ability.test = card.ability.mult
-    end
+function SMODS.Jokers.j_example.set_ability(card, initial, delay_sprites)
+    card.ability.test = card.ability.mult
 end
 function SMODS.Jokers.j_example:calculate(card, context)
-    if (card.ability.name == 'Example Joker') and (context.cardarea == G.jokers) then
+    if context.cardarea == G.jokers then
         return {
             message = localize{type='variable',key='a_mult',vars={self.ability.mult}},
             mult_mod = self.ability.mult
@@ -49,7 +45,7 @@ end
 * `loc_def` lets you provide localization variables for your joker description. Returning a second value (comma separated) will assign that value to main_end (this allows for compatibility displays like on Blueprint).
 * `set_ability` lets you initialize any additional variables you need for your effect to work.
 * `calculate` executes your joker's effect. To understand the different contexts you're able to use, it is recommended to have a look at the `Card:calculate_joker` function in the game's code.
-* For each function, it is **required** to check for the joker's name, as each function defined this way will be called in the appropriate context. This was done to ensure modders can easily define joker effects in bulk without having to define functions for each joker individually.
+* Before calling these functions, the used joker's slug is compared to your Joker object's slug, so your function is only ever executed when your joker is being processed. Thus, it is not needed to validate this information inside your function.
 
 ## Creating consumables
 There are individual creation functions for each consumable type, though they are very similar.
@@ -87,12 +83,12 @@ c_example_spectral:register()
 ### Functions
 For all consumable types, functions `use` and `can_use` can be defined with the following headers:
 ```lua
-function SMODS.Tarots.c_example_tarot:can_use(card)
+function SMODS.Tarots.c_example_tarot.can_use(card)
     if card.ability.name == 'Example Tarot' then
         return true
     end
 end
-function SMODS.Tarots.c_example_tarot:use(card, area, copier)
+function SMODS.Tarots.c_example_tarot.use(card, area, copier)
     if card.ability.name == 'Example Tarot' then
         -- do something
     end
