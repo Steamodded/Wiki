@@ -101,14 +101,11 @@ c_example_spectral:register()
 For all consumable types, functions `use`, `can_use`, `loc_def`, and `set_badges` can be defined with the following headers:
 ```lua
 function SMODS.Tarots.c_example_tarot.can_use(card)
-    if card.ability.name == 'Example Tarot' then
-        return true
-    end
+    -- stop_use and whatnot are handled by the loader, so you don't need to worry about it
+    return true
 end
 function SMODS.Tarots.c_example_tarot.use(card, area, copier)
-    if card.ability.name == 'Example Tarot' then
-        -- do something
-    end
+    -- do something
 end
 function SMODS.Tarots.c_example_tarot.loc_def(card, info_queue)
     info_queue[#info_queue+1] = { set = 'Other', key = 'my_key' }
