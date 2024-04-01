@@ -92,7 +92,7 @@ c_example_spectral:register()
 * `cost`: The card's shop cost.
 * `cost_mult`: A cost multiplier, does not exist for spectrals and defaults to 1.
 * `effect`: A string value that can be input to use certain base-game effects. Defaults to `'Hand Upgrade'` for planets, does not exist for spectrals.
-* `freq`: A weight value for planet frequency, defaults to 1 (this is the value *every* Planet in the base game uses)
+* `freq`: Unused legacy value that exists only on planets for some reason. If you want to use it for something, maybe it will have a purpose.
 * `consumeable`: Whether the card is consumeable (spoiler: yes, and it will probably not be functional if it isn't)
 * `discovered`: Whether the card is discovered by default (default: false)
 * `atlas`: Allows you to specify a custom atlas. Like with jokers, the loader still looks for a custom sprite sheet that matches the card's slug.
