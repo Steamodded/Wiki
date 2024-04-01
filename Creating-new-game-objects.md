@@ -3,7 +3,7 @@ Steamodded features APIs for adding different kinds of game objects. Some of the
 ## Creating jokers
 ### Example
 ```lua
--- SMODS.Joker:new(name, slug, config, spritePos, loc_txt, rarity, cost, unlocked, discovered, blueprint_compat, eternal_compat, effect, atlas)
+-- SMODS.Joker:new(name, slug, config, spritePos, loc_txt, rarity, cost, unlocked, discovered, blueprint_compat, eternal_compat, effect, atlas, soul_pos)
 local j_example = SMODS.Joker:new('Example Joker', 'example', { mult = 10 }, {x=0,y=0}, {
     name = 'Example Joker',
     text = { '{C:red}+#1#{} Mult' }
@@ -23,6 +23,7 @@ j_example:register()
 * `blueprint_compat`: Whether the joker can be copied by Blueprint or Brainstorm. You need to account for this in the joker's effect additionally.
 * `eternal_compat`: Whether the joker is allowed to be Eternal.
 * `atlas`: You may specify a custom atlas for your joker. The loader will look for sprites that match the joker's slug automatically, but this option allows you to use one spritesheet for multiple jokers.
+* `soul_pos`: Separate front layer sprite position, like for base game Hologram and Legendary jokers.
 
 ### Functions
 After registering your joker, it is possible to further define its behavior by declaring these functions on the joker object.
@@ -30,10 +31,21 @@ After registering your joker, it is possible to further define its behavior by d
 function SMODS.Jokers.j_example.loc_def(card)
     return {card.ability.test}
 end
+G.localization.descriptions.Other['my_key'] = {
+    name = 'My tooltip',
+    text = {
+        'Fancy text, and',
+        'even more fancy text.'
+    }
+}
+function SMODS.Jokers.j_example.tooltip(card, info_queue)
+    info_queue[#info_queue+1] = G.P_CENTERS.m_steel -- Tooltips for enhancements, editions, tags, etc.
+    info_queue[#info_queue+1] = { set = 'Other', key = 'my_key' } -- Custom tooltips
+end
 function SMODS.Jokers.j_example.set_ability(card, initial, delay_sprites)
     card.ability.test = card.ability.mult
 end
-function SMODS.Jokers.j_example:calculate(card, context)
+function SMODS.Jokers.j_example.calculate(card, context)
     if context.cardarea == G.jokers then
         return {
             message = localize{type='variable',key='a_mult',vars={self.ability.mult}},
@@ -41,11 +53,16 @@ function SMODS.Jokers.j_example:calculate(card, context)
         }
     end
 end
+function SMODS.Jokers.j_example.set_badges(card, badges)
+    badges[#badges+1] = create_badge('Custom Badge', HEX('FFFFFF'), HEX('000000'), 1.2)
+end
 ```
 * `loc_def` lets you provide localization variables for your joker description. Returning a second value (comma separated) will assign that value to main_end (this allows for compatibility displays like on Blueprint).
+* `tooltip` is a separate function for Jokers only that allows you to create tooltips by modifying the `info_queue` table.
 * `set_ability` lets you initialize any additional variables you need for your effect to work.
 * `calculate` executes your joker's effect. To understand the different contexts you're able to use, it is recommended to have a look at the `Card:calculate_joker` function in the game's code.
-* Before calling these functions, the used joker's slug is compared to your Joker object's slug, so your function is only ever executed when your joker is being processed. Thus, it is not needed to validate this information inside your function.
+* `set_badges` allows you to add or modify a Joker's badges (rarity display and editions show up as badges, usually). The `create_badge` function accepts 4 arguments: A label, a background color, a text color, and a text size.
+* These functions are only ever executed when your joker is being processed. Thus, it is not needed to validate what joker they are called from.
 
 ## Creating consumables
 There are individual creation functions for each consumable type, though they are very similar.
@@ -81,7 +98,7 @@ c_example_spectral:register()
 * `atlas`: Allows you to specify a custom atlas. Like with jokers, the loader still looks for a custom sprite sheet that matches the card's slug.
 
 ### Functions
-For all consumable types, functions `use` and `can_use` can be defined with the following headers:
+For all consumable types, functions `use`, `can_use`, `loc_def`, and `set_badges` can be defined with the following headers:
 ```lua
 function SMODS.Tarots.c_example_tarot.can_use(card)
     if card.ability.name == 'Example Tarot' then
@@ -93,8 +110,17 @@ function SMODS.Tarots.c_example_tarot.use(card, area, copier)
         -- do something
     end
 end
+function SMODS.Tarots.c_example_tarot.loc_def(card, info_queue)
+    info_queue[#info_queue+1] = { set = 'Other', key = 'my_key' }
+    return {}
+end
+function SMODS.Planets.c_example_planet.set_badges(card, badges)
+    -- change the label of an existing badge, in this case, the 'Planet' one
+    -- creating a new badge which overwrites the old one also works
+    badges[1].nodes[1].nodes[2].config.object.string = 'Exoplanet'
+end
 ```
-For Tarots and Spectrals, a `loc_def` function is also recognized and works the same way as it does for jokers. Planets are not expected to need this functionality and get assigned the variables they normally need automatically.
+The original function responsible for the usage of consumables will not be called if a `use` function has been declared. Tooltips can be made right inside `loc_def` for consumables due to them being processed differently.
 
 ## Creating vouchers, seals and blinds
 APIs for these game objects are also added, and this page will be completed with documentation for them soon.
