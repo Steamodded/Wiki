@@ -70,7 +70,7 @@ There are individual creation functions for each consumable type, though they ar
 -- SMODS.Planet:new(name, slug, config, pos, loc_txt, cost, cost_mult, effect, freq, consumeable, discovered, atlas)
 local c_example_planet = SMODS.Planet:new('Example Planet', 'example_planet', { hand_type = 'Custom Hand Type' }, {x = 0, y = 0 }, nil, 3, 1, nil, nil, nil, nil, 'my_mod_tarot')
 -- SMODS.Tarot:new(name, slug, config, pos, loc_txt, cost, cost_mult, effect, consumeable, discovered, atlas)
-local c_example_tarot = SMODS.Tarot:new('Example Tarot', 'example_tarot', { x = 1, y = 0 }, {
+local c_example_tarot = SMODS.Tarot:new('Example Tarot', 'example_tarot', {}, { x = 1, y = 0 }, {
    name = 'Example Tarot',
    text = { 'Does nothing?' }
 }, 3, 1, nil, nil, nil, 'my_mod_tarot')
