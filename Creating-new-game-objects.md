@@ -148,6 +148,8 @@ v_example:register()
 * `cost`: The voucher's shop cost.
 * `unlocked`: Whether the voucher is unlocked by default. Unlock conditions are unsupported as of now, so the API will override this value with `true` for the time being.
 * `discovered`: Whether the voucher is discovered by default (default: false)
+* `available`: Does nothing. If you want to set this to false and manually make your voucher unavailable, why are you creating it in the first place?
+* `requires`: A list of vouchers that must be redeemed first before this one can show up.
 * `atlas`: Allows you to specify a custom atlas. Like with jokers, the loader still looks for a custom sprite sheet that matches the card's slug.
 
 ### Functions
