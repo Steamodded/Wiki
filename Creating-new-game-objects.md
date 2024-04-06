@@ -167,3 +167,13 @@ end
 
 ## Creating seals and blinds
 APIs for these game objects are also added, and this page will be completed with documentation for them soon.
+
+# Modifying existing objects present in the base game
+## Taking ownership
+To use API functions with a vanilla Joker, Consumable, Voucher or Blind, you must first take ownership of it, providing its slug to the `take_ownership` function:
+```lua
+SMODS.Joker:take_ownership('jolly_joker'):register()
+SMODS.Tarot:take_ownership('fool'):register()
+-- and so on, you get the point
+```
+This only works for vanilla objects that have not been registered by a different mod. After doing this, you can use the object as if it were created by your mod through the API. Note that your mod badge will also be displayed on any vanilla objects you take ownership of.
