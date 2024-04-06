@@ -5,7 +5,7 @@
 ## Overview
 The MOD CORE API SPRITE is a Lua script designed to manage sprite objects within Balatro. This interface facilitates the creation, registration, and integration of custom sprites into the existing game structure.
 
-## File Structure for you mod
+## File Structure for your mod
 Assets need to be located under the directory `assets` and then between the `1x` and the `2x` version. It means that your assets will be located in:
 `assets/1x/your_asset.png` and `assets/2x/your_asset.png`. The 2 version are necessary if you want to match every resolution. Example of how it would look:
 ```bash
@@ -69,10 +69,6 @@ function SMODS.INIT.NegateTexturePack()
     sprite_blind:register()
 end
 ```
-
-## Missing Implementation
-Even if adding custom assets (so assets not replacing standard ones, but totally new ones), there is for now no possibility to use them with the API.
-This option will be added in a small amount of time. 
 
 ## Base References
 That's the list of textures loaded by the game, you can use it if you want to replace some of them:
