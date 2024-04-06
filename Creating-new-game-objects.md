@@ -22,6 +22,7 @@ j_example:register()
 * `discovered`: Whether this joker is discovered by default.
 * `blueprint_compat`: Whether the joker can be copied by Blueprint or Brainstorm. You need to account for this in the joker's effect additionally.
 * `eternal_compat`: Whether the joker is allowed to be Eternal.
+* `effect`: A string value that can be input to use certain base-game effects. You usually won't need it.
 * `atlas`: You may specify a custom atlas for your joker. The loader will look for sprites that match the joker's slug automatically, but this option allows you to use one spritesheet for multiple jokers.
 * `soul_pos`: Separate front layer sprite position, like for base game Hologram and Legendary jokers.
 
@@ -65,6 +66,7 @@ end
 * These functions are only ever executed when your joker is being processed. Thus, it is not needed to validate what joker they are called from.
 
 ## Creating consumables
+### Examples
 There are individual creation functions for each consumable type, though they are very similar.
 ```lua
 -- SMODS.Planet:new(name, slug, config, pos, loc_txt, cost, cost_mult, effect, freq, consumeable, discovered, atlas)
@@ -75,9 +77,9 @@ local c_example_tarot = SMODS.Tarot:new('Example Tarot', 'example_tarot', {}, { 
    text = { 'Does nothing?' }
 }, 3, 1, nil, nil, nil, 'my_mod_tarot')
 -- SMODS.Spectral:new(name, slug, config, pos, loc_txt, cost, consumeable, discovered, atlas)
-local c_example_spectral = SMODS.Spectral:new('Example Spectral', 'example_spectral', { x = 2, y = 0}, {
+local c_example_spectral = SMODS.Spectral:new('Example Spectral', 'example_spectral', { mult = 4 }, { x = 2, y = 0 }, {
     name = 'Example Spectral',
-    text = { 'Does nothing?' }
+    text = { 'Does nothing?', '{C:inactive}Or does it?' }
 }, 4, nil, nil, 'my_mod_tarot')
 c_example_planet:register()
 c_example_tarot:register()
@@ -98,7 +100,7 @@ c_example_spectral:register()
 * `atlas`: Allows you to specify a custom atlas. Like with jokers, the loader still looks for a custom sprite sheet that matches the card's slug.
 
 ### Functions
-For all consumable types, functions `use`, `can_use`, `loc_def`, and `set_badges` can be defined with the following headers:
+For all consumable types, functions `use`, `can_use`, `loc_def`, and `set_badges` can be defined as shown below. Additionally, a `calculate` function to be called from `Card:calculate_joker()` can also be defined and is identical in usage to a Joker's `calculate` function.
 ```lua
 function SMODS.Tarots.c_example_tarot.can_use(card)
     -- stop_use and whatnot are handled by the loader, so you don't need to worry about it
@@ -107,17 +109,59 @@ end
 function SMODS.Tarots.c_example_tarot.use(card, area, copier)
     -- do something
 end
-function SMODS.Tarots.c_example_tarot.loc_def(card, info_queue)
+function SMODS.Tarots.c_example_tarot.loc_def(center, info_queue)
     info_queue[#info_queue+1] = { set = 'Other', key = 'my_key' }
     return {}
 end
 function SMODS.Planets.c_example_planet.set_badges(card, badges)
-    -- change the label of an existing badge, in this case, the 'Planet' one
-    -- creating a new badge which overwrites the old one also works
-    badges[1].nodes[1].nodes[2].config.object.string = 'Exoplanet'
+    -- Override the default 'Planet' badge to have a different text
+    badges[1] = create_badge('Exoplanet', G.C.SECONDARY_SET['Planet'], nil, 1.2)
+end
+function SMODS.Spectrals.c_example_spectral.calculate(card, context)
+    if SMODS.end_calculate_context(context) then
+        return {
+            message = localize{type='variable',key='a_mult',vars={card.ability.mult}},
+            mult_mod = card.ability.mult
+        }
+    end
 end
 ```
-The original function responsible for the usage of consumables will not be called if a `use` function has been declared. Tooltips can be made right inside `loc_def` for consumables due to them being processed differently.
+The original function responsible for the usage of consumables will not be called if a `use` function has been declared. Tooltips can be made right inside `loc_def` for consumables due to them being processed differently. Note that this difference causes a Joker's `loc_def` function to be passed a `Card` object with an `ability` field, while all other such functions are passed a `center` object with a `config` table that includes similar information.
 
-## Creating vouchers, seals and blinds
+## Creating vouchers
+### Example
+```lua
+-- SMODS.Voucher:new(name, slug, config, pos, loc_txt, cost, unlocked, discovered, available, requires, atlas)
+local v_example = SMODS.Voucher:new('Example', 'example', { extra = 2 }, { x = 0, y = 0 }, {
+    name = 'Example',
+    text = { '{C:red}+#1#{} discards' },
+}, 10, true, false, true, {'v_recyclomancy'}, 'my_mod_voucher')
+v_example:register()
+```
+
+### Parameters
+* `name`: Your voucher's name.
+* `slug`: Your voucher's slug, used to index it in any tables it gets registered in. `v_` will automatically be prepended to this, so the actual slug will start with `v_v_` if you input a slug also starting with `v_`.
+* `config`: Used for values specific to this voucher.
+* `pos`: The voucher's position in its spritesheet. Defaults to position 0,0.
+* `loc_txt`: The voucher's description as it will show up in-game, with a `name` string and a `text` array. Each entry in `text` corresponds to one row of the description. Variables can be used with the format `#n#`.
+* `cost`: The voucher's shop cost.
+* `unlocked`: Whether the voucher is unlocked by default. Unlock conditions are unsupported as of now, so the API will override this value with `true` for the time being.
+* `discovered`: Whether the voucher is discovered by default (default: false)
+* `atlas`: Allows you to specify a custom atlas. Like with jokers, the loader still looks for a custom sprite sheet that matches the card's slug.
+
+### Functions
+Alongside `loc_def` and `set_badges` functions, which work identically to their consumable counterparts, custom vouchers can define a `redeem` function to be called when the voucher is redeemed:
+```lua
+function SMODS.Vouchers.v_example.loc_def(center, info_queue)
+    return { center.config.extra }
+end
+function SMODS.Vouchers.v_example.redeem(center_table)
+    -- center_table has 2 fields: name (the center's name) and extra (the extra field of the voucher config)
+    G.GAME.round_resets.discards = G.GAME.round_resets.discards + center_table.extra
+    ease_discard(center_table.extra)
+end
+```
+
+## Creating seals and blinds
 APIs for these game objects are also added, and this page will be completed with documentation for them soon.
