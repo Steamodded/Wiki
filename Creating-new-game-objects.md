@@ -36,12 +36,13 @@ G.localization.descriptions.Other['my_key'] = {
     name = 'My tooltip',
     text = {
         'Fancy text, and',
-        'even more fancy text.'
+        'even more fancy text.',
+        'Var 1: {C:attention}#1#' -- this will display 10
     }
 }
 function SMODS.Jokers.j_example.tooltip(card, info_queue)
     info_queue[#info_queue+1] = G.P_CENTERS.m_steel -- Tooltips for enhancements, editions, tags, etc.
-    info_queue[#info_queue+1] = { set = 'Other', key = 'my_key' } -- Custom tooltips
+    info_queue[#info_queue+1] = { set = 'Other', key = 'my_key', vars = {card.ability.mult} } -- Custom tooltips
 end
 function SMODS.Jokers.j_example.set_ability(card, initial, delay_sprites)
     card.ability.test = card.ability.mult
