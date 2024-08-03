@@ -1,4 +1,5 @@
 # Creating new game objects
+## NOTE: THIS PAGE WAS MADE FOR STEAMODDED 0.9.8, AND SHOULD NOT BE REFERRED TO FOR NEWER VERSIONS.
 Steamodded features APIs for adding different kinds of game objects. Some of them are still new, so they might be unstable in some places. Below, you will find an overview on how to use them.
 ## Creating jokers
 ### Example
