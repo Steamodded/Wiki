@@ -1,5 +1,5 @@
 # MOD CORE API DECK Documentation
-
+## NOTE: THIS PAGE WAS MADE FOR STEAMODDED 0.9.8, AND SHOULD NOT BE REFERRED TO FOR NEWER VERSIONS.
 ## Overview
 The MOD CORE API DECK is a Lua script designed to manage deck objects within Balatro. This script facilitates the creation, registration, and integration of custom decks into the existing game structure.
 
