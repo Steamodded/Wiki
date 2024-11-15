@@ -1,6 +1,8 @@
   * [Home](https://github.com/Steamopollys/Steamodded/wiki)
+
   * [Getting Started](https://github.com/Steamopollys/Steamodded/wiki/01.-Getting-started)
 ***
+Game Objects
   * [SMODS.Atlas](https://github.com/Steamopollys/Steamodded/wiki/04.-SMODS.Atlas)
   * [SMODS.Center](https://github.com/Steamopollys/Steamodded/wiki/05.-SMODS.Center)
   * [SMODS.ConsumableType](https://github.com/Steamopollys/Steamodded/wiki/06.-SMODS.ConsumableType)
