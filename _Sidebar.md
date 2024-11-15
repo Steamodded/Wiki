@@ -13,6 +13,7 @@ Game Objects
   * [SMODS.Sound](https://github.com/Steamopollys/Steamodded/wiki/09.-SMODS.Sound)
 ***
   * [Logging](https://github.com/Steamopollys/Steamodded/wiki/Logging)
+  * [Building a UI](https://github.com/Steamopollys/Steamodded/wiki/UI-Guide)
 ***
   0.9.8 Documentation [OUTDATED]
   * [Add or Replace a Sprite](https://github.com/Steamopollys/Steamodded/wiki/%5BOUTDATED%5D-Add-or-Replace-a-Sprite)
