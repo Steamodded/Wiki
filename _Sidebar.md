@@ -12,6 +12,7 @@ Game Objects
   * [SMODS.PokerHand](https://github.com/Steamopollys/Steamodded/wiki/10.-SMODS.PokerHand)
   * [SMODS.Sound](https://github.com/Steamopollys/Steamodded/wiki/09.-SMODS.Sound)
 ***
+  * [Calculation Context Guide](https://github.com/Steamopollys/Steamodded/wiki/Calculation-Context-Guide)
   * [Logging](https://github.com/Steamopollys/Steamodded/wiki/Logging)
   * [Mod Config](https://github.com/Steamopollys/Steamodded/wiki/SMODS.config_tab)
   * [Building a UI](https://github.com/Steamopollys/Steamodded/wiki/UI-Guide)
