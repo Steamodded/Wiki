@@ -287,4 +287,4 @@ All changes to context are mentioned alongside the event:
     Used only by 'Perkeo' in vanilla
 
 ***
-*Guide written by Divvy*
+*Guide written by Divvy and Eremel*
