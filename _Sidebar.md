@@ -15,7 +15,7 @@ Game Objects
   * [Guide - Joker Calculation](https://github.com/Steamopollys/Steamodded/wiki/Guide-%E2%80%90-Joker-Calculation)
   * [Logging](https://github.com/Steamopollys/Steamodded/wiki/Logging)
   * [Mod Config](https://github.com/Steamopollys/Steamodded/wiki/SMODS.config_tab)
-  * [Building a UI](https://github.com/Steamopollys/Steamodded/wiki/UI-Guide)
+  * [Guide - UI Structure](https://github.com/Steamopollys/Steamodded/wiki/UI-Guide)
 ***
   0.9.8 Documentation [OUTDATED]
   * [Add or Replace a Sprite](https://github.com/Steamopollys/Steamodded/wiki/%5BOUTDATED%5D-Add-or-Replace-a-Sprite)
