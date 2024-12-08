@@ -313,4 +313,4 @@ playing_card_added = true
 cards = cards```
 
 ***
-_Guide written by Eremel_ and Divvy_
+*Guide written by Eremel_ and Divvy_*
