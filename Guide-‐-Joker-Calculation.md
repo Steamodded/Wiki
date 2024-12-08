@@ -215,114 +215,76 @@ eval_card([CARD], {cardarea = G.jokers, remove_playing_cards = true, removed = c
 ```
 
 
-# Other joker calculations
-## End of round
- 1. Iterate through `G.jokers.cards` calling `calculate_joker` with context:
-```lua
-end_of_round = true
-game_over = game_over -- true or false
-```
+# Other Evaluation
 
-   *This evaluation checks for `saved` effects*<br>
-   **rental** and **perishable** calculations also happen here<br>
-   Use `if context.end_of_round and not context.repetition and not context.individual then` to trigger this.
+Jokers are also evaluated after other player actions, not just when a hand is played.
+The two main actions are discarding cards and winning the round, which have dedicated sections below.
+All other actions are listed in the 'Everything Else' section at the bottom, for quick reference.
 
- 2. If the game is not over, iterate through `G.hand.cards`<br>
-   i) establish the repetition loop `reps`<br>
-   ii) calculate `get_end_of_round_effect` on the current card with no context<br>
-   *This evaluation looks for `h_dollars`*<br>
-   iii) call `eval_card` with context:
-```lua
-end_of_round = true
-cardarea = G.hand
-repetition = true
-repetition_only = true
-```
-   *This evaluation looks for `repetitions` effects from **seals***<br>
-   iv) call `eval_card` with context:
-```lua
-cardarea = G.hand
-other_card = G.hand.cards[i]
-repetition = true
-end_of_round = true
-card_effects = effects
-```
-   *This evaluation looks for `repetitions` effects from **jokers***<br>
-   v) iterate through `effects` and look for:
-```lua
-h_dollars
-extra
-```
+## Discard
 
-## Discard cards from highlighted
-1) iterate through `G.hand.cards` calling `eval_card` with context:```
-pre_discard = true
-full_hand = G.hand.highlighted
-hook = hook``` *This evaluation looks for **cards** that do something to a discarded hand before it is discarded*
-2) iterate through `G.jokers.cards` calling `calculate_joker` with context:```
-pre_discard = true
-full_hand = G.hand.highlighted
-hook = hook``` *This evaluation looks for **jokers** that do something to a discarded hand before it is discarded*
-3)  iterate through `G.hand.cards` calling `eval_card` with context:```
-discard = true
-full_hand = G.hand.highlighted``` *This evaluation looks for `remove` effects from **cards** when it is discarded*
-4) iterate through `G.jokers.cards` calling `calculate_joker` with context:```
-discard = true
-other_card = G.hand.highlighted[i]
-full_hand = G.hand.highlighted``` *This evaluation looks for `remove` effects from **jokers** when a card is discarded*
-5) if there are any **destroyed** cards in the discarded cards, call `calculate_joker` with context:```
-cardarea = G.jokers
-remove_playing_cards = true
-removed = destroyed_cards``` *This evaluation checks to see if a **joker** has an effect on a removed card*
-## New round
-1) iterate through `G.jokers.cards` calling `calculate_joker` with context:```
-setting_blind = true
-blind = G.GAME.round_resets.blind``` *This evaluation checks to see if a **joker** has an effect when a blind is selected
-## Use consumeable
-1) When a consumeable removes a card, iterate through `G.jokers.cards` calling `calculate_joker` with contet:```
-remove_playing_cards = true
-removed = destroyed_cards```
-## Open a booster
-1) iterate through `G.jokers.cards` calling `calculate_joker` with context:```
-open_booster = true
-card = self```
-## Redeem voucher
-1) iterate through `G.jokers.cards` calling `calculate_joker` with context:```
-buying_card = true
-card = self```
-## Calculate joker
-1) if joker is *Blueprint* or *Brainstorm* call `calculate_joker` with the same context
-## Update draw to hand
-1) on the first hand of a round, iterate through `G.jokers.cards` calling `calculate_joker` with context `first_hand_drawn = true`
-## Use card
-1) If card is consumeable, iterate through `G.jokers.cards` calling `calculate_joker` with context:```
-using_consumeable = true
-consumeable = card```
-## Sell joker
-1) When a joker is sold, call `calculate_joker` with context `selling_self = true`
-## Sell card
-1) If selling card, iterate through `G.jokers.cards` calling `calculate_joker` with context:```
-selling_card = true
-card = card```
-## Buy from shop
-1) When buying a joker, call `calculate_joker` with context:```
-buying_card = true
-card = c1```
-2) iterate through `G.jokers.cards` calling `calculate_joker` with context:```
-buying_card = true
-card = c1```
-## Toggle shop
-1) If leaving the shop, iterate through `G.jokers.cards` calling `calculate_joker` with context `ending_shop = true`
-## Reroll shop
-1) If rerolling the shop, iterate through `G.jokers.cards` calling `calculate_joker` with context `reroll_shop = true`
-## Skip booster
-1) If skipping a booster pack, iterate through `G.jokers.cards` calling `calculate_joker` with context `skipping_booster = true`
-## Skip blind
-1) If skipping a blind, iterate through `G.jokers.cards` calling `calculate_joker` with context `skip_blind = true`
-## Playing card added
-1) When adding a playing card, iterate through `G.jokers.cards` calling `calculate_joker` with context:```
-playing_card_added = true
-cards = cards```
+Once you discard a hand, the game also does multiple stages of evaluation:
+
+ 1. **Before** Stage (Held Cards)<br>
+   Sets `context.pre_discard = true` and `context.full_hand = G.hand.highlighted` (ie. which cards will be discarded)<br>
+   *Also*, it sets `context.hook = true` if 'The Hook' blind is active.
+    1. Evaluates **each held card** with that context.
+    2. Evaluates **each joker** with that context.
+ 2. **Discard** Stage<br>
+   Sets `context.discard = true` and `context.full_hand = G.hand.highlighted` (ie. which cards are discarded)
+    1. Evaluates **each held card** with that context.
+    2. Evaluates **each joker** with that context and also `context.other_card = discarded_card` (ie. it's evaluated *for each discarded card*)<br>
+      This checks if any joker returns `remove = true`, like 'Trading Card' in vanilla.
+ 3. Card **Destruction** Stage<br>
+   Evaluates **each joker** with `context.cardarea = G.jokers`<br>
+   Sets `context.remove_playing_cards = true` and `context.removed = cards_destroyed`
+
+## End of Round
+
+Once you win (or lose) a round, the game also does multiple stages of evaluation:
+
+ 1. **Game Over** Effects<br>
+   Sets `context.end_of_round = true` and `game_over = true` if the player just lost the the game<br>
+   This checks if any joker returns `saved = true`, like 'Mr. Bones' in vanilla.
+ 2. **Held-Cards** Evaluation Stage<br>
+   Sets `context.cardarea = G.hand` and `context.end_of_round = true`<br>
+   This follows the same steps described in the 'Card Evaluation' section above.
+ 
+> [!NOTE]
+> For **End of Round** effects that trigger once, your joker should use:<br>
+> `if context.end_of_round and not context.repetition and not context.individual then ...`
+
+## Everything Else
+
+Whenever any of the events below take place, *each joker* will be evaluated via `[JOKER]:calculate_joker(context)`.
+All changes to context are mentioned alongside the event:
+
+ - Round-related events
+   - **New Round**: sets `context.setting_blind = true` and `context.blind = G.GAME.round_resets.blind` (ie. the type of blind)<br>
+    Used by 'Madness', 'Burglar', and others in vanilla
+   - **Drawing First Hand**: sets `context.first_hand_drawn = true`<br>
+    Used by 'DNA', 'Trading Card', and others in vanilla
+   - **Skipping a Blind**: sets `context.skip_blind = true`<br>
+    Used only by 'Throwback' in vanilla
+ - Set-up modifications
+   - **Adding a Playing Card**: sets `context.playing_card_added = true` and `context.cards = cards` (ie. which cards added)<br>
+    Used only by 'Hologram' in vanilla
+   - **Using a Consumable**: sets `context.using_consumeable = true` and `context.consumeable = card` (ie. which consumable)<br>
+    Used by 'Fortune Teller', 'Glass Joker', and others in vanilla
+   - **Selling a Joker/Consumable**: sets `context.selling_card = true` and `context.card = card` (ie. which card)<br>
+    *Also*, if selling a joker, that joker is evaluated with `context.selling_self = true`<br>
+    Used only by 'Campfire' and 'Luchador' in vanilla
+ - Shop-related events
+   - **Buying Anything**: sets `context.buying_card = true` and `context.card = card` (ie. a joker/consumable/card/voucher object)<br>
+    *Also*, if buying a joker, that joker is evaluated with the same context as above.
+   - **Opening a Booster Pack**: sets `context.open_booster = true` and `context.card = booster` (ie. which booster)<br>
+    Used only by 'Hallucination' in vanilla
+   - **Skipping a Booster**: sets `context.skipping_booster = true`<br>
+    Used only by 'Red Card' in vanilla
+   - **Rerolling Shop**: sets `context.reroll_shop = true`<br>
+    Used only by 'Flash Card' in vanilla
+   - **Leaving Shop**: sets `context.ending_shop = true`<br>
+    Used only by 'Perkeo' in vanilla
 
 ***
-*Guide written by Eremel_ and Divvy_*
+*Guide written by Divvy*
