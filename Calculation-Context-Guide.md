@@ -217,30 +217,42 @@ eval_card([CARD], {cardarea = G.jokers, remove_playing_cards = true, removed = c
 
 # Other joker calculations
 ## End of round
-1) Iterate through `G.jokers.cards` calling `calculate_joker` with context:```
+ 1. Iterate through `G.jokers.cards` calling `calculate_joker` with context:
+```lua
 end_of_round = true
-game_over = game_over -- true or false``` *This evaluation checks for `saved` effects*
-**rental** and **perishable** calculations also happen here
-2) If the game is not over, iterate through `G.hand.cards`
-    i) establish the repetition loop `reps`
-    ii) calculate `get_end_of_round_effect` on the current card with no context
-        *This evaluation looks for `h_dollars`*
-    iii) call `eval_card` with context:```
+game_over = game_over -- true or false
+```
+
+   *This evaluation checks for `saved` effects*<br>
+   **rental** and **perishable** calculations also happen here<br>
+   Use `if context.end_of_round and not context.repetition and not context.individual then` to trigger this.
+
+ 2. If the game is not over, iterate through `G.hand.cards`<br>
+   i) establish the repetition loop `reps`<br>
+   ii) calculate `get_end_of_round_effect` on the current card with no context<br>
+   *This evaluation looks for `h_dollars`*<br>
+   iii) call `eval_card` with context:
+```lua
 end_of_round = true
 cardarea = G.hand
 repetition = true
-repetition_only = true``` *This evaluation looks for `repetitions` effects from **seals***
-
-    iv) call `eval_card` with context:```
-cardarea = G,hand
+repetition_only = true
+```
+   *This evaluation looks for `repetitions` effects from **seals***<br>
+   iv) call `eval_card` with context:
+```lua
+cardarea = G.hand
 other_card = G.hand.cards[i]
 repetition = true
 end_of_round = true
-card_effects = effects``` *This evaluation looks for `repetitions` effects from **jokers***
-
-    v) iterate through `effects` and look for:```
+card_effects = effects
+```
+   *This evaluation looks for `repetitions` effects from **jokers***<br>
+   v) iterate through `effects` and look for:
+```lua
 h_dollars
-extra```
+extra
+```
 
 ## Discard cards from highlighted
 1) iterate through `G.hand.cards` calling `eval_card` with context:```
