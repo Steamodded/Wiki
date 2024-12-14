@@ -15,6 +15,7 @@ Game Objects
 Guides
   * [Joker Calculation](https://github.com/Steamopollys/Steamodded/wiki/Guide-%E2%80%90-Joker-Calculation)
   * [Logging](https://github.com/Steamopollys/Steamodded/wiki/Logging)
+  * [Event Manager](https://github.com/Steamopollys/Steamodded/wiki/Guide-%E2%80%90-Event-Manager)
   * [Mod Config](https://github.com/Steamopollys/Steamodded/wiki/SMODS.config_tab)
   * [UI Structure](https://github.com/Steamopollys/Steamodded/wiki/UI-Guide)
 ***
