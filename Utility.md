@@ -10,6 +10,8 @@ Steamodded provides utility functions that extend or replace vanilla functionali
     - Given an input function, outputs details on its name, source, line of definition and number of upvalues.
 - `serialize(t, indent) -> string`
     - Given an input table, creates a string containing Lua code that evaluates to the serializable part of `t`. Information may be lost, and circular references are not resolved.
+- `tprint(t, indent) -> string`
+    - Recursively stringifies an input table into pseudo-valid Lua code, leaving non-serializable values and tables above a depth of 5 into their default string representations.
 
 ## Number formatting
 - `round_number(num_precision) -> number`
