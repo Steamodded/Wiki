@@ -10,6 +10,7 @@ Game Objects
   * [SMODS.Enhancement - wip](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Enhancement-%5Bwip%5D)
   * [SMODS.PokerHand](https://github.com/Steamopollys/Steamodded/wiki/SMODS.PokerHand)
   * [SMODS.Sound](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Sound)
+  * [SMODS.Suit and SMODS.Rank](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Suit-and-SMODS.Rank)
 ***
 Guides
   * [Mod Metadata](https://github.com/Steamopollys/Steamodded/wiki/Mod-Metadata)
