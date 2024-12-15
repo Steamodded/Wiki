@@ -1,28 +1,23 @@
   * [Home](https://github.com/Steamopollys/Steamodded/wiki)
-
-  * [Getting Started](https://github.com/Steamopollys/Steamodded/wiki/01.-Getting-started)
-  * [API Documentation](https://github.com/Steamopollys/Steamodded/wiki/03.-API-Documentation)
 ***
 Game Objects
-  * [SMODS.Atlas](https://github.com/Steamopollys/Steamodded/wiki/04.-SMODS.Atlas)
-  * [SMODS.Center](https://github.com/Steamopollys/Steamodded/wiki/05.-SMODS.Center)
-  * [SMODS.ConsumableType](https://github.com/Steamopollys/Steamodded/wiki/06.-SMODS.ConsumableType)
-  * [SMODS.Edition](https://github.com/Steamopollys/Steamodded/wiki/07.-SMODS.Edition)
-  * [SMODS.Enhancement - wip](https://github.com/Steamopollys/Steamodded/wiki/11.-SMODS.Enhancement-%5Bwip%5D)
-  * [SMODS.Blind](https://github.com/Steamopollys/Steamodded/wiki/08.-SMODS.Blind)
-  * [SMODS.PokerHand](https://github.com/Steamopollys/Steamodded/wiki/10.-SMODS.PokerHand)
-  * [SMODS.Sound](https://github.com/Steamopollys/Steamodded/wiki/09.-SMODS.Sound)
+  * [API Documentation](https://github.com/Steamopollys/Steamodded/wiki/API-Documentation)
+  * [SMODS.Atlas](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Atlas)
+  * [SMODS.Blind](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Blind)
+  * [SMODS.Center](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Center)
+  * [SMODS.ConsumableType](https://github.com/Steamopollys/Steamodded/wiki/SMODS.ConsumableType)
+  * [SMODS.Edition](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Edition)
+  * [SMODS.Enhancement - wip](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Enhancement-%5Bwip%5D)
+  * [SMODS.PokerHand](https://github.com/Steamopollys/Steamodded/wiki/SMODS.PokerHand)
+  * [SMODS.Sound](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Sound)
 ***
 Guides
+  * [Mod Metadata](https://github.com/Steamopollys/Steamodded/wiki/Mod-Metadata)
   * [Joker Calculation](https://github.com/Steamopollys/Steamodded/wiki/Guide-%E2%80%90-Joker-Calculation)
   * [Logging](https://github.com/Steamopollys/Steamodded/wiki/Logging)
   * [Event Manager](https://github.com/Steamopollys/Steamodded/wiki/Guide-%E2%80%90-Event-Manager)
   * [Mod Config](https://github.com/Steamopollys/Steamodded/wiki/SMODS.config_tab)
   * [UI Structure](https://github.com/Steamopollys/Steamodded/wiki/UI-Guide)
-***
-  0.9.8 Documentation [OUTDATED]
-  * [Add or Replace a Sprite](https://github.com/Steamopollys/Steamodded/wiki/%5BOUTDATED%5D-Add-or-Replace-a-Sprite)
-  * [Create a Deck](https://github.com/Steamopollys/Steamodded/wiki/%5BOUTDATED%5D-Create-a-Deck)
-  * [Creating new game objects](https://github.com/Steamopollys/Steamodded/wiki/%5BOUTDATED%5D-Creating-new-game-objects)
+  * [Utility Functions](https://github.com/Steamopollys/Steamodded/wiki/Utility)
 
  
