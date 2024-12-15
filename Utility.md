@@ -38,6 +38,9 @@ Steamodded provides utility functions that extend or replace vanilla functionali
 
 ## Mod-facing utilities
 These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.
+- `SMODS.load_file(path, id) -> function`
+    - Given a path to a file in the context of the mod currently being loaded, loads the file contents and returns them as a function. If this function is called after the mod loading stage, a mod's `id` must be specified in order to find the correct file.
+    - Example usage: `assert(SMODS.load_file('jokers.lua'))()`
 - `SMODS.juice_up_blind()`
     - Plays a 'juice up' animation on the Blind chip.
 - `SMODS.eval_this(card, effects)`
