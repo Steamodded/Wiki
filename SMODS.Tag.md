@@ -18,6 +18,7 @@
         - `func` is a function that gets executed as an event before the used tag gets removed. This function should always return `true`.
 - `set_ability(self, tag)`
     - This function allows you to store any additional information your tag may need when it is created. Values should be stored within `tag.ability`.
+
 The following functions provide the same interface and functionality as their `SMODS.Center` counterparts.
 - `in_pool(self, args) -> bool, { allow_duplicates = bool }`
 	- Define custom logic for when a card is allowed to spawn. A card can spawn if `in_pool` returns true and all other checks are met.
