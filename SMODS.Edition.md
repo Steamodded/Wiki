@@ -1,12 +1,12 @@
 # API Documentation: `SMODS.Edition`
 - **Required parameters:**
 	- `key`
-	- `shader`, the shader key for your shader. `shader = false` is allowed. This will create edition with no shader.
+	- `shader`: the shader key for your shader. `shader = false` is allowed. This will create edition with no shader.
 - **Optional parameters** *(defaults)*:
-	- `atlas = 'Joker'`, The atlas that is used to draw the edition in the collection
-	- `pos = {x = 0, y = 0}`, The position used to draw the edition in the collection
-	- `discovered = false`,
-	- `unlocked = true`,
+	- `atlas = 'Joker'`: The atlas that is used to draw the edition in the collection.
+	- `pos = {x = 0, y = 0}`: The position used to draw the edition in the collection.
+	- `discovered = false`
+	- `unlocked = true`
 	- `loc_txt`, Skeleton:
 	```lua
 		{
@@ -27,14 +27,14 @@
 			card_limit = 2,
 		}
 	```
-	- `in_shop = false`, whether the edition can spawn naturally in the shop/booster packs
-	- `weight = 0`, the weighting of the edition, see below for more details
-	- `extra_cost`, the extra cost applied to cards in the shop with the edition
-	- `apply_to_float = false`, whether the shader should be applied to floating sprites or not
-	- `badge_colour = G.C.DARK_EDITION`, used to set a custom badge colour
-	- `sound = { sound = "foil1", per = 1.2, vol = 0.4 }`, used to set a custom sound when the edition is applied
-	- `disable_shadow`, disables shadow drawn under the card.
-	- `disable_base_shader = false`, whether the base shader should be applied (`booster` for Booster packs and Spectral cards, `voucher` for Vouchers and Invisible Joker, `dissolve` otherwise). Enable this if your shader modifies card transparency or shape in any way. Example:<br/>![image](https://github.com/user-attachments/assets/c7b32385-e486-40c2-9a83-c8a09a67185c)
+	- `in_shop = false`: Whether the edition can spawn naturally in the shop/booster packs.
+	- `weight = 0`: The weighting of the edition, see below for more details.
+	- `extra_cost`: The extra cost applied to cards in the shop with the edition.
+	- `apply_to_float = false`: Whether the shader should be applied to floating sprites or not.
+	- `badge_colour = G.C.DARK_EDITION`: Used to set a custom badge colour.
+	- `sound = { sound = "foil1", per = 1.2, vol = 0.4 }`: Used to set a custom sound when the edition is applied.
+	- `disable_shadow`: Disables shadow drawn under the card.
+	- `disable_base_shader = false`: Whether the base shader should be applied (`booster` for Booster packs and Spectral cards, `voucher` for Vouchers and Invisible Joker, `dissolve` otherwise). Enable this if your shader modifies card transparency or shape in any way. Example:<br/>![image](https://github.com/user-attachments/assets/c7b32385-e486-40c2-9a83-c8a09a67185c)
 
 ## API methods
 - `loc_vars(self, info_queue) -> { vars ?= table }`
@@ -53,7 +53,7 @@
 A shader is required for a custom edition.
 - **Required parameters:**
 	- `key`
-	- `path`, the file name of your shader. Shaders must be stored in `assets/shaders/` and be a `.fs` file. The name of your file **must** be the name of your shader.
+	- `path`: The file name of your shader. Shaders must be stored in `assets/shaders/` and be a `.fs` file. The name of your file **must** be the name of your shader.
 
 ### API methods
 - `send_vars(sprite, @nullable card) -> table`

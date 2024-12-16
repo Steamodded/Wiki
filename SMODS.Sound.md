@@ -12,7 +12,7 @@ Mods
 ```
 - **Required parameters:**
 	- `key`
-    - `path` - the sound file's name, including the extension (e.g. `'music_jimball.ogg'`)
+    - `path`: The sound file's name, including the extension (e.g. `'music_jimball.ogg'`).
 		- Supported file types include `*.ogg`, `*.wav` and `*.mp3`. It is not recommended to use MP3 files.
 		- If you want to use different sound files depending on the selected language, you can also provide a table:
 		```lua
@@ -23,11 +23,11 @@ Mods
 		}
 		```
 - **Optional parameters** *(defaults)*:
-    - `pitch = 0.7` - Specify a custom pitch shift for music tracks.
-	- `volume = 0.6` - Specify a custom volume for music tracks.
+    - `pitch = 0.7`: Specify a custom pitch shift for music tracks.
+	- `volume = 0.6`: Specify a custom volume for music tracks.
 		- These modifiers do not apply to regularly played sounds. Specify them as arguments to `play_sound` instead.
-	- `replace` - Behaves like `self:create_replace_sound(replace)`, see below
-	- `sync` - For music tracks only - configuration for synchronizing different music tracks.
+	- `replace`: Replace the specified sound with this one whenever it is played. Behaves like `self:create_replace_sound(replace)`.
+	- `sync`: For music tracks only - configuration for synchronizing different music tracks.
 		- Default behavior: sync with all tracks that aren't configured otherwise.
 		- `sync = false`: Do not sync with anything.
 		- If provided a table, only try to sync with keys that correspond to a true value, e.g.:

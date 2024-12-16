@@ -95,10 +95,10 @@
 - `remove_from_deck(self, card, from_debuff)`
 	- Modify the game state when this card is sold, destroyed, or otherwise removed.
 	- Jokers are considered removed when debuffed (in this case, `from_debuff` will be true).
-- `in_pool(self) -> bool, { allow_duplicates = bool }`
+- `in_pool(self, args) -> bool, { allow_duplicates = bool }`
 	- Define custom logic for when a card is allowed to spawn. A card can spawn if `in_pool` returns true and all other checks are met.
-	- (Subject to change) `in_pool` ignores base game checks, except disallowing duplicates.
 	- `allow_duplicates` allows this card to spawn when one already exists, even without Showman.
+	- When called from `generate_card_ui`, the `_append` key is passed as `args.source`.
 - `update(self, card, dt)`
 	- For actions that happen every frame.
 - `set_sprites(self, card, front)`

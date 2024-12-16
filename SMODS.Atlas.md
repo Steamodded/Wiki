@@ -16,9 +16,9 @@ Mods
 ```
 - **Required parameters:**
 	- `key`
-	- `px` - the width of each individual sprite at single resolution, in pixels.
-	- `py` - the height of each individual sprite at single resolution, in pixels.
-	- `path` - the image file's name, including the extension (e.g. `'Jokers-negate.png'`).
+	- `px`: the width of each individual sprite at single resolution, in pixels.
+	- `py`: the height of each individual sprite at single resolution, in pixels.
+	- `path`: the image file's name, including the extension (e.g. `'Jokers-negate.png'`).
 		- If you want to use different sprites depending on the selected language, you can also provide a table:
 		```lua
 		path = {
@@ -32,7 +32,7 @@ Mods
 		- Use `ASSET_ATLAS` for non-animated sprites
 		- Use `ANIMATION_ATLAS` for animated sprites
 		- Use `ASSET_IMAGES` for other images
-	- `frames` - for animated sprites, you must provide the number of frames of the animation. Each row should contain one animation, with each column showing one frame.
-	- `raw_key` - Set this to `true` to prevent the loader from adding your mod prefix to the `key`. Useful for replacing sprites from the base game or other mods.
-	- `language` - Restrict your atlas to a specific locale. Useful for introducing localized sprites while leaving other languages intact.
-	- `disable_mipmap` - Disable mipmap being applied to this texture. Might remove artifacts on smaller textures.
+	- `frames`: for animated sprites, you must provide the number of frames of the animation. Each row should contain one animation, with each column showing one frame.
+	- `raw_key`: Set this to `true` to prevent the loader from adding your mod prefix to the `key`. Useful for replacing sprites from the base game or other mods.
+	- `language`: Restrict your atlas to a specific locale. Useful for introducing localized sprites while leaving other languages intact.
+	- `disable_mipmap`: Disable mipmap being applied to this texture. Might remove artifacts on smaller textures.

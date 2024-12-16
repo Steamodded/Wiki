@@ -12,6 +12,7 @@ Game Objects
   * [SMODS.PokerHand](https://github.com/Steamopollys/Steamodded/wiki/SMODS.PokerHand)
   * [SMODS.Sound](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Sound)
   * [SMODS.Suit and SMODS.Rank](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Suit-and-SMODS.Rank)
+  * [SMODS.Tag](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Tag)
 ***
 Guides
   * [Mod Metadata](https://github.com/Steamopollys/Steamodded/wiki/Mod-Metadata)
