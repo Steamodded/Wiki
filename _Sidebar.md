@@ -11,6 +11,7 @@ Game Objects
   * [SMODS.Language](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Language)
   * [SMODS.PokerHand](https://github.com/Steamopollys/Steamodded/wiki/SMODS.PokerHand)
   * [SMODS.Sound](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Sound)
+  * [SMODS.Stake](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Stake)
   * [SMODS.Suit and SMODS.Rank](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Suit-and-SMODS.Rank)
   * [SMODS.Tag](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Tag)
 ***
