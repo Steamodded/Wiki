@@ -4,6 +4,18 @@
     - `applied_stakes`: An array of keys of stakes that should also be applied when this stake is active. This is evaluated recursively to include all stakes applied by applied stakes, so you usually don't need to specify multiple stakes here.
         - Note: Key prefixing is applied to this option by default. If you're applying stakes from the base game or other mods, this can be adjusted by using `prefix_config.applied_stakes`. For example, `prefix_config = { applied_stakes = { mod = false } }` will remove all mod prefixes. You can also specify this per index, e.g. `prefix_config = { applied_stakes = { {}, { mod = false } } }` to add a mod prefix to the first, but not the second entry.
 - **Optional parameters** *(defaults)*:
+    - `loc_txt`, Skeleton:
+        ```lua
+        {
+            name = '',
+            text = {''},
+            sticker = {
+                name = '',
+                text = {''},
+            },
+        }
+        ```
+        - Note: an extra line that lists applied stakes is appended at the end of the description only when `loc_txt` is used. If you are using localization files, you should add this yourself.
     - `atlas = 'chips'`
     - `pos = { x = 0, y = 0 }`
     - `sticker_atlas`: The atlas to use for this stake's win sticker.
