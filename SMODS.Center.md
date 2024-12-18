@@ -123,6 +123,19 @@
 - `set_badges(self, card, badges)`
 	- Add additional badges, leaving existing badges intact. This function doesn't return; add badges by appending to `badges`.
 	- Avoid overwriting existing elements. It will cause text to appear on the top left corner of your screen instead.
+	- Function for creating badges: `create_badge(_string, _badge_col, _text_col, scaling)`
+		- `_string`: Text displayed on the badge.
+		- `_badge_col = G.C.GREEN`: Background colour.
+		- `_text_col = G.C.WHITE`: Text colour.
+		- `_scaling = 1`: Relative size of the badge.
+	- Example:
+	```lua
+	{
+		set_badges = function(self, card, badges)
+			badges[#badges+1] = create_badge(localize('k_your_string'), G.C.RED, G.C.BLACK, 1.2 )
+		end,
+	}
+	```
 - `set_card_type_badge(self, card, badges)`
 	- Same as `set_badges`, but bypasses creation of the card type / rarity badge, allowing you to replace it with a custom one.
 
