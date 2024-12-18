@@ -29,13 +29,7 @@
 	- `set` (`'Tarot'`, `'Planet'`, `'Spectral'`, or any modded consumable type),
 
 - **Optional parameters** *(defaults)*:
-	- `loc_txt`, Skeleton:
-	```lua
-		{
-			name = '',
-			text = { '' },
-		}
-	```
+	- `loc_txt`, default skeleton
 	- `config = {}`
 	- `pos = { x = 0, y = 0 }`
 	- `atlas = 'Tarot'`
@@ -51,13 +45,7 @@
 - **Required parameters:**
 	- `key`,
 - **Optional parameters** *(defaults)*:
-	- `loc_txt`, Skeleton:
-	```lua
-		{
-			name = '',
-			text = { '' },
-		}
-	```
+	- `loc_txt`, default skeleton
 	- `config = {}`
 	- `pos = { x = 0, y = 0 }`
 	- `atlas = 'Voucher'`
@@ -70,12 +58,7 @@
 - **Required parameters:**
 	- `key`,
 - **Optional parameters** *(defaults)*:
-	- `loc_txt`, Skeleton:
-	```lua
-		{
-			name = '',
-			text = { '' },
-		}
+	- `loc_txt`, default skeleton
 	```
 	- `config = {}`,
 	- `pos = { x = 0, y = 0 }`,
@@ -83,7 +66,27 @@
 	- `unlocked = true`,
 	- `discovered = false`,
 
-
+## `SMODS.Booster`
+- **Required parameters:**
+	- `key`
+- **Optional parameters** *(defaults)*:
+	- `loc_txt`, Skeleton:
+	```lua
+		{
+			name = '',
+			group_name = '', -- Pack group text while a pack is being opened, omit if using group_key
+			text = { '' },
+		}
+	```
+	- `atlas = 'Booster'`
+	- `pos = { x = 0, y = 0 }`
+	- `config = { extra = 3, choose = 1 }`: `extra` is the amount of cards in the pack, `choose` is the amount of choices.
+	- `discovered = false`
+	- `weight = 1`: Determines how frequently the pack appears in the shop.
+	- `cost = 4`
+	- `group_key`: Key to the group name (bottom text while on the pack opening screen) of this booster. Draws from `G.localization.misc.dictionary['k_booster_group'..group_key]`.
+	- `draw_hand = false`: If this is `true`, draw playing cards to hand when this pack is opened.
+	- `kind`: Used for grouping packs together. For example, this can be used in `get_pack()` to generate a booster pack of a given type.
 
 ## API methods
 ### All centers
@@ -146,3 +149,17 @@
 	- Used for effects that happen during a run, like Plasma Deck's effect.
 - `Voucher.redeem(self)`
 	- Defines the behavior of a Voucher when redeemed.
+- `Booster.create_card(self, card, i) -> table|Card`
+	- Creates the cards inside of the booster pack. `card` is the booster pack card, `i` is the position of the card to be generated. If the returned table is not a `Card`, it is passed into `SMODS.create_card`.
+- `Booster.update_pack(self, dt)`
+	- Handles booster pack UI when opened. 
+- `Booster.ease_background_colour(self)`
+	- Changes background colour. 
+- `Booster.particles(self)`
+	- Handles particle effects. 
+- `Booster.create_UIBox(self) -> table`
+	- Returns the booster's UIBox. 
+
+## Utility functions
+- `SMODS.Booster:take_ownership_by_kind(kind, obj, silent)`
+	- Finds all booster packs with matching `kind` and applies `SMODS.Booster:take_ownership()` to each one with arguments `obj` and `silent` passed through.
