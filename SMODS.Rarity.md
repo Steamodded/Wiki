@@ -27,4 +27,4 @@
 
 ## Util methods
 - `SMODS.poll_rarity(_pool_key, _rand_key) -> key`
--    Polls all rarities tied to `_pool_key` and returns rarity key. 
+    - Polls all rarities tied to `_pool_key` and returns rarity key. 
