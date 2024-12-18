@@ -49,6 +49,11 @@
 		}
 	```
 
+## API methods
+This method is available for both suits and ranks.
+- `loc_vars(self, info_queue, card)`
+    - This method provides limited functionality compared to its `SMODS.Center` counterpart. It has no support for any return values, but it does allow you to add tooltips to `info_queue`.
+
 ## Utility: pools and randomness
 - Suits and Ranks have special support for `in_pool` with an extended argument signature: `in_pool(self, args)`. `args.initial_deck` indicates when a starting deck is being generated. This can be used to set rules for when your cards should be added to starting decks independently of whether they can show up in other places. 
 - Even though `SMODS.Suits` and `SMODS.Ranks` are unordered tables, it is possible to feed them directly into `pseudorandom_element` to get a random suit or rank while respecting `in_pool`. Example: `local rank = pseudorandom_element(SMODS.Ranks, pseudoseed('myrank'))`.
