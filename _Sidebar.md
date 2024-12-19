@@ -14,7 +14,7 @@ Game Objects
   * [SMODS.Rarity](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Rarity)
   * [SMODS.Sound](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Sound)
   * [SMODS.Stake](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Stake)
-  * [SMODS.Stake](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Sticker)
+  * [SMODS.Sticker](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Sticker)
   * [SMODS.Suit and SMODS.Rank](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Suit-and-SMODS.Rank)
   * [SMODS.Tag](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Tag)
 ***
