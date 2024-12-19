@@ -59,7 +59,6 @@
 	- `key`,
 - **Optional parameters** *(defaults)*:
 	- `loc_txt`, default skeleton
-	```
 	- `config = {}`,
 	- `pos = { x = 0, y = 0 }`,
 	- `atlas = 'centers'`,
@@ -84,7 +83,7 @@
 	- `discovered = false`
 	- `weight = 1`: Determines how frequently the pack appears in the shop.
 	- `cost = 4`
-	- `group_key`: Key to the group name (bottom text while on the pack opening screen) of this booster. Draws from `G.localization.misc.dictionary['k_booster_group'..group_key]`.
+	- `group_key`: Key to the group name (bottom text while on the pack opening screen) of this booster. Draws from `G.localization.misc.dictionary[group_key]`.
 	- `draw_hand = false`: If this is `true`, draw playing cards to hand when this pack is opened.
 	- `kind`: Used for grouping packs together. For example, this can be used in `get_pack()` to generate a booster pack of a given type.
 
