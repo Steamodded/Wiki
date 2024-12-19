@@ -12,6 +12,7 @@ Game Objects
   * [SMODS.ObjectType](https://github.com/Steamopollys/Steamodded/wiki/SMODS.ObjectType)
   * [SMODS.PokerHand](https://github.com/Steamopollys/Steamodded/wiki/SMODS.PokerHand)
   * [SMODS.Rarity](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Rarity)
+  * [SMODS.Seal](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Seal)
   * [SMODS.Sound](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Sound)
   * [SMODS.Stake](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Stake)
   * [SMODS.Sticker](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Sticker)
