@@ -69,18 +69,43 @@ SMODS.Class {
 	```
 - `unlocked`: Sets the default unlock state of an object. If set to `false`, your object won't be obtainable until it's unlocked; make sure to implement an unlock condition.
 - `discovered`: Sets the default discovery state of an object. If set to `true`, your object can be viewed in the collection without needing to find it in a run.
-- `config`: Put initial values for your object in `config`. Cards representing your object have an `ability` table, whose initial value is a copy of `config`, but can change during the game.
-
-	Only specific keys are copied from `config`; define an `extra` table inside `config` to make sure your initial values aren't lost.
-```lua
-config = {
-	extra = {
-		custom_value = 10,
-		another_value = 'something',
-	},
-}
-```
-- `raw_atlas_key` (optional): Parameter for all objects with an `atlas` field. Your mod prefix won't be prepended to `atlas` if this is set; it's needed if you want to reference an atlas from the base game or another mod.
+- `no_collection`: If set to `true`, this object will not show up in the collection.
+- `config`: Put initial values for your object in `config`. Cards representing your object have an `ability` table, whose initial value is a copy of `config`, but can change during the game. 
+	- Only specific keys are copied from `config`; define an `extra` table inside `config` to make sure your initial values aren't lost.
+	```lua
+	config = {
+		extra = {
+			custom_value = 10,
+			another_value = 'something',
+		},
+	}
+	```
+- `prefix_config`: Defining this table gives you control over where prefixes should be added to keys you specify. The default behavior is to add a class prefix (if it exists) and your mod prefix.
+	- Supported keys:
+		- `key`
+		- `atlas`: Includes all atlas-related fields like `hc_atlas` and `lc_atlas` on suits and ranks
+		- `shader`
+		- `card_key`
+		- `above_stake`
+		- `applied_stakes`: Also supports options per index
+	- Each key can be set to a table or the value `false`. Effects:
+		- `mod`: Setting this to `false` removes your mod prefix.
+		- `class`: Setting this to `false` removes the class prefix.
+		- If `false` is used as the value instead of a table, no prefixes are applied.
+	- Set `prefix_config = false` to apply no prefixes to any key.
+	- Example:
+	```lua
+	{
+		prefix_config = {
+			key = { mod = false },
+			atlas = false, 
+			applied_stakes = {
+				[1] = { mod = false },
+				[3] = false,
+			},
+		},
+	}
+	```
 - `dependencies` (optional): A list of one or more mod IDs. Your object will only be loaded when all specified mods are present. This is useful for cross-mod compatibility, but not for dependencies that are required for your mod to function properly. In that case, add a dependency to your mod header.
 
 ### Taking ownership
