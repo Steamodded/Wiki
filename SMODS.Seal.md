@@ -29,4 +29,5 @@
     - Gives money when a card with this seal is played.
 - `update(self, card, dt)`
     - For actions that happen every frame.
-    
+- `draw(self, card, layer)`
+	- Draws the sprite and shader of the seal.

@@ -138,6 +138,8 @@
 	```
 - `set_card_type_badge(self, card, badges)`
 	- Same as `set_badges`, but bypasses creation of the card type / rarity badge, allowing you to replace it with a custom one.
+- `draw(self, card, layer)`
+	- Draws the sprite and shader of the card.
 
 ### Specific to certain subclasses
 - `Consumable.use(self, card, area, copier)`

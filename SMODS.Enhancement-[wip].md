@@ -42,6 +42,8 @@
         end
     end
     ```
+- `draw(self, card, layer)`
+	- Draws the sprite and shader of the card.
 
 ## Util methods
 - `SMODS.poll_enhancement(args)` *(defaults)*

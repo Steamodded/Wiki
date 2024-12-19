@@ -47,7 +47,8 @@
 	- Used to modify Card when edition is removed
 - `on_load(card) -> void`
 	- Used to modify Card with edition when it is loaded from save file.
-
+- `draw(self, card, layer)`
+	- Draws the edition's shader. `self.shader` is drawn by default when this is absent.
 ## Other information
 ### SMODS.Shader
 A shader is required for a custom edition.
