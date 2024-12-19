@@ -2,6 +2,7 @@
 ***
 Game Objects
   * [API Documentation](https://github.com/Steamopollys/Steamodded/wiki/API-Documentation)
+  * [SMODS.Achievement](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Achievement)
   * [SMODS.Atlas](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Atlas)
   * [SMODS.Blind](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Blind)
   * [SMODS.Center](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Center)
