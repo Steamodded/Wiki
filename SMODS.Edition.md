@@ -53,7 +53,8 @@
 A shader is required for a custom edition.
 - **Required parameters:**
 	- `key`
-	- `path`: The file name of your shader. Shaders must be stored in `assets/shaders/` and be a `.fs` file. The name of your file **must** be the name of your shader.
+	- `path`: The file name of your shader. Shaders must be stored in `assets/shaders/` and be a `.fs` file.
+		- The shader's `key`, file name (without extension) and the shader name used in the GLSL file **must be identical.**
 
 ### API methods
 - `send_vars(sprite, @nullable card) -> table`
