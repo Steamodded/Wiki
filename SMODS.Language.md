@@ -24,6 +24,7 @@
             squish = 1,
             DESCSCALE = 1
         },
-        ``` 
+        ```
+    - `loc_key`: Loads localization from the specified language keys instead of this one, while keeping other information like font.
 
 You should place a localization file for your language's translation in a file at `localization/[key].lua` within your mod files, where `[key]` is the language's key. Steamodded will also load files named this way from other mods if the language is active. Non-existent entries default to English text.

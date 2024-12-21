@@ -31,5 +31,5 @@
 - `apply(self, card, val)`
 	- Handles applying and removing the sticker
 	- Sets `card.ability[self.key]` to `val` by default. 
-- `draw(self, card)`
-	- Draws the sprite and shader of the sticker
+- `draw(self, card, layer)`
+	- Draws the sprite and shader of the sticker.
