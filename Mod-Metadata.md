@@ -29,8 +29,8 @@ The (new) standard way to specify your mod's metadata is in a separate JSON file
 		"Talisman (>=1.1) (<<2)" // Same format as for dependencies, except alternatives (|) are disallowed.
 	], // ! No mods in the list (that fulfill version restrictions) may be installed, else this mod will not load.
 	"provides": [
-		"SomeAPIMod"
-	], // ! Use this if your mod is able to stand in for a different mod and fulfill dependencies on it. This allows the usage of a different ID so both mods can coexist.
+		"SomeAPIMod (1.0)"
+	], // ! Use this if your mod is able to stand in for a different mod and fulfill dependencies on it. This allows the usage of a different ID so both mods can coexist. If you don't specify a valid version, your mod's version is used instead.
 	"dump_loc": false // !! Not for use in distributions. Writes all localization changes made on startup to a file, for conversion from a legacy system.
 }
 ```

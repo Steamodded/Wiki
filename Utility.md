@@ -40,6 +40,9 @@ Steamodded provides utility functions that extend or replace vanilla functionali
 
 ## Mod-facing utilities
 These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.
+- `SMODS.find_mod(id) -> table`
+    - Returns a list of mods that either match the given mod ID or provide it, and are enabled and loaded. 
+    - The result of `next(SMODS.find_mod(id))` can be used to determine if a mod is present, akin to finding cards with `SMODS.find_card`.
 - `SMODS.load_file(path, id) -> function`
     - Given a path to a file in the context of the mod currently being loaded, loads the file contents and returns them as a function. If this function is called after the mod loading stage, a mod's `id` must be specified in order to find the correct file.
     - Example usage: `assert(SMODS.load_file('jokers.lua'))()`
