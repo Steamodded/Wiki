@@ -21,8 +21,8 @@
 	- `needs_enable_flag`: If set to `true`, this sticker requires `G.GAME.modifiers['enable_'..self.key]` to be `true` before it can be applied.
 
 ## API methods
-- `loc_vars(self, info_queue, card) -> { vars ?= table }`
-	- Returns variables for sticker description.
+- `loc_vars(self, info_queue, card) -> { vars ?= table, key ?= string, set ?= string }`
+	- Returns variables for sticker description. Returning a `key` changes the localization entry (in the given `set` or `'Other'`) to use for the description.
 - `calculate(self, card, context)`
     - Called with each context before joker calculation. Additional effects should use `SMODS.eval_this` instead of returning something. If a value is returned from this function, joker calculation for this context is skipped. Otherwise, behavior is identical to `Joker.calculate`.
 - `should_apply(self, card, center, area, bypass_roll) -> bool`

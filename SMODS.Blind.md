@@ -58,9 +58,9 @@ refer to the current blind. (The base game uses `self` to refer to the current b
 		- A boolean value indicating whether any values were changed
 - `get_loc_debuff_text(self) -> string`
 	- Allows modifying text displayed for debuff warnings on invalid hands
-- `loc_vars(self) -> { vars ?= table }`
-	- Used for passing variables to Blind descriptions.
-- `collection_loc_vars(self) -> { vars ?= table }`
+- `loc_vars(self) -> { vars ?= table, key ?= string }`
+	- Used for passing variables to Blind descriptions. If you need access to multiple descriptions, you can specify a `key` to a different description.
+- `collection_loc_vars(self) -> { vars ?= table, key ?= string }`
 	- Used for passing variables to Blind descriptions when viewing the collection. If not defined, the game will use the `vars` field on your object.
 - `in_pool(self) -> bool`
 	- For implementing advanced restrictions on when a Blind may appear in a run. This puts `boss.min` and `boss.max` restrictions out of effect.

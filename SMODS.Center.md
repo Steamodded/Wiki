@@ -107,14 +107,15 @@
 	- For advanced sprite manipulation that happens when a card is created or loaded.
 - `load(self, card, card_table, other_card)`
 	- For modifications to sprites or the card itself when a run is reloaded.
-- `loc_vars(self, info_queue, card) -> { vars ?= table, main_start ?= table, main_end ?= table, key ?= string, replace_debuff ?= bool }`
+- `loc_vars(self, info_queue, card) -> { vars ?= table, main_start ?= table, main_end ?= table, key ?= string, replace_debuff ?= bool, text_colour ?= table, scale ?= number }`
 	- Pass variables (`vars`) to card descriptions.
 	- Add tooltips by appending to `info_queue`.
 	- You can force the use of a different description entirely (`key`).
 	- Add additional text to the start or end of a card description with `main_start` or `main_end`.
+	- Change the default text colour (`text_colour`) or text scale (`scale`) of the description.
 - `generate_ui(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)`
 	- The default implementation of this function acts as a wrapper of `loc_vars`. For advanced UI implementations, define this function directly.
-- `locked_loc_vars(self, info_queue, card) -> { vars ?= table }`
+- `locked_loc_vars(self, info_queue, card) -> { vars ?= table, key ?= string, text_colour ?= table, scale ?= number }`
 	- Pass variables (`vars`) to descriptions of locked cards.
 	- Tooltips can be configured by appending to `info_queue`.
 - `check_for_unlock(self, args) -> bool`

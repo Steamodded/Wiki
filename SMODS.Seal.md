@@ -20,8 +20,8 @@
         - `vol`: The volume at which the sound should be played.
 
 ## API methods
-- `loc_vars(self, info_queue, card) -> {vars ?= table, key ?= string }`
-    - Allows adding additional tooltips to cards with seals. `vars` are passed to the seal's main description. Returning a `key` changes the localization entry (in set `Other`) to use for the description.
+- `loc_vars(self, info_queue, card) -> {vars ?= table, key ?= string, set ?= string }`
+    - Allows adding additional tooltips to cards with seals. `vars` are passed to the seal's main description. Returning a `key` changes the localization entry (in the given `set` or `'Other'`) to use for the description.
     - The description tooltip is added to `info_queue` before this gets called. `info_queue[#info_queue] = nil` can be used to remove it in case you want to replace it with something else entirely.
 - `calculate(self, card, context)`
     - Used for common seal effects during the scoring phase. You may need to add more context calls to `Card:calculate_seal()`.
