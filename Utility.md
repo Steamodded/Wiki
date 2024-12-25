@@ -58,6 +58,8 @@ These functions facilitate specific tasks that many mods may use but may be hard
 - `SMODS.find_card(key, count_debuffed) -> table`
     - This function replaces `find_joker`. It operates using keys instead of names, which avoids overlap between mods.
     - Returns an array of all jokers or consumables in the player's possession with the given key. Debuffed cards count only if `count_debuffed` is true.
+- `SMODS.add_card(t) -> Card`
+    - This function replaces `add_joker`. It takes the same input parameters as `SMODS.create_card` (below) and additionally emplaces the generated card into its area and evaluates `add_to_deck` effects.
 - `SMODS.create_card(t) -> Card`
     - This function replaces `create_card`. It provides a cleaner interface to the same functionality. The argument to this function should always be a table. The following fields are supported:
     - `set` - The card type to be generated, e.g. `'Joker'`, `'Tarot'`, `'Spectral'`

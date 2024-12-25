@@ -54,3 +54,12 @@
     - `args.options`, can be used to provide fixed options to the pool
         - `{ keys }`, a table of keys as strings, respects original weight values
         - `{ {key = string, weight = number} }`, a table of tables, with key and weight pairs
+- `SMODS.get_enhancements(card, extra_only)`: Returns a table indexed by keys of enhancements that the given card has.
+    - `Card:calculate_joker` is called for each joker with `context = { check_enhancement = true, other_card = card }`, expecting return tables in the same format to add extra enhancements. No other ways to give a card multiple enhancements are currently supported.
+    - If `extra_only == true`, the card's base enhancement is excluded.
+- `SMODS.has_enhancement(card, key)`: Returns `true` if the given card has the specified enhancement, either as its natural enhancement or an extra enhancement from jokers.
+- `SMODS.has_no_suit(card)`: Returns true if a card doesn't have any suit due to its enhancements (e.g., Stone Cards).
+- `SMODS.has_any_suit(card)`: Returns true if a card can be used as any suit due to its enhancements (e.g., Wild Cards).
+    - Cards with enhancement effects both for having no suit and for having any suit can be used as any suit.
+- `SMODS.has_no_rank(card)`: Returns true if a card doesn't have any rank due to its enhancements (e.g., Stone Cards).
+- `SMODS.always_scores(card)`: Returns true if a card always scores due to its enhancements (e.g., Stone Cards).
