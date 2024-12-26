@@ -16,12 +16,12 @@
     }
     ```
     - `badge_colour`: Colour of the rarity's badge.
-    - `default_rate`: Setting a numerical value for `default_rate` enables cards with this rarity to appear in the shop at the specified rate.
-        - This sets a default rate, which can be modified by accessing `G.GAME[key:lower() .. '_mod']` during a run.
+    - `default_weight`: Setting a numerical value for `default_weight` enables cards with this rarity to appear in the shop at the specified weight.
+        - This sets a default weight, which can be modified by accessing `G.GAME[key:lower() .. '_mod']` during a run.
 
 ## API methods
-- `get_rate(self, rate, object_type) -> number`
-    - Returns rate. Use for finer control over the rarity's rate. 
+- `get_weight(self, weight, object_type) -> number`
+    - Returns weight. Use for finer control over the rarity's weight. 
 - `gradient(self, dt)`
     - Used to control the badge colour gradient.
 
