@@ -7,6 +7,7 @@ Game Objects
   * [SMODS.Blind](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Blind)
   * [SMODS.Center](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Center)
   * [SMODS.Challenge](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Challenge)
+  * [SMODS.DeckSkin](https://github.com/Steamopollys/Steamodded/wiki/SMODS.DeckSkin)
   * [SMODS.Edition](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Edition)
   * [SMODS.Enhancement - wip](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Enhancement-%5Bwip%5D)
   * [SMODS.Language](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Language)
