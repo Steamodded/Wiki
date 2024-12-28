@@ -1,4 +1,4 @@
-# API Documentation: `SMODS.Language`
+# API Documentation: `SMODS.Keybind`
 - **Required parameters:**
 	- `key_pressed`: The key that needs to be pressed for this keybind to activate. Keycodes are documented [here](https://love2d.org/wiki/KeyConstant).
     - `action(self)`: Function to be called when the keybind is triggered.
