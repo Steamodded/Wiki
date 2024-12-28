@@ -10,6 +10,7 @@ Game Objects
   * [SMODS.DeckSkin](https://github.com/Steamopollys/Steamodded/wiki/SMODS.DeckSkin)
   * [SMODS.Edition](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Edition)
   * [SMODS.Enhancement - wip](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Enhancement-%5Bwip%5D)
+  * [SMODS.Keybind](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Keybind)
   * [SMODS.Language](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Language)
   * [SMODS.ObjectType](https://github.com/Steamopollys/Steamodded/wiki/SMODS.ObjectType)
   * [SMODS.PokerHand](https://github.com/Steamopollys/Steamodded/wiki/SMODS.PokerHand)
