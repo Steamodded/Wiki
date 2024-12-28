@@ -27,7 +27,8 @@ Guides
   * [Joker Calculation](https://github.com/Steamopollys/Steamodded/wiki/Guide-%E2%80%90-Joker-Calculation)
   * [Logging](https://github.com/Steamopollys/Steamodded/wiki/Logging)
   * [Event Manager](https://github.com/Steamopollys/Steamodded/wiki/Guide-%E2%80%90-Event-Manager)
-  * [Mod Config](https://github.com/Steamopollys/Steamodded/wiki/SMODS.config_tab)
+  * [Localization](https://github.com/Steamopollys/Steamodded/wiki/Localization)
+  * [Mod functions](https://github.com/Steamopollys/Steamodded/wiki/Mod-functions)
   * [UI Structure](https://github.com/Steamopollys/Steamodded/wiki/UI-Guide)
   * [Utility Functions](https://github.com/Steamopollys/Steamodded/wiki/Utility)
 
