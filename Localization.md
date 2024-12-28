@@ -3,22 +3,23 @@ Steamodded offers multiple ways to load strings for in-game descriptions and oth
 
 ## Localization files (recommended)
 This method follows the ways of the base game: instead of attaching descriptions directly to each object, all localization strings for the same language are combined into one file. Each such file should be found in the location `localization/locale.lua` relative to your mod's root directory. `locale` can be the key of any language found in Balatro itself or added through [SMODS.Language](https://github.com/Steamopollys/Steamodded/wiki/SMODS.Language).
-    - `default`: Used as a fallback when no text was found for the selected language.
-    - `de`: German
-    - `en-us`: English
-    - `es_419`: Spanish (Latin America)
-    - `es_ES`: Spanish (Spain)
-    - `fr`: French
-    - `id`: Indonesian
-    - `it`: Italian
-    - `ja`: Japanese
-    - `ko`: Korean
-    - `nl`: Dutch
-    - `pl`: Polish
-    - `pt_BR`: Portuguese
-    - `ru`: Russian
-    - `zh_CN`: Chinese (simplified)
-    - `zh_TW`: Chinese (traditional)
+
+- `default`: Used as a fallback when no text was found for the selected language.
+- `de`: German
+- `en-us`: English
+- `es_419`: Spanish (Latin America)
+- `es_ES`: Spanish (Spain)
+- `fr`: French
+- `id`: Indonesian
+- `it`: Italian
+- `ja`: Japanese
+- `ko`: Korean
+- `nl`: Dutch
+- `pl`: Polish
+- `pt_BR`: Portuguese
+- `ru`: Russian
+- `zh_CN`: Chinese (simplified)
+- `zh_TW`: Chinese (traditional)
 
 The following is a skeleton for the base structure of a localization file. Entries without content may be omitted. Each found localization string is copied into `G.localization` when the languages are matching.
 ```lua
