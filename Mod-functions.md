@@ -60,11 +60,15 @@ SMODS.current_mod.custom_collection_tabs = function()
 	return {
 		{
 			button = UIBox_button({
-				button = 'your_collection_something', -- calls `G.FUNCS.your_collection_something` when pressed, define accordingly
+				-- calls `G.FUNCS.your_collection_something` when pressed, define accordingly
+				button = 'your_collection_something', 
 				id = 'your_collection_something',
-				label = {localize('b_your_label')}, -- or pass a string directly instead of using `localize`
-				count = G.DISCOVER_TALLIES['something'], -- optional; should have numeric 'tally' and 'of' values (for discovery counts)
-				minw = 5, -- optional; minimum width of your button
+				-- Displayed label on the button (using non-localized strings also works)
+				label = {localize('b_your_label')},
+				-- optional; should have numeric 'tally' and 'of' values (for discovery counts)
+				count = G.DISCOVER_TALLIES['something'], 
+				-- optional; minimum width of your button
+				minw = 5,
 			})
 		},
 		-- add more buttons here
