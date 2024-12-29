@@ -92,10 +92,6 @@ These functions facilitate specific tasks that many mods may use but may be hard
     - Given an index from the Stake pool, return the corresponding key, or `'error'` if it doesn't exist.
 - `time(func, ...) -> number`
     - Calls an input function with any given additional arguments: `func(...)` and returns the time the function took to execute in milliseconds. The return value from `func` is lost.
-- `current_mod.debug_info` 
-    - A property that can be set by mods to show debug information on the crash screen.
-    - Setting this to a string will display that string under your mod in the crash screen.
-    - Setting this to a table of string's will display a list with each key and it's value under your mod in the crash screen.
 ## Internal utilities
 These functions are used internally and may be of use to you if you're modifying Steamodded's injection process.
 - `SMODS.save_d_u(o)`

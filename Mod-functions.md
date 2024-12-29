@@ -100,6 +100,11 @@ SMODS.current_mod.description_loc_vars = function(self)
 end
 ```
 
+## `mod.debug_info`
+This is a property that can be set by mods to show debug information on the crash screen.
+- Setting this to a string will display that string under your mod in the crash screen.
+- Setting this to a table of strings will display a list with each key and its value under your mod in the crash screen.
+
 ## In-game functionality
 You may want to have some functionality happen with your mod installed independently of some other object being present. For cases like this, defining these mod-scope functions is a good alternative to destructively modifying the underlying vanilla function and helps preserve compatibility with other mods.
 
