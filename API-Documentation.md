@@ -65,7 +65,7 @@ You may need to modify vanilla objects or objects from another mod. Use the `tak
 ```lua
 SMODS.Joker:take_ownership('joker', {
 	cost = 5,
-	calculate = function(card, context)
+	calculate = function(self, card, context)
 		-- more on this later
 	end
 })
