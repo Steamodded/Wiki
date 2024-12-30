@@ -51,7 +51,7 @@ SMODS.current_mod.extra_tabs = function()
 		-- insert more tables with the same structure here
 	}
 end
-	```
+```
 
 ## `mod.custom_collection_tabs`
 This sets up additional collection pages to be accessed through the 'Other' button.
