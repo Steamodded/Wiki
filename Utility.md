@@ -29,7 +29,7 @@ Steamodded provides utility functions that extend or replace vanilla functionali
     - `guaranteed` - If this is `true`, always generate a seal.
     - `options` - A table of possible seals to generate. Defaults to all available seals.
     - `type_key` - Randomness seed for the roll which seal to generate.
-- `SMODS.poll_enhancement(args)`
+- `SMODS.poll_enhancement(args) -> string?`
     - Checks if an enhancement should be generated, and generates one according to the specified arguments if so. The following arguments are supported: 
     - `key` - Randomness seed for the check whether to generate an enhancement, defaults to `'std_enhance'`.
     - `mod` - Multiplier to the base rate at which enhancements appear.
