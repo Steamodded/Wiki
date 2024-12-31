@@ -25,6 +25,12 @@ Now you're ready to install the **Lovely injector**. Please follow the installat
 3. In your file explorer, navigate to Balatro's save directory: **Windows:** `%AppData%/Balatro`; **Mac:** `~/Library/Application Support/Balatro`; **Linux (WINE/Proton):** `~/.local/share/Steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro`.
   > [!IMPORTANT]
   > On Windows systems, just paste `%AppData%/Balatro` into the explorer path bar or the run dialog to open the folder. `%AppData%` has special meaning and you do not need to manually replace it.
+  > <details>
+  > <summary>Click me for Example Video</summary>
+  > 
+  > [Screencast_20241231_162107.webm](https://github.com/user-attachments/assets/12b76bed-fb0b-4e49-ae57-4ca12b6f1727)
+  > 
+  > </details>
 
   > [!NOTE]
   > On Linux systems with a snap installation of Steam, the save directory is slightly different: `~/snap/steam/common/.local/share/Steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro`
