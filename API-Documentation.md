@@ -61,14 +61,17 @@ SMODS.Class {
 - `dependencies` (optional): A list of one or more mod IDs. Your object will only be loaded when all specified mods are present. This is useful for cross-mod compatibility, but not for dependencies that are required for your mod to function properly. In that case, add a dependency to your mod header.
 
 ### Taking ownership
-You may need to modify vanilla objects or objects from another mod. Use the `take_ownership` function to modify an existing object; then, you can use all of Steamodded's API functions on it. Each key-value pair of the provided table overwrites the object's value, while the rest of the object is left intact.
+You may need to modify vanilla objects or objects from another mod. Use the `take_ownership` function to modify an existing object; then, you can use all of Steamodded's API functions on it. Each key-value pair of the provided table overwrites the object's value, while the rest of the object is left intact. Objects you take ownership of have your mod's badge added to them, unless you suppress this with the `silent` argument.
 ```lua
-SMODS.Joker:take_ownership('joker', {
+SMODS.Joker:take_ownership('joker', -- object key (class prefix not required)
+    { -- table of properties to change from the existing object
 	cost = 5,
 	calculate = function(self, card, context)
 		-- more on this later
 	end
-})
+    },
+    true -- silent | suppresses mod badge
+)
 ```
 
 ### API functions
