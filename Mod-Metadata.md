@@ -21,12 +21,13 @@ The (new) standard way to specify your mod's metadata is in a separate JSON file
 		"SomeMod (==1.0.*)", // Allows all versions past 1.0.0 stable that are 1.0.x (1.1 and later are disallowed)
 		"SomeOtherMod (==1.0.0~)", // Allows 1.0.0 versions of any revision, beta or not.
 		"Balatro (==1.0.1m)", // Allows only the specified version and revision.
-		"OneMoreMod (>>1.0~g) (<<2)", // << and >> are used for versions strictly less/greater than the specified one.
+		"OneMoreMod (>>1.0~g) (<<2~)", // << and >> are used for versions strictly less/greater than the specified one.
+		// NOTE: The << operator should be used in combination with the ~ beta wildcard in order to exclude pre-release major version changes.
 		"IRanOutOfIdeas (==1.*~)", // Combination of wildcard symbols. All 1.x versions are allowed, including beta.
 		"Talisman | TalismanReplacement" // Multiple different mods can be used to fulfill this dependency. May want to use `provides` instead
 	], // ! All mods in the list must be installed and loaded (and must fulfill version requirements), else this mod will not load.
 	"conflicts": [
-		"Talisman (>=1.1) (<<2)" // Same format as for dependencies, except alternatives (|) are disallowed.
+		"Talisman (>=1.1) (<<2~)" // Same format as for dependencies, except alternatives (|) are disallowed.
 	], // ! No mods in the list (that fulfill version restrictions) may be installed, else this mod will not load.
 	"provides": [
 		"SomeAPIMod (1.0)"
