@@ -32,4 +32,6 @@ Guides
   * [UI Structure](https://github.com/Steamopollys/Steamodded/wiki/UI-Guide)
   * [Utility Functions](https://github.com/Steamopollys/Steamodded/wiki/Utility)
 
- 
+ ***
+
+Found an issue, or want to add something? Submit a PR to [the Wiki repo](https://github.com/Steamodded/Wiki).
