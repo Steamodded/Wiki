@@ -59,11 +59,11 @@ A shader is required for a custom edition.
 
 ### API methods
 - `send_vars(sprite, @nullable card) -> table`
-	- Used to send extra vars to the shader. Card may be `nil` if shader is not applied to a Card. Returned table entries are sent to the shader via `Shader:send(key, value)`. Usage example may be found in `example_mods/Mods/EditionExamples` - [here](https://github.com/Steamopollys/Steamodded/blob/4cfad55f612447db9cd85afed54044a70f7b9337/example_mods/Mods/EditionExamples/EditionExamples.lua#L126) and [here](https://github.com/Steamopollys/Steamodded/blob/4cfad55f612447db9cd85afed54044a70f7b9337/example_mods/Mods/EditionExamples/assets/shaders/gold.fs#L24)
+	- Used to send extra vars to the shader. Card may be `nil` if shader is not applied to a Card. Returned table entries are sent to the shader via `Shader:send(key, value)`. Usage example may be found in `example_mods/Mods/EditionExamples` - [here](https://github.com/Steamodded/examples/blob/master/Mods/EditionExamples/EditionExamples.lua#L126) and [here](https://github.com/Steamodded/examples/blob/master/Mods/EditionExamples/assets/shaders/gold.fs#L24)
 
 
 #### Working with Shaders
-[ionized.fs](https://github.com/Steamopollys/Steamodded/blob/main/example_mods/Mods/EditionExamples/assets/shaders/ionized.fs) has shader code explanation with comments.
+[ionized.fs](https://github.com/Steamodded/examples/blob/master/Mods/EditionExamples/assets/shaders/ionized.fs) has shader code explanation with comments.
 For a general guide, look at [LOVE2D introduction to shaders](https://blogs.love2d.org/content/beginners-guide-shaders).
 
 If you want to see vanilla Balatro shaders, unzip the Balatro.exe and go to `resources/shaders` folder.
