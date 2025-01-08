@@ -111,9 +111,9 @@ is not recommended for general use.
 You can, with this function, implements your own log levels, but it is not recommended to do so, as the debug console do
 not support custom log levels by default. You will have to modify the debug console by yourself to support custom log
 levels. If you want to do so, you'll find the function signature in
-the [debug.lua](https://github.com/Steamopollys/Steamodded/blob/main/debug/debug.lua#L39..L47) file, and the log
+the [debug.lua](https://github.com/Steamodded/smods/blob/main/src/logging.lua#L39-L49) file, and the log
 supported in the console on
-the [tk_debug_window.py](https://github.com/Steamopollys/Steamodded/blob/main/debug/tk_debug_window.py#L8..L15) file.
+the [tk_debug_window.py](https://github.com/Steamodded/smods/blob/main/tk_debug_window.py#L9-L16) file.
 
 Keep in mind that other people may not have the same modifications as you, so it is recommended to use the default log
 levels.
@@ -126,7 +126,7 @@ within the logs. It is a very useful tool for debugging and diagnosing problems.
 ### Opening the Debug Console
 
 The debug console requires python 3.6+ to be installed on your system. To open the debug console,
-execute `tk_debug_window.py` in [the `debug` folder](https://github.com/Steamopollys/Steamodded/tree/main/debug).
+execute `tk_debug_window.py` in [the steamodded repo](https://github.com/Steamodded/smods/blob/main/tk_debug_window.py).
 
 The debug console was not tested with python 3.6, but it _should_ work with it. It is recommended to use the latest
 python release.
@@ -156,5 +156,5 @@ You need to have the debug console open before you start the game. The console w
 
 ## Issues
 
-Please open an issue on the [GitHub repository](https://github.com/Steamopollys/Steamodded/issues/new) if you encounter
+Please open an issue on the [GitHub repository](https://github.com/Steamodded/smods/issues/new) if you encounter
 any problems with the debug console.

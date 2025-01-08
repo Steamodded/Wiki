@@ -45,6 +45,7 @@ These functions facilitate specific tasks that many mods may use but may be hard
     - The result of `next(SMODS.find_mod(id))` can be used to determine if a mod is present, akin to finding cards with `SMODS.find_card`.
 - `SMODS.load_file(path, id) -> function`
     - Given a path to a file in the context of the mod currently being loaded, loads the file contents and returns them as a function. If this function is called after the mod loading stage, a mod's `id` must be specified in order to find the correct file.
+    - Return type is the same as [love.filesystem.load](https://love2d.org/wiki/love.filesystem.load) and [loadfile](https://www.lua.org/manual/5.1/manual.html#pdf-loadfile).
     - Example usage: `assert(SMODS.load_file('jokers.lua'))()`
 - `SMODS.juice_up_blind()`
     - Plays a 'juice up' animation on the Blind chip.
