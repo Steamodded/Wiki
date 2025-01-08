@@ -1,5 +1,4 @@
-# Creating your first mod
-## Metadata
+# Metadata
 The (new) standard way to specify your mod's metadata is in a separate JSON file in your mod folder, as per the following specification:
 ```js
 // Mods/your_mod/your_mod.json
@@ -71,6 +70,3 @@ Your mod can also contain the following lines. These lines describe information 
 	- `--- VERSION: 1.0.0`
 These lines can be specified in any order.
 
-# Useful resources
-- Often, something you want to do has already been implemented in the base game. Familiarizing yourself with the game's code is an important step to learn Balatro modding. To get Balatro's source code, extract the game's executable file with [7-zip](https://www.7-zip.org/). For Mac, find `Balatro.love` inside `Balatro.app` and rename it to `Balatro.zip`, then extract `Balatro.zip`.
-- It can also be useful to look at code from other mod creators. The best place to find them is in the official [Balatro Discord](https://discord.gg/balatro).
