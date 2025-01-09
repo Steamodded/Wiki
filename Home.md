@@ -13,7 +13,7 @@ Differences may occur if you're using different software.
 5. Add a folder exclusion. When an explorer window opens, paste the path you copied in step 1 into the address bar and confirm.
 
 ## Step 2: Installing Lovely
-Now you're ready to install the **Lovely injector**. Please follow the installation instructions for your operating system [here](https://github.com/ethangreen-dev/lovely-injector), then return to this page and continue with Step 3. If your browser is blocking your download, use Firefox instead.
+Now you're ready to install the **Lovely injector**. Please follow the installation instructions for your operating system [here](https://github.com/ethangreen-dev/lovely-injector?tab=readme-ov-file#manual-installation), then return to this page and continue with Step 3. If your browser is blocking your download, use Firefox instead.
 
 ## Step 3: Installing Steamodded
 **If you previously installed Steamodded without Lovely,** you must first remove that installation by verifying your game files on Steam: `Library > Balatro > Properties > Installed Files > Verify integrity of game files`.
