@@ -89,6 +89,15 @@
 
 ## API methods
 ### All centers
+- `calculate(self, card, context)`
+	All effects that are tied to specific in-game actions happen here. Refer to the function `Card:calculate_joker(context)` in Balatro's source code to learn more about `context` and how this function works.
+	- Some common calculation contexts include:
+		- `context.joker_main`: The main scoring phase for Jokers, after playing cards have finished scoring.
+		- `context.before`: Effects that trigger before playing cards are scored (e.g. Midas Mask)
+		- `context.after`: Effects that trigger when a hand has finished scoring (e.g. Ice Cream melting)
+		- `context.individual`: Effects that operate on each card separately. An additional check for the card area is needed to avoid extra triggers.
+    	- This method is available for use with jokers, consumables, enhancements, editions, seals and decks.
+    	- See also: [Guide - Joker Calculation](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Joker-Calculation)
 - `set_ability(self, card, initial, delay_sprites)`
 	- Set up initial ability values or manipulate sprites in an advanced way.
 - `add_to_deck(self, card, from_debuff)`
@@ -158,10 +167,11 @@
 	- Consumables may also make use of this function, however only `context.joker_main` timing is supported.
 - `Joker.calc_dollar_bonus(self, card) -> number`
 	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
-- `Back.apply(self)`
+- `Back.apply(self, back)`
 	- Apply modifiers at the start of a run.
-- `Back.trigger_effect(self, args)`
-	- Used for effects that happen during a run, like Plasma Deck's effect.
+- ~~`Back.trigger_effect(self, args)`~~
+	- ~~Used for effects that happen during a run, like Plasma Deck's effect.~~
+	- **This method is deprecated. Use `calculate` instead.**
 - `Voucher.redeem(self)`
 	- Defines the behavior of a Voucher when redeemed.
 - `Booster.create_card(self, card, i) -> table|Card`
