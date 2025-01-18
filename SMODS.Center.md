@@ -172,7 +172,7 @@
 - ~~`Back.trigger_effect(self, args)`~~
 	- ~~Used for effects that happen during a run, like Plasma Deck's effect.~~
 	- **This method is deprecated. Use `calculate` instead.**
-- `Voucher.redeem(self)`
+- `Voucher.redeem(self, card)`
 	- Defines the behavior of a Voucher when redeemed.
 - `Booster.create_card(self, card, i) -> table|Card`
 	- Creates the cards inside of the booster pack. `card` is the booster pack card, `i` is the position of the card to be generated. If the returned table is not a `Card`, it is passed into `SMODS.create_card`.
