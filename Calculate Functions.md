@@ -17,11 +17,17 @@ There are three steps to writing the calculation code within your function.
 
 ### Step 1: Context Checks
 All code within your calculate function should be inside a **context check**. This statement will ensure that your effect will open happen in the timing that you want it to happen. There is a full list of contexts at the end of this guide, but here are some common ones you might want to use.
+
 `if context.joker_main then` The main scoring timing of jokers
+
 `if context.cardarea == G.play and context.main_scoring` The main scoring of played cards *(used for modifiers to cards)*
+
 `if context.before then` For effects that happen in the scoring loop but before anything is scored
+
 `if context.final_scoring_step then`For effects that modify the score after all cards have been scored
+
 `if context.cardarea == G.play and context.repetition then` For adding repetitions to played cards
+
 
 ### Step 2: Logic/Effects
 In this step, you need to add your actual logic for calculation. Values that are defined in your object's config can be access by using `card.ability.`, for example, here is some code that increases the chips an object will give out by 10 every time the effect is evaluated.
