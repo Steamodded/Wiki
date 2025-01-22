@@ -32,6 +32,33 @@
 - `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
 - `get_weight(self) ->  number `
 	- Used to modify the weight of enhancement on certain conditions.
+- `set_ability(self, card, initial, delay_sprites)`
+	- Set up initial ability values or manipulate sprites in an advanced way.
+-  `in_pool(self, args) -> bool, { allow_duplicates = bool }`
+	- Define custom logic for when a card is allowed to spawn. A card can spawn if `in_pool` returns true and all other checks are met.
+	- When called from `generate_card_ui`, the `_append` key is passed as `args.source`.
+- `update(self, card, dt)`
+	- For actions that happen every frame.
+- `set_sprites(self, card, front)`
+	- For advanced sprite manipulation that happens when a card is created or loaded.
+- `set_badges(self, card, badges)`
+	- Add additional badges, leaving existing badges intact. This function doesn't return; add badges by appending to `badges`.
+	- Avoid overwriting existing elements. It will cause text to appear on the top left corner of your screen instead.
+	- Function for creating badges: `create_badge(_string, _badge_col, _text_col, scaling)`
+		- `_string`: Text displayed on the badge.
+		- `_badge_col = G.C.GREEN`: Background colour.
+		- `_text_col = G.C.WHITE`: Text colour.
+		- `_scaling = 1`: Relative size of the badge.
+	- Example:
+	```lua
+	{
+		set_badges = function(self, card, badges)
+			badges[#badges+1] = create_badge(localize('k_your_string'), G.C.RED, G.C.BLACK, 1.2 )
+		end,
+	}
+	```
+- `set_card_type_badge(self, card, badges)`
+	- Same as `set_badges`, but bypasses creation of the card type / rarity badge, allowing you to replace it with a custom one.
 - `draw(self, card, layer)`
 	- Draws the sprite and shader of the card.
 
