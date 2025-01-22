@@ -7,6 +7,7 @@ Game Objects
   * [SMODS.Blind](https://github.com/Steamodded/smods/wiki/SMODS.Blind)
   * <details>
     <summary>SMODS.Center</summary>
+   
     * [SMODS.Back](https://github.com/Steamodded/smods/wiki/SMODS.Back)
     * [SMODS.Booster](https://github.com/Steamodded/smods/wiki/SMODS.Booster)
     * [SMODS.Edition](https://github.com/Steamodded/smods/wiki/SMODS.Edition)
@@ -14,6 +15,7 @@ Game Objects
     * [SMODS.Consumable](https://github.com/Steamodded/smods/wiki/SMODS.Consumable)
     * [SMODS.Joker](https://github.com/Steamodded/smods/wiki/SMODS.Joker)
     * [SMODS.Voucher](https://github.com/Steamodded/smods/wiki/SMODS.Voucher)
+   
     </details>
   * [SMODS.Challenge](https://github.com/Steamodded/smods/wiki/SMODS.Challenge)
   * [SMODS.DeckSkin](https://github.com/Steamodded/smods/wiki/SMODS.DeckSkin)
