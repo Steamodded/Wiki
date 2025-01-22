@@ -1,13 +1,9 @@
 # API Documentation: `SMODS.Challenge`
 - **Required parameters:**
     - `key`
+    - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+        - The only supported field is `name`. In localization files, it is set by referring to `misc.challenge_names[key]`.
 - **Optional parameters** *(defaults)*:
-    - `loc_txt`, Skeleton:
-    ```lua
-    {
-        name = '',
-    }
-    ```
     - `rules`: Custom rules and modifiers for the challenge.
         - `rules.custom`: Expects a list of tables with an `id` and optionally a `value` field (defaults to `true`). Sets `G.GAME.modifiers[id] = value`. Text for each rule should be stored in `G.localization.misc.v_text['ch_c_'..id]`, `value` is passed as a variable. The following custom rule keys are defined by the base game:
             - `all_eternal`, `chips_dollar_cap`, `daily`, `debuff_played_cards`, `discard_cost`, `flipped_cards`, `inflation`, `minus_hand_size_per_X_dollar`, `no_extra_hand_money`, `no_interest`, `no_reward`, `no_reward_specific`, `no_shop_jokers`, `none`, `set_eternal_ante`, `set_joker_slots_ante`, `set_seed`.

@@ -23,6 +23,7 @@ Mods
 		}
 		```
 - **Optional parameters** *(defaults)*:
+	- `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
     - `pitch = 0.7`: Specify a custom pitch shift for music tracks.
 	- `volume = 0.6`: Specify a custom volume for music tracks.
 		- These modifiers do not apply to regularly played sounds. Specify them as arguments to `play_sound` instead.

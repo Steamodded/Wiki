@@ -1,23 +1,18 @@
 # API Documentation: `SMODS.Blind`
+**Class prefix:** `bl`
 - **Required parameters:**
 	- `key`
-- **Optional parameters** *(defaults)*:
-	- `loc_txt`, Skeleton:
-	```lua
-		{
-			name = '',
-			text = { '' },
-		}
-	```
+	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+- **Optional parameters** *(defaults)*
+	- `atlas = 'blind_chips', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+		> [!NOTE]
+		> Any atlas specified here must set `atlas_table = 'ANIMATION_ATLAS'`. The `y` value determines the row to use for the animation. The `x` value is ignored and cycles through each frame of the animation.
+	- `discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `dollars = 5`: Amount of money obtained when defeated.
 	- `mult = 2`: Required score relative to the Ante's Base score.
-	- `boss`: Marks this Blind as a Boss Blind and specifies on which Antes it can appear (`{ min = 1, max = 10 }`). `max` is an artifact and is not functional. Use `in_pool` instead for advanced conditions.
+	- `boss`: Marks this Blind as a Boss Blind and specifies on which Antes it can appear (`{ min = 1, max = 10 }`). `max` is an artifact and not functional. Use `in_pool` instead for advanced conditions.
 		- `boss.showdown`: Marks this Blind as a Final Boss Blind that shows up on every multiple of the winning Ante. `min` is ignored, use `in_pool` to restrict spawning.
 	- `boss_colour`: Sets the background colour to use while playing this Blind (e.g. `HEX('56789A')`)
-	- `pos = { x = 0, y = 0 }`
-		- The `y` value determines the row to use for the animation.
-	- `atlas = 'blind_chips'`
-	- `discovered = false`
 	- `debuff = {}`: Configure vanilla Blind effects with these fields:
 		- Disallowing hands in full:
 			- `hand = { ['Hand Type'] = true}` for a specific set of hands,
@@ -28,13 +23,14 @@
 			- `value = '2'` for one specific rank,
 			- `nominal = n` for all ranks scoring `n` base chips,
 			- `is_face = true` for all face cards.
-		- Note that these effects are ignored if you specify a `debuff_hand` or `debuff_card` function respectively.
+		> [!NOTE]
+		> These effects are ignored if you specify a `debuff_hand` or `debuff_card` function respectively.
 	- `ignore_showdown_check`: Enabling this allows `in_pool` to be evaluated regardless of whether a showdown Boss Blind was requested or not.
 	- `vars = {}`: variables for the Blind's description in the collection. Fallback if `collection_loc_vars` isn't set.
 
 ## API methods
 In all of the following methods, use the global variable `G.GAME.blind` to
-refer to the current blind. (The base game uses `self` to refer to the current blind in `Blind:fff()`.)
+refer to the current blind. (The base game uses `self` to refer to the current blind in `Blind:foo()`.)
 - `set_blind(self)`
 	- Effects that activate when this Blind is selected
 - `disable(self)`
@@ -58,8 +54,8 @@ refer to the current blind. (The base game uses `self` to refer to the current b
 		- A boolean value indicating whether any values were changed
 - `get_loc_debuff_text(self) -> string`
 	- Allows modifying text displayed for debuff warnings on invalid hands
-- `loc_vars(self) -> { vars ?= table, key ?= string }`
-	- Used for passing variables to Blind descriptions. If you need access to multiple descriptions, you can specify a `key` to a different description.
+- `loc_vars(self) -> { vars ?= table, key ?= string }` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+	- Due to various constraints, the functionality of `loc_vars` on blinds is very limited. Only `vars` and `key` returns are supported, and no `info_queue` exists.
 - `collection_loc_vars(self) -> { vars ?= table, key ?= string }`
 	- Used for passing variables to Blind descriptions when viewing the collection. If not defined, the game will use the `vars` field on your object.
 - `in_pool(self) -> bool`

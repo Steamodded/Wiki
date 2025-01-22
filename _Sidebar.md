@@ -5,11 +5,18 @@ Game Objects
   * [SMODS.Achievement](https://github.com/Steamodded/smods/wiki/SMODS.Achievement)
   * [SMODS.Atlas](https://github.com/Steamodded/smods/wiki/SMODS.Atlas)
   * [SMODS.Blind](https://github.com/Steamodded/smods/wiki/SMODS.Blind)
-  * [SMODS.Center](https://github.com/Steamodded/smods/wiki/SMODS.Center)
+  * > <details>
+    > <summary>SMODS.Center</summary>
+    > * [SMODS.Back](https://github.com/Steamodded/smods/wiki/SMODS.Back)
+    > * [SMODS.Booster](https://github.com/Steamodded/smods/wiki/SMODS.Booster)
+    > * [SMODS.Edition](https://github.com/Steamodded/smods/wiki/SMODS.Edition)
+    > * [SMODS.Enhancement](https://github.com/Steamodded/smods/wiki/SMODS.Enhancement)
+    > * [SMODS.Consumable](https://github.com/Steamodded/smods/wiki/SMODS.Consumable)
+    > * [SMODS.Joker](https://github.com/Steamodded/smods/wiki/SMODS.Joker)
+    > * [SMODS.Voucher](https://github.com/Steamodded/smods/wiki/SMODS.Voucher)
+    > </details>
   * [SMODS.Challenge](https://github.com/Steamodded/smods/wiki/SMODS.Challenge)
   * [SMODS.DeckSkin](https://github.com/Steamodded/smods/wiki/SMODS.DeckSkin)
-  * [SMODS.Edition](https://github.com/Steamodded/smods/wiki/SMODS.Edition)
-  * [SMODS.Enhancement - wip](https://github.com/Steamodded/smods/wiki/SMODS.Enhancement-%5Bwip%5D)
   * [SMODS.Keybind](https://github.com/Steamodded/smods/wiki/SMODS.Keybind)
   * [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language)
   * [SMODS.ObjectType](https://github.com/Steamodded/smods/wiki/SMODS.ObjectType)

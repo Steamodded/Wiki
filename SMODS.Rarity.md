@@ -1,13 +1,9 @@
 # API Documentation: `SMODS.Rarity`
 - **Required parameters:**
     - `key`
+    - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+        - The only supported field is `name`. In localization files, it must be set as both `misc.labels['k_'..key:lower()]` and `misc.dictionary['k_'..key:lower()]`.
 - **Optional parameters** *(defaults)*:
-    - `loc_txt`, Skeleton:
-    ```lua
-    {
-        name = '', -- used on rarity badge
-    }
-    ```
     - `pools`: Table with a list of ObjectType keys to add this rarity to. Skeleton:
     ```lua
     {

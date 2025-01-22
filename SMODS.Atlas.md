@@ -36,3 +36,13 @@ Mods
 	- `raw_key`: Set this to `true` to prevent the loader from adding your mod prefix to the `key`. Useful for replacing sprites from the base game or other mods.
 	- `language`: Restrict your atlas to a specific locale. Useful for introducing localized sprites while leaving other languages intact.
 	- `disable_mipmap`: Disable mipmap being applied to this texture. Might remove artifacts on smaller textures.
+
+## Applying textures to cards
+For objects of any class that have a visual representation in-game, you can assign a sprite from your atlas by setting `atlas` to the key of your atlas and `pos` to the position of the sprite on this atlas (`{ x = 0, y = 0 }` refers to the top-left corner). Example:
+```lua
+SMODS.Joker {
+	key = 'my_joker',
+	atlas = 'my_atlas',
+	pos = { x = 1, y = 1 } -- second row, second colum
+}
+```

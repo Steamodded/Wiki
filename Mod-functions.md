@@ -87,7 +87,7 @@ end
 Default mod descriptions defined within your mod's metadata supports basic text wrapping, but no further formatting like changing the colour and scale of text or inserting variables, as well as localization. By using [Localization files](https://github.com/Steamodded/smods/wiki/Localization#localization-files-recommended), you can create a description for your mods with support for all the formatting of other descriptions. Your description should be placed in `G.localization.descriptions.Mod[mod_id]`.
 
 ### `mod.description_loc_vars`
-To change your description dynamically through variables and alternate keys or specify a default text colour and scale, you can define this function on your mod object.
+To change your description dynamically through variables and alternate keys or specify a default text colour and scale, you can define this function on your mod object. This function behaves like [`loc_vars`](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) on other objects.
 ```lua
 SMODS.current_mod.description_loc_vars = function(self)
 	return {
@@ -99,6 +99,9 @@ SMODS.current_mod.description_loc_vars = function(self)
 	}
 end
 ```
+
+### `mod.custom_ui`
+This function can be used to manipulate your mod's description tab arbitarily. It receives a table of nodes as an argument, you can modify this table to insert additional elements or modify existing ones. See also: [Building a UI](https://github.com/Steamodded/smods/wiki/UI-Guide).
 
 ## `mod.debug_info`
 This is a property that can be set by mods to show debug information on the crash screen.

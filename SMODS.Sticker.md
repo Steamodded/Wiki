@@ -1,10 +1,9 @@
 # API Documentation: `SMODS.Sticker`
 - **Required parameters:**
 	- `key`
+	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 - **Optional parameters** *(defaults)*:
-	- `atlas = 'stickers'`
-	- `pos = { x = 0, y = 0 }`
-	- `loc_txt`, default skeleton
+	- `atlas = 'stickers', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
 	- `badge_colour`: Colour of this sticker's badge.
     - `hide_badge`: If set to `true`, no badge is shown for this sticker.
 	- `default_compat`: Default compatibility with cards. If `true`, all cards can have this sticker unless otherwise specified.
@@ -21,10 +20,9 @@
 	- `needs_enable_flag`: If set to `true`, this sticker requires `G.GAME.modifiers['enable_'..self.key]` to be `true` before it can be applied.
 
 ## API methods
-- `loc_vars(self, info_queue, card) -> { vars ?= table, key ?= string, set ?= string }`
-	- Returns variables for sticker description. Returning a `key` changes the localization entry (in the given `set` or `'Other'`) to use for the description.
-- `calculate(self, card, context)`
-    - Called with each context before joker calculation. Additional effects should use `SMODS.eval_this` instead of returning something. If a value is returned from this function, joker calculation for this context is skipped. Otherwise, behavior is identical to `Joker.calculate`.
+- `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
+- `loc_vars` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+	- Due to some constraints, the functionality of `loc_vars` on stickers is limited. Out of all possible return values, only `vars`, `key` and `set` are supported.
 - `should_apply(self, card, center, area, bypass_roll) -> bool`
 	- Returns true if the sticker can be applied to the card. 
 	- `bypass_roll` skips the RNG check and only looks for compatibility

@@ -1,29 +1,24 @@
 # API Documentation: `SMODS.Stake`
+**Class prefix:** `stake`
 - **Required parameters:**
 	- `key`
     - `applied_stakes`: An array of keys of stakes that should also be applied when this stake is active. This is evaluated recursively to include all stakes applied by applied stakes, so you usually don't need to specify multiple stakes here.
-        - Note: Key prefixing is applied to this option by default. If you're applying stakes from the base game or other mods, this can be adjusted by using `prefix_config.applied_stakes`. For example, `prefix_config = { applied_stakes = { mod = false } }` will remove all mod prefixes. You can also specify this per index, e.g. `prefix_config = { applied_stakes = { {}, { mod = false } } }` to add a mod prefix to the first, but not the second entry.
+        > [!NOTE]
+        > Key prefixing is applied to this option by default. If you're applying stakes from the base game or other mods, this can be adjusted by using `prefix_config.applied_stakes`. For example, `prefix_config = { applied_stakes = { mod = false } }` will remove all mod prefixes. You can also specify this per index, e.g. `prefix_config = { applied_stakes = { {}, { mod = false } } }` to add a mod prefix to the first, but not the second entry. [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+    - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+        - `loc_txt` should contain a `sticker` table that also consists of a `name` and `text`. It is used for the tooltip of the stake's win sticker.
+        - When using localization files, the stake description should be placed in `descriptions.Stake[key]`, while the sticker description should be placed in `descriptions.Other[key:sub(7)..'_sticker']`, i.e., the `stake_` prefix is removed.
+        > [!IMPORTANT]
+        > An extra line that lists applied stakes is appended at the end of the description only when `loc_txt` is used. If you are using localization files, you should add this yourself.
 - **Optional parameters** *(defaults)*:
-    - `loc_txt`, Skeleton:
-        ```lua
-        {
-            name = '',
-            text = {''},
-            sticker = {
-                name = '',
-                text = {''},
-            },
-        }
-        ```
-        - Note: an extra line that lists applied stakes is appended at the end of the description only when `loc_txt` is used. If you are using localization files, you should add this yourself.
-    - `atlas = 'chips'`
-    - `pos = { x = 0, y = 0 }`
-    - `sticker_atlas`: The atlas to use for this stake's win sticker.
-    - `sticker_pos`: The sprite position for the win sticker.
+    - `atlas = 'chips', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards
+    - `sticker_atlas, sticker_pos`: The atlas and position to use for this stake's win sticker.
+    - `unlocked = false, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+        - If `unlocked` is set to `false`, the stake is unlocked by first winning a run on each of the `applied_stakes`.
     - `above_stake`: The stake's key that this stake should appear directly above in the list. By default, your stake will be placed at the top of the list.
-        - Note: Key prefixing is applied to this option by default. If you want your stake above a stake from the base game or other mods, this can be adjusted by using `prefix_config.above_stake`. For example, `prefix_config = { above_stake = { mod = false } }` will remove the mod prefix.
+        > [!NOTE] 
+        > Key prefixing is applied to this option by default. If you want your stake above a stake from the base game or other mods, this can be adjusted by using `prefix_config.above_stake`. For example, `prefix_config = { above_stake = { mod = false } }` will remove the mod prefix. [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
     - `colour = [white]`: The colour used for this stake in the stake selection column.
-    - `unlocked = false`: Whether this stake should be unlocked by default. If this is `false`, the stake is unlocked by first winning a run on each of the `applied_stakes`.
 
 ## API methods
 - `modifiers()`

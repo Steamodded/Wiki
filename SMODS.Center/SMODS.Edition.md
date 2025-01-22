@@ -1,32 +1,24 @@
 # API Documentation: `SMODS.Edition`
+**Class prefix:** `e`
 - **Required parameters:**
 	- `key`
 	- `shader`: the shader key for your shader. `shader = false` is allowed. This will create edition with no shader.
+	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+		- `loc_txt` should contain an additional `label` string. It is used on badges, while `name` is displayed at the top of info boxes. For use with localization files, this label should be placed in `misc.labels` **(without the `e_` prefix)**.
 - **Optional parameters** *(defaults)*:
-	- `atlas = 'Joker'`: The atlas that is used to draw the edition in the collection.
-	- `pos = {x = 0, y = 0}`: The position used to draw the edition in the collection.
-	- `discovered = false`
-	- `unlocked = true`
-	- `loc_txt`, Skeleton:
-	```lua
-		{
-			name = '',
-			label = '',
-			text = { '' },
-		}
-	```
-		- `name` is displayed at the top of info boxes
-		- `label` is displayed in the badge
-	- `config`, Skeleton:
-	```lua
-		{
-			chips = 10,
-			mult = 10,
-			x_mult = 2,
-			p_dollars = 3,
-			card_limit = 2,
-		}
-	```
+	- `atlas = 'Joker', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+		- This defines the card to draw the edition on in the collection.
+	- `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+		- The following base values for `config` are supported and will be applied/scored automatically:
+		```lua
+			{
+				chips = 10,
+				mult = 10,
+				x_mult = 2,
+				p_dollars = 3,
+				card_limit = 2,
+			}
+		```
 	- `in_shop = false`: Whether the edition can spawn naturally in the shop/booster packs.
 	- `weight = 0`: The weighting of the edition, see below for more details.
 	- `extra_cost`: The extra cost applied to cards in the shop with the edition.
@@ -37,8 +29,8 @@
 	- `disable_base_shader = false`: Whether the base shader should be applied (`booster` for Booster packs and Spectral cards, `voucher` for Vouchers and Invisible Joker, `dissolve` otherwise). Enable this if your shader modifies card transparency or shape in any way. Example:<br/>![image](https://github.com/user-attachments/assets/c7b32385-e486-40c2-9a83-c8a09a67185c)
 
 ## API methods
-- `loc_vars(self, info_queue) -> { vars ?= table }`
-	- Used for passing variables to edition descriptions.
+- `loc_vars` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+	- Only `vars`, `key` and `set` return values are currently supported for editions.
 - `get_weight(self) ->  number `
 	- Used to modify the weight of edition on certain conditions.
 - `on_apply(card) -> void`
