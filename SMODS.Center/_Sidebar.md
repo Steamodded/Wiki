@@ -1,6 +1,6 @@
   * [Home](https://github.com/Steamodded/smods/wiki)
 ***
-`SMODS.Center`
+SMODS.Center
   * [SMODS.Back](https://github.com/Steamodded/smods/wiki/SMODS.Back)
   * [SMODS.Booster](https://github.com/Steamodded/smods/wiki/SMODS.Booster)
   * [SMODS.Edition](https://github.com/Steamodded/smods/wiki/SMODS.Edition)
