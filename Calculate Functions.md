@@ -17,17 +17,11 @@ There are three steps to writing the calculation code within your function.
 
 ### Step 1: Context Checks
 All code within your calculate function should be inside a **context check**. This statement will ensure that your effect will open happen in the timing that you want it to happen. There is a full list of contexts at the end of this guide, but here are some common ones you might want to use.
-
 `if context.joker_main then` The main scoring timing of jokers
-
 `if context.cardarea == G.play and context.main_scoring` The main scoring of played cards *(used for modifiers to cards)*
-
 `if context.before then` For effects that happen in the scoring loop but before anything is scored
-
 `if context.final_scoring_step then`For effects that modify the score after all cards have been scored
-
 `if context.cardarea == G.play and context.repetition then` For adding repetitions to played cards
-
 
 ### Step 2: Logic/Effects
 In this step, you need to add your actual logic for calculation. Values that are defined in your object's config can be access by using `card.ability.`, for example, here is some code that increases the chips an object will give out by 10 every time the effect is evaluated.
@@ -276,13 +270,36 @@ if context.debuffed_hand and context.cardarea == G.play then
 }
 ```
 ---
-This context is used for effects at the end of the round. 
+This context is used for end of round effects. 
 ```lua
-if context.end_of_round and context.cardarea == G.hand then
+if context.end_of_round and context.cardarea == G.jokers then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
 	end_of_round = true,
 	game_over = game_over -- true or false
+}
+```
+---
+This context is used for effects on cards from jokers at the end of the round. 
+```lua
+if context.end_of_round and context.individual then
+{
+	cardarea = G.hand, -- (G.deck and G.discard optionally enabled)
+	end_of_round = true,
+	individual = true,
+	other_card = card
+}
+```
+---
+This context is used for repetitions on cards at the end of the round. 
+```lua
+if context.end_of_round and context.repetition then
+{
+	cardarea = G.hand, -- (G.deck and G.discard optionally enabled)
+	end_of_round = true,
+	repetition = true,
+	other_card = card,
+	card_effects = effects -- table of effects for the card
 }
 ```
 ---
