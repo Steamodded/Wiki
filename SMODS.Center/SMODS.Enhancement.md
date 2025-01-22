@@ -18,8 +18,7 @@
             h_x_mult,
 		}
 	    ```
-        > [!NOTE]
-        > `discovered` and `unlocked` on enhancements are currently unsupported.
+        - Note: `discovered` and `unlocked` on enhancements are currently unsupported.
     - `replace_base_card`: If `true`, don't draw base card sprite or give base card chips.
     - `no_rank`: If `true`, enhanced card has no rank.
     - `no_suit`: If `true`, enhanced card has no suit.

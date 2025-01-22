@@ -9,8 +9,7 @@
     - `atlas = 'Booster', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
     - `config, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
         - The default `config` table is `{ extra = 3, choose = 1 }`; `extra` is the amount of cards in the pack, `choose` is the amount of choices.
-        > [!NOTE]
-        > Locked boosters are currently unsupported.
+        - Note: `unlocked` on boosters is currently unsupported.
     - `group_key`: Key to the group name (see above) of this booster. Useful when multiple booster packs share the same group name.
 	- `cost = 4`,
     - `weight = 1`: Determines how freqently the pack appears in the shop.

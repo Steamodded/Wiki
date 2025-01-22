@@ -5,8 +5,7 @@
 	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 - **Optional parameters** *(defaults)*
 	- `atlas = 'blind_chips', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-		> [!NOTE]
-		> Any atlas specified here must set `atlas_table = 'ANIMATION_ATLAS'`. The `y` value determines the row to use for the animation. The `x` value is ignored and cycles through each frame of the animation.
+		- Any atlas specified here must set `atlas_table = 'ANIMATION_ATLAS'`. The `y` value determines the row to use for the animation. The `x` value is ignored and cycles through each frame of the animation.
 	- `discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `dollars = 5`: Amount of money obtained when defeated.
 	- `mult = 2`: Required score relative to the Ante's Base score.
@@ -23,8 +22,7 @@
 			- `value = '2'` for one specific rank,
 			- `nominal = n` for all ranks scoring `n` base chips,
 			- `is_face = true` for all face cards.
-		> [!NOTE]
-		> These effects are ignored if you specify a `debuff_hand` or `debuff_card` function respectively.
+		- These effects are ignored if you specify a `debuff_hand` or `debuff_card` function respectively.
 	- `ignore_showdown_check`: Enabling this allows `in_pool` to be evaluated regardless of whether a showdown Boss Blind was requested or not.
 	- `vars = {}`: variables for the Blind's description in the collection. Fallback if `collection_loc_vars` isn't set.
 
