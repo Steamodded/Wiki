@@ -1,4 +1,4 @@
-# API Documentation: `SMODS.Joker`
+# API Documentation: `SMODS.Back`
 **Class prefix:** `b`
 - **Required parameters:**
 	- `key`,
