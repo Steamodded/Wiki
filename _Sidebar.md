@@ -8,9 +8,9 @@ Game Objects
   * SMODS.Center
     * [SMODS.Back](https://github.com/Steamodded/smods/wiki/SMODS.Back)
     * [SMODS.Booster](https://github.com/Steamodded/smods/wiki/SMODS.Booster)
+    * [SMODS.Consumable](https://github.com/Steamodded/smods/wiki/SMODS.Consumable)
     * [SMODS.Edition](https://github.com/Steamodded/smods/wiki/SMODS.Edition)
     * [SMODS.Enhancement](https://github.com/Steamodded/smods/wiki/SMODS.Enhancement)
-    * [SMODS.Consumable](https://github.com/Steamodded/smods/wiki/SMODS.Consumable)
     * [SMODS.Joker](https://github.com/Steamodded/smods/wiki/SMODS.Joker)
     * [SMODS.Voucher](https://github.com/Steamodded/smods/wiki/SMODS.Voucher)
   * [SMODS.Challenge](https://github.com/Steamodded/smods/wiki/SMODS.Challenge)

@@ -4,7 +4,8 @@ This page is designed to help you find what is needed when first making a mod. I
 # First Steps 
 - If you haven't already [Install Steamodded](https://github.com/Steamodded/smods/wiki).
 - Checkout the [Mod Metadata](https://github.com/Steamodded/smods/wiki/Mod-Metadata) page for how to get your mod detected by Steamodded.
-- For adding Jokers, Consumeables, Vouchers, Backs/Decks, or Boosters, see the [SMODS.Center page](https://github.com/Steamodded/smods/wiki/SMODS.Center)
+- Checkout the [API Documentation](https://github.com/Steamodded/smods/wiki/API-Documentation) page for information on the basics of Steamodded's api.
+- For adding content, check the **Game Objects** part of the sidebar, which lists every object SMODS can create.
 
 # Useful resources
 - Often, something you want to do has already been implemented in the base game. Familiarizing yourself with the game's code is an important step to learn Balatro modding. To get Balatro's source code, extract the game's executable file with [7-zip](https://www.7-zip.org/). For Mac, find `Balatro.love` inside `Balatro.app` and rename it to `Balatro.zip`, then extract `Balatro.zip`. A handful of vanilla jokers have been reimplemented in a [Steamodded example mod](https://github.com/Steamodded/examples/tree/master/Mods/ExampleJokersMod) for reference.
