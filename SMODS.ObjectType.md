@@ -57,3 +57,6 @@ For consumable types, a sprite for undiscovered objects can be registered. Other
 	- `key`
 	- `atlas`
 	- `pos`
+   - **Optional parameters:**
+  	- `no_overlay`: disables the floating ? sprite from undiscovered objects
+  	- `overlay_pos`: customize the floating ? sprite using your atlas. Expects `{x = 0, y = 0}`
