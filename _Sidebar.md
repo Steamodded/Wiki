@@ -30,7 +30,6 @@ Game Objects
 Guides
   * [Your First Mod](https://github.com/Steamodded/smods/wiki/Your-First-Mod)
   * [Mod Metadata](https://github.com/Steamodded/smods/wiki/Mod-Metadata)
-  * [Joker Calculation](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Joker-Calculation)
   * [Calculate Functions](https://github.com/Steamodded/smods/wiki/calculate_functions)
   * [Logging](https://github.com/Steamodded/smods/wiki/Logging)
   * [Event Manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager)
