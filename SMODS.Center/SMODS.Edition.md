@@ -29,7 +29,7 @@
 	- `disable_base_shader = false`: Whether the base shader should be applied (`booster` for Booster packs and Spectral cards, `voucher` for Vouchers and Invisible Joker, `dissolve` otherwise). Enable this if your shader modifies card transparency or shape in any way. Example:<br/>![image](https://github.com/user-attachments/assets/c7b32385-e486-40c2-9a83-c8a09a67185c)
 
 ## API methods
-- `loc_vars` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+- `loc_vars` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 	- Only `vars`, `key` and `set` return values are currently supported for editions.
 - `get_weight(self) ->  number `
 	- Used to modify the weight of edition on certain conditions.

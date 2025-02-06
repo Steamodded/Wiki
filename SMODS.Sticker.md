@@ -21,7 +21,7 @@
 
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
-- `loc_vars` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+- `loc_vars` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 	- Due to some constraints, the functionality of `loc_vars` on stickers is limited. Out of all possible return values, only `vars`, `key` and `set` are supported.
 - `should_apply(self, card, center, area, bypass_roll) -> bool`
 	- Returns true if the sticker can be applied to the card. 

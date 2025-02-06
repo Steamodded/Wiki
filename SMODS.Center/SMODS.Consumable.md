@@ -15,7 +15,7 @@
 
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
-- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `use(self, card, area, copier)`
 	- Defines the behavior of a consumable when used. *(The `copier` argument is a remnant from an effect no longer present in the game and can be ignored.)*
 - `can_use(self, card) -> bool`

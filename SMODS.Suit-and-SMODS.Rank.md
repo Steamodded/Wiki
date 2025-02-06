@@ -39,7 +39,7 @@
 
 ## API methods
 These methods are available for both suits and ranks.
-- `loc_vars` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+- `loc_vars` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
     - This method provides very limited functionality compared to its counterpart on other classes. It has no support for any return values, but it does allow you to add tooltips to `info_queue`.
 - `draw(self, card, layer)`
 	- Draws additional sprites or shaders on cards.

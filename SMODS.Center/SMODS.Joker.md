@@ -17,7 +17,7 @@
 
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
-- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `calc_dollar_bonus(self, card) -> number`
 	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
 - `set_ability(self, card, initial, delay_sprites)`

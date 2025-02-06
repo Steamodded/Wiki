@@ -29,7 +29,7 @@
 
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
-- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `get_weight(self) ->  number `
 	- Used to modify the weight of enhancement on certain conditions.
 - `set_ability(self, card, initial, delay_sprites)`

@@ -52,7 +52,7 @@ refer to the current blind. (The base game uses `self` to refer to the current b
 		- A boolean value indicating whether any values were changed
 - `get_loc_debuff_text(self) -> string`
 	- Allows modifying text displayed for debuff warnings on invalid hands
-- `loc_vars(self) -> { vars ?= table, key ?= string }` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+- `loc_vars(self) -> { vars ?= table, key ?= string }` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 	- Due to various constraints, the functionality of `loc_vars` on blinds is very limited. Only `vars` and `key` returns are supported, and no `info_queue` exists.
 - `collection_loc_vars(self) -> { vars ?= table, key ?= string }`
 	- Used for passing variables to Blind descriptions when viewing the collection. If not defined, the game will use the `vars` field on your object.

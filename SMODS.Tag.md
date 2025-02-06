@@ -9,7 +9,7 @@
     - `min_ante`: Minimum ante needed for this tag to appear. Use in_pool for more advanced spawn restrictions instead.
 
 ## API methods
-- `loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+- `loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `in_pool(self, args) -> bool, { allow_duplicates = bool }`
 	- Define custom logic for when a tag is allowed to spawn. A tag can spawn if `in_pool` returns true and all other checks are met.
 	- When called from `generate_card_ui`, the `_append` key is passed as `args.source`.

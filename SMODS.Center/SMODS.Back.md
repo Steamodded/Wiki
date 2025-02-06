@@ -12,7 +12,7 @@
 - `calculate(self, back, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
     - This method is called from `Back:trigger_effect()` and incorporated into the standard calculation pipeline. This does not apply to vanilla `trigger_effect` functionality, which can be used as normal from this function by checking for `context.context == 'eval'` or `context.context == 'final_scoring_step` respectively.
     - **Defining a `trigger_effect` function on your deck is deprecated.**
-- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/wiki/Localization#Localization-functions)
+- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `apply(self, back)`
     - Apply modifiers at the start of a run. If you want to modify the starting deck, you must use events to do so.
 - `in_pool(self, args) -> bool, { allow_duplicates = bool }`
