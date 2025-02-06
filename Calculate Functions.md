@@ -106,7 +106,7 @@ if context.before and context.cardarea == G.play then
 }
 ```
 ---
-This context is used for the effects from playing cards when they are scored.
+This context is used for the effects from playing cards when they are scored. This is used for enhancements, editions and seals (or any other card modifiers)
 ```lua
 if context.main_scoring and context.cardarea == G.play then
 {
