@@ -31,8 +31,8 @@ Hopefully, all of this will become more clear as this guide continues.
 The only values that the `n` field can take:
 
  - `G.UIT.ROOT`: the top-level node of *every* `UIBox`; there's exactly one of these per `UIBox`.
- - `G.UIT.R`: a **Row** node, which arranges its child nodes *horizontally*.
- - `G.UIT.C`: a **Column** node, which arranges its child nodes *vertically*.
+ - `G.UIT.R`: a **Row** node, which arranges its child nodes *horizontally*, meaning you will get a long row containing multiple elements.
+ - `G.UIT.C`: a **Column** node, which arranges its child nodes *vertically*, meaning you will get a long column containing multiple elements.
  - `G.UIT.T`: a **Text** node, which displays text.<br>
    This node must contain `text`, `colour`, and `scale` in its `config`.
  - `G.UIT.O`: an **Object** node, which displays a special game object.<br>
@@ -158,9 +158,13 @@ The children will be equally distributed (unless any specific width/height confi
 }}
 
 -- Result:
---   -------------------
---   |    1|  2  |3    |
---   -------------------
+--   ------------
+--   |        1 |
+--   ------------
+--   |     2    |
+--   ------------
+--   | 3        |
+--   ------------
 -- The WHOLE box containing 1,2,3 is Element 0
 -- The contents of Elements 1,2,3 will go inside their respective small boxes.
 -- The contents of Elements 1/3 will be right/left aligned, due to configuration.
@@ -176,11 +180,11 @@ The children will be equally distributed (unless any specific width/height confi
 }}
 
 -- Result:
---   -----------------
---   |       1       |
---   -----------------
---   |   3   |   4   |
---   -----------------
+--   -------------
+--   |     |  3  |
+--   |  1  |-----|
+--   |     |  4  |
+--   -------------
 -- The WHOLE box is Element 0
 -- The row containing 3,4 is Element 2
 ```
