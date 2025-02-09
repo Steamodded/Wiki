@@ -122,10 +122,8 @@ The following are examples of valid `loc_txt` tables:
     ['en-us'] = {
         -- Sometimes, more text is required than just a name and a description
         label = 'Label',
-        description = {
-            name = 'Name',
-            text = { 'A moderately long', 'description of', 'your effect.' }
-        }
+        name = 'Name',
+        text = { 'A moderately long', 'description of', 'your effect.' },
     }
 }
 ```
@@ -134,10 +132,8 @@ The following are examples of valid `loc_txt` tables:
 {
     -- The simplest option: use a single table
     label = 'Label',
-    description = {
-        name = 'Name',
-        text = { 'A moderately long', 'description of', 'your effect.' }
-    }
+    name = 'Name',
+    text = { 'A moderately long', 'description of', 'your effect.' },
 }
 ```
 
