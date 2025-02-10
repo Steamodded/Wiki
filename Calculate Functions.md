@@ -422,7 +422,8 @@ if context.using_consumeable then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
 	using_consumeable = true,
-	consumeable = card -- the consumable being used
+	consumeable = card, -- the consumable being used
+	area = G.consumeables, -- the area the card was used from (could be G.shop_jokers, G.pack_cards)
 }
 ```
 ---
@@ -441,7 +442,7 @@ if context.playing_card_added then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
 	playing_card_added = true,
-	card = cards -- the cards being added
+	cards = cards -- the cards being added (sometimes is true when used from vanilla items)
 }
 ```
 ---
