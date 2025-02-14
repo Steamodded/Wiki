@@ -158,9 +158,13 @@ The children will be equally distributed (unless any specific width/height confi
 }}
 
 -- Result:
---   -------------------
---   |    1|  2  |3    |
---   -------------------
+--   ------------
+--   |        1 |
+--   ------------
+--   |     2    |
+--   ------------
+--   | 3        |
+--   ------------
 -- The WHOLE box containing 1,2,3 is Element 0
 -- The contents of Elements 1,2,3 will go inside their respective small boxes.
 -- The contents of Elements 1/3 will be right/left aligned, due to configuration.
@@ -176,11 +180,11 @@ The children will be equally distributed (unless any specific width/height confi
 }}
 
 -- Result:
---   -----------------
---   |       1       |
---   -----------------
---   |   3   |   4   |
---   -----------------
+--   -------------
+--   |     |  3  |
+--   |  1  |-----|
+--   |     |  4  |
+--   -------------
 -- The WHOLE box is Element 0
 -- The row containing 3,4 is Element 2
 ```
