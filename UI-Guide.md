@@ -31,8 +31,8 @@ Hopefully, all of this will become more clear as this guide continues.
 The only values that the `n` field can take:
 
  - `G.UIT.ROOT`: the top-level node of *every* `UIBox`; there's exactly one of these per `UIBox`.
- - `G.UIT.R`: a **Row** node, which arranges its child nodes *horizontally*, meaning you will get a long row containing multiple elements.
- - `G.UIT.C`: a **Column** node, which arranges its child nodes *vertically*, meaning you will get a long column containing multiple elements.
+ - `G.UIT.R`: a **Row** node, which arranges its child nodes *horizontally*.
+ - `G.UIT.C`: a **Column** node, which arranges its child nodes *vertically*.
  - `G.UIT.T`: a **Text** node, which displays text.<br>
    This node must contain `text`, `colour`, and `scale` in its `config`.
  - `G.UIT.O`: an **Object** node, which displays a special game object.<br>
