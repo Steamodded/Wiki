@@ -7,8 +7,8 @@
 		-  Expects a list of keys like this:
 		```lua
 			{
-				["j_foo_joker"] = true
-				["c_bar_tarot"] = true
+				["j_foo_joker"] = true,
+				["c_bar_tarot"] = true,
 			}
 		```
 	- `rarities` allows cards to show up at different rates.
