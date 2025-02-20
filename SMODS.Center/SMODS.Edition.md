@@ -110,8 +110,8 @@ Use this function to set the edition of a card
 	Option 2 - table of keys and weights. Used to override default weights,
 	```lua
 	{
-		e_foil = 1,
-		e_holo = 1,
-		e_negative = 1
+		{name = 'e_foil', weight = 1,},
+		{name = 'e_holo', weight = 1,},
+ 		{name = 'e_polychrome', weight = 1,}
 	}
 	```
