@@ -30,6 +30,9 @@
         - `{ hand }` if all cards score,
         - `{ SMODS.merge_lists(parts._flush, parts._straight) }` for all scoring cards that are part of a straight or flush, or
         - `{}` if the cards don't contain this hand.
+- `modify_display_text(self, cards, scoring_hnd) -> string?`
+    - Changes the displayed name of the poker hand. 
+    - Returns the key to the new display name that gets localized (placed inside of `misc.poker_hands[key]`). 
 
 ## Utility functions
 - `SMODS.merge_lists(...) -> table`
