@@ -23,11 +23,19 @@ local https = require "SMODS.https"
       - `body`: The response body on success. Either nil or a description of the error on failure.
       - `headers`: HTTP response headers as key-value pairs, or nil on failure.
 
+- `https.asyncRequest(url, optionsOrCallback, callback)`
+  - `url`: The URL to request.
+  - `optionsOrCallback`: If callback is nil, this can be set to a function instead of the callback. Otherwise is treated like option (see `http.request`)
+  - `callback`: A function to call when the request is done, or nil if the callback is set in `optionsOrCallback`. 
+    - `callback(code, body, headers)` - The callback to call. For meanings on the values, see `http.request`'s return values
+
 ## Example Usage
 
 ```lua
 local https = require "SMODS.https"
 
-print(https.request("https://example.com"))
+print(https.request("https://example.com")) -- Sync request
+
+https.asyncRequest("https://example.com", print)) -- Async request
 ```
 
