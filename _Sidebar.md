@@ -15,6 +15,7 @@ Game Objects
     * [SMODS.Voucher](https://github.com/Steamodded/smods/wiki/SMODS.Voucher)
   * [SMODS.Challenge](https://github.com/Steamodded/smods/wiki/SMODS.Challenge)
   * [SMODS.DeckSkin](https://github.com/Steamodded/smods/wiki/SMODS.DeckSkin)
+  * [SMODS.https](https://github.com/Steamodded/smods/wiki/SMODS.https)
   * [SMODS.Keybind](https://github.com/Steamodded/smods/wiki/SMODS.Keybind)
   * [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language)
   * [SMODS.ObjectType](https://github.com/Steamodded/smods/wiki/SMODS.ObjectType)
