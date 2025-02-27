@@ -8,6 +8,7 @@ Note: Atlases in this class are not automatically prefixed.
     - `suit`: The suit this skin applies to.
     - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
     - `palettes`: A list of tables with the following values:
+        - `key` (Use `'hc'` or `'lc'` to consider this palette a default high-/low-contrast palette)
         - `ranks`: A list of ranks the skin provides sprites for.
         - `display_ranks`: A list of ranks to show in the preview.
         - `atlas`: Atlas for the cards.
@@ -25,4 +26,5 @@ Note: Atlases in this class are not automatically prefixed.
             - `atlas`: An atlas with the icons
             - `pos = 0`: The position for the icon. If set to a number, it will use y = pos, x = suit's vanilla icon pos. If it's a table [see reference](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards).
 	    - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+        - `hc_default` (optional): If this is true, use high-contrast textures for unchanged sprites.
 
