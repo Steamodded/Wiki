@@ -1,8 +1,8 @@
 
-# Permanent bonusses
-Card objects can be given permanent permanent bonusses that allow them to add or subtract score, similar to the vanilla Hiker joker. These are only considered on **playing cards** during the scoring phases. These will not be changed by applying enhancements, copying the card, or similar. Steamodded by default handles all the UI elements for this. These were added in `1.0.0~ALPHA-1428c-STEAMODDED`.
+# Permanent bonuses
+Card objects can be given permanent permanent bonuses that allow them to add or subtract score, similar to the vanilla Hiker joker. These are only considered on **playing cards** during the scoring phases. These will not be changed by applying enhancements, copying the card, or similar. Steamodded by default handles all the UI elements for this. These were added in `1.0.0~ALPHA-1428c-STEAMODDED`.
 
-## List of all perma-bonusses
+## List of all perma-bonuses
 ```lua
 perma_bonus,      -- permanent chips, from vanilla
 perma_mult,
@@ -19,7 +19,7 @@ perma_h_dollars,  -- money on held at end of round (like gold cards)
 ```
 
 ## Re-implementation of Hiker
-This function is an example of how to use perma-bonusses in smods, based on the vanilla Hiker joker. See [Calculate Functions](https://github.com/Steamodded/smods/wiki/calculate_functions) for more information about `calculate`.
+This function is an example of how to use perma-bonuses in smods, based on the vanilla Hiker joker. See [Calculate Functions](https://github.com/Steamodded/smods/wiki/calculate_functions) for more information about `calculate`.
 ```lua
 SMODS.Joker{
     key = "hiker2",
@@ -37,13 +37,13 @@ SMODS.Joker{
 }
 ```
 
-### Implementation details
-Permanent bonusses get added when the playing card gets scored. They happen at the same time as base chips and enhancements, before any edition effects. Permanent bonusses do not change when the player applies enhancements, copies the card, or similar.
+## Implementation details
+Permanent bonuses get added when the playing card gets scored. They happen at the same time as base chips and enhancements, before any edition effects. Permanent bonuses do not change when the player applies enhancements, copies the card, or similar.
 
-Permanent bonusses are scored in the following order:
+Permanent bonuses are scored in the following order:
 1. chips (base + enhancement + permanent)
 2. mult (enhancement + permanent)
-3. xchips (permanent)
+3. xchips (enhancement * permanent)
 4. xmult (enhancement * permanent)
 5. dollars (seals + permanent)
 6. all edition effects
@@ -53,16 +53,16 @@ Permanent (held) chips get scored at the same time as a playing card's base chip
 
 Permanent (held) mult gets scored at the same time as a playing card's regular mult and bonus mult from enhancements. It also shows up as a combined number with bonus mult from enhancements. Supports negative values.
 
-Permanent (held) xchips do not support negative values, and will do nothing if scored.
+Permanent (held) xchips get multiplied with enhancement xchips, showing as a single multiplied number during scoring. Does not support final negative xchips, and will do nothing if end result is negative.
 
-Permanent xmult gets multiplied with enhancement xmult such as glass when scoring, showing as a single multiplied number during scoring. It does show up as a seperate number in the UI when hovering over the card. It does not support negative values, and will do nothing if scored.
+Permanent xmult gets multiplied with enhancement xmult such as glass when scoring, showing as a single multiplied number during scoring. It does show up as a seperate number in the UI when hovering over the card. Does not support final negative xmult, and will do nothing if end result is negative.
 
 Permanent held xmult gets multiplied with enhancement held xmult such as steel when scoring, showing as a single multiplied number during scoring. It does show up as a seperate number in the UI when hovering over the card. It does not support negative values, and will do nothing if scored.
 
 Permanent held dollars only give money on end of round, similar to the gold enhancement.
 
 ## Localization
-Steamodded by default handles the localization of all perma-bonusses described on this page. These can be overwritten (or translated) by defining:
+Steamodded by default handles the localization of all perma-bonuses described on this page. These can be overwritten (or translated) by defining:
 ```lua
 card_extra_chips,
 card_extra_mult,
