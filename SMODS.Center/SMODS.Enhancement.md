@@ -1,23 +1,27 @@
 # API Documentation: SMODS.Enhancement
 **Class prefix:** `m`
 - **Required parameters:**
-	- `key`
+    - `key`
     - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 - **Optional parameters** *(defaults)*:
-	- `atlas = 'centers', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+    - `atlas = 'centers', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
     - `config = {}, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
-        - The following base values for `config` are supported and will be scored automatically:
+        - The following base values for `config` are supported and will be scored automatically and unconditionally:
         ```lua
-		{
-			bonus,
-            bonus_chips,
-			mult,
-			x_mult,
-			p_dollars,
-            h_mult,
-            h_x_mult,
-		}
-	    ```
+            {
+                bonus,      -- Extra chips
+                x_chips,    -- Chips multiplier, nil (not defined), 0 or 1 is treated as 1.
+                mult,       -- Extra additive mult
+                x_mult,     -- Mult multiplier, nil (not defined), 0 or 1 is treated as 1.
+                h_chips,    -- Chips when held in hand during scoring
+                h_x_chips,  -- Chips multiplier when held in hand during scoring, nil (not defined), 0 or 1 is treated as 1.
+                h_mult,     -- Additive mult when held in hand during scoring
+                h_x_mult,   -- Mult multiplier when held in hand during scoring, nil (not defined), 0 or 1 is treated as 1.
+                p_dollars   -- Dollars granted when scored
+                h_dollars   -- Dollars granted when held in hand at the end of the round
+            }
+        ```
+        - For conditionally granting any of these values, use a `calculate` function instead!
         - Note: `discovered` and `unlocked` on enhancements are currently unsupported.
     - `replace_base_card`: If `true`, don't draw base card sprite or give base card chips.
     - `no_rank`: If `true`, enhanced card has no rank.
@@ -31,40 +35,40 @@
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
 - `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `get_weight(self) ->  number `
-	- Used to modify the weight of enhancement on certain conditions.
+    - Used to modify the weight of enhancement on certain conditions.
 - `set_ability(self, card, initial, delay_sprites)`
-	- Set up initial ability values or manipulate sprites in an advanced way.
+    - Set up initial ability values or manipulate sprites in an advanced way.
 -  `in_pool(self, args) -> bool, { allow_duplicates = bool }`
-	- Define custom logic for when a card is allowed to spawn. A card can spawn if `in_pool` returns true and all other checks are met.
-	- When called from `generate_card_ui`, the `_append` key is passed as `args.source`.
+    - Define custom logic for when a card is allowed to spawn. A card can spawn if `in_pool` returns true and all other checks are met.
+    - When called from `generate_card_ui`, the `_append` key is passed as `args.source`.
 - `update(self, card, dt)`
-	- For actions that happen every frame.
+    - For actions that happen every frame.
 - `set_sprites(self, card, front)`
-	- For advanced sprite manipulation that happens when a card is created or loaded.
+    - For advanced sprite manipulation that happens when a card is created or loaded.
 - `set_badges(self, card, badges)`
-	- Add additional badges, leaving existing badges intact. This function doesn't return; add badges by appending to `badges`.
-	- Avoid overwriting existing elements. It will cause text to appear on the top left corner of your screen instead.
-	- Function for creating badges: `create_badge(_string, _badge_col, _text_col, scaling)`
-		- `_string`: Text displayed on the badge.
-		- `_badge_col = G.C.GREEN`: Background colour.
-		- `_text_col = G.C.WHITE`: Text colour.
-		- `_scaling = 1`: Relative size of the badge.
-	- Example:
-	```lua
-	{
-		set_badges = function(self, card, badges)
-			badges[#badges+1] = create_badge(localize('k_your_string'), G.C.RED, G.C.BLACK, 1.2 )
-		end,
-	}
-	```
+    - Add additional badges, leaving existing badges intact. This function doesn't return; add badges by appending to `badges`.
+    - Avoid overwriting existing elements. It will cause text to appear on the top left corner of your screen instead.
+    - Function for creating badges: `create_badge(_string, _badge_col, _text_col, scaling)`
+        - `_string`: Text displayed on the badge.
+        - `_badge_col = G.C.GREEN`: Background colour.
+        - `_text_col = G.C.WHITE`: Text colour.
+        - `_scaling = 1`: Relative size of the badge.
+    - Example:
+    ```lua
+    {
+        set_badges = function(self, card, badges)
+            badges[#badges+1] = create_badge(localize('k_your_string'), G.C.RED, G.C.BLACK, 1.2 )
+        end,
+    }
+    ```
 - `set_card_type_badge(self, card, badges)`
-	- Same as `set_badges`, but bypasses creation of the card type / rarity badge, allowing you to replace it with a custom one.
+    - Same as `set_badges`, but bypasses creation of the card type / rarity badge, allowing you to replace it with a custom one.
 - `draw(self, card, layer)`
-	- Draws the sprite and shader of the card.
+    - Draws the sprite and shader of the card.
 
 ## Util methods
 - `SMODS.poll_enhancement(args)` *(defaults)*
-	- `args.key`, the key used to generate the seed
+    - `args.key`, the key used to generate the seed
     - `args.type_key`, an optional key used to generate the specific enhancement seed
     - `args.mod`, multiplying modifier to the base rate (40%)
     - `args.guaranteed`, if `true`, enhancement is guaranteed
