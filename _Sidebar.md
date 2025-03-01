@@ -33,6 +33,7 @@ Guides
   * [Your First Mod](https://github.com/Steamodded/smods/wiki/Your-First-Mod)
   * [Mod Metadata](https://github.com/Steamodded/smods/wiki/Mod-Metadata)
   * [Calculate Functions](https://github.com/Steamodded/smods/wiki/calculate_functions)
+  * [Perma-bonusses](https://github.com/Steamodded/smods/wiki/Perma-bonusses)
   * [Logging](https://github.com/Steamodded/smods/wiki/Logging)
   * [Event Manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager)
   * [Localization](https://github.com/Steamodded/smods/wiki/Localization)
