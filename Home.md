@@ -20,7 +20,7 @@ Now you're ready to install the **Lovely injector**. Please follow the installat
 
 ### Method (3a): Direct download
 *This method requires no further tools. If you know what Git is, skip ahead to Method (3b).*
-1. Click [here](https://github.com/Steamodded/smods/archive/refs/heads/main.zip) to download the latest source code. (*No up-to-date releases exist as of now. This guide will be updated when they do.*)
+1. Download the [latest release](https://github.com/Steamodded/smods/releases/latest) (click "Source code (zip)" at the bottom of the page) or the latest [dev version](https://github.com/Steamodded/smods/archive/refs/heads/main.zip).
 2. Extract the download zip file.
 3. In your file explorer, navigate to Balatro's save directory: **Windows:** `%AppData%/Balatro`; **Mac:** `~/Library/Application Support/Balatro`; **Linux (WINE/Proton):** `~/.local/share/Steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro`.
   > [!IMPORTANT]
