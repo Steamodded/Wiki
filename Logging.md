@@ -10,6 +10,14 @@ Steamodded implements 6 levels of logging, each with a different purpose. The le
 - `ERROR`: Due to a more serious problem, the software has not been able to perform some function.
 - `FATAL`: A serious error, indicating that the program itself may be unable to continue running.
 
+## Viewing Logs
+
+The default log sink (i.e., the place where logs go) is to the Lovely console window, as Lovely is required for Steammodded and 'already available for free'.  This means you can use this logging in your own mods.
+
+> *Note*: The default log level captured to the console and text files is Information.  If you'd like to capture Trace or Debug logs, you can change this setting in the Balatro Settings menu.
+
+Be sure to use `sendInfoMessage` if you haven't changed the default log level.  Also keep in mind that more logs can overwhelm users, so when shipping a mod it is good to change the log level to a lower level when releasing a mod.
+
 ## Logging usage
 
 All logging functions follow the same pattern, with the first argument being the message, and the second argument being
