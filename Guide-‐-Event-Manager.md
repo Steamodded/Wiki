@@ -148,6 +148,7 @@ event = Event {
     no_delete = true,
     trigger = "after",
     delay = 5,
+    timer = "UPTIME",
     func = function()
         print("Hi mom!")
         event.start_timer = false
