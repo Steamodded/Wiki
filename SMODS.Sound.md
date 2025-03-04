@@ -65,6 +65,16 @@ Mods
 	- Polls `select_music_track` on all sound objects that have it, returns the key of the music to play.
 	- You may override this function to take full control of the played music.
 
+## Notes
+Sounds can be loaded in any of your mod's json files.  To prevent collision if two mods have the same sound, all sounds
+ must be accessed using the prefixed defined in your mod's `.json` file under the `prefix` property.
+
+For example, if your mod prefix is defined as `prefix: "MyMod"`, you would play your sound as shown:
+
+```lua
+       SMODS.Sound({key = "MyCoolSound",path = "fileName.ogg",atlas_table = "ASSET_ATLAS"})
+       play_sound("MyMod_MyCoolSound", 0.85)
+```
 ## Vanilla music tracks
 The following overview provides a list of music tracks present in the base game and when they play. Custom music with conditions overrides all of these.
 - `music1`: default track. Plays when none of the below apply
