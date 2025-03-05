@@ -159,6 +159,8 @@ G.E_MANAGER:add_event(event)
 
 This works by storing a reference to the event, then setting the start_timer property to false. This will cause the event to think it never started the timer, and as such restart it after running the event, causing it to repeat every 5 seconds.
 
+ We use `timer = "UPTIME"` here as the default (`"REAL"`) is reset when returning to the menu or starting a new game. Without this the event would not fire until the timer catches up to what it was.
+
 This event also set's some properties to make sure it doesn't get block, block other events, and run even if the game is paused. If you want to make sure you can stop this event, then you could add some check for some variable then return if it's true or smth.
 
 
