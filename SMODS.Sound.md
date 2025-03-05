@@ -65,16 +65,23 @@ Mods
 	- Polls `select_music_track` on all sound objects that have it, returns the key of the music to play.
 	- You may override this function to take full control of the played music.
 
-## Notes
-Sounds can be loaded in any of your mod's json files.  To prevent collision if two mods have the same sound, all sounds
- must be accessed using the prefixed defined in your mod's `.json` file under the `prefix` property.
+## Playing sounds
 
-For example, if your mod prefix is defined as `prefix: "MyMod"`, you would play your sound as shown:
+The `play_sound` function can be used to play a sound at any time. 
+- Usage: `play_sound(key, pitch, volume)`
+- Example: `play_sound('MyMod_MyCoolSound', 0.7, 0.55)`
+> [!IMPORTANT]
+> When playing a sound, the game has no context of being called from your mod. Thus, it is always necessary to include your [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata) when accessing your custom sounds.
 
+It is also possible to play a sound with any message returned from a [calculate function](https://github.com/Steamodded/smods/wiki/calculate_functions) by adding a `sound` field to the effect table.
+- Example:
 ```lua
-       SMODS.Sound({key = "MyCoolSound",path = "fileName.ogg",atlas_table = "ASSET_ATLAS"})
-       play_sound("MyMod_MyCoolSound", 0.85)
+return {
+	message = localize('k_upgrade_ex'),
+	sound = 'MyMod_UpgradeSound',
+}
 ```
+
 ## Vanilla music tracks
 The following overview provides a list of music tracks present in the base game and when they play. Custom music with conditions overrides all of these.
 - `music1`: default track. Plays when none of the below apply
