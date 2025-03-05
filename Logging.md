@@ -12,11 +12,19 @@ Steamodded implements 6 levels of logging, each with a different purpose. The le
 
 ## Viewing Logs
 
-The default log sink (i.e., the place where logs go) is to the Lovely console window, as Lovely is required for Steammodded and 'already available for free'.  This means you can use this logging in your own mods.
+There a few different methods of viewing logs, with their own pros and cons. Below is a list of them, sorted by ease of use:
 
-> *Note*: The default log level captured to the console and text files is Information.  If you'd like to capture Trace or Debug logs, you can change this setting in the Balatro Settings menu.
-
-Be sure to use `sendInfoMessage` if you haven't changed the default log level.  Also keep in mind that more logs can overwhelm users, so when shipping a mod it is good to change the log level to a lower level when releasing a mod.
+- Lovely Console (or the terminal on MacOS)
+  - Lovely prints all logs received to the console while the game is running. This is the simplest method to view the logs as it's already running in normal SMODS installs.
+- Lovely log files
+  - Lovely writes the contents of the logs to log files in the `Mods/lovely/log` folder in your Balatro config folder. This is useful for sharing logs with others and checking logs after the game has been closed.
+- [DebugPlus](https://github.com/WilsontheWolf)
+  - DebugPlus is a mod to help with debugging. One of the features it implements is an in game console. Logged messages will show up for a few seconds when logged in game, and you can open the console with `/` to view all logs.
+  - By default DebugPlus hides Debug and Trace logs. To view these logs, you will need to switch the log level in it's config to DEBUG (Mods > DebugPlus > Console)
+- SMODS Debug Console
+  - SMODS includes a console window that can be used with it. If you have python installed you can run it on [tk_debug_window.py](https://github.com/Steamodded/smods/blob/main/tk_debug_window.py). This console has some more advanced features such as searching/filtering the logs.
+  - To get logs, you need to launch the console before launching the game.
+  - This method does not work when using `print` to log, unlike the other methods listed.
 
 ## Logging usage
 
