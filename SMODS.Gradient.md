@@ -1,5 +1,5 @@
 # API Documentation: `SMODS.Gradient`
-This class offers a standardized way of drawing sprites and shaders on cards instead of having to rely on patching `Card:draw()`.
+This class helps create colours that change over time between two or more specified endpoint colours. A gradient can be used at any point where a colour is expected.
 - **Required parameters:**
 	- `key`
     - `colours`: An array of two or more colours for the gradient to interpolate between.
