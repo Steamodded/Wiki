@@ -20,6 +20,7 @@
     - Returns weight. Use for finer control over the rarity's weight. 
 - `gradient(self, dt)`
     - Used to control the badge colour gradient.
+    - **Defining a `gradient` function on your rarity is deprecated.**
 
 ## Util methods
 - `SMODS.poll_rarity(_pool_key, _rand_key) -> key`
