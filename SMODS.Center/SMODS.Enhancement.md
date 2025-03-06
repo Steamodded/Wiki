@@ -23,6 +23,14 @@
         ```
         - For conditionally granting any of these values, use a `calculate` function instead!
         - Note: `discovered` and `unlocked` on enhancements are currently unsupported.
+    - `pools`: List of keys to ObjectTypes this center should be injected into
+		-  Expects a list of keys like this:
+		```lua
+			{
+				["Foo"] = true,
+				["Bar"] = true,
+			}
+		```
     - `replace_base_card`: If `true`, don't draw base card sprite or give base card chips.
     - `no_rank`: If `true`, enhanced card has no rank.
     - `no_suit`: If `true`, enhanced card has no suit.

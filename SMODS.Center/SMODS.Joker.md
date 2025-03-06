@@ -9,6 +9,14 @@
 	- `rarity = 1`
         - `1` = Common, `2` = Uncommon, `3` = Rare, `4` = Legendary
         - [Modded rarities](https://github.com/Steamodded/smods/wiki/SMODS.Rarity) are specified using their key (including your mod prefix)
+	- `pools`: List of keys to ObjectTypes this center should be injected into
+		-  Expects a list of keys like this:
+		```lua
+			{
+				["Foo"] = true,
+				["Bar"] = true,
+			}
+		```
 	- `cost = 3`,
 	- `blueprint_compat = false` (**Purely cosmetic, you need to define your Joker's blueprint behavior in code**),
 	- `eternal_compat = true`,

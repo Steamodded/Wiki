@@ -6,6 +6,14 @@
 - **Optional parameters** *(defaults)*:
     - `atlas = 'Voucher', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
     - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+	- `pools`: List of keys to ObjectTypes this center should be injected into
+		-  Expects a list of keys like this:
+		```lua
+			{
+				["Foo"] = true,
+				["Bar"] = true,
+			}
+		```
 	- `cost = 10`,
     - `requires`: specify a list of one or more vouchers by their **full key** (e.g. `'v_grabber'` for vanilla vouchers, or `'v_pref_myvoucher'` for a modded voucher from the mod with prefix `'pref'`)
 

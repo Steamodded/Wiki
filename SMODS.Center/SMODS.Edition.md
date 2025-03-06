@@ -19,6 +19,14 @@
 				card_limit = 2,
 			}
 		```
+	- `pools`: List of keys to ObjectTypes this center should be injected into
+		-  Expects a list of keys like this:
+		```lua
+			{
+				["Foo"] = true,
+				["Bar"] = true,
+			}
+		```
 	- `in_shop = false`: Whether the edition can spawn naturally in the shop/booster packs.
 	- `weight = 0`: The weighting of the edition, see below for more details.
 	- `extra_cost`: The extra cost applied to cards in the shop with the edition.

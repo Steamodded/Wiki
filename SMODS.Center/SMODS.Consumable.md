@@ -8,6 +8,14 @@
     - `atlas = 'Tarot', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
     - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `cost = 3`,
+	- `pools`: List of keys to ObjectTypes this center should be injected into
+		-  Expects a list of keys like this:
+		```lua
+			{
+				["Foo"] = true,
+				["Bar"] = true,
+			}
+		```
     - `hidden` for legendary consumables like The Soul. For further customization:
 		- `soul_set = 'Spectral'`, legendaries may appear when a card of either their own set or this one are being generated.
 		- `soul_rate = 0.003`, determines how likely this legendary is to replace each card in a pack

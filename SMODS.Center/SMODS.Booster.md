@@ -10,6 +10,14 @@
     - `config, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
         - The default `config` table is `{ extra = 3, choose = 1 }`; `extra` is the amount of cards in the pack, `choose` is the amount of choices.
         - Note: `unlocked` on boosters is currently unsupported.
+	- `pools`: List of keys to ObjectTypes this center should be injected into
+		-  Expects a list of keys like this:
+		```lua
+			{
+				["Foo"] = true,
+				["Bar"] = true,
+			}
+		```
     - `group_key`: Key to the group name (see above) of this booster. Useful when multiple booster packs share the same group name.
 	- `cost = 4`,
     - `weight = 1`: Determines how freqently the pack appears in the shop.
