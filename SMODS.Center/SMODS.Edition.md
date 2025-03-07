@@ -105,6 +105,14 @@ end
 	- `silent`, *boolean*
 Use this function to set the edition of a card
 
+**Example**
+
+If you have created a new edition called **MyEdition**, and your mod prefix key is defined as **MyFirstMod**, you would use this syntax to apply your edition to a card.
+
+```lua
+card:set_edition("e_MyFirstMod_MyEdition", true)
+```
+
 - `poll_edition(_key, _mod, _no_neg, _guaranteed, _options)` *(defaults)*
 	- `_key = edition_generic`, *string* - key value for a random seed
 	- `_mod = 1`, *number* - scale of chance against base card
