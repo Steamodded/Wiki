@@ -52,9 +52,9 @@ These functions facilitate specific tasks that many mods may use but may be hard
 - `SMODS.eval_this(card, effects)`
     - Given a `Card` object and a table that could be returned from a `calculate` function, evaluates the specified effects on this card while allowing the `calculate` function to continue on. You'll need to use this if your joker shows multiple consecutive messages in the main calculation phase.
     - Supported keys in `effects` include `mult_mod, chip_mod, Xmult_mod, message`, but you can extend the function to include your own effects.
-- `SMODS.change_base(card, suit, rank) -> bool`
+- `SMODS.change_base(card, suit, rank) -> Card?, string?`
     - Given a `Card` representing a playing card, changes the card's suit, rank, or both. Either argument may be omitted to retain the original suit or rank.
-    - This function returns `false` if it fails. It is recommended to always wrap calls to it in `assert` so errors don't go unnoticed.
+    - This function returns `nil` if it fails, with the second argument being a string with an error message. It is recommended to always wrap calls to it in `assert` so errors don't go unnoticed.
     - Examples: `assert(SMODS.change_base(card, 'Hearts'))` converts a card into Hearts. `assert(SMODS.change_base(card, nil, 'Ace'))` converts a card into an Ace. `assert(SMODS.change_base(card, 'Hearts', 'Ace'))` converts a card into an Ace of Hearts.
 - `SMODS.find_card(key, count_debuffed) -> table`
     - This function replaces `find_joker`. It operates using keys instead of names, which avoids overlap between mods.
