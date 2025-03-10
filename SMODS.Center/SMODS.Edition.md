@@ -27,7 +27,7 @@
 				["Bar"] = true,
 			}
 		```
-	- `in_shop = false`: Whether the edition can spawn naturally in the shop/booster packs.
+	- `in_shop = false`: Whether the edition can spawn naturally in the shop/booster packs. Ignored if `in_pool` on this edition returns `true`.
 	- `weight = 0`: The weighting of the edition, see below for more details.
 	- `extra_cost`: The extra cost applied to cards in the shop with the edition.
 	- `apply_to_float = false`: Whether the shader should be applied to floating sprites or not.
@@ -49,6 +49,9 @@
 	- Used to modify Card with edition when it is loaded from save file.
 - `draw(self, card, layer)`
 	- Draws the edition's shader. `self.shader` is drawn by default when this is absent.
+- `in_pool(self, args) -> bool`
+	- Define custom logic for when an edition is allowed to spawn. `A card with this edition can spawn if `in_pool` returns true and all other checks are met.`
+	- `args` table contains `source`, which is the seed key used when calling `poll_edition`.
 ## Other information
 ### SMODS.Shader
 A shader is required for a custom edition.
