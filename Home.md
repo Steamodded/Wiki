@@ -35,8 +35,8 @@ Now you're ready to install the **Lovely injector**. Please follow the installat
   > [!NOTE]
   > On Linux systems with a snap installation of Steam, the save directory is slightly different: `~/snap/steam/common/.local/share/Steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro`
 4. Create a folder named `Mods` if it doesn't already exist. Open your `Mods` folder.
-5. Inside the extracted zip file, you should find a directory named `smods-main`. Move this interior folder into your `Mods` folder. Ensure there is more than a single folder inside.
-6. To update Steamodded later, delete the `smods-main` folder and repeat steps 1-5.
+5. Inside the extracted zip file, you should find a single directory. Move this interior folder into your `Mods` folder. Ensure there is more than a single folder inside.
+6. To update Steamodded later, delete your Steamodded folder from step 5 and repeat steps 1-5.
 
 ### Method (3b): Using the command line
 *This method requires [Git](https://git-scm.com/downloads). If you have completed Method (3a), please skip this step. Your installation is complete.*
