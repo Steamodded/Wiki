@@ -22,12 +22,12 @@ Game Objects
   * [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language)
   * [SMODS.ObjectType](https://github.com/Steamodded/smods/wiki/SMODS.ObjectType)
   * [SMODS.PokerHand](https://github.com/Steamodded/smods/wiki/SMODS.PokerHand)
+  * [SMODS.Rank and SMODS.Suit](https://github.com/Steamodded/smods/wiki/SMODS.Rank-and-SMODS.Suit)
   * [SMODS.Rarity](https://github.com/Steamodded/smods/wiki/SMODS.Rarity)
   * [SMODS.Seal](https://github.com/Steamodded/smods/wiki/SMODS.Seal)
   * [SMODS.Sound](https://github.com/Steamodded/smods/wiki/SMODS.Sound)
   * [SMODS.Stake](https://github.com/Steamodded/smods/wiki/SMODS.Stake)
   * [SMODS.Sticker](https://github.com/Steamodded/smods/wiki/SMODS.Sticker)
-  * [SMODS.Suit and SMODS.Rank](https://github.com/Steamodded/smods/wiki/SMODS.Suit-and-SMODS.Rank)
   * [SMODS.Tag](https://github.com/Steamodded/smods/wiki/SMODS.Tag)
 ***
 Guides
