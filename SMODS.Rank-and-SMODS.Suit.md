@@ -1,19 +1,3 @@
-# API Documentation: `SMODS.Suit`
-- **Required parameters:**
-	- `key`
-    - `card_key`: Used to create keys for playing cards, formatted like `S_R`, where `S` is the suit's and `R` is the rank's card key. Your mod prefix gets prepended by default.
-    - `pos`: This is a partial `pos` table that only needs a `y` coordinate. As such, your atlas should organize suits in rows.
-    - `ui_pos`: Sprite position of the miniature suit symbol used in deck view.
-    - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
-        - `loc_txt` should contain a `singular` and `plural` string only. When using localization files, assign to `misc.suits_singular[key]` and `misc.suits_plural[key]` respectively.
-- **Optional parameters** *(defaults)*:
-    - `lc_atlas = 'cards_1'`: Atlas to use when high-contrast cards are disabled.
-    - `hc_atlas = 'cards_2'`: Atlas to use when high-contrast cards are enabled.
-    - `lc_ui_atlas = 'ui_1'`: Atlas for miniature suit symbols when high-contrast cards are disabled.
-    - `hc_ui_atlas = 'ui_2'`: Atlas for miniature suit symbols when high-contrast cards are enabled.
-    - `lc_colour = [white]`: Text colour when high-contrast cards are disabled.
-    - `hc_colour = [white]`: Text colour when high-contrast cards are enabled.
-    
 # API Documentation: `SMODS.Rank`
 - **Required parameters:**
 	- `key`
@@ -36,6 +20,22 @@
     - `suit_map = { Hearts = 0, Clubs = 1, Diamonds = 2, Spades = 3 }`
         - For any suit keys present as keys in `suit_map`, prefer using this rank's atlas over the suit's atlas. The value at the suit's key will be used as each sprite's `x` position instead of the one specified by the suit.
         - This indicates that you provide sprites for certain suits with your rank. Combinations of suits and ranks where neither side supports the other, blank sprites are used instead.
+
+# API Documentation: `SMODS.Suit`
+- **Required parameters:**
+	- `key`
+    - `card_key`: Used to create keys for playing cards, formatted like `S_R`, where `S` is the suit's and `R` is the rank's card key. Your mod prefix gets prepended by default.
+    - `pos`: This is a partial `pos` table that only needs a `y` coordinate. As such, your atlas should organize suits in rows.
+    - `ui_pos`: Sprite position of the miniature suit symbol used in deck view.
+    - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+        - `loc_txt` should contain a `singular` and `plural` string only. When using localization files, assign to `misc.suits_singular[key]` and `misc.suits_plural[key]` respectively.
+- **Optional parameters** *(defaults)*:
+    - `lc_atlas = 'cards_1'`: Atlas to use when high-contrast cards are disabled.
+    - `hc_atlas = 'cards_2'`: Atlas to use when high-contrast cards are enabled.
+    - `lc_ui_atlas = 'ui_1'`: Atlas for miniature suit symbols when high-contrast cards are disabled.
+    - `hc_ui_atlas = 'ui_2'`: Atlas for miniature suit symbols when high-contrast cards are enabled.
+    - `lc_colour = [white]`: Text colour when high-contrast cards are disabled.
+    - `hc_colour = [white]`: Text colour when high-contrast cards are enabled.
 
 ## API methods
 These methods are available for both suits and ranks.
