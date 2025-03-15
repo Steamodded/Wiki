@@ -151,6 +151,11 @@ python release.
 
 You need to have the debug console open before you start the game. The console will show all logs in real-time.
 
+
+### CLI Args
+
+- `-s` or `--scale` to control the font scale of console.
+
 ### Features
 
 - You can filter logs by logger name.
