@@ -356,7 +356,7 @@ if context.skipping_booster then
 }
 ```
 ---
-This context is used for effects after buying a card. 
+This context is used for effects after buying a card.
 ```lua
 if context.buying_card then
 {
@@ -436,7 +436,8 @@ if context.skip_blind then
 }
 ```
 ---
-This context is used for effects after adding a card to your deck. 
+This context is used for effects after adding a playing card to your deck.
+(See also `context.card_added` for non-playing cards.)
 ```lua
 if context.playing_card_added then
 {
@@ -470,7 +471,8 @@ if context.post_trigger then
 }
 ```
 ---
-This context is used for effects when a (non-playing) card is added to the deck (`Card:add_to_deck`). 
+This context is used for effects when a (non-playing) card is added to the deck (`Card:add_to_deck`).
+(See also `context.playing_card_added` for playing cards.)
 ```lua
 if context.card_added then
 {
@@ -479,7 +481,8 @@ if context.card_added then
 	card = card
 }
 ```
-
+New playing card types may need to be excluded manually.
+A patch target is provided.
 
 
 > [!NOTE]
