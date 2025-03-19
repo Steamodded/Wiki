@@ -469,7 +469,16 @@ if context.post_trigger then
 	other_ret = ret -- the return table from the trigger
 }
 ```
-
+---
+This context is used for effects when a (non-playing) card is added to the deck (`Card:add_to_deck`). 
+```lua
+if context.card_added then
+{
+	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
+	card_added = true,
+	card = card
+}
+```
 
 
 
