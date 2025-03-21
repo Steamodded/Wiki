@@ -49,13 +49,14 @@ These functions facilitate specific tasks that many mods may use but may be hard
     - Example usage: `assert(SMODS.load_file('jokers.lua'))()`
 - `SMODS.juice_up_blind()`
     - Plays a 'juice up' animation on the Blind chip.
-- `SMODS.eval_this(card, effects)`
-    - Given a `Card` object and a table that could be returned from a `calculate` function, evaluates the specified effects on this card while allowing the `calculate` function to continue on. You'll need to use this if your joker shows multiple consecutive messages in the main calculation phase.
-    - Supported keys in `effects` include `mult_mod, chip_mod, Xmult_mod, message`, but you can extend the function to include your own effects.
 - `SMODS.change_base(card, suit, rank) -> Card?, string?`
     - Given a `Card` representing a playing card, changes the card's suit, rank, or both. Either argument may be omitted to retain the original suit or rank.
     - This function returns `nil` if it fails, with the second argument being a string with an error message. It is recommended to always wrap calls to it in `assert` so errors don't go unnoticed.
     - Examples: `assert(SMODS.change_base(card, 'Hearts'))` converts a card into Hearts. `assert(SMODS.change_base(card, nil, 'Ace'))` converts a card into an Ace. `assert(SMODS.change_base(card, 'Hearts', 'Ace'))` converts a card into an Ace of Hearts.
+- `SMODS.modify_rank(card, amount) -> Card?, string?`
+    - Given a `Card` representing a playing card, increases or decreases the card's rank by the specified `amount`. The rank is increased if `amount` is positive and decreased if it is negative.
+    - This function returns `nil` if it fails, with the second argument being a string with an error message. It is recommended to always wrap calls to it in `assert` so errors don't go unnoticed.
+    - Examples: `assert(SMODS.modify_rank(card, 1))` increases a card's rank by one, like the Strength Tarot. `assert(SMODS.modify_rank(card, -2))` decreases a card's rank by two.
 - `SMODS.find_card(key, count_debuffed) -> table`
     - This function replaces `find_joker`. It operates using keys instead of names, which avoids overlap between mods.
     - Returns an array of all jokers or consumables in the player's possession with the given key. Debuffed cards count only if `count_debuffed` is true.
