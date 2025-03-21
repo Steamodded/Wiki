@@ -15,3 +15,5 @@ This page is designed to help you find what is needed when first making a mod. I
   - The best place to find other mods is in the official [Balatro Discord](https://discord.gg/balatro).
 - Lovely is a tool that lets you patch the balatro source code, and since it's necessary for Steamodded, Steamodded mods can take advantage of it too. See [Lovely's patch documentation](https://github.com/ethangreen-dev/lovely-injector?tab=readme-ov-file#patches).
 
+# Development Tips
+- To quickly restart the game after making mod changes, press and hold `M` or press `Alt + F5`
