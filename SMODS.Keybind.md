@@ -1,0 +1,12 @@
+# API Documentation: `SMODS.Keybind`
+- **Required parameters:**
+	- `key_pressed`: The key that needs to be pressed for this keybind to activate. Keycodes are documented [here](https://love2d.org/wiki/KeyConstant).
+    - `action(self)`: Function to be called when the keybind is triggered.
+- **Optional parameters** *(defaults)*:
+    - `event = 'pressed'`: Defines when the keybind should trigger.
+        - `'pressed'`: When the key is pressed.
+        - `'released'`: When the key is released.
+        - `'held'`: When the key has been held for a specified amount of time.
+    - `held_duration = 1`: How long (in seconds) the key must be held before triggering when `event == 'held'`.
+    - `held_keys = {}`: Set of keycodes that must also be pressed for the keybind to activate. 
+    - `key`: Because there is no need to explicitly refer to a keybind elsewhere, it is not required to specify an object key here. The default value is the amount of previously registered keybinds as a string.
