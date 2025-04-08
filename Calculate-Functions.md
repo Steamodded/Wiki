@@ -217,7 +217,7 @@ This context is used for marking cards to be destroyed.
 ```lua
 if context.destroy_card then
 {
-	cardarea = G.play, -- or 'unscored'
+	cardarea = G.play -- 'unscored', G.hand, (G.deck and G.discard optionally enabled)
 	full_hand = G.play.cards,
 	scoring_hand = scoring_hand,
 	scoring_name = text,
