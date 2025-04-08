@@ -213,22 +213,26 @@ if context.final_scoring_step and context.cardarea == G.play then
 }
 ```
 ---
-This context is used for marking cards to be destroyed. 
+This context is used for marking cards to be destroyed.
 ```lua
-if context.destroy_card and context.cardarea == G.play then
+if context.destroy_card then
 {
-	cardarea = G.play, -- G.hand, (G.deck and G.discard optionally enabled)
+	cardarea = G.play, -- or 'unscored'
 	full_hand = G.play.cards,
 	scoring_hand = scoring_hand,
 	scoring_name = text,
 	poker_hands = poker_hands,
 	destroy_card = card,
-	destroying_card = card -- only when calculating in G.play
+	destroying_card = card -- only when calculating in G.play.
+	-- This is from vanilla, you can use context.destroy_card instead.
 }
 ```
 > [!TIP]
 > Your return table to destroy a card without a message should look like
 > `return { remove = true }`
+
+> [!TIP]
+> If you want a card to destroy itself, you need `...and context.destroy_card == card` to avoid destroying other cards.
 ---
 This context is used for effects on removing cards. 
 ```lua
