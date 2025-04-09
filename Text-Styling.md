@@ -122,6 +122,8 @@ Valid style modifiers are as follows:
  </tr> 
 </table>
 
+> [!IMPORTANT]
+> Modifiers are **case sensitive** – `{s:}` must be lowercase, while all other modifiers are UPPERCASE.
 
 ---
 
@@ -511,6 +513,9 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
 
 
 ## Text scale modifier `{s:}`
+> [!IMPORTANT] 
+> This modifier requires the **lowercase** `s`, unlike other modifiers which must be UPPERCASE.
+
 <code>{s:<i>scale</i>}</code> changes the size of the text.
 
 *`scale`* is a decimal value where the default size is 1.0.
