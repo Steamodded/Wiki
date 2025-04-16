@@ -86,6 +86,13 @@ calculate = function(self, card, context)
 > If you want to evaluate effects outside of the return table, use `SMODS.calculate_effect({effects}, card)`,
 > where `{effects}` is a table like the return table of a calculate function, and `card` is the card that is being evaluated.
 
+> [!WARNING]
+> If you use `context.xxx` inside `SMODS.calculate_effect` or an Event,
+> you might need to save `context.xxx` in a local variable.
+>
+> (`context` is NOT constant. It could change later and cause you
+> to reference an unrelated value.)
+
 ## Contexts
 Detailed here is a list of all contexts that are sent to calculate functions, as well as a unique identifier to use to reference them. As each context is sent to different areas, use the following logic statement to make sure you are calculating in the intended area.
 ```lua
