@@ -19,7 +19,7 @@ perma_h_dollars,  -- money on held at end of round (like gold cards)
 ```
 
 ## Re-implementation of Hiker
-This function is an example of how to use perma-bonuses in smods, based on the vanilla Hiker joker. See [Calculate Functions](https://github.com/Steamodded/smods/wiki/calculate_functions) for more information about `calculate`.
+This function is an example of how to use perma-bonuses in smods, based on the vanilla Hiker joker. See [Calculate Functions](https://github.com/Steamodded/smods/wiki/Calculate-Functions) for more information about `calculate`.
 ```lua
 SMODS.Joker{
     key = "hiker2",
