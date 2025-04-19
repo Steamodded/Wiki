@@ -80,6 +80,20 @@ return {
                     'for unlocking this card',
                 },
             },
+            -- multiple description box example
+            j_mod_multi_joker = {
+                name = 'Name',
+                text = {
+					{
+						'First line of box 1',
+						'Second line of box 1',
+					},
+                    {
+						'First line of box 2',
+						'Second line of box 2',
+					}
+				}
+            },
         },
     },
 }
