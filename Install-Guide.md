@@ -49,3 +49,7 @@ git clone https://github.com/Steamodded/smods.git
 
 ```
 3. To update Steamodded later, navigate back to the `smods` directory and run `git pull`.
+___
+
+### How to find your mods folder
+there are various ways to navigate to the Balatro mod folder, if y ou are using Windows you can just press `Win + R` and input `%Appdata%/Balatro` or you can pin the folder location to your quick access for an easier time with navigation.
