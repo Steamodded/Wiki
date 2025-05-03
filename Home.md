@@ -1,7 +1,5 @@
 # Welcome to the Steamodded wiki! The following pages form an assembly of documentation and guides for Steamodded.
-___
-# **Looking for install instructions** [Click Here]()
-___
+> [!IMPORTANT] **Looking for install instructions** [Click Here]()
 ___
 ## Useful Info for developing and Debugging
 - [API Documentation](https://github.com/Steamodded/smods/wiki/API-Documentation)
