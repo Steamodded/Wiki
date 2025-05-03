@@ -1,4 +1,21 @@
 # Metadata
+Template for copying:
+```json
+{
+	"id": "",
+	"name": "",
+	"display_name": "",
+	"author": [""],
+	"description": "",
+	"prefix": "",
+	"main_file": "",
+	"priority": 0,
+	"badge_colour": "",
+	"badge_text_colour": "",
+	"version": "",
+	"dependencies": [],
+}
+```
 The (new) standard way to specify your mod's metadata is in a separate JSON file in your mod folder, as per the following specification:
 ```js
 // Mods/your_mod/your_mod.json
@@ -32,23 +49,6 @@ The (new) standard way to specify your mod's metadata is in a separate JSON file
 		"SomeAPIMod (1.0)"
 	], // ! Use this if your mod is able to stand in for a different mod and fulfill dependencies on it. This allows the usage of a different ID so both mods can coexist. If you don't specify a valid version, your mod's version is used instead.
 	"dump_loc": false // !! Not for use in distributions. Writes all localization changes made on startup to a file, for conversion from a legacy system.
-}
-```
-Template for copying:
-```json
-{
-	"id": "",
-	"name": "",
-	"display_name": "",
-	"author": [""],
-	"description": "",
-	"prefix": "",
-	"main_file": "",
-	"priority": 0,
-	"badge_colour": "",
-	"badge_text_colour": "",
-	"version": "",
-	"dependencies": [],
 }
 ```
 ## File header (outdated)
