@@ -15,6 +15,10 @@ ___
 ___
 ## Useful Info for developing and Debugging
 - [Calculation Functions](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
+- [Event Manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager)
+- [Localization](https://github.com/Steamodded/smods/wiki/Localization)
+- [Logging](https://github.com/Steamodded/smods/wiki/Logging)
+- [Perma-bonuses](https://github.com/Steamodded/smods/wiki/Perma-bonuses)
 - [Utility Functions](https://github.com/Steamodded/smods/wiki/Utility)
 ___
 ## Basic and Simple to use SMODS Methods
@@ -50,6 +54,7 @@ ___
 ___
 ## Expert SMODS Methods
 - [Creating your own HTTPS module](https://github.com/Steamodded/smods/wiki/SMODS.https)
+- [Creating UI's outside of your mods config](https://github.com/Steamodded/smods/wiki/UI-Guide)
 - [SMODS.Edition](https://github.com/Steamodded/smods/wiki/SMODS.Edition)
 - [SMODS.Shader](https://github.com/Steamodded/smods/wiki/SMODS.Edition#smodsshader)
 ___
@@ -57,3 +62,4 @@ ___
 - [SMODS.Achievement](https://github.com/Steamodded/smods/wiki/SMODS.Achievement)
 - [SMODS.DeckSkin](https://github.com/Steamodded/smods/wiki/SMODS.DeckSkin)
 - [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language)
+- [Text Styling](https://github.com/Steamodded/smods/wiki/Text-Styling)
