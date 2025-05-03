@@ -1,6 +1,12 @@
 # Making Your First Mod
 This page is designed to help you find what is needed when first making a mod. If you are just looking on more clarifcation on something specific, you should check the sidebar to see if it's covered, or ask in the [Balatro Discord](https://discord.gg/balatro).
 
+## **If you are looking to start making a mod its reccomended to use a IDE. here is a list of commonly used IDE programs:**
+
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Visual Studio](https://visualstudio.microsoft.com/)
+- [NotePad++](https://notepad-plus-plus.org/)
+
 # First Steps 
 - If you haven't already [Install Steamodded](https://github.com/Steamodded/smods/wiki).
 - Checkout the [Mod Metadata](https://github.com/Steamodded/smods/wiki/Mod-Metadata) page for how to get your mod detected by Steamodded.
