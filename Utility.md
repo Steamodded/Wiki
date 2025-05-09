@@ -14,7 +14,7 @@ Steamodded provides utility functions that extend or replace vanilla functionali
     - Recursively stringifies an input table into pseudo-valid Lua code, leaving non-serializable values and tables above a depth of 5 into their default string representations.
 
 ## Number formatting
-- `round_number(num_precision) -> number`
+- `round_number(num, precision) -> number`
     - Rounds the input number to a given amount of decimal places.
 - `format_ui_value(value) -> string`
     - Stringifies the input if it is not a number. Otherwise return the number as it should be displayed in the UI (e.g. scientific notation).
