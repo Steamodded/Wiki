@@ -1,6 +1,6 @@
 # The Balatro Event System
 
-You can make a new event and dispatch it like so 
+You can make a new event and dispatch it like so
 
 ```lua
 G.E_MANAGER:add_event(Event({}))
@@ -8,11 +8,11 @@ G.E_MANAGER:add_event(Event({}))
 
 Which is an event which does nothing :tada:
 
-However, you probably want to do something in this event. Let's cover some of the properties you can pass to the event handler
+However, you probably want to do something in this event. Let's cover some of the properties you can pass to the event handler.
 
 
 # Properties
-These can be passed in a table to the Event function. 
+These can be passed in a table to the Event function.
 
 trigger - string:
 - "immediate" (default) - Runs as soon as possible
@@ -21,23 +21,23 @@ trigger - string:
 - "ease" - Used to interpolate values. Useful for score incrementing or movement. Also see ref_table, ref_value and ease_to for how to set this.
 - "before" - Will run immediately, but if it doesn't complete before the set amount of time, it will be cancelled. Also see delay
 
-blocking - boolean: Whether or not this event may block other events. Default is true
+blocking - boolean: Whether or not this event may block other events. Default is true.
 
-blockable - boolean: Whether or not this event may be blocked by other events is true
+blockable - boolean: Whether or not this event may be blocked by other events. Default is true.
 
 func - function: The function to call for the event. When this is called depends on the trigger type.
     This function takes no arguments. 
     It returns whether it completed. If true, then the event is over, if false, then it will be called again next time the event manager processes events (the next frame).
-    It's behavior for each trigger is as follows:
+    Its behavior for each trigger is as follows:
 - immediate - Called when events are next processed
 - after - Called when the time is over
 - condition - Behaves like immediate. Providing a function will overwrite the default condition behaviour. If you want to do stuff conditionally and use a function, then just do your check and return false if the condition is not satisfied.
 - ease - Called each frame with the current value of the ease. The function defintion is a bit different here. The first argument is the current value of the ease. The return value is then set to the value stored in the table. The default function just returns the current value.
-- "before" - Called immediately. If the event does not complete after the delay, then it is automatically canceled.
+- "before" - Called immediately. If the event does not complete after the delay, then it is automatically cancelled.
 
-delay - number: The time to take, in seconds. Used for after, ease and before. Note this value is effected by the game speed option. Default is 0.
+delay - number: The time to take, in seconds. Used for after, ease and before. Note this value is affected by the game speed option. Default is 0.
 
-ref_table - table: The table to check for the condition. Used for condition and ease. No default
+ref_table - table: The table to check for the condition. Used for condition and ease. No default.
 
 ref_value - string: The key in ref_table to get the value. Used for condition and ease. No default.
 
@@ -61,11 +61,11 @@ G.E_MANAGER:add_event(Event({
 }))
 ```
 
-Now of course, you might be wondering, why wouldn't I just call the function directly? Well, the real power of this is when used in tandom with other events. If you run this event in the  calculate_joker context, you'll notice that it won't run right away, but only after the joker(s) before it are done doing their stuff. 
+Now of course, you might be wondering, why wouldn't I just call the function directly? Well, the real power of this is when used in tandem with other events. If you create this event in a calculate() function, you'll notice that it won't run right away, but only after the joker(s) before it are done doing their stuff.
 
 If you remember from earlier, there are blockable and blocking properties on events. This is what allows this to happen. The previous calculations are blocking, and your calculation is blockable, so it will wait until the blocking events are done before running.
 
-This also works for after events. For example, if you want to run the function after 5 seconds, you can do this:
+This also works for "after" events. For example, if you want to run the function after 5 seconds, you can do this:
 
 ```lua
 G.E_MANAGER:add_event(Event({
@@ -78,11 +78,11 @@ G.E_MANAGER:add_event(Event({
 }))
 ```
 
-(you may notice this might be less than 5 seconds. This is because the delay is effected by the game speed option)
+(you may notice this might be less than 5 seconds. This is because the delay is affected by the game speed option)
 
-Also note that this event will block for those 5 seconds, so other events will also wait your 5 seconds, just like the immediate event.
+Also note that this event will block for those 5 seconds, so like earlier, other events will wait until after your event is over. In this case they'll wait until after those 5 seconds.
 
-Now, let's say you want to block until a certain condition is met. You can do this by checking your condition, and returning false if it is not met. For example, if you want to wait until the player has 2 hands left, you can do this:
+Now, let's say you want to wait until a certain condition is met. You can do this by checking your condition, and returning false if it is not met. For example, if you want to wait until the player has 2 hands left, you can do this:
 
 ```lua
 G.E_MANAGER:add_event(Event({
@@ -97,7 +97,7 @@ G.E_MANAGER:add_event(Event({
 }))
 ```
 
-Note the blocking false I made. This may be nessicary if what you are waiting for is blockable (you can lock up the game if you're not careful).
+Note `blocking = false`. This may be necessary if something blockable happens before what you are waiting for (you can lock up the game if you're not careful).
 
 Now let's get to the last main type. Easing. This is used for interpolating values. For example, if you want to increase the round score by 1000 over 5 seconds, you can do this:
 
@@ -114,9 +114,10 @@ G.E_MANAGER:add_event(Event({
 and with that, you should have everything you need to use events. However, I'll cover some more stuff just in case you want more.
 
 # Further Reading
-So far we have just been adding events to the base queue. However, there are a few other queues for us to use.
 
 ## Queues
+So far we have just been adding events to the base queue. However, there are a few other queues for us to use.
+
 When calling G.E_MANAGER:add_event, you can pass in a second argument for the queue. This is string corresponding to the queue type (default is "base"). The queues are as follows:
 
 - base - The default queue. This is where most events should go.
@@ -157,23 +158,23 @@ event = Event {
 G.E_MANAGER:add_event(event)
 ```
 
-This works by storing a reference to the event, then setting the start_timer property to false. This will cause the event to think it never started the timer, and as such restart it after running the event, causing it to repeat every 5 seconds.
+This works by storing a reference to the event, then setting the start_timer property to false. This will cause the event to think it never started the timer, and as such the event restarts after running the event, causing it to repeat every 5 seconds. (Later note: it may take more than 5 seconds depending on how frequently the game updates)
 
- We use `timer = "UPTIME"` here as the default (`"REAL"`) is reset when returning to the menu or starting a new game. Without this the event would not fire until the timer catches up to what it was.
+We use `timer = "UPTIME"` here as the default timer (`"REAL"`) is reset when returning to the menu or starting a new game. Without this the event would not fire until the timer catches up to what it was.
 
-This event also set's some properties to make sure it doesn't get block, block other events, and run even if the game is paused. If you want to make sure you can stop this event, then you could add some check for some variable then return if it's true or smth.
+This event also sets some properties to make sure it doesn't get blocked or block other events, and it runs even if the game is paused. If you want to make sure you can stop this event, then you could, say, add some check for some variable then return if it's true.
 
 
-## More properites
+## More properties
 These are some more event properties you can use, but aren't really that useful in most situations.
 
-start_timer - boolean: If true, then it will use the starting time of the event being created. Otherwise this will start them timer the first time the event is processed. Default is false.
+start_timer - boolean: If true, then it will use the starting time of the event being created. Otherwise this will start the timer the first time the event is processed. Default is false.
 
 no_delete - boolean: If true, then when clearing the event queue, this event will not be deleted. You probably don't want to use this unless you want to have an event that never stops. Default is false.
 
-force_pause - boolean: If true, then the event will run even if the game is paused. This only has an effect if your command was created when the game wasn't paused. Default is false.
+force_pause - boolean: If true, then the event will run even if the game is paused. This only has an effect if your event was created when the game wasn't paused. Default is false.
 
-timer - string: The name of the timer to use. Default is "REAL" of created while paused (or with force_pause) otherwise "TOTAL". Can take any of the keys in G.TIMERS.
+timer - string: The name of the timer to use. Default is "REAL" if created while paused (or with force_pause) otherwise "TOTAL". Can take any of the keys in G.TIMERS.
 
 ***
 *Guide written by WilsontheWolf*
