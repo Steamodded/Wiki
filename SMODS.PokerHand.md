@@ -3,14 +3,14 @@
 	- `key`
 	- `mult`, `chips`: Base Mult and Chips
     - `l_mult`, `l_chips`: Amount of Mult/Chips scaling per hand level
-    - `example`: Hand example to show in the Run Info tab, format:
+    - `example`: Hand example to show in the Run Info tab. The following keys are supported: `enhancement`, `edition`, `seal`. Format:
     ```lua
         {
             { 'S_K', false }, -- King of Spades, does not score
             { 'S_9', true }, -- 9 of Spades, scores
-            { 'D_9', true }, -- 9 of Diamonds, scores
+            { 'D_9', true, edition = 'e_negative', enhancement = 'm_lucky' }, -- Negative Lucky 9 of Diamonds, scores
             { 'H_6', false }, -- 6 of Hearts, does not score
-            { 'D_3', false } -- 3 of Diamonds, does not score
+            { 'D_3', false, seal = 'Red' } -- Red Seal 3 of Diamonds, does not score
         }
     ```
     - `evaluate`
