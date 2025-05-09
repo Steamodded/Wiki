@@ -454,7 +454,7 @@ if context.playing_card_added then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
 	playing_card_added = true,
-	cards = cards -- the cards being added (sometimes is true when used from vanilla items)
+	cards = cards -- the cards being added
 }
 ```
 ---
