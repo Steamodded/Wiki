@@ -10,8 +10,17 @@ Steamodded provides utility functions that extend or replace vanilla functionali
     - Given an input function, outputs details on its name, source, line of definition and number of upvalues.
 - `serialize(t, indent) -> string`
     - Given an input table, creates a string containing Lua code that evaluates to the serializable part of `t`. Information may be lost, and circular references are not resolved.
+- `serialize_string(s) -> string`
+    - Serializes the provided string.
 - `tprint(t, indent) -> string`
     - Recursively stringifies an input table into pseudo-valid Lua code, leaving non-serializable values and tables above a depth of 5 into their default string representations.
+- `SMODS.deepfind(tbl, val, mode, immediate) -> table`
+    - Searches for provided `val` anywhere deep within the provided `tbl`. Returns a table of finds. 
+    - `mode` - `"index"`/`"i"` will have `val` compared to the indexes in the tables. `"value"`/`"v"` will have `val` compared to the values in the tables. 
+    - `immediate` - Will return immediately after finding the value the first time.
+- `SMODS.debug_calculation()`
+    - Enables debugging of Joker calculations. 
+    - Every time that `Card:calculate_joker()` is called, `G.contexts` is updated for every value within `context`.
 
 ## Number formatting
 - `round_number(num, precision) -> number`
@@ -36,7 +45,6 @@ Steamodded provides utility functions that extend or replace vanilla functionali
     - `guaranteed` - If this is `true`, always generate an enhancement.
     - `options` - A table of possible enhancements to generate. Defaults to all available enhancements.
     - `type_key` - Randomness seed for the roll which enhancement to generate.
-
 
 ## Mod-facing utilities
 These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.
@@ -68,7 +76,7 @@ These functions facilitate specific tasks that many mods may use but may be hard
     - `area` - The card area this will be emplaced into, e.g. `G.jokers`, `G.consumeables`. Default values are determined based on `set`.
     - `legendary` - Set this to `true` to generate a card of Legendary rarity.
     - `rarity` - If this is specified, skip rarity polling and use this instead of a chance roll between 0 and 1.
-        - Under vanilla conditions, values up to 0.7 indicate Common rarity, values above 0.7 and up to 0.95 indicate Uncommon rarity, and values above 0.95 indicate Rare rarity.
+        - Under vanilla conditions, values up to 0.7 indicate "Common" rarity, values above 0.7 and up to 0.95 indicate "Uncommon" rarity, and values above 0.95 indicate "Rare" rarity.
     - `skip_materialize` - If this is `true`, a `start_materialize` animation will not be shown.
     - `soulable` - If this is `true`, hidden Soul-type cards are allowed to replace the generated card. Usually, this is the case for cards generated for booster packs.
     - `key` - If this is specified, generate a card with the given key instead of the random one.
@@ -92,10 +100,46 @@ These functions facilitate specific tasks that many mods may use but may be hard
     - Provides score requirements for higher stages of ante scaling. If you want to implement your own scaling rules, you should modify this function.
 - `SMODS.stake_from_index(index) -> string`
     - Given an index from the Stake pool, return the corresponding key, or `'error'` if it doesn't exist.
+- `SMODS.smart_level_up_hand(card, hand, instant, amount)`
+    - Akin to vanilla's `level_up_hand()`, but avoids uneccessary calling of `update_hand_text()`
+    - `card` - If included, juices up this card during the animation
+    - `hand` - Key to the hand being leveled up.
+    - `instant` - Skips the level up animations.
+    - `amount` - How much the poker hand is leveled. Defaults to 1.
+- `SMODS.blueprint_effect(copier, copied_card, context) -> table?`
+    - Helper function to copy the ability of another joker, akin to Blueprint/Brainstorm. 
+    - `copier` is the card the will be copying the effect of `copied_card`, using the provided `context` table. 
+    - The returned table is the calculated effect of `copied_card`, with the display card set to `copier`. 
+    - Example: 
+        ```lua
+		calculate = function(self, card, context)
+			-- This is an implementation of Brainstorm
+			local other_joker = G.jokers.cards[1]
+			local other_joker_ret = SMODS.blueprint_effect(other_joker, card, context)
+
+			if other_joker_ret then
+				return other_joker_ret
+			end
+		end
+        ```
+- `SMODS.has_enhancement(card, key) -> bool`
+    - Returns true if the provided `card` has a specific enhancement.
+- `SMODS.change_voucher_limit(mod)`
+    - Modifies the Voucher shop limit by `mod`.
+- `SMODS.change_booster_limit(mod)`
+    - Modifies the Booster Pack shop limit by `mod`.
+- `SMODS.change_free_rerolls(mod)`
+    - Modifies the current amount of free shop rerolls by `mod`.
+- `SMODS.shallow_copy(t) -> table`
+    - Returns a shallow copy of the provided table.
 - `time(func, ...) -> number`
     - Calls an input function with any given additional arguments: `func(...)` and returns the time the function took to execute in milliseconds. The return value from `func` is lost.
+
 ## Internal utilities
-These functions are used internally and may be of use to you if you're modifying Steamodded's injection process.
+These functions are used internally by Steamodded which may be of use for mods.
+
+### Injection
+These are functions used during the injection process of mods or GameObjects.
 - `SMODS.save_d_u(o)`
     - Saves the default discovery and unlock states of an object into a separate field for later use before they are overwritten with profile data.
 - `SMODS.SAVE_UNLOCKS()`
@@ -121,3 +165,72 @@ These functions are used internally and may be of use to you if you're modifying
     - Adjusts values in save data to make the save compatible with Steamodded's way of storing deck wins by stake key instead of index.
 - `SMODS.restart_game()`
     - Restarts the game.
+- `SMODS.get_optional_features()`
+    - Inserts all enabled optional features by injected mods into the `SMODS.optional_features` table.
+
+### Calculation
+These functions are used for handling calculation events.
+- `SMODS.calculate_context(context, return_table) -> table?`
+	- Main function used to calculate effects on cards for the provided `context` over a majority of CardAreas.
+	- If `return_table` is provided, the function will not return a table and instead put all the calculation returns into
+	- Mods can hook this function to add extra CardAreas.
+- `SMODS.calculate_card_areas(_type, context, return_table, args) -> table`
+	- Calculates effects on cards for a specific group of CardAreas based on `_type`.
+- `SMODS.score_card(card, context)`
+	- Scores the provided `card`.
+- `SMODS.calculate_main_scoring(context, scoring_hand)`
+	- Handles the main scoring hand calculation event.
+	- `scoring_hand` - Uses this table of cards if provided, else it looks through `context.cardarea.cards` for if any of them are inside of `context.scoring_hand`. 
+- `SMODS.calculate_end_of_round_effects(context)`
+	- Handles the end of round calculation event.
+- `SMODS.calculate_destroying_cards(context, cards_destroyed, scoring_hand)`
+	- Handles the card destroy calculation event.
+	- `scoring_hand` - Uses this table of cards if provided, else it looks through `context.cardarea.cards` for if any of them are inside of `context.scoring_hand`. 
+- `SMODS.calculate_individual_effect(effect, scored_card, key, amount, from_edition)`
+	- Used to trigger a calculation effect based on provided `key`.
+- `SMODS.calculate_effect_table_key(effect_table, key, card, ret)`
+	- Triggers one key of an effect table returned from `eval_card`.
+- `SMODS.trigger_effects(effects, card)`
+	- Used to calculate a table of effects generated in `G.FUNCS.evaluate_play`.
+- `SMODS.get_card_areas(_type, _context) -> table`
+    - Returns a table of CardAreas based on the provided `_type` and `_context`. Can be hooked or injected into to add your own CardAreas.
+    - Possible values of `_type`:
+        - `"playing_cards"` - Playing card evaluation.
+			- Default CardAreas are `G.hand`, `G.play` (if `_context` is not `"end_of_round"`), `G.deck` (if the "Deck Calculation" feature is enabled), and `G.discard` (if the "Discard Calculation" feature is enabled).
+        - `"jokers"` - Joker evaluation.
+			- Default CardAreas are `G.jokers`, `G.consumeables`, and `G.vouchers`. 
+        - `"individual"` - Individual object evaluation.
+			- Unlike above, this does not return CardAreas and instead returns tables with an `object` and `scored_card` field. `object` if the object that will have the `calculate` function called on, and `scored_card` is the card/object used for animation.
+			- Default objects are the selected Back and the selected Blind.
+    - `_context` - Optional string to indicate extra information about the context.
+- `SMODS.calculate_retriggers(card, context, _ret) -> table`
+    - Calculates the retriggers on a Joker. Requires the "Joker Retrigger" feature to be enabled.
+- `SMODS.calculate_repetitions(card, context, reps)`
+    - Calculates the repetitions on a playing card.
+- `SMODS.get_enhancements(card, extra_only) -> table<key, true>`
+    - Returns a table of key-bool pairs, the keys being the enhancements this card counts as having.
+    - If the "Quantum Enhancement" feature is not enabled, this function will only return the card's current enhancement.
+    - `extra_only` - The returned table will exclude the card's current enhancement.
+- `SMODS.calculate_quantum_enhancements(card, effects, context)`
+    - Calculates quantum enhancements. Requires the "Quantum Enhancements" feature to be enabled.
+- `SMODS.shatters(card) -> bool`
+    - Returns true if the card should be shattered.
+- `SMODS.in_scoring(card, scoring_hand) -> bool`
+    - Returns true if the card is within the scoring hand.
+
+### Misc.
+These are functions used by SMODS for miscellaneous features.
+- `SMODS.size_of_pool(pool) -> number`
+    - Returns the size of provided `pool`, excluding "UNAVAILABLE".
+- `SMODS.get_next_vouchers(vouchers) -> table`
+    - Returns the next Vouchers to spawn.
+- `SMODS.add_voucher_to_shop(key) -> Card`
+    - Adds a Voucher based on provided `key` to the shop.
+- `SMODS.add_booster_to_shop(key) -> Card`
+    - Adds a Booster Pack based on provided `key` to the shop.
+- `SMODS.signed(val) -> string`
+    - Returned a signed string of `val`, prefixed with "+" if positive.
+- `SMODS.signed_dollars(val) -> string`
+    - Returned a signed string of `val` as dollars, prefixed with "$" if positive and "-$" if negative.
+- `SMODS.multiplicative_stacking(base, perma) -> number`
+    - Returns the result of multiplying `base` and `perma + 1`.
