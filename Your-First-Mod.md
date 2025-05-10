@@ -12,6 +12,7 @@ This page is designed to help you find what is needed when first making a mod. I
 - Often, something you want to do has already been implemented in the base game. Familiarizing yourself with the game's code is an important step to learn Balatro modding. To get Balatro's source code, extract the game's executable file with [7-zip](https://www.7-zip.org/). For Mac, find `Balatro.love` inside `Balatro.app` and rename it to `Balatro.zip`, then extract `Balatro.zip`. A handful of vanilla jokers have been reimplemented in a [Steamodded example mod](https://github.com/Steamodded/examples/tree/master/Mods/ExampleJokersMod) for reference.
 - It can also be useful to look at code from other mod creators.
   - Steamodded has some [Example Mods](https://github.com/Steamodded/examples/tree/master/Mods).
+  - You can find example implementations of the vanilla Jokers using Steamodded [here](https://github.com/nh6574/VanillaRemade) (Work In Progress)
   - The best place to find other mods is in the official [Balatro Discord](https://discord.gg/balatro).
 - Lovely is a tool that lets you patch the balatro source code, and since it's necessary for Steamodded, Steamodded mods can take advantage of it too. See [Lovely's patch documentation](https://github.com/ethangreen-dev/lovely-injector?tab=readme-ov-file#patches).
 
