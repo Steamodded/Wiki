@@ -35,6 +35,34 @@ If you want the mod config to be handled differently from how SMODS saves config
 ## Optional Features
 Steamodded comes with additional opt-in features that requires mods to manually turn them on. 
 
+Available Features: 
+- `quantum_enhancements` - Enables "Quantum Enhancement" contexts. Cards can count as having multiple enhancements at once. 
+- `retrigger_joker` - Enables "Joker Retrigger" contexts. Jokers can be retriggered by other jokers or effects. 
+- `post_trigger` - Enables "Post Trigger" contexts. Allows calculating effects after a Joker has been calculated. 
+- `cardareas` - Table of features that would add 
+	- `deck` - Adds `G.deck` to CardArea checks, allowing cards within the deck to be included in calculation.
+	- `discard` - Adds `G.discard` to CardArea checks, allowing discarded cards to be included in calculation.
+
+### `mod.optional_features`
+Tables of SMODS features to enable if the mod is loaded.
+```lua
+SMODS.current_mod.optional_features = {
+	quantum_enhancements = true, -- will enable "Quantum Enhancement"
+	-- Add any other features to enable here.
+	cardareas = {}
+}
+
+-- `mod.optional_features` also works as a function.
+-- Returns a table of features to enable.
+SMODS.current_mod.optional_features = function()
+	return {
+		quantum_enhancements = true,
+		-- ...
+		cardareas = {}
+	}
+end
+```
+
 ## `mod.extra_tabs`
 You may want to create additional pages besides your config tab.
 
