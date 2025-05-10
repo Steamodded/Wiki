@@ -1,5 +1,7 @@
-Welcome to the Steamodded wiki! The following pages form an assembly of documentation and guides for Steamodded.
-# How to install Steamodded
+# Welcome to the Steamodded wiki! The following pages form an assembly of documentation and guides for Steamodded.
+___
+# Want to start making a mod, go [here](https://github.com/Steamodded/smods/wiki/Your-First-Mod)
+# Looking on how to install Steamodded read the installation Guide below
 ## Step 1: Anti-virus setup
 *Skip ahead to step 2 if you are not using any anti-virus software.*
 
@@ -50,3 +52,4 @@ git clone https://github.com/Steamodded/smods.git
 
 ```
 3. To update Steamodded later, navigate back to the `smods` directory and run `git pull`.
+___
