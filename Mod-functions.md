@@ -1,4 +1,4 @@
-# Mod functions
+# Mod Functions
 ## `mod.config_tab`
 Your mod can have an optional config page that is accessed through the Mods menu. 
 
@@ -28,6 +28,12 @@ SMODS.current_mod.config_tab = function()
 	}}
 end
 ```
+
+### `mod.save_mod_config(mod)`
+If you want the mod config to be handled differently from how SMODS saves configs or modify the config just before saving, you can define this function. It will be called when SMODS goes to save all mod configs rather than the default `SMODS.save_mod_config` function. 
+
+## Optional Features
+Steamodded comes with additional opt-in features that requires mods to manually turn them on. 
 
 ## `mod.extra_tabs`
 You may want to create additional pages besides your config tab.
@@ -113,3 +119,9 @@ You may want to have some functionality happen with your mod installed independe
 
 ### `mod.reset_game_globals(run_start)`
 Set up global game values that reset each round, similar to vanilla jokers like Castle, The Idol, Ancient Joker, and Mail-In Rebate. `run_start` indicates if the function is being called at the start of the run.
+
+### `mod.set_ability_reset_keys() -> table`
+When a card's `ability` table is changed (such as calling `Card:set_ability()` on it), all previous fields are transferred from the previous `ability` table with set exceptions. This function returns a table of strings corresponding to fields that should not persist. 
+
+### `mod.set_debuff(card) -> boolean|"prevent_debuff"`
+This function is called when a card is being checked for if it should be debuffed. Returning `false` or nil will not debuff the card. Returning `true` will debuff the card. Returning `"prevent_debuff"` will force to card to not be debuffed, and all other effects that would normally debuff this card are ignored.
