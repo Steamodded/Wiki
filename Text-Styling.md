@@ -810,7 +810,7 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
    <code><b>inactive</code>
   </td>
   <td>
-   <code>G.C.INACTIVE</code>
+   <code>G.C.UI.TEXT_INACTIVE</code>
   </td>
   <td align="center">
    <img src="Assets/Text-Styling/example_Must_have_room.svg" height=24 alt="(Must have room)">
@@ -1011,7 +1011,7 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
    <code><b>legendary</code>
   </td>
   <td>
-   <code>G.C.RARITY[4]</code> or <br> <code>G.C.RARITY.Legendary</code>
+   <code>G.C.RARITY[4]</code> (vanilla)<br> <code>G.C.RARITY.Legendary</code> (SMODS)
   </td>
   <td align="center">
    <picture>
