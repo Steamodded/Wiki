@@ -167,6 +167,8 @@ These are functions used during the injection process of mods or GameObjects.
     - Restarts the game.
 - `SMODS.get_optional_features()`
     - Inserts all enabled optional features by injected mods into the `SMODS.optional_features` table.
+- `SMODS.localize_box(lines, args)`
+    - Handles localizing description boxes within a localization entry. 
 
 ### Calculation
 These functions are used for handling calculation events.
