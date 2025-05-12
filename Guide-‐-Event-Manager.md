@@ -15,37 +15,43 @@ However, you probably want to do something in this event. Let's cover some of th
 These can be passed in a table to the Event function.
 
 trigger - string:
-- "immediate" (default) - Runs as soon as possible
-- "after" - Will run after a set amount of time. Also see delay
-- "condition" - Will not finish until the condition is met. For most cases, you probably just want to use immediate with a check (see func). See ref_table, ref_value and stop_val for how to set this.
-- "ease" - Used to interpolate values. Useful for score incrementing or movement. Also see ref_table, ref_value and ease_to for how to set this.
-- "before" - Will run immediately, but if it doesn't complete before the set amount of time, it will be cancelled. Also see delay
+- `"immediate"` (default) - Runs as soon as possible
+- `"after"` - Runs after a set amount of time specified in `delay`
+- `"before"` - Runs immediately. The event takes at least the amount of time specified in `delay` to finish
+- `"condition"` - Waits until the condition is met (namely, when `config.ref_table[config.ref_value] == config.stop_val`). You probably want to use `immediate` instead.
+- `"ease"` - Used to interpolate values. Useful for score incrementing or movement.
 
 blocking - boolean: Whether or not this event may block other events. Default is true.
 
 blockable - boolean: Whether or not this event may be blocked by other events. Default is true.
 
-func - function: The function to call for the event. When this is called depends on the trigger type.
-    This function takes no arguments. 
-    It returns whether it completed. If true, then the event is over, if false, then it will be called again next time the event manager processes events (the next frame).
+func - function: The body of the event. This is where you will perform any actions or custom delays. Once the event starts, this will be run once per frame until it returns true. This can be omitted without consequence.
     Its behavior for each trigger is as follows:
-- immediate - Called when events are next processed
-- after - Called when the time is over
-- condition - Behaves like immediate. Providing a function will overwrite the default condition behaviour. If you want to do stuff conditionally and use a function, then just do your check and return false if the condition is not satisfied.
-- ease - Called each frame with the current value of the ease. The function defintion is a bit different here. The first argument is the current value of the ease. The return value is then set to the value stored in the table. The default function just returns the current value.
-- "before" - Called immediately. If the event does not complete after the delay, then it is automatically cancelled.
+- `immediate` - Called when the event begins
+- `after` - Called when the time is over
+- `condition` - Behaves exactly like immediate. Providing a function will overwrite the default condition behaviour.
+- `ease` - Called each frame with the current interpolated value so you can modify the easing function. The default function returns its argument unmodified.
+- `before` - Called when the event begin
 
-delay - number: The time to take, in seconds. Used for after, ease and before. Note this value is affected by the game speed option. Default is 0.
+delay - number: The time to take, in seconds. Used for after, ease and before. This value is typically affected by the game speed option. Default is 0.
 
-ref_table - table: The table to check for the condition. Used for condition and ease. No default.
+ref_table - table: The table to ease a value in. Required for ease events. Also used for condition events.
 
-ref_value - string: The key in ref_table to get the value. Used for condition and ease. No default.
+ref_value - string: The key in ref_table to ease. Required for ease events. Also used for condition events.
 
-stop_val - any: The value to stop at. Used for condition. No default.
+ease_to - number: The value for the ease to end at. Required for ease events.
 
-ease_to - number: The value to end at. Used for ease. No default.
+ease - string: The type of ease to use. Used for ease. Default is "lerp". Can be any of "lerp" (linear ease), "elastic" (wobbly ease in) or "quad" (quadratic ease in).
 
-ease - string: The type of ease to use. Used for ease. Default is "lerp". Can be any of "lerp", "elastic" or "quad".
+stop_val - any: The value to wait for in a condition event.
+
+start_timer - boolean: Set to true to start the time component of a before or after event immediately, instead of when the event starts.
+
+no_delete - boolean: Set to true to prevent the event from being deleted by `clear_queue`.
+
+pause_force - boolean: Set to true to force this event to act as though it were created while the game was paused. Events without this will pause when the game is paused.
+
+timer - string: Set this to a key in `G.TIMERS` to use a different timer than the standard one. If `pause_force` was set, this defaults to `'REAL'`, otherwise it defaults to `'TOTAL'`.
 
 # Examples
 Great, now you've been info dumped, let's show you some more practical examples.
@@ -78,9 +84,9 @@ G.E_MANAGER:add_event(Event({
 }))
 ```
 
-(you may notice this might be less than 5 seconds. This is because the delay is affected by the game speed option)
+(This might take less than 5 seconds. This is because the delay is affected by the game speed option)
 
-Also note that this event will block for those 5 seconds, so like earlier, other events will wait until after your event is over. In this case they'll wait until after those 5 seconds.
+Note that this event will block for those 5 seconds, so like earlier, other events will wait until after your event is over. In this case, they'll wait for 5 seconds.
 
 Now, let's say you want to wait until a certain condition is met. You can do this by checking your condition, and returning false if it is not met. For example, if you want to wait until the player has 2 hands left, you can do this:
 
@@ -118,10 +124,10 @@ and with that, you should have everything you need to use events. However, I'll 
 ## Queues
 So far we have just been adding events to the base queue. However, there are a few other queues for us to use.
 
-When calling G.E_MANAGER:add_event, you can pass in a second argument for the queue. This is string corresponding to the queue type (default is "base"). The queues are as follows:
+When calling `G.E_MANAGER:add_event`, you can pass in a second argument for the queue. This is string corresponding to the queue type (default is "base"). The queues are as follows:
 
 - base - The default queue. This is where most events should go.
-- other - Was once used for displaying a video in the demo. Since it's not used, it makes for a prime candidate for putting stuff in, if you want to use blocking but not block the base queue.
+- other - Was once used for displaying a video in the demo. Since it's not used, it makes for a prime candidate for putting stuff in, if you want to use blocking events without clogging up the base queue.
 
 The rest are all mostly for super specific things, but are documented here for completeness.
 
@@ -129,16 +135,47 @@ The rest are all mostly for super specific things, but are documented here for c
 - tutorial - This is used for the tutorial. Allows it to manage some of it's stuff. Also let's all the tutorial stuff be cleared at once.
 - achievement - This is used for unlocking achievements. Allows the ui to show one at a time.
 
-add_event also has a third argument, front. This is a boolean that will put the event at the front of the queue. Useful to block stuff already in the queue.
+You can also create your own queue:
+```lua
+G.E_MANAGER.queues.my_cool_queue = {}
+```
+
+`add_event` also has a third argument, front. This is a boolean that will put the event at the front of the queue. This can be useful to compose a large event out of multiple smaller ones:
+```lua
+G.E_MANAGER:add_event(Event({
+    func = function()
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                do_a_second_cool_thing()
+                return true
+            end
+        }), nil, true)
+
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 1
+        }), nil, true)
+
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                do_a_cool_thing()
+                return true
+            end
+        }), nil, true)
+        return true
+    end
+}))
+```
+These events will act as a single unit (similar to an await in other languages). Note the reversed order of events.
 
 ## Clearing the queue
-The event manager also has another function you may use.
-G.E_MANAGER:clear_queue(queue, exception)
+The event manager has another function:
+`G.E_MANAGER:clear_queue(queue, exception)`
 
-Passing it with no options will clear all the queues. If a queue is passed, it will clear that queue. If an exception is passed, it will not clear all queues, except the one passed. You can avoid being cleared by setting the no_delete property to true.
+Calling it with no options will clear all the queues. If a queue is passed, it will clear that queue. If an exception is passed, it will clear every queue except the one passed. An event can avoid being cleared by setting its `no_delete` property to true.
 
 ## Repeating on a timer
-Here is an example I made to run an event every 5 seconds. This does use a bit of hacking to get working, but I figured it might be handy.
+Here is an example to run an event every 5 seconds. This does use a bit of hacking to get working, but I figured it might be handy.
 
 ```lua
 local event
@@ -164,17 +201,25 @@ We use `timer = "UPTIME"` here as the default timer (`"REAL"`) is reset when ret
 
 This event also sets some properties to make sure it doesn't get blocked or block other events, and it runs even if the game is paused. If you want to make sure you can stop this event, then you could, say, add some check for some variable then return if it's true.
 
-
-## More properties
-These are some more event properties you can use, but aren't really that useful in most situations.
-
-start_timer - boolean: If true, then it will use the starting time of the event being created. Otherwise this will start the timer the first time the event is processed. Default is false.
-
-no_delete - boolean: If true, then when clearing the event queue, this event will not be deleted. You probably don't want to use this unless you want to have an event that never stops. Default is false.
-
-force_pause - boolean: If true, then the event will run even if the game is paused. This only has an effect if your event was created when the game wasn't paused. Default is false.
-
-timer - string: The name of the timer to use. Default is "REAL" if created while paused (or with force_pause) otherwise "TOTAL". Can take any of the keys in G.TIMERS.
+Here's another way to accomplish the same thing:
+```lua
+local create_event
+create_event = function()
+    G.E_MANAGER:add_event(Event {
+        blockable = false,
+        blocking = false,
+        pause_force = true,
+        no_delete = true,
+        trigger = "after",
+        delay = 5,
+        func = function()
+            print("Hi mom!")
+            create_event()
+            return true
+        end
+    })
+end
+```
 
 ***
 *Guide written by WilsontheWolf*
