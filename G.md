@@ -5,7 +5,7 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
 ## The Highlights
 
 - `G.E_MANAGER` is the [event manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager).
-- `G.P_CENTERS` holds the definitions for jokers, consumables, vouchers, decks, enhancements, editions, and boosters. It is indexed with the object's key. For example, `G.P_CENTERS.c_strength` is the definition for Strength.
+- `G.P_CENTERS` holds the game's center objects (prototypes for jokers, consumables, vouchers, decks, enhancements, editions, and boosters). It is indexed with the object's key. For example, `G.P_CENTERS.c_strength` is the center for Strength.
 - `G:update(dt)` is called once per frame. This uses `G.STATE` and `G.STATE_COMPLETE` to run a state machine.
 - `G.C` holds colors.
 - [`G.GAME`](https://github.com/Steamodded/smods/wiki/G#GGAME)
@@ -13,12 +13,12 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
 ## Everything
 
 - `G.E_MANAGER` is the [event manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager).
-- `G.P_SEALS` holds the definitions for seals, much like `G.P_CENTERS`.
-- `G.P_TAGS` holds the definitions for tags, much like `G.P_CENTERS`.
-- `G.P_STAKES` holds the definitions for stakes, much like `G.P_CENTERS`.
-- `G.P_BLINDS` holds the definitions for blinds, much like `G.P_CENTERS`.
-- `G.P_CARDS` holds the definitions for playing cards, much like `G.P_CENTERS`.
-- `G.P_CENTERS` holds the definitions for jokers, consumables, vouchers, decks, enhancements, editions, and boosters. It is indexed with the object's key. For example, `G.P_CENTERS.c_strength` is the definition for Strength.
+- `G.P_SEALS` holds the seal prototypes, much like `G.P_CENTERS`.
+- `G.P_TAGS` holds the tag prototypes, much like `G.P_CENTERS`.
+- `G.P_STAKES` holds the stake prototypes, much like `G.P_CENTERS`.
+- `G.P_BLINDS` holds the blind prototypes, much like `G.P_CENTERS`.
+- `G.P_CARDS` holds the playing card prototypes, much like `G.P_CENTERS`.
+- `G.P_CENTERS` holds the game's center objects (prototypes for jokers, consumables, vouchers, decks, enhancements, editions, and boosters). It is indexed with the object's key. For example, `G.P_CENTERS.c_strength` is the center for Strength.
 - `G.P_CENTER_POOLS` holds definitions for objects grouped by pool, indexed by numbers. For example, `G.P_CENTER_POOLS.Tag` holds the tags, and `G.P_CENTER_POOLS.Tag[1]` is a specific tag.
 - `G.P_JOKER_RARITY_POOLS` is like `G.P_CENTER_POOLS` but for specific joker rarities.
 - `G.P_LOCKED` holds every locked object.
@@ -39,10 +39,8 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
 - `G:save_settings()` save `G.SETTINGS`.
 - `G:save_metrics()` save `G.METRICS`.
 - `G:prep_stage(...)` sets up `G.ROOM`.
-- `G:sandbox()`
 - `G:splash_screen()` shows the intro animation.
 - `G:main_menu(...)` shows the main menu.
-- `G:demo_cta()`
 - `G:init_game_object()` return the initial state of `G.GAME`.
 - `G:start_run(...)` starts a new run or continues a run in progress. Additionally, it creates the various `CardArea`s needed in game, as well as the UI elements in the HUD.
 - `G:update(dt)` is called once per frame. This uses `G.STATE` and `G.STATE_COMPLETE` to run a state machine.
@@ -92,7 +90,7 @@ G.METRICS = {
 - `G.STAGE_OBJECTS` tracks which objects belong to the current stage so they can be deleted correctly.
 - `G.STAGES` names every possible game screen.
 - `G.TAROT_INTERRUPT` holds the state to return to after the current tarot card is done processing.
-- `G.ARGS`
+- `G.ARGS` is used to move data around the game. It does a lot of miscellaneous things.
 - `G.FUNCS` primarily holds functions used as callbacks from within UI definitions.
 - `G.I` holds every object the engine needs to generically process.
 - `G.I.NODE` holds every `Node`, but no subclasses.
@@ -106,7 +104,7 @@ G.METRICS = {
 - `G.MOVEABLES` holds every moveable.
 - `G.ANIMATIONS` holds every `AnimatedSprite`.
 - `G.C` holds colors.
-- `G.UIT` names every possible type of UI node.
+- `G.UIT` names every possible type of [UI node](https://github.com/Steamodded/smods/wiki/UI-Guide#node-types).
 - `G.handlist` orders the pokers hands from best to worst.
 - `G.ROOM` is the UI node for the entire window.
 - `G.ROOM_ATTACH` is the moveable for `G.ROOM`.
@@ -133,7 +131,7 @@ G.hand_text_area = {
 - `G.MAJORS` appears to be unused.
 - `G.MINORS` appears to be unused.
 - `G.CANVAS` is the Love canvas the game gets rendered to.
-- `G.SEED` is what was used to initialize `math.randomseed()`. This seeding gets clobbered very quickly.
+- `G.SEED` is largely inconsequential. You want `G.GAME.pseudorandom.seed` instead.
 
 ## `G.GAME`
 
@@ -185,7 +183,7 @@ G.hand_text_area = {
 - `G.GAME.bankrupt_at` is set to -20 by Credit Card.
 - `G.GAME.current_boss_streak` tracks the "most bosses in a row" statistic.
 - `G.GAME.base_reroll_cost` is lowered by Reroll Surplus and Reroll Glut.
-- `G.GAME.blind_on_deck` is the key of the "up next" blind.
+- `G.GAME.blind_on_deck` is the type of the "up next" blind ("Small", "Big", or "Boss").
 - `G.GAME.sort` is the selected hand sorting method.
 - `G.GAME.previous_round` appears to be unused.
 - `G.GAME.previous_round.dollars` appears to be unused, but tracks the amount of money after the most recent cash out.
@@ -193,7 +191,7 @@ G.hand_text_area = {
 - `G.GAME.tag_tally` is used to give each tag a unique ID number.
 - `G.GAME.pool_flags` is used for Gros Michel/Cavendish.
 - `G.GAME.used_jokers` holds currently spawned centers to avoid spawning duplicates.
-- `G.GAME.used_jokers` holds vouchers redeemed this run.
+- `G.GAME.used_vouchers` holds vouchers redeemed this run.
 - `G.GAME.current_round` holds various transient numbers that rapidly change during gameplay.
 - `G.GAME.round_resets` is used to reset `G.GAME.current_round`.
 - `G.GAME.round_resets.blind_states` holds the skip status of each blind.
