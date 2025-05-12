@@ -32,7 +32,7 @@ refer to the current blind. (The base game uses `self` to refer to the current b
 - `set_blind(self)`
 	- Effects that activate when this Blind is selected
 - `calculate(self, context) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
-    - This method is both called directly on the center and from `Blind:calculate()` and incorporated into the standard calculation pipeline. Several blind function can be handled here via checking their respective calculation context.
+    - This method is both called directly on the center and from `Blind:calculate()` and incorporated into the standard calculation pipeline. Several blind functions below can be handled here via checking their respective calculation context.
 - `disable(self)`
 	- Reverting effects when this Blind gets disabled
 - `defeat(self)`
