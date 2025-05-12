@@ -146,7 +146,7 @@ G.hand_text_area = {
 - `G.GAME.win_ante` holds the ante at which finisher blinds will appear.
 - `G.GAME.stake` holds the currently applied stake.
 - `G.GAME.modifiers` holds game rules. These are usually set by stakes or challenges.
-- `G.GAME.starting_params`
+- `G.GAME.starting_params` holds the standard variables set by decks, stakes, and challenges. These are copied elsewhere in `G.GAME` when starting the game.
 - `G.GAME.banned_keys` holds keys of objects that aren't allowed to spawn.
 - `G.GAME.round` holds the current round number.
 - `G.GAME.probabilities.normal` holds the 1 for any 1 in x odds.
