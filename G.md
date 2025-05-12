@@ -22,8 +22,6 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
 - `G.P_CENTER_POOLS` holds definitions for objects grouped by pool, indexed by numbers. For example, `G.P_CENTER_POOLS.Tag` holds the tags, and `G.P_CENTER_POOLS.Tag[1]` is a specific tag.
 - `G.P_JOKER_RARITY_POOLS` is like `G.P_CENTER_POOLS` but for specific joker rarities.
 - `G.P_LOCKED` holds every locked object.
-- `G:load_profile(_profile)` selects one of the profiles.
-- `G:set_language()` initializes localization information.
 - `G.ASSET_ATLAS` and `G.ANIMATION_ATLAS` hold sprite atlases that look like the following:
 ```lua
 {
@@ -34,16 +32,6 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
     py = number
 }
 ```
-- `G:save_progress()` saves the unlocked/discovered/alerted badge state of centers, blinds, tags, and seals.
-- `G:save_notify()` saves unlock notifications.
-- `G:save_settings()` save `G.SETTINGS`.
-- `G:save_metrics()` save `G.METRICS`.
-- `G:prep_stage(...)` sets up `G.ROOM`.
-- `G:splash_screen()` shows the intro animation.
-- `G:main_menu(...)` shows the main menu.
-- `G:init_game_object()` return the initial state of `G.GAME`.
-- `G:start_run(...)` starts a new run or continues a run in progress. Additionally, it creates the various `CardArea`s needed in game, as well as the UI elements in the HUD.
-- `G:update(dt)` is called once per frame. This uses `G.STATE` and `G.STATE_COMPLETE` to run a state machine.
 - `G.STATE_COMPLETE` is set to true once the most recent transition in `G.STATE` has been run.
 - `G.STATE` holds the current interaction state in the game's state machine.
 - `G.STATES` names every possible interaction state in the game's state machine.
@@ -51,8 +39,6 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
 - `G.STEAM` is used to interact with the Steam API.
 - `G.DEBUG` can be set to true to view debugging information.
 - `G.FILE_HANDLER` manages saving the game every 10 seconds.
-- `G:draw()` draws everything in the game.
-- `G:set_globals()` initializes many globals within `G`.
 - `G.VERSION` is the version string for the current build of the game.
 - `G.TIMERS` has various timers that run at different rates and reset at different times. The [event manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager) uses these, as well as many animations.
 - `G.FRAMES.MOVE` holds the current physics frame number.
@@ -132,6 +118,20 @@ G.hand_text_area = {
 - `G.MINORS` appears to be unused.
 - `G.CANVAS` is the Love canvas the game gets rendered to.
 - `G.SEED` is largely inconsequential. You want `G.GAME.pseudorandom.seed` instead.
+- `G:save_progress()` saves the unlocked/discovered/alerted badge state of centers, blinds, tags, and seals.
+- `G:save_notify()` saves unlock notifications.
+- `G:save_settings()` save `G.SETTINGS`.
+- `G:save_metrics()` save `G.METRICS`.
+- `G:prep_stage(...)` sets up `G.ROOM`.
+- `G:splash_screen()` shows the intro animation.
+- `G:main_menu(...)` shows the main menu.
+- `G:load_profile(_profile)` selects one of the profiles.
+- `G:start_run(...)` starts a new run or continues a run in progress. Additionally, it creates the various `CardArea`s needed in game, as well as the UI elements in the HUD.
+- `G:init_game_object()` return the initial state of `G.GAME`.
+- `G:set_language()` initializes localization information.
+- `G:set_globals()` initializes many globals within `G`.
+- `G:update(dt)` is called once per frame. This uses `G.STATE` and `G.STATE_COMPLETE` to run a state machine.
+- `G:draw()` draws everything in the game.
 
 ## `G.GAME`
 
