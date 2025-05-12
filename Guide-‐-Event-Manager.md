@@ -19,7 +19,7 @@ trigger - string:
 - `"after"` - Runs after a set amount of time specified in `delay`
 - `"before"` - Runs immediately. The event takes at least the amount of time specified in `delay` to finish
 - `"condition"` - Waits until the condition is met (namely, when `config.ref_table[config.ref_value] == config.stop_val`). You probably want to use `immediate` instead.
-- `"ease"` - Used to interpolate values. Useful for score incrementing or movement.
+- `"ease"` - Used to interpolate values. Useful for score incrementing or movement. Acts something like `config.ref_table[config.ref_value] = config.func(ease_function(original_value, config.ease_to, config.duration))`
 
 blocking - boolean: Whether or not this event may block other events. Default is true.
 
@@ -31,7 +31,7 @@ func - function: The body of the event. This is where you will perform any actio
 - `after` - Called when the time is over
 - `condition` - Behaves exactly like immediate. Providing a function will overwrite the default condition behaviour.
 - `ease` - Called each frame with the current interpolated value so you can modify the easing function. The default function returns its argument unmodified.
-- `before` - Called when the event begin
+- `before` - Called when the event begins
 
 delay - number: The time to take, in seconds. Used for after, ease and before. This value is typically affected by the game speed option. Default is 0.
 
@@ -42,6 +42,8 @@ ref_value - string: The key in ref_table to ease. Required for ease events. Also
 ease_to - number: The value for the ease to end at. Required for ease events.
 
 ease - string: The type of ease to use. Used for ease. Default is "lerp". Can be any of "lerp" (linear ease), "elastic" (wobbly ease in) or "quad" (quadratic ease in).
+
+## Advanced Properties
 
 stop_val - any: The value to wait for in a condition event.
 
@@ -124,7 +126,7 @@ and with that, you should have everything you need to use events. However, I'll 
 ## Queues
 So far we have just been adding events to the base queue. However, there are a few other queues for us to use.
 
-When calling `G.E_MANAGER:add_event`, you can pass in a second argument for the queue. This is string corresponding to the queue type (default is "base"). The queues are as follows:
+When calling `G.E_MANAGER:add_event`, you can pass in a second argument for the queue. This is a string corresponding to the queue type (default is "base"). The queues are as follows:
 
 - base - The default queue. This is where most events should go.
 - other - Was once used for displaying a video in the demo. Since it's not used, it makes for a prime candidate for putting stuff in, if you want to use blocking events without clogging up the base queue.
@@ -140,33 +142,7 @@ You can also create your own queue:
 G.E_MANAGER.queues.my_cool_queue = {}
 ```
 
-`add_event` also has a third argument, front. This is a boolean that will put the event at the front of the queue. This can be useful to compose a large event out of multiple smaller ones:
-```lua
-G.E_MANAGER:add_event(Event({
-    func = function()
-        G.E_MANAGER:add_event(Event({
-            func = function()
-                do_a_second_cool_thing()
-                return true
-            end
-        }), nil, true)
-
-        G.E_MANAGER:add_event(Event({
-            trigger = 'after',
-            delay = 1
-        }), nil, true)
-
-        G.E_MANAGER:add_event(Event({
-            func = function()
-                do_a_cool_thing()
-                return true
-            end
-        }), nil, true)
-        return true
-    end
-}))
-```
-These events will act as a single unit (similar to an await in other languages). Note the reversed order of events.
+`add_event` also has a third argument, front. This is a boolean that will put the event at the front of the queue. Using this within an event will cause incorrect behavior.
 
 ## Clearing the queue
 The event manager has another function:
@@ -219,6 +195,7 @@ create_event = function()
         end
     })
 end
+create_event()
 ```
 
 ***
