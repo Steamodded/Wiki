@@ -42,6 +42,7 @@ Guides
   * [Mod Functions](https://github.com/Steamodded/smods/wiki/Mod-Functions)
   * [UI Structure](https://github.com/Steamodded/smods/wiki/UI-Guide)
   * [Utility Functions](https://github.com/Steamodded/smods/wiki/Utility)
+  * [Internal Documentation](https://github.com/Steamodded/smods/wiki/Internal-Documentation)
 
  ***
 
