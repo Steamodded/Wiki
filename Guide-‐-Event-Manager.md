@@ -129,7 +129,7 @@ So far we have just been adding events to the base queue. However, there are a f
 When calling `G.E_MANAGER:add_event`, you can pass in a second argument for the queue. This is a string corresponding to the queue type (default is "base"). The queues are as follows:
 
 - base - The default queue. This is where most events should go.
-- other - Was once used for displaying a video in the demo. Since it's not used, it makes for a prime candidate for putting stuff in, if you want to use blocking events without clogging up the base queue.
+- other - Was once used for displaying a video in the demo. No longer used.
 
 The rest are all mostly for super specific things, but are documented here for completeness.
 
