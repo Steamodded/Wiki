@@ -137,9 +137,26 @@ The rest are all mostly for super specific things, but are documented here for c
 - tutorial - This is used for the tutorial. Allows it to manage some of it's stuff. Also let's all the tutorial stuff be cleared at once.
 - achievement - This is used for unlocking achievements. Allows the ui to show one at a time.
 
-You can also create your own queue:
+You can also create your own queue. This is useful if you want to use blocking events that run alongside the base queue events without interacting with them.
 ```lua
 G.E_MANAGER.queues.my_cool_queue = {}
+-- Later, with empty queues:
+G.E_MANAGER:add_event(Event {
+    trigger = "after",
+    delay = 10,
+    func = function()
+        print("These events should fire on the same frame")
+        return true
+    end
+})
+G.E_MANAGER:add_event(Event {
+    trigger = "after",
+    delay = 10,
+    func = function()
+        print("These events don't have a guaranteed order")
+        return true
+    end
+}, "my_cool_queue")
 ```
 
 `add_event` also has a third argument, front. This is a boolean that will put the event at the front of the queue. Using this within an event will cause incorrect behavior.
