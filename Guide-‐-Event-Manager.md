@@ -17,7 +17,7 @@ These can be passed in a table to the Event function.
 trigger - string:
 - `"immediate"` (default) - Runs as soon as possible
 - `"after"` - Runs after a set amount of time specified in `delay`
-- `"before"` - Runs immediately. The event takes at least the amount of time specified in `delay` to finish
+- `"before"` - Runs as soon as possible. Events after this one wait for both `func` and `delay`, whichever takes longer to finish.
 - `"condition"` - Waits until the condition is met (namely, when `config.ref_table[config.ref_value] == config.stop_val`). You probably want to use `immediate` instead.
 - `"ease"` - Used to interpolate values. Useful for score incrementing or movement. Acts something like `config.ref_table[config.ref_value] = config.func(ease_function(original_value, config.ease_to, config.duration))`
 
