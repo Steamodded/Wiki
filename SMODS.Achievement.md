@@ -7,8 +7,8 @@
     - `atlas = 'Joker', pos = { x = 1, y = 0 }, hidden_pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
         - `pos` is used when the achievement has been earned, `hidden_pos` if it has not been earned.
     - `earned`: Achievement is considered "earned". Achievement will stay earned on loaded profiles unless `reset_on_startup` is true
-    - `reset_on_startup`: Unearns the achievement if already earned on profile load
-    - `bypass_all_unlocked = false`: Achievement cannot be earned if "Unlock All" button was pressed on current profile
+    - `reset_on_startup`: Unearns the achievement if already earned when the profile is loaded
+    - `bypass_all_unlocked = false`: Sets if the achievement can be earned on profiles that pressed the "Unlock All" button
     - `hidden_name = true`: Hides the name of the achievement if not earned
     - `hidden_text`: Hides the description of the achievement if not earned
 
