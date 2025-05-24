@@ -1,6 +1,13 @@
 # Utility functions
 Steamodded provides utility functions that extend or replace vanilla functionality or provide other useful tools you may need when making your mod. This page contains information on these functions. Check out `src/utils.lua` if you'd like to learn more about a function's implementation.
 
+- [Debugging](#debugging)
+- [Number Formatting](#number-formatting)
+- [Randomness](#randomness)
+- [Mod-facing utilities](#mod-facing-utilities)
+
+***
+
 ## Debugging 
 - `inspect(table) -> string`
     - Given an input table, outputs a shallow mapping of keys to values as a string. Gives no further information on subtables.
@@ -22,7 +29,7 @@ Steamodded provides utility functions that extend or replace vanilla functionali
     - Enables debugging of Joker calculations. 
     - Every time that `Card:calculate_joker()` is called, `G.contexts` is updated for every value within `context`.
 
-## Number formatting
+## Number Formatting
 - `round_number(num, precision) -> number`
     - Rounds the input number to a given amount of decimal places.
 - `format_ui_value(value) -> string`
