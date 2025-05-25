@@ -1,6 +1,12 @@
 # Internal Documentation
 SMODS has internal functions that are used for loading mods, creating and handling GameObjects, and general backend operations. Mods may be interested in using or modifying these functions. 
 
+- [Injection](#injection)
+- [Calculation](#calculation)
+- [Misc.](#misc)
+
+***
+
 ## Injection
 These are functions used during the injection process of mods or GameObjects.
 - `SMODS.save_d_u(o)`

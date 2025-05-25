@@ -4,7 +4,7 @@ Steamodded provides utility functions that extend or replace vanilla functionali
 - [Debugging](#debugging)
 - [Number Formatting](#number-formatting)
 - [Randomness](#randomness)
-- [Mod-facing utilities](#mod-facing-utilities)
+- [Mod-facing Utilities](#mod-facing-utilities)
 
 ***
 
@@ -53,7 +53,7 @@ Steamodded provides utility functions that extend or replace vanilla functionali
     - `options` - A table of possible enhancements to generate. Defaults to all available enhancements.
     - `type_key` - Randomness seed for the roll which enhancement to generate.
 
-## Mod-facing utilities
+## Mod-facing Utilities
 These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.
 - `SMODS.find_mod(id) -> table`
     - Returns a list of mods that either match the given mod ID or provide it, and are enabled and loaded. 
