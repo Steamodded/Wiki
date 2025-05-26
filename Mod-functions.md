@@ -100,6 +100,25 @@ SMODS.current_mod.description_loc_vars = function(self)
 end
 ```
 
+### `mod.ui_config`
+You can define this table in your mod object to change the colours of its menu.
+```lua
+SMODS.current_mod.ui_config = {
+	colour = G.C.L_BLACK, -- Main UI box
+    bg_colour = {G.C.GREY[1], G.C.GREY[2], G.C.GREY[3], 0.7}, -- Background
+    back_colour = G.C.ORANGE, -- Back button
+    tab_button_colour = G.C.BOOSTER, -- Tabs buttons
+	outline_colour = G.C.JOKER_GREY, -- Main UI box outline
+	author_colour = G.C.JOY.XYZ, -- Author text
+	author_bg_colour = G.C.CLEAR, -- Author box background
+	author_outline_colour = G.C.JOKER_GREY, -- Author box outline
+    collection_bg_colour = {G.C.GREY[1], G.C.GREY[2], G.C.GREY[3], 0.7}, -- Collection background (Defaults to bg_colour)
+    collection_back_colour = G.C.ORANGE, -- Collection background (Defaults to back_colour)
+	collection_outline_colour = G.C.JOKER_GREY, -- Collection background (Defaults to outline_colour)
+    collection_option_cycle_colour = G.C.RED, -- Collection option cycle button
+}
+```
+
 ### `mod.custom_ui`
 This function can be used to manipulate your mod's description tab arbitarily. It receives a table of nodes as an argument, you can modify this table to insert additional elements or modify existing ones. See also: [Building a UI](https://github.com/Steamodded/smods/wiki/UI-Guide).
 
