@@ -430,10 +430,11 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
 
 
 ## Text motion modifier `{E:}`
-`{E:1}` applies a floating animation to each letter in the text.
+`{E:1}` applies a pop-in effect when the text is first displayed, and a floating animation to each letter in the text.
 
 `{E:2}` applies a bumping animation to each letter in sequence.
 
+`{E:}` is incompatible with background modifiers `{X:}` and `{B:}`. If background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored.
 
 ### Examples
 
@@ -554,6 +555,8 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
 - `{T:}` and `{s:}` are compatible with all other modifiers.
 
 - Background modifiers `{X:}` or `{B:}` can be used in conjunction with text colour modifiers `{C:}` or `{V:}`.
+
+- Text motion modifier `{E:}` is incompatible with background modifiers `{X:}` and `{B:}` - if background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored.
 
 - `{C:}` and `{V:}` are exclusive - if both are used, `{C:}` will be ignored.
 
