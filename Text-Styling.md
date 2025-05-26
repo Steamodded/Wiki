@@ -292,7 +292,7 @@ This modifier uniquely strips all whitespace from the styled text, so text like 
    
    ```lua
    vars = {
-     colours = { HEX("FF00FF") }
+     colours = { HEX('FF00FF') }
    }
    ```
   </td>
@@ -312,10 +312,10 @@ This modifier uniquely strips all whitespace from the styled text, so text like 
    
    ```lua
    vars = {
-     "Spade",
-     "Heart",
-     "Club",
-     "Diamond",
+     'Spade',
+     'Heart',
+     'Club',
+     'Diamond',
      colours = { 
        G.C.SUITS.Spades,
        G.C.SUITS.Hearts,
@@ -365,7 +365,7 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
    
    ```lua
    vars = {
-     colours = { HEX("00FF00") }
+     colours = { HEX('00FF00') }
    }
    ```
   </td>
@@ -411,8 +411,8 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
    
    ```lua
    vars = {
-     "Spa",
-     "rts",
+     'Spa',
+     'rts',
      colours = { 
        G.C.SUITS.Spades,
        G.C.SUITS.Hearts,
