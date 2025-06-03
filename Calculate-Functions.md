@@ -307,7 +307,7 @@ if context.modify_scoring_hand then
 }
 ```
 > [!TIP]
-> Return `{ add_to_hand = true }` or `{ remove_from_hand = true }` to add or remove the card from the scoring hand.
+> Return `{ add_to_hand = true }` or `{ remove_from_hand = true }` to add or remove `context.other_card` from the scoring hand.
 ---
 This context is used for effects at the same time a hand would be modified by a blind.
 ```lua
