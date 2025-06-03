@@ -268,7 +268,21 @@ if context.after and context.cardarea == G.play then
 ```
 ---
 ### Other Contexts
-This context is used for trigger effects on playing a hand debuffed by the blind. 
+This context is used for debuffing a hand. 
+```lua
+if context.debuff_hand then
+{
+	cardarea = G.jokers, -- G.play, G.hand, (G.deck and G.discard optionally enabled)
+	full_hand = G.play.cards,
+	scoring_hand = scoring_hand,
+	poker_hands = poker_hands,
+	scoring_name = text,
+	check = check, -- This is true when called before a hand is played
+	debuff_hand = true
+}
+```
+---
+This context is used for effects when playing a hand debuffed by the blind. 
 ```lua
 if context.debuffed_hand and context.cardarea == G.play then
 {
@@ -277,7 +291,34 @@ if context.debuffed_hand and context.cardarea == G.play then
 	scoring_hand = scoring_hand,
 	scoring_name = text,
 	poker_hands = poker_hands,
-	debuffed_hand = true,
+	debuffed_hand = true
+}
+```
+---
+This context is used for marking cards to be in the scoring hand. 
+```lua
+if context.modify_scoring_hand then
+{
+	cardarea = G.jokers -- G.play, G.hand, (G.deck and G.discard optionally enabled)
+	other_card = card, -- The card to be added or removed from scoring
+	full_hand = G.play.cards,
+	scoring_hand = scoring_hand,
+	modify_scoring_hand = true
+}
+```
+> [!TIP]
+> Return `{ add_to_hand = true }` or `{ remove_from_hand = true }` to add or remove the card from the scoring hand.
+---
+This context is used for effects at the same time a hand would be modified by a blind.
+```lua
+if context.modify_hand then
+{
+	cardarea = G.jokers, -- G.play, G.hand, (G.deck and G.discard optionally enabled)
+	full_hand = G.play.cards,
+	scoring_hand = scoring_hand,
+	scoring_name = text,
+	poker_hands = poker_hands,
+	modify_hand = true
 }
 ```
 ---
@@ -419,7 +460,7 @@ if context.drawing_cards then
 }
 ```
 > [!TIP]
-> Returning `{ cards_to_draw = num }` changes the number of drawn cards to `num`.
+> Return `{ cards_to_draw = num }` to change the number of drawn cards to `num`.
 ---
 This context is used for effects after drawing the first hand of a blind. 
 ```lua
