@@ -409,6 +409,18 @@ if context.ending_shop then
 }
 ```
 ---
+This context is used for effects when drawing cards. 
+```lua
+if context.drawing_cards then
+{
+	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
+	drawing_cards = true,
+	amount = hand_space -- The amount of cards that will be drawn
+}
+```
+> [!TIP]
+> Returning `{ cards_to_draw = num }` changes the number of drawn cards to `num`.
+---
 This context is used for effects after drawing the first hand of a blind. 
 ```lua
 if context.first_hand_drawn then
@@ -418,7 +430,7 @@ if context.first_hand_drawn then
 }
 ```
 ---
-This context is used for effects after drawing a hand. 
+This context is used for effects after drawing a hand when facing a blind. 
 ```lua
 if context.hand_drawn then
 {
@@ -427,7 +439,16 @@ if context.hand_drawn then
 }
 ```
 ---
-This context is used for effects after using a consumable 
+This context is used for effects after drawing a hand when not facing a blind. 
+```lua
+if context.other_drawn then
+{
+	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
+	other_drawn = true,
+}
+```
+---
+This context is used for effects after using a consumable. 
 ```lua
 if context.using_consumeable then
 {
