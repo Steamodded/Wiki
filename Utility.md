@@ -131,13 +131,25 @@ These functions facilitate specific tasks that many mods may use but may be hard
         ```
 - `SMODS.has_enhancement(card, key) -> bool`
     - Returns true if the provided `card` has a specific enhancement.
-- `SMODS.change_voucher_limit(mod)`
-    - Modifies the Voucher shop limit by `mod`.
-- `SMODS.change_booster_limit(mod)`
-    - Modifies the Booster Pack shop limit by `mod`.
-- `SMODS.change_free_rerolls(mod)`
-    - Modifies the current amount of free shop rerolls by `mod`.
 - `SMODS.shallow_copy(t) -> table`
     - Returns a shallow copy of the provided table.
 - `time(func, ...) -> number`
     - Calls an input function with any given additional arguments: `func(...)` and returns the time the function took to execute in milliseconds. The return value from `func` is lost.
+- `SMODS.destroy_cards(cards)`
+	- Destroys any type of cards given to the function appropriately, with respect to further calculations if called during the scoring loop.
+	- `cards` - Can be an individual `Card` object, or a table of `Card` objects.
+- `SMODS.add_voucher_to_shop(key)`/`SMODS.add_booster_to_shop(key)`
+	- Adds a `Voucher` or a `Booster` to the current shop.
+	- `key` - the key of the object to be added. If no key is provided, the next seeded object will be used
+- `SMODS.change_voucher_limit(mod)`/`SMODS.change_booster_limit(mod)`
+	- Modify the number of `Voucher`/`Booster` objects that appear in the shop
+	- `mod` - number to change limit by *(if this limit is increased whilst in a shop, a new object will be created automatically)*
+- `SMODS.change_free_rerolls(mod)`
+	- Modify the number of free rerolls per shop
+	- `mod` - number to change the amount by *(applies instantly if within a shop)*
+- `SMODS.change_play_limit(mod)`/`SMODS.change_discard_limit(mod)`
+	- Used to change the number of cards that can be played/discarded at one time. Play limit has a lower limit of **1**, and discard has a lower limit of **0**. *(Note: values can go below these limits, but will have no effect)*
+	- `mod` - number to change the limit by
+- `SMODS.draw_cards(hand_space)`
+	- Function to draw a certain number of cards to hand, calling the relevant calculation contexts
+	- `hand_space` - the number of cards to draw

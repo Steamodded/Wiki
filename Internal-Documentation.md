@@ -91,14 +91,6 @@ These functions are used for handling calculation events.
 
 ## Misc.
 These are functions used by SMODS for miscellaneous features.
-- `SMODS.size_of_pool(pool) -> number`
-    - Returns the size of provided `pool`, excluding "UNAVAILABLE".
-- `SMODS.get_next_vouchers(vouchers) -> table`
-    - Returns the next Vouchers to spawn.
-- `SMODS.add_voucher_to_shop(key) -> Card`
-    - Adds a Voucher based on provided `key` to the shop.
-- `SMODS.add_booster_to_shop(key) -> Card`
-    - Adds a Booster Pack based on provided `key` to the shop.
 - `SMODS.signed(val) -> string`
     - Returned a signed string of `val`, prefixed with "+" if positive.
 - `SMODS.signed_dollars(val) -> string`
