@@ -1,4 +1,5 @@
   * [Home](https://github.com/Steamodded/smods/wiki)
+  * [Install Guide](https://github.com/Steamodded/smods/wiki/Install-Guide)
 ***
 Game Objects
   * [API Documentation](https://github.com/Steamodded/smods/wiki/API-Documentation)

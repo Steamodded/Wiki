@@ -1,3 +1,17 @@
+# UI Guide
+
+- [Basic Structure](#basic-structure)
+  - [Node Types](#node-types)
+  - [Node Configuration](#node-configuration)
+- [How to Build UI](#how-to-build-ui)
+  - [The Basics](#the-basics)
+  - [Creating a `UIBox`](#creating-a-uibox)
+  - [Interaction](#interaction)
+  - [Helper Functions](#helper-functions)
+  - [The Details](#the-details)
+
+***
+
 # Basic Structure
 
 The user interface of Balatro most closely resembles the CSS `flexbox` layout, albeit with fewer features.
