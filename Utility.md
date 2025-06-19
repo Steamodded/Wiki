@@ -65,6 +65,7 @@ These functions facilitate specific tasks that many mods may use but may be hard
 - `SMODS.create_card(t) -> Card`
     - This function replaces `create_card`. It provides a cleaner interface to the same functionality. The argument to this function should always be a table. The following fields are supported:
     - `set` - The card type to be generated, e.g. `'Joker'`, `'Tarot'`, `'Spectral'`
+        - `'Playing Card'` can be used for a random pick between `'Base'` and `'Enhanced'`.
     - `area` - The card area this will be emplaced into, e.g. `G.jokers`, `G.consumeables`. Default values are determined based on `set`.
     - `legendary` - Set this to `true` to generate a card of Legendary rarity.
     - `rarity` - If this is specified, skip rarity polling and use this instead of a chance roll between 0 and 1.
@@ -76,6 +77,10 @@ These functions facilitate specific tasks that many mods may use but may be hard
     - `no_edition` - If this is `true`, the generated card is guaranteed to have no randomly generated edition.
     - `edition`, `enhancement`, `seal` - Applies the specified modifier to the card.
     - `stickers` - This should be an array of sticker keys. Applies all specified stickers to the card.
+    - `front` - Front of the playing card, takes the playing card's key (e.g. `H_A`). Ignores `rank` and `suit`.
+    - `rank` - Rank of the playing card. Can be the `key` or the `card_key` (e.g. `'Ace'` or `'A'`).
+    - `suit` - Suit of the playing card. Can be the `key` or the `card_key` (e.g. `'Hearts'` or `'H'`).
+    - `enhanced_poll` - Chance to pick `'Base'` over `'Enhanced'` with set `'Playing Card'`. Default: 0.6
 - `SMODS.debuff_card(card, debuff, source)`
     - Allows manually setting and removing debuffs from cards.
     - `source` should be a unique identifier string. You must use the same source to remove a previously set debuff.
@@ -112,6 +117,9 @@ These functions facilitate specific tasks that many mods may use but may be hard
 - `SMODS.draw_cards(hand_space)`
 	- Function to draw a certain number of cards to hand, calling the relevant calculation contexts
 	- `hand_space` - the number of cards to draw
+- `SMODS.merge_lists(...) -> table`
+    - Takes any number of 2D arrays. Flattens given calculation returns into one, utilising `extra` tables.
+    - This can be used to merge returns from `SMODS.blueprint_effect`.
 ## Internal utilities
 These functions are used internally and may be of use to you if you're modifying Steamodded's injection process.
 - `SMODS.save_d_u(o)`
