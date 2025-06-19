@@ -117,7 +117,7 @@ These functions facilitate specific tasks that many mods may use but may be hard
 - `SMODS.draw_cards(hand_space)`
 	- Function to draw a certain number of cards to hand, calling the relevant calculation contexts
 	- `hand_space` - the number of cards to draw
-- `SMODS.merge_lists(...) -> table`
+- `SMODS.merge_effects(...) -> table`
     - Takes any number of 2D arrays. Flattens given calculation returns into one, utilising `extra` tables.
     - This can be used to merge returns from `SMODS.blueprint_effect`.
 ## Internal utilities
