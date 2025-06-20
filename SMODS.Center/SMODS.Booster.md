@@ -29,24 +29,22 @@
 - `loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `create_card(self, card, i) -> table|Card`
 	- Creates the cards inside of the booster pack. `card` is the booster pack card, `i` is the position of the card to be generated. If the returned table is not a `Card`, it is passed into [`SMODS.create_card`](https://github.com/Steamodded/smods/wiki/Utility#mod-facing-utilities).
- 	- Example:
-  	```lua
-   	--to create a booster pack of standard cards
-   	create_card = function(self, card)
-            --function create_playing_card(card_init, area, skip_materialize, silent, colours)
-            local newCard = create_playing_card(nil, G.pack_cards, true, true, nil)            
-            return getCard
-        end,
-   	```
-   	- Example:
-  	```lua
-   	--to create a booster pack of foil jokers
-   	create_card = function(self, card)            
-            local getCard = create_card("Joker", G.pack_cards, nil, nil, true, true, nil, "yourModPrefix")
-            getCard:set_edition('e_foil', false)
-            return getCard
-        end,
-   	```
+ 	- Example 1, manual card creation:
+	```lua
+	-- to create a booster pack of standard cards
+	create_card = function(self, card)
+	    --function create_playing_card(card_init, area, skip_materialize, silent, colours)
+	    local newCard = create_playing_card(nil, G.pack_cards, true, true, nil)            
+	    return getCard
+	end,
+	```
+   	- Example 2, return passed into `SMODS.create_card`:
+	```lua
+	-- to create a booster pack of foil jokers
+	create_card = function(self, card)
+	    return {set = "Joker", area = G.pack_cards, skip_materialize = true, soulable = true, key_append = "yourModPrefix", edition = "e_foil"}
+	end,
+	```
 - `update_pack(self, dt)`
 	- Handles booster pack UI when opened. 
 - `ease_background_colour(self)`
