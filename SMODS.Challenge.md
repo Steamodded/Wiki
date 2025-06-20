@@ -39,6 +39,7 @@
         - `deck.enhancement`: Can be used only if no `cards` table is specified. Given an enhancement by its key, apply it to all cards in the starting deck.
         - `deck.edition`: Can be used only if no `cards` table is specified. Given an edition by its key without the `e_` prefix, apply it to all cards in the starting deck.
         - `deck.seal`: Can be used only if no `cards` table is specified. Given a seal by its key, apply it to all cards in the starting deck.
+    - `button_colour = G.C.RED`: Used to set a custom button colour in the challenge list.
 
 ## API methods
 - `unlocked(self) -> bool`
