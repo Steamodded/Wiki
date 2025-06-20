@@ -1,6 +1,12 @@
 # Making Your First Mod
 This page is designed to help you find what is needed when first making a mod. If you are just looking on more clarification on something specific, you should check the sidebar to see if it's covered, or ask in the [Balatro Discord](https://discord.gg/balatro).
 
+- [First Steps](#first-steps)
+- [Useful Resources](#useful-resources)
+- [Development Tips](#development-tips)
+
+***
+
 # First Steps
 - If you haven't already, [Install Steamodded](https://github.com/Steamodded/smods/wiki).
 

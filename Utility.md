@@ -1,6 +1,13 @@
 # Utility functions
 Steamodded provides utility functions that extend or replace vanilla functionality or provide other useful tools you may need when making your mod. This page contains information on these functions. Check out `src/utils.lua` if you'd like to learn more about a function's implementation.
 
+- [Debugging](#debugging)
+- [Number Formatting](#number-formatting)
+- [Randomness](#randomness)
+- [Mod-facing Utilities](#mod-facing-utilities)
+
+***
+
 ## Debugging 
 - `inspect(table) -> string`
     - Given an input table, outputs a shallow mapping of keys to values as a string. Gives no further information on subtables.
@@ -10,10 +17,19 @@ Steamodded provides utility functions that extend or replace vanilla functionali
     - Given an input function, outputs details on its name, source, line of definition and number of upvalues.
 - `serialize(t, indent) -> string`
     - Given an input table, creates a string containing Lua code that evaluates to the serializable part of `t`. Information may be lost, and circular references are not resolved.
+- `serialize_string(s) -> string`
+    - Serializes the provided string.
 - `tprint(t, indent) -> string`
     - Recursively stringifies an input table into pseudo-valid Lua code, leaving non-serializable values and tables above a depth of 5 into their default string representations.
+- `SMODS.deepfind(tbl, val, mode, immediate) -> table`
+    - Searches for provided `val` anywhere deep within the provided `tbl`. Returns a table of finds. 
+    - `mode` - `"index"`/`"i"` will have `val` compared to the indexes in the tables. `"value"`/`"v"` will have `val` compared to the values in the tables. 
+    - `immediate` - Will return immediately after finding the value the first time.
+- `SMODS.debug_calculation()`
+    - Enables debugging of Joker calculations. 
+    - Every time that `Card:calculate_joker()` is called, `G.contexts` is updated for every value within `context`.
 
-## Number formatting
+## Number Formatting
 - `round_number(num, precision) -> number`
     - Rounds the input number to a given amount of decimal places.
 - `format_ui_value(value) -> string`
@@ -37,8 +53,7 @@ Steamodded provides utility functions that extend or replace vanilla functionali
     - `options` - A table of possible enhancements to generate. Defaults to all available enhancements.
     - `type_key` - Randomness seed for the roll which enhancement to generate.
 
-
-## Mod-facing utilities
+## Mod-facing Utilities
 These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.
 - `SMODS.find_mod(id) -> table`
     - Returns a list of mods that either match the given mod ID or provide it, and are enabled and loaded. 
@@ -69,7 +84,7 @@ These functions facilitate specific tasks that many mods may use but may be hard
     - `area` - The card area this will be emplaced into, e.g. `G.jokers`, `G.consumeables`. Default values are determined based on `set`.
     - `legendary` - Set this to `true` to generate a card of Legendary rarity.
     - `rarity` - If this is specified, skip rarity polling and use this instead of a chance roll between 0 and 1.
-        - Under vanilla conditions, values up to 0.7 indicate Common rarity, values above 0.7 and up to 0.95 indicate Uncommon rarity, and values above 0.95 indicate Rare rarity.
+        - Under vanilla conditions, values up to 0.7 indicate "Common" rarity, values above 0.7 and up to 0.95 indicate "Uncommon" rarity, and values above 0.95 indicate "Rare" rarity.
     - `skip_materialize` - If this is `true`, a `start_materialize` animation will not be shown.
     - `soulable` - If this is `true`, hidden Soul-type cards are allowed to replace the generated card. Usually, this is the case for cards generated for booster packs.
     - `key` - If this is specified, generate a card with the given key instead of the random one.
@@ -97,6 +112,32 @@ These functions facilitate specific tasks that many mods may use but may be hard
     - Provides score requirements for higher stages of ante scaling. If you want to implement your own scaling rules, you should modify this function.
 - `SMODS.stake_from_index(index) -> string`
     - Given an index from the Stake pool, return the corresponding key, or `'error'` if it doesn't exist.
+- `SMODS.smart_level_up_hand(card, hand, instant, amount)`
+    - Akin to vanilla's `level_up_hand()`, but avoids uneccessary calling of `update_hand_text()`
+    - `card` - If included, juices up this card during the animation
+    - `hand` - Key to the hand being leveled up.
+    - `instant` - Skips the level up animations.
+    - `amount` - How much the poker hand is leveled. Defaults to 1.
+- `SMODS.blueprint_effect(copier, copied_card, context) -> table?`
+    - Helper function to copy the ability of another joker, akin to Blueprint/Brainstorm. 
+    - `copier` is the card the will be copying the effect of `copied_card`, using the provided `context` table. 
+    - The returned table is the calculated effect of `copied_card`, with the display card set to `copier`. 
+    - Example: 
+        ```lua
+		calculate = function(self, card, context)
+			-- This is an implementation of Brainstorm
+			local other_joker = G.jokers.cards[1]
+			local other_joker_ret = SMODS.blueprint_effect(other_joker, card, context)
+
+			if other_joker_ret then
+				return other_joker_ret
+			end
+		end
+        ```
+- `SMODS.has_enhancement(card, key) -> bool`
+    - Returns true if the provided `card` has a specific enhancement.
+- `SMODS.shallow_copy(t) -> table`
+    - Returns a shallow copy of the provided table.
 - `time(func, ...) -> number`
     - Calls an input function with any given additional arguments: `func(...)` and returns the time the function took to execute in milliseconds. The return value from `func` is lost.
 - `SMODS.destroy_cards(cards)`
