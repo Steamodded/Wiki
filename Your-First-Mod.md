@@ -25,4 +25,5 @@ This page is designed to help you find what is needed when first making a mod. I
 - Lovely is a tool that lets you patch Balatro's source code. Steamodded mods can take advantage of it too. See [Lovely's patch documentation](https://github.com/ethangreen-dev/lovely-injector?tab=readme-ov-file#patches).
 
 # Development Tips
-- To quickly restart the game after making mod changes, press and hold `M` or press `Alt + F5`
+- To quickly restart the game after making mod changes, press and hold `M` or press `Alt + F5`.
+- Data can be saved by adding it to `G.GAME`.

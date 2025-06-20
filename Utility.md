@@ -80,6 +80,7 @@ These functions facilitate specific tasks that many mods may use but may be hard
 - `SMODS.create_card(t) -> Card`
     - This function replaces `create_card`. It provides a cleaner interface to the same functionality. The argument to this function should always be a table. The following fields are supported:
     - `set` - The card type to be generated, e.g. `'Joker'`, `'Tarot'`, `'Spectral'`
+        - `'Playing Card'` can be used for a random pick between `'Base'` and `'Enhanced'`.
     - `area` - The card area this will be emplaced into, e.g. `G.jokers`, `G.consumeables`. Default values are determined based on `set`.
     - `legendary` - Set this to `true` to generate a card of Legendary rarity.
     - `rarity` - If this is specified, skip rarity polling and use this instead of a chance roll between 0 and 1.
@@ -91,6 +92,10 @@ These functions facilitate specific tasks that many mods may use but may be hard
     - `no_edition` - If this is `true`, the generated card is guaranteed to have no randomly generated edition.
     - `edition`, `enhancement`, `seal` - Applies the specified modifier to the card.
     - `stickers` - This should be an array of sticker keys. Applies all specified stickers to the card.
+    - `front` - Front of the playing card, takes the playing card's key (e.g. `H_A`). Ignores `rank` and `suit`.
+    - `rank` - Rank of the playing card. Can be the `key` or the `card_key` (e.g. `'Ace'` or `'A'`).
+    - `suit` - Suit of the playing card. Can be the `key` or the `card_key` (e.g. `'Hearts'` or `'H'`).
+    - `enhanced_poll` - Chance to pick `'Base'` over `'Enhanced'` with set `'Playing Card'`. Default: 0.6
 - `SMODS.debuff_card(card, debuff, source)`
     - Allows manually setting and removing debuffs from cards.
     - `source` should be a unique identifier string. You must use the same source to remove a previously set debuff.
@@ -153,3 +158,33 @@ These functions facilitate specific tasks that many mods may use but may be hard
 - `SMODS.draw_cards(hand_space)`
 	- Function to draw a certain number of cards to hand, calling the relevant calculation contexts
 	- `hand_space` - the number of cards to draw
+- `SMODS.merge_effects(...) -> table`
+    - Takes any number of 2D arrays. Flattens given calculation returns into one, utilising `extra` tables.
+    - This can be used to merge returns from `SMODS.blueprint_effect`.
+## Internal utilities
+These functions are used internally and may be of use to you if you're modifying Steamodded's injection process.
+- `SMODS.save_d_u(o)`
+    - Saves the default discovery and unlock states of an object into a separate field for later use before they are overwritten with profile data.
+- `SMODS.SAVE_UNLOCKS()`
+    - Modified from base game code. Sets discovery and unlock data according to profile state after injection.
+- `SMODS.process_loc_text(ref_table, ref_value, loc_txt, key)`
+    - Saves a localization entry (usually consisting of a name and a description) into the game's dictionary, with the ability to handle a multi-language format. The `loc_txt` table should either have locale indexing at the top layer or none at all. If the table holds multiple entries, `key` can be used to choose a key one layer down.
+    - Example: `SMODS.process_loc_text(G.localization.descriptions.Joker, 'my_joker_key', loc_txt)`
+- `SMODS.handle_loc_file(path)`
+    - Given a mod's path, reads any present localization files and adds entries to the dictionary.
+- `SMODS.insert_pool(pool, center, replace)`
+    - If `replace` is true or `center` has been taken ownership of, look for an entry in `pool` with the same key and replace it. Otherwise, append `center` to the end of `pool`.
+- `SMODS.remove_pool(pool, key)`
+    - Find an entry in pool with this `key` and remove it if found.
+- `SMODS.create_loc_dump()`
+    - Dumps localization entries created during injection into a single file, for purposes of converting to a file-based localization system.
+- `SMODS.create_mod_badges(obj, badges)`
+    - UI code for adding mod badges to an object.
+- `SMODS.merge_defaults(t, defaults) -> t`
+    - Starting with `t`, insert any key-value pairs from `defaults` that don't already exist in `t` into `t`. Modifies `t` and returns it as the result of the merge.
+    - `nil` entries are interpreted as an empty table; `false` inputs count as a table where every possible key maps to `false`. Therefore, `t == nil` is weak and falls back to defaults, while `t == false` explicitly ignores `defaults` in its entirety. Due to this, this function may not always return a table.
+    - This is used for controlling when keys should receive prefixes.
+- `convert_save_data()`
+    - Adjusts values in save data to make the save compatible with Steamodded's way of storing deck wins by stake key instead of index.
+- `SMODS.restart_game()`
+    - Restarts the game.

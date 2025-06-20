@@ -92,9 +92,12 @@ return {
                     'for unlocking this card',
                 },
             },
-            -- multiple description box example
+            -- multiple line name and multiple description box example
             j_mod_multi_joker = {
-                name = 'Name',
+                name = {
+                    'First line of name',
+                    'Second line of name',
+                },
                 text = {
                     {
                        'First line of box 1',
