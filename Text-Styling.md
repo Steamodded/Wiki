@@ -292,7 +292,7 @@ This modifier uniquely strips all whitespace from the styled text, so text like 
    
    ```lua
    vars = {
-     colours = { HEX("#FF00FF") }
+     colours = { HEX('FF00FF') }
    }
    ```
   </td>
@@ -312,10 +312,10 @@ This modifier uniquely strips all whitespace from the styled text, so text like 
    
    ```lua
    vars = {
-     "Spade",
-     "Heart",
-     "Club",
-     "Diamond",
+     'Spade',
+     'Heart',
+     'Club',
+     'Diamond',
      colours = { 
        G.C.SUITS.Spades,
        G.C.SUITS.Hearts,
@@ -365,7 +365,7 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
    
    ```lua
    vars = {
-     colours = { HEX("#00FF00") }
+     colours = { HEX('00FF00') }
    }
    ```
   </td>
@@ -411,8 +411,8 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
    
    ```lua
    vars = {
-     "Spa",
-     "rts",
+     'Spa',
+     'rts',
      colours = { 
        G.C.SUITS.Spades,
        G.C.SUITS.Hearts,
@@ -430,10 +430,11 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
 
 
 ## Text motion modifier `{E:}`
-`{E:1}` applies a floating animation to each letter in the text.
+`{E:1}` applies a pop-in effect when the text is first displayed, and a floating animation to each letter in the text.
 
 `{E:2}` applies a bumping animation to each letter in sequence.
 
+`{E:}` is incompatible with background modifiers `{X:}` and `{B:}`. If background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored.
 
 ### Examples
 
@@ -554,6 +555,8 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
 - `{T:}` and `{s:}` are compatible with all other modifiers.
 
 - Background modifiers `{X:}` or `{B:}` can be used in conjunction with text colour modifiers `{C:}` or `{V:}`.
+
+- Text motion modifier `{E:}` is incompatible with background modifiers `{X:}` and `{B:}` - if background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored.
 
 - `{C:}` and `{V:}` are exclusive - if both are used, `{C:}` will be ignored.
 
@@ -810,7 +813,7 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
    <code><b>inactive</code>
   </td>
   <td>
-   <code>G.C.INACTIVE</code>
+   <code>G.C.UI.TEXT_INACTIVE</code>
   </td>
   <td align="center">
    <img src="Assets/Text-Styling/example_Must_have_room.svg" height=24 alt="(Must have room)">
@@ -1011,7 +1014,7 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
    <code><b>legendary</code>
   </td>
   <td>
-   <code>G.C.RARITY[4]</code> or <br> <code>G.C.RARITY.Legendary</code>
+   <code>G.C.RARITY[4]</code> (vanilla)<br> <code>G.C.RARITY.Legendary</code> (SMODS)
   </td>
   <td align="center">
    <picture>
