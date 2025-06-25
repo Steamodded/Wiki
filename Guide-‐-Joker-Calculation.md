@@ -260,7 +260,7 @@ Whenever any of the events below take place, *each joker* will be evaluated via 
 All changes to context are mentioned alongside the event:
 
  - Round-related events
-   - **New Round**: sets `context.setting_blind = true` and `context.blind = G.GAME.round_resets.blind` (ie. the type of blind)<br>
+   - **New Round**: sets `context.setting_blind = true` and `context.blind = G.GAME.round_resets.blind` (ie. the type of blind) and `context.tag = G.GAME.round_resets.blind_tag` (ie. the blind's associated skip tag, if any exists)<br>
     Used by 'Madness', 'Burglar', and others in vanilla
    - **Drawing First Hand**: sets `context.first_hand_drawn = true`<br>
     Used by 'DNA', 'Trading Card', and others in vanilla
