@@ -469,6 +469,20 @@ if context.check_enhancement then
 }
 ```
 ---
+This context is used for determining if a card is eternal. 
+```lua
+if context.check_eternal then
+{
+	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
+	check_eternal = true,
+	other_card = card,
+	trigger = trigger, -- The card that triggered the check
+	no_blueprint = true
+}
+```
+> [!TIP]
+> `trigger = {from_sell = true}` when checking if a card can be sold.
+---
 This context is used for effects after a Joker has triggered. 
 ```lua
 if context.post_trigger then
