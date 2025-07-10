@@ -481,7 +481,7 @@ if context.check_eternal then
 }
 ```
 > [!TIP]
-> `trigger = {from_sell = true}` when checking if a card can be sold.
+> `trigger = { from_sell = true }` when checking if a card can be sold.
 ---
 This context is used for effects after a Joker has triggered. 
 ```lua
