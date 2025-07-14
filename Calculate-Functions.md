@@ -281,6 +281,8 @@ if context.debuff_hand then
 	debuff_hand = true
 }
 ```
+> [!TIP]
+> You can return `{ debuff = true }` or `{ prevent_debuff = true }`
 ---
 This context is used for effects when playing a hand debuffed by the blind. 
 ```lua
@@ -476,7 +478,7 @@ This context is used for effects after drawing a hand when facing a blind.
 if context.hand_drawn then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
-	hand_drawn = true,
+	hand_drawn = drawn_cards, --The cards that have been drawn
 }
 ```
 ---
@@ -485,7 +487,7 @@ This context is used for effects after drawing a hand when not facing a blind.
 if context.other_drawn then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
-	other_drawn = true,
+	other_drawn = drawn_cards,
 }
 ```
 ---
