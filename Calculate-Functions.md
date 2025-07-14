@@ -282,7 +282,7 @@ if context.debuff_hand then
 }
 ```
 > [!TIP]
-> You can return `{ debuff = true }` or `{ prevent_debuff = true }`
+> You can return `{ debuff = true }` to debuff the hand or `{ prevent_debuff = true }` to stop the hand from being debuffed
 ---
 This context is used for effects when playing a hand debuffed by the blind. 
 ```lua
