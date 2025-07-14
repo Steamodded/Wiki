@@ -28,6 +28,7 @@ This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMOD
 	- `primary_colour`
 	- `secondary_colour`
 - **Optional parameters** *(defaults)*:
+	- `no_collection` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `loc_txt`, Skeleton:
 	```lua
 		{
