@@ -59,6 +59,3 @@ If you'd like to update Steamodded in the future. Note that you do not need to u
 
 ## Uninstalling Steamodded
 Delete the `version.dll` file from Balatro's game directory. This will prevent Steamodded and any other mods from loading.
-
-## Different platforms
-Looking to install Steamodded on Windows or Mac? Check [here](https://github.com/Steamodded/smods/wiki).

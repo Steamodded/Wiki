@@ -61,6 +61,3 @@ If you'd like to update Steamodded in the future. Note that you do not need to u
 - Check if Lovely needs to be updated. Your current version of Lovely is shown in the title of the second window when launching Balatro, and the latest version of Lovely can be found [here](https://github.com/ethangreen-dev/lovely-injector/releases/latest). If Lovely does need to be updated, follow step 1.
 - Delete your current Steamodded folder. It might be named `Steamodded`, `smods-1.0.0-beta-0711a`, or something similar.
 - Follow the instructions on how to install Steamodded in step 2.
-
-## Different platforms
-Looking to install Steamodded on Windows or Linux? Check [here](https://github.com/Steamodded/smods/wiki).
