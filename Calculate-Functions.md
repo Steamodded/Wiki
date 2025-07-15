@@ -480,8 +480,14 @@ if context.check_eternal then
 	no_blueprint = true
 }
 ```
-> [!TIP]
+> [!NOTE]
 > `trigger = { from_sell = true }` when checking if a card can be sold.
+
+> [!TIP]
+> Return `{ no_destroy = true }` to mark `context.other_card` as eternal
+
+> [!WARNING]
+> `eternal_compat` still applies unless `no_destroy = { override_compat = true }`
 ---
 This context is used for effects after a Joker has triggered. 
 ```lua
