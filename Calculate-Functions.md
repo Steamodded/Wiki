@@ -287,7 +287,8 @@ if context.end_of_round and context.cardarea == G.jokers then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
 	end_of_round = true,
-	game_over = game_over -- true or false
+	game_over = game_over, -- true or false
+	beat_boss = G.GAME.blind.boss -- true if the defeated blind was a boss
 }
 ```
 ---
@@ -298,7 +299,8 @@ if context.end_of_round and context.individual then
 	cardarea = G.hand, -- (G.deck and G.discard optionally enabled)
 	end_of_round = true,
 	individual = true,
-	other_card = card
+	other_card = card,
+	beat_boss = G.GAME.blind.boss
 }
 ```
 ---
@@ -310,6 +312,7 @@ if context.end_of_round and context.repetition then
 	end_of_round = true,
 	repetition = true,
 	other_card = card,
+	beat_boss = G.GAME.blind.boss,
 	card_effects = effects -- table of effects for the card
 }
 ```
