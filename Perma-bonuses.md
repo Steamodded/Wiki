@@ -16,6 +16,8 @@ perma_h_x_mult,
 
 perma_p_dollars,  -- money on scoring
 perma_h_dollars,  -- money on held at end of round (like gold cards)
+
+perma_repetitions, -- retriggers in any context
 ```
 
 ## Re-implementation of Hiker
@@ -61,6 +63,8 @@ Permanent held xmult gets multiplied with enhancement held xmult such as steel w
 
 Permanent held dollars only give money on end of round, similar to the gold enhancement.
 
+Permanent repetitions retrigger the card in any context, both when scored or when in hand (Gold cards, Blue seals, etc.).
+
 ## Localization
 Steamodded by default handles the localization of all perma-bonuses described on this page. These can be overwritten (or translated) by defining:
 ```lua
@@ -76,6 +80,8 @@ card_extra_h_x_mult,
 
 card_extra_p_dollars,
 card_extra_h_dollars,
+
+card_extra_repetitions,
 ```
 Simplify define an entry under `descriptions.Other` (see [Localization](https://github.com/Steamodded/smods/wiki/Localization) for more information) such as:
 ```lua
