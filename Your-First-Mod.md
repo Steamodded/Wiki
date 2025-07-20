@@ -2,13 +2,30 @@
 This page is designed to help you find what is needed when first making a mod. If you are just looking on more clarification on something specific, you should check the sidebar to see if it's covered, or ask in the [Balatro Discord](https://discord.gg/balatro).
 
 # First Steps
-- If you haven't already, [Install Steamodded](https://github.com/Steamodded/smods/wiki).
+If you haven't already, Install Steamodded. Method A is recommended due to easier updating and being on the latest dev branch.
+### Method A: using the command line
+*This method requires [Git](https://git-scm.com/downloads). If you do not have git, skip to method B.*
+1. Install lovely according to the [instructions](https://github.com/ethangreen-dev/lovely-injector?tab=readme-ov-file#manual-installation).
+2. Navigate to Balatro's save directory: `cd %AppData%/Balatro`
+3. Paste the following lines:
+```shell
+mkdir Mods
+cd Mods
+git clone https://github.com/Steamodded/smods.git
+```
+4. To update Steamodded later, navigate back to the `smods` directory and run `git pull`.
+### Method B: manual installation
+*If you have completed Method A, please skip this step. Your installation is complete.*
+
+Follow the manual installation instructions on how to install smods as a user at the [home page](https://github.com/Steamodded/smods/wiki).
 
 # Useful resources
-- It can be useful to look at code from other mod creators.
-  - You can find example implementations of the vanilla Jokers using Steamodded [here](https://github.com/nh6574/VanillaRemade) (Work In Progress)
-  - The best place to find more mods is in the official [Balatro Discord](https://discord.gg/balatro).
-  - Steamodded has some [Example Mods](https://github.com/Steamodded/examples/tree/master/Mods).
+A list of resources that might be useful when developing your own mod.
+## Existing mods
+It can be useful to look at code from other mod creators.
+- You can find example implementations of the vanilla Jokers using Steamodded [here](https://github.com/nh6574/VanillaRemade) (Work In Progress)
+- The best place to find more mods is in the official [Balatro Discord](https://discord.gg/balatro).
+- Steamodded has some [Example Mods](https://github.com/Steamodded/examples/tree/master/Mods).
 ## Steamodded documentation
 - Check out the [Mod Metadata](https://github.com/Steamodded/smods/wiki/Mod-Metadata) page for how to get your mod detected by Steamodded.
 - Check out the [API Documentation](https://github.com/Steamodded/smods/wiki/API-Documentation) page for information on the basics of Steamodded's api.
