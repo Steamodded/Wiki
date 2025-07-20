@@ -23,7 +23,7 @@ Follow the manual installation instructions on how to install smods as a user at
 A list of resources that might be useful when developing your own mod.
 ## Existing mods
 It can be useful to look at code from other mod creators.
-- You can find example implementations of the vanilla Jokers using Steamodded [here](https://github.com/nh6574/VanillaRemade) (Work In Progress)
+- You can find example implementations of the vanilla game objects using Steamodded [here](https://github.com/nh6574/VanillaRemade)
 - The best place to find more mods is in the official [Balatro Discord](https://discord.gg/balatro).
 - Steamodded has some [Example Mods](https://github.com/Steamodded/examples/tree/master/Mods).
 ## Steamodded documentation
