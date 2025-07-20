@@ -9,7 +9,7 @@
 > [!IMPORTANT]
 > An extra line that lists applied stakes is appended at the end of the description only when `loc_txt` is used. If you are using localization files, you should add this yourself.
 - **Optional parameters** *(defaults)*:
-    - `atlas = 'chips', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards
+    - `atlas = 'chips', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
     - `sticker_atlas, sticker_pos`: The atlas and position to use for this stake's win sticker.
     - `unlocked = false, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
         - If `unlocked` is set to `false`, the stake is unlocked by first winning a run on each of the `applied_stakes`.
