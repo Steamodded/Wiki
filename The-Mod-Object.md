@@ -14,6 +14,8 @@ Every mod that's found and registered by Steamodded is converted into a "Mod" ob
 	- [`mod.optional_features`](#modoptional_features)
 
 - [Customizing Mod Page UI](#customizing-mod-page-ui)
+	- [`Mod Descriptions`](#mod-description)
+	- [`mod.ui_config`](#modui_config)
 	- [`mod.description_loc_vars`](#moddescription_loc_vars)
 	- [`mod.custom_ui`](#modcustom_ui)
 
@@ -88,9 +90,9 @@ If you want the mod config to be handled differently from how SMODS saves mod co
 Steamodded comes with additional opt-in features that requires mods to manually turn them on. 
 
 ### Available Features
-- **`quantum_enhancements`** - Enables "Quantum Enhancement" contexts. Cards can count as having multiple enhancements at once. 
-- **`retrigger_joker`** - Enables "Joker Retrigger" contexts. Jokers can be retriggered by other jokers or effects. 
-- **`post_trigger`** - Enables "Post Trigger" contexts. Allows calculating effects after a Joker has been calculated. 
+- **`quantum_enhancements`** - Enables "Quantum Enhancement" contexts. Cards can count as having multiple enhancements at once.
+- **`retrigger_joker`** - Enables "Joker Retrigger" contexts. Jokers can be retriggered by other jokers or effects.
+- **`post_trigger`** - Enables "Post Trigger" contexts. Allows calculating effects after a Joker has been calculated.
 - **`cardareas`** - Table of features that would add 
 	- **`deck`** - Adds `G.deck` to CardArea checks, allowing cards within the deck to be included in calculation.
 	- **`discard`** - Adds `G.discard` to CardArea checks, allowing discarded cards to be included in calculation.
@@ -123,6 +125,21 @@ The UI elements within on your mod page can be individually customized.
 
 ### Mod Description
 Default mod descriptions defined within your mod's metadata supports basic text wrapping, but no further formatting like changing the colour and scale of text or inserting variables, as well as localization. By using [Localization files](https://github.com/Steamodded/smods/wiki/Localization#localization-files-recommended), you can create a description for your mods with support for all the formatting of other descriptions. Your description should be placed in `G.localization.descriptions.Mod[mod_id]`.
+
+#### `mod.ui_config`
+Allows configuring the mod menu's ui elements via custom values in a table.
+```lua
+SMODS.current_mod.ui_config = {
+	colour = G.C.RED, -- Color of the mod menu BG
+	author_colour = G.C.WHITE, -- Color of the text displaying the mod authors
+	bg_colour = { G.C.MOD.CUSTOM_COLOR[1], G.C.MOD.CUSTOM_COLOR[2], G.C.MOD.CUSTOM_COLOR[3], 0.5 } -- Color of the area behind the mod menu.
+	back_colour = G.C.RED -- Color of the "Back" button
+	tab_button_colour = G.C.RED -- Color of the tab buttons
+	collection_colour = G.C.RED, -- Color of the collections menu BG. Defaults to `colour` if not provided.
+	collection_bg_colour = { G.C.MOD.CUSTOM_COLOR[1], G.C.MOD.CUSTOM_COLOR[2], G.C.MOD.CUSTOM_COLOR[3], 0.5 } -- Color of the area behind the collections menu. Defaults to `bg_colour` if not provided.
+	collection_back_colour = G.C.RED -- Color of the "Back" button in the collections menu. Defaults to `back_colour` if not provided.
+}
+```
 
 #### `mod.description_loc_vars`
 To change your description dynamically through variables and alternate keys or specify a default text colour and scale, you can define this function on your mod object. This function behaves like [`loc_vars`](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) on other objects.
@@ -226,6 +243,13 @@ This function is called when a card is being checked for if it should be debuffe
 - Returning `false` or `nil` will not debuff the card. 
 - Returning `true` will debuff the card. 
 - Returning `"prevent_debuff"` will force to card to not be debuffed, and all other effects that would normally debuff this card are ignored.
+
+### `mod.quip_filter(SMODS.JimboQuip, string) -> boolean, table`
+Allows configuring if a quip is allowed to appear.
+
+### `mod.calculate(self, table) -> table, boolean`
+Equivalent to a calculate function on a GameObject.
+See [SMODS calculation](https://github.com/Steamodded/smods/wiki/calculate_functions) docs for details.
 
 ## Other 
 ### `mod.debug_info`
