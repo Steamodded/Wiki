@@ -18,6 +18,10 @@ These are functions used during the injection process of mods or GameObjects.
     - Example: `SMODS.process_loc_text(G.localization.descriptions.Joker, 'my_joker_key', loc_txt)`
 - `SMODS.handle_loc_file(path)`
     - Given a mod's path, reads any present localization files and adds entries to the dictionary.
+- `SMODS.modify_key(obj, prefix, condition, key)`
+    - Modifies a string within the object to include provided `prefix`.
+- `SMODS.add_prefixes(cls, obj, from_take_ownership)`
+    - Injects prefixes into the object. This includes the `key` of the object and any tables expecting keys of objects (e.x. `applied_stakes`).
 - `SMODS.insert_pool(pool, center, replace)`
     - If `replace` is true or `center` has been taken ownership of, look for an entry in `pool` with the same key and replace it. Otherwise, append `center` to the end of `pool`.
 - `SMODS.remove_pool(pool, key)`
@@ -88,6 +92,12 @@ These functions are used for handling calculation events.
     - Returns true if the card should be shattered.
 - `SMODS.in_scoring(card, scoring_hand) -> bool`
     - Returns true if the card is within the scoring hand.
+- `SMODS.push_to_context_stack(context, func)`
+    - Pushes `context` into `SMODS.context_stack`.
+- `SMODS.pop_from_context_stack(context, func)`
+    - Pops a `context` from `SMODS.context_stack`.
+- `SMODS.get_previous_context()`
+    - Returns the second to last context from `SMODS.context_stack`
 
 ## Misc.
 These are functions used by SMODS for miscellaneous features.
@@ -97,3 +107,6 @@ These are functions used by SMODS for miscellaneous features.
     - Returned a signed string of `val` as dollars, prefixed with "$" if positive and "-$" if negative.
 - `SMODS.multiplicative_stacking(base, perma) -> number`
     - Returns the result of multiplying `base` and `perma + 1`.
+- `SMODS.add_to_pool(prototype_obj, args) -> bool?, table?`
+    - Helper function to check if an object can be added into a pool,
+    - If `prototype_obj.in_pool` is defined, returns the result of `in_pool`, otherwise returns `false`.

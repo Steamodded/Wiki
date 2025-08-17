@@ -136,6 +136,8 @@ These functions facilitate specific tasks that many mods may use but may be hard
         ```
 - `SMODS.has_enhancement(card, key) -> bool`
     - Returns true if the provided `card` has a specific enhancement.
+- `SMODS.is_eternal(card, trigger) -> bool`
+    - Returns true if the card is cosidered to be "eternal" (cannot be destroyed).
 - `SMODS.shallow_copy(t) -> table`
     - Returns a shallow copy of the provided table.
 - `time(func, ...) -> number`
@@ -161,30 +163,3 @@ These functions facilitate specific tasks that many mods may use but may be hard
 - `SMODS.merge_effects(...) -> table`
     - Takes any number of 2D arrays. Flattens given calculation returns into one, utilising `extra` tables.
     - This can be used to merge returns from `SMODS.blueprint_effect`.
-## Internal utilities
-These functions are used internally and may be of use to you if you're modifying Steamodded's injection process.
-- `SMODS.save_d_u(o)`
-    - Saves the default discovery and unlock states of an object into a separate field for later use before they are overwritten with profile data.
-- `SMODS.SAVE_UNLOCKS()`
-    - Modified from base game code. Sets discovery and unlock data according to profile state after injection.
-- `SMODS.process_loc_text(ref_table, ref_value, loc_txt, key)`
-    - Saves a localization entry (usually consisting of a name and a description) into the game's dictionary, with the ability to handle a multi-language format. The `loc_txt` table should either have locale indexing at the top layer or none at all. If the table holds multiple entries, `key` can be used to choose a key one layer down.
-    - Example: `SMODS.process_loc_text(G.localization.descriptions.Joker, 'my_joker_key', loc_txt)`
-- `SMODS.handle_loc_file(path)`
-    - Given a mod's path, reads any present localization files and adds entries to the dictionary.
-- `SMODS.insert_pool(pool, center, replace)`
-    - If `replace` is true or `center` has been taken ownership of, look for an entry in `pool` with the same key and replace it. Otherwise, append `center` to the end of `pool`.
-- `SMODS.remove_pool(pool, key)`
-    - Find an entry in pool with this `key` and remove it if found.
-- `SMODS.create_loc_dump()`
-    - Dumps localization entries created during injection into a single file, for purposes of converting to a file-based localization system.
-- `SMODS.create_mod_badges(obj, badges)`
-    - UI code for adding mod badges to an object.
-- `SMODS.merge_defaults(t, defaults) -> t`
-    - Starting with `t`, insert any key-value pairs from `defaults` that don't already exist in `t` into `t`. Modifies `t` and returns it as the result of the merge.
-    - `nil` entries are interpreted as an empty table; `false` inputs count as a table where every possible key maps to `false`. Therefore, `t == nil` is weak and falls back to defaults, while `t == false` explicitly ignores `defaults` in its entirety. Due to this, this function may not always return a table.
-    - This is used for controlling when keys should receive prefixes.
-- `convert_save_data()`
-    - Adjusts values in save data to make the save compatible with Steamodded's way of storing deck wins by stake key instead of index.
-- `SMODS.restart_game()`
-    - Restarts the game.
