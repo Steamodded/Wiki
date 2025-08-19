@@ -23,7 +23,8 @@
     - `weight = 1`: Determines how freqently the pack appears in the shop.
     - `draw_hand = false`: If this is `true`, draw playing cards to hand when this pack is opened.
     - `kind`: Used for grouping packs together. For example, this can be used in `get_pack()` to generate a booster pack of a given type.
-    - `select_card`: Set to string of card area, `consumeables`, to save cards from the pack instead of using them. Set to table of form `{Set = 'area'}` to change behaviour according to a card's `Set` (e.g. `{Tarot = 'consumeables'}` to only save `Tarot` cards, relevant if you have multiple types of consumables in a booster).
+    - `select_card`: Set to string of card area, `consumeables`, to save cards from the pack instead of using them. 
+	Set to table of form `{Set = 'area'}` to change behaviour according to a card's `Set` (e.g. `{Tarot = 'consumeables'}` to only save `Tarot` cards, relevant if you have multiple types of consumables in a booster).
 
 ## API methods
 - `loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
