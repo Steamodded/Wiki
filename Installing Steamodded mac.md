@@ -5,7 +5,7 @@ You can follow Lovely's general instructions [here](https://github.com/ethangree
 1. Download the [latest Lovely release](https://github.com/ethangreen-dev/lovely-injector/releases/latest) for Mac. If you have an M-series CPU (M1, M2, etc.) then this will be `lovely-aarch64-apple-darwin.tar.gz`. If you have an Intel CPU then it will be `lovely-x86_64-apple-darwin.tar.gz`. If you don't know which CPU you have, go to the Apple logo on the top left and press "About this Mac" to view what chip you are using.
 2. Navigate to your Balatro game directory in Finder. This can easily be done by right-clicking the game in Steam, hovering "Manage", and selecting "Browse local files".
 3. Open the archive, and extract Lovely's `liblovely.dylib` and `run_lovely_macos.sh` files from the archive into the game directory.
-4. Launch Balatro by dragging and dropping `run_lovely_macos.sh` onto `Terminal.app` in Applications > Utilities and then pressing enter. You should now see a second window pop up alongside the game named something like `Lovely x.x.x`. If it does, you have installed Lovely correctly and are ready to proceed to the next section. If it does not, please make sure you have followed the previous steps correctly.
+4. Launch Balatro by dragging and dropping `run_lovely_macos.sh` onto `Terminal.app` in Applications > Utilities and then pressing enter. You should now see the game popup and a bunch of text in the terminal. If this happens, you have installed Lovely correctly and are ready to proceed to the next section. If not, please make sure you have followed the previous steps correctly.
 
 ## Step 2: Installing Steamodded
 Once you have installed Lovely, you can install Steamodded:
@@ -18,6 +18,8 @@ Once you have installed Lovely, you can install Steamodded:
 You can now install other mods by placing them into the `Mods` folder next to the Steamodded/smods folder. Make sure each mod is in its own subfolder.
 
 Note: You cannot run your game through Steam on Mac due to a known bug within the Steam client. You must run it by dragging and dropping `run_lovely_macos.sh` onto `Terminal.app` and pressing enter.
+
+Once you have run the game once this way, you may do so again by opening `Terminal.app` and pressing the up arrow to bring your last run command. 
 
 ## Common issues
 Click the line describing your issue to see possible solutions.
