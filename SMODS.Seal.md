@@ -23,3 +23,9 @@
     - For actions that happen every frame.
 - `draw(self, card, layer)`
 	- Draws the sprite and shader of the seal.
+- `apply(self, card)`
+    - Runs when a card with the Seal is obtained, or when the Seal is applied on an obtained card.
+- `remove(self, card)`
+    - Runs when a card with the Seal is removed, or when the Seal is removed.
+- `set_ability(self, card)`
+    - Runs when the Seal is applied on a card.
