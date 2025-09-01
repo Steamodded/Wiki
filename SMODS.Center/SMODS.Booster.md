@@ -33,16 +33,15 @@
 	```lua
 	-- to create a booster pack of standard cards
 	create_card = function(self, card)
-	    --function create_playing_card(card_init, area, skip_materialize, silent, colours)
-	    local newCard = create_playing_card(nil, G.pack_cards, true, true, nil)            
-	    return getCard
+	    local newCard = SMODS.create_card({set = "Playing Card", area = G.pack_cards, skip_materialize = true})
+	    return newCard
 	end,
 	```
    	- Example 2, return passed into `SMODS.create_card`:
 	```lua
 	-- to create a booster pack of foil jokers
 	create_card = function(self, card)
-	    return {set = "Joker", area = G.pack_cards, skip_materialize = true, soulable = true, key_append = "yourModPrefix", edition = "e_foil"}
+	    return {set = "Joker", area = G.pack_cards, skip_materialize = true, soulable = true, key_append = "unique_string_for_rng", edition = "e_foil"}
 	end,
 	```
 - `update_pack(self, dt)`
