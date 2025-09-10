@@ -128,8 +128,8 @@ Configuration options for Text nodes (ie. `G.UIT.T`):
  - `vert`: set to `true` to draw the text vertically (ie. sideways).
  
  > [!TIP]
- > The text contents of a `G.UIT.T` node **cannot be changed** interactively.<br>
- > You must either: (1) delete and re-create the node with new text, or (2) use a `DynaText` object.
+ > If you want to change the text contents of a `G.UIT.T` interactively, use arguments `ref_table` and `ref_value` instead of `text`. Its text will be updated whenever `ref_table[ref_value]` changes.
+ > If you want animated text, use `G.UIT.O` with `DynaText`.
  
 Configuration optoins for Object nodes (ie. `G.UIT.O`):
 
