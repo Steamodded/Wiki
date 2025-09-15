@@ -117,9 +117,15 @@ These functions facilitate specific tasks that many mods may use but may be hard
 - `SMODS.draw_cards(hand_space)`
 	- Function to draw a certain number of cards to hand, calling the relevant calculation contexts
 	- `hand_space` - the number of cards to draw
+- `SMODS.blueprint_effect(copier, copied_card, context) -> table`
+    - Use in calculation to copy the ability of another joker.
+    - Returns whatever the copied card returned during calculation.
 - `SMODS.merge_effects(...) -> table`
     - Takes any number of 2D arrays. Flattens given calculation returns into one, utilising `extra` tables.
     - This can be used to merge returns from `SMODS.blueprint_effect`.
+- `SMODS.smart_level_up_hand(card, hand, instant, amount)`
+    - Like vanilla `level_up_hand()`, but takes care of calling `update_hand_text()` for you and works mid-scoring.
+
 ## Internal utilities
 These functions are used internally and may be of use to you if you're modifying Steamodded's injection process.
 - `SMODS.save_d_u(o)`
