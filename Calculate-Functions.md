@@ -382,10 +382,10 @@ if context.buying_card then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
 	buying_card = true,
-	card = self -- the card being bought
+	card = c1 -- the card being bought
 }
 ```
-The card being bought also calculates itself with context `{ buying_card = true, card = c1 }`.
+The card being bought also calculates itself with context `{ buying_card = true, buying_self = true, card = c1 }`.
 
 ---
 This context is used for effects after selling a card. 
