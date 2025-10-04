@@ -1,3 +1,4 @@
+
 # Welcome to the Steamodded wiki!
 The place serves as an assembly of documentation and guides for Steamodded, also known as smods. It explains how to install mods, has documentation on internal game objects, and has multiple guides on how to create mods.
 

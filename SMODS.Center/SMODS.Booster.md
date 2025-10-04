@@ -28,6 +28,7 @@
 
 ## API methods
 - `loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+	- SMODS.Booster implements a default `loc_vars` function that returns `card.ability.choose` and `card.ability.extra`. If your booster pack defines both of these values in its `config` you can omit defining `loc_vars`.
 - `create_card(self, card, i) -> table|Card`
 	- Creates the cards inside of the booster pack. `card` is the booster pack card, `i` is the position of the card to be generated. If the returned table is not a `Card`, it is passed into [`SMODS.create_card`](https://github.com/Steamodded/smods/wiki/Utility#mod-facing-utilities).
  	- Example 1, manual card creation:
@@ -46,11 +47,11 @@
 	end,
 	```
 - `update_pack(self, dt)`
-	- Handles booster pack UI when opened. 
+	- Handles the booster back's UI elements when this booster is opened. 
 - `ease_background_colour(self)`
-	- Changes background colour. 
+	- Changes the background color whilst this booster is opened. 
 - `particles(self)`
-	- Handles particle effects. 
+	- Handles adding particle effects. 
 - `create_UIBox(self) -> table`
 	- Returns the booster's UIBox. 
 - `set_ability(self, card, initial, delay_sprites)`
