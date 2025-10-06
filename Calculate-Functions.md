@@ -581,6 +581,25 @@ if context.card_added then
 ```
 New playing card types may need to be excluded manually.
 A patch target is provided.
+---
+This context is used for effects before the ante is changed.
+```lua
+if context.modify_ante then
+{
+	context.modify_ante = true,
+	context.ante_end = false -- Is true when the player naturally passes an ante by beating the ante's boss
+}
+```
+> [!TIP]
+> Return `{ modify = number }` to change the ante's modifier. (ex. returning `{modify = 1}` will increment the ante by 1 more than usual)
+---
+This context is used for effects after the ante is changed.
+```lua
+if context.ante_change then
+{
+	context.ante_change = mod, -- The number the ante was incremented by
+	context.ante_end = false -- Is true when the player naturally passes an ante by beating the ante's boss
+}
 
 
 > [!NOTE]
