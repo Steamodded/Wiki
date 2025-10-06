@@ -1,5 +1,38 @@
 # Logging
 
+- [Log Levels](#log-levels)
+- [Viewing Logs](#viewing-logs)
+- [Logging Usage](#logging-usage)
+  - [Trace](#trace)
+    - [Lua](#lua)
+    - [Output](#output)
+  - [Debug](#debug)
+    - [Lua](#lua-1)
+    - [Output](#output-1)
+  - [Info](#info)
+    - [Lua](#lua-2)
+    - [Output](#output-2)
+  - [Warn](#warn)
+    - [Lua](#lua-3)
+    - [Output](#output-3)
+  - [Error](#error)
+    - [Lua](#lua-4)
+    - [Output](#output-4)
+  - [Fatal](#fatal)
+    - [Lua](#lua-5)
+    - [Output](#output-5)
+  - [Additional Notes](#additional-notes)
+- [Debug Console](#debug-console)
+  - [Opening the Debug Console](#opening-the-debug-console)
+  - [Using the Debug Console](#using-the-debug-console)
+  - [CLI Args](#cli-args)
+  - [Features](#features)
+  - [Shortcuts](#shortcuts)
+- [Issues](#issues)
+
+***
+
+## Log Levels
 Steamodded implements 6 levels of logging, each with a different purpose. The levels are as follows:
 
 - `TRACE`: Very detailed information, typically of interest only when diagnosing problems.
@@ -26,7 +59,7 @@ There a few different methods of viewing logs, with their own pros and cons. Bel
   - To get logs, you need to launch the console before launching the game.
   - This method does not work when using `print` to log, unlike the other methods listed.
 
-## Logging usage
+## Logging Usage
 
 All logging functions follow the same pattern, with the first argument being the message, and the second argument being
 the logger name. This argument order is consistent across all logging functions. The logger name is optional and will
@@ -116,7 +149,7 @@ sendFatalMessage("This is a fatal message", "MyFatalLogger")
 2024-04-04 22:58:45 :: FATAL :: MyFatalLogger :: This is a fatal message
 ```
 
-### Additional notes
+### Additional Notes
 
 A logger name can be any string, but it is recommended to use a descriptive name to make it easier to identify where
 the log message is coming from.

@@ -93,3 +93,4 @@
     - Cards with enhancement effects both for having no suit and for having any suit can be used as any suit.
 - `SMODS.has_no_rank(card)`: Returns true if a card doesn't have any rank due to its enhancements (e.g., Stone Cards).
 - `SMODS.always_scores(card)`: Returns true if a card always scores due to its enhancements (e.g., Stone Cards).
+- `SMODS.never_scores(card)`: Returns true if the card cannot be scored.

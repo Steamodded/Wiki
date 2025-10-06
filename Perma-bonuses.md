@@ -2,6 +2,13 @@
 # Permanent bonuses
 Card objects can be given permanent permanent bonuses that allow them to add or subtract score, similar to the vanilla Hiker joker. These are only considered on **playing cards** during the scoring phases. These will not be changed by applying enhancements, copying the card, or similar. Steamodded by default handles all the UI elements for this. These were added in `1.0.0~ALPHA-1428c-STEAMODDED`.
 
+- [List of all perma-bonuses](#list-of-all-perma-bonuses)
+- [Re-implementation of Hiker](#re-implementation-of-hiker)
+- [Implementation Details](#implementation-details)
+- [Localization](#localization)
+
+***
+
 ## List of all perma-bonuses
 ```lua
 perma_bonus,      -- permanent chips, from vanilla
@@ -39,7 +46,7 @@ SMODS.Joker{
 }
 ```
 
-## Implementation details
+## Implementation Details
 Permanent bonuses get added when the playing card gets scored. They happen at the same time as base chips and enhancements, before any edition effects. Permanent bonuses do not change when the player applies enhancements, copies the card, or similar.
 
 Permanent bonuses are scored in the following order:

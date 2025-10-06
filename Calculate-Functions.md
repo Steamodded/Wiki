@@ -37,7 +37,7 @@ return {
 }
 ```
 There are a range of different keys that you can return in this table.
-- `chips`,`mult`,`xmult`, `dollars` - scores these values *(automatically adds a message to the card that is being scored)*
+- `chips`,`mult`,`xchips`, `xmult`, `dollars` - scores these values *(automatically adds a message to the card that is being scored)*
 - `swap` - swaps current chips and mult values with each other
 - `level_up` - levels up the played hand by the number returned
 - `saved` - used during `context.end_of_round` to prevent game over
@@ -45,6 +45,7 @@ There are a range of different keys that you can return in this table.
 	- will automatically be put on the scored card unless `message_card` is also returned
 	- colour of message background will be `G.C.FILTER` unless `colour` is returned
 	- sound will be `generic1` unless `sound` is returned
+- `balance` - Balances chips and mult (akin to Plasma Deck)
 - `func` - return a function to be called at the correct timing *(advanced)*
 - `extra` - an extra table set out the same as this one *(advanced)*
 
@@ -92,6 +93,14 @@ calculate = function(self, card, context)
 >
 > (`context` is NOT constant. It could change later and cause you
 > to reference an unrelated value.)
+
+### Additional Functions
+These are helper functions that can be used during calculation events. 
+
+- `SMODS.calculate_effect(effect, scored_card, from_edition)`
+	- Handles triggering a table of events. Unlike the return table, this will evaluate and trigger effect when called.
+	- `effect` - Table of effects. This is akin to the table you'd return in `calculate` functions
+	- `scored_card` - Card or object to juice up during animations. 
 
 ## Contexts
 Detailed here is a list of all contexts that are sent to calculate functions, as well as a unique identifier to use to reference them. As each context is sent to different areas, use the following logic statement to make sure you are calculating in the intended area.

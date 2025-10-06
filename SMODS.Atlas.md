@@ -14,6 +14,7 @@ Mods
 			├── Jokers-negate.png
 			└── boosters-negate.png
 ```
+
 - **Required parameters:**
 	- `key`
 	- `px`: the width of each individual sprite at single resolution, in pixels.
