@@ -14,7 +14,7 @@ Steamodded offers multiple ways to load strings for in-game descriptions and oth
 ***
 
 ## Localization Files (recommended)
-This method follows the ways of the base game: instead of attaching descriptions directly to each object, all localization strings for the same language are combined into one file. Each such file should be found in the location `localization/<locale>.lua` relative to your mod's root directory. `<locale>` can be the key of any language found in Balatro itself or added through [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language).
+This method follows the ways of the base game: instead of attaching descriptions directly to each object, all localization strings for the same language are combined into one file. Each such file should be found in the location `localization/<locale>.lua` or `localization/<locale>.json` relative to your mod's root directory. `<locale>` can be the key of any language found in Balatro itself or added through [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language).
 
 - `default`: Used as a fallback when no text was found for the selected language.
 - `de`: German
