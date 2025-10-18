@@ -137,7 +137,7 @@ if context.main_scoring and context.cardarea == G.play then
 ---
 This context is used for triggering joker effects on playing cards. 
 ```lua
-if context.individual and context.cardarea == G.play then
+if context.individual and context.cardarea == G.play and not context.end_of_round then
 {
 	cardarea = G.play, -- G.hand, (G.deck and G.discard optionally enabled)
 	full_hand = G.play.cards,
