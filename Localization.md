@@ -1,7 +1,19 @@
 # Localization
 Steamodded offers multiple ways to load strings for in-game descriptions and other labels into the game. This page offers an overview of each option and when you should use them.
 
-## Localization files (recommended)
+- [Localization Files](#localization-files-recommended)
+    - [Adding your descriptions](#adding-your-descriptions)
+- [`loc_txt`](#loc_txt)
+- [`mod.process.loc_text`](#modprocessloc_text)
+- [Text Formatting](#text-formatting)
+- [Localization Functions](#localization-functions)
+    - [`loc_vars`](#loc_vars)
+    - [`locked_loc_vars`](#locked_loc_vars)
+    - [`generate_ui`](#generate_ui-advanced)
+
+***
+
+## Localization Files (recommended)
 This method follows the ways of the base game: instead of attaching descriptions directly to each object, all localization strings for the same language are combined into one file. Each such file should be found in the location `localization/<locale>.lua` relative to your mod's root directory. `<locale>` can be the key of any language found in Balatro itself or added through [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language).
 
 - `default`: Used as a fallback when no text was found for the selected language.
@@ -80,9 +92,12 @@ return {
                     'for unlocking this card',
                 },
             },
-            -- multiple description box example
+            -- multiple line name and multiple description box example
             j_mod_multi_joker = {
-                name = 'Name',
+                name = {
+                    'First line of name',
+                    'Second line of name',
+                },
                 text = {
                     {
                        'First line of box 1',
@@ -164,7 +179,7 @@ SMODS.current_mod.process_loc_text = function()
 end
 ```
 
-# Text formatting
+# Text Formatting
 ```lua
 {
     name = 'Example name',
@@ -180,7 +195,7 @@ end
 }
 ```
 
-# Localization functions
+# Localization Functions
 To create dynamic descriptions, you need to create functions that define how they behave.
 ## `loc_vars`
 `loc_vars` functions are a simple to use but versatile tool for any type of description.

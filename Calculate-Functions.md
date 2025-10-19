@@ -37,7 +37,7 @@ return {
 }
 ```
 There are a range of different keys that you can return in this table.
-- `chips`,`mult`,`xmult`, `dollars` - scores these values *(automatically adds a message to the card that is being scored)*
+- `chips`,`mult`,`xchips`, `xmult`, `dollars` - scores these values *(automatically adds a message to the card that is being scored)*
 - `swap` - swaps current chips and mult values with each other
 - `level_up` - levels up the played hand by the number returned
 - `saved` - used during `context.end_of_round` to prevent game over
@@ -45,6 +45,7 @@ There are a range of different keys that you can return in this table.
 	- will automatically be put on the scored card unless `message_card` is also returned
 	- colour of message background will be `G.C.FILTER` unless `colour` is returned
 	- sound will be `generic1` unless `sound` is returned
+- `balance` - Balances chips and mult (akin to Plasma Deck)
 - `func` - return a function to be called at the correct timing *(advanced)*
 - `extra` - an extra table set out the same as this one *(advanced)*
 
@@ -93,6 +94,14 @@ calculate = function(self, card, context)
 > (`context` is NOT constant. It could change later and cause you
 > to reference an unrelated value.)
 
+### Additional Functions
+These are helper functions that can be used during calculation events. 
+
+- `SMODS.calculate_effect(effect, scored_card, from_edition)`
+	- Handles triggering a table of events. Unlike the return table, this will evaluate and trigger effect when called.
+	- `effect` - Table of effects. This is akin to the table you'd return in `calculate` functions
+	- `scored_card` - Card or object to juice up during animations. 
+
 ## Contexts
 Detailed here is a list of all contexts that are sent to calculate functions, as well as a unique identifier to use to reference them. As each context is sent to different areas, use the following logic statement to make sure you are calculating in the intended area.
 ```lua
@@ -128,7 +137,7 @@ if context.main_scoring and context.cardarea == G.play then
 ---
 This context is used for triggering joker effects on playing cards. 
 ```lua
-if context.individual and context.cardarea == G.play then
+if context.individual and context.cardarea == G.play and not context.end_of_round then
 {
 	cardarea = G.play, -- G.hand, (G.deck and G.discard optionally enabled)
 	full_hand = G.play.cards,
@@ -268,7 +277,23 @@ if context.after and context.cardarea == G.play then
 ```
 ---
 ### Other Contexts
-This context is used for trigger effects on playing a hand debuffed by the blind. 
+This context is used for debuffing a hand. 
+```lua
+if context.debuff_hand then
+{
+	cardarea = G.jokers, -- G.play, G.hand, (G.deck and G.discard optionally enabled)
+	full_hand = G.play.cards,
+	scoring_hand = scoring_hand,
+	poker_hands = poker_hands,
+	scoring_name = text,
+	check = check, -- This is true when called before a hand is played
+	debuff_hand = true
+}
+```
+> [!TIP]
+> You can return `{ debuff = true }` to debuff the hand or `{ prevent_debuff = true }` to stop the hand from being debuffed
+---
+This context is used for effects when playing a hand debuffed by the blind. 
 ```lua
 if context.debuffed_hand and context.cardarea == G.play then
 {
@@ -277,7 +302,34 @@ if context.debuffed_hand and context.cardarea == G.play then
 	scoring_hand = scoring_hand,
 	scoring_name = text,
 	poker_hands = poker_hands,
-	debuffed_hand = true,
+	debuffed_hand = true
+}
+```
+---
+This context is used for marking cards to be in the scoring hand. 
+```lua
+if context.modify_scoring_hand then
+{
+	cardarea = G.jokers -- G.play, G.hand, (G.deck and G.discard optionally enabled)
+	other_card = card, -- The card to be added or removed from scoring
+	full_hand = G.play.cards,
+	scoring_hand = scoring_hand,
+	modify_scoring_hand = true
+}
+```
+> [!TIP]
+> Return `{ add_to_hand = true }` or `{ remove_from_hand = true }` to add or remove `context.other_card` from the scoring hand.
+---
+This context is used for effects at the same time a hand would be modified by a blind.
+```lua
+if context.modify_hand then
+{
+	cardarea = G.jokers, -- G.play, G.hand, (G.deck and G.discard optionally enabled)
+	full_hand = G.play.cards,
+	scoring_hand = scoring_hand,
+	scoring_name = text,
+	poker_hands = poker_hands,
+	modify_hand = true
 }
 ```
 ---
@@ -287,7 +339,8 @@ if context.end_of_round and context.cardarea == G.jokers then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
 	end_of_round = true,
-	game_over = game_over -- true or false
+	game_over = game_over, -- true or false
+	beat_boss = G.GAME.blind.boss -- true if the defeated blind was a boss
 }
 ```
 ---
@@ -298,7 +351,8 @@ if context.end_of_round and context.individual then
 	cardarea = G.hand, -- (G.deck and G.discard optionally enabled)
 	end_of_round = true,
 	individual = true,
-	other_card = card
+	other_card = card,
+	beat_boss = G.GAME.blind.boss
 }
 ```
 ---
@@ -310,6 +364,7 @@ if context.end_of_round and context.repetition then
 	end_of_round = true,
 	repetition = true,
 	other_card = card,
+	beat_boss = G.GAME.blind.boss,
 	card_effects = effects -- table of effects for the card
 }
 ```
@@ -373,10 +428,10 @@ if context.buying_card then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
 	buying_card = true,
-	card = self -- the card being bought
+	card = c1 -- the card being bought
 }
 ```
-The card being bought also calculates itself with context `{ buying_card = true, card = c1 }`.
+The card being bought also calculates itself with context `{ buying_card = true, buying_self = true, card = c1 }`.
 
 ---
 This context is used for effects after selling a card. 
@@ -409,6 +464,18 @@ if context.ending_shop then
 }
 ```
 ---
+This context is used for effects when drawing cards. 
+```lua
+if context.drawing_cards then
+{
+	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
+	drawing_cards = true,
+	amount = hand_space -- The amount of cards that will be drawn
+}
+```
+> [!TIP]
+> Return `{ cards_to_draw = num }` to change the number of drawn cards to `num`.
+---
 This context is used for effects after drawing the first hand of a blind. 
 ```lua
 if context.first_hand_drawn then
@@ -418,16 +485,25 @@ if context.first_hand_drawn then
 }
 ```
 ---
-This context is used for effects after drawing a hand. 
+This context is used for effects after drawing a hand when facing a blind. 
 ```lua
 if context.hand_drawn then
 {
 	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
-	hand_drawn = true,
+	hand_drawn = drawn_cards, --The cards that have been drawn
 }
 ```
 ---
-This context is used for effects after using a consumable 
+This context is used for effects after drawing a hand when not facing a blind. 
+```lua
+if context.other_drawn then
+{
+	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
+	other_drawn = drawn_cards,
+}
+```
+---
+This context is used for effects after using a consumable. 
 ```lua
 if context.using_consumeable then
 {
@@ -469,6 +545,26 @@ if context.check_enhancement then
 }
 ```
 ---
+This context is used for determining if a card is eternal. 
+```lua
+if context.check_eternal then
+{
+	cardarea = G.jokers, -- G.hand, (G.deck and G.discard optionally enabled)
+	check_eternal = true,
+	other_card = card,
+	trigger = trigger, -- The card that triggered the check
+	no_blueprint = true
+}
+```
+> [!NOTE]
+> `trigger = { from_sell = true }` when checking if a card can be sold.
+
+> [!TIP]
+> Return `{ no_destroy = true }` to mark `context.other_card` as eternal
+
+> [!WARNING]
+> `eternal_compat` still applies unless `no_destroy = { override_compat = true }`
+---
 This context is used for effects after a Joker has triggered. 
 ```lua
 if context.post_trigger then
@@ -494,6 +590,25 @@ if context.card_added then
 ```
 New playing card types may need to be excluded manually.
 A patch target is provided.
+---
+This context is used for effects before the ante is changed.
+```lua
+if context.modify_ante then
+{
+	context.modify_ante = true,
+	context.ante_end = false -- Is true when the player naturally passes an ante by beating the ante's boss
+}
+```
+> [!TIP]
+> Return `{ modify = number }` to change the ante's modifier. (ex. returning `{modify = 1}` will increment the ante by 1 more than usual)
+---
+This context is used for effects after the ante is changed.
+```lua
+if context.ante_change then
+{
+	context.ante_change = mod, -- The number the ante was incremented by
+	context.ante_end = false -- Is true when the player naturally passes an ante by beating the ante's boss
+}
 
 
 > [!NOTE]

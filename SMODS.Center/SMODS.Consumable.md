@@ -20,6 +20,10 @@
 		- `soul_set = 'Spectral'`, legendaries may appear when a card of either their own set or this one are being generated.
 		- `soul_rate = 0.003`, determines how likely this legendary is to replace each card in a pack
 		- `can_repeat_soul`, allows repeats of this card as if Showman were present
+    - `select_card`:
+    	- Set to string of destination card area, ex. `'consumeables'`, to save this card from Booster packs instead of using it.
+		- Set to a function `select_card(card, pack) -> string?` to control if and where `card` should be saved for any `card, pack` combination.
+		- Takes priority over `select_card` on the ConsumableType or Booster pack
 
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)

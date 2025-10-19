@@ -2,6 +2,13 @@
 # Permanent bonuses
 Card objects can be given permanent permanent bonuses that allow them to add or subtract score, similar to the vanilla Hiker joker. These are only considered on **playing cards** during the scoring phases. These will not be changed by applying enhancements, copying the card, or similar. Steamodded by default handles all the UI elements for this. These were added in `1.0.0~ALPHA-1428c-STEAMODDED`.
 
+- [List of all perma-bonuses](#list-of-all-perma-bonuses)
+- [Re-implementation of Hiker](#re-implementation-of-hiker)
+- [Implementation Details](#implementation-details)
+- [Localization](#localization)
+
+***
+
 ## List of all perma-bonuses
 ```lua
 perma_bonus,      -- permanent chips, from vanilla
@@ -16,6 +23,8 @@ perma_h_x_mult,
 
 perma_p_dollars,  -- money on scoring
 perma_h_dollars,  -- money on held at end of round (like gold cards)
+
+perma_repetitions, -- retriggers in any context
 ```
 
 ## Re-implementation of Hiker
@@ -37,7 +46,7 @@ SMODS.Joker{
 }
 ```
 
-## Implementation details
+## Implementation Details
 Permanent bonuses get added when the playing card gets scored. They happen at the same time as base chips and enhancements, before any edition effects. Permanent bonuses do not change when the player applies enhancements, copies the card, or similar.
 
 Permanent bonuses are scored in the following order:
@@ -61,6 +70,8 @@ Permanent held xmult gets multiplied with enhancement held xmult such as steel w
 
 Permanent held dollars only give money on end of round, similar to the gold enhancement.
 
+Permanent repetitions retrigger the card in any context, both when scored or when in hand (Gold cards, Blue seals, etc.).
+
 ## Localization
 Steamodded by default handles the localization of all perma-bonuses described on this page. These can be overwritten (or translated) by defining:
 ```lua
@@ -76,6 +87,8 @@ card_extra_h_x_mult,
 
 card_extra_p_dollars,
 card_extra_h_dollars,
+
+card_extra_repetitions,
 ```
 Simplify define an entry under `descriptions.Other` (see [Localization](https://github.com/Steamodded/smods/wiki/Localization) for more information) such as:
 ```lua

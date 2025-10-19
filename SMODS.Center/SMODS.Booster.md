@@ -23,18 +23,37 @@
     - `weight = 1`: Determines how freqently the pack appears in the shop.
     - `draw_hand = false`: If this is `true`, draw playing cards to hand when this pack is opened.
     - `kind`: Used for grouping packs together. For example, this can be used in `get_pack()` to generate a booster pack of a given type.
-    - `select_card`: Set to string of card area, `consumeables`, to save cards from the pack instead of using them.
+    - `select_card`:
+		- Set to string of destination card area, ex. `'consumeables'`, to save cards from the pack instead of using them.
+		- Set to table of form `{Set = 'area'}` to change behaviour according to a card's `Set` (e.g. `{Tarot = 'consumeables'}` to only save `Tarot` cards, relevant if you have multiple types of consumables in a booster).
+		- Set to a function `select_card(card, pack) -> string?` to control if and where `card` should be saved for any `card, pack` combination.
 
 ## API methods
 - `loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+	- SMODS.Booster implements a default `loc_vars` function that returns `card.ability.choose` and `card.ability.extra`. If your booster pack defines both of these values in its `config` you can omit defining `loc_vars`.
 - `create_card(self, card, i) -> table|Card`
 	- Creates the cards inside of the booster pack. `card` is the booster pack card, `i` is the position of the card to be generated. If the returned table is not a `Card`, it is passed into [`SMODS.create_card`](https://github.com/Steamodded/smods/wiki/Utility#mod-facing-utilities).
+ 	- Example 1, manual card creation:
+	```lua
+	-- to create a booster pack of standard cards
+	create_card = function(self, card)
+	    local newCard = SMODS.create_card({set = "Playing Card", area = G.pack_cards, skip_materialize = true})
+	    return newCard
+	end,
+	```
+   	- Example 2, return passed into `SMODS.create_card`:
+	```lua
+	-- to create a booster pack of foil jokers
+	create_card = function(self, card)
+	    return {set = "Joker", area = G.pack_cards, skip_materialize = true, soulable = true, key_append = "unique_string_for_rng", edition = "e_foil"}
+	end,
+	```
 - `update_pack(self, dt)`
-	- Handles booster pack UI when opened. 
+	- Handles the booster back's UI elements when this booster is opened. 
 - `ease_background_colour(self)`
-	- Changes background colour. 
+	- Changes the background color whilst this booster is opened. 
 - `particles(self)`
-	- Handles particle effects. 
+	- Handles adding particle effects. 
 - `create_UIBox(self) -> table`
 	- Returns the booster's UIBox. 
 - `set_ability(self, card, initial, delay_sprites)`

@@ -28,6 +28,7 @@ This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMOD
 	- `primary_colour`
 	- `secondary_colour`
 - **Optional parameters** *(defaults)*:
+	- `no_collection` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `loc_txt`, Skeleton:
 	```lua
 		{
@@ -42,6 +43,11 @@ This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMOD
 	- `collection_rows = { 6, 6 }`: Customize the collection for this card type. Each value indicates a row with the specified amount of cards.
 	- `shop_rate`: Setting a numerical value for `shop_rate` enables cards of this type to appear in the shop at the specified rate.
 		- This sets a default rate, which can be modified by accessing `G.GAME[key:lower() .. '_rate']` during a run.
+	- `text_colour`: Set a custom text color used on the card type's badge. This can take any HEX color, and saves it as `G.C.UI[key]`.
+    - `select_card`:
+    	- Set to string of destination card area, ex. `'consumeables'`, to save cards of this type from Booster packs instead of using it.
+		- Set to a function `select_card(card, pack) -> string?` to control if and where `card` should be saved for any `card, pack` combination.
+		- Takes priority over `select_card` on the Booster pack
 
 ## API methods
 - `ObjectType.inject_card(self, center)`

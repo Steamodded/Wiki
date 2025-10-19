@@ -1,4 +1,7 @@
   * [Home](https://github.com/Steamodded/smods/wiki)
+    * [Installing on Windows](https://github.com/Steamodded/smods/wiki/Installing-Steamodded-windows)
+    * [Installing on Linux](https://github.com/Steamodded/smods/wiki/Installing-Steamodded-linux)
+    * [Installing on Mac](https://github.com/Steamodded/smods/wiki/Installing-Steamodded-mac)
 ***
 Game Objects
   * [API Documentation](https://github.com/Steamodded/smods/wiki/API-Documentation)
@@ -33,16 +36,17 @@ Game Objects
 Guides
   * [Your First Mod](https://github.com/Steamodded/smods/wiki/Your-First-Mod)
   * [Mod Metadata](https://github.com/Steamodded/smods/wiki/Mod-Metadata)
+  * [The Mod Object](https://github.com/Steamodded/smods/wiki/The-Mod-Object)
   * [Calculate Functions](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
   * [Perma-bonuses](https://github.com/Steamodded/smods/wiki/Perma-bonuses)
   * [Logging](https://github.com/Steamodded/smods/wiki/Logging)
   * [Event Manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager)
   * [Localization](https://github.com/Steamodded/smods/wiki/Localization)
   * [Text Styling](https://github.com/Steamodded/smods/wiki/Text-Styling)
-  * [Mod functions](https://github.com/Steamodded/smods/wiki/Mod-functions)
   * [UI Structure](https://github.com/Steamodded/smods/wiki/UI-Guide)
   * [Utility Functions](https://github.com/Steamodded/smods/wiki/Utility)
   * [All About `G`](https://github.com/Steamodded/smods/wiki/G)
+  * [Internal Documentation](https://github.com/Steamodded/smods/wiki/Internal-Documentation)
 
  ***
 

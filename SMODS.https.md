@@ -1,6 +1,8 @@
 # API Documentation: `SMODS.https`
-
 The SMODS.https module is a module designed to be compatible with the [lua-https](https://love2d.org/wiki/lua-https) module. The main difference between this and the built in https module is that `SMODS.https` works on more platforms out of the box, compared to Balatro's shipped https modules (which is only availible on Windows by default).
+- [Usage](#usage)
+- [API Methods](#api-methods)
+- [Example Usage](#example-usage)
 
 ## Usage
 
@@ -36,6 +38,6 @@ local https = require "SMODS.https"
 
 print(https.request("https://example.com")) -- Sync request
 
-https.asyncRequest("https://example.com", print)) -- Async request
+https.asyncRequest("https://example.com", print) -- Async request
 ```
 

@@ -1,7 +1,26 @@
 # API Documentation
-## General remarks
+
+- [General Remarks](#general-remarks)
+- [Creating an Object](#creating-an-object)
+- [Common Parameters](#common-parameters)
+	- [`name`](#name)
+	- [`loc_txt`](#loc_txt)
+	- [`unlocked`](#unlocked)
+	- [`discovered`](#discovered)
+	- [`no_collection`](#no_collection)
+	- [`config`](#config)
+	- [`prefix_config`](#prefix_config)
+	- [`dependencies`](#dependencies)
+	- [`display_size`](#display_size)
+	- [`pixel_size`](#pixel_size)
+- [Taking Ownership](#taking-ownership)
+- [API Functions](#api-functions)
+
+***
+
+## General Remarks
 All Steamodded APIs are built on an Object Oriented Programming engine. As such, Steamodded objects share some common methods and parameters, described below.
-## Creating an object
+## Creating an Object
 Create an object by calling a class, for example `SMODS.Joker`, with a single table parameter. Each class may have required fields and may provide some default values.
 
 Your table must have a `key` field, which must be a unique string. Don't worry about collisions with other mods&mdash;your mod's prefix will always be prepended to `key`. With a few exceptions, you don't have to worry about this.
@@ -16,7 +35,7 @@ SMODS.Class {
 }
 ``` 
 
-## Common parameters
+## Common Parameters
 ### `name`
 Used by the game to identify certain objects, but Steamodded doesn't use it at all. You can ignore it.
 
@@ -81,7 +100,7 @@ Changes the display size of cards by scaling them by a factor relative to pixel 
 ### `pixel_size`
 Changes how large the sprite of this card is considered, useful for smaller sprites like Half Joker (default: `{ w = 71, h = 95 }`).
 
-## Taking ownership
+## Taking Ownership
 You may need to modify vanilla objects or objects from another mod. Use the `take_ownership` function to modify an existing object; then, you can use all of Steamodded's API functions on it. Each key-value pair of the provided table overwrites the object's value, while the rest of the object is left intact. Objects you take ownership of have your mod's badge added to them, unless you suppress this with the `silent` argument.
 ```lua
 SMODS.Joker:take_ownership('joker', -- object key (class prefix not required)
@@ -95,7 +114,7 @@ SMODS.Joker:take_ownership('joker', -- object key (class prefix not required)
 )
 ```
 
-## API functions
+## API Functions
 Each class's API functions are explained on that class's Wiki page. The following lists parameter names common to these API functions.
 | Identifier 	| Meaning 		|
 | :--------- 	| :--------- 	|
