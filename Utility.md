@@ -99,7 +99,6 @@ This function replaces `create_card`. It provides a cleaner interface to the sam
 #### `SMODS.debuff_card(card, debuff, source)`
 Allows manually setting and removing debuffs from cards.
 - `source` should be a unique identifier string. You must use the same source to remove a previously set debuff.
-- If `debuff` is the string `'reset'`, remove debuffs from all sources handled by this function.
 - If `debuff` is the string `'prevent_debuff'`, blocks all possible debuffs on the card until removed.
 - If `debuff` is another truthy value, set a debuff on the card.
 - If `debuff` is a falsy values, remove this debuff.
