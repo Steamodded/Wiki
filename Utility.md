@@ -165,3 +165,21 @@ Returns whatever the copied card returned during calculation.
 #### `SMODS.merge_effects(...) -> table`
 Takes any number of 2D arrays. Flattens given calculation returns into one, utilising `extra` tables.
 - This can be used to merge returns from `SMODS.blueprint_effect`.
+#### `SMODS.scoring_parameter_is_upgradeable(param_key, hand_key) -> bool`
+Returns true if a scoring parameter, given its key `param_key`, can be upgraded in the hand with key `hand_key`. If `hand_key` is not specified, will always return true.
+#### `SMODS.start_level_up_hand_animation(args)`
+Prepares the score display for the hand level-up animation. This involves setting the poker hand name, the poker hand's level display, and the poker hand's scoring parameter values. The argument to this function should always be a table. The following fields are supported:
+- `hand` - The key of the poker hand to reference.
+- `hand_text` - The text to display where the poker hand name would be.
+- `parameter_text` - A table with keys being scoring parameter keys, and values being the text to display on the scoring parameter's container.
+- `all_parameter_text` - The text to display on every scoring parameter containers.
+- `level_text` - The text to display where the poker hand's level would be.
+#### `SMODS.level_up_hand_animation(args)`
+Plays hand level-up animation. This involves a "popping" animation over each scoring parameter container, changing the value in said container, and changing the poker hand's level display. The argument to this function should always be a table. The following fields are supported:
+- `hand` - The key of the poker hand to reference.
+- `card` - The card to juice up on each "popping" animation.
+- `parameter_status_text` - A table with keys being scoring parameter keys, and values being the text to display when the "popping" animation occurs on the scoring parameter's container.
+- `all_parameter_status_text` - The text to display when the "popping" animation occurs on every scoring parameter container.
+- `level_text` - The text to change to on the poker hand's level display.
+#### `SMODS.end_level_up_hand_animation(args)`
+Completes the hand level-up animation. This involves resetting scoring parameter values to their default values and clearing the poker hand name and level display. The argument to this function should always be a table, although no fields are currently supported.
