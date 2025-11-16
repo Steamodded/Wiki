@@ -19,5 +19,7 @@
 > Key prefixing is applied to `applied_stakes` and `above_stake` by default. If you want your stake above a stake from the base game or other mods, this can be adjusted by using `prefix_config`. [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 
 ## API methods
+- `loc_vars` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+    - Due to how the stake description box works, the functionality of `loc_vars` on stakes is limited. `info_queue` and `card` will not be used. Out of all possible return values, only `vars`, `key` and `set` are supported.
 - `modifiers()`
     - Used for applying changes to the game state when your stake is applied at the start of a run.
