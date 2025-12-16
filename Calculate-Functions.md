@@ -609,7 +609,7 @@ if context.ante_change then
 	context.ante_change = mod, -- The number the ante was incremented by
 	context.ante_end = false -- Is true when the player naturally passes an ante by beating the ante's boss
 }
-
+```
 
 > [!NOTE]
 > All calculation of jokers that evaluates no secondary card is called with `main_eval = true` in the context table.
