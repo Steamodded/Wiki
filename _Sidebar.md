@@ -49,5 +49,9 @@ Guides
   * [Internal Documentation](https://github.com/Steamodded/smods/wiki/Internal-Documentation)
 
  ***
+ Release Notes
+  * [1221a](https://github.com/Steamodded/smods/wiki/1221a)
+  * [0827](https://github.com/Steamodded/smods/wiki/0827)
+  * [0711a](https://github.com/Steamodded/smods/wiki/0711a)
 
 Found an issue, or want to add something? Submit a PR to [the Wiki repo](https://github.com/Steamodded/Wiki).
