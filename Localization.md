@@ -3,6 +3,7 @@ Steamodded offers multiple ways to load strings for in-game descriptions and oth
 
 - [Localization Files](#localization-files-recommended)
     - [Adding your descriptions](#adding-your-descriptions)
+    - [Migrating to localization files](#migrating-to-localization-files)
 - [`loc_txt`](#loc_txt)
 - [`mod.process.loc_text`](#modprocessloc_text)
 - [Text Formatting](#text-formatting)
