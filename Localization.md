@@ -118,6 +118,8 @@ return {
 ### Migrating to localization files
 If you've been using `loc_txt` and wish to switch to using localization files, disable as many other mods as possible (if you have cross-mod content, you may wish to reconfigure it so it can load even with the other mod disabled), add `"dump_loc": true` to [your mod's metadata](https://github.com/Steamodded/smods/wiki/Mod-Metadata), and launch Balatro once. Steamodded will create a `dump.lua` file in your mod's localization folder, containing all modified localization entries. Remove any extraneous entries (e.g. from other mods you couldn't disable due to being dependencies) and rename this file to `en-us.lua`.
 
+Remember to remove the `dump_loc` entry when finished!
+
 ## `loc_txt`
 Alternatively, you can define a `loc_txt` table on each object to create its description. This is more limited than localization files because it does not allow creating multiple descriptions for the same object or strings that don't belong to an object at all. The effort of maintaining translations of your mod while using this method is significantly higher. 
 
