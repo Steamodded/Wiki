@@ -818,7 +818,7 @@ if context.debuff_hand then
 ```lua
 context.full_hand, context.scoring_hand, context.scoring_name, context.poker_hands
 context.debuff_hand -- flag to identify this context, always TRUE
-context.check -- TRUE when the player is selecting cards in hand as opposed to playing them
+context.check -- true while the hand is being selected, and false when the hand is played
 ```
 
   ---
