@@ -42,5 +42,8 @@
     - `button_colour = G.C.RED`: Used to set a custom button colour in the challenge list.
 
 ## API methods
+- `calculate(self, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
+- `apply(self)`
+    - Apply modifiers at the start of a run.
 - `unlocked(self) -> bool`
     - Defines when the challenge should be unlocked (or not).
