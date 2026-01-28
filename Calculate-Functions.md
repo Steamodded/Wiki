@@ -763,6 +763,33 @@ context.discard -- flag to identify this context, always TRUE
 context.other_card -- the card that is being discarded
 context.full_hand -- the list of all cards that are being discarded
 ```
+---
+#### context.press_play
+This context is used when the Play Hand button is pressed.
+
+```lua
+if context.press_play then
+```
+
+---
+#### context.evaluate_poker_hand
+This context is used to alter the poker hand that the played hand counts as. It can also provide cosmetic alterations too. For example, `replace_scoring_name = "Full House"` would make the hand score as a Full House, whilst `replace_display_name = "Fullest House"` would only change the text shown in the UI.
+
+>[!CAUTION]
+> As an advanced use, you can return `replace_poker_hands = {}` to provide a new updated poker hands table. It is only recommend you do this if you fully understand how this table should be structured.
+
+```lua
+if context.evaluate_poker_hand then
+```
+
+```lua
+context.evaluate_poker_hand -- flag to identify this context, always TRUE
+context.full_hand -- the list of all cards that are being selected
+context.scoring_name -- the current poker hand
+context.display_name -- the display name for the current poker hand
+context.scoring_hand -- the list of cards in the selected hand that would be scored for the current poker hand
+context.poker_hands -- the list of poker hands contained within the selected cards
+```
 
 ---
 #### context.modify_scoring_hand
@@ -781,24 +808,19 @@ context.in_scoring -- false while the hand is being selected, and true when the 
 ```
 
 ---
-#### context.evaluate_poker_hand
-This context is used to alter the poker hand that the played hand counts as. It can also provide cosmetic alterations too. For example, `replace_scoring_hand = "Full House"` would make the hand score as a Full House, whilst `replace_display_name = "Fullest House"` would only change the text shown in the UI.
-
->[!CAUTION]
-> As an advanced use, you can return `replace_poker_hands = {}` to provide a new updated poker hands table. It is only recommend you do this if you fully understand how this table should be structured.
+#### context.debuff_hand
+This context is used to check if the hand should score, for effects like The Eye or The Mouth. Returning `debuff = true` or `prevent_debuff = true` will do the according action *(preventing debuff has a higher priority)*. You can also specify a `debuff_text` string to be displayed on screen when the hand is selected and a `debuff_source` object which will wiggle to indicate where the debuff comes from.
 
 ```lua
-if context.evaluate_poker_hand then
+if context.debuff_hand then
 ```
 
 ```lua
-context.evaluate_poker_hand -- flag to identify this context, always TRUE
-context.full_hand -- the list of all cards that are being selected
-context.scoring_name -- the current poker hand
-context.display_name -- the display name for the current poker hand
-context.scoring_hand -- the list of cards in the selected hand that would be scored for the current poker hand
-context.poker_hands -- the list of poker hands contained within the selected cards
+context.full_hand, context.scoring_hand, context.scoring_name, context.poker_hands
+context.debuff_hand -- flag to identify this context, always TRUE
+context.check -- TRUE when the player is selecting cards in hand as opposed to playing them
 ```
+
   ---
 #### context.modify_hand
 This context is used to modify the initial values of a hand, at the same time as `Blind:modify_hand`. You can change the chips and mult by modifying `_G.mult` and `_G.hand_chips` directly.
@@ -815,7 +837,7 @@ context.scoring_hand -- the list of cards in the selected hand that would be sco
 context.poker_hands -- the list of poker hands contained within the selected cards
 ```
 
-  ---
+---
 #### context.debuff_card
 This context is used to check if each card in the deck should be debuffed when selecting a blind. Returning `debuff = true` or `prevent_debuff = true` will do the according action *(preventing debuff has a higher priority)*.
 
@@ -855,13 +877,6 @@ This context is used when a Blind is defeated.
 
 ```lua
 if context.blind_defeated then
-```
-  ---
-#### context.press_play
-This context is used when the Play Hand button is pressed.
-
-```lua
-if context.press_play then
 ```
   ---
 #### context.round_eval
