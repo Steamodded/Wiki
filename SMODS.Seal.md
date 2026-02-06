@@ -13,6 +13,8 @@
         - `sound`: The key of the sound to play.
         - `per`: The pitch at which the sound should be played.
         - `vol`: The volume at which the sound should be played.
+    - `always_scores`: If `true`, editioned card always counts in scoring.
+    - `never_scores`: If `true`, editioned card never counts in scoring (supersedes `always_scores`).
 
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
