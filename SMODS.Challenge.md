@@ -39,8 +39,12 @@
         - `deck.enhancement`: Can be used only if no `cards` table is specified. Given an enhancement by its key, apply it to all cards in the starting deck.
         - `deck.edition`: Can be used only if no `cards` table is specified. Given an edition by its key without the `e_` prefix, apply it to all cards in the starting deck.
         - `deck.seal`: Can be used only if no `cards` table is specified. Given a seal by its key, apply it to all cards in the starting deck.
+    - `text_colour = G.C.WHITE`: Used to set a custom text colour for the button in the challenge list.
     - `button_colour = G.C.RED`: Used to set a custom button colour in the challenge list.
 
 ## API methods
+- `calculate(self, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
+- `apply(self)`
+    - Apply modifiers at the start of a run.
 - `unlocked(self) -> bool`
     - Defines when the challenge should be unlocked (or not).
