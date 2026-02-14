@@ -8,13 +8,20 @@ This class allows for drawing a shader on the entire screen, rather than just a 
 - **Optional parameters** *(defaults)*:
     - `order`
         - Defines the order in which ScreenShaders should be rendered, defaults to 0
-        - Lower orders are rendered earlier
+        - ScreenShaders are rendered in order from lowest to highest.
 
 
 ## API methods
 - `should_apply(self) -> boolean`
     - Determines whether a ScreenShader should apply to the screen at any given time. If not defined, defaults to always applying.
 - `send_vars(self) -> table`
-    - Returns a table of all variables to send to the shader
-    - For example, returning `{iTime = G.TIMERS.REAL}` would send the floating point value `iTime`, allowing it to be used in the shader with `extern float iTime;`
-    - Note that if you do not use all external variables in the shader, it will crash
+    - Used to send extra vars to the shader, similar to `SMODS.Shader.send_vars`
+    - One major difference between the two, with `SMODS.ScreenShader.send_vars`, you can pass arrays like so
+    ```lua
+    send_vars = function(self)
+        return {
+            float_array = {array = {1.5, 2.3, 6.7}},
+            vector_array = {array = { {x, y}, {z, w} }}
+        }
+    end
+    ```
