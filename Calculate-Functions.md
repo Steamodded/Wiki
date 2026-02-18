@@ -1025,6 +1025,21 @@ context.consumeable -- the consumeable being used
 context.area -- the card area that the consumeable is being used from
 ```
   ---
+#### context.poker_hand_changed
+This context is used when a poker hand has its chips and/or mult changed.
+```lua
+if context.poker_hand_changed then
+```
+
+```lua
+context.poker_hand_changed -- flag to identify this context, always TRUE
+context.old_level, context.new_level -- the poker hand's level before and after this modification
+context.old_parameters, context.new_parameters -- tables mapping a scoring parameter's key to its value before and after this modification
+-- this table only contains keys to scoring parameters that were changed
+context.scoring_name -- the poker hand being modified
+context.card -- the card that caused this change (optional)
+```
+  ---
 #### context.reroll_shop
 This context is used when rerolling in the shop.
 
