@@ -731,7 +731,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 {f:modname_fontkey}Hello{}
 ```
   </td>
-  <td><a href="https://github.com/Steamodded/smods/wiki/SMODS.Font">Custom Font</a> (example: Wingdings)</td>
+  <td><a href="https://github.com/Steamodded/smods/wiki/SMODS.Font">Custom Font</a> (example: Comic Sans MS)</td>
   <td>Custom</td>
   <td align="center">
    <picture>
@@ -1264,6 +1264,7 @@ Steamodded automatically adds additional entries to `LOC_COLOURS` for all custom
 - [SMODS.Suit](https://github.com/Steamodded/smods/wiki/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit)
 
 which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient, Consumable or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata#metadata).
+
 
 
 
