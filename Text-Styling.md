@@ -569,7 +569,10 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
  <tr>
   <td>
-  ```pas{f:1}Hello{}```
+  
+  ```pas
+   {f:1}Hello{}
+   ```
   </td>
   <td>
   m6x11 plus
@@ -586,7 +589,10 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
  <tr>
   <td>
-  ```pas{f:2}Hello, 你好{}```
+   
+  ```pas
+  {f:2}Hello, 你好{}
+   ```
   </td>
   <td>
   Noto Sans SC Bold
@@ -603,7 +609,10 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
  <tr>
   <td>
-  ```pas{f:3}Hello, 您好{}```
+   
+  ```pas
+   {f:3}Hello, 您好{}
+   ```
   </td>
   <td>
   Noto Sans TC Bold
@@ -620,7 +629,10 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
  <tr>
   <td>
-  ```pas{f:4}Hello, 안녕하세요{}```
+   
+  ```pas
+   {f:4}Hello, 안녕하세요{}
+   ```
   </td>
   <td>
   Noto Sans KR Bold
@@ -637,7 +649,10 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
  <tr>
   <td>
-  ```pas{f:5}こんにちは{}```
+   
+  ```pas
+   {f:5}こんにちは{}
+   ```
   </td>
   <td>
   Noto Sans JP Bold
@@ -654,7 +669,10 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
  <tr>
   <td>
-  ```pas{f:6}Hello, Здравствуйте{}```
+   
+  ```pas
+   {f:6}Hello, Здравствуйте{}
+   ```
   </td>
   <td>
   Noto Sans Bold
@@ -671,7 +689,10 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
  <tr>
   <td>
-  ```pas{f:7}Hello{}```
+   
+  ```
+  pas{f:7}Hello{}
+  ```
   </td>
   <td>
   m6x11 plus
@@ -688,7 +709,10 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
  <tr>
   <td>
-  ```pas{f:8}Hello{}```
+   
+   ```pas
+   {f:8}Hello{}
+   ```
   </td>
   <td>
   Go Noto Current Bold
@@ -705,6 +729,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
  <tr>
   <td>
+   
   ```pas{f:9}Hello{}```
   </td>
   <td>
@@ -722,7 +747,10 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
   <tr>
    <td>
-   ```pas{f:modname_fontkey}Hello{}```
+    
+   ```pas
+    {f:modname_fontkey}Hello{}
+    ```
    </td>
   <td>
   [Custom Font](https://github.com/Steamodded/smods/wiki/SMODS.Font) (in this example, *Wingdings*)
@@ -1259,5 +1287,6 @@ Steamodded automatically adds additional entries to `LOC_COLOURS` for all custom
 - [SMODS.Suit](https://github.com/Steamodded/smods/wiki/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit)
 
 which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient, Consumable or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata#metadata).
+
 
 
