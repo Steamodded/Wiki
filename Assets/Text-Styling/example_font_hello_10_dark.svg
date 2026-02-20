@@ -5,7 +5,7 @@
             <style>
                 @font-face {
                     font-family: 'PixelFont';
-                    src: url('/Wingdings.ttf');
+                    src: url('Wingdings.ttf');
                 }
                 text {
                     font-family: 'PixelFont';
@@ -29,4 +29,5 @@
 
 
     </svg>
+
 
