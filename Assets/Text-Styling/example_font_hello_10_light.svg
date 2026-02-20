@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+        width="250" height="53">
+
+        <defs>
+            <style>
+                @font-face {
+                    font-family: 'PixelFont';
+                    src: url('../Feli5x8.ttf');
+                }
+                text {
+                    font-family: 'PixelFont';
+                    font-size: 50px;
+                    dominant-baseline: hanging;
+                }
+            </style>
+        </defs>
+
+        <!-- Shadow -->
+        <text x="3" y="3"
+              fill="black" opacity="0.5">
+            Hello
+        </text>
+
+        <!-- Main Text -->
+        <text x="0" y="0"
+              fill="#4F6367">
+            Hello
+        </text>
+
+    </svg>
