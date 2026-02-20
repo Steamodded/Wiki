@@ -743,6 +743,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 </table>
 
 *It differs from the default font from the parameters `TEXT_HEIGHT_SCALE = 0.9` and `TEXT_OFFSET = {x=10,y=15}`
+
 **These are the language names given in the original `game.lua` file.
 
 
@@ -1264,6 +1265,7 @@ Steamodded automatically adds additional entries to `LOC_COLOURS` for all custom
 - [SMODS.Suit](https://github.com/Steamodded/smods/wiki/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit)
 
 which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient, Consumable or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata#metadata).
+
 
 
 
