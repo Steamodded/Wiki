@@ -565,21 +565,21 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 ### Examples
 <table>
  <tr>
- <td> Text string </td> <td> Font Name </td> <td>Language</td> <td>Result</td> 
+  <td>Text string</td>
+  <td>Font Name</td>
+  <td>Assigned Language</td>
+  <td>Result</td>
  </tr>
+
  <tr>
   <td>
-  
-  ```pas
-   {f:1}Hello{}
-   ```
+   
+   ```pas
+{f:1}Hello{}
+```
   </td>
-  <td>
-  m6x11 plus
-  </td>
-  <td>
-  Default
-  </td>
+  <td>m6x11 plus</td>
+  <td>Default</td>
   <td align="center">
    <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Assets/Text-Styling/example_font_hello_1_dark.svg">
@@ -587,19 +587,16 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
    </picture>
   </td>
  </tr>
+
  <tr>
   <td>
    
-  ```pas
-  {f:2}Hello, 你好{}
-   ```
+   ```pas
+{f:2}Hello, 你好{}
+```
   </td>
-  <td>
-  Noto Sans SC Bold
-  </td>
-  <td>
-  Simplified Chinese
-  </td>
+  <td>Noto Sans SC Bold</td>
+  <td>Simplified Chinese</td>
   <td align="center">
    <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Assets/Text-Styling/example_font_hello_2_dark.svg">
@@ -607,19 +604,16 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
    </picture>
   </td>
  </tr>
+
  <tr>
   <td>
    
-  ```pas
-   {f:3}Hello, 您好{}
-   ```
+   ```pas
+{f:3}Hello, 您好{}
+```
   </td>
-  <td>
-  Noto Sans TC Bold
-  </td>
-  <td>
-  Traditional Chinese
-  </td>
+  <td>Noto Sans TC Bold</td>
+  <td>Traditional Chinese</td>
   <td align="center">
    <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Assets/Text-Styling/example_font_hello_3_dark.svg">
@@ -627,19 +621,16 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
    </picture>
   </td>
  </tr>
+
  <tr>
   <td>
    
-  ```pas
-   {f:4}Hello, 안녕하세요{}
-   ```
+   ```pas
+{f:4}Hello, 안녕하세요{}
+```
   </td>
-  <td>
-  Noto Sans KR Bold
-  </td>
-  <td>
-  Korean
-  </td>
+  <td>Noto Sans KR Bold</td>
+  <td>Korean</td>
   <td align="center">
    <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Assets/Text-Styling/example_font_hello_4_dark.svg">
@@ -647,59 +638,50 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
    </picture>
   </td>
  </tr>
+
  <tr>
   <td>
    
-  ```pas
-   {f:5}こんにちは{}
-   ```
+   ```pas
+{f:5}こんにちは{}
+```
   </td>
-  <td>
-  Noto Sans JP Bold
-  </td>
-  <td>
-  Japanese
-  </td>
+  <td>Noto Sans JP Bold</td>
+  <td>Japanese</td>
   <td align="center">
    <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Assets/Text-Styling/example_font_hello_5_dark.svg">
-    <img src="Assets/Text-Styling/example_font_hello_5_light.svg" height=35.2 alt="Hello, こんにちは">
+    <img src="Assets/Text-Styling/example_font_hello_5_light.svg" height=35.2 alt="こんにちは">
    </picture>
   </td>
  </tr>
+
  <tr>
   <td>
    
-  ```pas
-   {f:6}Hello, Здравствуйте{}
-   ```
+   ```pas
+{f:6}Hello, Здравствуйте{}
+```
   </td>
-  <td>
-  Noto Sans Bold
-  </td>
-  <td>
-  All, assigned to Russian
-  </td>
+  <td>Noto Sans Bold</td>
+  <td>Russian</td>
   <td align="center">
    <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Assets/Text-Styling/example_font_hello_6_dark.svg">
-    <img src="Assets/Text-Styling/example_font_hello_6_light.svg" height=35.2 alt="Hello, Здравствуйт">
+    <img src="Assets/Text-Styling/example_font_hello_6_light.svg" height=35.2 alt="Hello, Здравствуйте">
    </picture>
   </td>
  </tr>
+
  <tr>
   <td>
    
-  ```
-  pas{f:7}Hello{}
-  ```
+   ```pas
+{f:7}Hello{}
+```
   </td>
-  <td>
-  m6x11 plus
-  </td>
-  <td>
-  unassigned, see notes at bottom*
-  </td>
+  <td>m6x11 plus</td>
+  <td>None*</td>
   <td align="center">
    <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Assets/Text-Styling/example_font_hello_7_dark.svg">
@@ -707,19 +689,16 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
    </picture>
   </td>
  </tr>
+
  <tr>
   <td>
    
    ```pas
-   {f:8}Hello{}
-   ```
+{f:8}Hello{}
+```
   </td>
-  <td>
-  Go Noto Current Bold
-  </td>
-  <td>
-  All, assigned to `All1`
-  </td>
+  <td>Go Noto Current Bold</td>
+  <td>`All1`**</td>
   <td align="center">
    <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Assets/Text-Styling/example_font_hello_8_dark.svg">
@@ -727,17 +706,16 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
    </picture>
   </td>
  </tr>
+
  <tr>
   <td>
    
-  ```pas{f:9}Hello{}```
-  </td>
-  <td>
-  Go Noto CJK Core
-  </td>
-  <td>
-  All, assigned to `All2` 
-  </td>
+   ```pas
+{f:9}Hello{}
+```
+</td>
+  <td>Go Noto CJK Core</td>
+  <td>`All2`**</td>
   <td align="center">
    <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Assets/Text-Styling/example_font_hello_9_dark.svg">
@@ -745,19 +723,16 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
    </picture>
   </td>
  </tr>
-  <tr>
-   <td>
-    
+
+ <tr>
+  <td>
+   
    ```pas
-    {f:modname_fontkey}Hello{}
-    ```
-   </td>
-  <td>
-  [Custom Font](https://github.com/Steamodded/smods/wiki/SMODS.Font) (in this example, *Wingdings*)
+{f:modname_fontkey}Hello{}
+```
   </td>
-  <td>
-  Any
-  </td>
+  <td><a href="https://github.com/Steamodded/smods/wiki/SMODS.Font">Custom Font</a> (example: Wingdings)</td>
+  <td>Custom</td>
   <td align="center">
    <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Assets/Text-Styling/example_font_hello_10_dark.svg">
@@ -766,7 +741,9 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
   </td>
  </tr>
 </table>
-*It differs from the default font used by English from the parameters `TEXT_HEIGHT_SCALE = 0.9` and `TEXT_OFFSET = {x=10,y=15}`
+
+* It differs from the default font from the parameters `TEXT_HEIGHT_SCALE = 0.9` and `TEXT_OFFSET = {x=10,y=15}`
+** These are the language names given in the original `game.lua` file.
 
 
 ## Combinations
@@ -1287,6 +1264,7 @@ Steamodded automatically adds additional entries to `LOC_COLOURS` for all custom
 - [SMODS.Suit](https://github.com/Steamodded/smods/wiki/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit)
 
 which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient, Consumable or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata#metadata).
+
 
 
 
