@@ -51,7 +51,7 @@ Mods
 ## API methods
 - `select_music_track(self) -> number`
 	- This function is called each frame to decide what music to play. Return values that are not `nil`, `false` or a number are converted to zero. The music track that returned the highest value is to be played.
-		- Your track's sound code must contain the string `music` if you are using this.
+		- Your track's key must contain the string `music` if you are using this.
 
 ## Utility functions
 - `create_replace_sound(self, replace)`
