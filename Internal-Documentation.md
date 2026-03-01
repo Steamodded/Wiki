@@ -109,4 +109,4 @@ Returned a signed string of `val` as dollars, prefixed with "$" if positive and 
 Returns the result of multiplying `base` and `perma + 1`.
 #### `SMODS.add_to_pool(prototype_obj, args) -> bool?, table?`
 Helper function to check if an object can be added into a pool,
-- If `prototype_obj.in_pool` is defined, returns the result of `in_pool`, otherwise returns `false`.
+- If `prototype_obj.in_pool` is defined, returns the result of `in_pool`, otherwise returns `true`.

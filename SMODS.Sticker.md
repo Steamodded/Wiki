@@ -18,6 +18,8 @@
 	```
 	- `rate = 0.3`: Chance of the sticker applying on an eligible card
 	- `needs_enable_flag`: If set to `true`, this sticker requires `G.GAME.modifiers['enable_'..self.key]` to be `true` before it can be applied.
+	- `always_scores`: If `true`, editioned card always counts in scoring.
+    - `never_scores`: If `true`, editioned card never counts in scoring (supersedes `always_scores`).
 
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)

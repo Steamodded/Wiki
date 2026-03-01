@@ -38,6 +38,7 @@
     - `any_suit`: If `true`, enhanced card counts as any suit.
     - `shatters`: If `true`, enhanced card breaks on destruction like a Glass Card.
     - `always_scores`: If `true`, enhanced card always counts in scoring.
+    - `never_scores`: If `true`, enhanced card never counts in scoring (supersedes `always_scores`).
 	- `weight`: The weighting of the enhancement, follows same rules as other weighted objects *(default weight is 5)*.
 
 ## API methods

@@ -31,7 +31,7 @@ In all of the following methods, use the global variable `G.GAME.blind` to
 refer to the current blind. (The base game uses `self` to refer to the current blind in `Blind:foo()`.)
 - `set_blind(self)`
 	- Effects that activate when this Blind is selected
-- `calculate(self, context) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
+- `calculate(self, blind, context) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
     - This method is both called directly on the center and from `Blind:calculate()` and incorporated into the standard calculation pipeline. Several blind functions below can be handled here via checking their respective calculation context.
 - `disable(self)`
 	- Reverting effects when this Blind gets disabled

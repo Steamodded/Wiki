@@ -141,9 +141,12 @@ Returns true if the card is cosidered to be "eternal" (cannot be destroyed).
 Returns a shallow copy of the provided table.
 #### `time(func, ...) -> number`
 Calls an input function with any given additional arguments: `func(...)` and returns the time the function took to execute in milliseconds. The return value from `func` is lost.
-#### `SMODS.destroy_cards(cards)`
+#### `SMODS.destroy_cards(cards, bypass_eternal, immediate, skip_anim)`
 Destroys any type of cards given to the function appropriately, with respect to further calculations if called during the scoring loop.
 - `cards` - Can be an individual `Card` object, or a table of `Card` objects.
+- `bypass_eternal` - Destroys cards even if they're Eternal.
+- `immediate` - Destroys the cards immediately not creating an event (Note: Card.start_dissolve and Card.shatter internally still create an event)
+- `skip_anim` - Skips the normal animation and changes it to that of food jokers.
 #### `SMODS.add_voucher_to_shop(key)`/`SMODS.add_booster_to_shop(key)`
 Adds a `Voucher` or a `Booster` to the current shop.
 - `key` - the key of the object to be added. If no key is provided, the next seeded object will be used

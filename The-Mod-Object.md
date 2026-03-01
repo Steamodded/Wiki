@@ -249,7 +249,7 @@ Allows configuring if a quip is allowed to appear.
 
 ### `mod.calculate(self, table) -> table, boolean`
 Equivalent to a calculate function on a GameObject.
-See [SMODS calculation](https://github.com/Steamodded/smods/wiki/calculate_functions) docs for details.
+See [SMODS calculation](https://github.com/Steamodded/smods/wiki/Calculate-Functions) docs for details.
 
 ## Other 
 ### `mod.debug_info`
