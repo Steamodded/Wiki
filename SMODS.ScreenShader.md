@@ -1,5 +1,6 @@
 # API Documentation: `SMODS.ScreenShader`
 *(Added in 1501a)*
+
 This class allows for drawing a shader on the entire screen, rather than just a singular object.
 - **Required parameters:**
 	- `key`

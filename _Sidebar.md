@@ -27,6 +27,7 @@ Game Objects
   * [SMODS.PokerHand](https://github.com/Steamodded/smods/wiki/SMODS.PokerHand)
   * [SMODS.Rank and SMODS.Suit](https://github.com/Steamodded/smods/wiki/SMODS.Rank-and-SMODS.Suit)
   * [SMODS.Rarity](https://github.com/Steamodded/smods/wiki/SMODS.Rarity)
+  * [SMODS.ScreenShader](https://github.com/Steamodded/smods/wiki/SMODS.ScreenShader)
   * [SMODS.Seal](https://github.com/Steamodded/smods/wiki/SMODS.Seal)
   * [SMODS.Sound](https://github.com/Steamodded/smods/wiki/SMODS.Sound)
   * [SMODS.Stake](https://github.com/Steamodded/smods/wiki/SMODS.Stake)
