@@ -70,11 +70,14 @@ There are a range of different keys that you can return in this table. These key
 - `message` - used to return a custom message
   - will automatically be put on the scored card unless `message_card` is also returned
   - colour of message background will be `G.C.FILTER` unless `colour` is returned
+  - text colour will be `G.C.WHITE` unless `text_colour` is returned
   - a custom sound can be added to a custom message by using `sound`
 	  - you can use `pitch` and `volume` to modify the pitch and volume of your sound
 - `func` - return a function to be called at the correct timing *(advanced)*
+- `pre_func` - return a function to be called before other effects *(advanced - used for `context.post_joker`)*
 - `extra` - an extra table set out the same as this one *(advanced)*
 - `effect` - set as true to mark your joker as having triggered
+- `no_juice` - stops the card from shaking when triggered
 
 If you do not want the default messages to be shown when adding `chips` etc. there are 2 ways to do this
 
@@ -391,6 +394,16 @@ Below is a list of every context currently in the game. There is a short explana
 
 > [!IMPORTANT]
 > All calculation of jokers that evaluates no secondary card is called with `main_eval = true` in the context table. This should be used for the main evaluation of the joker within that context. See `context.end_of_round` for more information.
+
+### `SMODS.last_hand`
+*(Added in 1501a)*
+This keeps track of the last played hand throughout the game, allowing you to check it for certain things. It is structured as below.
+
+```lua
+SMODS.last_hand.scoring_name — string of the name of the hand
+SMODS.last_hand.scoring_hand — table of scoring cards
+SMODS.last_hand.full_hand — table of all played cards
+```
 
 ## Main Scoring Contexts
 
@@ -863,6 +876,10 @@ context.other_card -- the card being evaluated for flipping
 context.from_area -- the card area the card was in previously
 context.to_area -- the card area the card is moving into
 ```
+
+>[!NOTE]
+>*(Added in 1501a)*
+>This context can now be used to redirect cards when theyb are moving from on area to another. Returning `modify = {to_area = CardArea}` will send the card to that area instead
   
 ---
 #### context.blind_disabled
@@ -1081,6 +1098,23 @@ context.from_scoring -- true if the money changed while scoring
 
   >[!NOTE]
   >The tagging within this context *may* be inaccurate. Please report any inaccuracies to the SMODS team.
+
+---
+#### context.poker_hand_changed
+*(Added in 1501a)*
+This context is used when a poker hand has its chips and/or mult changed.
+
+```lua
+if context.poker_hand_changed then
+```
+
+```lua
+context.poker_hand_changed -- flag to identify this context, always TRUE
+context.old_level, context.new_level -- the poker hand's level before and after this modification (only present when level changes)
+context.old_parameters, context.new_parameters -- tables mapping a scoring parameter's key to its value before and after this modification (only modified parameters are present)
+context.scoring_name -- the poker hand being modified
+context.card -- the card that caused this change (optional)
+```
 
 ---
 #### context.skip_blind
