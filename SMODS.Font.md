@@ -11,7 +11,7 @@ Mods
 ```
 
 - **Required parameters:**
-	- `key`: The key used to indentify your font (e.g. `'HelveticaNeue` *(`modname_HelveticaNeue`)*)
+	- `key`: The key used to indentify your font (e.g. `'HelveticaNeue'` *(`modname_HelveticaNeue`)*)
 	- `path`: The font's name, including the extension (e.g. `'HelveticaNeue.ttf'`).
 	
 - **Optional parameters** *(defaults)*:
