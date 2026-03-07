@@ -5,9 +5,21 @@
         - The only supported field is `name`. In localization files, it is set by referring to `misc.challenge_names[key]`.
 - **Optional parameters** *(defaults)*:
     - `rules`: Custom rules and modifiers for the challenge.
-        - `rules.custom`: Expects a list of tables with an `id` and optionally a `value` field (defaults to `true`). Sets `G.GAME.modifiers[id] = value`. Text for each rule should be stored in `G.localization.misc.v_text['ch_c_'..id]`, `value` is passed as a variable. The following custom rule keys are defined by the base game:
+        - `rules.custom`: Expects a list of tables with an `id`, optionally a `value` field (defaults to `true`) and `no_ui` (not set by default).
+
+          Sets `G.GAME.modifiers[id] = value`.
+
+          Text for each rule should be stored in `G.localization.misc.v_text['ch_c_'..id]` unless `no_ui` is set to `true`.
+
+          The following custom rule keys are defined by the base game:
             - `all_eternal`, `chips_dollar_cap`, `daily`, `debuff_played_cards`, `discard_cost`, `flipped_cards`, `inflation`, `minus_hand_size_per_X_dollar`, `no_extra_hand_money`, `no_interest`, `no_reward`, `no_reward_specific`, `no_shop_jokers`, `none`, `set_eternal_ante`, `set_joker_slots_ante`, `set_seed`.
-        - `rules.modifiers`: Expects a list of tables with an `id` and a `value` field. Sets each corresponding base modifier to the given value. The following modifiers are supported:
+        - `rules.modifiers`: Expects a list of tables with an `id` and a `value` field.
+
+          Sets `G.GAME.starting_params[id] = value`.
+     
+          Custom `starting_params` can be used (i.e. `erratic_suits_and_ranks`), as long as `no_ui` is set to `true`.
+
+          The following modifiers are supported:
             - `dollars`, `discards`, `hands`, `reroll_cost`, `joker_slots`, `consumable_slots`, `hand_size`.
     - `jokers`: Expects a list of tables that represent jokers added at the start of the run. Each table can have the following fields:
         - `id` (required): The key of the joker to create.
