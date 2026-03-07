@@ -52,6 +52,7 @@ These are the values that can be created from the mod's metadata:
 - `conflicts` - Table of the mod's conflicts.
 - `provides` - Table of the mods that this mod can provide.
 - `lovely` - Mods that have a `lovely.toml` file or a `lovely` folder in their directory have this flag enabled. You can use this to verify if your mod was able to load lovely patches
+- `can_load` - `true` if the mod is able to load. This is useful for checking if another mod has loaded successfully.
 
 ### "Lovely" Mods
 Folders within the mod directiry that have a `lovely.toml` file or a `lovely` folder are considered "Lovely" mods. These are registered as regular mods, with default information set up and a `lovely_only` flag. 
