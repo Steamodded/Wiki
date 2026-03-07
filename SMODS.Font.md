@@ -11,7 +11,7 @@ Mods
 ```
 
 - **Required parameters:**
-	- `key`: The key used to indentify your font (e.g. `'HelveticaNeue'` *(`modname_HelveticaNeue`)*)
+	- `key`: The key used to indentify your font (e.g. `'HelveticaNeue'` *(`modprefix_HelveticaNeue`)*)
 	- `path`: The font's name, including the extension (e.g. `'HelveticaNeue.ttf'`).
 	
 - **Optional parameters** *(defaults)*:
@@ -39,11 +39,11 @@ SMODS.Font{
 ## Applying fonts to text
 For your font to show up in game, you can assign it to formatted text using the *style modifier code* `f:` Example:
 ```lua
-j_modname_example = {
-  name = "{f:modname_HelveticaNeue}Example",
+j_modprefix_example = {
+  name = "{f:modprefix_HelveticaNeue}Example",
   text = {
     {
-    "{C:chips,f:modname_HelveticaNeue}+#1#{} Chips",
+    "{C:chips,f:modprefix_HelveticaNeue}+#1#{} Chips",
     },
   },
 },
