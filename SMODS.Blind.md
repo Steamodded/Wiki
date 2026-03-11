@@ -5,7 +5,7 @@
 	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 - **Optional parameters** *(defaults)*
 	- `atlas = 'blind_chips', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-		- Any atlas specified here must set `atlas_table = 'ANIMATION_ATLAS'`. The `y` value determines the row to use for the animation. The `x` value is ignored and cycles through each frame of the animation.
+		- To have an animated sprite like vanilla Blinds set `atlas_table = 'ANIMATION_ATLAS'`. The `y` value determines the row to use for the animation. The `x` value is ignored and cycles through each frame of the animation.
 	- `discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `dollars = 5`: Amount of money obtained when defeated.
 	- `mult = 2`: Required score relative to the Ante's Base score.
