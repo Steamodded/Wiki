@@ -46,6 +46,8 @@
 	- Define custom logic for when a card is allowed to spawn. A card can spawn if `in_pool` returns true and all other checks are met.
 	- `allow_duplicates` allows this card to spawn when one already exists, even without Showman.
 	- When called from `generate_card_ui`, the `_append` key is passed as `args.source`.
+- `can_sell(self, card, context)`
+	- Define additional custom logic for when your card is allowed to be sold. By default, the card is usually prevented from being sold during scoring or if it is eternal. If defined, can_sell is then also checked afterwards and the card can be sold if it returns true.
 - `update(self, card, dt)`
 	- For actions that happen every frame.
 - `set_sprites(self, card, front)`
