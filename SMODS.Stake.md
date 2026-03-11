@@ -15,6 +15,7 @@
         - If `unlocked` is set to `false`, the stake is unlocked by first winning a run on each of the `applied_stakes`.
     - `colour = [white]`: The colour used for this stake in the stake selection column.
     - `above_stake`: The stake's key that this stake should appear directly above in the list. By default, your stake will be placed at the top of the list.
+    - `hide_from_run_info`: If `true` hides the stake from the Run Info screen during a run.
 > [!NOTE] 
 > Key prefixing is applied to `applied_stakes` and `above_stake` by default. If you want your stake above a stake from the base game or other mods, this can be adjusted by using `prefix_config`. [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 
