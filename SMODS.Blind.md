@@ -6,7 +6,8 @@
 - **Optional parameters** *(defaults)*
 	- `atlas = 'blind_chips', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
 		- To have an animated sprite like vanilla Blinds set `atlas_table = 'ANIMATION_ATLAS'`. The `y` value determines the row to use for the animation. The `x` value is ignored and cycles through each frame of the animation.
-	- `discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+	- `config = {}, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+		- `config` values are saved under `G.GAME.blind.effect`.
 	- `dollars = 5`: Amount of money obtained when defeated.
 	- `mult = 2`: Required score relative to the Ante's Base score.
 	- `boss`: Marks this Blind as a Boss Blind and specifies on which Antes it can appear (`{ min = 1, max = 10 }`). `max` is an artifact and not functional. Use `in_pool` instead for advanced conditions.
@@ -25,6 +26,7 @@
 		- These effects are ignored if you specify a `debuff_hand` or `debuff_card` function respectively.
 	- `ignore_showdown_check`: Enabling this allows `in_pool` to be evaluated regardless of whether a showdown Boss Blind was requested or not.
 	- `vars = {}`: variables for the Blind's description in the collection. Fallback if `collection_loc_vars` isn't set.
+	- `modifies_draw`: Set to true if the blind modifies the draw similar to `The Serpent`. This will not handle the functionality but it is necessary for the effects to apply properly.
 
 ## API methods
 In all of the following methods, use the global variable `G.GAME.blind` to

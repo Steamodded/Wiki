@@ -52,6 +52,13 @@ Checks if an enhancement should be generated, and generates one according to the
 - `guaranteed` - If this is `true`, always generate an enhancement.
 - `options` - A table of possible enhancements to generate. Defaults to all available enhancements.
 - `type_key` - Randomness seed for the roll which enhancement to generate.
+#### `SMODS.poll_edition(args) -> string?`
+- Checks if an edition should be generated, and generates one according to the specified arguments if so. The following arguments are supported: 
+	- `key` - Randomness seed for the check whether to generate an edition, defaults to `'edition_generic'`.
+	- `mod` - Multiplier to the base rate at which editions appear.
+	- `no_negative` - Disables negative edition chance *(chance is added to polychrome)*
+	- `guaranteed` - If this is `true`, disables base card and always generates an edition.
+	- `options` - A table of possible enhancements to generate. Defaults to all editions marked `in_shop`.
 
 ## Mod-facing Utilities
 These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.
@@ -91,11 +98,12 @@ This function replaces `create_card`. It provides a cleaner interface to the sam
 - `key_append` - An additional RNG seeding string. This should be used to put different sources of card generation on different queues.
 - `no_edition` - If this is `true`, the generated card is guaranteed to have no randomly generated edition.
 - `edition`, `enhancement`, `seal` - Applies the specified modifier to the card.
-- `stickers` - This should be an array of sticker keys. Applies all specified stickers to the card.
+- `stickers`, `force_stickers` - This should be an array of sticker keys. Applies all specified stickers to the card. `force_stickers` bypasses all checks.
 - `front` - Front of the playing card, takes the playing card's key (e.g. `H_A`). Ignores `rank` and `suit`.
 - `rank` - Rank of the playing card. Can be the `key` or the `card_key` (e.g. `'Ace'` or `'A'`).
 - `suit` - Suit of the playing card. Can be the `key` or the `card_key` (e.g. `'Hearts'` or `'H'`).
 - `enhanced_poll` - Chance to pick `'Base'` over `'Enhanced'` with set `'Playing Card'`. Default: 0.6
+- `allow_duplicates` - Allows duplicates of created cards (when a `key` is not specified) as if Showman was owned.
 #### `SMODS.debuff_card(card, debuff, source)`
 Allows manually setting and removing debuffs from cards.
 - `source` should be a unique identifier string. You must use the same source to remove a previously set debuff.
@@ -111,7 +119,16 @@ This can be used to merge results from poker hand evaluation to create a combine
 Provides score requirements for higher stages of ante scaling. If you want to implement your own scaling rules, you should modify this function.
 #### `SMODS.stake_from_index(index) -> string`
 Given an index from the Stake pool, return the corresponding key, or `'error'` if it doesn't exist.
+#### `SMODS.upgrade_poker_hands(args)`
+*(Added in 1221a)* This function levels up or upgrades poker hands. This allows permanent modifications to the chips and mult *(and other parameters if defined)* for each poker hand that will not be removed when a standard level up happens. The argument to this function should always be a table. The following fields are supported:
+- `hands` : table of strings or a single string of hand names to level up *(if left blank defaults to all Poker Hands)*
+- `parameters` : table of strings of keys of `Scoring_Parameters` to upgrade *(if left blank defaults to all Scoring Parameters)*
+- `level_up` : increases the level of the hand by amount passed *(NOTE: this can be used to level up a hand by more than one level)*
+- `func` : pass a custom function `function(current, base, parameter)` for custom modifications to the parameters in a Poker Hand *(if left blank defaults to normal level up method)*
+- `from` : the Object that is doing the upgrading, will `juice_up` during animations
+- `instant` : boolean that disables animations
 #### `SMODS.smart_level_up_hand(card, hand, instant, amount)`
+**DEPRECATED IN 1221a IN FAVOR OF `SMODS.upgrade_poker_hands(args)`**
 Akin to vanilla's `level_up_hand()`, but avoids uneccessary calling of `update_hand_text()`
 - `card` - If included, juices up this card during the animation
 - `hand` - Key to the hand being leveled up.
@@ -133,10 +150,15 @@ Helper function to copy the ability of another joker, akin to Blueprint/Brainsto
         end
     end
     ```
+#### `SMODS.merge_effects(...) -> table`
+Takes any number of 2D arrays. Flattens given calculation returns into one, utilising `extra` tables.
+- This can be used to merge returns from `SMODS.blueprint_effect`.
 #### `SMODS.has_enhancement(card, key) -> bool`
 Returns true if the provided `card` has a specific enhancement.
 #### `SMODS.is_eternal(card, trigger) -> bool`
 Returns true if the card is cosidered to be "eternal" (cannot be destroyed).
+- `card` - the card that is being checked
+- `trigger` - generally should be a reference to the object that is doing the check. If the check is being done by a general function, it is recommended to supply an identifying table such as `{destroying_cards = true}`
 #### `SMODS.shallow_copy(t) -> table`
 Returns a shallow copy of the provided table.
 #### `time(func, ...) -> number`
@@ -162,9 +184,22 @@ Used to change the number of cards that can be played/discarded at one time. Pla
 #### `SMODS.draw_cards(hand_space)`
 Function to draw a certain number of cards to hand, calling the relevant calculation contexts
 - `hand_space` - the number of cards to draw
-#### `SMODS.blueprint_effect(copier, copied_card, context) -> table`
-Use in calculation to copy the ability of another joker.
-Returns whatever the copied card returned during calculation.
-#### `SMODS.merge_effects(...) -> table`
-Takes any number of 2D arrays. Flattens given calculation returns into one, utilising `extra` tables.
-- This can be used to merge returns from `SMODS.blueprint_effect`.
+#### `SMODS.is_poker_hand_visible(handname) -> boolean`
+This function checks whether a poker hand is visible in the poker hands menu.
+- `handname` - string of poker hand name
+#### `SMODS.add_to_pool(prototype_obj, args) -> boolean`
+This function handles the `in_pool` call to each object when creating a pool, and if it returns `true` the object is added to the pool. `prototype_obj` will be the prototype of the object of the set being polled (i.e. an `SMODS.Center`, `SMODS.Blind`, `SMODS.Tag`, `SMODS.Rank`, `SMODS.Suit`, etc.) The `args` table is optional, and I would recommend searching in your IDE for the function to see the different `args` tables.
+*(Calls to `get_current_pool` will add an `args` table of `{source = _append}` where `_append` is the 4th argument of `get_current_pool`)*
+#### `SMODS.create_sprite(x, y, width, height, atlas_key, pos) -> Sprite|AnimatedSprite`
+*(Added in 1221a)* Handles creation of `Sprite` objects with the correct atlas type.
+#### `SMODS.is_active_blind(key, ignore_disabled) -> boolean`
+*(Added in 1221a)* Returns `true` when the current blind matches the inputted `key`.
+#### `SMODS.get_clean_pool(_type, _rarity, _legendary, _append)`
+*(Added in 1501a)* Wrapper for `get_current_pool` that will exclude any `"UNAVAILABLE"` values in the pool, therefore giving a list of valid keys only.
+
+## Card Methods
+
+#### `Card:should_hide_front() -> boolean`
+This function checks whether a card object should display the front sprite or not. Currently only checks for Stone cards and cards with `overrides_base_rank = true` defined on the Center, but can be **hooked** to provide additional functionality as required.
+#### `Card:is_rarity(rarity) -> boolean`
+This function checks if a Joker is a certain rarity. Accepts a number for vanilla rarities, or a key as a string for modded rarities.

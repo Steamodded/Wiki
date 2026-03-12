@@ -2,13 +2,14 @@
 **Class prefix:** `e`
 - **Required parameters:**
 	- `key`
-	- `shader`: the shader key for your shader. `shader = false` is allowed. This will create edition with no shader.
+	- `shader`: the shader key for your shader. [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Shader-and-SMODS.ScreenShader)
+		- `shader = false` is allowed. This will create edition with no shader.
 	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 		- `loc_txt` should contain an additional `label` string. It is used on badges, while `name` is displayed at the top of info boxes. For use with localization files, this label should be placed in `misc.labels` **(without the `e_` prefix)**.
 - **Optional parameters** *(defaults)*:
 	- `atlas = 'Joker', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
 		- This defines the card to draw the edition on in the collection.
-	- `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+	- `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 		- The following base values for `config` are supported and will be applied/scored automatically:
 		```lua
 			{
@@ -55,36 +56,6 @@
 	- Define custom logic for when an edition is allowed to spawn. `A card with this edition can spawn if `in_pool` returns true and all other checks are met.`
 	- `args` table contains `source`, which is the seed key used when calling `poll_edition`.
 ## Other information
-### SMODS.Shader
-A shader is required for a custom edition.
-- **Required parameters:**
-	- `key`
-	- `path`: The file name of your shader. Shaders must be stored in `assets/shaders/` and be a `.fs` file.
-		- The shader's `key`, file name (without extension) and the shader name used in the GLSL file **must be identical.**
-
-### API methods
-- `send_vars(sprite, @nullable card) -> table`
-	- Used to send extra vars to the shader. Card may be `nil` if shader is not applied to a Card. Returned table entries are sent to the shader via `Shader:send(key, value)`. Usage example may be found in `example_mods/Mods/EditionExamples` - [here](https://github.com/Steamodded/examples/blob/master/Mods/EditionExamples/EditionExamples.lua#L126) and [here](https://github.com/Steamodded/examples/blob/master/Mods/EditionExamples/assets/shaders/gold.fs#L24)
-
-
-#### Working with Shaders
-[ionized.fs](https://github.com/Steamodded/examples/blob/master/Mods/EditionExamples/assets/shaders/ionized.fs) has shader code explanation with comments.
-For a general guide, look at [LOVE2D introduction to shaders](https://blogs.love2d.org/content/beginners-guide-shaders).
-
-If you want to see vanilla Balatro shaders, unzip the Balatro.exe and go to `resources/shaders` folder.
-
-To see values for default externs, check out `engine/sprite.lua` -> `Sprite:draw_shader`.
-
-
-#### Useful shaders resources
-- [The book of shaders](https://thebookofshaders.com) - beginner friendly introduction to shaders.
-- [GLSL Editor](https://patriciogonzalezvivo.github.io/glslEditor/) - preview your fragment shaders live.
-- [GLSL Image Processing System](https://github.com/kajott/GIPS/releases) - preview your fragment shaders live. The program additionally provides some built-in shaders as examples.
-- [Inigo Quilez articles](https://iquilezles.org/articles/) - in-depth articles on algorithms and techniques you could use in shaders. A lot of those are for 3D, but there's some 2D stuff as well.
-- [Shadertoy](https://www.shadertoy.com) - tons of shaders from other people to learn from. A lot of them are pretty complex and 3D, but you can find simple 2D ones.
-
-Note: in all resources the language is slightly different from LOVE2D shaders language, but the logic works the same way.
-
 
 ### Weight System
 The default game editions have the following weights
@@ -118,12 +89,13 @@ If you have created a new edition called **MyEdition**, and your mod prefix key 
 card:set_edition("e_MyFirstMod_MyEdition", true)
 ```
 
-- `poll_edition(_key, _mod, _no_neg, _guaranteed, _options)` *(defaults)*
-	- `_key = edition_generic`, *string* - key value for a random seed
-	- `_mod = 1`, *number* - scale of chance against base card
-	- `_no_neg = false`, *boolean* - disables negative edition chance *(chance is added to polychrome)*
-	- `_guaranteed = false`, *boolean* - disables base card
-	- `_options = all editions marked in_shop`, *table* - List of editions to poll. Two variations.
+- `SMODS.poll_edition(args)` *(defaults)*
+- The arguments is always a table that can contain the following parameters. *(defaults)*
+	- `key = edition_generic`, *string* - key value for a random seed
+	- `mod = 1`, *number* - scale of chance against base card
+	- `no_negative = false`, *boolean* - disables negative edition chance *(chance is added to polychrome)*
+	- `guaranteed = false`, *boolean* - disables base card
+	- `options = all editions marked in_shop`, *table* - List of editions to poll. Two variations.
 	Option 1 - list of keys for included editions. This method respects defined weights,
 	```lua
 	{"e_foil", "e_holo","e_negative"}

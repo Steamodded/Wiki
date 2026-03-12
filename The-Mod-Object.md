@@ -27,9 +27,13 @@ Every mod that's found and registered by Steamodded is converted into a "Mod" ob
 	- [`mod.reset_game_globals(run_start)`](#modreset_game_globalsrun_start)
 	- [`mod.set_ability_reset_keys() -> table`](#modset_ability_reset_keys---table)
 	- [`mod.set_debuff(card) -> boolean|"prevent_debuff"`](#modset_debuffcard---booleanprevent_debuff)
+	- [`mod.quip_filter(SMODS.JimboQuip, string) -> boolean, table`](#modquip_filtersmodsjimboquip-string---boolean-table)
+	- [`mod.calculate(self, table) -> table, boolean`](#modcalculateself-table---table-boolean)
+	- [`mod.custom_card_areas(game)`](#modcustom_card_areasgame)
 
 - [Other](#other)
 	- [`mod.debug_info`](#moddebug_info)
+	- [`mod.menu_cards`](#modmenu_cards)
 
 ***
 
@@ -252,6 +256,19 @@ Allows configuring if a quip is allowed to appear.
 Equivalent to a calculate function on a GameObject.
 See [SMODS calculation](https://github.com/Steamodded/smods/wiki/Calculate-Functions) docs for details.
 
+### `mod.custom_card_areas(game)`
+*(Added in 1221a)*
+Creates a custom `CardArea` at the correct point of the run start sequence. This means that any loading will be done correctly.
+```lua
+SMODS.current_mod.custom_card_areas = function(game)
+	game.my_area = CardArea(
+		game.jokers.T.x, game.jokers.T.y + 3,
+        game.jokers.T.w, game.jokers.T.h / 2,
+        { card_limit = 1, type = 'joker', highlight_limit = 1 }
+	)
+end
+```
+
 ## Other 
 ### `mod.debug_info`
 This is a property that can be set by mods to display debug information on the crash screen.
@@ -264,3 +281,17 @@ SMODS.current_mod.debug_info = "Foo"
 -- Will display "Bar: Baz" under your mod
 SMODS.current_mod.debug_info = {Bar = "Baz"}
 ```
+### `mod.menu_cards() -> table`
+*(Added in 1501a)*
+This function allows you to easily add cards to the main menu of the game, or to adjust the card that is already there. It can be used to add a single card, or a group of cards, by providing tables of inputs to `SMODS.create_card`. *(If you are adding a single card, you can treat the entire return table as the input to `SMODS.create_card`)*
+
+```lua
+SMODS.current_mod.menu_cards = function()
+	return {
+		{set = 'Tarot'}, -- adds a random Tarot to the menu
+		{key = 'j_perkeo'}, -- adds Perkeo to the menu
+	}
+end
+```
+
+You can optionally remove the initial card from the menu by including `remove_original = true` to your return table, and you can also define a `func = function() ...` that will be run after all mods have added their cards to the menu. `G.title_top` is the `CardArea` that holds these cards.

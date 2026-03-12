@@ -62,6 +62,7 @@ Put initial values for your object in `config`. Cards representing your object h
 		},
 	}
 	``` 
+- For cards, `card_limit` in `config` can be used to increase *(or decrease)* the card limit of the area that the card is in. `extra_slots_used` can be used to increase *(or decrease)* the number of slots that the card takes up.
 
 ### `prefix_config`
 Defining this table gives you control over where prefixes should be added to keys you specify. The default behavior is to add a class prefix (if it exists) and your mod prefix.
@@ -99,6 +100,9 @@ Changes the display size of cards by scaling them by a factor relative to pixel 
 
 ### `pixel_size`
 Changes how large the sprite of this card is considered, useful for smaller sprites like Half Joker (default: `{ w = 71, h = 95 }`).
+
+### `badge_colour`, `badge_text_colour`/`text_colour`
+Changes the color of the card type's badge background and text (i.e. the set for Consumables, the rarity for Jokers, etc.). On `SMODS.Center` (except Editions) text colour can be changed with `badge_text_colour`, while on everything else you can use `text_colour`.
 
 ## Taking Ownership
 You may need to modify vanilla objects or objects from another mod. Use the `take_ownership` function to modify an existing object; then, you can use all of Steamodded's API functions on it. Each key-value pair of the provided table overwrites the object's value, while the rest of the object is left intact. Objects you take ownership of have your mod's badge added to them, unless you suppress this with the `silent` argument.

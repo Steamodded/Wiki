@@ -6,7 +6,7 @@
 		- `loc_txt` should contain an additional `label` string. It is used on badges, while `name` is displayed at the top of info boxes. For use with localization files, this label should be set as `misc.labels[key:lower()..'_seal']`.
 - **Optional parameters** *(defaults)*:
     - `atlas = 'Joker', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-    - `config = {}, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+    - `config = {}, discovered = false, no_collection, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
         - Values in `config` are copied to `card.ability.seal` when the seal is applied to `card`.
     - `badge_colour = HEX('FFFFFF')`
     - `sound = { sound = 'gold_seal', per = 1.2, vol = 0.4 }`: The sound that should play when the seal is applied to a card.

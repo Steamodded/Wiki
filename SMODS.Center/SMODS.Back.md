@@ -6,6 +6,10 @@
 - **Optional parameters** *(defaults)*:
     - `atlas = 'centers', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
     - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+		- `config` values will be saved under `G.GAME.selected_back.effect.config`
+    - `initial_deck`: *(Added in 1501a)* Allows for easier customisation of your starting deck in custom Back objects.
+        - `ranks`, `suits`: A list of ranks and suits to include/exclude.
+        - `exclude = false`: If `true`, `ranks`/`suits` will be trated as blacklists instead of whitelists.
 
 
 ## API methods
@@ -15,9 +19,5 @@
 - `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `apply(self, back)`
     - Apply modifiers at the start of a run. If you want to modify the starting deck, you must use events to do so.
-- `in_pool(self, args) -> bool, { allow_duplicates = bool }`
-	- Define custom logic for when a card is allowed to spawn. A card can spawn if `in_pool` returns true and all other checks are met.
-	- `allow_duplicates` allows this card to spawn when one already exists, even without Showman.
-	- When called from `generate_card_ui`, the `_append` key is passed as `args.source`.
 - `check_for_unlock(self, args) -> bool`
 	- Configure unlock conditions. Refer to the function `check_for_unlock` in Balatro's code for more information.

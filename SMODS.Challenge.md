@@ -30,7 +30,7 @@
         - Supports all fields of `jokers` except `pinned`.
     - `vouchers`: Behaves like `jokers`, but for vouchers redeemed at the start of the run.
         - Supports the same fields as `consumeables`, but `edition` and `eternal` have no functional effect beyond displaying in the preview UI.
-    - `restrictions`: Contains information about objects that are banned in this challenge.
+    - `restrictions`: Contains information about objects that are banned in this challenge. These parameters can also be functions that return the expected tables.
         - `restrictions.banned_cards`: Expects a list of tables with keys to ban in their `id` fields.
             - This can be used to ban jokers, consumables, vouchers and booster packs. 
             - If a table has an `ids` field containing a list of center keys, only `id` is shown as banned in the challenge UI, but all of the `ids` are banned.

@@ -39,6 +39,9 @@
 ## Utility functions
 - `SMODS.merge_lists(...) -> table`
     - Takes any amount of parts and flattens them into an array containing all scoring cards present in any of the parts. This is particularly useful for composite hands.
+- `SMODS.is_poker_hand_visible(handname) -> boolean`
+This function checks whether a poker hand is visible in the poker hands menu.
+    - `handname` - string of poker hand name
 
 # API Documentation: `SMODS.PokerHandPart`
 This utility class allows easily re-using the same poker hand constructs to build composite hands without much boilerplate code. Before all hand types get evaluated, each part gets executed and added to `parts` for access in the `evaluate` functions.

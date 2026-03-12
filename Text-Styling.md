@@ -112,12 +112,28 @@ Valid style modifiers are as follows:
    <code>{s:<i>scale</i>}</code>
   </td>
  </tr>
+ <tr>
+  <td>
+   <a href="#text-underline-modifier-u"><b>Text underline</a>
+  </td>
+  <td>
+   <code>{u:<i>colour-key</i>}</code>
+  </td>
+ </tr>
   <tr>
   <td>
    <a href="#text-font-modifier-f"><b>Font</a>
   </td>
   <td>
    <code>{f:<i>font</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-font-button-button"><b>Button</a>
+  </td>
+  <td>
+   <code>{button:<i>function-key</i>}</code>
   </td>
  </tr>
  <tr>
@@ -554,7 +570,40 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
 </table>
 
+## Text underline modifier `{u:}`
+> [!NOTE]
+> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+
+> [!IMPORTANT] 
+> This modifier requires the **lowercase** `u`, unlike other modifiers which must be UPPERCASE.
+
+<code>{u:<i>colour-key</i>}</code> adds an underline under the text.
+
+*`colour-key`* sets the colour of the underline, where *`colour-key`* is the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table).
+
+### Examples
+
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+
+  ```pas
+  {u:red}Underlined text!    
+  ```
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+
 ## Text font modifier `{f:}`
+> [!NOTE]
+> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+
 > [!IMPORTANT] 
 > This modifier requires the **lowercase** `f`, unlike other modifiers which must be UPPERCASE.
 
@@ -746,11 +795,41 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 
 **These are the language names given in the original `game.lua` file.
 
+## Text button modifier `{button:}`
+> [!NOTE]
+> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+> *(Added in 1501a)*
+
+> [!IMPORTANT] 
+> This modifier requires the **lowercase** `button`, unlike other modifiers which must be UPPERCASE.
+
+<code>{button:<i>function-key</i>}</code> allows text to be clickable.
+
+*`function-key`* is the key of the callback function for the button. The function will be under `G.FUNCS['function-key']`.
+
+### Examples
+
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+
+  ```pas
+  {button:modprefix_function}Click me!    
+  ```
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
 
 ## Combinations
 Some style codes can be combined within one set of curly braces, like `{X:mult,C:white}`.
 
-- `{T:}`, `{f:}` and `{s:}` are compatible with all other modifiers.
+- `{T:}`, `{f:}`, `{u:}`, `{button:}` and `{s:}` are compatible with all other modifiers.
 
 - Background modifiers `{X:}` or `{B:}` can be used in conjunction with text colour modifiers `{C:}` or `{V:}`.
 
