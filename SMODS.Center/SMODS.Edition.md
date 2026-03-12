@@ -90,21 +90,21 @@ card:set_edition("e_MyFirstMod_MyEdition", true)
 ```
 
 - `SMODS.poll_edition(args)` *(defaults)*
-- The arguments is always a table that can contain the following parameters. *(defaults)*
-	- `key = edition_generic`, *string* - key value for a random seed
-	- `mod = 1`, *number* - scale of chance against base card
-	- `no_negative = false`, *boolean* - disables negative edition chance *(chance is added to polychrome)*
-	- `guaranteed = false`, *boolean* - disables base card
-	- `options = all editions marked in_shop`, *table* - List of editions to poll. Two variations.
-	Option 1 - list of keys for included editions. This method respects defined weights,
-	```lua
-	{"e_foil", "e_holo","e_negative"}
-	```
-	Option 2 - table of keys and weights. Used to override default weights,
-	```lua
-	{
-		{name = 'e_foil', weight = 1,},
-		{name = 'e_holo', weight = 1,},
- 		{name = 'e_polychrome', weight = 1,}
-	}
-	```
+	- The arguments is always a table that can contain the following parameters. *(defaults)*
+		- `key = edition_generic`, *string* - key value for a random seed
+		- `mod = 1`, *number* - scale of chance against base card
+		- `no_negative = false`, *boolean* - disables negative edition chance *(chance is added to polychrome)*
+		- `guaranteed = false`, *boolean* - disables base card
+		- `options = all editions marked in_shop`, *table* - List of editions to poll. Two variations.
+		Option 1 - list of keys for included editions. This method respects defined weights,
+		```lua
+		{"e_foil", "e_holo","e_negative"}
+		```
+		Option 2 - table of keys and weights. Used to override default weights,
+		```lua
+		{
+			{name = 'e_foil', weight = 1,},
+			{name = 'e_holo', weight = 1,},
+			{name = 'e_polychrome', weight = 1,}
+		}
+		```

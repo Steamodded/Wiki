@@ -58,7 +58,7 @@ Checks if an enhancement should be generated, and generates one according to the
 	- `mod` - Multiplier to the base rate at which editions appear.
 	- `no_negative` - Disables negative edition chance *(chance is added to polychrome)*
 	- `guaranteed` - If this is `true`, disables base card and always generates an edition.
-	- `options` - A table of possible enhancements to generate. Defaults to all editions marked `in_shop`.
+	- `options` - A table of possible editions to generate. Defaults to all editions marked `in_shop`.
 
 ## Mod-facing Utilities
 These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.
@@ -129,6 +129,7 @@ Given an index from the Stake pool, return the corresponding key, or `'error'` i
 - `instant` : boolean that disables animations
 #### `SMODS.smart_level_up_hand(card, hand, instant, amount)`
 **DEPRECATED IN 1221a IN FAVOR OF `SMODS.upgrade_poker_hands(args)`**
+
 Akin to vanilla's `level_up_hand()`, but avoids uneccessary calling of `update_hand_text()`
 - `card` - If included, juices up this card during the animation
 - `hand` - Key to the hand being leveled up.
@@ -203,3 +204,5 @@ This function handles the `in_pool` call to each object when creating a pool, an
 This function checks whether a card object should display the front sprite or not. Currently only checks for Stone cards and cards with `overrides_base_rank = true` defined on the Center, but can be **hooked** to provide additional functionality as required.
 #### `Card:is_rarity(rarity) -> boolean`
 This function checks if a Joker is a certain rarity. Accepts a number for vanilla rarities, or a key as a string for modded rarities.
+#### `Card:can_calculate(ignore_debuff, ignore_sliced) -> boolean`
+This function checks whether a card can run its `calculate` function.
