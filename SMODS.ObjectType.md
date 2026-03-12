@@ -40,6 +40,7 @@ This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMOD
 			},
 		}
 	```
+	In localization files, `name` should be under `G.localization.misc.dictionary['k_'.. key:lower()]`, the badge name under `G.localization.misc.labels[key:lower()]`, `collection` under `G.localization.misc.dictionary['b_'.. key:lower().. '_cards']` and `undiscovered` under `G.localization.descriptions.Other['undiscovered_'.. key:lower()]`
 	- `collection_rows = { 6, 6 }`: Customize the collection for this card type. Each value indicates a row with the specified amount of cards.
 	- `shop_rate`: Setting a numerical value for `shop_rate` enables cards of this type to appear in the shop at the specified rate.
 		- This sets a default rate, which can be modified by accessing `G.GAME[key:lower() .. '_rate']` during a run.

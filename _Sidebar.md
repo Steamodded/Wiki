@@ -24,7 +24,7 @@ Game Objects
   * [SMODS.https](https://github.com/Steamodded/smods/wiki/SMODS.https)
   * [SMODS.Keybind](https://github.com/Steamodded/smods/wiki/SMODS.Keybind)
   * [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language)
-  * [SMODS.ObjectType](https://github.com/Steamodded/smods/wiki/SMODS.ObjectType)
+  * [SMODS.ObjectType and SMODS.ConsumableType](https://github.com/Steamodded/smods/wiki/SMODS.ObjectType)
   * [SMODS.PokerHand](https://github.com/Steamodded/smods/wiki/SMODS.PokerHand)
   * [SMODS.Rank and SMODS.Suit](https://github.com/Steamodded/smods/wiki/SMODS.Rank-and-SMODS.Suit)
   * [SMODS.Rarity](https://github.com/Steamodded/smods/wiki/SMODS.Rarity)
