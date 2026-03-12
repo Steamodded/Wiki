@@ -1264,7 +1264,7 @@ Steamodded automatically adds additional entries to `LOC_COLOURS` for all custom
 - [SMODS.ConsumableType](https://github.com/Steamodded/smods/wiki/SMODS.Consumable)
 - [SMODS.Suit](https://github.com/Steamodded/smods/wiki/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit)
 
-which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient, Consumable or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata#metadata).
+which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata#metadata).
 
 
 
