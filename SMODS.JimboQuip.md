@@ -1,4 +1,6 @@
 # API Documentation: `SMODS.JimboQuip`
+JimboQuips allow you to create new pop ups at the end of a run.
+
 - **Required parameters:**
 	- `key`,
     - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
