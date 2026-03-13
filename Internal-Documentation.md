@@ -41,7 +41,26 @@ Restarts the game.
 #### `SMODS.get_optional_features()`
 Inserts all enabled optional features by injected mods into the `SMODS.optional_features` table.
 #### `SMODS.localize_box(lines, args)`
-Handles localizing description boxes within a localization entry. 
+Handles localizing description boxes within a localization entry. Given a `lines` table parsed by `loc_parse_string()`, returns the UI structure for a description line.
+- `args` can be a table with the following parameters:
+    - `vars`: like the ones returned by `loc_vars`, it can similarly also contain a `colours` table.
+    - `scale`, `text_colour`, `shadow`, `default_col`
+
+Example:
+```lua
+-- Parses the whole description for Joker
+local text_table = loc_parse_string(G.localization.descriptions.Joker.j_joker.text)
+local nodes = {}
+for k, v in ipairs(text_table) do
+    nodes[#nodes+1] = SMODS.localize_box(v)
+end
+-- It can then be used in a node like this:
+local ui_node = {
+    n=G.UIT.R, 
+    config={align = "cm"}, 
+    nodes=nodes
+}
+```
 
 ## Calculation
 These functions are used for handling calculation events.

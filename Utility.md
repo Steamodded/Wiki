@@ -117,8 +117,6 @@ Recalculates the debuff state of a card.
 #### `SMODS.merge_lists(...) -> table`
 Takes any number of 2D arrays. Flattens the input into a 1D array that contains all elements once in the order they first appear and removes any duplicates.
 This can be used to merge results from poker hand evaluation to create a combined hand.
-#### `SMODS.merge_defaults(t, defaults) -> table`
-Starting with `t`, inserts any key-value pairs from `defaults` that don't already exist in `t` into `t`. Returns `t`, the result of the merge. `nil` inputs count as {}; `false` inputs count as a table where every possible key maps to `false`. Therefore, `t == nil` is weak and falls back to `defaults`. `t == false` explicitly ignores `defaults`. (This function might not return a table, due to the above)
 #### `SMODS.get_blind_amount(ante) -> number`
 Provides score requirements for higher stages of ante scaling. If you want to implement your own scaling rules, you should modify this function.
 #### `SMODS.stake_from_index(index) -> string`
@@ -192,10 +190,6 @@ Function to draw a certain number of cards to hand, calling the relevant calcula
 #### `SMODS.is_poker_hand_visible(handname) -> boolean`
 This function checks whether a poker hand is visible in the poker hands menu.
 - `handname` - string of poker hand name
-#### `SMODS.restart_game()`
-Restarts the game.
-#### `SMODS.add_to_pool(prototype_obj, args) -> boolean`
-This function handles the `in_pool` call to each object when creating a pool, and if it returns `true` the object is added to the pool. `prototype_obj` will be the prototype of the object of the set being polled (i.e. an `SMODS.Center`, `SMODS.Blind`, `SMODS.Tag`, `SMODS.Rank`, `SMODS.Suit`, etc.) The `args` table is optional, and I would recommend searching in your IDE for the function to see the different `args` tables.
 *(Calls to `get_current_pool` will add an `args` table of `{source = _append}` where `_append` is the 4th argument of `get_current_pool`)*
 #### `SMODS.create_sprite(x, y, width, height, atlas_key, pos) -> Sprite|AnimatedSprite`
 *(Added in 1221a)* Handles creation of `Sprite` objects with the correct atlas type.
@@ -205,27 +199,6 @@ This function handles the `in_pool` call to each object when creating a pool, an
 *(Added in 1501a)* Wrapper for `get_current_pool` that will exclude any `"UNAVAILABLE"` values in the pool, therefore giving a list of valid keys only.
 #### `SMODS.size_of_pool(pool) -> integer`
 Returns the number of valid keys in a pool obtained with `get_current_pool`.
-#### `SMODS.localize_box(lines, args) -> table`
-Given a `lines` table parsed by `loc_parse_string()`, returns the UI structure for a description line.
-- `args` can be a table with the following parameters:
-    - `vars`: like the ones returned by `loc_vars`, it can similarly also contain a `colours` table.
-    - `scale`, `text_colour`, `shadow`, `default_col`
-
-Example:
-```lua
--- Parses the whole description for Joker
-local text_table = loc_parse_string(G.localization.descriptions.Joker.j_joker.text)
-local nodes = {}
-for k, v in ipairs(text_table) do
-    nodes[#nodes+1] = SMODS.localize_box(v)
-end
--- It can then be used in a node like this:
-local ui_node = {
-    n=G.UIT.R, 
-    config={align = "cm"}, 
-    nodes=nodes
-}
-```
 
 ## Joker Effects
 
