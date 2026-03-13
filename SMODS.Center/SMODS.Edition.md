@@ -53,7 +53,7 @@
 - `draw(self, card, layer)`
 	- Draws the edition's shader. `self.shader` is drawn by default when this is absent.
 - `in_pool(self, args) -> bool`
-	- Define custom logic for when an edition is allowed to spawn. `A card with this edition can spawn if `in_pool` returns true and all other checks are met.`
+	- Define custom logic for when an edition is allowed to spawn. A card with this edition can spawn if `in_pool` returns true and all other checks are met.
 	- `args` table contains `source`, which is the seed key used when calling `poll_edition`.
 ## Other information
 
