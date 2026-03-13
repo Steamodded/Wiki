@@ -130,7 +130,7 @@ Valid style modifiers are as follows:
  </tr>
  <tr>
   <td>
-   <a href="#text-font-button-button"><b>Button</a>
+   <a href="#text-button-modifier-button"><b>Button</a>
   </td>
   <td>
    <code>{button:<i>function-key</i>}</code>
