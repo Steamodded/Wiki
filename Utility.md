@@ -94,6 +94,7 @@ This function replaces `create_card`. It provides a cleaner interface to the sam
 - `legendary` - Set this to `true` to generate a card of Legendary rarity.
 - `rarity` - If this is specified, skip rarity polling and use this instead of a chance roll between 0 and 1.
     - Under vanilla conditions, values up to 0.7 indicate "Common" rarity, values above 0.7 and up to 0.95 indicate "Uncommon" rarity, and values above 0.95 indicate "Rare" rarity.
+    - This can also be the key of a modded rarity or `'Common'`, `'Uncommon'`, `'Rare'` or `'Legendary'` for vanilla rarities.
 - `skip_materialize` - If this is `true`, a `start_materialize` animation will not be shown.
 - `soulable` - If this is `true`, hidden Soul-type cards are allowed to replace the generated card. Usually, this is the case for cards generated for booster packs.
 - `key` - If this is specified, generate a card with the given key instead of the random one.
