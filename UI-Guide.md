@@ -55,7 +55,8 @@ The only values that the `n` field can take:
    This node must contain `h` and `w` in its `config`.
  - `G.UIT.S`: a **Slider** node, which contains a slider input.<br>
    You should probably use `create_slider(..)` instead.
- - `G.UIT.I`: a text **Input** node, which contains text input.
+ - `G.UIT.I`: a text **Input** node, which contains text input.<br>
+   Never used, use `create_text_input(..)` instead.
 
 *Example*
 The following code uses a combination of columns and rows to build up the basic structure of the UI. It can then have other elements added to add content.
