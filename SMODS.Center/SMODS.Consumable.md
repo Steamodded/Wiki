@@ -24,6 +24,7 @@
     	- Set to string of destination card area, ex. `'consumeables'`, to save this card from Booster packs instead of using it.
 		- Set to a function `select_card(card, pack) -> string?` to control if and where `card` should be saved for any `card, pack` combination.
 		- Takes priority over `select_card` on the ConsumableType or Booster pack
+	- `disable_shine`: Disables the default 'shine' shader for Spectrals.
 
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
