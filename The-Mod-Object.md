@@ -135,14 +135,15 @@ Default mod descriptions defined within your mod's metadata supports basic text 
 Allows configuring the mod menu's ui elements via custom values in a table.
 ```lua
 SMODS.current_mod.ui_config = {
-	colour = G.C.RED, -- Color of the mod menu BG
-	author_colour = G.C.WHITE, -- Color of the text displaying the mod authors
-	bg_colour = { G.C.MOD.CUSTOM_COLOR[1], G.C.MOD.CUSTOM_COLOR[2], G.C.MOD.CUSTOM_COLOR[3], 0.5 } -- Color of the area behind the mod menu.
-	back_colour = G.C.RED -- Color of the "Back" button
-	tab_button_colour = G.C.RED -- Color of the tab buttons
-	collection_colour = G.C.RED, -- Color of the collections menu BG. Defaults to `colour` if not provided.
-	collection_bg_colour = { G.C.MOD.CUSTOM_COLOR[1], G.C.MOD.CUSTOM_COLOR[2], G.C.MOD.CUSTOM_COLOR[3], 0.5 } -- Color of the area behind the collections menu. Defaults to `bg_colour` if not provided.
-	collection_back_colour = G.C.RED -- Color of the "Back" button in the collections menu. Defaults to `back_colour` if not provided.
+	colour = G.C.L_BLACK, -- Colour of the mod menu
+	author_colour = G.C.BLUE, -- Colour of the text displaying the mod authors
+	bg_colour = { G.C.GREY[1], G.C.GREY[2], G.C.GREY[3], 0.5 }, -- Colour of the area behind the mod menu.
+	back_colour = G.C.ORANGE, -- Colour of the "Back" button
+	tab_button_colour = G.C.BOOSTER, -- Colour of the tab buttons
+	collection_colour = G.C.L_BLACK, -- Colour of the collections menu. Defaults to `colour` if not provided.
+	collection_bg_colour = { G.C.GREY[1], G.C.GREY[2], G.C.GREY[3], 0.5 }, -- Colour of the area behind the collections menu. Defaults to `bg_colour` if not provided.
+	collection_back_colour = G.C.ORANGE, -- Colour of the "Back" button in the collections menu. Defaults to `back_colour` if not provided.
+	collection_option_cycle_colour = G.C.RED -- Colour of the option cycle in the collection
 }
 ```
 
