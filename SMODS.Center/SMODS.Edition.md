@@ -2,7 +2,7 @@
 **Class prefix:** `e`
 - **Required parameters:**
 	- `key`
-	- `shader`: the shader key for your shader. [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Shader-and-SMODS.ScreenShader)
+	- `shader`: the key for your shader [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Shader-and-SMODS.ScreenShader)
 		- `shader = false` is allowed. This will create edition with no shader.
 	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 		- `loc_txt` should contain an additional `label` string. It is used on badges, while `name` is displayed at the top of info boxes. For use with localization files, this label should be placed in `misc.labels` **(without the `e_` prefix)**.
