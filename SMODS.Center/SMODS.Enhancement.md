@@ -44,8 +44,8 @@
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
 - `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
-- `get_weight(self) ->  number `
-    - Used to modify the weight of enhancement on certain conditions.
+- `get_weight(self) -> number`
+    - Returns weight. Use for finer control over the enhancement's weight.
 - `set_ability(self, card, initial, delay_sprites)`
     - Set up initial ability values or manipulate sprites in an advanced way.
 -  `in_pool(self, args) -> bool, { allow_duplicates = bool }`

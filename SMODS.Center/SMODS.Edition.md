@@ -42,8 +42,8 @@
 ## API methods
 - `loc_vars` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 	- Only `vars`, `key` and `set` return values are currently supported for editions.
-- `get_weight(self) ->  number `
-	- Used to modify the weight of edition on certain conditions.
+- `get_weight(self) -> number`
+	- Returns weight. Use for finer control over the edition's weight. 
 - `on_apply(card) -> void`
 	- Used to modify Card when edition is applied
 - `on_remove(card) -> void`
