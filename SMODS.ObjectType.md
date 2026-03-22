@@ -1,6 +1,7 @@
 # API Documentation: `SMODS.ObjectType`
 - **Required parameters:**
 	- `key`
+		- Unlike other game objects, ObjectTypes don't add your mod's prefix automatically to the key to allow multiple mods to share pools. You can still add your prefix manually to avoid conflicts.
 - **Optional parameters** *(defaults)*:
 	- `default`: Fallback card when object pool is empty
 	- `cards`: List of keys to centers to auto-inject into this ObjectType
@@ -25,6 +26,7 @@
 This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMODS.ObjectType` work for this class. 
 - **Required parameters:**
 	- `key`
+		- Like with ObjectTypes, ConsumableTypes don't add your mod's prefix automatically to the key. You can still add your prefix manually to avoid conflicts.
 	- `primary_colour`
 	- `secondary_colour`
 - **Optional parameters** *(defaults)*:
