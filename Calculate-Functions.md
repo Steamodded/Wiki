@@ -1079,6 +1079,34 @@ if context.modify_shop_card then
 context.modify_shop_card -- flag to identify this context, always TRUE
 context.card -- The card that has been added to the shop
 ```
+---
+#### context.create_booster_card
+This context is used when a card is created for a booster. You can return a table as `booster_create_flags` that will be passed into `SMODS.create_card` to change which card will be created.
+
+```lua
+if context.create_booster_card then
+```
+
+```lua
+context.create_booster_card -- flag to identify this context, always TRUE
+context.booster -- The booster object
+context.index -- The index of the card to be created (i.e. its position in the booster area)
+```
+
+---
+#### context.modify_shop_card
+This context is used when a card is added to a booster. You can call other functions on this card, such as `Card:set_cost`, to alter the card within the booster. This context could also be used to respond to certain things appearing in a booster.
+
+```lua
+if context.modify_booster_card then
+```
+
+```lua
+context.modify_booster_card -- flag to identify this context, always TRUE
+context.booster -- The booster object
+context.card -- The card that has been added to the booster
+context.index -- The index of the card added (i.e. its position in the booster area)
+```
 
 ---
 #### context.money_altered
