@@ -89,7 +89,7 @@ If you have created a new edition called **MyEdition**, and your mod prefix key 
 card:set_edition("e_MyFirstMod_MyEdition", true)
 ```
 
-- `SMODS.poll_edition(args)` *(defaults)*
+- `SMODS.poll_edition(args)`
 	- The arguments is always a table that can contain the following parameters. *(defaults)*
 		- `key = edition_generic`, *string* - key value for a random seed
 		- `mod = 1`, *number* - scale of chance against base card
