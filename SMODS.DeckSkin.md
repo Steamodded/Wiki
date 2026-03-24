@@ -29,6 +29,9 @@ Note: Atlases in this class are not automatically prefixed.
 	    - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
         - `hc_default` (optional): If this is true, use high-contrast textures for unchanged sprites.
 
+- **Optional parameters:**
+    - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+
 ## API Methods
 - `has_ds_card_ui(card, self, palette)`
 		- Enable UI on cards in preview

@@ -4,7 +4,7 @@
 	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 - **Optional parameters** *(defaults)*:
 	- `atlas = 'stickers', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-	- `badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+	- `prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `badge_colour`: Colour of this sticker's badge.
     - `hide_badge`: If set to `true`, no badge is shown for this sticker.
 	- `default_compat`: Default compatibility with cards. If `true`, all cards can have this sticker unless otherwise specified.

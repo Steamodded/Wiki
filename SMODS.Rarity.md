@@ -11,7 +11,7 @@
         ["Joker"] = { weight = 0.7 }, -- alternatively specify a weight directly for each ObjectType
     }
     ```
-    - `badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+    - `prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
     - `default_weight`: Setting a numerical value for `default_weight` enables cards with this rarity to appear in the shop at the specified weight.
         - This sets a default weight, which can be modified by accessing `G.GAME[key:lower() .. '_mod']` during a run.
     - `disable_if_empty`: *(Added in 1221a)* Removes the rarity from the pool of available rarities if the pool has no valid objects.

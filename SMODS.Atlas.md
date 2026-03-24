@@ -29,6 +29,7 @@ Mods
 		}
 		```
 - **Optional parameters** *(defaults)*:
+	- `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `atlas_table = 'ASSET_ATLAS'`
 		- Use `ASSET_ATLAS` for non-animated sprites
 		- Use `ANIMATION_ATLAS` for animated sprites

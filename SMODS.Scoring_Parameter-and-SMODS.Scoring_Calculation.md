@@ -7,6 +7,7 @@ Used to add new scoring parameters that act like `chips` or `mult` in the base g
   - `default_value`
     - Default value the parameter takes
 - **Optional parameters** *(defaults)*:
+  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
   - `colour = G.C.UI_MULT`: Colour of the parameter in the game's UI
   - `calculation_keys`: Valid `calculate` returns for this parameter.
   - `hands`: Defines the values this parameter takes for each Poker Hand.
@@ -74,6 +75,7 @@ Used to add new scoring calculation behavious between `chips` and `mult`.
     ```
 
 - **Optional parameters** *(defaults)*:
+  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
   - `text = 'X'`: Replaces the "X" symbol on the UI between the chips and mult boxes
   - `colour = G.C.RED`: Sets the colour for the UI symbol
   - `config`: Table for values that persist during the run. You can access it by using `self.config` in the Scoring Calculation's functions, or `G.GAME.current_scoring_calculation.config` anywhere else.

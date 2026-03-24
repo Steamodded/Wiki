@@ -3,6 +3,7 @@
 	- `key`
 		- Unlike other game objects, ObjectTypes don't add your mod's prefix automatically to the key to allow multiple mods to share pools. You can still add your prefix manually to avoid conflicts.
 - **Optional parameters** *(defaults)*:
+	- `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `default`: Fallback card when object pool is empty
 	- `cards`: List of keys to centers to auto-inject into this ObjectType
 		-  Expects a list of keys like this:

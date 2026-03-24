@@ -7,6 +7,7 @@ JimboQuips allow you to create new pop ups at the end of a run.
         - For use with localization file, the text should be set as `G.localization.misc.quips[key:lower()]`.
 		- `loc_txt` should only contain the text, without key-indexing.
 - **Optional parameters** *(defaults)*:
+    - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
     - `type`: Whether it's `'win'` or `'loss'` quip. It can be other strings for modded types.
     - `extra`: Table of parameters to customize the key, it can also be a function that returns the appropriate table.
     ```lua
