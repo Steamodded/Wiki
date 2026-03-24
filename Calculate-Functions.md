@@ -1094,7 +1094,7 @@ context.index -- The index of the card to be created (i.e. its position in the b
 ```
 
 ---
-#### context.modify_shop_card
+#### context.modify_booster_card
 This context is used when a card is added to a booster. You can call other functions on this card, such as `Card:set_cost`, to alter the card within the booster. This context could also be used to respond to certain things appearing in a booster.
 
 ```lua
