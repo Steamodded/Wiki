@@ -127,7 +127,7 @@ Given an index from the Stake pool, return the corresponding key, or `'error'` i
 - `hands` : table of strings or a single string of hand names to level up *(if left blank defaults to all Poker Hands)*
 - `parameters` : table of strings of keys of `Scoring_Parameters` to upgrade *(if left blank defaults to all Scoring Parameters)*
 - `level_up` : increases the level of the hand by amount passed *(NOTE: this can be used to level up a hand by more than one level)*
-- `func` : pass a custom function `function(current, base, parameter)` for custom modifications to the parameters in a Poker Hand *(if left blank defaults to normal level up method)*
+- `func` : pass a custom function `function(current, base, parameter, level_up)` for custom modifications to the parameters in a Poker Hand *(if left blank defaults to normal level up method)*
 - `from` : the Object that is doing the upgrading, will `juice_up` during animations
 - `instant` : boolean that disables animations
 #### `SMODS.smart_level_up_hand(card, hand, instant, amount)`
