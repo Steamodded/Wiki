@@ -74,7 +74,7 @@ There are a range of different keys that you can return in this table. These key
   - a custom sound can be added to a custom message by using `sound`
 	  - you can use `pitch` and `volume` to modify the pitch and volume of your sound
 - `func` - return a function to be called at the correct timing *(advanced)*
-- `pre_func` - return a function to be called before other effects *(advanced - used for `context.post_joker`)*
+- `pre_func` - return a function to be called before other effects *(advanced - used for `context.post_trigger`)*
 - `extra` - an extra table set out the same as this one *(advanced)*
 - `effect` - set as true to mark your joker as having triggered
 - `no_juice` - stops the card from shaking when triggered
