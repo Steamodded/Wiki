@@ -460,6 +460,8 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
 
 `{E:}` is incompatible with background modifiers `{X:}` and `{B:}`. If background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored.
 
+You can also apply a custom effect using [SMODS.DynaTextEffect](https://github.com/Steamodded/smods/wiki/SMODS.DynaTextEffect), in that case the modifier should be `{E:modprefix_key}`.
+
 ### Examples
 
 <table>
