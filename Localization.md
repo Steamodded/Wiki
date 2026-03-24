@@ -234,6 +234,8 @@ SMODS.Consumable {
             background_colour = G.C.BLACK, -- Change the default background colour
             main_start = nil, -- Table of UIElements inserted before the main description (-> "Building a UI")
             main_end = nil, -- Table of UIElements inserted after the main description
+            box_starts  = {}, -- List of tables of UIElements inserted before the multibox description at each index
+            box_ends = {}, -- List of tables of UIElements inserted after the main description at each index
         }
     end,
 }
