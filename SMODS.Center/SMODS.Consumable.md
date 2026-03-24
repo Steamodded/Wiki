@@ -37,7 +37,7 @@
 - `calc_dollar_bonus(self, card) -> number`
 	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
 - `calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions#scaling-values)
-	- Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values. The return may include a `scaling_value` or `scalar_value` field to modify those values or any standard calculation return.
+	- Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.
 - `set_ability(self, card, initial, delay_sprites)`
 	- Set up initial ability values or manipulate sprites in an advanced way.
 - `add_to_deck(self, card, from_debuff)`
