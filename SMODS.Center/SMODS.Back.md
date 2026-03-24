@@ -7,7 +7,7 @@
     - `atlas = 'centers', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
     - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 		- `config` values will be saved under `G.GAME.selected_back.effect.config`
-    - `initial_deck`: *(Added in 1501a)* Allows for easier customisation of your starting deck in custom Back objects.
+    - `initial_deck`: *(Added in 1501a)* Allows for easier customisation of your starting deck.
         - `ranks`, `suits`: A list of ranks and suits to include/exclude.
         - `exclude = false`: If `true`, `ranks`/`suits` will be trated as blacklists instead of whitelists.
 
