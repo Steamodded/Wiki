@@ -12,7 +12,7 @@
 - `loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `in_pool(self, args) -> bool, { allow_duplicates = bool }`
 	- Define custom logic for when a tag is allowed to spawn. A tag can spawn if `in_pool` returns true and all other checks are met.
-	- When called from `generate_card_ui`, the `_append` key is passed as `args.source`.
+	- When called from `get_current_pool`, the `_append` key is passed as `args.source`.
 - `apply(self, tag, context)`
     - This function defines the tag's behavior when triggering. Unlike vanilla tags, this function is not restricted by `self.config.type` matching `context.type`, meaning you have to check context manually.
         - To trigger the tag, you should call `tag:yep(message, colour, func)` and set `tag.triggered = true`.
