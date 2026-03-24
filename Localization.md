@@ -226,6 +226,10 @@ SMODS.Consumable {
                     G.C.SECONDARY_SET.Tarot, -- colour text formatted with {V:1}
                     HEX(card.ability.extra.colour_string), -- colour text formatted with {V:2}
                 },
+                box_colours = { -- Changes the default background colour for each multibox at each index
+                    G.C.SECONDARY_SET.Tarot, -- colour for the main description's background
+                    HEX(card.ability.extra.colour_string), -- colour for the second box's background
+                }
             },
             key = self.key..'_alt', -- Use an alternate description key (pulls from G.localization.descriptions[self.set][key])
             set = 'Spectral', -- Use an alternate description set (G.localization.descriptions[set][key or self.key])
