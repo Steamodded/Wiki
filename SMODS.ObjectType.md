@@ -72,5 +72,6 @@ For consumable types, a sprite for undiscovered objects can be registered. Other
 	- `atlas`
 	- `pos`
 - **Optional parameters:**
+	- `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
   	- `no_overlay`: disables the floating ? sprite from undiscovered objects
   	- `overlay_pos`: customize the floating ? sprite using your atlas. Expects `{x = 0, y = 0}`

@@ -3,6 +3,7 @@
 	- `key` (does not get prefixed by default)
     - `label`: The label displayed on the language selection screen
 - **Optional parameters** *(defaults)*:
+    - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `font = 1`: When a number is specified, use the corresponding font provided by the game.
         - 1: m6x11plus (Latin alphabet)
         - 2: NotoSansSC-Bold (Simplified Chinese)
