@@ -924,6 +924,21 @@ if context.round_eval then
   >You can call `add_round_eval_row` in this context to add to the cash out display.
 
 ---
+#### context.modify_final_cashout
+This context is used to manipulate the final cashout value.
+
+```lua
+if context.modify_final_cashout then
+```
+
+```lua
+context.modify_final_cashout -- boolean value to flag this context, always TRUE
+context.dollars -- the current final cashout value
+```
+>[!TIP]
+>Returning `cashout_mod` as a number will change the cashout value by that number and automatically add a row to the cashout report
+
+---
 #### context.modify_ante
 This context is used when the ante is about to change. Returning `modify = number` will change the amount that the ante will change by.
 
