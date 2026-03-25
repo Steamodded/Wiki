@@ -997,39 +997,7 @@ context.booster -- the booster pack center that was opened
 
 >[!TIP]
 >You can access the cards in the booster pack by checking in `G.pack_cards.cards`
-
---- 
-#### context.create_booster_card
-This context is used when a card is about created for a booster pack.
-
-```lua
-if context.create_booster_card then
-```
-
-```lua
-context.create_booster_card -- flag to identify this context, always TRUE
-context.booster -- the booster pack object that was opened
-context.index -- the index order the card to be created is in
-```
-
->[!TIP]
->Returning `booster_create_flags` as a table structured similarly to SMODS.create_card will create the card with your specified parameters
-
---- 
-#### context.modify_booster_card
-This context is used after a card is created for a booster pack.
-
-```lua
-if context.modify_booster_card then
-```
-
-```lua
-context.modify_booster_card -- flag to identify this context, always TRUE
-context.booster -- the booster pack object that was opened
-context.card -- the card that was created and is primed for modification
-context.index -- the index order the card was created is in
-```
-
+  
 ---
 #### context.skipping_booster
 This context is used when a Booster Pack is skipped.
