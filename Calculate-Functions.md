@@ -706,6 +706,23 @@ context.card_effects -- this is a table of effects that has been calculated duri
 ```
 
 ---
+#### context.modify_blind_chips
+This context is used to modify a blind's chip goal .
+
+```lua
+if context.modify_blind_chips then
+```
+
+```lua
+context.modify_blind_chips -- boolean value to flag this context, always TRUE
+context.blind -- a reference to the blind that will be modified
+context.multiplier -- the multiplier value the blind uses to modify from the base ante amount (i.e. 1.5 for Big Blind)
+context.blind_chips -- the blind's chip goal
+```
+>[!TIP]
+>Returning `modify` as a number will set the chip goal to that number
+
+---
 #### context.setting_blind
 This context is used for effects when the blind is started.
 
