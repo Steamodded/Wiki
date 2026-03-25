@@ -16,7 +16,6 @@
 		```
 	- `cost = 10`,
     - `requires`: specify a list of one or more vouchers by their **full key** (e.g. `'v_grabber'` for vanilla vouchers, or `'v_pref_myvoucher'` for a modded voucher from the mod with prefix `'pref'`)
-	- `disable_shine`: Used to disable the shine shader that gets applied to vouchers by default
 
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
