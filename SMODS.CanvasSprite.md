@@ -1,6 +1,8 @@
 # API Documentation: `SMODS.CanvasSprite`
 This class extends Balatro's `Sprite` object, and creates a Sprite that renders the contents of a Love2D Canvas. Note that unlike vanilla Sprites, creating a CanvasSprite uses a single table as the argument.
 
+Once a CanvasSprite is created (e.g. `local sprite = SMODS.CanvasSprite { ... }`), the object will contain a `canvas` object, which is the Love2D canvas itself (e.g. `sprite.canvas`). This is where everything should be rendered.
+
 - **Optional parameters** *(defaults)*:
     - `X, Y, W, H = 0, 0, G.CARD_W, G.CARD_H`: the vanilla Sprite position and dimension parameters.
 	- `canvasW, canvasH = 71, 95`: the width and height of the Love2D canvas in pixels.
