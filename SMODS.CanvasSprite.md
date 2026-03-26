@@ -23,15 +23,16 @@ If a card object has either a CanvasSprite or a table of CanvasSprites stored at
 To attach a CanvasSprite with canvas_text functionality to the card, you should do this (or make it an array of CanvasSprites) in the card's `set_sprites` function:
 ```lua
 set_sprites = function(self, card, front)
-  G.E_MANAGER:add_event(Event({
-	  blockable = false,
-		func = function()
-		  card.canvas_text = SMODS.CanvasSprite {
-			  text = "foobar",
-			  ...
-			}
-			return true
-	}))
+    G.E_MANAGER:add_event(Event({
+        blockable = false,
+        func = function()
+            card.canvas_text = SMODS.CanvasSprite {
+                text = "foobar",
+                ...
+            }
+            return true
+        end
+    }))
 end
 ```
 The event is only necessary if you plan on referencing the card's ability table in the function (e.g. as the CanvasSprite's `ref_table`); if that is not needed, then you can just define the canvas_text variable/table directly in the function.
