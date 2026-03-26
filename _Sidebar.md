@@ -8,6 +8,7 @@ Game Objects
   * [SMODS.Achievement](https://github.com/Steamodded/smods/wiki/SMODS.Achievement)
   * [SMODS.Atlas](https://github.com/Steamodded/smods/wiki/SMODS.Atlas)
   * [SMODS.Blind](https://github.com/Steamodded/smods/wiki/SMODS.Blind)
+  * [SMODS.CanvasSprite](https://github.com/Steamodded/smods/wiki/SMODS.CanvasSprite)
   * SMODS.Center
     * [SMODS.Back](https://github.com/Steamodded/smods/wiki/SMODS.Back)
     * [SMODS.Booster](https://github.com/Steamodded/smods/wiki/SMODS.Booster)
