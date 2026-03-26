@@ -3,9 +3,9 @@ This class extends Balatro's `Sprite` object, and creates a Sprite that renders 
 
 - **Optional parameters** *(defaults)*:
     - `X, Y, W, H = 0, 0, G.CARD_W, G.CARD_H`: the vanilla Sprite position and dimension parameters.
-		- `canvasW, canvasH = 71, 95`: the width and height of the Love2D canvas in pixels.
-		- `canvasScale = 10`: a multiplier applied to the canvas dimensions; higher numbers help make the image sharper.
-		- `text, text_offset, text_colour, text_width, text_height, ref_table, ref_value, text_font, text_transform`: all these parameters are related to `card.canvas_text` usage (see below).
+	- `canvasW, canvasH = 71, 95`: the width and height of the Love2D canvas in pixels.
+	- `canvasScale = 10`: a multiplier applied to the canvas dimensions; higher numbers help make the image sharper.
+	- `text, text_offset, text_colour, text_width, text_height, ref_table, ref_value, text_font, text_transform`: all these parameters are related to `card.canvas_text` usage (see below).
 
 ## Using `card.canvas_text`
 If a card object has either a CanvasSprite or a table of CanvasSprites stored at `card.canvas_text`, SMODS will automatically render that CanvasSprite in a standard drawstep. This drawstep goes above the center, front, edition, seal, and sticker sprites, but below any floating sprites or the debuff shader. The following parameters control the text drawn, with their defaults specified:
@@ -14,7 +14,7 @@ If a card object has either a CanvasSprite or a table of CanvasSprites stored at
 - `text_colour = G.C.UI.TEXT_LIGHT`: this controls the color of the text itself.
 - `text_width = canvasW`: This scales the text by specifying its width in pixels.
 - `text_height = canvasH`: This scales the text by specifying its height in pixels.
-- `ref_table, ref_value = nil, nil`: If both of these are set and the table and value actually exist, the CanvasSprite will use `ref_table[ref_value]` as its text string *instead of* the string in the `text` parameter.
+- `ref_table, ref_value`: If both of these are set and the table and value actually exist, the CanvasSprite will use `ref_table[ref_value]` as its text string *instead of* the string in the `text` parameter.
 - `text_font = 1`: This can be set to the key of a font in `SMODS.Fonts`, or the index of a font in `G.FONTS`. The default value of 1 selects the standard pixel font used throughout the rest of Balatro.
 - `text_transform`: This can be a table containing all the transformation parameters for the `love.graphics.draw` call that draws the text, if you want more control over it. It must contain elements in the same order as [love.graphics.draw](https://love2d.org/wiki/love.graphics.draw) uses for its parameters, starting at `x`. (canvas_text does not support the shearing factor parameters)
 
