@@ -43,6 +43,6 @@ love.graphics.push()
 love.graphics.origin()
 card.canvassprite.canvas:renderTo(love.graphics.clear, 0, 0, 0, 0)
 -- rendering code
-love.graphics.pop
+love.graphics.pop()
 ```
 The `love.graphics` functions safely reset the origin to the top left of the canvas without affecting anything else, and the `renderTo` function both demonstrates how to access the sprite's canvas object itself and clears the canvas to full transparency (since it's being drawn to every frame).
