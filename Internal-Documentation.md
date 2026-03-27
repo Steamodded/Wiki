@@ -117,6 +117,13 @@ Pushes `context` into `SMODS.context_stack`.
 Pops a `context` from `SMODS.context_stack`.
 #### `SMODS.get_previous_context()`
 Returns the second to last context from `SMODS.context_stack`
+#### `SMODS.mod_score(args)`
+Modifies current scored chips. Arguments:
+    - `add`: Add this number to score
+    - `mult`: Multiply score by this number
+    - `card`: Card responsible for score modification action, crucial for score display to work properly
+    - `effect`: Table of effects that were calculated
+    - `from_edition`: If `true` the effect comes from an Edition
 
 ## Misc.
 These are functions used by SMODS for miscellaneous features.
