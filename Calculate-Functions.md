@@ -549,6 +549,18 @@ context.cardarea, context.full_hand, context.scoring_hand, context.scoring_name,
 context.edition -- boolean value to flag this context, always TRUE
 context.post_joker -- boolean value to flag this context, always TRUE
 ```
+---
+#### context.main_scoring
+This context is used for the effects from Blinds, Decks, Challenges, Stakes and Mod objects (or any other 'individual' objects) when the score.
+
+```lua
+if context.main_scoring then
+```
+
+```lua
+context.cardarea, context.full_hand, context.scoring_hand, context.scoring_name, context.poker_hands
+context.main_scoring -- boolean value to flag this context, always TRUE
+```
 
 ---
 #### context.final_scoring_step
