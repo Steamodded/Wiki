@@ -48,6 +48,9 @@
 	- Used to modify Card when edition is applied
 - `on_remove(card) -> void`
 	- Used to modify Card when edition is removed
+- `calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions#scaling-values)
+	- Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.
+	- This only affects the card with the Edition
 - `on_load(card) -> void`
 	- Used to modify Card with edition when it is loaded from save file.
 - `draw(self, card, layer)`
