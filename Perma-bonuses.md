@@ -24,6 +24,11 @@ perma_h_x_mult,
 perma_p_dollars,  -- money on scoring
 perma_h_dollars,  -- money on held at end of round (like gold cards)
 
+perma_score, -- adds to current chips scored
+perma_x_score, -- multiplies current chips scored
+perma_h_score, -- adds to current chips scored when held
+perma_h_x_score -- multiplies current chips scored when held
+
 perma_repetitions, -- retriggers in any context
 ```
 
