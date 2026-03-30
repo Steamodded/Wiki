@@ -839,7 +839,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 > [!IMPORTANT]
 > Unlike other modifiers, this modifier does not affect the text string after it. Instead, the UI element is inserted directly **at** the position of the modifier.
 
-<code>{element:<i>index</i>}</code> inserts a [UI element](https://github.com/Steamodded/smods/wiki/UI-Guide)  provided as an entry in the [`loc_vars`](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) `vars.elements` table. See [Localization](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) for more details.
+<code>{element:<i>index</i>}</code> inserts a [UI element](https://github.com/Steamodded/smods/wiki/UI-Guide)  provided as an entry in the [`loc_vars`](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) `vars.elements` table. Instances of `Node` (e.g. `CardArea`, `Sprite`, `UIBox`) are automatically wrapped in an object node. See [Localization](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) for more details.
 
 *`index`* is the array index of the element entry in the `vars.elements` table.
 
