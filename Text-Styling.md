@@ -828,6 +828,51 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
 </table>
 
+## UI element insertion `{element:}`
+> [!NOTE]
+> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+> *(Added in NEXT_RELEASE)*
+
+> [!IMPORTANT] 
+> This modifier requires the **lowercase** `element`, unlike other modifiers which must be UPPERCASE.
+
+> [!IMPORTANT]
+> Unlike other modifiers, this modifier does not affect the text string after it. Instead, the UI element is inserted directly **at** the position of the modifier.
+
+<code>{element:<i>index</i>}</code> inserts a [UI element](https://github.com/Steamodded/smods/wiki/UI-Guide)  provided as an entry in the [`loc_vars`](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) `vars.elements` table. See [Localization](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) for more details.
+
+*`index`* is the array index of the element entry in the `vars.elements` table.
+
+### Examples
+<!--- Single-indented table is necessary for code blocks to function properly -->
+<table>
+ <tr>
+  <td> Text string </td> <td> <code>loc_vars</code> </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+
+   ```pas
+   {element:1} I need a proper example for this   
+   ```
+  </td>
+  <td>
+
+   ```lua
+   vars = {
+     elements = {
+       { n=G.UIT.R, config = { align="cm" }, nodes = {} },
+     }
+   }
+   ```
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+
+
 ## Combinations
 Some style codes can be combined within one set of curly braces, like `{X:mult,C:white}`.
 
@@ -840,6 +885,8 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
 - `{C:}` and `{V:}` are exclusive - if both are used, `{C:}` will be ignored.
 
 - `{X:}` and `{B:}` are exclusive - if both are used, `{X:}` will be ignored.
+
+- `{element:}` does not interact with any other modifiers. Any additional modifiers will function as if `{element:}` wasn't present.
 
 
 ### Examples
