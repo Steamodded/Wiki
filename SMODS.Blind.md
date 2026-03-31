@@ -35,6 +35,12 @@ refer to the current blind. (The base game uses `self` to refer to the current b
 	- Effects that activate when this Blind is selected
 - `calculate(self, blind, context) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
     - This method is both called directly on the center and from `Blind:calculate()` and incorporated into the standard calculation pipeline. Several blind functions below can be handled here via checking their respective calculation context.
+- `calc_dollar_bonus(self, blind) -> number, table`
+	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
+	- Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
+		- `text`: Replaces the default name text.
+		- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
+		- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
 - `disable(self)`
 	- Reverting effects when this Blind gets disabled
 - `defeat(self)`

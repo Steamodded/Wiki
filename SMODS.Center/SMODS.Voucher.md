@@ -22,8 +22,12 @@
 - `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `redeem(self, card)`
 	- Defines the behavior of a Voucher when redeemed.
-- `calc_dollar_bonus(self, card) -> number`
+- `calc_dollar_bonus(self, card) -> number, table`
 	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
+	- Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
+		- `text`: Replaces the default name text.
+		- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
+		- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
 - `calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions#scaling-values)
 	- Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.
 - `set_ability(self, card, initial, delay_sprites)`

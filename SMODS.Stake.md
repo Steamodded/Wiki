@@ -24,4 +24,9 @@
     - Due to how the stake description box works, the functionality of `loc_vars` on stakes is limited. `info_queue` and `card` will not be used. Out of all possible return values, only `vars`, `key` and `set` are supported.
 - `modifiers()`
     - Used for applying changes to the game state when your stake is applied at the start of a run.
-    
+- `calc_dollar_bonus(self) -> number, table`
+	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
+	- Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
+		- `text`: Replaces the default name text.
+		- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
+		- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively

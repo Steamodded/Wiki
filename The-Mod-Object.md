@@ -270,6 +270,13 @@ SMODS.current_mod.custom_card_areas = function(game)
 end
 ```
 
+### `mod.calc_dollar_bonus(self) -> number, table`
+Equivalent to a calc_dollar_bonus function on a GameObject.
+Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
+	- `text`: Replaces the default name text.
+	- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
+	- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
+
 ## Other 
 ### `mod.debug_info`
 This is a property that can be set by mods to display debug information on the crash screen.
