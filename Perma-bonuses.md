@@ -59,8 +59,10 @@ Permanent bonuses are scored in the following order:
 3. xchips (enhancement * permanent)
 4. xmult (enhancement * permanent)
 5. dollars (seals + permanent)
-6. all edition effects
-7. all joker effects
+6. score (permanent, enhancement)
+7. xscore (permanent, enhancement)
+8. all edition effects
+9. all joker effects
 
 Permanent (held) chips get scored at the same time as a playing card's base chips and chips from enhancements. They also show up as a combined number with bonus chips from enhancements in the UI. This is inherited vanilla behaviour. Supports negative values.
 
@@ -71,6 +73,10 @@ Permanent (held) xchips get multiplied with enhancement xchips, showing as a sin
 Permanent xmult gets multiplied with enhancement xmult such as glass when scoring, showing as a single multiplied number during scoring. It does show up as a seperate number in the UI when hovering over the card. Does not support final negative xmult, and will do nothing if end result is negative.
 
 Permanent held xmult gets multiplied with enhancement held xmult such as steel when scoring, showing as a single multiplied number during scoring. It does show up as a seperate number in the UI when hovering over the card. It does not support negative values, and will do nothing if scored.
+
+Permanent (held) score gets scored before the enhancement. It does show up as a seperate number in the UI when hovering over the card. Supports negative values.
+
+Permanent (held) xscore gets scored before the enhancement. It does show up as a seperate number in the UI when hovering over the card. Does not support final negative xscore, and will do nothing if end result is negative.
 
 Permanent held dollars only give money on end of round, similar to the gold enhancement.
 
@@ -91,6 +97,11 @@ card_extra_h_x_mult,
 
 card_extra_p_dollars,
 card_extra_h_dollars,
+
+card_extra_score,
+card_extra_x_score,
+card_extra_h_score,
+card_extra_h_x_score,
 
 card_extra_repetitions,
 ```
