@@ -13,6 +13,9 @@ The (new) standard way to specify your mod's metadata is in a separate JSON file
 	"badge_colour": "FF230A", // [default: 666665] ! Background colour for your mod badge. Must be a valid hex color with 6 or 8 digits (RRGGBB or RRGGBBAA)
 	"badge_text_colour": "ABC123", // [default: FFFFFF] ! Text colour for your mod badge.
 	"display_name": "YM", // [default: <name>] ! Displayed text on your mod badge.
+	"icon_path": "path.png", // ! Path to the mod's icon in the Mods menu. Must be located in both assets/1x and assets/2x.
+	"icon_width": 34, // ! Automatically calculated by default. Can be used to specify the width of a frame for an animated icon.
+	"icon_fps": 5, // ! FPS of your animated icon.
 	"version": "1.0.0", // ! Must follow a version format of (major).(minor).(patch)(rev). rev starting with ~ indicates a beta/pre-release version.
 	"dependencies": [
 		"Steamodded (>=1.*)", // Allows any version past a 1.0.0 stable version (but disallows 1.0.0 beta versions)
