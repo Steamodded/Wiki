@@ -34,7 +34,7 @@
 	- If this function is redefined it will ignore all optional parameter flags listed above. You can call and store the return of `SMODS.Sticker.should_apply(self, card, center, area, bypass_roll)` in this function to retain the default functionality.
 - `apply(self, card, val)`
 	- Handles applying and removing the sticker
-	- By default, Sets `card.ability[self.key]` to `config` if it exists and `val` is truthy or to `val` otherwise. 
+	- By default, sets `card.ability[self.key]` to `config` if it exists and `val` is truthy or to `val` otherwise. 
 	- It is recommended to not redefine this function. If you still need to, you can call `SMODS.Sticker.apply(self, card, val)` in this function to retain the default functionality.
 - `draw(self, card, layer)`
 	- Draws the sprite and shader of the sticker.
