@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="154.0" height="38.375"
+    viewBox="0 -28.125 154.0 38.375">
+
+    <!-- Shadow -->
+    <g transform="translate(4,4)"
+       fill="black" opacity="0.5">
+        <g transform="translate(0,0) scale(0.048828125,-0.048828125)"><path d="M0 576H320V512H384V-128H256V448H128V-128H0Z" /></g><g transform="translate(21.875,0) scale(0.048828125,-0.048828125)"><path d="M64 384H320V320H384V-64H320V-128H64V-64H0V320H64ZM128 256V0H256V256Z" /></g><g transform="translate(65.625,0) scale(0.048828125,-0.048828125)"><path d="M0 576H320V512H384V256H320V192H384V-64H320V-128H0ZM128 448V320H256V448ZM128 192V0H256V192Z" /></g><g transform="translate(87.5,0) scale(0.048828125,-0.048828125)"><path d="M0 576H128V-128H0Z" /></g><g transform="translate(96.875,0) scale(0.048828125,-0.048828125)"><path d="M0 576H128V448H0ZM0 384H128V-128H0Z" /></g><g transform="translate(106.25,0) scale(0.048828125,-0.048828125)"><path d="M0 384H320V320H384V-128H256V256H128V-128H0Z" /></g><g transform="translate(128.125,0) scale(0.048828125,-0.048828125)"><path d="M256 576H384V-128H64V-64H0V320H64V384H256ZM128 256V0H256V256Z" /></g>
+    </g>
+
+    <!-- Text -->
+    <g fill="#1E2B2D">
+        <g transform="translate(0,0) scale(0.048828125,-0.048828125)"><path d="M0 576H320V512H384V-128H256V448H128V-128H0Z" /></g><g transform="translate(21.875,0) scale(0.048828125,-0.048828125)"><path d="M64 384H320V320H384V-64H320V-128H64V-64H0V320H64ZM128 256V0H256V256Z" /></g><g transform="translate(65.625,0) scale(0.048828125,-0.048828125)"><path d="M0 576H320V512H384V256H320V192H384V-64H320V-128H0ZM128 448V320H256V448ZM128 192V0H256V192Z" /></g><g transform="translate(87.5,0) scale(0.048828125,-0.048828125)"><path d="M0 576H128V-128H0Z" /></g><g transform="translate(96.875,0) scale(0.048828125,-0.048828125)"><path d="M0 576H128V448H0ZM0 384H128V-128H0Z" /></g><g transform="translate(106.25,0) scale(0.048828125,-0.048828125)"><path d="M0 384H320V320H384V-128H256V256H128V-128H0Z" /></g><g transform="translate(128.125,0) scale(0.048828125,-0.048828125)"><path d="M256 576H384V-128H64V-64H0V320H64V384H256ZM128 256V0H256V256Z" /></g>
+    </g>
+
+</svg>
