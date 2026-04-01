@@ -880,7 +880,7 @@ context.to_area -- the card area the card is moving into
 
 >[!NOTE]
 >*(Added in 1501a)*
->This context can now be used to redirect cards when theyb are moving from on area to another. Returning `modify = {to_area = CardArea}` will send the card to that area instead
+>This context can now be used to redirect cards when they are moving from on area to another. Returning `modify = {to_area = CardArea}` will send the card to that area instead
   
 ---
 #### context.blind_disabled

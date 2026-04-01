@@ -2,9 +2,11 @@
 - **Required parameters:**
 	- `key`
 	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+		- `loc_txt` should contain a `label` string used for the card's badge text
 - **Optional parameters** *(defaults)*:
 	- `atlas = 'stickers', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-	- `prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+	- `config = {}, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+		- `config` values will be saved to `card.ability[sticker_key]`
 	- `badge_colour`: Colour of this sticker's badge.
     - `hide_badge`: If set to `true`, no badge is shown for this sticker.
 	- `default_compat`: Default compatibility with cards. If `true`, all cards can have this sticker unless otherwise specified.
@@ -29,8 +31,20 @@
 - `should_apply(self, card, center, area, bypass_roll) -> bool`
 	- Returns true if the sticker can be applied to the card. 
 	- `bypass_roll` skips the RNG check and only looks for compatibility
+	- If this function is redefined it will ignore all optional parameter flags listed above. You can call and store the return of `SMODS.Sticker.should_apply(self, card, center, area, bypass_roll)` in this function to retain the default functionality.
 - `apply(self, card, val)`
 	- Handles applying and removing the sticker
-	- Sets `card.ability[self.key]` to `val` by default. 
+	- By default, sets `card.ability[self.key]` to `config` if it exists and `val` is truthy or to `val` otherwise. 
+	- It is recommended to not redefine this function. If you still need to, you can call `SMODS.Sticker.apply(self, card, val)` in this function to retain the default functionality.
 - `draw(self, card, layer)`
 	- Draws the sprite and shader of the sticker.
+
+### Sticker methods
+- `Card:add_sticker(sticker, bypass_check)`
+	Use this function to add a sticker to a card
+	- `sticker`, `key` of sticker as a string
+	- `bypass_check`, *boolean*
+
+- `Card:remove_sticker(sticker)`
+	Use this function to remove a sticker from a card
+	- `sticker`, `key` of sticker as a string

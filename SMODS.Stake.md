@@ -24,13 +24,4 @@
     - Due to how the stake description box works, the functionality of `loc_vars` on stakes is limited. `info_queue` and `card` will not be used. Out of all possible return values, only `vars`, `key` and `set` are supported.
 - `modifiers()`
     - Used for applying changes to the game state when your stake is applied at the start of a run.
-
-### Sticker methods
-- `Card:add_sticker(sticker, bypass_check)`
-	- `sticker`, `key` of sticker as a string
-	- `bypass_check`, *boolean*
-Use this function to add a sticker to a card
-
-- `Card:remove_sticker(sticker)`
-	- `sticker`, `key` of sticker as a string
-Use this function to remove a sticker from a card
+    

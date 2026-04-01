@@ -1256,7 +1256,11 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
   <td>
    <code>G.C.RARITY.Common</code>
   </td>
-  <td> </td>
+  <td align="center">
+   <picture>
+    <img src="Assets/Text-Styling/example_common_light.svg" height=16 alt="Rare">
+   </picture>
+  </td>
   <td align="center" rowspan=3>
    Added by<br>Steamodded
   </td>
@@ -1271,7 +1275,11 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
   <td>
    <code>G.C.RARITY.Uncommon</code>
   </td>
-  <td> </td>
+  <td align="center">
+   <picture>
+    <img src="Assets/Text-Styling/example_uncommon_light.svg" height=16 alt="Uncommon">
+   </picture>
+  </td>
  </tr>
  <tr>
   <td>
@@ -1283,7 +1291,11 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
   <td>
    <code>G.C.RARITY.Rare</code>
   </td>
-  <td> </td>
+  <td align="center">
+   <picture>
+    <img src="Assets/Text-Styling/example_rare_light.svg" height=16 alt="Rare">
+   </picture>
+  </td>
  </tr>
  <tr>
   <td>
@@ -1334,6 +1346,22 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
    <img src="Assets/Text-Styling/example_Joker_light.svg" height=24 alt="Joker">
   </td>
   <td> </td>
+ <tr>
+  <td>
+   <img src="Assets/Colour-Icons/G.C.DYN_UI.DARK.svg" height=32 alt="#1E2B2DFF"><br><img src="Assets/Colour-Icons/G.C.DYN_UI.DARK-PICKER.svg" height=32 alt="#34744DFF">
+  </td>
+  <td>
+   <b>blind
+  </td>
+  <td>
+ <code>G.C.DYN_UI.DARK</code>
+  </td>
+  <td align="center">
+   <img src="Assets/Text-Styling/example_blind_none_light.svg" height=16 alt="No Blind"><br><img src="Assets/Text-Styling/example_blind_picker_light.svg" height=16 alt="The Picker">
+  </td>
+  <td align="center">
+   Added by<br>Steamodded
+  </td>
  </tr>
 </table>
 
