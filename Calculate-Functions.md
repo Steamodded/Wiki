@@ -1081,6 +1081,7 @@ context.card -- The card that has been added to the shop
 ```
 ---
 #### context.create_booster_card
+*(Added in 1531zeebee)* 
 This context is used when a card is created for a booster. You can return a table as `booster_create_flags` that will be passed into `SMODS.create_card` to change which card will be created.
 
 ```lua
@@ -1095,6 +1096,7 @@ context.index -- The index of the card to be created (i.e. its position in the b
 
 ---
 #### context.modify_booster_card
+*(Added in 1531zeebee)* 
 This context is used when a card is added to a booster. You can call other functions on this card, such as `Card:set_cost`, to alter the card within the booster. This context could also be used to respond to certain things appearing in a booster.
 
 ```lua
