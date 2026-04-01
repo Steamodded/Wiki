@@ -1387,7 +1387,7 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
   <td> </td>
  <tr>
   <td>
-   <img src="Assets/Colour-Icons/G.C.DYN_UI.DARK.svg" height=32 alt="#1E2B2DFF"><br><img src="Assets/Colour-Icons/G.C.DYN_UI.DARK-PICKER.svg" height=32 alt="#055481FF">
+   <img src="Assets/Colour-Icons/G.C.DYN_UI.DARK-none.svg" height=32 alt="#1E2B2DFF"><br><img src="Assets/Colour-Icons/G.C.DYN_UI.DARK-cerulean.svg" height=32 alt="#055481FF">
   </td>
   <td>
    <b>blind
