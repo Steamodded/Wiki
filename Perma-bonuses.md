@@ -1,6 +1,6 @@
 
 # Permanent bonuses
-Card objects can be given permanent permanent bonuses that allow them to add or subtract score, similar to the vanilla Hiker joker. These are only considered on **playing cards** during the scoring phases. These will not be changed by applying enhancements, copying the card, or similar. Steamodded by default handles all the UI elements for this. These were added in `1.0.0~ALPHA-1428c-STEAMODDED`.
+Card objects can be given permanent permanent bonuses that allow them to add or subtract score, similar to the vanilla Hiker joker. These are only considered on **playing cards** during the scoring phases. These will not be changed by applying enhancements, copying the card, or similar. Steamodded by default handles all the UI elements for this. These were added in `1.0.0~ALPHA-1428c`. *Blind Size and Score related bonuses were added in `1.0.0~BETA-1531zeebee`*
 
 - [List of all perma-bonuses](#list-of-all-perma-bonuses)
 - [Re-implementation of Hiker](#re-implementation-of-hiker)
@@ -23,6 +23,11 @@ perma_h_x_mult,
 
 perma_p_dollars,  -- money on scoring
 perma_h_dollars,  -- money on held at end of round (like gold cards)
+
+perma_blind_size, -- adds to current blind_size
+perma_x_blind_size, -- multiplies current blind_size
+perma_h_blind_size, -- adds to current blind_size when held
+perma_h_x_blind_size -- multiplies current blind_size when held
 
 perma_repetitions, -- retriggers in any context
 ```
@@ -54,8 +59,11 @@ Permanent bonuses are scored in the following order:
 3. xchips (enhancement * permanent)
 4. xmult (enhancement * permanent)
 5. dollars (seals + permanent)
-6. all edition effects
-7. all joker effects
+6. blindsize (permanent, enhancement)
+7. xblindsize (permanent, enhancement)
+8. (enhancement * permanent)
+9. all edition effects
+10. all joker effects
 
 Permanent (held) chips get scored at the same time as a playing card's base chips and chips from enhancements. They also show up as a combined number with bonus chips from enhancements in the UI. This is inherited vanilla behaviour. Supports negative values.
 
@@ -66,6 +74,10 @@ Permanent (held) xchips get multiplied with enhancement xchips, showing as a sin
 Permanent xmult gets multiplied with enhancement xmult such as glass when scoring, showing as a single multiplied number during scoring. It does show up as a seperate number in the UI when hovering over the card. Does not support final negative xmult, and will do nothing if end result is negative.
 
 Permanent held xmult gets multiplied with enhancement held xmult such as steel when scoring, showing as a single multiplied number during scoring. It does show up as a seperate number in the UI when hovering over the card. It does not support negative values, and will do nothing if scored.
+
+Permanent (held) blindsize get scored before the enhancement. It does show up as a seperate number in the UI when hovering over the card. Supports negative values.
+
+Permanent (held) xblindsize get scored before the enhancement. It does show up as a seperate number in the UI when hovering over the card. Does not support final negative xblindsize, and will do nothing if end result is negative.
 
 Permanent held dollars only give money on end of round, similar to the gold enhancement.
 
@@ -83,6 +95,11 @@ card_extra_h_chips,
 card_extra_h_mult,
 card_extra_h_x_chips,
 card_extra_h_x_mult,
+
+card_extra_blind_size,
+card_extra_x_blind_size,
+card_extra_h_blind_size,
+card_extra_h_x_blind_size,
 
 card_extra_p_dollars,
 card_extra_h_dollars,
