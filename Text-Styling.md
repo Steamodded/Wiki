@@ -1399,7 +1399,7 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
    <img src="Assets/Text-Styling/example_blind_none_light.svg" height=16 alt="No Blind"><br><img src="Assets/Text-Styling/example_blind_cerulean_light.svg" height=16 alt="Cerulean Bell">
   </td>
   <td align="center">
-   Added by<br>Steamodded
+   Added by<br>Steamodded<br>since `1.0.0~BETA-1531zeebee`
   </td>
  </tr>
 </table>
