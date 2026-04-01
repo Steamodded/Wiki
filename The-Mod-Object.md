@@ -271,6 +271,7 @@ end
 ```
 
 ### `mod.calc_dollar_bonus(self) -> number, table`
+*(Added in 1531zeebee)* 
 Equivalent to a calc_dollar_bonus function on a GameObject.
 Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
 	- `text`: Replaces the default name text.
