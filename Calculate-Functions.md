@@ -467,7 +467,7 @@ context.main_scoring -- boolean value to flag this context, always TRUE
 ```
 
 > [!NOTE]
-> For the context for Blind/Deck/Challenge/Stake/Mod effects check [here]().
+> For the context for Blind/Deck/Challenge/Stake/Mod effects check [here](https://github.com/Steamodded/smods/wiki/Calculate-Functions#contextmain_scoring-individual).
 ---
 #### context.individual
 This context is used for triggering joker effects on playing cards. It iterates over the cards in each area one by one. Change the `cardarea` you are checking to apply effects to cards in different areas.
@@ -567,7 +567,7 @@ context.main_scoring -- boolean value to flag this context, always TRUE
 ```
 
 > [!NOTE]
-> For the context for playing card effects check [here]().
+> For the context for playing card effects check [here](https://github.com/Steamodded/smods/wiki/Calculate-Functions#contextmain_scoring).
 
 ---
 #### context.final_scoring_step
