@@ -1387,7 +1387,7 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
   <td> </td>
  <tr>
   <td>
-   <img src="Assets/Colour-Icons/G.C.DYN_UI.DARK.svg" height=32 alt="#1E2B2DFF"><br><img src="Assets/Colour-Icons/G.C.DYN_UI.DARK-PICKER.svg" height=32 alt="#34744DFF">
+   <img src="Assets/Colour-Icons/G.C.DYN_UI.DARK.svg" height=32 alt="#1E2B2DFF"><br><img src="Assets/Colour-Icons/G.C.DYN_UI.DARK-PICKER.svg" height=32 alt="#055481FF">
   </td>
   <td>
    <b>blind
@@ -1396,7 +1396,7 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
  <code>G.C.DYN_UI.DARK</code>
   </td>
   <td align="center">
-   <img src="Assets/Text-Styling/example_blind_none_light.svg" height=16 alt="No Blind"><br><img src="Assets/Text-Styling/example_blind_picker_light.svg" height=16 alt="The Picker">
+   <img src="Assets/Text-Styling/example_blind_none_light.svg" height=16 alt="No Blind"><br><img src="Assets/Text-Styling/example_blind_cerulean_light.svg" height=16 alt="Cerulean Bell">
   </td>
   <td align="center">
    Added by<br>Steamodded
