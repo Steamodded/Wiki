@@ -120,6 +120,14 @@ Valid style modifiers are as follows:
    <code>{u:<i>colour-key</i>}</code>
   </td>
  </tr>
+ <tr>
+  <td>
+   <a href="#text-strikethrough-modifier-st"><b>Text strikethrough</a>
+  </td>
+  <td>
+   <code>{st:<i>colour-key</i>}</code>
+  </td>
+ </tr>
   <tr>
   <td>
    <a href="#text-font-modifier-f"><b>Font</a>
@@ -147,7 +155,7 @@ Valid style modifiers are as follows:
 </table>
 
 > [!IMPORTANT]
-> Modifiers are **case sensitive** – `{s:}` and `{f:}` must be lowercase, while all other modifiers are UPPERCASE.
+> Modifiers are **case sensitive** - make sure to refer to this list for the appropriate capitalization.
 
 ---
 
@@ -594,6 +602,37 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 
   ```pas
   {u:red}Underlined text!    
+  ```
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+
+## Text strikethrough modifier `{st:}`
+> [!NOTE]
+> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+> *(Added in 1531zeebee)* 
+
+> [!IMPORTANT] 
+> This modifier requires the **lowercase** `st`, unlike other modifiers which must be UPPERCASE.
+
+<code>{st:<i>colour-key</i>}</code> adds a strikethrough line through the text.
+
+*`colour-key`* sets the colour of the underline, where *`colour-key`* is the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table).
+
+### Examples
+
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+
+  ```pas
+  {st:red}Strikethrough text!    
   ```
   </td>
   <td align="center">
