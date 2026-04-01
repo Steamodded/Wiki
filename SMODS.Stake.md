@@ -25,6 +25,7 @@
 - `modifiers()`
     - Used for applying changes to the game state when your stake is applied at the start of a run.
 - `calc_dollar_bonus(self) -> number, table`
+	- *(Added in 1531zeebee)* 
 	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
 	- Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
 		- `text`: Replaces the default name text.
