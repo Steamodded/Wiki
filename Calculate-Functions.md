@@ -163,6 +163,7 @@ SMODS.current_mod.optional_features = function()
         post_trigger = true,
         retrigger_joker = true,
         quantum_enhancements = true,
+		object_weights = true,
 		cardareas = {
             discard = true,
             deck = true
