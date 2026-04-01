@@ -138,6 +138,14 @@ Valid style modifiers are as follows:
  </tr>
  <tr>
   <td>
+   <a href="#ui-element-insertion-element"><b>UI Element</a>
+  </td>
+  <td>
+   <code>{element:<i>element-index</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
    <b>No modifiers</b> (use default styling)
   </td>
   <td>
@@ -831,7 +839,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 ## UI element insertion `{element:}`
 > [!NOTE]
 > This modifier is added by Steamodded and is not supported by vanilla Balatro.
-> *(Added in NEXT_RELEASE)*
+> *(Added in 1531zeebee)*
 
 > [!IMPORTANT] 
 > This modifier requires the **lowercase** `element`, unlike other modifiers which must be UPPERCASE.
@@ -853,7 +861,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
   <td>
 
    ```pas
-   {element:1} I need a proper example for this   
+   {element:1} <-- Cool sprite   
    ```
   </td>
   <td>
@@ -861,7 +869,9 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
    ```lua
    vars = {
      elements = {
-       { n=G.UIT.R, config = { align="cm" }, nodes = {} },
+       { n=G.UIT.R, config = { align="cm" }, nodes = { 
+        { n=G.UIT.O, config= { object = SMODS.create_sprite(0, 0, G.CARD_W, G.CARD_H, "modprefix_atlaskey", {x = 0, y = 0}) } } 
+      } },
      }
    }
    ```
