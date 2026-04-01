@@ -613,6 +613,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 ## Text strikethrough modifier `{st:}`
 > [!NOTE]
 > This modifier is added by Steamodded and is not supported by vanilla Balatro.
+> *(Added in 1531zeebee)* 
 
 > [!IMPORTANT] 
 > This modifier requires the **lowercase** `st`, unlike other modifiers which must be UPPERCASE.
