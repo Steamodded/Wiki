@@ -20,8 +20,9 @@
 - `apply(self, back)`
     - Apply modifiers at the start of a run. If you want to modify the starting deck, you must use events to do so.
 - `calc_dollar_bonus(self, back) -> number, table`
+	- *(Added in 1531zeebee)* 
 	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
-	- *(Added in 1531zeebee)* Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
+	- Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
 		- `text`: Replaces the default name text.
 		- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
 		- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
