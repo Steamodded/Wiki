@@ -909,7 +909,9 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
    vars = {
      elements = {
        { n=G.UIT.R, config = { align="cm" }, nodes = { 
-        { n=G.UIT.O, config= { object = SMODS.create_sprite(0, 0, G.CARD_W, G.CARD_H, "modprefix_atlaskey", {x = 0, y = 0}) } } 
+        { n=G.UIT.O, config= { object =
+            SMODS.create_sprite(0, 0, 20, 20, "modprefix_atlaskey", {x = 0, y = 0})
+        } } 
       } },
      }
    }
