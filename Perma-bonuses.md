@@ -1,6 +1,6 @@
 
 # Permanent bonuses
-Card objects can be given permanent permanent bonuses that allow them to add or subtract score, similar to the vanilla Hiker joker. These are only considered on **playing cards** during the scoring phases. These will not be changed by applying enhancements, copying the card, or similar. Steamodded by default handles all the UI elements for this. These were added in `1.0.0~ALPHA-1428c-STEAMODDED`. Blind Size related bonuses were added in `insert version here`
+Card objects can be given permanent permanent bonuses that allow them to add or subtract score, similar to the vanilla Hiker joker. These are only considered on **playing cards** during the scoring phases. These will not be changed by applying enhancements, copying the card, or similar. Steamodded by default handles all the UI elements for this. These were added in `1.0.0~ALPHA-1428c-STEAMODDED`. Blind Size and Score related bonuses were added in `1.0.0~BETA-1531zeebee-STEAMODDED`
 
 - [List of all perma-bonuses](#list-of-all-perma-bonuses)
 - [Re-implementation of Hiker](#re-implementation-of-hiker)
