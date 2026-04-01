@@ -28,6 +28,7 @@ perma_score, -- adds to current chips scored
 perma_x_score, -- multiplies current chips scored
 perma_h_score, -- adds to current chips scored when held
 perma_h_x_score -- multiplies current chips scored when held
+
 perma_blind_size, -- adds to current blind_size
 perma_x_blind_size, -- multiplies current blind_size
 perma_h_blind_size, -- adds to current blind_size when held
@@ -65,12 +66,11 @@ Permanent bonuses are scored in the following order:
 5. dollars (seals + permanent)
 6. score (permanent, enhancement)
 7. xscore (permanent, enhancement)
-8. all edition effects
-9. all joker effects
-10. blindsize (permanent, enhancement)
-11. xblindsize (permanent, enhancement)
-12. all edition effects
-13. all joker effects
+8. blindsize (permanent, enhancement)
+9. xblindsize (permanent, enhancement)
+10. all edition effects
+11. all joker effects
+
 
 Permanent (held) chips get scored at the same time as a playing card's base chips and chips from enhancements. They also show up as a combined number with bonus chips from enhancements in the UI. This is inherited vanilla behaviour. Supports negative values.
 
