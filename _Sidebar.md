@@ -7,6 +7,7 @@ Game Objects
   * [API Documentation](https://github.com/Steamodded/smods/wiki/API-Documentation)
   * [SMODS.Achievement](https://github.com/Steamodded/smods/wiki/SMODS.Achievement)
   * [SMODS.Atlas](https://github.com/Steamodded/smods/wiki/SMODS.Atlas)
+  * [SMODS.Attribute](https://github.com/Steamodded/smods/wiki/SMODS.Attributes)
   * [SMODS.Blind](https://github.com/Steamodded/smods/wiki/SMODS.Blind)
   * [SMODS.CanvasSprite](https://github.com/Steamodded/smods/wiki/SMODS.CanvasSprite)
   * SMODS.Center
@@ -45,6 +46,7 @@ Guides
   * [The Mod Object](https://github.com/Steamodded/smods/wiki/The-Mod-Object)
   * [Calculate Functions](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
   * [Perma-bonuses](https://github.com/Steamodded/smods/wiki/Perma-bonuses)
+  * [Object Weights](https://github.com/Steamodded/smods/wiki/Weight-System)
   * [Logging](https://github.com/Steamodded/smods/wiki/Logging)
   * [Event Manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager)
   * [Localization](https://github.com/Steamodded/smods/wiki/Localization)

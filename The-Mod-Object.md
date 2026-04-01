@@ -101,6 +101,7 @@ Steamodded comes with additional opt-in features that requires mods to manually 
 - **`cardareas`** - Table of features that would add 
 	- **`deck`** - Adds `G.deck` to CardArea checks, allowing cards within the deck to be included in calculation.
 	- **`discard`** - Adds `G.discard` to CardArea checks, allowing discarded cards to be included in calculation.
+- **`object_weights`** - Enables "Weight System" feature - this feature will break vanilla seed consistency. *(Added in 1531zeebee)*
 
 ### `mod.optional_features`
 To enable any of the optional features, you can define `optional_features` for your mod

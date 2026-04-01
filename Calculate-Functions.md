@@ -164,6 +164,7 @@ SMODS.current_mod.optional_features = function()
         post_trigger = true,
         retrigger_joker = true,
         quantum_enhancements = true,
+		object_weights = true,
 		cardareas = {
             discard = true,
             deck = true
@@ -1370,6 +1371,27 @@ context.blueprint -- flag to identify copy effect
 context.blueprint_card -- the original object the copy effect came from
 context.blueprint_copier -- the current object copying the effect (differs when copy effects are chained)
 context.blueprint_copiers_stack -- ordered table of objects copying the effect (used when copy effects are chained)
+```
+
+---
+#### context.modify_weights
+*(Added in 1531zeebee)*
+This context is used to modify weights in `SMODS.poll_object` when the **`object_weights`** optional feature is enabled.
+
+```lua
+if context.modify_weights then
+```
+
+```lua
+context.modify_weights -- flag to identify this context, always TRUE
+context.pool -- the booster pack center that has ended
+context.pool_types
+```
+
+The pool is structured as a table of tables, where each table is structured as below. Modifying the weight value in this table will affect the final weighted table to be used.
+
+```lua
+{key = 'object_key', weight = number_of_weight}
 ```
 
 ---
