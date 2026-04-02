@@ -73,14 +73,36 @@ Return type is the same as [love.filesystem.load](https://love2d.org/wiki/love.f
 - Example usage: `assert(SMODS.load_file('jokers.lua'))()`
 #### `SMODS.juice_up_blind()`
 Plays a 'juice up' animation on the Blind chip.
-#### `SMODS.change_base(card, suit, rank) -> Card?, string?`
+#### `SMODS.change_base(card, suit, rank, manual_sprites) -> Card?, string?`
 Given a `Card` representing a playing card, changes the card's suit, rank, or both. Either argument may be omitted to retain the original suit or rank.
 This function returns `nil` if it fails, with the second argument being a string with an error message. It is recommended to always wrap calls to it in `assert` so errors don't go unnoticed.
 - Examples: `assert(SMODS.change_base(card, 'Hearts'))` converts a card into Hearts. `assert(SMODS.change_base(card, nil, 'Ace'))` converts a card into an Ace. `assert(SMODS.change_base(card, 'Hearts', 'Ace'))` converts a card into an Ace of Hearts.
-#### `SMODS.modify_rank(card, amount) -> Card?, string?`
+Use `manual_sprites` if you want better control of the timing of the conversion. For a general use case during scoring, you can use the following snippet for the visuals to update at the correct timing.
+```lua
+-- Converts a card to a Jack with the correct animation timing
+assert(SMODS.change_base(card, nil, 'Jack'))
+G.E_MANAGER:add_event(Event({
+    func = function()
+        card:set_sprites(nil, card.config.card)
+        return true
+    end
+}))
+```
+#### `SMODS.modify_rank(card, amount, manual_sprites) -> Card?, string?`
 Given a `Card` representing a playing card, increases or decreases the card's rank by the specified `amount`. The rank is increased if `amount` is positive and decreased if it is negative.
 This function returns `nil` if it fails, with the second argument being a string with an error message. It is recommended to always wrap calls to it in `assert` so errors don't go unnoticed.
 - Examples: `assert(SMODS.modify_rank(card, 1))` increases a card's rank by one, like the Strength Tarot. `assert(SMODS.modify_rank(card, -2))` decreases a card's rank by two.
+Use `manual_sprites` if you want better control of the timing of the conversion. For a general use case during scoring, you can use the following snippet for the visuals to update at the correct timing.
+```lua
+-- Increases a card's rank by 1 with the correct animation timing
+assert(SMODS.modify_rank(card, 1))
+G.E_MANAGER:add_event(Event({
+    func = function()
+        card:set_sprites(nil, card.config.card)
+        return true
+    end
+}))
+```
 #### `SMODS.find_card(key, count_debuffed) -> table`
 This function replaces `find_joker`. It operates using keys instead of names, which avoids overlap between mods.
 Returns an array of all jokers or consumables in the player's possession with the given key. Debuffed cards count only if `count_debuffed` is true.

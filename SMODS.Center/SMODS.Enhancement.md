@@ -77,6 +77,11 @@
     - Draws the sprite and shader of the card.
 
 ## Util methods
+- `Card:set_ability(center, initial, delay_sprites)`: 
+    - Used for changing the center of a card, you can use this function to set an enhancement.
+    - `center`: key of the enhancement to turn the card into (use `c_base` for no enhancement).
+    - `initial`: *boolean (advanced)* internal value for when the card is created
+    - `delay_sprites`: *boolean* delays the visuals of the enhancement, useful for applying enhancements during calculations
 - `SMODS.poll_enhancement(args)` *(defaults)*
     - `args.key`, the key used to generate the seed
     - `args.type_key`, an optional key used to generate the specific enhancement seed

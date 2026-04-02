@@ -79,19 +79,20 @@ end
 ```
 
 ### Edition methods
-- `Card:set_edition(edition, immediate, silent)`
-	- `edition`, `nil` removes edition, `key` of edition as a string
-	- `immediate`, *boolean*
-	- `silent`, *boolean*
-Use this function to set the edition of a card
+- `Card:set_edition(edition, immediate, silent, delay)`
+	- Use this function to set the edition of a card
+		- `edition`, `nil` removes edition, `key` of edition as a string
+		- `immediate`, *boolean*
+		- `silent`, *boolean*
+		- `delay`, *boolean* delays the visuals of the edition, useful for applying editions during calculations
 
-**Example**
+	**Example**
 
-If you have created a new edition called **MyEdition**, and your mod prefix key is defined as **MyFirstMod**, you would use this syntax to apply your edition to a card.
+	If you have created a new edition called **MyEdition**, and your mod prefix key is defined as **MyFirstMod**, you would use this syntax to apply your edition to a card.
 
-```lua
-card:set_edition("e_MyFirstMod_MyEdition", true)
-```
+	```lua
+	card:set_edition("e_MyFirstMod_MyEdition", true)
+	```
 
 - `SMODS.poll_edition(args)`
 	- The arguments is always a table that can contain the following parameters. *(defaults)*

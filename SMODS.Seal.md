@@ -25,3 +25,10 @@
     - For actions that happen every frame.
 - `draw(self, card, layer)`
 	- Draws the sprite and shader of the seal.
+
+## Seal methods
+- `Card:set_seal(seal, immediate, silent)`
+	- Use this function to set the seal of a card
+		- `edition`, `nil` removes seal, `key` of seal as a string
+		- `immediate`, *boolean*
+		- `silent`, *boolean*
