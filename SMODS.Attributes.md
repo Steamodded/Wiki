@@ -84,6 +84,10 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **reroll** | effect is based around rerolling the shop | Chaos the Clown, Flash Card |
 | **on_sell** | triggers when card is sold | Luchador, Diet Cola, Invisible Joker |
 | **sell_value** | effect is based around sell value of a card | Egg, Swashbuckler, Ceremonial Dagger, Gift Card |
+| **skip** |  effect is based around skipping a blind | Throwback |
+| **tag** |  effect is based around tags | Diet Cola |
+| **boss_blind** | effect is based around boss blinds | Rocket, Luchador, Matador, Campfire, Chicot |
+| **space** | themed on space | Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 | **food** | themed on food | Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola |
 | **space** | themed on space | Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 
@@ -184,7 +188,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Lucky Cat** | xmult, enhancements, scaling |
 | **Baseball Card** | xmult |
 | **Bull** | chips |
-| **Diet Cola** | on_sell, food, generation |
+| **Diet Cola** | on_sell, food, generation, tag |
 | **Trading Card** | destroy_card, discard, economy |
 | **Flash Card** | mult, reroll, scaling |
 | **Popcorn** | mult, food, scaling |
@@ -204,7 +208,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Troubadour** | hand_size, passive, hands |
 | **Certificate** | seals, generation |
 | **Smeared Joker** | suit, hearts, passive, diamonds, spades, clubs|
-| **Throwback** | xmult, scaling |
+| **Throwback** | xmult, scaling, skip |
 | **Hanging Chad** | retrigger |
 | **Rough Gem** | suit, diamonds, economy |
 | **Bloodstone** | xmult, chance, suit, hearts |
