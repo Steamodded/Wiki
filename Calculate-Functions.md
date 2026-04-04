@@ -856,7 +856,7 @@ context.check -- true while the hand is being selected, and false when the hand 
 
   ---
 #### context.modify_hand
-This context is used to modify the initial values of a hand, at the same time as `Blind:modify_hand`. You can change the chips and mult by modifying `_G.mult` and `_G.hand_chips` directly.
+This context is used to modify the initial values of a hand, at the same time as `Blind:modify_hand`.
 
 ```lua
 if context.modify_hand then
@@ -869,6 +869,9 @@ context.scoring_name -- the current poker hand
 context.scoring_hand -- the list of cards in the selected hand that would be scored for the current poker hand
 context.poker_hands -- the list of poker hands contained within the selected cards
 ```
+
+>[!TIP]
+>You can modify chips and mult by doing `hand_chips = mod_mult(hand_chips + value)` and `mult = mod_mult(mult + value)` or any scoring parameter, including chips and mult, by calling `SMODS.Scoring_Parameters.key:modify(value)`.
 
 ---
 #### context.debuff_card
