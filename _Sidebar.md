@@ -2,6 +2,7 @@
     * [Installing on Windows](https://github.com/Steamodded/smods/wiki/Installing-Steamodded-windows)
     * [Installing on Linux](https://github.com/Steamodded/smods/wiki/Installing-Steamodded-linux)
     * [Installing on Mac](https://github.com/Steamodded/smods/wiki/Installing-Steamodded-mac)
+    * [Installing on Android/iOS](https://github.com/Steamodded/smods/wiki/Installing-Steamodded-mobile)
 ***
 Game Objects
   * [API Documentation](https://github.com/Steamodded/smods/wiki/API-Documentation)
