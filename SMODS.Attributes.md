@@ -164,80 +164,80 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Vagabond** | tarot, generation, hands |
 | **Baron** | xmult, rank, king |
 | **Cloud 9** | full_deck, nine, rank, economy |
-| **Rocket** | space, scaling, economy |
+| **Rocket** | space, scaling, economy, boss_blind |
 | **Obelisk** | xmult, hand_type, reset, scaling, hands |
 | **Midas Mask** | modify_card, enhancements, face |
-| **Luchador** | on_sell |
+| **Luchador** | on_sell, boss_blind |
 | **Photograph** | xmult, face |
 | **Gift Card** | sell_value, scaling, economy |
 | **Turtle Bean** | food, hand_size, scaling |
-| **Erosion** | mult, full_deck
-| **Reserved Parking** | chance, face, economy
-| **Mail-In Rebate** | discard, rank, economy
-| **To the Moon** | passive, economy
-| **Hallucination** | chance, tarot, generation
-| **Fortune Teller** | mult, tarot
-| **Juggler** | hand_size, passive
-| **Drunkard** | discard, passive
-| **Stone Joker** | full_deck, enhancements, chips
-| **Golden Joker** | economy
-| **Lucky Cat** | xmult, enhancements, scaling
-| **Baseball Card** | xmult
-| **Bull** | chips
-| **Diet Cola** | on_sell, food, generation
-| **Trading Card** | destroy_card, discard, economy
-| **Flash Card** | mult, reroll, scaling
-| **Popcorn** | mult, food, scaling
-| **Spare Trousers** | mult, hand_type, scaling
-| **Ancient Joker** | xmult, suit
-| **Ramen** | xmult, food, discard, scaling
-| **Walkie Talkie** | mult, ten, four, chips, rank
-| **Seltzer** | retrigger, food, scaling
-| **Castle** | suit, discard, chips, scaling
-| **Smiley Face** | mult, face
-| **Campfire** | xmult, reset, scaling
-| **Golden Ticket** | enhancements, economy
-| **Mr. Bones** | prevents_death
-| **Acrobat** | xmult, hands
-| **Sock and Buskin** | retrigger, face
-| **Swashbuckler** | mult, joker, sell_value
-| **Troubadour** | hand_size, passive, hands
-| **Certificate** | seals, generation
-| **Smeared Joker** | suit, hearts, passive, diamonds, spades, clubs
-| **Throwback** | xmult, scaling
-| **Hanging Chad** | retrigger
-| **Rough Gem** | suit, diamonds, economy
-| **Bloodstone** | xmult, chance, suit, hearts
-| **Arrowhead** | suit, chips, spades
-| **Onyx Agate** | mult, suit, clubs
-| **Glass Joker** | xmult, enhancements, scaling
-| **Showman** | passive
-| **Flower Pot** | xmult, suit, hands
-| **Blueprint** | copying
-| **Wee Joker** | two, chips, rank, scaling
-| **Merry Andy** | hand_size, discard
-| **Oops! All 6s** | mod_chance, passive
-| **The Idol** | xmult, suit, rank
-| **Seeing Double** | xmult, suit, clubs
-| **Matador** | economy
-| **Hit the Road** | xmult, jack, discard, reset, rank, scaling
-| **The Duo** | xmult, hand_type
-| **The Trio** | xmult, hand_type
-| **The Family** | xmult, hand_type
-| **The Order** | xmult, hand_type
-| **The Tribe** | xmult, hand_type
-| **Stuntman** | hand_size, chips
-| **Invisible Joker** | on_sell, generation
-| **Brainstorm** | copying
-| **Satellite** | planet, space, economy
-| **Shoot the Moon** | mult, rank, queen
-| **Driver's License** | xmult, full_deck, enhancements
-| **Cartomancer** | tarot, generation
-| **Astronomer** | planet, passive, space
-| **Burnt Joker** | hand_type, discard
-| **Bootstraps** | mult
-| **Canio** | xmult, face, scaling
-| **Triboulet** | xmult, rank, queen, king
-| **Yorick** | xmult, discard, scaling
-| **Chicot** | None
-| **Perkeo** | generation
+| **Erosion** | mult, full_deck |
+| **Reserved Parking** | chance, face, economy |
+| **Mail-In Rebate** | discard, rank, economy |
+| **To the Moon** | passive, economy |
+| **Hallucination** | chance, tarot, generation |
+| **Fortune Teller** | mult, tarot |
+| **Juggler** | hand_size, passive |
+| **Drunkard** | discard, passive |
+| **Stone Joker** | full_deck, enhancements, chips |
+| **Golden Joker** | economy |
+| **Lucky Cat** | xmult, enhancements, scaling |
+| **Baseball Card** | xmult |
+| **Bull** | chips |
+| **Diet Cola** | on_sell, food, generation |
+| **Trading Card** | destroy_card, discard, economy |
+| **Flash Card** | mult, reroll, scaling |
+| **Popcorn** | mult, food, scaling |
+| **Spare Trousers** | mult, hand_type, scaling |
+| **Ancient Joker** | xmult, suit |
+| **Ramen** | xmult, food, discard, scaling |
+| **Walkie Talkie** | mult, ten, four, chips, rank |
+| **Seltzer** | retrigger, food, scaling |
+| **Castle** | suit, discard, chips, scaling |
+| **Smiley Face** | mult, face |
+| **Campfire** | xmult, reset, scaling, boss_blind |
+| **Golden Ticket** | enhancements, economy |
+| **Mr. Bones** | prevents_death |
+| **Acrobat** | xmult, hands |
+| **Sock and Buskin** | retrigger, face |
+| **Swashbuckler** | mult, joker, sell_value |
+| **Troubadour** | hand_size, passive, hands |
+| **Certificate** | seals, generation |
+| **Smeared Joker** | suit, hearts, passive, diamonds, spades, clubs|
+| **Throwback** | xmult, scaling |
+| **Hanging Chad** | retrigger |
+| **Rough Gem** | suit, diamonds, economy |
+| **Bloodstone** | xmult, chance, suit, hearts |
+| **Arrowhead** | suit, chips, spades |
+| **Onyx Agate** | mult, suit, clubs |
+| **Glass Joker** | xmult, enhancements, scaling |
+| **Showman** | passive |
+| **Flower Pot** | xmult, suit, hands |
+| **Blueprint** | copying |
+| **Wee Joker** | two, chips, rank, scaling |
+| **Merry Andy** | hand_size, discard |
+| **Oops! All 6s** | mod_chance, passive |
+| **The Idol** | xmult, suit, rank |
+| **Seeing Double** | xmult, suit, clubs |
+| **Matador** | economy, boss_blind |
+| **Hit the Road** | xmult, jack, discard, reset, rank, scaling |
+| **The Duo** | xmult, hand_type |
+| **The Trio** | xmult, hand_type |
+| **The Family** | xmult, hand_type |
+| **The Order** | xmult, hand_type |
+| **The Tribe** | xmult, hand_type |
+| **Stuntman** | hand_size, chips |
+| **Invisible Joker** | on_sell, generation |
+| **Brainstorm** | copying |
+| **Satellite** | planet, space, economy |
+| **Shoot the Moon** | mult, rank, queen |
+| **Driver's License** | xmult, full_deck, enhancements |
+| **Cartomancer** | tarot, generation |
+| **Astronomer** | planet, passive, space |
+| **Burnt Joker** | hand_type, discard |
+| **Bootstraps** | mult |
+| **Canio** | xmult, face, scaling |
+| **Triboulet** | xmult, rank, queen, king |
+| **Yorick** | xmult, discard, scaling |
+| **Chicot** | boss_blind | 
+| **Perkeo** | generation | 
