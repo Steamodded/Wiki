@@ -31,8 +31,13 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **xchips** | gives Xchips at some point of scoring | *none* |
 | **score** | gives +score at some point of scoring | *none* |
 | **xscore** | gives Xscore at some point of scoring | *none* |
+| **blindsize** | gives +blindsize at some point of scoring | *none* |
+| **xblindsize** | gives Xblindsize at some point of scoring | *none* |
+| **balance** | balances chips and mult at some point of scoring | *none* |
+| **swap** | swaps chips and mult at some point of scoring | *none* |
 | **retrigger** | retriggers a card at some point of scoring | Mime, Dusk, Hack, Seltzer, Sock and Buskin, Hanging Chad |
 | **scaling** | scales a value on a trigger | Ceremonial Dagger, Seltzer, Ride the Bus, Egg, Runner, Ice Cream, Constellation, Hiker, Green Joker, Red Card, Madness, Square Joker, Vampire, Hologram, Rocket, Turtle Bean, Obelisk, Gift Card, Flash Card, Lucky Cat, Popcorn, Spare Trousers, Ramen, Castle, Campfire, Throwback, Glass Joker, Wee Joker, Hit the Road, Canio, Yorick |
+| **perma_bonus** | grants any perma bonus on a trigger | *none* |
 | **reset** | has a value that resets | Obelisk, Campfire, Hit the Road, Ride the Bus |
 | **suit** | trigger is affected by a suit | Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Smeared Joker, Castle, Ancient Joker, Seeing Double, Blackboard, Flower Pot, The Idol, Rough Gem, Bloodstone, Arrowhead, Onyx Agate |
 | **diamonds** | trigger is affected by diamonds | Greedy Joker, Smeared Joker, Rough Gem |
@@ -72,6 +77,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **planet** | related to Planet cards | Astronomer, Constellation, Satellite |
 | **spectral** | related to Spectral cards | Sixth Sense, Séance |
 | **enhancements** | related to enhancements | Golden Ticket, Marble Joker, Steel Joker, Vampire, Midas Mask, Stone Joker, Lucky Cat, Glass Joker, Driver's License |
+| **editions** | related to editions | *none* |
 | **seals** | related to seals | Certificate |
 | **modify_card** | modifies playing cards | Pareidolia, Hiker, Vampire, Midas Mask |
 | **prevents_death** | effect prevents losing a run | Mr. Bones |
@@ -140,7 +146,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Blue Joker** | chips |
 | **Sixth Sense** | spectral, six, generation, rank |
 | **Constellation** | xmult, planet, space, scaling |
-| **Hiker** | modify_card, chips, scaling |
+| **Hiker** | modify_card, chips, perma_bonus |
 | **Faceless Joker** | discard, face, economy |
 | **Green Joker** | mult, discard, scaling, hands |
 | **Superposition** | ace, hand_type, tarot, generation, rank |
