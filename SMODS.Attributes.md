@@ -119,12 +119,12 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Four Fingers** | hand_type, passive |
 | **Mime** | retrigger |
 | **Credit Card** | passive, economy |
-| **Ceremonial Dagger** | mult, destroy_card, sell_value, scaling |
+| **Ceremonial Dagger** | mult, destroy_card, sell_value, scaling, position |
 | **Banner** | discard, chips |
 | **Mystic Summit** | mult, discard |
 | **Marble Joker** | enhancements, generation |
 | **Loyalty Card** | xmult, hands |
-| **8 Ball** | chance, eight, tarot, generation, rank |
+| **8 Ball** | chance, eight, tarot, consumeable, generation, rank |
 | **Misprint** | mult |
 | **Dusk** | retrigger, hands |
 | **Raised Fist** | mult, rank |
@@ -152,38 +152,38 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **DNA** | generation, hands |
 | **Splash** | passive |
 | **Blue Joker** | chips |
-| **Sixth Sense** | spectral, six, generation, rank |
-| **Constellation** | xmult, planet, space, scaling |
+| **Sixth Sense** | spectral, consumeable, six, generation, rank |
+| **Constellation** | xmult, planet, consumeable, space, scaling |
 | **Hiker** | modify_card, chips, perma_bonus |
 | **Faceless Joker** | discard, face, economy |
 | **Green Joker** | mult, discard, scaling, hands |
-| **Superposition** | ace, hand_type, tarot, generation, rank |
+| **Superposition** | ace, hand_type, tarot, consumeable, generation, rank |
 | **To Do List** | hand_type, economy |
 | **Cavendish** | xmult, chance, food |
 | **Card Sharp** | xmult, hand_type |
 | **Red Card** | mult, scaling |
 | **Madness** | xmult, destroy_card, scaling |
 | **Square Joker** | chips, scaling, hands |
-| **Séance** | spectral, hand_type, generation |
+| **Séance** | spectral, consumeable, hand_type, generation |
 | **Riff-Raff** | joker, generation |
 | **Vampire** | xmult, modify_card, enhancements, scaling |
 | **Shortcut** | hand_type, passive |
 | **Hologram** | xmult, scaling |
-| **Vagabond** | tarot, generation, hands |
+| **Vagabond** | tarot, consumeable, generation, hands |
 | **Baron** | xmult, rank, king |
 | **Cloud 9** | full_deck, nine, rank, economy |
 | **Rocket** | space, scaling, economy, boss_blind |
 | **Obelisk** | xmult, hand_type, reset, scaling, hands |
 | **Midas Mask** | modify_card, enhancements, face |
 | **Luchador** | on_sell, boss_blind |
-| **Photograph** | xmult, face |
+| **Photograph** | xmult, face, position |
 | **Gift Card** | sell_value, scaling, economy |
 | **Turtle Bean** | food, hand_size, scaling |
 | **Erosion** | mult, full_deck |
 | **Reserved Parking** | chance, face, economy |
 | **Mail-In Rebate** | discard, rank, economy |
 | **To the Moon** | passive, economy |
-| **Hallucination** | chance, tarot, generation |
+| **Hallucination** | chance, tarot, consumeable, generation |
 | **Fortune Teller** | mult, tarot |
 | **Juggler** | hand_size, passive |
 | **Drunkard** | discard, passive |
@@ -213,7 +213,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Certificate** | seals, generation |
 | **Smeared Joker** | suit, hearts, passive, diamonds, spades, clubs|
 | **Throwback** | xmult, scaling, skip |
-| **Hanging Chad** | retrigger |
+| **Hanging Chad** | retrigger, position |
 | **Rough Gem** | suit, diamonds, economy |
 | **Bloodstone** | xmult, chance, suit, hearts |
 | **Arrowhead** | suit, chips, spades |
@@ -221,7 +221,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Glass Joker** | xmult, enhancements, scaling |
 | **Showman** | passive |
 | **Flower Pot** | xmult, suit, hands |
-| **Blueprint** | copying |
+| **Blueprint** | copying, position |
 | **Wee Joker** | two, chips, rank, scaling |
 | **Merry Andy** | hand_size, discard |
 | **Oops! All 6s** | mod_chance, passive |
@@ -236,16 +236,16 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **The Tribe** | xmult, hand_type |
 | **Stuntman** | hand_size, chips |
 | **Invisible Joker** | on_sell, generation |
-| **Brainstorm** | copying |
-| **Satellite** | planet, space, economy |
+| **Brainstorm** | copying, position |
+| **Satellite** | planet, consumeable, space, economy |
 | **Shoot the Moon** | mult, rank, queen |
 | **Driver's License** | xmult, full_deck, enhancements |
-| **Cartomancer** | tarot, generation |
-| **Astronomer** | planet, passive, space |
+| **Cartomancer** | tarot, consumeable, generation |
+| **Astronomer** | planet, consumeable, passive, space |
 | **Burnt Joker** | hand_type, discard |
 | **Bootstraps** | mult |
 | **Canio** | xmult, face, scaling |
 | **Triboulet** | xmult, rank, queen, king |
 | **Yorick** | xmult, discard, scaling |
 | **Chicot** | boss_blind | 
-| **Perkeo** | generation | 
+| **Perkeo** | generation, consumeable | 
