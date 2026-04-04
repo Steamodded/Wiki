@@ -83,6 +83,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **prevents_death** | effect prevents losing a run | Mr. Bones |
 | **reroll** | effect is based around rerolling the shop | Chaos the Clown, Flash Card |
 | **on_sell** | triggers when card is sold | Luchador, Diet Cola, Invisible Joker |
+| **sell_value** | effect is based around sell value of a card | Egg, Swashbuckler, Ceremonial Dagger, Gift Card |
 | **skip** |  effect is based around skipping a blind | Throwback |
 | **tag** |  effect is based around tags | Diet Cola |
 | **boss_blind** | effect is based around boss blinds | Rocket, Luchador, Matador, Campfire, Chicot |
