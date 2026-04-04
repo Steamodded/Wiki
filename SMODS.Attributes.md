@@ -87,7 +87,6 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **skip** |  effect is based around skipping a blind | Throwback |
 | **tag** |  effect is based around tags | Diet Cola |
 | **boss_blind** | effect is based around boss blinds | Rocket, Luchador, Matador, Campfire, Chicot |
-| **space** | themed on space | Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 | **food** | themed on food | Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola |
 | **space** | themed on space | Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 
