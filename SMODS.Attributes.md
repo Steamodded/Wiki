@@ -68,16 +68,19 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **hand_size** | effect is based around hand size | Juggler, Turtle Bean, Troubadour, Merry Andy, Stuntman |
 | **chance** | effect has a chance to happen | 8 Ball, Gros Michel, Business Card, Space Joker, Cavendish, Hallucination, Reserved Parking, Bloodstone |
 | **joker_slot** | related to Joker slots | Abstract Joker, Joker Stencil |
+| **consumeable_slot** | related to Consumeable slots | *none* |
 | **mod_chance** | affects other chance rolls | Oops! All 6s |
 | **copying** | copies the effect of another card | Blueprint, Brainstorm |
 | **full_deck** | effect is based on your full deck | Steel Joker, Cloud 9, Erosion, Stone Joker, Driver's License |
 | **passive** | passive bonus from owning the card | Four Fingers, Credit Card, Chaos the Clown, Pareidolia, Splash, Shortcut, To the Moon, Juggler, Drunkard, Troubadour, Smeared Joker, Showman, Oops! All 6s, Astronomer |
 | **joker** | related to Joker cards | Abstract Joker, Riff-Raff, Swashbuckler |
+| **consumeable** | related to Consumeable cards | 8 Ball, Superposition, Vagabond, Hallucination, Fortune Teller, Cartomancer, Astronomer, Constellation, Satellite, Sixth Sense, Séance, Perkeo |
 | **tarot** | related to Tarot cards | 8 Ball, Superposition, Vagabond, Hallucination, Fortune Teller, Cartomancer |
 | **planet** | related to Planet cards | Astronomer, Constellation, Satellite |
 | **spectral** | related to Spectral cards | Sixth Sense, Séance |
 | **enhancements** | related to enhancements | Golden Ticket, Marble Joker, Steel Joker, Vampire, Midas Mask, Stone Joker, Lucky Cat, Glass Joker, Driver's License |
 | **editions** | related to editions | *none* |
+| **stickers** | related to stickers | *none* |
 | **seals** | related to seals | Certificate |
 | **modify_card** | modifies playing cards | Pareidolia, Hiker, Vampire, Midas Mask |
 | **prevents_death** | effect prevents losing a run | Mr. Bones |
@@ -86,8 +89,9 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **sell_value** | effect is based around sell value of a card | Egg, Swashbuckler, Ceremonial Dagger, Gift Card |
 | **skip** |  effect is based around skipping a blind | Throwback |
 | **tag** |  effect is based around tags | Diet Cola |
+| **debuff** |  effect is based around debuffing cards | *none* |
+| **position** |  effect is based around card positioning | Blueprint, Brainstorm, Ceremonial Dagger, Photograph, Hanging Chad |
 | **boss_blind** | effect is based around boss blinds | Rocket, Luchador, Matador, Campfire, Chicot |
-| **space** | themed on space | Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 | **food** | themed on food | Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola |
 | **space** | themed on space | Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 
