@@ -31,8 +31,13 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **xchips** | gives Xchips at some point of scoring | *none* |
 | **score** | gives +score at some point of scoring | *none* |
 | **xscore** | gives Xscore at some point of scoring | *none* |
+| **blindsize** | gives +blindsize at some point of scoring | *none* |
+| **xblindsize** | gives Xblindsize at some point of scoring | *none* |
+| **balance** | balances chips and mult at some point of scoring | *none* |
+| **swap** | swaps chips and mult at some point of scoring | *none* |
 | **retrigger** | retriggers a card at some point of scoring | Mime, Dusk, Hack, Seltzer, Sock and Buskin, Hanging Chad |
 | **scaling** | scales a value on a trigger | Ceremonial Dagger, Seltzer, Ride the Bus, Egg, Runner, Ice Cream, Constellation, Hiker, Green Joker, Red Card, Madness, Square Joker, Vampire, Hologram, Rocket, Turtle Bean, Obelisk, Gift Card, Flash Card, Lucky Cat, Popcorn, Spare Trousers, Ramen, Castle, Campfire, Throwback, Glass Joker, Wee Joker, Hit the Road, Canio, Yorick |
+| **perma_bonus** | grants any perma bonus on a trigger | *none* |
 | **reset** | has a value that resets | Obelisk, Campfire, Hit the Road, Ride the Bus |
 | **suit** | trigger is affected by a suit | Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Smeared Joker, Castle, Ancient Joker, Seeing Double, Blackboard, Flower Pot, The Idol, Rough Gem, Bloodstone, Arrowhead, Onyx Agate |
 | **diamonds** | trigger is affected by diamonds | Greedy Joker, Smeared Joker, Rough Gem |
@@ -63,21 +68,30 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **hand_size** | effect is based around hand size | Juggler, Turtle Bean, Troubadour, Merry Andy, Stuntman |
 | **chance** | effect has a chance to happen | 8 Ball, Gros Michel, Business Card, Space Joker, Cavendish, Hallucination, Reserved Parking, Bloodstone |
 | **joker_slot** | related to Joker slots | Abstract Joker, Joker Stencil |
+| **consumeable_slot** | related to Consumeable slots | *none* |
 | **mod_chance** | affects other chance rolls | Oops! All 6s |
 | **copying** | copies the effect of another card | Blueprint, Brainstorm |
 | **full_deck** | effect is based on your full deck | Steel Joker, Cloud 9, Erosion, Stone Joker, Driver's License |
 | **passive** | passive bonus from owning the card | Four Fingers, Credit Card, Chaos the Clown, Pareidolia, Splash, Shortcut, To the Moon, Juggler, Drunkard, Troubadour, Smeared Joker, Showman, Oops! All 6s, Astronomer |
 | **joker** | related to Joker cards | Abstract Joker, Riff-Raff, Swashbuckler |
+| **consumeable** | related to Consumeable cards | 8 Ball, Superposition, Vagabond, Hallucination, Fortune Teller, Cartomancer, Astronomer, Constellation, Satellite, Sixth Sense, Séance, Perkeo |
 | **tarot** | related to Tarot cards | 8 Ball, Superposition, Vagabond, Hallucination, Fortune Teller, Cartomancer |
 | **planet** | related to Planet cards | Astronomer, Constellation, Satellite |
 | **spectral** | related to Spectral cards | Sixth Sense, Séance |
 | **enhancements** | related to enhancements | Golden Ticket, Marble Joker, Steel Joker, Vampire, Midas Mask, Stone Joker, Lucky Cat, Glass Joker, Driver's License |
+| **editions** | related to editions | *none* |
+| **stickers** | related to stickers | *none* |
 | **seals** | related to seals | Certificate |
 | **modify_card** | modifies playing cards | Pareidolia, Hiker, Vampire, Midas Mask |
 | **prevents_death** | effect prevents losing a run | Mr. Bones |
 | **reroll** | effect is based around rerolling the shop | Chaos the Clown, Flash Card |
 | **on_sell** | triggers when card is sold | Luchador, Diet Cola, Invisible Joker |
 | **sell_value** | effect is based around sell value of a card | Egg, Swashbuckler, Ceremonial Dagger, Gift Card |
+| **skip** |  effect is based around skipping a blind | Throwback |
+| **tag** |  effect is based around tags | Diet Cola |
+| **debuff** |  effect is based around debuffing cards | *none* |
+| **position** |  effect is based around card positioning | Blueprint, Brainstorm, Ceremonial Dagger, Photograph, Hanging Chad |
+| **boss_blind** | effect is based around boss blinds | Rocket, Luchador, Matador, Campfire, Chicot |
 | **food** | themed on food | Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola |
 | **space** | themed on space | Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 
@@ -105,12 +119,12 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Four Fingers** | hand_type, passive |
 | **Mime** | retrigger |
 | **Credit Card** | passive, economy |
-| **Ceremonial Dagger** | mult, destroy_card, sell_value, scaling |
+| **Ceremonial Dagger** | mult, destroy_card, sell_value, scaling, position |
 | **Banner** | discard, chips |
 | **Mystic Summit** | mult, discard |
 | **Marble Joker** | enhancements, generation |
 | **Loyalty Card** | xmult, hands |
-| **8 Ball** | chance, eight, tarot, generation, rank |
+| **8 Ball** | chance, eight, tarot, consumeable, generation, rank |
 | **Misprint** | mult |
 | **Dusk** | retrigger, hands |
 | **Raised Fist** | mult, rank |
@@ -138,100 +152,100 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **DNA** | generation, hands |
 | **Splash** | passive |
 | **Blue Joker** | chips |
-| **Sixth Sense** | spectral, six, generation, rank |
-| **Constellation** | xmult, planet, space, scaling |
-| **Hiker** | modify_card, chips, scaling |
+| **Sixth Sense** | spectral, consumeable, six, generation, rank |
+| **Constellation** | xmult, planet, consumeable, space, scaling |
+| **Hiker** | modify_card, chips, perma_bonus |
 | **Faceless Joker** | discard, face, economy |
 | **Green Joker** | mult, discard, scaling, hands |
-| **Superposition** | ace, hand_type, tarot, generation, rank |
+| **Superposition** | ace, hand_type, tarot, consumeable, generation, rank |
 | **To Do List** | hand_type, economy |
 | **Cavendish** | xmult, chance, food |
 | **Card Sharp** | xmult, hand_type |
 | **Red Card** | mult, scaling |
 | **Madness** | xmult, destroy_card, scaling |
 | **Square Joker** | chips, scaling, hands |
-| **Séance** | spectral, hand_type, generation |
+| **Séance** | spectral, consumeable, hand_type, generation |
 | **Riff-Raff** | joker, generation |
 | **Vampire** | xmult, modify_card, enhancements, scaling |
 | **Shortcut** | hand_type, passive |
 | **Hologram** | xmult, scaling |
-| **Vagabond** | tarot, generation, hands |
+| **Vagabond** | tarot, consumeable, generation, hands |
 | **Baron** | xmult, rank, king |
 | **Cloud 9** | full_deck, nine, rank, economy |
-| **Rocket** | space, scaling, economy |
+| **Rocket** | space, scaling, economy, boss_blind |
 | **Obelisk** | xmult, hand_type, reset, scaling, hands |
 | **Midas Mask** | modify_card, enhancements, face |
-| **Luchador** | on_sell |
-| **Photograph** | xmult, face |
+| **Luchador** | on_sell, boss_blind |
+| **Photograph** | xmult, face, position |
 | **Gift Card** | sell_value, scaling, economy |
 | **Turtle Bean** | food, hand_size, scaling |
-| **Erosion** | mult, full_deck
-| **Reserved Parking** | chance, face, economy
-| **Mail-In Rebate** | discard, rank, economy
-| **To the Moon** | passive, economy
-| **Hallucination** | chance, tarot, generation
-| **Fortune Teller** | mult, tarot
-| **Juggler** | hand_size, passive
-| **Drunkard** | discard, passive
-| **Stone Joker** | full_deck, enhancements, chips
-| **Golden Joker** | economy
-| **Lucky Cat** | xmult, enhancements, scaling
-| **Baseball Card** | xmult
-| **Bull** | chips
-| **Diet Cola** | on_sell, food, generation
-| **Trading Card** | destroy_card, discard, economy
-| **Flash Card** | mult, reroll, scaling
-| **Popcorn** | mult, food, scaling
-| **Spare Trousers** | mult, hand_type, scaling
-| **Ancient Joker** | xmult, suit
-| **Ramen** | xmult, food, discard, scaling
-| **Walkie Talkie** | mult, ten, four, chips, rank
-| **Seltzer** | retrigger, food, scaling
-| **Castle** | suit, discard, chips, scaling
-| **Smiley Face** | mult, face
-| **Campfire** | xmult, reset, scaling
-| **Golden Ticket** | enhancements, economy
-| **Mr. Bones** | prevents_death
-| **Acrobat** | xmult, hands
-| **Sock and Buskin** | retrigger, face
-| **Swashbuckler** | mult, joker, sell_value
-| **Troubadour** | hand_size, passive, hands
-| **Certificate** | seals, generation
-| **Smeared Joker** | suit, hearts, passive, diamonds, spades, clubs
-| **Throwback** | xmult, scaling
-| **Hanging Chad** | retrigger
-| **Rough Gem** | suit, diamonds, economy
-| **Bloodstone** | xmult, chance, suit, hearts
-| **Arrowhead** | suit, chips, spades
-| **Onyx Agate** | mult, suit, clubs
-| **Glass Joker** | xmult, enhancements, scaling
-| **Showman** | passive
-| **Flower Pot** | xmult, suit, hands
-| **Blueprint** | copying
-| **Wee Joker** | two, chips, rank, scaling
-| **Merry Andy** | hand_size, discard
-| **Oops! All 6s** | mod_chance, passive
-| **The Idol** | xmult, suit, rank
-| **Seeing Double** | xmult, suit, clubs
-| **Matador** | economy
-| **Hit the Road** | xmult, jack, discard, reset, rank, scaling
-| **The Duo** | xmult, hand_type
-| **The Trio** | xmult, hand_type
-| **The Family** | xmult, hand_type
-| **The Order** | xmult, hand_type
-| **The Tribe** | xmult, hand_type
-| **Stuntman** | hand_size, chips
-| **Invisible Joker** | on_sell, generation
-| **Brainstorm** | copying
-| **Satellite** | planet, space, economy
-| **Shoot the Moon** | mult, rank, queen
-| **Driver's License** | xmult, full_deck, enhancements
-| **Cartomancer** | tarot, generation
-| **Astronomer** | planet, passive, space
-| **Burnt Joker** | hand_type, discard
-| **Bootstraps** | mult
-| **Canio** | xmult, face, scaling
-| **Triboulet** | xmult, rank, queen, king
-| **Yorick** | xmult, discard, scaling
-| **Chicot** | None
-| **Perkeo** | generation
+| **Erosion** | mult, full_deck |
+| **Reserved Parking** | chance, face, economy |
+| **Mail-In Rebate** | discard, rank, economy |
+| **To the Moon** | passive, economy |
+| **Hallucination** | chance, tarot, consumeable, generation |
+| **Fortune Teller** | mult, tarot |
+| **Juggler** | hand_size, passive |
+| **Drunkard** | discard, passive |
+| **Stone Joker** | full_deck, enhancements, chips |
+| **Golden Joker** | economy |
+| **Lucky Cat** | xmult, enhancements, scaling |
+| **Baseball Card** | xmult |
+| **Bull** | chips |
+| **Diet Cola** | on_sell, food, generation, tag |
+| **Trading Card** | destroy_card, discard, economy |
+| **Flash Card** | mult, reroll, scaling |
+| **Popcorn** | mult, food, scaling |
+| **Spare Trousers** | mult, hand_type, scaling |
+| **Ancient Joker** | xmult, suit |
+| **Ramen** | xmult, food, discard, scaling |
+| **Walkie Talkie** | mult, ten, four, chips, rank |
+| **Seltzer** | retrigger, food, scaling |
+| **Castle** | suit, discard, chips, scaling |
+| **Smiley Face** | mult, face |
+| **Campfire** | xmult, reset, scaling, boss_blind |
+| **Golden Ticket** | enhancements, economy |
+| **Mr. Bones** | prevents_death |
+| **Acrobat** | xmult, hands |
+| **Sock and Buskin** | retrigger, face |
+| **Swashbuckler** | mult, joker, sell_value |
+| **Troubadour** | hand_size, passive, hands |
+| **Certificate** | seals, generation |
+| **Smeared Joker** | suit, hearts, passive, diamonds, spades, clubs|
+| **Throwback** | xmult, scaling, skip |
+| **Hanging Chad** | retrigger, position |
+| **Rough Gem** | suit, diamonds, economy |
+| **Bloodstone** | xmult, chance, suit, hearts |
+| **Arrowhead** | suit, chips, spades |
+| **Onyx Agate** | mult, suit, clubs |
+| **Glass Joker** | xmult, enhancements, scaling |
+| **Showman** | passive |
+| **Flower Pot** | xmult, suit, hands |
+| **Blueprint** | copying, position |
+| **Wee Joker** | two, chips, rank, scaling |
+| **Merry Andy** | hand_size, discard |
+| **Oops! All 6s** | mod_chance, passive |
+| **The Idol** | xmult, suit, rank |
+| **Seeing Double** | xmult, suit, clubs |
+| **Matador** | economy, boss_blind |
+| **Hit the Road** | xmult, jack, discard, reset, rank, scaling |
+| **The Duo** | xmult, hand_type |
+| **The Trio** | xmult, hand_type |
+| **The Family** | xmult, hand_type |
+| **The Order** | xmult, hand_type |
+| **The Tribe** | xmult, hand_type |
+| **Stuntman** | hand_size, chips |
+| **Invisible Joker** | on_sell, generation |
+| **Brainstorm** | copying, position |
+| **Satellite** | planet, consumeable, space, economy |
+| **Shoot the Moon** | mult, rank, queen |
+| **Driver's License** | xmult, full_deck, enhancements |
+| **Cartomancer** | tarot, consumeable, generation |
+| **Astronomer** | planet, consumeable, passive, space |
+| **Burnt Joker** | hand_type, discard |
+| **Bootstraps** | mult |
+| **Canio** | xmult, face, scaling |
+| **Triboulet** | xmult, rank, queen, king |
+| **Yorick** | xmult, discard, scaling |
+| **Chicot** | boss_blind | 
+| **Perkeo** | generation, consumeable | 
