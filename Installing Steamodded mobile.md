@@ -62,4 +62,4 @@ If you'd like to update Steamodded in the future. Note that you do not need to u
 - If you're experiencing any crashes or mods failing to load due to Lovely not being up to date, follow step 1 again to update.
 
 ## Uninstalling Steamodded
-It is not possible to uninstall Lovely from a Lovely Mobile Maker build. To install Steamodded or any other mods, remove them from your mods folder.
+It is not possible to uninstall Lovely from a Lovely Mobile Maker build. To uninstall Steamodded or any other mods, remove them from your mods folder.
