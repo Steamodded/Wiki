@@ -17,11 +17,15 @@ Once you've used Lovely Mobile Maker and installed the app on your mobile device
 2. Extract the downloaded zip file.
 3. In your file explorer, navigate to your mods folder.
   <details><summary>Mods folder on Android</summary>
-  - Unfortunately, most Android file managers are inadequate for managing your Mods folder. It is recommended to use [Material Files](https://github.com/zhanghai/MaterialFiles) (Install on [Google Play](https://play.google.com/store/apps/details?id=me.zhanghai.android.file) or [F-Droid](ttps://f-droid.org/packages/me.zhanghai.android.files)) for this purpose.
+
+    
+  - Unfortunately, most Android file managers are inadequate for managing your Mods folder. It is recommended to use [Material Files](https://github.com/zhanghai/MaterialFiles) (Install on [Google Play](https://play.google.com/store/apps/details?id=me.zhanghai.android.file) or [F-Droid](https://f-droid.org/packages/me.zhanghai.android.files)) for this purpose.
   - After installing Material Files, you can then open the hamburger menu on the top left > Add Storage... > External Storage > the hamburger menu on the top left > Balatro > Use this folder > allow. </p>
   - This will add a new folder to the sidebar with your game saves. Navigate to <code>ASET/Mods</code> within this folder to access your mods folder.
   </details>
   <details><summary>Mods folder on iOS</summary>
+
+    
   - In <code>On My iPhone/iPad</code>, navigate to <code>Balatro/game/Mods</code> to access your mods folder.
   </details>
 
