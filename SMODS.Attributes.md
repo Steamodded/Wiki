@@ -17,6 +17,9 @@ If you want to apply attributes in object definitions, add `attributes = {'key1'
     - Inserts a table of keys into a pre-existing attribute
     - `attribute_key`: key of the attribute to insert into
     - `object_keys`: table of keys of centers to insert into the attribute
+- `Card:has_attribute(attribute_key)` *(added in 1606b)*
+    - Checks whether a card has a certain attribute or not *(respects aliases)
+    - `attribute_key`: key of the attribute to check
 
 # Provided Attributes
 
@@ -25,19 +28,18 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 ## SMODS Attributes
 | Attribute Key | When to use | Vanilla Jokers |
 | ------------- | ----------- | -------------- |
-| **mult** | gives +mult at some point of scoring | Joker, Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Jolly Joker, Zany Joker, Crazy Joker, Mad Joker, Droll Joker, Half Joker, Ceremonial Dagger, Mystic Summit, Misprint, Raised Fist, Fibonacci, Abstract Joker, Gros Michel, Even Steven, Scholar, Supernova, Ride the Bus, Green Joker, Red Card, Erosion, Fortune Teller, Flash Card, Popcorn, Spare Trousers, Walkie Talkie, Smiley Face, Swashbuckler, Onyx Agate, Shoot the Moon, Bootstraps, Bicycle |
+| **mult** | gives +mult at some point of scoring | Joker, Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Jolly Joker, Zany Joker, Crazy Joker, Mad Joker, Droll Joker, Half Joker, Ceremonial Dagger, Mystic Summit, Misprint, Raised Fist, Fibonacci, Abstract Joker, Gros Michel, Even Steven, Scholar, Supernova, Ride the Bus, Green Joker, Red Card, Erosion, Fortune Teller, Flash Card, Popcorn, Spare Trousers, Walkie Talkie, Smiley Face, Swashbuckler, Onyx Agate, Shoot the Moon, Bootstraps |
 | **chips** | gives +chips at some point of scoring | Sly Joker, Wily Joker, Clever Joker, Devious Joker, Crafty Joker, Banner, Scary Face, Odd Todd, Scholar, Runner, Ice Cream, Blue Joker, Hiker, Square Joker, Stone Joker, Bull, Walkie Talkie, Castle, Arrowhead, Wee Joker, Stuntman |
 | **xmult** | gives Xmult at some point of scoring | Joker Stencil, Loyalty Card, Steel Joker, Blackboard, Constellation, Cavendish, Card Sharp, Madness, Vampire, Hologram, Baron, Obelisk, Photograph, Lucky Cat, Baseball Card, Ancient Joker, Ramen, Campfire, Acrobat, Throwback, Bloodstone, Glass Joker, Flower Pot, The Idol, Seeing Double, Hit the Road, The Duo, The Trio, The Family, The Order, The Tribe, Driver's License, Canio, Triboulet, Yorick |
 | **xchips** | gives Xchips at some point of scoring | *none* |
 | **score** | gives +score at some point of scoring | *none* |
 | **xscore** | gives Xscore at some point of scoring | *none* |
-| **blindsize** | gives +blindsize at some point of scoring | *none* |
-| **xblindsize** | gives Xblindsize at some point of scoring | *none* |
-| **balance** | balances chips and mult at some point of scoring | *none* |
-| **swap** | swaps chips and mult at some point of scoring | *none* |
+| **blindsize** | gives +blindsize at some point of scoring *(added in 1606b)* | *none* |
+| **xblindsize** | gives Xblindsize at some point of scoring *(added in 1606b)* | *none* |
+| **balance** | balances mult and chips during scoring *(added in 1606b)* | *none* |
+| **swap** | swaps mult and chips during scoring *(added in 1606b)* | *none* |
 | **retrigger** | retriggers a card at some point of scoring | Mime, Dusk, Hack, Seltzer, Sock and Buskin, Hanging Chad |
-| **scaling** | scales a value on a trigger | Ceremonial Dagger, Seltzer, Ride the Bus, Egg, Runner, Ice Cream, Constellation, Hiker, Green Joker, Red Card, Madness, Square Joker, Vampire, Hologram, Rocket, Turtle Bean, Obelisk, Gift Card, Flash Card, Lucky Cat, Popcorn, Spare Trousers, Ramen, Castle, Campfire, Throwback, Glass Joker, Wee Joker, Hit the Road, Canio, Yorick |
-| **perma_bonus** | grants any perma bonus on a trigger | *none* |
+| **scaling** | scales a value on a trigger | Ceremonial Dagger, Seltzer, Ride the Bus, Egg, Runner, Ice Cream, Constellation, Green Joker, Red Card, Madness, Square Joker, Vampire, Hologram, Rocket, Turtle Bean, Obelisk, Flash Card, Lucky Cat, Popcorn, Spare Trousers, Ramen, Castle, Campfire, Throwback, Glass Joker, Wee Joker, Hit the Road, Canio, Yorick |
 | **reset** | has a value that resets | Obelisk, Campfire, Hit the Road, Ride the Bus |
 | **suit** | trigger is affected by a suit | Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Smeared Joker, Castle, Ancient Joker, Seeing Double, Blackboard, Flower Pot, The Idol, Rough Gem, Bloodstone, Arrowhead, Onyx Agate |
 | **diamonds** | trigger is affected by diamonds | Greedy Joker, Smeared Joker, Rough Gem |
@@ -63,7 +65,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **economy** | effect is based around money | Credit Card, Chaos the Clown, Delayed Gratification, Business Card, Egg, Faceless Joker, To Do List, Cloud 9, Rocket, Gift Card, Reserved Parking, Mail-In Rebate, To the Moon, Golden Joker, Trading Card, Golden Ticket, Rough Gem, Matador, Satellite |
 | **generation** | generates another object on a trigger | Marble Joker, 8 Ball, DNA, Sixth Sense, Superposition, Séance, Riff-Raff, Vagabond, Hallucination, Diet Cola, Certificate, Invisible Joker, Cartomancer, Perkeo |
 | **destroy_card** | destroys another card | Ceremonial Dagger, Madness, Trading Card |
-| **hands** | effect is based around hands | Loyalty Card, Burglar, Troubadour, Green Joker, Square Joker, Dusk, Acrobat, Flower Pot, DNA, Vagabond, Obelisk |
+| **hands** | effect is based around hands | Loyalty Card, Burglar, Troubadour, Dusk, Acrobat, DNA, Vagabond |
 | **discard** | effect is based around discards | Banner, Mystic Summit, Delayed Gratification, Burglar, Faceless Joker, Green Joker, Mail-In Rebate, Drunkard, Trading Card, Ramen, Castle, Merry Andy, Hit the Road, Burnt Joker, Yorick |
 | **hand_size** | effect is based around hand size | Juggler, Turtle Bean, Troubadour, Merry Andy, Stuntman |
 | **chance** | effect has a chance to happen | 8 Ball, Gros Michel, Business Card, Space Joker, Cavendish, Hallucination, Reserved Parking, Bloodstone |
@@ -79,8 +81,13 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **enhancements** | related to enhancements | Golden Ticket, Marble Joker, Steel Joker, Vampire, Midas Mask, Stone Joker, Lucky Cat, Glass Joker, Driver's License |
 | **editions** | related to editions | *none* |
 | **seals** | related to seals | Certificate |
+| **editions** | related to editions *(added in 1606b)* | *none* |
+| **tag** | related to tags *(added in 1606b)* | Diet Cola |
+| **skip** | effect linked to skipping blinds *(added in 1606b)* | Throwback |
 | **modify_card** | modifies playing cards | Pareidolia, Hiker, Vampire, Midas Mask |
+| **perma_bonus** | permanently modifies the stats of cards *(added in 1606b)* | Hiker |
 | **prevents_death** | effect prevents losing a run | Mr. Bones |
+| **boss_blind** | effect linked to boss blinds *(added in 1606b)* | Luchador, Matador, Chicot |
 | **reroll** | effect is based around rerolling the shop | Chaos the Clown, Flash Card |
 | **on_sell** | triggers when card is sold | Luchador, Diet Cola, Invisible Joker |
 | **sell_value** | effect is based around sell value of a card | Egg, Swashbuckler, Ceremonial Dagger, Gift Card |
@@ -151,14 +158,14 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Constellation** | xmult, planet, space, scaling |
 | **Hiker** | modify_card, chips, perma_bonus |
 | **Faceless Joker** | discard, face, economy |
-| **Green Joker** | mult, discard, scaling, hands |
+| **Green Joker** | mult, discard, scaling |
 | **Superposition** | ace, hand_type, tarot, generation, rank |
 | **To Do List** | hand_type, economy |
 | **Cavendish** | xmult, chance, food |
 | **Card Sharp** | xmult, hand_type |
 | **Red Card** | mult, scaling |
 | **Madness** | xmult, destroy_card, scaling |
-| **Square Joker** | chips, scaling, hands |
+| **Square Joker** | chips, scaling |
 | **Séance** | spectral, hand_type, generation |
 | **Riff-Raff** | joker, generation |
 | **Vampire** | xmult, modify_card, enhancements, scaling |
@@ -172,7 +179,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Midas Mask** | modify_card, enhancements, face |
 | **Luchador** | on_sell, boss_blind |
 | **Photograph** | xmult, face |
-| **Gift Card** | sell_value, scaling, economy |
+| **Gift Card** | sell_value, economy |
 | **Turtle Bean** | food, hand_size, scaling |
 | **Erosion** | mult, full_deck |
 | **Reserved Parking** | chance, face, economy |

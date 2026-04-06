@@ -80,7 +80,7 @@ This function returns `nil` if it fails, with the second argument being a string
 Use `manual_sprites` if you want better control of the timing of the conversion. For a general use case during scoring, you can use the following snippet for the visuals to update at the correct timing.
 ```lua
 -- Converts a card to a Jack with the correct animation timing
-assert(SMODS.change_base(card, nil, 'Jack'))
+assert(SMODS.change_base(card, nil, 'Jack', true))
 G.E_MANAGER:add_event(Event({
     func = function()
         card:set_sprites(nil, card.config.card)
@@ -95,7 +95,7 @@ This function returns `nil` if it fails, with the second argument being a string
 Use `manual_sprites` if you want better control of the timing of the conversion. For a general use case during scoring, you can use the following snippet for the visuals to update at the correct timing.
 ```lua
 -- Increases a card's rank by 1 with the correct animation timing
-assert(SMODS.modify_rank(card, 1))
+assert(SMODS.modify_rank(card, 1, true))
 G.E_MANAGER:add_event(Event({
     func = function()
         card:set_sprites(nil, card.config.card)
