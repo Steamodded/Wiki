@@ -79,7 +79,6 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **planet** | related to Planet cards | Astronomer, Constellation, Satellite |
 | **spectral** | related to Spectral cards | Sixth Sense, Séance |
 | **enhancements** | related to enhancements | Golden Ticket, Marble Joker, Steel Joker, Vampire, Midas Mask, Stone Joker, Lucky Cat, Glass Joker, Driver's License |
-| **editions** | related to editions | *none* |
 | **seals** | related to seals | Certificate |
 | **editions** | related to editions *(added in 1606b)* | *none* |
 | **tag** | related to tags *(added in 1606b)* | Diet Cola |
@@ -87,13 +86,10 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **modify_card** | modifies playing cards | Pareidolia, Hiker, Vampire, Midas Mask |
 | **perma_bonus** | permanently modifies the stats of cards *(added in 1606b)* | Hiker |
 | **prevents_death** | effect prevents losing a run | Mr. Bones |
-| **boss_blind** | effect linked to boss blinds *(added in 1606b)* | Luchador, Matador, Chicot |
+| **boss_blind** | effect linked to boss blinds *(added in 1606b)* | Rocket, Luchador, Matador, Campfire, Chicot |
 | **reroll** | effect is based around rerolling the shop | Chaos the Clown, Flash Card |
 | **on_sell** | triggers when card is sold | Luchador, Diet Cola, Invisible Joker |
 | **sell_value** | effect is based around sell value of a card | Egg, Swashbuckler, Ceremonial Dagger, Gift Card |
-| **skip** |  effect is based around skipping a blind | Throwback |
-| **tag** |  effect is based around tags | Diet Cola |
-| **boss_blind** | effect is based around boss blinds | Rocket, Luchador, Matador, Campfire, Chicot |
 | **food** | themed on food | Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola |
 | **space** | themed on space | Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 
