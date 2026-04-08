@@ -40,7 +40,7 @@ Mods
 	- `disable_mipmap`: Disable mipmap being applied to this texture. Might remove artifacts on smaller textures.
 
 ## Applying textures to cards
-For objects of any class that have a visual representation in-game, you can assign a sprite from your atlas by setting `atlas` to the key of your atlas and `pos` to the position of the sprite on this atlas (`{ x = 0, y = 0 }` refers to the top-left corner). For floating sprites, similar to Legendary Jokers or The Soul, you can define a `soul_pos` for that sprite, which can contain a custom `draw` function for that sprite.
+For objects of any class that have a visual representation in-game, you can assign a sprite from your atlas by setting `atlas` to the key of your atlas and `pos` to the position of the sprite on this atlas (`{ x = 0, y = 0 }` refers to the top-left corner). `hc_atlas` and/or `lc_atlas` can also be set instead to assign different sprites between the High Contrast and Low Contrast settings. For floating sprites, similar to Legendary Jokers or The Soul, you can define a `soul_pos` for that sprite, which can contain a custom `draw` function for that sprite.
 
 Example:
 ```lua
