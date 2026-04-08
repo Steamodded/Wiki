@@ -7,7 +7,7 @@
 	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 		- `loc_txt` should contain an additional `label` string. It is used on badges, while `name` is displayed at the top of info boxes. For use with localization files, this label should be placed in `misc.labels` **(without the `e_` prefix)**.
 - **Optional parameters** *(defaults)*:
-	- `atlas = 'Joker', pos = { x = 0, y = 0 }, soul_pos` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+	- `atlas = 'Joker', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
 		- This defines the card to draw the edition on in the collection.
 	- `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 		- The following base values for `config` are supported and will be applied/scored automatically:

@@ -4,7 +4,7 @@
 	- `key`,
 	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 - **Optional parameters** *(defaults)*:
-    - `atlas = 'Voucher', pos = { x = 0, y = 0 }, soul_pos` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+    - `atlas = 'Voucher', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
     - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `pools`: List of keys to ObjectTypes this center should be injected into
 		-  Expects a list of keys like this:

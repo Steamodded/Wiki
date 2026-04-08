@@ -6,7 +6,7 @@
         - `loc_txt` can contain an additional `group_name` string. This is the bottom text while on the pack opening screen.
         - With localization files, this text should be stored in `misc.dictionary[group_key or 'k_booster_group_'..key]`
 - **Optional parameters** *(defaults)*:
-    - `atlas = 'Booster', pos = { x = 0, y = 0 }, soul_pos` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+    - `atlas = 'Booster', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
     - `config, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
         - The default `config` table is `{ extra = 3, choose = 1 }`; `extra` is the amount of cards in the pack, `choose` is the amount of choices.
         - Note: `unlocked` on boosters is currently unsupported.
