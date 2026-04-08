@@ -40,11 +40,19 @@ Mods
 	- `disable_mipmap`: Disable mipmap being applied to this texture. Might remove artifacts on smaller textures.
 
 ## Applying textures to cards
-For objects of any class that have a visual representation in-game, you can assign a sprite from your atlas by setting `atlas` to the key of your atlas and `pos` to the position of the sprite on this atlas (`{ x = 0, y = 0 }` refers to the top-left corner). Example:
+For objects of any class that have a visual representation in-game, you can assign a sprite from your atlas by setting `atlas` to the key of your atlas and `pos` to the position of the sprite on this atlas (`{ x = 0, y = 0 }` refers to the top-left corner). For floating sprites, similar to Legendary Jokers or The Soul, you can define a `soul_pos` for that sprite, which can contain a custom `draw` function for that sprite.
+
+Example:
 ```lua
 SMODS.Joker {
 	key = 'my_joker',
 	atlas = 'my_atlas',
-	pos = { x = 1, y = 1 } -- second row, second colum
+	pos = { x = 1, y = 1 }, -- second row, second colum
+	soul_pos = { 
+		x = 0 , y = 0 -- first row, first colum
+		draw = function(card, scale_mod, rotate_mod) -- omit this function if you want the default behaviour
+			-- custom draw code
+		end
+	}
 }
 ```
