@@ -1334,7 +1334,7 @@ context.from_roll -- internal value used to only trigger certain return values w
 
 ---
 #### context.pseudorandom_result
-This context should be used for setting either the numerator or the denominator.
+This context is used _after_ a probability is checked. It receives the final numerators and denominators that were used, as well as whether the chance succeeded.
 
 ```lua
 if context.pseudorandom_result then
