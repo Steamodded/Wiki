@@ -218,7 +218,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Onyx Agate** | mult, suit, clubs |
 | **Glass Joker** | xmult, enhancements, scaling |
 | **Showman** | passive |
-| **Flower Pot** | xmult, suit, hands |
+| **Flower Pot** | xmult, suit |
 | **Blueprint** | copying |
 | **Wee Joker** | two, chips, rank, scaling |
 | **Merry Andy** | hand_size, discard |
