@@ -28,16 +28,16 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 ## SMODS Attributes
 | Attribute Key | When to use | Vanilla Jokers |
 | ------------- | ----------- | -------------- |
-| **mult** | gives +mult at some point of scoring | Joker, Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Jolly Joker, Zany Joker, Crazy Joker, Mad Joker, Droll Joker, Half Joker, Ceremonial Dagger, Mystic Summit, Misprint, Raised Fist, Fibonacci, Abstract Joker, Gros Michel, Even Steven, Scholar, Supernova, Ride the Bus, Green Joker, Red Card, Erosion, Fortune Teller, Flash Card, Popcorn, Spare Trousers, Walkie Talkie, Smiley Face, Swashbuckler, Onyx Agate, Shoot the Moon, Bootstraps |
-| **chips** | gives +chips at some point of scoring | Sly Joker, Wily Joker, Clever Joker, Devious Joker, Crafty Joker, Banner, Scary Face, Odd Todd, Scholar, Runner, Ice Cream, Blue Joker, Hiker, Square Joker, Stone Joker, Bull, Walkie Talkie, Castle, Arrowhead, Wee Joker, Stuntman |
-| **xmult** | gives Xmult at some point of scoring | Joker Stencil, Loyalty Card, Steel Joker, Blackboard, Constellation, Cavendish, Card Sharp, Madness, Vampire, Hologram, Baron, Obelisk, Photograph, Lucky Cat, Baseball Card, Ancient Joker, Ramen, Campfire, Acrobat, Throwback, Bloodstone, Glass Joker, Flower Pot, The Idol, Seeing Double, Hit the Road, The Duo, The Trio, The Family, The Order, The Tribe, Driver's License, Canio, Triboulet, Yorick |
-| **xchips** | gives Xchips at some point of scoring | *none* |
-| **score** | gives +score at some point of scoring | *none* |
-| **xscore** | gives Xscore at some point of scoring | *none* |
-| **blindsize** | gives +blindsize at some point of scoring *(added in 1606b)* | *none* |
-| **xblindsize** | gives Xblindsize at some point of scoring *(added in 1606b)* | *none* |
-| **balance** | balances mult and chips during scoring *(added in 1606b)* | *none* |
-| **swap** | swaps mult and chips during scoring *(added in 1606b)* | *none* |
+| **mult** | gives +mult at some point of scoring or causes other cards to do so | Joker, Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Jolly Joker, Zany Joker, Crazy Joker, Mad Joker, Droll Joker, Half Joker, Ceremonial Dagger, Mystic Summit, Misprint, Raised Fist, Fibonacci, Abstract Joker, Gros Michel, Even Steven, Scholar, Supernova, Ride the Bus, Green Joker, Red Card, Erosion, Fortune Teller, Flash Card, Popcorn, Spare Trousers, Walkie Talkie, Smiley Face, Swashbuckler, Onyx Agate, Shoot the Moon, Bootstraps |
+| **chips** | gives +chips at some point of scoring or causes other cards to do so | Sly Joker, Wily Joker, Clever Joker, Devious Joker, Crafty Joker, Banner, Scary Face, Odd Todd, Scholar, Runner, Ice Cream, Blue Joker, Hiker, Square Joker, Stone Joker, Bull, Walkie Talkie, Castle, Arrowhead, Wee Joker, Stuntman |
+| **xmult** | gives Xmult at some point of scoring or causes other cards to do so | Joker Stencil, Loyalty Card, Steel Joker, Blackboard, Constellation, Cavendish, Card Sharp, Madness, Vampire, Hologram, Baron, Obelisk, Photograph, Lucky Cat, Baseball Card, Ancient Joker, Ramen, Campfire, Acrobat, Throwback, Bloodstone, Glass Joker, Flower Pot, The Idol, Seeing Double, Hit the Road, The Duo, The Trio, The Family, The Order, The Tribe, Driver's License, Canio, Triboulet, Yorick |
+| **xchips** | gives Xchips at some point of scoring or causes other cards to do so | *none* |
+| **score** | gives +score at some point of scoring or causes other cards to do so | *none* |
+| **xscore** | gives Xscore at some point of scoring or causes other cards to do so | *none* |
+| **blindsize** | gives +blindsize at some point of scoring or causes other cards to do so *(added in 1606b)* | *none* |
+| **xblindsize** | gives Xblindsize at some point of scoring or causes other cards to do so *(added in 1606b)* | *none* |
+| **balance** | balances mult and chips during scoring or causes other cards to do so *(added in 1606b)* | *none* |
+| **swap** | swaps mult and chips during scoring or causes other cards to do so *(added in 1606b)* | *none* |
 | **retrigger** | retriggers a card at some point of scoring | Mime, Dusk, Hack, Seltzer, Sock and Buskin, Hanging Chad |
 | **scaling** | scales a value on a trigger | Ceremonial Dagger, Seltzer, Ride the Bus, Egg, Runner, Ice Cream, Constellation, Green Joker, Red Card, Madness, Square Joker, Vampire, Hologram, Rocket, Turtle Bean, Obelisk, Flash Card, Lucky Cat, Popcorn, Spare Trousers, Ramen, Castle, Campfire, Throwback, Glass Joker, Wee Joker, Hit the Road, Canio, Yorick |
 | **reset** | has a value that resets | Obelisk, Campfire, Hit the Road, Ride the Bus |
