@@ -37,7 +37,6 @@ You can now install other mods by placing them into the `Mods` folder next to th
 
 ## Step 3: Recommended Mods
 - The default mouse controls of the Steam version are not very mobile-friendly. It is recommended to install [Silk Touch](https://github.com/HuyTheKiller/SilkTouch) or [Sticky Fingers](https://github.com/eramdam/sticky-fingers) to control the game more like the native mobile version.
-- [Mobile Patches](https://github.com/WilsontheWolf/MobilePatches/archive/refs/heads/master.zip) is a mod that changes a few things in balatro to work better on mobile devices. Each patch is in a different file and can be deleted if you do not want it. If you are experiencing certain issues (see below!), **you must install this!**
 
 ## Common issues
 Click the line describing your issue to see possible solutions.
@@ -54,9 +53,9 @@ There is a variety of reasons this can happen. Some of the more common reasons a
 - Your Balatro version might be outdated and needs to be updated through Steam. Steamodded only supports the latest Steam version of the game. After a game update, you should follow step 1 again to update your mobile app to the latest version.
 - If you're trying to continue an existing run and crashing, your run is most likely unrecoverable. Try starting a new run.
 </details>
-<details><summary>When I lauch the game, it is mostly covered in black!</summary>
+<details><summary>When I launch the game, it is mostly covered in black!</summary>
 
-- This is a common issue mostly observed on Google Pixel devices. To fix it, please install [Mobile Patches](https://github.com/WilsontheWolf/MobilePatches/archive/refs/heads/master.zip).
+- This is a common issue mostly observed on Google Pixel devices. Starting on version *1620a*, Steamodded comes with a fix for this included. If you are not running Steamodded or are using version *1224a* or earlier, you can also install [Mobile Patches](https://github.com/WilsontheWolf/MobilePatches/archive/refs/heads/master.zip). If you must run a version between those two, there is currently no ready-made working solution, but you can apply the changes made to your own installation. Please contact us on the [Steamodded Discord](https://discord.gg/kU8cqCqwy3) if you need help with this and can't switch to a more recent version.
 </details>
 
 ## Updating Steamodded
