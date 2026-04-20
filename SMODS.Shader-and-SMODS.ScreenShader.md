@@ -56,3 +56,5 @@ This class allows for drawing a shader on the entire screen, rather than just a 
         }
     end
     ```
+- `draw(self, shader, canvas)`
+    - Allows freely drawing on a canvas for more advanced control than directly applying the shader to it. *(added in 1620a)*
