@@ -162,14 +162,14 @@ Akin to vanilla's `level_up_hand()`, but avoids uneccessary calling of `update_h
 - `amount` - How much the poker hand is leveled. Defaults to 1.
 #### `SMODS.blueprint_effect(copier, copied_card, context) -> table?`
 Helper function to copy the ability of another joker, akin to Blueprint/Brainstorm. 
-- `copier` is the card the will be copying the effect of `copied_card`, using the provided `context` table. 
+- `copier` is the card that will be copying the effect of `copied_card`, using the provided `context` table. 
 - The returned table is the calculated effect of `copied_card`, with the display card set to `copier`. 
 - Example: 
     ```lua
     calculate = function(self, card, context)
         -- This is an implementation of Brainstorm
         local other_joker = G.jokers.cards[1]
-        local other_joker_ret = SMODS.blueprint_effect(other_joker, card, context)
+        local other_joker_ret = SMODS.blueprint_effect(card, other_joker, context)
 
         if other_joker_ret then
             return other_joker_ret
