@@ -64,6 +64,7 @@ There are a range of different keys that you can return in this table. These key
 
 - `chips`, `mult`, `xmult`, `xchips`, `dollars` - scores these values *(automatically adds a message to the card that is being scored)*
 - `score`, `xscore` - adds or multiplies the current scored chips, respectively *(automatically adds a message to the card that is being scored)*
+- `blindsize`, `xblindsize` - adds or multiplies the current blind size, respectively *(automatically adds a message to the card that is being scored)*
 - `swap` - swaps current chips and mult values with each other
 - `balance` - balances the current chips and mult values *(plasma deck effect)*
 - `level_up` - levels up the played hand by the number returned *(You can specify a different hand to be levelled up by using `level_up_hand`)*
