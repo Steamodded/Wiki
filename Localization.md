@@ -11,6 +11,7 @@ Steamodded offers multiple ways to load strings for in-game descriptions and oth
     - [`loc_vars`](#loc_vars)
     - [`locked_loc_vars`](#locked_loc_vars)
     - [`generate_ui`](#generate_ui-advanced)
+    - [`localize`](#localize)
 
 ***
 
@@ -262,3 +263,31 @@ The base implementation of this function acts as a wrapper to `loc_vars`. Overri
         end,
     }
 ```
+
+## `localize`
+The Balatro function `localize` can be used to extract data from your localization files. <br>
+The function supports the following usages
+
+### `localize(key, misc_cat)`
+Fetches text from `G.localization.misc`. Uses `G.localization.misc.dictionary[key]` if only key is provided, and `G.localization.misc[misc_cat][key]` if both are.
+
+### `localize{args}`
+Fetches text and creates UI nodes from `G.localization`. <br>
+the most important keys args includes:<br>
+- `type` (required): determines where data is fetched from and how it is returned
+	- `"other"`: [TO BE COMPLETED]
+	- `"descriptions"`: [TO BE COMPLETED]
+	- `"unlocks"`: [TO BE COMPLETED]
+	- `"tutorial"`: [TO BE COMPLETED]
+	- `"quips"`: [TO BE COMPLETED]
+	- `"raw_descriptions"`: [TO BE COMPLETED]
+	- `"text"`: [TO BE COMPLETED]
+	- `"variable"`: [TO BE COMPLETED]
+	- `"name_text"`: returns the name of the object found in `G.localization.descriptions[args.set][args.key]` as a string. Multiline names are joined with a space
+	- `"name"`: returns the name of the object found in `G.localization.descriptions[args.set][args.key]` as UI nodes
+- `set`: used by some types to determine where in `G.localization.descriptions` to grab data from
+- `key`: used by some types to determine what data to grab from `G.localization.descriptions[args.set]`
+- `scale`: scale for any UI text nodes returned. Using `{s:}` in text will override this
+- `fixed_scale`: same as scale, but combines with `{s:}` instead
+- `vars`: any information to pass into the wanted text, see `loc_vars` for more information
+
