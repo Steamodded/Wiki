@@ -399,7 +399,7 @@ If you prefer to inject your code using a lovely patch, there are target lines p
 ```toml
 [[patches]]
 [patches.pattern]
-target = "=[SMODS _ "src/utils.lua"]"
+target = '=[SMODS _ "src/utils.lua"]'
 pattern = '''-- TARGET: add your own CardAreas for joker evaluation'''
 position = "after"
 payload = '''t[#t+1] = G.custom_card_area'''
