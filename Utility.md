@@ -106,6 +106,7 @@ G.E_MANAGER:add_event(Event({
 #### `SMODS.find_card(key, count_debuffed) -> table`
 This function replaces `find_joker`. It operates using keys instead of names, which avoids overlap between mods.
 Returns an array of all jokers or consumables in the player's possession with the given key. Debuffed cards count only if `count_debuffed` is true.
+This function finds cards in the joker areas returned by `SMODS.get_card_areas`. [This page](https://github.com/Steamodded/smods/wiki/Calculate-Functions#adding-calculation-zones) explains how to add your own.
 #### `SMODS.add_card(t) -> Card`
 This function replaces `add_joker`. It takes the same input parameters as `SMODS.create_card` (below) and additionally emplaces the generated card into its area and evaluates `add_to_deck` effects.
 #### `SMODS.create_card(t) -> Card`
