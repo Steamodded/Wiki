@@ -33,7 +33,7 @@ Every mod that's found and registered by Steamodded is converted into a "Mod" ob
 
 - [Other](#other)
 	- [`mod.debug_info`](#moddebug_info)
-	- [`mod.menu_cards`](#modmenu_cards)
+	- [`mod.menu_cards`](#modmenu_cards---table)
 
 ***
 
