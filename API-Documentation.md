@@ -49,7 +49,7 @@ Sets the default unlock state of an object. If set to `false`, your object won't
 Sets the default discovery state of an object. If set to `true`, your object can be viewed in the collection without needing to find it in a run.
 
 ### `no_collection`
-If set to `true`, this object will not show up in the collection.
+If set to `true` or returning `true` as a function, this object will not show up in the collection.
 
 ### `config`
 Put initial values for your object in `config`. Cards representing your object have an `ability` table, whose initial value is a copy of `config`, but can change during the game. Defaults to `{}` when not specified.
