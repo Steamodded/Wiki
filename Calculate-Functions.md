@@ -1039,7 +1039,7 @@ context.booster -- the booster pack center that has ended
 ```
   ---
 #### context.buying_card
-This context is used when buying a card from the shop, including Vouchers and Booster Packs.
+This context is used when buying a card from the shop, including Vouchers.
 
 ```lua
 if context.buying_card then
