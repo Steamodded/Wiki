@@ -89,7 +89,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **perma_bonus** | permanently modifies the stats of cards *(added in 1606b)* | Hiker |
 | **prevents_death** | effect prevents losing a run | Mr. Bones |
 | **boss_blind** | effect linked to boss blinds *(added in 1606b)* | Rocket, Luchador, Matador, Campfire, Chicot |
-| **hand_level** | affects the level of poker hands | Space Joker |
+| **hand_level** | affects the level of poker hands | Space Joker, Burnt Joker |
 | **reroll** | effect is based around rerolling the shop | Chaos the Clown, Flash Card |
 | **on_sell** | triggers when card is sold | Luchador, Diet Cola, Invisible Joker |
 | **sell_value** | effect is based around sell value of a card | Egg, Swashbuckler, Ceremonial Dagger, Gift Card |
@@ -243,7 +243,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Driver's License** | xmult, full_deck, enhancements |
 | **Cartomancer** | tarot, generation |
 | **Astronomer** | planet, booster, passive, shop, space |
-| **Burnt Joker** | hand_type, discard |
+| **Burnt Joker** | hand_type, discard, hand_level |
 | **Bootstraps** | mult |
 | **Canio** | xmult, face, scaling |
 | **Triboulet** | xmult, rank, queen, king |
