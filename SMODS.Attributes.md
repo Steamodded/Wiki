@@ -65,7 +65,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **economy** | effect is based around money | Credit Card, Chaos the Clown, Delayed Gratification, Business Card, Egg, Faceless Joker, To Do List, Cloud 9, Rocket, Gift Card, Reserved Parking, Mail-In Rebate, To the Moon, Golden Joker, Trading Card, Golden Ticket, Rough Gem, Matador, Satellite |
 | **generation** | generates another object on a trigger | Marble Joker, 8 Ball, DNA, Sixth Sense, Superposition, Séance, Riff-Raff, Vagabond, Hallucination, Diet Cola, Certificate, Invisible Joker, Cartomancer, Perkeo |
 | **shop** | effect is based around the shop | Chaos the Clown, Flash Card, Astronomer |
-| **booster** | effect is based around booster packs | Red Card |
+| **booster** | effect is based around booster packs | Red Card, Hallucination, Astronomer |
 | **destroy_card** | destroys another card | Ceremonial Dagger, Madness, Trading Card |
 | **hands** | effect is based around hands | Loyalty Card, Burglar, Troubadour, Dusk, Acrobat, DNA, Vagabond |
 | **discard** | effect is based around discards | Banner, Mystic Summit, Delayed Gratification, Burglar, Faceless Joker, Green Joker, Mail-In Rebate, Drunkard, Trading Card, Ramen, Castle, Merry Andy, Hit the Road, Burnt Joker, Yorick |
@@ -184,7 +184,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Reserved Parking** | chance, face, economy |
 | **Mail-In Rebate** | discard, rank, economy |
 | **To the Moon** | passive, economy |
-| **Hallucination** | chance, tarot, generation |
+| **Hallucination** | chance, tarot, generation, booster |
 | **Fortune Teller** | mult, tarot |
 | **Juggler** | hand_size, passive |
 | **Drunkard** | discard, passive |
@@ -242,7 +242,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Shoot the Moon** | mult, rank, queen |
 | **Driver's License** | xmult, full_deck, enhancements |
 | **Cartomancer** | tarot, generation |
-| **Astronomer** | planet, passive, shop, space |
+| **Astronomer** | planet, booster, passive, shop, space |
 | **Burnt Joker** | hand_type, discard |
 | **Bootstraps** | mult |
 | **Canio** | xmult, face, scaling |
