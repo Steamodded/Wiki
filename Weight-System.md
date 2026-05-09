@@ -9,7 +9,7 @@ Due to these changes, there is now a new polling function that you **should** us
 
 ## `SMODS.poll_object(args) -> string|nil`
 This function returns a key of an object that is appropriate for the `args` that you provide. If there are no matches *(for example if a chance roll fails)*, it will not return a value. The following arguments are supported:
-- `type`: specify a single type (or attribute) to poll
+- `type`: specify a single type to poll, defaulting to `Joker` *(should __not__ be used for attributes; use `attributes` instead)*
 - `types`: Table[string] specify a table of types to poll
 - `rarities`: Table[string] specify a table of rarities to include *(only for standard object types*) <br><br>
 - `pool` = Table[string] specify a table of object keys to use as the pool instead of having the function generate one <br><br>
@@ -22,9 +22,9 @@ This function returns a key of an object that is appropriate for the `args` that
 - `guaranteed`: set to `true` to override default chance
 - `no_negative`: swaps negative edition to polychrome for vanilla functionality when `true`
 - `blind_type`: can be set to `"boss"`, `"big"`, or `"small"` to select an appropriate boss *(NOTE: currently there is no use of big and small blinds)* <br><br>
-- `print`: set to `true` to display debug messages *(useful for understanding your pool)*
+- `print`: set to `true` to display debug messages *(useful for understanding your pool)* <br><br>
 *Arguments to poll attributes (default behaviour is to find an object that matches all attributes)*
-- `attributes`: Table[string] specify a table of attributes to poll *(preferred for attribute polling)*
+- `attributes`: Table[string] specify a table of attributes to poll
 - `union`: set to `true` to switch to join each set rather than find the intersection
 - `rarity`: attribute polling respects rarity by default. Set this to a rarity key to select a specific rarity, or set to `false` to ignore rarity completely
 - `closest_match`: set to `true` to stop the pool becoming completely empty due to a lack of matching attributes *(NOTE: attributes are found in the order they are given)*
