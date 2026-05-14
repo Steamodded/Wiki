@@ -528,9 +528,7 @@ You can also apply a custom effect using [SMODS.DynaTextEffect](https://github.c
 
 
 ## Text hover tooltip modifier `{T:}`
-<code>{T:<i>tooltip-key</i>}</code> adds tooltip functionality to the text, which displays a small tooltip UI above the text when the text is hovered over.
-
-*`tooltip-key`* must be the name of a key found in either `G.P_CENTERS` or `G.P_TAGS`. See the entries in the SMODS.Center category and [SMODS.Tag](https://github.com/Steamodded/smods/wiki/SMODS.Tag) for more.
+<code>{T:<i>tooltip-key</i>}</code> adds tooltip functionality to the text, which displays a small tooltip UI above the text when the text is hovered over. If `tooltip-key` can be the name of a key found in either `G.P_CENTERS` or `G.P_TAGS` or a description found in `G.localization.descriptions.Other`. You can additionally use `T_set:set-key` to specify a set in `G.localization.descriptions` to pull from, and `T_vars:var1;var2;...` to replace any localizarion variables in the text.
 
 
 ### Examples
@@ -551,8 +549,31 @@ You can also apply a custom effect using [SMODS.DynaTextEffect](https://github.c
    <img src="Assets/Text-Styling/example_Crystal_Ball_animated.svg" height=150 alt="Crystal Ball with Tooltip Animation">
   </td>
  </tr>
-</table>
+ <tr>
+  <td>
+   <br><br>
 
+   ```pas
+   "Shop can have {C:perishable,T:perishable,T_vars:5;5}Perishable{} Jokers"   
+   ```
+  </td>
+  <td>
+   TBD
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <br><br>
+
+   ```pas
+   "{T_set:Blind,T:bl_arm}The Arm{}"   
+   ```
+  </td>
+  <td>
+   TBD
+  </td>
+ </tr>
+</table>
 
 
 ## Text scale modifier `{s:}`
