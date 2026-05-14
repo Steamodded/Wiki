@@ -47,10 +47,10 @@ Example:
 SMODS.Joker {
 	key = 'my_joker',
 	atlas = 'my_atlas',
-	pos = { x = 1, y = 1 }, -- second row, second colum
+	pos = { x = 1, y = 1 }, -- second row, second column
 	soul_atlas = 'my_other_atlas',
 	soul_pos = { 
-		x = 0 , y = 0 -- first row, first colum
+		x = 0 , y = 0 -- first row, first column
 		draw = function(card, scale_mod, rotate_mod) -- omit this function if you want the default behaviour
 			-- custom draw code
 		end
