@@ -40,6 +40,7 @@
 	- *(Added in 1531zeebee)* Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
 		- `text`: Replaces the default name text.
 		- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
+		- `vars`: Replaces the variables (e.g. `#1#`) in names sourced from the localization.
 		- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
 - `calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions#scaling-values)
 	- Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.
