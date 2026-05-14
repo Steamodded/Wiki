@@ -312,6 +312,6 @@ Fetches text and creates UI nodes from `G.localization`. The following arguments
 ### Formatting UI nodes from `localize`
 The following vanilla functions can be used to format the array of UI nodes obtained from `localize`.
 - `transparent_multiline_text(nodes)` formats the nodes with a transparent background.
-- `name_from_rows(nodes, background_colour)` formats the nodes like a card description's name.
-- `desc_from_rows(nodes, empty, maxw)` formats the nodes like a card description. `empty` removes the background colour and embossing. Set `nodes.background_colour` before calling this function to change the background colour.
+- `name_from_rows(nodes, background_colour)` formats the nodes like a card description tooltip's name.
+- `desc_from_rows(nodes, empty, maxw)` formats the nodes like a card description tooltip. `empty` removes the background colour and embossing. Set `nodes.background_colour` before calling this function to change the background colour.
 - `info_tip_from_rows(nodes, name)` formats the nodes like an `info_queue` tooltip. `name` is a string used for the title of the UI node. Set `nodes.background_colour` before calling this function to change the background colour. Set `nodes.name_styled` to an array of UI nodes to replace the name.
