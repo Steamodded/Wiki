@@ -297,6 +297,7 @@ Fetches text and creates UI nodes from `G.localization`. The following arguments
     - `text_colour = G.C.UI.TEXT_DARK`: Sets the default text colour. 
     - `default_col = G.C.UI.TEXT_DARK`: Same as `text_colour`. 
 - The following arguments are supported for the `"name"` type: *(defaults)*
+    - `scale = 1`: Scale for any UI text nodes returned. Using `{s:}` in text will override this.
     - `text_colour = G.C.UI.TEXT_LIGHT`: Sets the default text colour. 
     - `fixed_scale = 1`: Same as `scale`, but combines with `{s:}` instead.
     - `no_bump`: Removes the DynaText bump effect.
