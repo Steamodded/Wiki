@@ -41,6 +41,7 @@ refer to the current blind. (The base game uses `self` to refer to the current b
 	- Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
 		- `text`: Replaces the default name text.
 		- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
+		- `vars`: Replaces the variables (e.g. `#1#`) in names sourced from the localization.
 		- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
 - `disable(self)`
 	- Reverting effects when this Blind gets disabled
