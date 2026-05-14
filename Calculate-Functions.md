@@ -73,6 +73,7 @@ There are a range of different keys that you can return in this table. These key
   - will automatically be put on the scored card unless `message_card` is also returned
   - colour of message background will be `G.C.FILTER` unless `colour` is returned
   - text colour will be `G.C.WHITE` unless `text_colour` is returned
+  - the message font can be changed by returning `font`, which can either be the vanilla index, an `SMODS.Font` key, or font object from `G.FONTS` or `SMODS.Fonts`
   - a custom sound can be added to a custom message by using `sound`
 	  - you can use `pitch` and `volume` to modify the pitch and volume of your sound
 - `func` - return a function to be called at the correct timing *(advanced)*
