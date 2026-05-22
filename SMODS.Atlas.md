@@ -35,6 +35,7 @@ Mods
 		- Use `ANIMATION_ATLAS` for animated sprites
 		- Use `ASSET_IMAGES` for other images
 	- `frames`: for animated sprites, you must provide the number of frames of the animation. Each row should contain one animation, with each column showing one frame.
+	- `fps`: for animated sprites, you can provide the animation speed by *frames per second*. The default value is `10` or `G.ANIMATION_FPS`.	 
 	- `raw_key`: Set this to `true` to prevent the loader from adding your mod prefix to the `key`. Useful for replacing sprites from the base game or other mods.
 	- `language`: Restrict your atlas to a specific locale. Useful for introducing localized sprites while leaving other languages intact.
 	- `disable_mipmap`: Disable mipmap being applied to this texture. Might remove artifacts on smaller textures.
