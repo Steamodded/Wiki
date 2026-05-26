@@ -49,17 +49,19 @@ Handles localizing description boxes within a localization entry. Given a `lines
 Example:
 ```lua
 -- Parses the whole description for Joker
-local text_table = loc_parse_string(G.localization.descriptions.Joker.j_joker.text)
-local nodes = {}
-for k, v in ipairs(text_table) do
-    nodes[#nodes+1] = SMODS.localize_box(v)
+local joker_description = G.localization.descriptions.Joker.j_joker.text
+local final_ui = {}
+for _, line in ipairs(joker_description) do
+    local text_table = loc_parse_string(line)
+    final_ui[#final_ui+1] = {
+        n=G.UIT.R, 
+        config={align = "cm"}, 
+        nodes=SMODS.localize_box(text_table, {vars = 4}) -- 4 mult
+    }
 end
--- It can then be used in a node like this:
-local ui_node = {
-    n=G.UIT.R, 
-    config={align = "cm"}, 
-    nodes=nodes
-}
+-- Then it can be used in any UI definition, for example like this
+-- (on its own it will out the text on the corner of the screen)
+UIBox { definition = {n = G.UIT.ROOT, config = {colour = G.C.CLEAR}, nodes = final_ui}, config = {}}
 ```
 
 ## Calculation
