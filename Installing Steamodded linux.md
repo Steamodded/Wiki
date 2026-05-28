@@ -17,8 +17,8 @@ Once you have installed Lovely, you can install Steamodded:
 3. In your file explorer, navigate to Balatro's save directory: `~/.local/share/Steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro`.
   > [!NOTE]
   > This location can differ depending on how you installed Steam:
-  > - On systems with a Snap installation of steam the save directory is: `~/snap/steam/common/.local/share/Steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro`
-  > - On systems with a Flatpack version of steam the save directory is: `~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro`
+  > - On systems with a Snap installation of Steam the save directory is: `~/snap/steam/common/.local/share/Steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro`
+  > - On systems with a Flatpack version of Steam the save directory is: `~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro`
   > - On Steam Deck (and some other installations) the save directory is: `~/.steam/steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro`
 4. Create a folder named `Mods` if it doesn't already exist. Open your `Mods` folder.
 5. Inside the extracted zip file, you should find a single directory. Move this interior folder into your `Mods` folder. After moving, it should look like `Mods/smods/<files>`, not `Mods/smods/smods/<files>` or `Mods/<files>`.
@@ -47,7 +47,7 @@ This means Lovely has been installed correctly, but Steamodded is not installed 
 There is a variety of reasons this can happen. Some of the more common reasons are:
 - If you have other mods installed, it's very likely those mods are crashing. Check with the developer(s) of those mods.
 - Your Balatro installation could be corrupted. Try verifying your game files on Steam: `Library > Balatro > Properties > Installed Files > Verify integrity of game files`.
-- Your Balatro version might be outdated and needs to be updated through steam. Steamodded only supports the latest Steam version of the game.
+- Your Balatro version might be outdated and needs to be updated through Steam. Steamodded only supports the latest Steam version of the game.
 - If you're trying to continue an existing run and crashing, your run is most likely unrecoverable. Try starting a new run.
 </details>
 
