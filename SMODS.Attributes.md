@@ -171,7 +171,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Baron** | xmult, rank, king |
 | **Cloud 9** | full_deck, nine, rank, economy |
 | **Rocket** | space, scaling, economy, boss_blind |
-| **Obelisk** | xmult, hand_type, reset, scaling, hands |
+| **Obelisk** | xmult, hand_type, reset, scaling |
 | **Midas Mask** | modify_card, enhancements, face |
 | **Luchador** | on_sell, boss_blind |
 | **Photograph** | xmult, face |
