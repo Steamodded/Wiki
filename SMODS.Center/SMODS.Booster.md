@@ -26,7 +26,7 @@
     - `select_card`:
 		- Set to string of destination card area, ex. `'consumeables'`, to save cards from the pack instead of using them.
 		- Set to table of form `{Set = 'area'}` to change behaviour according to a card's `Set` (e.g. `{Tarot = 'consumeables'}` to only save `Tarot` cards, relevant if you have multiple types of consumables in a booster).
-		- Set to a function `select_card(self, card, pack) -> string?` to control if and where `card` should be saved for any `card, pack` combination.
+		- Set to a function `select_card(self, card, pack) -> string?, boolean?` to control if and where `card` should be saved for any `card, pack` combination. Returning `true` as the second value allows the player to select whether to save or use the card.
 	- `disable_shine`: *(added in 1531zeebee)* Disables the default 'shine' shader.
 
 ## API methods

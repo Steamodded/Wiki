@@ -54,7 +54,7 @@ This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMOD
 	- `text_colour`: Set a custom text color used on the card type's badge. This can take any HEX color, and saves it as `G.C.UI[key]`.
     - `select_card`:
     	- Set to string of destination card area, ex. `'consumeables'`, to save cards of this type from Booster packs instead of using it.
-		- Set to a function `select_card(card, pack) -> string?` to control if and where `card` should be saved for any `card, pack` combination.
+		- Set to a function `select_card(card, pack) -> string?, boolean?` to control if and where `card` should be saved for any `card, pack` combination. Returning `true` as the second value allows the player to select whether to save or use the card.
 		- Takes priority over `select_card` on the Booster pack
 
 ## API methods
