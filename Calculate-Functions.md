@@ -640,6 +640,7 @@ context.removed -- a table of cards that have been destroyed
 ---
 #### context.after
 This context is used for effects after scoring. **Any chip and mult returns here will not be added to the score.**
+During this context you can check for `SMODS.last_hand_oneshot` to know if the last played hand scored **more** than the blind requirement and `SMODS.last_hand_score` to get the exact score. **These values are not saved. They will only exist in this context and the ones happening immediately after**
 
 ```lua
 if context.after then
