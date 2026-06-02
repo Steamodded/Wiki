@@ -61,4 +61,4 @@ New object types should work fine with this system, but may need some extra set 
 - If your object should only have a chance of being successful, you can set a base chance that will always be used by adding `SMODS.base_rate_percentage[type_key] = X` where `X` is a number 0-1 that represents the percent chance of generating your object. *(for example, editions have 0.04)*
 - If your object that relies on chance should use the chance roll as it's poll amount *(like Editions)*, add `SMODS.no_repoll[type_key] = true`.
 - If your object needs to modify the type polling key in a specific way other than default, add `SMODS.poll_keys[type_key] = {str = 'new_key', block_infill = true or false, ante = true or false}`. You can see how these affect the key by looking at `SMODS.get_poll_key` in `src/utils/weights.lua`.
-- If your object isn't stored in `G.P_CENTERS`, you can add `SMODS.game_table_from_type[type_key] = table`.
+- If your object isn't stored in `G.P_CENTERS`, you can add `SMODS.game_table_from_type[type_key]` that can be either a key in `G` (i.e. G["P_SEALS"]) or a table of the form `{ ref_table = table, ref_value = key }`.
