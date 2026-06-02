@@ -62,6 +62,22 @@ This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMOD
 	- Used for modifying any registered cards of this type, or adding them to additional pools.
 - `ObjectType.delete_card(self, center)`
 	- Used for removing cards from additional pools when deleted.
+- `ObjectType.set_badges(self, card, badges)`
+	- Add additional badges, leaving existing badges intact. This function doesn't return; add badges by appending to `badges`.
+	- Avoid overwriting existing elements. It will cause text to appear on the top left corner of your screen instead.
+	- Function for creating badges: `create_badge(_string, _badge_col, _text_col, scaling)`
+		- `_string`: Text displayed on the badge.
+		- `_badge_col = G.C.GREEN`: Background colour.
+		- `_text_col = G.C.WHITE`: Text colour.
+		- `_scaling = 1`: Relative size of the badge.
+	- Example:
+	```lua
+	{
+		set_badges = function(self, card, badges)
+			badges[#badges+1] = create_badge(localize('k_your_string'), G.C.RED, G.C.BLACK, 1.2 )
+		end,
+	}
+	```
 - `ConsumableType.create_UIBox_your_collection(self) -> table`
 	- Returns the UIBox of the ConsumableType's collections menu. 
 
