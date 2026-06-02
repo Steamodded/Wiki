@@ -138,3 +138,5 @@ Returns the result of multiplying `base` and `perma + 1`.
 #### `SMODS.add_to_pool(prototype_obj, args) -> bool?, table?`
 Helper function to check if an object can be added into a pool,
 - If `prototype_obj.in_pool` is defined, returns the result of `in_pool`, otherwise returns `true`.
+#### `SMODS.pinch_and_remove(card)`
+Destroys the card with the vanilla food Joker animations. In most cases you should use [`SMODS.destroy_cards()`](https://github.com/Steamodded/smods/wiki/Utility) instead.
