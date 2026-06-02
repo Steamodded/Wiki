@@ -12,7 +12,7 @@ This function returns a key of an object that is appropriate for the `args` that
 - `type`: specify a single type (or attribute) to poll
 - `types`: Table[string] specify a table of types to poll
 - `rarities`: Table[string] specify a table of rarities to include *(only for standard object types*) <br><br>
-- `pool` = Table[string] specify a table of object keys to use as the pool instead of having the function generate one <br><br>
+- `pool`: Table[string] specify a table of object keys to use as the pool instead of having the function generate one <br><br>
 - `filter`: function(pool) -> Table[{key = string, type = string}] specify a function to filter the pool once it has been generated, must return the modified pool
 - `chance`: % of success as a decimal value 0-1, editions, enhancements and seals have a default chance internally
 - `mod`: multiplier to the base chance
@@ -30,6 +30,27 @@ This function returns a key of an object that is appropriate for the `args` that
 - `closest_match`: set to `true` to stop the pool becoming completely empty due to a lack of matching attributes *(NOTE: attributes are found in the order they are given)*
 - `allow_duplicates`: set to `true` to allow duplicates to be given
 - `allow_legendaries`: set to `true` to allow legendaries to be included *(NOTE: if the pool consists of **only** legendary objects, they are always allowed)*
+
+Example filter:
+
+```lua
+-- Filter cards that are compatible with Eternal
+filter = function(pool)
+    local all_unavailable = true
+    for _, v in ipairs(pool) do
+        local center = G.P_CENTERS[v.key]
+        if not center or not center.eternal_compat then
+            v.key = "UNAVAILABLE" -- This is done to preserve RNG
+        else
+            all_unavailable = false
+        end
+    end
+    if all_unavailable then
+        pool[#pool+1] = {key = 'j_joker', type = "Joker"} -- Default if the entire pool is unavailable
+    end
+    return pool
+end
+```
 
 ## Utility
 
