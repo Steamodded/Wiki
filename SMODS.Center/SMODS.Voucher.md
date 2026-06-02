@@ -4,8 +4,8 @@
 	- `key`,
 	- `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 - **Optional parameters** *(defaults)*:
-    - `atlas = 'Voucher', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-    - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+    - `atlas = 'Voucher', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+    - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `pools`: List of keys to ObjectTypes this center should be injected into
 		-  Expects a list of keys like this:
 		```lua
@@ -16,12 +16,21 @@
 		```
 	- `cost = 10`,
     - `requires`: specify a list of one or more vouchers by their **full key** (e.g. `'v_grabber'` for vanilla vouchers, or `'v_pref_myvoucher'` for a modded voucher from the mod with prefix `'pref'`)
+	- `disable_shine`: *(added in 1531zeebee)* Disables the default 'shine' shader.
 
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
 - `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
 - `redeem(self, card)`
 	- Defines the behavior of a Voucher when redeemed.
+- `calc_dollar_bonus(self, card) -> number, table`
+	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
+	- *(Added in 1531zeebee)* Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
+		- `text`: Replaces the default name text.
+		- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
+		- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
+- `calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions#scaling-values)
+	- Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.
 - `set_ability(self, card, initial, delay_sprites)`
 	- Set up initial ability values or manipulate sprites in an advanced way.
 - `add_to_deck(self, card, from_debuff)`
@@ -33,7 +42,7 @@
 - `in_pool(self, args) -> bool, { allow_duplicates = bool }`
 	- Define custom logic for when a card is allowed to spawn. A card can spawn if `in_pool` returns true and all other checks are met.
 	- `allow_duplicates` allows this card to spawn when one already exists, even without Showman.
-	- When called from `generate_card_ui`, the `_append` key is passed as `args.source`.
+	- When called from `get_current_pool`, the `_append` key is passed as `args.source`.
 - `update(self, card, dt)`
 	- For actions that happen every frame.
 - `set_sprites(self, card, front)`

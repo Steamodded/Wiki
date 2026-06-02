@@ -41,7 +41,28 @@ Restarts the game.
 #### `SMODS.get_optional_features()`
 Inserts all enabled optional features by injected mods into the `SMODS.optional_features` table.
 #### `SMODS.localize_box(lines, args)`
-Handles localizing description boxes within a localization entry. 
+Handles localizing description boxes within a localization entry. Given a `lines` table parsed by `loc_parse_string()`, returns the UI structure for a description line.
+- `args` can be a table with the following parameters:
+    - `vars`: like the ones returned by `loc_vars`, it can similarly also contain a `colours` table.
+    - `scale`, `text_colour`, `shadow`, `default_col`
+
+Example:
+```lua
+-- Parses the whole description for Joker
+local joker_description = G.localization.descriptions.Joker.j_joker.text
+local final_ui = {}
+for _, line in ipairs(joker_description) do
+    local text_table = loc_parse_string(line)
+    final_ui[#final_ui+1] = {
+        n=G.UIT.R, 
+        config={align = "cm"}, 
+        nodes=SMODS.localize_box(text_table, {vars = 4}) -- 4 mult
+    }
+end
+-- Then it can be used in any UI definition, for example like this
+-- (on its own it will out the text on the corner of the screen)
+UIBox { definition = {n = G.UIT.ROOT, config = {colour = G.C.CLEAR}, nodes = final_ui}, config = {}}
+```
 
 ## Calculation
 These functions are used for handling calculation events.
@@ -98,6 +119,13 @@ Pushes `context` into `SMODS.context_stack`.
 Pops a `context` from `SMODS.context_stack`.
 #### `SMODS.get_previous_context()`
 Returns the second to last context from `SMODS.context_stack`
+#### `SMODS.mod_score(args)`
+Modifies current scored chips. Arguments:
+    - `add`: Add this number to score
+    - `mult`: Multiply score by this number
+    - `card`: Card responsible for score modification action, crucial for score display to work properly
+    - `effect`: Table of effects that were calculated
+    - `from_edition`: If `true` the effect comes from an Edition
 
 ## Misc.
 These are functions used by SMODS for miscellaneous features.

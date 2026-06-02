@@ -133,6 +133,21 @@ G.hand_text_area = {
 - `G:update(dt)` is called once per frame. This uses `G.STATE` and `G.STATE_COMPLETE` to run a state machine.
 - `G:draw()` draws everything in the game.
 
+### CardAreas
+
+- `G.jokers` Main Joker area.
+- `G.consumeables` Main consumable area.
+- `G.hand` Area for playing cards held in hand.
+- `G.play` Area for playing cards played. Also used for some animations.
+- `G.deck` Area for playing cards currently in the deck.
+- `G.discard` Invisible area playing cards go after being played or discarded. Also used for some animations.
+- `G.vouchers` Voucher area. Added by SMODS.
+- `G.shop_jokers` Main shop area for Jokers, Consumables, Playing Cards, etc.
+- `G.shop_booster` Shop area for Booster packs.
+- `G.shop_vouchers` Shop area for Vouchers.
+- `G.pack_cards` Area for cards in a booster.
+- `G.title_top` Title screen area.
+
 ## `G.GAME`
 
 `G.GAME` holds game state for the current run. This is reset when starting a new run. Note that it is serialized when saving and reloading the game. 

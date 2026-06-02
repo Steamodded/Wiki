@@ -7,6 +7,7 @@
     - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
         - `loc_txt` should contain only a `name` string. For localization files, place this string in `misc.ranks[key]`.
 - **Optional parameters** *(defaults)*:
+    - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
     - `lc_atlas = 'cards_1', hc_atlas = 'cards_2'`: Atlas to use for low-contrast and high-contrast settings respectively. Use the same atlas key if you don't have separate high contrast textures. [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
     - `shorthand = key`: Short descriptor used in deck preview.
     - `face_nominal`: Numeric value (normally between 0 and 1) that determines the displayed order of ranks with the same nominal value.
@@ -30,6 +31,7 @@
     - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
         - `loc_txt` should contain a `singular` and `plural` string only. When using localization files, assign to `misc.suits_singular[key]` and `misc.suits_plural[key]` respectively.
 - **Optional parameters** *(defaults)*:
+    - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
     - `lc_atlas = 'cards_1'`: Atlas to use when high-contrast cards are disabled.
     - `hc_atlas = 'cards_2'`: Atlas to use when high-contrast cards are enabled.
     - `lc_ui_atlas = 'ui_1'`: Atlas for miniature suit symbols when high-contrast cards are disabled.

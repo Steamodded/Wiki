@@ -15,6 +15,7 @@ Mods
 	- `path`: The font's name, including the extension (e.g. `'HelveticaNeue.ttf'`).
 	
 - **Optional parameters** *(defaults)*:
+  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
   - `render_scale`: Sets the font size. This is generally better as a higher value so it can be scaled down. The default value is `200`.
   - `FONTSCALE` : Multiplier to scale down the font to the intended display size. Multiplies `render_scale` so that it renders at a proper size. The default value is `0.1`.
   - `DESCSCALE` : Determines how big the description text should be in relation to normal text. Keep in mind that mobile UI makes this 1.5x bigger. The default font's value is `1`.

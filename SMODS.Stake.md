@@ -15,6 +15,7 @@
         - If `unlocked` is set to `false`, the stake is unlocked by first winning a run on each of the `applied_stakes`.
     - `colour = [white]`: The colour used for this stake in the stake selection column.
     - `above_stake`: The stake's key that this stake should appear directly above in the list. By default, your stake will be placed at the top of the list.
+    - `hide_from_run_info`: *(added in 1531zeebee)* If `true` hides the stake from the Run Info screen during a run.
 > [!NOTE] 
 > Key prefixing is applied to `applied_stakes` and `above_stake` by default. If you want your stake above a stake from the base game or other mods, this can be adjusted by using `prefix_config`. [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 
@@ -24,3 +25,10 @@
     - Due to how the stake description box works, the functionality of `loc_vars` on stakes is limited. `info_queue` and `card` will not be used. Out of all possible return values, only `vars`, `key` and `set` are supported.
 - `modifiers()`
     - Used for applying changes to the game state when your stake is applied at the start of a run.
+- `calc_dollar_bonus(self) -> number, table`
+	- *(Added in 1531zeebee)* 
+	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
+	- Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
+		- `text`: Replaces the default name text.
+		- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
+		- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively

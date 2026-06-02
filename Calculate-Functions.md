@@ -62,7 +62,9 @@ return {
 
 There are a range of different keys that you can return in this table. These keys can be combined to have multiple effects from the same calculation step.
 
-- `chips`,`mult`,`xmult`, `xchips`, `dollars` - scores these values *(automatically adds a message to the card that is being scored)*
+- `chips`, `mult`, `xmult`, `xchips`, `dollars` - scores these values *(automatically adds a message to the card that is being scored)*
+- `score`, `xscore` - adds or multiplies the current scored chips, respectively *(automatically adds a message to the card that is being scored)*
+- `blindsize`, `xblindsize` - adds or multiplies the current blind size, respectively *(automatically adds a message to the card that is being scored)*
 - `swap` - swaps current chips and mult values with each other
 - `balance` - balances the current chips and mult values *(plasma deck effect)*
 - `level_up` - levels up the played hand by the number returned *(You can specify a different hand to be levelled up by using `level_up_hand`)*
@@ -74,7 +76,7 @@ There are a range of different keys that you can return in this table. These key
   - a custom sound can be added to a custom message by using `sound`
 	  - you can use `pitch` and `volume` to modify the pitch and volume of your sound
 - `func` - return a function to be called at the correct timing *(advanced)*
-- `pre_func` - return a function to be called before other effects *(advanced - used for `context.post_joker`)*
+- `pre_func` - return a function to be called before other effects *(advanced - used for `context.post_trigger`)*
 - `extra` - an extra table set out the same as this one *(advanced)*
 - `effect` - set as true to mark your joker as having triggered
 - `no_juice` - stops the card from shaking when triggered
@@ -163,6 +165,7 @@ SMODS.current_mod.optional_features = function()
         post_trigger = true,
         retrigger_joker = true,
         quantum_enhancements = true,
+		object_weights = true,
 		cardareas = {
             discard = true,
             deck = true
@@ -235,6 +238,28 @@ To add the quantum enhancements to specific cards, you should return the enhance
 return {
 	m_wild = true -- make cards function as wild cards
 }
+```
+
+### Object Weights
+*(Added in 1531zeebee)*
+With the object_weights optional feature enabled, every object in the game is now polled based on a weight value that is assigned to it. More details [here](https://github.com/Steamodded/smods/wiki/Weight-System).
+
+This context is used to modify weights in `SMODS.poll_object` when this feature is enabled.
+
+```lua
+if context.modify_weights then
+```
+
+```lua
+context.modify_weights -- flag to identify this context, always TRUE
+context.pool -- the booster pack center that has ended
+context.pool_types
+```
+
+The pool is structured as a table of tables, where each table is structured as below. Modifying the weight value in this table will affect the final weighted table to be used.
+
+```lua
+{key = 'object_key', weight = number_of_weight}
 ```
 
 ### Card Areas
@@ -374,7 +399,7 @@ If you prefer to inject your code using a lovely patch, there are target lines p
 ```toml
 [[patches]]
 [patches.pattern]
-target = "=[SMODS _ "src/utils.lua"]"
+target = '=[SMODS _ "src/utils.lua"]'
 pattern = '''-- TARGET: add your own CardAreas for joker evaluation'''
 position = "after"
 payload = '''t[#t+1] = G.custom_card_area'''
@@ -465,6 +490,8 @@ context.cardarea, context.full_hand, context.scoring_hand, context.scoring_name,
 context.main_scoring -- boolean value to flag this context, always TRUE
 ```
 
+> [!NOTE]
+> For the context for Blind/Deck/Challenge/Stake/Mod effects check [here](https://github.com/Steamodded/smods/wiki/Calculate-Functions#contextmain_scoring-individual).
 ---
 #### context.individual
 This context is used for triggering joker effects on playing cards. It iterates over the cards in each area one by one. Change the `cardarea` you are checking to apply effects to cards in different areas.
@@ -549,6 +576,22 @@ context.cardarea, context.full_hand, context.scoring_hand, context.scoring_name,
 context.edition -- boolean value to flag this context, always TRUE
 context.post_joker -- boolean value to flag this context, always TRUE
 ```
+---
+#### context.main_scoring (individual)
+*(Added in 1531zeebee)* 
+This context is used for the effects from Blinds, Decks, Challenges, Stakes and Mod objects (or any other 'individual' objects) when the score.
+
+```lua
+if context.main_scoring then
+```
+
+```lua
+context.cardarea, context.full_hand, context.scoring_hand, context.scoring_name, context.poker_hands
+context.main_scoring -- boolean value to flag this context, always TRUE
+```
+
+> [!NOTE]
+> For the context for playing card effects check [here](https://github.com/Steamodded/smods/wiki/Calculate-Functions#contextmain_scoring).
 
 ---
 #### context.final_scoring_step
@@ -836,7 +879,7 @@ context.check -- true while the hand is being selected, and false when the hand 
 
   ---
 #### context.modify_hand
-This context is used to modify the initial values of a hand, at the same time as `Blind:modify_hand`. You can change the chips and mult by modifying `_G.mult` and `_G.hand_chips` directly.
+This context is used to modify the initial values of a hand, at the same time as `Blind:modify_hand`.
 
 ```lua
 if context.modify_hand then
@@ -849,6 +892,9 @@ context.scoring_name -- the current poker hand
 context.scoring_hand -- the list of cards in the selected hand that would be scored for the current poker hand
 context.poker_hands -- the list of poker hands contained within the selected cards
 ```
+
+>[!TIP]
+>You can modify chips and mult by doing `hand_chips = mod_mult(hand_chips + value)` and `mult = mod_mult(mult + value)` or any scoring parameter, including chips and mult, by calling `SMODS.Scoring_Parameters.key:modify(value)`.
 
 ---
 #### context.debuff_card
@@ -879,7 +925,7 @@ context.to_area -- the card area the card is moving into
 
 >[!NOTE]
 >*(Added in 1501a)*
->This context can now be used to redirect cards when theyb are moving from on area to another. Returning `modify = {to_area = CardArea}` will send the card to that area instead
+>This context can now be used to redirect cards when they are moving from on area to another. Returning `modify = {to_area = CardArea}` will send the card to that area instead
   
 ---
 #### context.blind_disabled
@@ -993,7 +1039,7 @@ context.booster -- the booster pack center that has ended
 ```
   ---
 #### context.buying_card
-This context is used when buying a card from the shop, including Vouchers and Booster Packs.
+This context is used when buying a card from the shop, including Vouchers.
 
 ```lua
 if context.buying_card then
@@ -1078,6 +1124,36 @@ if context.modify_shop_card then
 ```lua
 context.modify_shop_card -- flag to identify this context, always TRUE
 context.card -- The card that has been added to the shop
+```
+---
+#### context.create_booster_card
+*(Added in 1531zeebee)* 
+This context is used when a card is created for a booster. You can return a table as `booster_create_flags` that will be passed into `SMODS.create_card` to change which card will be created.
+
+```lua
+if context.create_booster_card then
+```
+
+```lua
+context.create_booster_card -- flag to identify this context, always TRUE
+context.booster -- The booster object
+context.index -- The index of the card to be created (i.e. its position in the booster area)
+```
+
+---
+#### context.modify_booster_card
+*(Added in 1531zeebee)* 
+This context is used when a card is added to a booster. You can call other functions on this card, such as `Card:set_cost`, to alter the card within the booster. This context could also be used to respond to certain things appearing in a booster.
+
+```lua
+if context.modify_booster_card then
+```
+
+```lua
+context.modify_booster_card -- flag to identify this context, always TRUE
+context.booster -- The booster object
+context.card -- The card that has been added to the booster
+context.index -- The index of the card added (i.e. its position in the booster area)
 ```
 
 ---
@@ -1281,7 +1357,7 @@ context.from_roll -- internal value used to only trigger certain return values w
 
 ---
 #### context.pseudorandom_result
-This context should be used for setting either the numerator or the denominator.
+This context is used _after_ a probability is checked. It receives the final numerators and denominators that were used, as well as whether the chance succeeded.
 
 ```lua
 if context.pseudorandom_result then

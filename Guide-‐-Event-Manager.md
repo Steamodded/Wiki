@@ -30,7 +30,7 @@ func - function: The body of the event. This is where you will perform any actio
 - `immediate` - Called when the event begins
 - `after` - Called when the time is over
 - `condition` - Behaves exactly like immediate. Providing a function will overwrite the default condition behaviour.
-- `ease` - Called each frame with the current interpolated value so you can modify the easing function. The default function returns its argument unmodified.
+- `ease` - Called each frame with the current interpolated value so you can modify the easing function. The default function returns its argument unmodified. Custom easing types can be found in `SMODS.ease_types` in `utils.lua`, and your own easing functions can be added to this dictionary to be used.
 - `before` - Called when the event begins
 
 delay - number: The time to take, in seconds. Used for after, ease and before. This value is typically affected by the game speed option. Default is 0.

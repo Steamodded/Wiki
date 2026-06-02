@@ -4,8 +4,8 @@
     - `key`
     - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
 - **Optional parameters** *(defaults)*:
-    - `atlas = 'centers', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-    - `config = {}, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+    - `atlas = 'centers', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+    - `config = {}, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
         - The following base values for `config` are supported and will be scored automatically and unconditionally:
         ```lua
             {
@@ -44,13 +44,13 @@
 ## API methods
 - `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
 - `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
-- `get_weight(self) ->  number `
-    - Used to modify the weight of enhancement on certain conditions.
+- `get_weight(self) -> number`
+    - Returns weight. Use for finer control over the enhancement's weight.
 - `set_ability(self, card, initial, delay_sprites)`
     - Set up initial ability values or manipulate sprites in an advanced way.
 -  `in_pool(self, args) -> bool, { allow_duplicates = bool }`
     - Define custom logic for when a card is allowed to spawn. A card can spawn if `in_pool` returns true and all other checks are met.
-    - When called from `generate_card_ui`, the `_append` key is passed as `args.source`.
+    - When called from `get_current_pool`, the `_append` key is passed as `args.source`.
 - `update(self, card, dt)`
     - For actions that happen every frame.
 - `set_sprites(self, card, front)`
@@ -77,6 +77,11 @@
     - Draws the sprite and shader of the card.
 
 ## Util methods
+- `Card:set_ability(center, initial, delay_sprites)`: 
+    - Used for changing the center of a card, you can use this function to set an enhancement.
+    - `center`: key of the enhancement to turn the card into (use `c_base` for no enhancement).
+    - `initial`: *boolean (advanced)* internal value for when the card is created
+    - `delay_sprites`: *boolean* delays the visuals of the enhancement, useful for applying enhancements during calculations
 - `SMODS.poll_enhancement(args)` *(defaults)*
     - `args.key`, the key used to generate the seed
     - `args.type_key`, an optional key used to generate the specific enhancement seed

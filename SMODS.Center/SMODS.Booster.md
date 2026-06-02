@@ -6,8 +6,8 @@
         - `loc_txt` can contain an additional `group_name` string. This is the bottom text while on the pack opening screen.
         - With localization files, this text should be stored in `misc.dictionary[group_key or 'k_booster_group_'..key]`
 - **Optional parameters** *(defaults)*:
-    - `atlas = 'Booster', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-    - `config, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+    - `atlas = 'Booster', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+    - `config, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
         - The default `config` table is `{ extra = 3, choose = 1 }`; `extra` is the amount of cards in the pack, `choose` is the amount of choices.
         - Note: `unlocked` on boosters is currently unsupported.
 	- `pools`: List of keys to ObjectTypes this center should be injected into
@@ -27,6 +27,7 @@
 		- Set to string of destination card area, ex. `'consumeables'`, to save cards from the pack instead of using them.
 		- Set to table of form `{Set = 'area'}` to change behaviour according to a card's `Set` (e.g. `{Tarot = 'consumeables'}` to only save `Tarot` cards, relevant if you have multiple types of consumables in a booster).
 		- Set to a function `select_card(self, card, pack) -> string?` to control if and where `card` should be saved for any `card, pack` combination.
+	- `disable_shine`: *(added in 1531zeebee)* Disables the default 'shine' shader.
 
 ## API methods
 - `loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
@@ -61,7 +62,9 @@
 - `in_pool(self, args) -> bool, { allow_duplicates = bool }`
 	- Define custom logic for when a card is allowed to spawn. A card can spawn if `in_pool` returns true and all other checks are met.
 	- `allow_duplicates` allows this card to spawn when one already exists, even without Showman.
-	- When called from `generate_card_ui`, the `_append` key is passed as `args.source`.
+	- When called from `get_current_pool`, the `_append` key is passed as `args.source`.
+- `get_weight(self) -> number`
+	- Returns weight. Use for finer control over the booster's weight.
 - `update(self, card, dt)`
 	- For actions that happen every frame.
 - `set_sprites(self, card, front)`

@@ -3,6 +3,7 @@
 	- `key_pressed`: The key that needs to be pressed for this keybind to activate. Keycodes are documented [here](https://love2d.org/wiki/KeyConstant).
     - `action(self)`: Function to be called when the keybind is triggered.
 - **Optional parameters** *(defaults)*:
+    - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
     - `event = 'pressed'`: Defines when the keybind should trigger.
         - `'pressed'`: When the key is pressed.
         - `'released'`: When the key is released.

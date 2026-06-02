@@ -5,6 +5,8 @@ Steamodded provides utility functions that extend or replace vanilla functionali
 - [Number Formatting](#number-formatting)
 - [Randomness](#randomness)
 - [Mod-facing Utilities](#mod-facing-utilities)
+- [Joker Effects](#joker-effects)
+- [Card Methods](#card-methods)
 
 ***
 
@@ -30,9 +32,9 @@ Enables debugging of Joker calculations.
 Every time that `Card:calculate_joker()` is called, `G.contexts` is updated for every value within `context`.
 
 ## Number Formatting
-#### round_number(num, precision) -> number`
+#### `round_number(num, precision) -> number`
 Rounds the input number to a given amount of decimal places.
-#### format_ui_value(value) -> string`
+#### `format_ui_value(value) -> string`
 Stringifies the input if it is not a number. Otherwise return the number as it should be displayed in the UI (e.g. scientific notation).
 
 ## Randomness
@@ -52,6 +54,13 @@ Checks if an enhancement should be generated, and generates one according to the
 - `guaranteed` - If this is `true`, always generate an enhancement.
 - `options` - A table of possible enhancements to generate. Defaults to all available enhancements.
 - `type_key` - Randomness seed for the roll which enhancement to generate.
+#### `SMODS.poll_edition(args) -> string?`
+- Checks if an edition should be generated, and generates one according to the specified arguments if so. The following arguments are supported: 
+	- `key` - Randomness seed for the check whether to generate an edition, defaults to `'edition_generic'`.
+	- `mod` - Multiplier to the base rate at which editions appear.
+	- `no_negative` - Disables negative edition chance *(chance is added to polychrome)*
+	- `guaranteed` - If this is `true`, disables base card and always generates an edition.
+	- `options` - A table of possible editions to generate. Defaults to all editions marked `in_shop`.
 
 ## Mod-facing Utilities
 These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.
@@ -64,17 +73,40 @@ Return type is the same as [love.filesystem.load](https://love2d.org/wiki/love.f
 - Example usage: `assert(SMODS.load_file('jokers.lua'))()`
 #### `SMODS.juice_up_blind()`
 Plays a 'juice up' animation on the Blind chip.
-#### `SMODS.change_base(card, suit, rank) -> Card?, string?`
+#### `SMODS.change_base(card, suit, rank, manual_sprites) -> Card?, string?`
 Given a `Card` representing a playing card, changes the card's suit, rank, or both. Either argument may be omitted to retain the original suit or rank.
 This function returns `nil` if it fails, with the second argument being a string with an error message. It is recommended to always wrap calls to it in `assert` so errors don't go unnoticed.
 - Examples: `assert(SMODS.change_base(card, 'Hearts'))` converts a card into Hearts. `assert(SMODS.change_base(card, nil, 'Ace'))` converts a card into an Ace. `assert(SMODS.change_base(card, 'Hearts', 'Ace'))` converts a card into an Ace of Hearts.
-#### `SMODS.modify_rank(card, amount) -> Card?, string?`
+Use `manual_sprites` if you want better control of the timing of the conversion. For a general use case during scoring, you can use the following snippet for the visuals to update at the correct timing.
+```lua
+-- Converts a card to a Jack with the correct animation timing
+assert(SMODS.change_base(card, nil, 'Jack', true))
+G.E_MANAGER:add_event(Event({
+    func = function()
+        card:set_sprites(nil, card.config.card)
+        return true
+    end
+}))
+```
+#### `SMODS.modify_rank(card, amount, manual_sprites) -> Card?, string?`
 Given a `Card` representing a playing card, increases or decreases the card's rank by the specified `amount`. The rank is increased if `amount` is positive and decreased if it is negative.
 This function returns `nil` if it fails, with the second argument being a string with an error message. It is recommended to always wrap calls to it in `assert` so errors don't go unnoticed.
 - Examples: `assert(SMODS.modify_rank(card, 1))` increases a card's rank by one, like the Strength Tarot. `assert(SMODS.modify_rank(card, -2))` decreases a card's rank by two.
+Use `manual_sprites` if you want better control of the timing of the conversion. For a general use case during scoring, you can use the following snippet for the visuals to update at the correct timing.
+```lua
+-- Increases a card's rank by 1 with the correct animation timing
+assert(SMODS.modify_rank(card, 1, true))
+G.E_MANAGER:add_event(Event({
+    func = function()
+        card:set_sprites(nil, card.config.card)
+        return true
+    end
+}))
+```
 #### `SMODS.find_card(key, count_debuffed) -> table`
 This function replaces `find_joker`. It operates using keys instead of names, which avoids overlap between mods.
 Returns an array of all jokers or consumables in the player's possession with the given key. Debuffed cards count only if `count_debuffed` is true.
+This function finds cards in the joker areas returned by `SMODS.get_card_areas`. [This page](https://github.com/Steamodded/smods/wiki/Calculate-Functions#adding-calculation-zones) explains how to add your own.
 #### `SMODS.add_card(t) -> Card`
 This function replaces `add_joker`. It takes the same input parameters as `SMODS.create_card` (below) and additionally emplaces the generated card into its area and evaluates `add_to_deck` effects.
 #### `SMODS.create_card(t) -> Card`
@@ -85,17 +117,19 @@ This function replaces `create_card`. It provides a cleaner interface to the sam
 - `legendary` - Set this to `true` to generate a card of Legendary rarity.
 - `rarity` - If this is specified, skip rarity polling and use this instead of a chance roll between 0 and 1.
     - Under vanilla conditions, values up to 0.7 indicate "Common" rarity, values above 0.7 and up to 0.95 indicate "Uncommon" rarity, and values above 0.95 indicate "Rare" rarity.
+    - This can also be the key of a modded rarity or `'Common'`, `'Uncommon'`, `'Rare'` or `'Legendary'` for vanilla rarities.
 - `skip_materialize` - If this is `true`, a `start_materialize` animation will not be shown.
 - `soulable` - If this is `true`, hidden Soul-type cards are allowed to replace the generated card. Usually, this is the case for cards generated for booster packs.
 - `key` - If this is specified, generate a card with the given key instead of the random one.
 - `key_append` - An additional RNG seeding string. This should be used to put different sources of card generation on different queues.
 - `no_edition` - If this is `true`, the generated card is guaranteed to have no randomly generated edition.
 - `edition`, `enhancement`, `seal` - Applies the specified modifier to the card.
-- `stickers` - This should be an array of sticker keys. Applies all specified stickers to the card.
+- `stickers`, `force_stickers` - This should be an array of sticker keys. Applies all specified stickers to the card. `force_stickers` bypasses all checks.
 - `front` - Front of the playing card, takes the playing card's key (e.g. `H_A`). Ignores `rank` and `suit`.
 - `rank` - Rank of the playing card. Can be the `key` or the `card_key` (e.g. `'Ace'` or `'A'`).
 - `suit` - Suit of the playing card. Can be the `key` or the `card_key` (e.g. `'Hearts'` or `'H'`).
 - `enhanced_poll` - Chance to pick `'Base'` over `'Enhanced'` with set `'Playing Card'`. Default: 0.6
+- `allow_duplicates` - Allows duplicates of created cards (when a `key` is not specified) as if Showman was owned.
 #### `SMODS.debuff_card(card, debuff, source)`
 Allows manually setting and removing debuffs from cards.
 - `source` should be a unique identifier string. You must use the same source to remove a previously set debuff.
@@ -111,7 +145,17 @@ This can be used to merge results from poker hand evaluation to create a combine
 Provides score requirements for higher stages of ante scaling. If you want to implement your own scaling rules, you should modify this function.
 #### `SMODS.stake_from_index(index) -> string`
 Given an index from the Stake pool, return the corresponding key, or `'error'` if it doesn't exist.
+#### `SMODS.upgrade_poker_hands(args)`
+*(Added in 1221a)* This function levels up or upgrades poker hands. This allows permanent modifications to the chips and mult *(and other parameters if defined)* for each poker hand that will not be removed when a standard level up happens. The argument to this function should always be a table. The following fields are supported:
+- `hands` : table of strings or a single string of hand names to level up *(if left blank defaults to all Poker Hands)*
+- `parameters` : table of strings of keys of `Scoring_Parameters` to upgrade *(if left blank defaults to all Scoring Parameters)*
+- `level_up` : increases the level of the hand by amount passed *(NOTE: this can be used to level up a hand by more than one level)*
+- `func` : pass a custom function `function(current, base, parameter, level_up)` for custom modifications to the parameters in a Poker Hand *(if left blank defaults to normal level up method)*
+- `from` : the Object that is doing the upgrading, will `juice_up` during animations
+- `instant` : boolean that disables animations
 #### `SMODS.smart_level_up_hand(card, hand, instant, amount)`
+**DEPRECATED IN 1221a IN FAVOR OF `SMODS.upgrade_poker_hands(args)`**
+
 Akin to vanilla's `level_up_hand()`, but avoids uneccessary calling of `update_hand_text()`
 - `card` - If included, juices up this card during the animation
 - `hand` - Key to the hand being leveled up.
@@ -119,24 +163,29 @@ Akin to vanilla's `level_up_hand()`, but avoids uneccessary calling of `update_h
 - `amount` - How much the poker hand is leveled. Defaults to 1.
 #### `SMODS.blueprint_effect(copier, copied_card, context) -> table?`
 Helper function to copy the ability of another joker, akin to Blueprint/Brainstorm. 
-- `copier` is the card the will be copying the effect of `copied_card`, using the provided `context` table. 
+- `copier` is the card that will be copying the effect of `copied_card`, using the provided `context` table. 
 - The returned table is the calculated effect of `copied_card`, with the display card set to `copier`. 
 - Example: 
     ```lua
     calculate = function(self, card, context)
         -- This is an implementation of Brainstorm
         local other_joker = G.jokers.cards[1]
-        local other_joker_ret = SMODS.blueprint_effect(other_joker, card, context)
+        local other_joker_ret = SMODS.blueprint_effect(card, other_joker, context)
 
         if other_joker_ret then
             return other_joker_ret
         end
     end
     ```
+#### `SMODS.merge_effects(...) -> table`
+Takes any number of 2D arrays. Flattens given calculation returns into one, utilising `extra` tables.
+- This can be used to merge returns from `SMODS.blueprint_effect`.
 #### `SMODS.has_enhancement(card, key) -> bool`
 Returns true if the provided `card` has a specific enhancement.
 #### `SMODS.is_eternal(card, trigger) -> bool`
 Returns true if the card is cosidered to be "eternal" (cannot be destroyed).
+- `card` - the card that is being checked
+- `trigger` - generally should be a reference to the object that is doing the check. If the check is being done by a general function, it is recommended to supply an identifying table such as `{destroying_cards = true}`
 #### `SMODS.shallow_copy(t) -> table`
 Returns a shallow copy of the provided table.
 #### `time(func, ...) -> number`
@@ -162,9 +211,39 @@ Used to change the number of cards that can be played/discarded at one time. Pla
 #### `SMODS.draw_cards(hand_space)`
 Function to draw a certain number of cards to hand, calling the relevant calculation contexts
 - `hand_space` - the number of cards to draw
-#### `SMODS.blueprint_effect(copier, copied_card, context) -> table`
-Use in calculation to copy the ability of another joker.
-Returns whatever the copied card returned during calculation.
-#### `SMODS.merge_effects(...) -> table`
-Takes any number of 2D arrays. Flattens given calculation returns into one, utilising `extra` tables.
-- This can be used to merge returns from `SMODS.blueprint_effect`.
+#### `SMODS.is_poker_hand_visible(handname) -> boolean`
+This function checks whether a poker hand is visible in the poker hands menu.
+- `handname` - string of poker hand name
+*(Calls to `get_current_pool` will add an `args` table of `{source = _append}` where `_append` is the 4th argument of `get_current_pool`)*
+#### `SMODS.create_sprite(x, y, width, height, atlas_key, pos) -> Sprite|AnimatedSprite`
+*(Added in 1221a)* Handles creation of `Sprite` objects with the correct atlas type.
+#### `SMODS.is_active_blind(key, ignore_disabled) -> boolean`
+*(Added in 1221a)* Returns `true` when the current blind matches the inputted `key`.
+#### `SMODS.get_clean_pool(_type, _rarity, _legendary, _append)`
+*(Added in 1501a)* Wrapper for `get_current_pool` that will exclude any `"UNAVAILABLE"` values in the pool, therefore giving a list of valid keys only.
+#### `SMODS.size_of_pool(pool) -> integer`
+Returns the number of valid keys in a pool obtained with `get_current_pool`.
+
+## Joker Effects
+
+#### `SMODS.smeared_check(card, suit) -> boolean`
+Checks if the base suit of `card` counts as `suit` for effects similar to Smeared Joker.
+#### `SMODS.seeing_double_check(hand, suit) -> boolean`
+Checks if `hand` fulfills the conditions for Seeing Double but for `suit`.
+#### `SMODS.showman(card_key) -> boolean`
+Checks if `card_key` can spawn even if the player has duplicates for effects similar to Showman.
+#### `SMODS.four_fingers(hand_type) -> number`
+Returns how many cards are necessary to make a Flush or a Straight for effects similar to Four Fingers. `hand_type` will be `flush` or `straight`.
+#### `SMODS.shortcut() -> boolean`
+Checks if the effects of Shortcut are applying (i.e. if Straights can be made with gaps of one rank).
+#### `SMODS.wrap_around_straight() -> boolean`
+Returns `true` if Straights can wrap around.
+
+## Card Methods
+
+#### `Card:should_hide_front() -> boolean`
+This function checks whether a card object should display the front sprite or not. Currently only checks for Stone cards and cards with `overrides_base_rank = true` defined on the Center, but can be **hooked** to provide additional functionality as required.
+#### `Card:is_rarity(rarity) -> boolean`
+This function checks if a Joker is a certain rarity. Accepts a number for vanilla rarities, or a key as a string for modded rarities.
+#### `Card:can_calculate(ignore_debuff, ignore_sliced) -> boolean`
+This function checks whether a card can run its `calculate` function.

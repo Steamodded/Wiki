@@ -17,7 +17,7 @@
     - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
         - Rather than a `text` table, `loc_txt` should contain a `description` table. The description is displayed when viewing the hand in the Run Info menu. When using localization files, the name should be placed in `misc.poker_hands[key]`, the description should be placed in `misc.poker_hand_descriptions[key]`.
 - **Optional parameters** *(defaults)*:
-    - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+    - `no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `visible = true`: Is this hand visible in the poker hands menu from the start, or is it hidden until played for the first time? (Can also be a function. See API methods.)
     - `above_hand`: Sets the position in the hands menu above the specified hands. By default, hands are ordered by the product of their chips and mult.
     - `order_offset`: If this numeric parameter is specified, add its value to the product of chips and mult for the purpose of ordering.
@@ -39,6 +39,9 @@
 ## Utility functions
 - `SMODS.merge_lists(...) -> table`
     - Takes any amount of parts and flattens them into an array containing all scoring cards present in any of the parts. This is particularly useful for composite hands.
+- `SMODS.is_poker_hand_visible(handname) -> boolean`
+This function checks whether a poker hand is visible in the poker hands menu.
+    - `handname` - string of poker hand name
 
 # API Documentation: `SMODS.PokerHandPart`
 This utility class allows easily re-using the same poker hand constructs to build composite hands without much boilerplate code. Before all hand types get evaluated, each part gets executed and added to `parts` for access in the `evaluate` functions.

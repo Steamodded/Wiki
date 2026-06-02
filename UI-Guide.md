@@ -55,7 +55,8 @@ The only values that the `n` field can take:
    This node must contain `h` and `w` in its `config`.
  - `G.UIT.S`: a **Slider** node, which contains a slider input.<br>
    You should probably use `create_slider(..)` instead.
- - `G.UIT.I`: a text **Input** node, which contains text input.
+ - `G.UIT.I`: a text **Input** node, which contains text input.<br>
+   Never used, use `create_text_input(..)` instead.
 
 *Example*
 The following code uses a combination of columns and rows to build up the basic structure of the UI. It can then have other elements added to add content.
@@ -140,6 +141,9 @@ Configuration options for Text nodes (ie. `G.UIT.T`):
    Standard values are `G.C.UI.TEXT_LIGHT`, `G.C.UI.TEXT_DARK`, and `G.C.UI.TEXT_INACTIVE`,<br>
    but all values applicable to `colour` can also go here (see above).
  - `vert`: set to `true` to draw the text vertically (ie. sideways).
+ - `font`: set the text font.<br>
+	Must be a font object found within either `G.FONTS` for vanilla fonts or `SMODS.Fonts` for modded fonts.<br>
+	The key needed is the same as the number or string you would provide in `{f:}` during [localization](https://github.com/Steamodded/smods/wiki/Text-Styling#text-font-modifier-f)
  
  > [!TIP]
  > If you want to change the text contents of a `G.UIT.T` interactively, use arguments `ref_table` and `ref_value` instead of `text`. Its text will be updated whenever `ref_table[ref_value]` changes.

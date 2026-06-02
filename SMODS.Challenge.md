@@ -4,6 +4,7 @@
     - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
         - The only supported field is `name`. In localization files, it is set by referring to `misc.challenge_names[key]`.
 - **Optional parameters** *(defaults)*:
+    - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
     - `rules`: Custom rules and modifiers for the challenge.
         - `rules.custom`: Expects a list of tables with an `id`, optionally a `value` field (defaults to `true`) and `no_ui` (not set by default).
 
@@ -30,7 +31,7 @@
         - Supports all fields of `jokers` except `pinned`.
     - `vouchers`: Behaves like `jokers`, but for vouchers redeemed at the start of the run.
         - Supports the same fields as `consumeables`, but `edition` and `eternal` have no functional effect beyond displaying in the preview UI.
-    - `restrictions`: Contains information about objects that are banned in this challenge.
+    - `restrictions`: Contains information about objects that are banned in this challenge. These parameters can also be functions that return the expected tables.
         - `restrictions.banned_cards`: Expects a list of tables with keys to ban in their `id` fields.
             - This can be used to ban jokers, consumables, vouchers and booster packs. 
             - If a table has an `ids` field containing a list of center keys, only `id` is shown as banned in the challenge UI, but all of the `ids` are banned.
@@ -58,5 +59,12 @@
 - `calculate(self, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
 - `apply(self)`
     - Apply modifiers at the start of a run.
+- `calc_dollar_bonus(self) -> number, table`
+	- *(Added in 1531zeebee)*  
+	- For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
+	- Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
+		- `text`: Replaces the default name text.
+		- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
+		- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
 - `unlocked(self) -> bool`
     - Defines when the challenge should be unlocked (or not).

@@ -1,7 +1,9 @@
 # API Documentation: `SMODS.ObjectType`
 - **Required parameters:**
 	- `key`
+		- Unlike other game objects, ObjectTypes don't add your mod's prefix automatically to the key to allow multiple mods to share pools. You can still add your prefix manually to avoid conflicts.
 - **Optional parameters** *(defaults)*:
+	- `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `default`: Fallback card when object pool is empty
 	- `cards`: List of keys to centers to auto-inject into this ObjectType
 		-  Expects a list of keys like this:
@@ -25,6 +27,7 @@
 This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMODS.ObjectType` work for this class. 
 - **Required parameters:**
 	- `key`
+		- Like with ObjectTypes, ConsumableTypes don't add your mod's prefix automatically to the key. You can still add your prefix manually to avoid conflicts.
 	- `primary_colour`
 	- `secondary_colour`
 - **Optional parameters** *(defaults)*:
@@ -39,6 +42,11 @@ This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMOD
 				text = { '' },
 			},
 		}
+		-- In localization files:
+		-- name should be under should be under `G.localization.misc.dictionary['k_'.. key:lower()]`
+		-- the badge label under `G.localization.misc.labels[key:lower()]`
+		-- collection under `G.localization.misc.dictionary['b_'.. key:lower().. '_cards']`
+		-- undiscovered under `G.localization.descriptions.Other['undiscovered_'.. key:lower()]`
 	```
 	- `collection_rows = { 6, 6 }`: Customize the collection for this card type. Each value indicates a row with the specified amount of cards.
 	- `shop_rate`: Setting a numerical value for `shop_rate` enables cards of this type to appear in the shop at the specified rate.
@@ -63,6 +71,7 @@ For consumable types, a sprite for undiscovered objects can be registered. Other
 	- `key`
 	- `atlas`
 	- `pos`
-   - **Optional parameters:**
+- **Optional parameters:**
+	- `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
   	- `no_overlay`: disables the floating ? sprite from undiscovered objects
   	- `overlay_pos`: customize the floating ? sprite using your atlas. Expects `{x = 0, y = 0}`

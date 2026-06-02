@@ -112,12 +112,44 @@ Valid style modifiers are as follows:
    <code>{s:<i>scale</i>}</code>
   </td>
  </tr>
+ <tr>
+  <td>
+   <a href="#text-underline-modifier-u"><b>Text underline</a>
+  </td>
+  <td>
+   <code>{u:<i>colour-key</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-strikethrough-modifier-st"><b>Text strikethrough</a>
+  </td>
+  <td>
+   <code>{st:<i>colour-key</i>}</code>
+  </td>
+ </tr>
   <tr>
   <td>
    <a href="#text-font-modifier-f"><b>Font</a>
   </td>
   <td>
    <code>{f:<i>font</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-button-modifier-button"><b>Button</a>
+  </td>
+  <td>
+   <code>{button:<i>function-key</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#ui-element-insertion-element"><b>UI Element</a>
+  </td>
+  <td>
+   <code>{element:<i>element-index</i>}</code>
   </td>
  </tr>
  <tr>
@@ -131,7 +163,7 @@ Valid style modifiers are as follows:
 </table>
 
 > [!IMPORTANT]
-> Modifiers are **case sensitive** – `{s:}` and `{f:}` must be lowercase, while all other modifiers are UPPERCASE.
+> Modifiers are **case sensitive** - make sure to refer to this list for the appropriate capitalization.
 
 ---
 
@@ -444,6 +476,8 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
 
 `{E:}` is incompatible with background modifiers `{X:}` and `{B:}`. If background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored.
 
+You can also apply a custom effect using [SMODS.DynaTextEffect](https://github.com/Steamodded/smods/wiki/SMODS.DynaTextEffect), in that case the modifier should be `{E:modprefix_key}`.
+
 ### Examples
 
 <table>
@@ -554,7 +588,71 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
 </table>
 
+## Text underline modifier `{u:}`
+> [!NOTE]
+> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+
+> [!IMPORTANT] 
+> This modifier requires the **lowercase** `u`, unlike other modifiers which must be UPPERCASE.
+
+<code>{u:<i>colour-key</i>}</code> adds an underline under the text.
+
+*`colour-key`* sets the colour of the underline, where *`colour-key`* is the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table).
+
+### Examples
+
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+
+  ```pas
+  {u:red}Underlined text!    
+  ```
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+
+## Text strikethrough modifier `{st:}`
+> [!NOTE]
+> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+> *(Added in 1531zeebee)* 
+
+> [!IMPORTANT] 
+> This modifier requires the **lowercase** `st`, unlike other modifiers which must be UPPERCASE.
+
+<code>{st:<i>colour-key</i>}</code> adds a strikethrough line through the text.
+
+*`colour-key`* sets the colour of the underline, where *`colour-key`* is the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table).
+
+### Examples
+
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+
+  ```pas
+  {st:red}Strikethrough text!    
+  ```
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+
 ## Text font modifier `{f:}`
+> [!NOTE]
+> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+
 > [!IMPORTANT] 
 > This modifier requires the **lowercase** `f`, unlike other modifiers which must be UPPERCASE.
 
@@ -746,11 +844,90 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 
 **These are the language names given in the original `game.lua` file.
 
+## Text button modifier `{button:}`
+> [!NOTE]
+> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+> *(Added in 1501a)*
+
+> [!IMPORTANT] 
+> This modifier requires the **lowercase** `button`, unlike other modifiers which must be UPPERCASE.
+
+<code>{button:<i>function-key</i>}</code> allows text to be clickable.
+
+*`function-key`* is the key of the callback function for the button. The function will be under `G.FUNCS['function-key']`.
+
+### Examples
+
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+
+  ```pas
+  {button:modprefix_function}Click me!    
+  ```
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+
+## UI element insertion `{element:}`
+> [!NOTE]
+> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+> *(Added in 1531zeebee)*
+
+> [!IMPORTANT] 
+> This modifier requires the **lowercase** `element`, unlike other modifiers which must be UPPERCASE.
+
+> [!IMPORTANT]
+> Unlike other modifiers, this modifier does not affect the text string after it. Instead, the UI element is inserted directly **at** the position of the modifier.
+
+<code>{element:<i>index</i>}</code> inserts a [UI element](https://github.com/Steamodded/smods/wiki/UI-Guide)  provided as an entry in the [`loc_vars`](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) `vars.elements` table. Instances of `Node` (e.g. `CardArea`, `Sprite`, `UIBox`) are automatically wrapped in an object node. See [Localization](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) for more details.
+
+*`index`* is the array index of the element entry in the `vars.elements` table.
+
+### Examples
+<!--- Single-indented table is necessary for code blocks to function properly -->
+<table>
+ <tr>
+  <td> Text string </td> <td> <code>loc_vars</code> </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+
+   ```pas
+   {element:1} <-- Cool sprite   
+   ```
+  </td>
+  <td>
+
+   ```lua
+   vars = {
+     elements = {
+       { n=G.UIT.R, config = { align="cm" }, nodes = { 
+        { n=G.UIT.O, config= { object =
+            SMODS.create_sprite(0, 0, 20, 20, "modprefix_atlaskey", {x = 0, y = 0})
+        } } 
+      } },
+     }
+   }
+   ```
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+
 
 ## Combinations
 Some style codes can be combined within one set of curly braces, like `{X:mult,C:white}`.
 
-- `{T:}`, `{f:}` and `{s:}` are compatible with all other modifiers.
+- `{T:}`, `{f:}`, `{u:}`, `{button:}` and `{s:}` are compatible with all other modifiers.
 
 - Background modifiers `{X:}` or `{B:}` can be used in conjunction with text colour modifiers `{C:}` or `{V:}`.
 
@@ -759,6 +936,8 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
 - `{C:}` and `{V:}` are exclusive - if both are used, `{C:}` will be ignored.
 
 - `{X:}` and `{B:}` are exclusive - if both are used, `{X:}` will be ignored.
+
+- `{element:}` does not interact with any other modifiers. Any additional modifiers will function as if `{element:}` wasn't present.
 
 
 ### Examples
@@ -1175,7 +1354,11 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
   <td>
    <code>G.C.RARITY.Common</code>
   </td>
-  <td> </td>
+  <td align="center">
+   <picture>
+    <img src="Assets/Text-Styling/example_common_light.svg" height=16 alt="Rare">
+   </picture>
+  </td>
   <td align="center" rowspan=3>
    Added by<br>Steamodded
   </td>
@@ -1190,7 +1373,11 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
   <td>
    <code>G.C.RARITY.Uncommon</code>
   </td>
-  <td> </td>
+  <td align="center">
+   <picture>
+    <img src="Assets/Text-Styling/example_uncommon_light.svg" height=16 alt="Uncommon">
+   </picture>
+  </td>
  </tr>
  <tr>
   <td>
@@ -1202,7 +1389,11 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
   <td>
    <code>G.C.RARITY.Rare</code>
   </td>
-  <td> </td>
+  <td align="center">
+   <picture>
+    <img src="Assets/Text-Styling/example_rare_light.svg" height=16 alt="Rare">
+   </picture>
+  </td>
  </tr>
  <tr>
   <td>
@@ -1253,6 +1444,23 @@ Some style codes can be combined within one set of curly braces, like `{X:mult,C
    <img src="Assets/Text-Styling/example_Joker_light.svg" height=24 alt="Joker">
   </td>
   <td> </td>
+ <tr>
+  <td>
+   <img src="Assets/Colour-Icons/G.C.DYN_UI.DARK-none.svg" height=32 alt="#1E2B2DFF"><br><img src="Assets/Colour-Icons/G.C.DYN_UI.DARK-cerulean.svg" height=32 alt="#055481FF">
+  </td>
+  <td>
+   <b>blind
+  </td>
+  <td>
+ <code>G.C.DYN_UI.DARK</code>
+  </td>
+  <td align="center">
+   <img src="Assets/Text-Styling/example_blind_none_light.svg" height=16 alt="No Blind"><br><img src="Assets/Text-Styling/example_blind_cerulean_light.svg" height=16 alt="Cerulean Bell">
+  </td>
+  <td align="center">
+   Added by<br>Steamodded<br>
+   since <code>1.0.0~BETA-1531zeebee</code>
+  </td>
  </tr>
 </table>
 
@@ -1264,7 +1472,7 @@ Steamodded automatically adds additional entries to `LOC_COLOURS` for all custom
 - [SMODS.ConsumableType](https://github.com/Steamodded/smods/wiki/SMODS.Consumable)
 - [SMODS.Suit](https://github.com/Steamodded/smods/wiki/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit)
 
-which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient, Consumable or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata#metadata).
+which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata#metadata).
 
 
 

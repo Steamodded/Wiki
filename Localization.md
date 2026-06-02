@@ -11,11 +11,12 @@ Steamodded offers multiple ways to load strings for in-game descriptions and oth
     - [`loc_vars`](#loc_vars)
     - [`locked_loc_vars`](#locked_loc_vars)
     - [`generate_ui`](#generate_ui-advanced)
+    - [`localize`](#localize)
 
 ***
 
 ## Localization Files (recommended)
-This method follows the ways of the base game: instead of attaching descriptions directly to each object, all localization strings for the same language are combined into one file. Each such file should be found in the location `localization/<locale>.lua` or `localization/<locale>.json` relative to your mod's root directory. `<locale>` can be the key of any language found in Balatro itself or added through [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language).
+This method follows the ways of the base game: instead of attaching descriptions directly to each object, all localization strings for the same language are combined into one file. Each such file should be found in the location `localization/<locale>.lua` or `localization/<locale>.json` relative to your mod's root directory. Since 1501a, it is now possible to load sub-folders within the localization folder. Sub-folders can be named as you see fit, but should have files inside named for each language. `<locale>` can be the key of any language found in Balatro itself or added through [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language).
 
 - `default`: Used as a fallback when no text was found for the selected language.
 - `de`: German
@@ -226,6 +227,10 @@ SMODS.Consumable {
                     G.C.SECONDARY_SET.Tarot, -- colour text formatted with {V:1}
                     HEX(card.ability.extra.colour_string), -- colour text formatted with {V:2}
                 },
+                box_colours = { -- Changes the default background colour for each multibox at each index
+                    G.C.SECONDARY_SET.Tarot, -- colour for the main description's background
+                    HEX(card.ability.extra.colour_string), -- colour for the second box's background
+                }
             },
             key = self.key..'_alt', -- Use an alternate description key (pulls from G.localization.descriptions[self.set][key])
             set = 'Spectral', -- Use an alternate description set (G.localization.descriptions[set][key or self.key])
@@ -234,6 +239,8 @@ SMODS.Consumable {
             background_colour = G.C.BLACK, -- Change the default background colour
             main_start = nil, -- Table of UIElements inserted before the main description (-> "Building a UI")
             main_end = nil, -- Table of UIElements inserted after the main description
+            box_starts  = {}, -- *(Added in 1531zeebee)* List of tables of UIElements inserted before a multibox description at each index
+            box_ends = {}, -- *(Added in 1531zeebee)* List of tables of UIElements inserted after a multibox description at each index
         }
     end,
 }
@@ -256,3 +263,56 @@ The base implementation of this function acts as a wrapper to `loc_vars`. Overri
         end,
     }
 ```
+
+## `localize`
+The Balatro function `localize` can be used to extract data from your localization files.
+The function supports the following usages
+
+### `localize(key, misc_cat)`
+Fetches text from `G.localization.misc`. Uses `G.localization.misc.dictionary[key]` if only key is provided, and `G.localization.misc[misc_cat][key]` if both are.
+
+### `localize{args}`
+Fetches text and creates UI nodes from `G.localization`. The following arguments are supported:
+
+- `type` (required): determines where data is fetched from and how it is returned
+    - These can be separated into two categories, types that return a `string` and types that generate [UI nodes](https://github.com/Steamodded/smods/wiki/UI-Guide). 
+    - Types that return a `string`.
+        - `"name_text"`: Returns the name of the object found in `G.localization.descriptions[args.set][args.key]` as a **string**. Multiline names are joined with a space and any formatting is removed, and variables are not replaced.
+        - `"raw_descriptions"`: Returns the description of the object found in `G.localization.descriptions[args.set][args.key]`. Multibox descriptions are joined with a blank line.
+        - `"variable"`: Returns the text found in `G.localization.misc.v_dictionary[args.key]` with any variables (e.g. `#1#`) replaced by `args.vars`.
+    - Types that generate an array of UI nodes. With the exception of `"name"` and `"text"` they do not return a value but store it in `args.nodes` instead.
+        - `"name"`: Returns the name of the object found in `G.localization.descriptions[args.set][args.key]`.
+        - `"descriptions"`: Gets the description of the object found in `G.localization.descriptions[args.set][args.key]`. Multiboxes are *not* obtained.
+        - `"other"`: Gets the description of the object found in `G.localization.descriptions.Other[args.key]`.
+        - `"unlocks"`: Gets the description for the unlock conditions of the object found in `G.localization.descriptions[args.set][args.key]`.
+        - `"tutorial"`: Gets the tutorial text found in `G.localization.tutorial[args.key]`.
+        - `"quips"`: Gets the quip text found in `G.localization.quips[args.key]` as **UI nodes**.
+        - `"text"`: Returns the text found in `G.localization.v_text[args.key]` as **UI nodes**.
+- `key`: Used to determine where to grab data from.
+- `set`: Used by some types to determine where in `G.localization.descriptions` to grab data from.
+- `vars`: Any information to pass into the text, see `loc_vars` for more information. All types support this except `"name_text"`.
+- The following arguments are supported for the UI node types: *(defaults)*
+    - `nodes`: Table where the UI for the some types is saved.
+    - `scale = 1`: Scale for any UI text nodes returned. Using `{s:}` in text will override this.
+    - `text_colour = G.C.UI.TEXT_DARK`: Sets the default text colour. 
+    - `default_col = G.C.UI.TEXT_DARK`: Same as `text_colour`. 
+- The following arguments are supported for the `"name"` type: *(defaults)*
+    - `scale = 1`: Scale for any UI text nodes returned. Using `{s:}` in text will override this.
+    - `text_colour = G.C.UI.TEXT_LIGHT`: Sets the default text colour. 
+    - `fixed_scale = 1`: Same as `scale`, but combines with `{s:}` instead.
+    - `no_bump`: Removes the DynaText bump effect.
+    - `no_silent`: Allows the DynaText to make sound.
+    - `no_pop_in`: Removes the DynaText pop in effect.
+    - `no_shadow`: Removes the drop shadow. *`"name"` does not support `shadow`*.
+    - `no_spacing`: Removes the spacing between letters.
+    - `pop_in = 0`: Controls the start time of the pop in effect.
+    - `pop_in_rate = 4`: Controls the speed of the pop in effect (higher = faster).
+    - `maxw = 5`: Controls the max width of the DynaText.
+    - `y_offset = -0.6`: Controls the y offset of the Dynatext.
+
+### Formatting UI nodes from `localize`
+The following vanilla functions can be used to format the array of UI nodes obtained from `localize`.
+- `transparent_multiline_text(nodes)` formats the nodes with a transparent background.
+- `name_from_rows(nodes, background_colour)` formats the nodes like a card description tooltip's name.
+- `desc_from_rows(nodes, empty, maxw)` formats the nodes like a card description tooltip. `empty` removes the background colour and embossing. Set `nodes.background_colour` before calling this function to change the background colour.
+- `info_tip_from_rows(nodes, name)` formats the nodes like an `info_queue` tooltip. `name` is a string used for the title of the UI node. Set `nodes.background_colour` before calling this function to change the background colour. Set `nodes.name_styled` to an array of UI nodes to replace the name.

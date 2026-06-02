@@ -73,7 +73,7 @@ This means Lovely has been installed correctly, but Steamodded is not installed 
 There is a variety of reasons this can happen. Some of the more common reasons are:
 - If you have other mods installed, it's very likely those mods are crashing. Check with the developer(s) of those mods.
 - Your Balatro installation could be corrupted. Try verifying your game files on Steam: `Library > Balatro > Properties > Installed Files > Verify integrity of game files`.
-- Your Balatro version might be outdated and needs to be updated through steam. Steamodded only supports the latest Steam version of the game.
+- Your Balatro version might be outdated and needs to be updated through Steam. Steamodded only supports the latest Steam version of the game.
 - If you're trying to continue an existing run and crashing, your run is most likely unrecoverable. Try starting a new run.
 </details>
 
