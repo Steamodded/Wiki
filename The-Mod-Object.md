@@ -243,7 +243,7 @@ You may want to have some functionality happen with your mod installed independe
 Set up global game values that reset each round, similar to vanilla jokers like Castle, The Idol, Ancient Joker, and Mail-In Rebate. `run_start` indicates if the function is being called at the start of the run.
 
 ### `mod.set_ability_reset_keys() -> table`
-When a card's `ability` table is changed (such as calling `Card:set_ability()` on it), all previous fields are transferred from the previous `ability` table with set exceptions. This function returns a table of strings corresponding to fields that should not persist. 
+When a card's `ability` table is changed (such as calling `Card:set_ability()` on it), all previous fields are transferred from the previous `ability` table with set exceptions; by default those exceptions are `name`, `effect`, `set`, `extra`, `played_this_ante`, and `perma_debuff`. This function returns a table of strings corresponding to fields to be added to that list (there is currently no way to remove an exception).
 
 ### `mod.set_debuff(card) -> boolean|"prevent_debuff"`
 This function is called when a card is being checked for if it should be debuffed. 
