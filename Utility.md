@@ -61,6 +61,22 @@ Checks if an enhancement should be generated, and generates one according to the
 	- `no_negative` - Disables negative edition chance *(chance is added to polychrome)*
 	- `guaranteed` - If this is `true`, disables base card and always generates an edition.
 	- `options` - A table of possible editions to generate. Defaults to all editions marked `in_shop`.
+#### `SMODS.poll_object(args) -> string?`
+- Generates a random object based on the provided arguments. Respects [object weights, if enabled](The-Mod-Object#optional-features).
+	- `type` - A single type ([object type](SMODS.ObjectType) or [attribute](SMODS.Attributes)) to poll from
+	- `types` or `attributes` - A table of types to poll from
+	- `intersect` - If `true`, polled object must be of all types specified, instead of any
+	- `pool` - Specify a table of object keys to use as the pool instead of having the function generate one
+ 		- Items in the pool at this stage are of the form `{ key = "j_joker", type = "Joker", weight = 10 }`.
+	- `filter` - Specify a function to filter the pool once it has been generated; must return the modified pool
+ 		- To preserve RNG behavior, an invalid item should have its key changed to `"UNAVAILABLE` rather than being fully removed.
+	- `chance` - % chance of success as a decimal value 0-1
+	- `guaranteed` - Guarantee a result from the function (e.g. if polling for an enhancement). Overrides `chance`.
+	- `seed` - Specify a seed to use for the poll chance (defaults are available)
+	- `type_key` - A second poll seed if repolling is used (e.g. the card already exists without Showman)
+	- `append` - Appended onto the poll seed
+	- `no_negative`- Disables negative edition chance *(chance is added to polychrome)*
+	- `print` - Turns on debug prints.
 
 ## Mod-facing Utilities
 These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.
