@@ -62,7 +62,7 @@ Checks if an enhancement should be generated, and generates one according to the
 	- `guaranteed` - If this is `true`, disables base card and always generates an edition.
 	- `options` - A table of possible editions to generate. Defaults to all editions marked `in_shop`.
 #### `SMODS.poll_object(args) -> string?`
-- Polls objects, respecting object weights if enabled. [Further info on the Weights page.](Weight-System.md#smodspoll_objectargs---stringnil)
+- Polls objects, respecting object weights if enabled. [Further info on the Weights page.](https://github.com/Steamodded/smods/wiki/Weight-System#smodspoll_objectargs---stringnil)
 
 ## Mod-facing Utilities
 These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.
