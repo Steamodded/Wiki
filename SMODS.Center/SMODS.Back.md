@@ -9,7 +9,7 @@
 		- `config` values will be saved under `G.GAME.selected_back.effect.config`
     - `initial_deck`: *(Added in 1501a)* Allows for easier customisation of your starting deck.
         - `ranks`, `suits`: A list of ranks and suits to include/exclude.
-        - `exclude = false`: If `true`, `ranks`/`suits` will be trated as blacklists instead of whitelists.
+        - `exclude = false`: If `true`, `ranks`/`suits` will be treated as blacklists instead of whitelists.
 
 
 ## API methods
