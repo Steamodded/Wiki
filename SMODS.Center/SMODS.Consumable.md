@@ -22,7 +22,7 @@
 		- `can_repeat_soul`, allows repeats of this card as if Showman were present
     - `select_card`:
     	- Set to string of destination card area, ex. `'consumeables'`, to save this card from Booster packs instead of using it.
-		- Set to a function `select_card(card, pack) -> string?` to control if and where `card` should be saved for any `card, pack` combination.
+		- Set to a function `select_card(card, pack) -> string?, boolean?` to control if and where `card` should be saved for any `card, pack` combination. Returning `true` as the second value allows the player to select whether to save or use the card.
 		- Takes priority over `select_card` on the ConsumableType or Booster pack
 	- `disable_shine`: *(added in 1531zeebee)* Disables the default 'shine' shader for Spectrals.
 
