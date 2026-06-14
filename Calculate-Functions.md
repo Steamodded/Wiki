@@ -955,6 +955,22 @@ if context.round_eval then
   >You can call `add_round_eval_row` in this context to add to the cash out display.
 
 ---
+#### context.modify_final_cashout
+*(Added in 1814a)* This context is used to adjust the total value of the cashout. Returning `modify = X` will add your value to the total cashout.
+
+```lua
+if context.modify_final_cashout then
+```
+
+```lua
+context.modify_final_cashout -- boolean value to flag this context, always TRUE
+context.amount -- the current value of the cashout
+```
+>[!TIP]
+>Setting `cashout_row = {}` will allow you to provide your own arguments to the cashout row function. The amount and pitch are automatically populated for you. For example,
+>`cashout_row = {name='custom', text = 'I'm custom!', text_colour = G.C.BLUE}`
+
+---
 #### context.modify_ante
 This context is used when the ante is about to change. Returning `modify = number` will change the amount that the ante will change by.
 
