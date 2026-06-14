@@ -1111,7 +1111,7 @@ if context.create_shop_card then
 ```lua
 context.create_shop_card -- flag to identify this context, always TRUE
 context.set -- The selected set of the card that is to be created
-context.area -- The area where the created card will be placed
+context.area -- *(Added in 1814a)* The area where the created card will be placed
 ```
 
 ---
