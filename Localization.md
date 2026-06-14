@@ -290,7 +290,7 @@ Fetches text and creates UI nodes from `G.localization`. The following arguments
         - `"text"`: Returns the text found in `G.localization.v_text[args.key]` as **UI nodes**.
 - `key`: Used to determine where to grab data from.
 - `set`: Used by some types to determine where in `G.localization.descriptions` to grab data from.
-- `vars`: Any information to pass into the text, see `loc_vars` for more information. All types support this except `"name_text"`.
+- `vars`: Any information to pass into the text, see `loc_vars` for more information.
 - The following arguments are supported for the UI node types: *(defaults)*
     - `nodes`: Table where the UI for the some types is saved.
     - `scale = 1`: Scale for any UI text nodes returned. Using `{s:}` in text will override this.
