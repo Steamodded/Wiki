@@ -63,6 +63,7 @@ This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMOD
 - `ObjectType.delete_card(self, center)`
 	- Used for removing cards from additional pools when deleted.
 - `ObjectType.set_badges(self, card, badges)`
+	- *(Added in 1814a)*
 	- Add additional badges, leaving existing badges intact. This function doesn't return; add badges by appending to `badges`.
 	- Avoid overwriting existing elements. It will cause text to appear on the top left corner of your screen instead.
 	- Function for creating badges: `create_badge(_string, _badge_col, _text_col, scaling)`
