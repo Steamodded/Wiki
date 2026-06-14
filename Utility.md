@@ -131,10 +131,12 @@ This function replaces `create_card`. It provides a cleaner interface to the sam
 - `enhanced_poll` - Chance to pick `'Base'` over `'Enhanced'` with set `'Playing Card'`. Default: 0.6
 - `allow_duplicates` - Allows duplicates of created cards (when a `key` is not specified) as if Showman was owned.
 #### `SMODS.add_to_deck(card, args)`
+*(Added in 1814a)* 
 Adds `card` to the player's owned cards, doing all the necessary operations (calling add_to_deck, emplacing the card, etc.). The following `args` are supported:
 - `area` - Area the card should be added to, if not specified it will be inferred from the card.
 - `playing_card` - Sets the card's playing card value. If `false`, the value is not set. If no value is specified, it sets it to the next G.playing_card (only if `card` is a playing card)
 #### `SMODS.copy_card(card, args)`
+*(Added in 1814a)* 
 This function replaces `copy_card`. `card` is the card being copied. The following `args` are supported:
 - `new_card` - Copies the card into `new_card` instead of creating a new card (like the Death tarot)
 - `card_scale` - Multiplier for the copy's scale
