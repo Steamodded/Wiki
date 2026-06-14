@@ -908,7 +908,7 @@ if context.round_eval then
 
 ---
 #### context.modify_final_cashout
-This context is used to manipulate the final cashout value.
+*(Added in 1814a)* This context is used to adjust the total value of the cashout. Returning `modify = X` will add your value to the total cashout.
 
 ```lua
 if context.modify_final_cashout then
@@ -916,10 +916,11 @@ if context.modify_final_cashout then
 
 ```lua
 context.modify_final_cashout -- boolean value to flag this context, always TRUE
-context.amount -- the current final cashout value
+context.amount -- the current value of the cashout
 ```
 >[!TIP]
->Returning `cashout_mod` as a number will change the cashout value by that number and automatically add a row to the cashout report
+>Setting `cashout_row = {}` will allow you to provide your own arguments to the cashout row function. The amount and pitch are automatically populated for you. For example,
+>`cashout_row = {name='custom', text = 'I'm custom!', text_colour = G.C.BLUE}`
 
 ---
 #### context.modify_ante
