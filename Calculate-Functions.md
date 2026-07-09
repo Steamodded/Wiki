@@ -896,7 +896,7 @@ context.poker_hands -- the list of poker hands contained within the selected car
 ```
 
 >[!TIP]
->You can modify chips and mult by doing `hand_chips = mod_mult(hand_chips + value)` and `mult = mod_mult(mult + value)` or any scoring parameter, including chips and mult, by calling `SMODS.Scoring_Parameters.key:modify(value)`.
+>You can modify chips and mult by doing `hand_chips = mod_chips(hand_chips + value)` and `mult = mod_mult(mult + value)` or any scoring parameter, including chips and mult, by calling `SMODS.Scoring_Parameters.key:modify(value)`.
 
 ---
 #### context.debuff_card
