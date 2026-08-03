@@ -30,8 +30,8 @@
 		- `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
 		- `vars`: *(Added in 1814a)* Replaces the variables (e.g. `#1#`) in names sourced from the localization.
 		- `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
-- `calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions#scaling-values)
-	- Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.
+- ~~`calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions#scaling-values)~~
+	- **DEPRECATED.** Use `context.scaling_card` with `calculate` instead. ~~Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.~~
 - `set_ability(self, card, initial, delay_sprites)`
 	- Set up initial ability values or manipulate sprites in an advanced way.
 - `add_to_deck(self, card, from_debuff)`
