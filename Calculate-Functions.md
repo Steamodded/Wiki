@@ -822,6 +822,25 @@ context.other_card -- the card that is being discarded
 context.full_hand -- the list of all cards that are being discarded
 ```
 ---
+#### context.drawing_to_play_area
+This context is used when determining which cards in the selected hand should be added to the play area for scoring. Each card held in hand passes through the context, and returning `add_to_hand = true` or `remove_from_hand = true` will do the according action *(removing has a higher priority than adding)*. Unlike `context.modify_scoring_hand`, cards removed will stay held in hand. Returning `return_to_hand = true` will additionally return that card to hand instead of discarding it after scoring similar to (and superceded by) `context.stay_flipped`.
+
+```lua
+if context.drawing_to_play_area then
+```
+
+```lua
+context.drawing_to_play_area -- flag to identify this context, always TRUE
+context.other_card -- the individual card being evaluated for the hand
+context.full_hand -- the list of all cards highlighted for play
+```
+
+>[!TIP]
+>You can check if a card is currently highlighted with the boolean `context.other_card.highlighted`.
+
+>[!CAUTION]
+> The game doesn't have a default case for handling and empty hand and will crash when evaluating one. This can be prevented by checking if `#context.full_hand > 1` before removing a card.
+---
 #### context.press_play
 This context is used when the Play Hand button is pressed.
 
