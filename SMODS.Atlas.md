@@ -32,10 +32,12 @@ Mods
 	- `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
 	- `atlas_table = 'ASSET_ATLAS'`
 		- Use `ASSET_ATLAS` for non-animated sprites
-		- Use `ANIMATION_ATLAS` for animated sprites
+		- Use `ANIMATION_ATLAS` for AnimatedSprites (see [guide](https://github.com/Steamodded/smods/wiki/Animated-Sprites.md))
+		- Use `STATE_ATLAS` for StateSprites (see [guide](https://github.com/Steamodded/smods/wiki/Animated-Sprites.md))
 		- Use `ASSET_IMAGES` for other images
-	- `frames`: for animated sprites, you must provide the number of frames of the animation. Each row should contain one animation, with each column showing one frame.
-	- `fps`: for animated sprites, you can provide the animation speed by *frames per second*. The default value is `10` or `G.ANIMATION_FPS`.	 
+	- `frames`: for animated sprites, you can provide the default number of frames of the animation. Each column shows one frame, and animations may wrap to the next row.
+	- `fps`: for animated sprites, you can provide the default animation speed by *frames per second*. The global default value is `10` or `G.ANIMATION_FPS`.
+	- `sprite_args`: for animated sprites, may contain default `sprite_args` arguments for created sprites. If a `sprite_args` table is passed to `SMODS.create_sprite()`, its arguments take priority if defined. (see [guide](https://github.com/Steamodded/smods/wiki/Animated-Sprites.md) for `Animated/StateSprite`s)
 	- `raw_key`: Set this to `true` to prevent the loader from adding your mod prefix to the `key`. Useful for replacing sprites from the base game or other mods.
 	- `language`: Restrict your atlas to a specific locale. Useful for introducing localized sprites while leaving other languages intact.
 	- `disable_mipmap`: Disable mipmap being applied to this texture. Might remove artifacts on smaller textures.

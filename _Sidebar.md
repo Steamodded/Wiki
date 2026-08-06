@@ -52,6 +52,7 @@ Guides
   * [Event Manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager)
   * [Localization](https://github.com/Steamodded/smods/wiki/Localization)
   * [Text Styling](https://github.com/Steamodded/smods/wiki/Text-Styling)
+  * [Animated Sprites](https://github.com/Steamodded/smods/wiki/Animated-Sprites)
   * [UI Structure](https://github.com/Steamodded/smods/wiki/UI-Guide)
   * [Utility Functions](https://github.com/Steamodded/smods/wiki/Utility)
   * [All About `G`](https://github.com/Steamodded/smods/wiki/G)
