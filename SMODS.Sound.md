@@ -73,7 +73,7 @@ The `play_sound` function can be used to play a sound at any time.
 > [!IMPORTANT]
 > When playing a sound, the game has no context of being called from your mod. Thus, it is always necessary to include your [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata) when accessing your custom sounds.
 
-It is also possible to play a sound with any message returned from a [calculate function](https://github.com/Steamodded/smods/wiki/calculate_functions) by adding a `sound` field to the effect table.
+It is also possible to play a sound with any message returned from a [calculate function](https://github.com/Steamodded/smods/wiki/Calculate-Functions) by adding a `sound` field to the effect table.
 - Example:
 ```lua
 return {
