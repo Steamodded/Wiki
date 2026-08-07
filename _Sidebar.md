@@ -1,3 +1,7 @@
+## Move Notice
+The SMODS wiki has a new home now! Check it out at https://docs.smods.dev
+
+
   * [Home](https://docs.smods.dev)
     * [Installing on Windows](https://docs.smods.dev/Installation/Installing%20Steamodded%20windows)
     * [Installing on Linux](https://docs.smods.dev/Installation/Installing%20Steamodded%20linux)
