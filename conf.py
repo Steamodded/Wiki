@@ -26,7 +26,7 @@ html_theme = "shibuya"
 html_static_path = ["_static"]
 html_theme_options = {
     "globaltoc_expand_depth": 2,
-    "accent_color": "amber",
+    "accent_color": "orange",
     "show_ai_links": False,
     "show_nav_level": 0,
 }
