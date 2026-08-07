@@ -12,6 +12,7 @@ The (new) standard way to specify your mod's metadata is in a separate JSON file
 	"priority": -20, // [default: 0] ! Mods are loaded in order from lowest to highest priority value.
 	"badge_colour": "FF230A", // [default: 666665] ! Background colour for your mod badge. Must be a valid hex color with 6 or 8 digits (RRGGBB or RRGGBBAA)
 	"badge_text_colour": "ABC123", // [default: FFFFFF] ! Text colour for your mod badge.
+	"badge_shader": "modprefix_shaderkey", // ! Key to the SMODS.Shader to use for the badge if any
 	"display_name": "YM", // [default: <name>] ! Displayed text on your mod badge.
 	"no_marquee": true, // ! [default: false] Disable the marquee scrolling effect on your mod badge and display the whole text at once.
 	"icon_path": "path.png", // ! Path to the mod's icon in the Mods menu. Must be located in both assets/1x and assets/2x. *(Added in 1531zeebee)*
