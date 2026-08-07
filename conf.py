@@ -64,6 +64,9 @@ myst_enable_extensions = [
 html_js_files = [
     "js/search-phrase.js",
 ]
+html_css_files = [
+    "css/scroll.css",
+]
 
 # -- LUA LS
 
