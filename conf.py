@@ -61,6 +61,10 @@ myst_enable_extensions = [
     "tasklist",
 ]
 
+html_js_files = [
+    "js/search-phrase.js",
+]
+
 # -- LUA LS
 
 lua_ls_project_root = "."
