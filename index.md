@@ -71,6 +71,6 @@ Game Objects/API-Documentation.md
 :hidden:
 :glob:
 Guides/G
-Guides/Guide-‐-Event-Manager
+Guides/Event-Manager
 Guides/UI-Guide
 ```
