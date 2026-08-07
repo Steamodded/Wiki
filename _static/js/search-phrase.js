@@ -681,7 +681,7 @@
   );
 
   document.addEventListener("DOMContentLoaded", initPhraseSearch);
-  document.addEventListener("DOMContentLoaded", highlightPhrases);
+  //document.addEventListener("DOMContentLoaded", highlightPhrases);
   document.addEventListener("DOMContentLoaded", function () {
     // Delay form interception to ensure all elements are loaded
     setTimeout(interceptSearchForm, 100);
