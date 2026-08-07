@@ -7,6 +7,7 @@ Steamodded provides utility functions that extend or replace vanilla functionali
 - [Mod-facing Utilities](#mod-facing-utilities)
 - [Joker Effects](#joker-effects)
 - [Card Methods](#card-methods)
+- [Miscellaneous](#miscellaneous)
 
 ***
 
@@ -272,3 +273,11 @@ This function checks whether a card object should display the front sprite or no
 This function checks if a Joker is a certain rarity. Accepts a number for vanilla rarities, or a key as a string for modded rarities.
 #### `Card:can_calculate(ignore_debuff, ignore_sliced) -> boolean`
 This function checks whether a card can run its `calculate` function.
+
+## Miscellaneous
+
+#### `SMODS.card_to_image(card, scale, filename)`
+Renders one card to a `.png` file, saved to your save directory (the folder above the Mods folder).
+    - `card` - Card to save as an image
+    - `scale` Scale to render the card at (default = `G.SETTINGS.GRAPHICS.texture_scaling`)
+    - `filename` - Name of the file (default = `card.config.center.key`)
