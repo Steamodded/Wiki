@@ -93,7 +93,11 @@
 
         for (const result of results) {
           const [docName] = result;
-          const url = contentRoot + docName + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
+          const url =
+            contentRoot +
+            docName +
+            "/index" + // asumme dirhtml
+            DOCUMENTATION_OPTIONS.FILE_SUFFIX;
 
           try {
             const response = await fetch(url);
