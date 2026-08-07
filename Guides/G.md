@@ -4,7 +4,7 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
 
 ## The Highlights
 
-- `G.E_MANAGER` is the [event manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager).
+- `G.E_MANAGER` is the [event manager](https://github.com/Steamodded/smods/wiki/Event-Manager).
 - `G.P_CENTERS` holds the game's center objects (prototypes for jokers, consumables, vouchers, decks, enhancements, editions, and boosters). It is indexed with the object's key. For example, `G.P_CENTERS.c_strength` is the center for Strength.
 - `G:update(dt)` is called once per frame. This uses `G.STATE` and `G.STATE_COMPLETE` to run a state machine.
 - `G.C` holds colors.
@@ -12,7 +12,7 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
 
 ## Everything
 
-- `G.E_MANAGER` is the [event manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager).
+- `G.E_MANAGER` is the [event manager](https://github.com/Steamodded/smods/wiki/Event-Manager).
 - `G.P_SEALS` holds the seal prototypes, much like `G.P_CENTERS`.
 - `G.P_TAGS` holds the tag prototypes, much like `G.P_CENTERS`.
 - `G.P_STAKES` holds the stake prototypes, much like `G.P_CENTERS`.
@@ -40,7 +40,7 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
 - `G.DEBUG` can be set to true to view debugging information.
 - `G.FILE_HANDLER` manages saving the game every 10 seconds.
 - `G.VERSION` is the version string for the current build of the game.
-- `G.TIMERS` has various timers that run at different rates and reset at different times. The [event manager](https://github.com/Steamodded/smods/wiki/Guide-%E2%80%90-Event-Manager) uses these, as well as many animations.
+- `G.TIMERS` has various timers that run at different rates and reset at different times. The [event manager](https://github.com/Steamodded/smods/wiki/Event-Manager) uses these, as well as many animations.
 - `G.FRAMES.MOVE` holds the current physics frame number.
 - `G.FRAMES.DRAW` holds the current frame number.
 - `G.SETTINGS` holds the various configuration options:
