@@ -10,6 +10,8 @@ project = "SMODS Documentation"
 copyright = "SMODS Team"
 author = "SMODS Team"
 release = "0.1"
+html_favicon = "icon.png"
+html_title = "SMODS Documentation"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -29,13 +31,20 @@ html_theme_options = {
     "accent_color": "orange",
     "show_ai_links": False,
     "show_nav_level": 0,
+    "foot_socials": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/Steamodded/smods",
+            "icon": "simple-icons:github",
+        }
+    ],
 }
 html_logo = "icon.png"
 html_context = {
     "source_type": "github",
     "source_user": "Steamodded",
-    "source_repo": "Wiki",
-    "source_docs_path": "/",
+    "source_repo": "smods",
+    "source_edit_template": "https://github.com/Steamodded/Wiki/blob/main/{0}",
 }
 
 myst_enable_extensions = [
