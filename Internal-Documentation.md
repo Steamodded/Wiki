@@ -117,7 +117,7 @@ Returns true if the card is within the scoring hand.
 Pushes `context` into `SMODS.context_stack`.
 #### `SMODS.pop_from_context_stack(context, func)`
 Pops a `context` from `SMODS.context_stack`.
-#### `SMODS.get_previous_context()`
+#### `SMODS.get_previous_context() -> table`
 Returns the second to last context from `SMODS.context_stack`
 #### `SMODS.mod_score(args)`
 Modifies current scored chips. Arguments:
@@ -126,6 +126,10 @@ Modifies current scored chips. Arguments:
     - `card`: Card responsible for score modification action, crucial for score display to work properly
     - `effect`: Table of effects that were calculated
     - `from_edition`: If `true` the effect comes from an Edition
+#### `SMODS.can_context_retrigger(context) -> bool`
+Returns whether or not the given context can retrigger (by checking `SMODS.CONTEXT_RETRIGGER_BLACKLIST`)
+#### `SMODS.can_context_post_trigger(context) -> bool`
+Returns whether or not the given context can post_trigger (by checking `SMODS.CONTEXT_POST_TRIGGER_BLACKLIST`)
 
 ## Misc.
 These are functions used by SMODS for miscellaneous features.
