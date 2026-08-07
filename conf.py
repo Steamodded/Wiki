@@ -44,7 +44,7 @@ html_context = {
     "source_type": "github",
     "source_user": "Steamodded",
     "source_repo": "smods",
-    "source_edit_template": "https://github.com/Steamodded/Wiki/blob/main/{0}",
+    "source_edit_template": "https://github.com/Steamodded/Wiki/blob/master/{0}",
 }
 
 myst_enable_extensions = [
