@@ -1,5 +1,5 @@
-## Move Notice
-The SMODS wiki has a new home now! Check it out at https://docs.smods.dev
+  > [!NOTE]
+  > The SMODS wiki has a new home now! Check it out at https://docs.smods.dev
 
 
   * [Home](https://docs.smods.dev)
