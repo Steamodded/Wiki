@@ -29,7 +29,7 @@ for key, value in lookup.items():
         if decoded not in lookup:
             sys.exit(f"Error: Linked page '{decoded}' not found in directory.")
         new_path = quote(os.path.splitext(lookup[decoded])[0], safe='/')
-        replacement = f'https://wikitest.smods.dev/testwiki/{new_path}'
+        replacement = f'https://wikitest.smods.dev/{new_path}'
         original_url = f'https://github.com/Steamodded/smods/wiki/{match}'
         content = content.replace(original_url, replacement, 1)
 
