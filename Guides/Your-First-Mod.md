@@ -26,7 +26,7 @@ git clone https://github.com/Steamodded/smods.git
 
 *If you have completed Method A, please skip this step. Your installation is complete.*
 
-Follow the manual installation instructions on how to install smods as a user at the [home page](https://github.com/Steamodded/smods/wiki).
+Follow the manual installation instructions on how to install smods as a user at the [home page](https://docs.smods.dev/).
 
 ## Useful resources
 
