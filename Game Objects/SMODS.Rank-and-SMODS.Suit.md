@@ -5,11 +5,11 @@
   - `card_key`: Used to create keys for playing cards, formatted like `S_R`, where `S` is the suit's and `R` is the rank's card key. Your mod prefix gets prepended by default.
   - `pos`: This is a partial `pos` table that only needs an `x` coordinate. As such, your atlas should organize ranks in columns.
   - `nominal`: The amount of chips this rank should score.
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
     - `loc_txt` should contain only a `name` string. For localization files, place this string in `misc.ranks[key]`.
 - **Optional parameters** *(defaults)*:
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
-  - `lc_atlas = 'cards_1', hc_atlas = 'cards_2'`: Atlas to use for low-contrast and high-contrast settings respectively. Use the same atlas key if you don't have separate high contrast textures. [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
+  - `lc_atlas = 'cards_1', hc_atlas = 'cards_2'`: Atlas to use for low-contrast and high-contrast settings respectively. Use the same atlas key if you don't have separate high contrast textures. [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
   - `shorthand = key`: Short descriptor used in deck preview.
   - `face_nominal`: Numeric value (normally between 0 and 1) that determines the displayed order of ranks with the same nominal value.
   - `face = false`: whether this rank counts as a face card.
@@ -30,10 +30,10 @@
   - `card_key`: Used to create keys for playing cards, formatted like `S_R`, where `S` is the suit's and `R` is the rank's card key. Your mod prefix gets prepended by default.
   - `pos`: This is a partial `pos` table that only needs a `y` coordinate. As such, your atlas should organize suits in rows.
   - `ui_pos`: Sprite position of the miniature suit symbol used in deck view.
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
     - `loc_txt` should contain a `singular` and `plural` string only. When using localization files, assign to `misc.suits_singular[key]` and `misc.suits_plural[key]` respectively.
 - **Optional parameters** *(defaults)*:
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `lc_atlas = 'cards_1'`: Atlas to use when high-contrast cards are disabled.
   - `hc_atlas = 'cards_2'`: Atlas to use when high-contrast cards are enabled.
   - `lc_ui_atlas = 'ui_1'`: Atlas for miniature suit symbols when high-contrast cards are disabled.
@@ -45,7 +45,7 @@
 
 These methods are available for both suits and ranks.
 
-- `loc_vars` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+- `loc_vars` [(reference)](https://docs.smods.dev/API%20Documentation/Localization#Localization-functions)
   - This method provides very limited functionality compared to its counterpart on other classes. It has no support for any return values, but it does allow you to add tooltips to `info_queue`.
 - `draw(self, card, layer)`
   - Draws additional sprites or shaders on cards.

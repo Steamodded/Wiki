@@ -13,4 +13,4 @@ This class offers a standardized way of drawing sprites and shaders on cards ins
   - `conditions = {}`: Defines additonal conditions for when this draw step should or shouldn't run. This table accepts the following keys:
     - `vortex = <bool>`: Checks for a `vortex` property of the drawn card. This is true only for splash cards on the game's splash screen.
     - `facing`: Checks for the facing direction of the card. Valid values are `'front'` and `'back'`.
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)

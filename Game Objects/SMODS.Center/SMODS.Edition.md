@@ -4,14 +4,14 @@
 
 - **Required parameters:**
   - `key`
-  - `shader`: the key for your shader [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Shader-and-SMODS.ScreenShader)
+  - `shader`: the key for your shader [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Shader-and-SMODS.ScreenShader)
     - `shader = false` is allowed. This will create an edition with no shader.
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
     - `loc_txt` should contain an additional `label` string. It is used on badges, while `name` is displayed at the top of info boxes. For use with localization files, this label should be placed in `misc.labels` **(without the `e_` prefix)**.
 - **Optional parameters** *(defaults)*:
-  - `atlas = 'Joker', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+  - `atlas = 'Joker', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
     - This defines the card to draw the edition on in the collection.
-  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - The following base values for `config` are supported and will be applied/scored automatically:
 
   ```lua
@@ -47,7 +47,7 @@
 
 ## API methods
 
-- `loc_vars` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+- `loc_vars` [(reference)](https://docs.smods.dev/API%20Documentation/Localization#Localization-functions)
   - Only `vars`, `key` and `set` return values are currently supported for editions.
 - `get_weight(self) -> number`
   - Returns weight. Use for finer control over the edition's weight.
@@ -55,7 +55,7 @@
   - Used to modify Card when edition is applied
 - `on_remove(card) -> void`
   - Used to modify Card when edition is removed
-- `calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions#scaling-values)
+- `calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://docs.smods.dev/API%20Documentation/Calculate-Functions#scaling-values)
   - *(Added in 1531zeebee)*
   - Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.
   - This only affects the card with the Edition

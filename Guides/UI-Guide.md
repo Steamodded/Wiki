@@ -132,7 +132,7 @@ Configuration options for Text nodes (ie. `G.UIT.T`):
 - `vert`: set to `true` to draw the text vertically (ie. sideways).
 - `font`: set the text font.<br>
  Must be a font object found within either `G.FONTS` for vanilla fonts or `SMODS.Fonts` for modded fonts.<br>
- The key needed is the same as the number or string you would provide in `{f:}` during [localization](https://github.com/Steamodded/smods/wiki/Text-Styling#text-font-modifier-f)
+ The key needed is the same as the number or string you would provide in `{f:}` during [localization](https://docs.smods.dev/Guides/Text-Styling#text-font-modifier-f)
 
  > [!TIP]
  > If you want to change the text contents of a `G.UIT.T` interactively, use arguments `ref_table` and `ref_value` instead of `text`. Its text will be updated whenever `ref_table[ref_value]` changes.

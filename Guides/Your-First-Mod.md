@@ -42,8 +42,8 @@ It can be useful to look at code from other mod creators.
 
 ### Steamodded documentation
 
-- Check out the [Mod Metadata](https://github.com/Steamodded/smods/wiki/Mod-Metadata) page for how to get your mod detected by Steamodded.
-- Check out the [API Documentation](https://github.com/Steamodded/smods/wiki/API-Documentation) page for information on the basics of Steamodded's api.
+- Check out the [Mod Metadata](https://docs.smods.dev/API%20Documentation/Mod-Metadata) page for how to get your mod detected by Steamodded.
+- Check out the [API Documentation](https://docs.smods.dev/Game%20Objects/API-Documentation) page for information on the basics of Steamodded's api.
 - For adding content, check the **Game Objects** part of the sidebar, which lists every object SMODS can create.
 
 ### Other resources

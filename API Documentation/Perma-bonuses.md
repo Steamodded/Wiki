@@ -34,7 +34,7 @@ perma_repetitions, -- retriggers in any context
 
 ## Re-implementation of Hiker
 
-This function is an example of how to use perma-bonuses in smods, based on the vanilla Hiker joker. See [Calculate Functions](https://github.com/Steamodded/smods/wiki/Calculate-Functions) for more information about `calculate`.
+This function is an example of how to use perma-bonuses in smods, based on the vanilla Hiker joker. See [Calculate Functions](https://docs.smods.dev/API%20Documentation/Calculate-Functions) for more information about `calculate`.
 
 ```lua
 SMODS.Joker{
@@ -122,7 +122,7 @@ card_extra_h_dollars,
 card_extra_repetitions,
 ```
 
-Simplify define an entry under `descriptions.Other` (see [Localization](https://github.com/Steamodded/smods/wiki/Localization) for more information) such as:
+Simplify define an entry under `descriptions.Other` (see [Localization](https://docs.smods.dev/API%20Documentation/Localization) for more information) such as:
 
 ```lua
             card_extra_chips={

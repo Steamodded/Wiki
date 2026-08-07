@@ -7,7 +7,7 @@ Used to add new scoring parameters that act like `chips` or `mult` in the base g
   - `default_value`
     - Default value the parameter takes
 - **Optional parameters** *(defaults)*:
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `colour = G.C.UI_MULT`: Colour of the parameter in the game's UI
   - `calculation_keys`: Valid `calculate` returns for this parameter.
   - `hands`: Defines the values this parameter takes for each Poker Hand.
@@ -75,7 +75,7 @@ Used to add new scoring calculation behavious between `chips` and `mult`.
     ```
 
 - **Optional parameters** *(defaults)*:
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `text = 'X'`: Replaces the "X" symbol on the UI between the chips and mult boxes
   - `colour = G.C.RED`: Sets the colour for the UI symbol
   - `config`: Table for values that persist during the run. You can access it by using `self.config` in the Scoring Calculation's functions, or `G.GAME.current_scoring_calculation.config` anywhere else.
@@ -84,7 +84,7 @@ Used to add new scoring calculation behavious between `chips` and `mult`.
 ## API methods
 
 - `replace_ui(self) -> table`
-  - Used to replace the UI for the hand scoring boxes. Returns a [UI node table](https://github.com/Steamodded/smods/wiki/UI-Guide). See `SMODS.GUI.hand_chips_container` in `src/ui.lua` for an example.
+  - Used to replace the UI for the hand scoring boxes. Returns a [UI node table](https://docs.smods.dev/Guides/UI-Guide). See `SMODS.GUI.hand_chips_container` in `src/ui.lua` for an example.
 
 - `update_ui(self, container, chip_display, mult_display, operator)`
   - Called when the UI for the scoring boxes is being updated. `container` is the UIElement that contains the entire UI, while `chip_display`, `mult_display` and `operator` are the UIElements for the chip box, mult box and operator symbol respectively.

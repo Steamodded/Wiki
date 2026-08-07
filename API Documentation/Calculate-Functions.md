@@ -253,7 +253,7 @@ return {
 #### Object Weights
 
 *(Added in 1531zeebee)*
-With the object_weights optional feature enabled, every object in the game is now polled based on a weight value that is assigned to it. More details [here](https://github.com/Steamodded/smods/wiki/Weight-System).
+With the object_weights optional feature enabled, every object in the game is now polled based on a weight value that is assigned to it. More details [here](https://docs.smods.dev/API%20Documentation/Weight-System).
 
 This context is used to modify weights in `SMODS.poll_object` when this feature is enabled.
 
@@ -529,7 +529,7 @@ context.main_scoring -- boolean value to flag this context, always TRUE
 ```
 
 > [!NOTE]
-> For the context for Blind/Deck/Challenge/Stake/Mod effects check [here](https://github.com/Steamodded/smods/wiki/Calculate-Functions#contextmain_scoring-individual).
+> For the context for Blind/Deck/Challenge/Stake/Mod effects check [here](https://docs.smods.dev/API%20Documentation/Calculate-Functions#contextmain_scoring-individual).
 ---
 
 #### context.individual
@@ -644,7 +644,7 @@ context.main_scoring -- boolean value to flag this context, always TRUE
 ```
 
 > [!NOTE]
-> For the context for playing card effects check [here](https://github.com/Steamodded/smods/wiki/Calculate-Functions#contextmain_scoring).
+> For the context for playing card effects check [here](https://docs.smods.dev/API%20Documentation/Calculate-Functions#contextmain_scoring).
 
 ---
 

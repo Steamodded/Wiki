@@ -29,7 +29,7 @@ Used by the game to identify certain objects, but Steamodded doesn't use it at a
 
 ### `loc_txt`
 
-Most objects display a text description, and some objects need to display additional text in the collection and other places. The `loc_txt` field defines these pieces of text. You can find an in-depth explanation of `loc_txt` and other ways to load description strings on [this page](https://github.com/Steamodded/smods/wiki/Localization).
+Most objects display a text description, and some objects need to display additional text in the collection and other places. The `loc_txt` field defines these pieces of text. You can find an in-depth explanation of `loc_txt` and other ways to load description strings on [this page](https://docs.smods.dev/API%20Documentation/Localization).
 
 ### `unlocked`
 

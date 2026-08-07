@@ -5,10 +5,10 @@
 - **Required parameters:**
   - `key`,
   - `set` (`'Tarot'`, `'Planet'`, `'Spectral'` or the key of a modded consumable type)
-    - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+    - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
 - **Optional parameters** *(defaults)*:
-  - `atlas = 'Tarot', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `atlas = 'Tarot', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
+  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - `cost = 3`,
     - `pools`: List of keys to ObjectTypes this center should be injected into
       - Expects a list of keys like this:
@@ -32,8 +32,8 @@
 
 ## API methods
 
-- `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
-- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+- `calculate(self, card, context)` [(reference)](https://docs.smods.dev/API%20Documentation/Calculate-Functions)
+- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://docs.smods.dev/API%20Documentation/Localization#Localization-functions)
 - `use(self, card, area, copier)`
   - Defines the behavior of a consumable when used. *(The `copier` argument is a remnant from an effect no longer present in the game and can be ignored.)*
 - `can_use(self, card) -> bool`
@@ -47,7 +47,7 @@
     - `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
     - `vars`: *(Added in 1814a)* Replaces the variables (e.g. `#1#`) in names sourced from the localization.
     - `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
-- `calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions#scaling-values)
+- `calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://docs.smods.dev/API%20Documentation/Calculate-Functions#scaling-values)
   - Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.
 - `set_ability(self, card, initial, delay_sprites)`
   - Set up initial ability values or manipulate sprites in an advanced way.

@@ -8,7 +8,7 @@ Note: Atlases in this class are not automatically prefixed.
 - **Required parameters:**
   - `key`
   - `suit`: The suit this skin applies to.
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
   - `palettes`: A list of tables with the following values:
     - `key` (Use `'hc'` or `'lc'` to consider this palette a default high-/low-contrast palette)
     - `ranks`: A list of ranks the skin provides sprites for.
@@ -26,12 +26,12 @@ Note: Atlases in this class are not automatically prefixed.
     - `colour`: Replaces the suit's colour in the `G.C` table with this one when skin is applied.
     - `suit_icon`: A table defining the icon for the suit
       - `atlas`: An atlas with the icons
-      - `pos = 0`: The position for the icon. If set to a number, it will use y = pos, x = suit's vanilla icon pos. If it's a table [see reference](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards).
-    - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+      - `pos = 0`: The position for the icon. If set to a number, it will use y = pos, x = suit's vanilla icon pos. If it's a table [see reference](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards).
+    - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
     - `hc_default` (optional): If this is true, use high-contrast textures for unchanged sprites.
 
 - **Optional parameters:**
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
 
 ## API Methods
 
@@ -62,7 +62,7 @@ end
 
 ## Defining the UI (generate_ds_card_ui)
 
-For every card that has its UI enabled by `has_ds_card_ui`, you can define the contents of it with `generate_ds_card_ui`, much like you would define the ui with [`generate_ui`](https://github.com/Steamodded/smods/wiki/Localization#generate_ui-advanced) in Centers.
+For every card that has its UI enabled by `has_ds_card_ui`, you can define the contents of it with `generate_ds_card_ui`, much like you would define the ui with [`generate_ui`](https://docs.smods.dev/API%20Documentation/Localization#generate_ui-advanced) in Centers.
 
 The following is a simple method for crediting artists with this function, which is used in the code for Steammodded when crediting the original artists for the vanilla Friends of Jimbo DeckSkins. The first localize function creates the header which says "Artist", and the second is for showing the artist, whose name goes in the vars:
 

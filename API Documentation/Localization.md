@@ -4,7 +4,7 @@ Steamodded offers multiple ways to load strings for in-game descriptions and oth
 
 ## Localization Files (recommended)
 
-This method follows the ways of the base game: instead of attaching descriptions directly to each object, all localization strings for the same language are combined into one file. Each such file should be found in the location `localization/<locale>.lua` or `localization/<locale>.json` relative to your mod's root directory. Since 1501a, it is now possible to load sub-folders within the localization folder. Sub-folders can be named as you see fit, but should have files inside named for each language. `<locale>` can be the key of any language found in Balatro itself or added through [SMODS.Language](https://github.com/Steamodded/smods/wiki/SMODS.Language).
+This method follows the ways of the base game: instead of attaching descriptions directly to each object, all localization strings for the same language are combined into one file. Each such file should be found in the location `localization/<locale>.lua` or `localization/<locale>.json` relative to your mod's root directory. Since 1501a, it is now possible to load sub-folders within the localization folder. Sub-folders can be named as you see fit, but should have files inside named for each language. `<locale>` can be the key of any language found in Balatro itself or added through [SMODS.Language](https://docs.smods.dev/Game%20Objects/SMODS.Language).
 
 - `default`: Used as a fallback when no text was found for the selected language.
 - `de`: German
@@ -110,7 +110,7 @@ return {
 
 ### Migrating to localization files
 
-If you've been using `loc_txt` and wish to switch to using localization files, disable as many other mods as possible (if you have cross-mod content, you may wish to reconfigure it so it can load even with the other mod disabled), add `"dump_loc": true` to [your mod's metadata](https://github.com/Steamodded/smods/wiki/Mod-Metadata), and launch Balatro once. Steamodded will create a `dump.lua` file in your mod's localization folder, containing all modified localization entries. Remove any extraneous entries (e.g. from other mods you couldn't disable due to being dependencies) and rename this file to `en-us.lua`.
+If you've been using `loc_txt` and wish to switch to using localization files, disable as many other mods as possible (if you have cross-mod content, you may wish to reconfigure it so it can load even with the other mod disabled), add `"dump_loc": true` to [your mod's metadata](https://docs.smods.dev/API%20Documentation/Mod-Metadata), and launch Balatro once. Steamodded will create a `dump.lua` file in your mod's localization folder, containing all modified localization entries. Remove any extraneous entries (e.g. from other mods you couldn't disable due to being dependencies) and rename this file to `en-us.lua`.
 
 Remember to remove the `dump_loc` entry when finished!
 
@@ -289,7 +289,7 @@ Fetches text from `G.localization.misc`. Uses `G.localization.misc.dictionary[ke
 Fetches text and creates UI nodes from `G.localization`. The following arguments are supported:
 
 - `type` (required): determines where data is fetched from and how it is returned
-  - These can be separated into two categories, types that return a `string` and types that generate [UI nodes](https://github.com/Steamodded/smods/wiki/UI-Guide).
+  - These can be separated into two categories, types that return a `string` and types that generate [UI nodes](https://docs.smods.dev/Guides/UI-Guide).
   - Types that return a `string`.
     - `"name_text"`: Returns the name of the object found in `G.localization.descriptions[args.set][args.key]` as a **string**. Multiline names are joined with a space and any formatting is removed, and variables are not replaced.
     - `"raw_descriptions"`: Returns the description of the object found in `G.localization.descriptions[args.set][args.key]`. Multibox descriptions are joined with a blank line.

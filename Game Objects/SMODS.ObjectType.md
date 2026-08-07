@@ -4,7 +4,7 @@
   - `key`
     - Unlike other game objects, ObjectTypes don't add your mod's prefix automatically to the key to allow multiple mods to share pools. You can still add your prefix manually to avoid conflicts.
 - **Optional parameters** *(defaults)*:
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `default`: Fallback card when object pool is empty
   - `cards`: List of keys to centers to auto-inject into this ObjectType
     - Expects a list of keys like this:
@@ -38,7 +38,7 @@ This is a subclass of `SMODS.ObjectType`. All values and functions tied to `SMOD
   - `primary_colour`
   - `secondary_colour`
 - **Optional parameters** *(defaults)*:
-  - `no_collection` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `no_collection` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `loc_txt`, Skeleton:
 
  ```lua
@@ -104,6 +104,6 @@ For consumable types, a sprite for undiscovered objects can be registered. Other
   - `atlas`
   - `pos`
 - **Optional parameters:**
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `no_overlay`: disables the floating ? sprite from undiscovered objects
   - `overlay_pos`: customize the floating ? sprite using your atlas. Expects `{x = 0, y = 0}`

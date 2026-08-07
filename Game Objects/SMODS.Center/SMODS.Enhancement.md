@@ -4,10 +4,10 @@
 
 - **Required parameters:**
   - `key`
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
 - **Optional parameters** *(defaults)*:
-  - `atlas = 'centers', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-  - `config = {}, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `atlas = 'centers', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
+  - `config = {}, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - The following base values for `config` are supported and will be scored automatically and unconditionally:
 
         ```lua
@@ -49,8 +49,8 @@
 
 ## API methods
 
-- `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
-- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+- `calculate(self, card, context)` [(reference)](https://docs.smods.dev/API%20Documentation/Calculate-Functions)
+- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://docs.smods.dev/API%20Documentation/Localization#Localization-functions)
 - `get_weight(self) -> number`
   - Returns weight. Use for finer control over the enhancement's weight.
 - `set_ability(self, card, initial, delay_sprites)`

@@ -4,15 +4,15 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
 
 ## The Highlights
 
-- `G.E_MANAGER` is the [event manager](https://github.com/Steamodded/smods/wiki/Event-Manager).
+- `G.E_MANAGER` is the [event manager](https://docs.smods.dev/Guides/Event-Manager).
 - `G.P_CENTERS` holds the game's center objects (prototypes for jokers, consumables, vouchers, decks, enhancements, editions, and boosters). It is indexed with the object's key. For example, `G.P_CENTERS.c_strength` is the center for Strength.
 - `G:update(dt)` is called once per frame. This uses `G.STATE` and `G.STATE_COMPLETE` to run a state machine.
 - `G.C` holds colors.
-- [`G.GAME`](https://github.com/Steamodded/smods/wiki/G#GGAME)
+- [`G.GAME`](https://docs.smods.dev/Guides/G#GGAME)
 
 ## Everything
 
-- `G.E_MANAGER` is the [event manager](https://github.com/Steamodded/smods/wiki/Event-Manager).
+- `G.E_MANAGER` is the [event manager](https://docs.smods.dev/Guides/Event-Manager).
 - `G.P_SEALS` holds the seal prototypes, much like `G.P_CENTERS`.
 - `G.P_TAGS` holds the tag prototypes, much like `G.P_CENTERS`.
 - `G.P_STAKES` holds the stake prototypes, much like `G.P_CENTERS`.
@@ -40,7 +40,7 @@ Balatro has a global variable `G` which is the singleton instance of the `Game` 
 - `G.DEBUG` can be set to true to view debugging information.
 - `G.FILE_HANDLER` manages saving the game every 10 seconds.
 - `G.VERSION` is the version string for the current build of the game.
-- `G.TIMERS` has various timers that run at different rates and reset at different times. The [event manager](https://github.com/Steamodded/smods/wiki/Event-Manager) uses these, as well as many animations.
+- `G.TIMERS` has various timers that run at different rates and reset at different times. The [event manager](https://docs.smods.dev/Guides/Event-Manager) uses these, as well as many animations.
 - `G.FRAMES.MOVE` holds the current physics frame number.
 - `G.FRAMES.DRAW` holds the current frame number.
 - `G.SETTINGS` holds the various configuration options:
@@ -90,7 +90,7 @@ G.METRICS = {
 - `G.MOVEABLES` holds every moveable.
 - `G.ANIMATIONS` holds every `AnimatedSprite`.
 - `G.C` holds colors.
-- `G.UIT` names every possible type of [UI node](https://github.com/Steamodded/smods/wiki/UI-Guide#node-types).
+- `G.UIT` names every possible type of [UI node](https://docs.smods.dev/Guides/UI-Guide#node-types).
 - `G.handlist` orders the pokers hands from best to worst.
 - `G.ROOM` is the UI node for the entire window.
 - `G.ROOM_ATTACH` is the moveable for `G.ROOM`.

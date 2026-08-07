@@ -228,4 +228,4 @@ Helper function to check if an object can be added into a pool,
 #### `SMODS.pinch_and_remove(card)`
 
 *(Added in 1814a)*
-Destroys the card with the vanilla food Joker animations. In most cases you should use [`SMODS.destroy_cards()`](https://github.com/Steamodded/smods/wiki/Utility) instead.
+Destroys the card with the vanilla food Joker animations. In most cases you should use [`SMODS.destroy_cards()`](https://docs.smods.dev/API%20Documentation/Utility) instead.

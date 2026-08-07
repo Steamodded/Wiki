@@ -2,10 +2,10 @@
 
 - **Required parameters:**
   - `key`
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
     - The only supported field is `name`. In localization files, it is set by referring to `misc.challenge_names[key]`.
 - **Optional parameters** *(defaults)*:
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `rules`: Custom rules and modifiers for the challenge.
     - `rules.custom`: Expects a list of tables with an `id`, optionally a `value` field (defaults to `true`) and `no_ui` (not set by default).
 
@@ -58,7 +58,7 @@
 
 ## API methods
 
-- `calculate(self, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
+- `calculate(self, context)` [(reference)](https://docs.smods.dev/API%20Documentation/Calculate-Functions)
 - `apply(self)`
   - Apply modifiers at the start of a run.
 - `calc_dollar_bonus(self) -> number, table`

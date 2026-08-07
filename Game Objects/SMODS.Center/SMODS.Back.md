@@ -4,10 +4,10 @@
 
 - **Required parameters:**
   - `key`,
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
 - **Optional parameters** *(defaults)*:
-  - `atlas = 'centers', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `atlas = 'centers', pos = { x = 0, y = 0 }` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
+  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - `config` values will be saved under `G.GAME.selected_back.effect.config`
   - `initial_deck`: *(Added in 1501a)* Allows for easier customisation of your starting deck.
     - `ranks`, `suits`: A list of ranks and suits to include/exclude.
@@ -15,10 +15,10 @@
 
 ## API methods
 
-- `calculate(self, back, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
+- `calculate(self, back, context)` [(reference)](https://docs.smods.dev/API%20Documentation/Calculate-Functions)
   - This method is called from `Back:trigger_effect()` and incorporated into the standard calculation pipeline. This does not apply to vanilla `trigger_effect` functionality, which can be used as normal from this function by checking for `context.context == 'eval'` or `context.context == 'final_scoring_step` respectively.
   - **Defining a `trigger_effect` function on your deck is deprecated.**
-- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+- `loc_vars, locked_loc_vars, generate_ui` [(reference)](https://docs.smods.dev/API%20Documentation/Localization#Localization-functions)
 - `apply(self, back)`
   - Apply modifiers at the start of a run. If you want to modify the starting deck, you must use events to do so.
 - `calc_dollar_bonus(self, back) -> number, table`

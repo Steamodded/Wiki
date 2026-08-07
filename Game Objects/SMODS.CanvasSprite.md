@@ -46,7 +46,7 @@ The event is only necessary if you plan on referencing the card's ability table 
 
 This will only be a basic setup tutorial, and will not go into detail about how to use Love2D's graphics features. Love2D has [its own documentation](https://love2d.org/wiki/love.graphics) about that subject.
 
-An [SMODS.DrawStep](https://github.com/Steamodded/smods/wiki/SMODS.DrawStep) will be needed. In the DrawStep's `func`, you should first check for the card that actually has the CanvasSprite (e.g. SMODS's DrawStep for rendering canvas_texts checks `if card.canvas_text` before doing anything). Then the function should consist of the following (assuming the CanvasSprite was created at `card.canvassprite`):
+An [SMODS.DrawStep](https://docs.smods.dev/Game%20Objects/SMODS.DrawStep) will be needed. In the DrawStep's `func`, you should first check for the card that actually has the CanvasSprite (e.g. SMODS's DrawStep for rendering canvas_texts checks `if card.canvas_text` before doing anything). Then the function should consist of the following (assuming the CanvasSprite was created at `card.canvassprite`):
 
 ```lua
 love.graphics.push()

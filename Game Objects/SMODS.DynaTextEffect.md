@@ -5,7 +5,7 @@ This class is used to add effects to text descriptions and other DynaText object
 - **Required parameters:**
   - `key`
 - **Optional parameters:**
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
 
 ## API methods
 

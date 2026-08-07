@@ -27,7 +27,7 @@ Balatro includes a very basic formatting syntax for styling and formatting displ
  </tr>
 </table>
 
-Most SMODS objects that display description text will parse and style text strings automatically when loading from [localization files](https://github.com/Steamodded/smods/wiki/Localization#localization-files-recommended) or [`loc_txt`](https://github.com/Steamodded/smods/wiki/Localization#loc_txt). This includes the text strings of descriptions for Achievements, Consumables, Decks, Jokers, Vouchers, and more.
+Most SMODS objects that display description text will parse and style text strings automatically when loading from [localization files](https://docs.smods.dev/API%20Documentation/Localization#localization-files-recommended) or [`loc_txt`](https://docs.smods.dev/API%20Documentation/Localization#loc_txt). This includes the text strings of descriptions for Achievements, Consumables, Decks, Jokers, Vouchers, and more.
 
 Style modifiers are not additive - text will only be styled by the modifiers contained within the previous set of curly braces. Using empty braces `{}` will reset text styling for text after it.
 
@@ -313,7 +313,7 @@ This modifier uniquely strips all whitespace from the styled text, so text like 
 
 ## Variable/custom text colour modifier `{V:}`
 
-<code>{V:<i>index</i>}</code> changes the colour of the text to a custom colour provided as an entry in the [`loc_vars`](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) `vars.colours` table. See [Localization](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) for more details.
+<code>{V:<i>index</i>}</code> changes the colour of the text to a custom colour provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.colours` table. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
 
 *`index`* is the array index of the colour entry in the `vars.colours` table.
 
@@ -385,7 +385,7 @@ This modifier uniquely strips all whitespace from the styled text, so text like 
 > [!NOTE]
 > This modifier is added by Steamodded and is not supported by vanilla Balatro.
 
-<code>{B:<i>index</i>}</code> changes the colour of the background to a custom colour provided as an entry in the [`loc_vars`](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) `vars.colours` table. See [Localization](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) for more details.
+<code>{B:<i>index</i>}</code> changes the colour of the background to a custom colour provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.colours` table. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
 
 *`index`* is the array index of the colour entry in the `vars.colours` table.
 
@@ -483,7 +483,7 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
 
 `{E:}` is incompatible with background modifiers `{X:}` and `{B:}`. If background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored.
 
-You can also apply a custom effect using [SMODS.DynaTextEffect](https://github.com/Steamodded/smods/wiki/SMODS.DynaTextEffect), in that case the modifier should be `{E:modprefix_key}`.
+You can also apply a custom effect using [SMODS.DynaTextEffect](https://docs.smods.dev/Game%20Objects/SMODS.DynaTextEffect), in that case the modifier should be `{E:modprefix_key}`.
 
 ### Examples
 
@@ -694,7 +694,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 
 <code>{f:<i>font</i>}</code> changes the font of the text.
 
-*`font`* is a f value ranging from `1` to `9` in vanilla, to add [custom fonts](https://github.com/Steamodded/smods/wiki/SMODS.Font) you need to set the value as the font's full key (`modname_font`).
+*`font`* is a f value ranging from `1` to `9` in vanilla, to add [custom fonts](https://docs.smods.dev/Game%20Objects/SMODS.Font) you need to set the value as the font's full key (`modname_font`).
 
 ### Examples
 
@@ -876,7 +876,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 ```
 
   </td>
-  <td><a href="https://github.com/Steamodded/smods/wiki/SMODS.Font">Custom Font</a> (example: Comic Sans MS)</td>
+  <td><a href="https://docs.smods.dev/Game%20Objects/SMODS.Font">Custom Font</a> (example: Comic Sans MS)</td>
   <td>Custom</td>
   <td align="center">
    <picture>
@@ -936,7 +936,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 > [!IMPORTANT]
 > Unlike other modifiers, this modifier does not affect the text string after it. Instead, the UI element is inserted directly **at** the position of the modifier.
 
-<code>{element:<i>index</i>}</code> inserts a [UI element](https://github.com/Steamodded/smods/wiki/UI-Guide)  provided as an entry in the [`loc_vars`](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) `vars.elements` table. Instances of `Node` (e.g. `CardArea`, `Sprite`, `UIBox`) are automatically wrapped in an object node. See [Localization](https://github.com/Steamodded/smods/wiki/Localization#loc_vars) for more details.
+<code>{element:<i>index</i>}</code> inserts a [UI element](https://docs.smods.dev/Guides/UI-Guide)  provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.elements` table. Instances of `Node` (e.g. `CardArea`, `Sprite`, `UIBox`) are automatically wrapped in an object node. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
 
 *`index`* is the array index of the element entry in the `vars.elements` table.
 
@@ -1521,9 +1521,9 @@ This dictionary is initially assigned by the `loc_colour` function in `functions
 
 Steamodded automatically adds additional entries to `LOC_COLOURS` for all custom objects in:
 
-- [SMODS.Rarity](https://github.com/Steamodded/smods/wiki/SMODS.Rarity)
-- [SMODS.Gradient](https://github.com/Steamodded/smods/wiki/SMODS.Gradient)
-- [SMODS.ConsumableType](https://github.com/Steamodded/smods/wiki/SMODS.Consumable)
-- [SMODS.Suit](https://github.com/Steamodded/smods/wiki/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit)
+- [SMODS.Rarity](https://docs.smods.dev/Game%20Objects/SMODS.Rarity)
+- [SMODS.Gradient](https://docs.smods.dev/Game%20Objects/SMODS.Gradient)
+- [SMODS.ConsumableType](https://docs.smods.dev/Game%20Objects/SMODS.Center/SMODS.Consumable)
+- [SMODS.Suit](https://docs.smods.dev/Game%20Objects/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit)
 
-which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata#metadata).
+which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://docs.smods.dev/API%20Documentation/Mod-Metadata#metadata).

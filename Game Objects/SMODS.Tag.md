@@ -4,15 +4,15 @@
 
 - **Required parameters:**
   - `key`
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
 - **Optional parameters** *(defaults)*:
-  - `atlas = 'tags', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-  - `config = {}, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `atlas = 'tags', pos = { x = 0, y = 0 }` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
+  - `config = {}, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `min_ante`: Minimum ante needed for this tag to appear. Use in_pool for more advanced spawn restrictions instead.
 
 ## API methods
 
-- `loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+- `loc_vars, generate_ui` [(reference)](https://docs.smods.dev/API%20Documentation/Localization#Localization-functions)
 - `in_pool(self, args) -> bool, { allow_duplicates = bool }`
   - Define custom logic for when a tag is allowed to spawn. A tag can spawn if `in_pool` returns true and all other checks are met.
   - When called from `get_current_pool`, the `_append` key is passed as `args.source`.

@@ -4,11 +4,11 @@
 
 - **Required parameters:**
   - `key`
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
 - **Optional parameters** *(defaults)*
-  - `atlas = 'blind_chips', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
+  - `atlas = 'blind_chips', pos = { x = 0, y = 0 }` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
     - To have an animated sprite like vanilla Blinds set `atlas_table = 'ANIMATION_ATLAS'`. The `y` value determines the row to use for the animation. The `x` value is ignored and cycles through each frame of the animation.
-  - `config = {}, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `config = {}, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - `config` values are saved under `G.GAME.blind.effect`.
   - `dollars = 5`: Amount of money obtained when defeated.
   - `mult = 2`: Required score relative to the Ante's Base score.
@@ -37,7 +37,7 @@ refer to the current blind. (The base game uses `self` to refer to the current b
 
 - `set_blind(self)`
   - Effects that activate when this Blind is selected
-- `calculate(self, blind, context) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
+- `calculate(self, blind, context) -> table` [(reference)](https://docs.smods.dev/API%20Documentation/Calculate-Functions)
   - This method is both called directly on the center and from `Blind:calculate()` and incorporated into the standard calculation pipeline. Several blind functions below can be handled here via checking their respective calculation context.
 - `calc_dollar_bonus(self, blind) -> number, table`
   - *(Added in 1531zeebee)*
@@ -68,7 +68,7 @@ refer to the current blind. (The base game uses `self` to refer to the current b
     - A boolean value indicating whether any values were changed
 - `get_loc_debuff_text(self) -> string`
   - Allows modifying text displayed for debuff warnings on invalid hands
-- `loc_vars(self) -> { vars ?= table, key ?= string }` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+- `loc_vars(self) -> { vars ?= table, key ?= string }` [(reference)](https://docs.smods.dev/API%20Documentation/Localization#Localization-functions)
   - Due to various constraints, the functionality of `loc_vars` on blinds is very limited. Only `vars`, `set` and `key` returns are supported, and no `info_queue` exists.
 - `collection_loc_vars(self) -> { vars ?= table, key ?= string }`
   - Used for passing variables to Blind descriptions when viewing the collection. If not defined, the game will use the `vars` field on your object.

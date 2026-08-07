@@ -28,7 +28,7 @@ Mods
   ```
 
 - **Optional parameters** *(defaults)*:
-  - `prefix_config, dependencies` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `pitch = 0.7`: Specify a custom pitch shift for music tracks.
     - `volume = 0.6`: Specify a custom volume for music tracks.
       - These modifiers do not apply to regularly played sounds. Specify them as arguments to `play_sound` instead.
@@ -84,9 +84,9 @@ The `play_sound` function can be used to play a sound at any time.
 - Example: `play_sound('MyMod_MyCoolSound', 0.7, 0.55)`
 
 > [!IMPORTANT]
-> When playing a sound, the game has no context of being called from your mod. Thus, it is always necessary to include your [mod prefix](https://github.com/Steamodded/smods/wiki/Mod-Metadata) when accessing your custom sounds.
+> When playing a sound, the game has no context of being called from your mod. Thus, it is always necessary to include your [mod prefix](https://docs.smods.dev/API%20Documentation/Mod-Metadata) when accessing your custom sounds.
 
-It is also possible to play a sound with any message returned from a [calculate function](https://github.com/Steamodded/smods/wiki/Calculate-Functions) by adding a `sound` field to the effect table.
+It is also possible to play a sound with any message returned from a [calculate function](https://docs.smods.dev/API%20Documentation/Calculate-Functions) by adding a `sound` field to the effect table.
 
 - Example:
 

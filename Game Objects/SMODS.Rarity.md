@@ -2,7 +2,7 @@
 
 - **Required parameters:**
   - `key`
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
     - The only supported field is `name`. In localization files, it must be set as both `misc.labels['k_'..key:lower()]` and `misc.dictionary['k_'..key:lower()]`.
 - **Optional parameters** *(defaults)*:
   - `pools`: Table with a list of ObjectType keys to add this rarity to. Skeleton:
@@ -14,7 +14,7 @@
     }
     ```
 
-  - `prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `default_weight`: Setting a numerical value for `default_weight` enables cards with this rarity to appear in the shop at the specified weight.
     - This sets a default weight, which can be modified by accessing `G.GAME[key:lower() .. '_mod']` during a run.
   - `disable_if_empty`: *(Added in 1221a)* Removes the rarity from the pool of available rarities if the pool has no valid objects.

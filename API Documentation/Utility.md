@@ -86,7 +86,7 @@ Checks if an enhancement should be generated, and generates one according to the
 
 #### `SMODS.poll_object(args) -> string?`
 
-- Polls objects, respecting object weights if enabled. [Further info on the Weights page.](https://github.com/Steamodded/smods/wiki/Weight-System#smodspoll_objectargs---stringnil)
+- Polls objects, respecting object weights if enabled. [Further info on the Weights page.](https://docs.smods.dev/API%20Documentation/Weight-System#smodspoll_objectargs---stringnil)
 
 ## Mod-facing Utilities
 
@@ -150,7 +150,7 @@ G.E_MANAGER:add_event(Event({
 
 This function replaces `find_joker`. It operates using keys instead of names, which avoids overlap between mods.
 Returns an array of all jokers or consumables in the player's possession with the given key. Debuffed cards count only if `count_debuffed` is true.
-This function finds cards in the joker areas returned by `SMODS.get_card_areas`. [This page](https://github.com/Steamodded/smods/wiki/Calculate-Functions#adding-calculation-zones) explains how to add your own.
+This function finds cards in the joker areas returned by `SMODS.get_card_areas`. [This page](https://docs.smods.dev/API%20Documentation/Calculate-Functions#adding-calculation-zones) explains how to add your own.
 
 #### `SMODS.add_card(t) -> Card`
 

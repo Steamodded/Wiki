@@ -2,11 +2,11 @@
 
 - **Required parameters:**
   - `key`
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
     - `loc_txt` should contain a `label` string used for the card's badge text
 - **Optional parameters** *(defaults)*:
-  - `atlas = 'stickers', pos = { x = 0, y = 0 }` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-  - `config = {}, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `atlas = 'stickers', pos = { x = 0, y = 0 }` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
+  - `config = {}, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - `config` values will be saved to `card.ability[sticker_key]`
   - `badge_colour`: Colour of this sticker's badge.
   - `hide_badge`: If set to `true`, no badge is shown for this sticker.
@@ -30,8 +30,8 @@
 
 ## API methods
 
-- `calculate(self, card, context)` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions)
-- `loc_vars` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+- `calculate(self, card, context)` [(reference)](https://docs.smods.dev/API%20Documentation/Calculate-Functions)
+- `loc_vars` [(reference)](https://docs.smods.dev/API%20Documentation/Localization#Localization-functions)
   - Due to some constraints, the functionality of `loc_vars` on stickers is limited. Out of all possible return values, only `vars`, `key` and `set` are supported.
 - `should_apply(self, card, center, area, bypass_roll) -> bool`
   - Returns true if the sticker can be applied to the card.

@@ -4,12 +4,12 @@
 
 - **Required parameters:**
   - `key`,
-  - `loc_txt` or localization entry [(reference)](https://github.com/Steamodded/smods/wiki/Localization)
+  - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
   - `loc_txt` can contain an additional `group_name` string. This is the bottom text while on the pack opening screen.
   - With localization files, this text should be stored in `misc.dictionary[group_key or 'k_booster_group_'..key]`
 - **Optional parameters** *(defaults)*:
-  - `atlas = 'Booster', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://github.com/Steamodded/smods/wiki/SMODS.Atlas#applying-textures-to-cards)
-  - `config, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://github.com/Steamodded/smods/wiki/API-Documentation#common-parameters)
+  - `atlas = 'Booster', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
+  - `config, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - The default `config` table is `{ extra = 3, choose = 1 }`; `extra` is the amount of cards in the pack, `choose` is the amount of choices.
     - Note: `unlocked` on boosters is currently unsupported.
     - `pools`: List of keys to ObjectTypes this center should be injected into
@@ -35,10 +35,10 @@
 
 ## API methods
 
-- `loc_vars, generate_ui` [(reference)](https://github.com/Steamodded/smods/wiki/Localization#Localization-functions)
+- `loc_vars, generate_ui` [(reference)](https://docs.smods.dev/API%20Documentation/Localization#Localization-functions)
   - SMODS.Booster implements a default `loc_vars` function that returns `card.ability.choose` and `card.ability.extra`. If your booster pack defines both of these values in its `config` you can omit defining `loc_vars`.
 - `create_card(self, card, i) -> table|Card`
-  - Creates the cards inside of the booster pack. `card` is the booster pack card, `i` is the position of the card to be generated. If the returned table is not a `Card`, it is passed into [`SMODS.create_card`](https://github.com/Steamodded/smods/wiki/Utility#mod-facing-utilities).
+  - Creates the cards inside of the booster pack. `card` is the booster pack card, `i` is the position of the card to be generated. If the returned table is not a `Card`, it is passed into [`SMODS.create_card`](https://docs.smods.dev/API%20Documentation/Utility#mod-facing-utilities).
   - Example 1, manual card creation:
 
  ```lua
