@@ -96,7 +96,7 @@
           const url =
             contentRoot +
             docName +
-            "/index" + // asumme dirhtml
+            "/index" + // assume dirhtml
             DOCUMENTATION_OPTIONS.FILE_SUFFIX;
 
           try {
