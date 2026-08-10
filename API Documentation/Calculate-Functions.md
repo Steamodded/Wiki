@@ -277,13 +277,13 @@ The pool is structured as a table of tables, where each table is structured as b
 
 Turning these card areas on allows every calculation call to iterate over the cards currently in the deck, and the cards currently in the discard pile. They can be specifically accessed by checking for either `context.card_area == G.deck` or `context.cardarea == G.discard`.
 
-## Scaling Values
+### Scaling Values
 
 Scaling values within cards can be a simple line of code as shown in the above examples, but by opting in to using `SMODS.scale_card` you can now allow other effects to detect, respond to, or manipulate, your scaling. This function will handle scaling your value and display an automatic message. The function is **entirely** customisable so you can tune it to your exact requirements.
 
-### Using `SMODS.scale_card`
+#### Using `SMODS.scale_card`
 
-#### Basic Structure
+##### Basic Structure
 
 This example code will scale the `chips` value of the card by the `change` value. It will display a `"Upgrade!"` message with a `G.C.FILTER` background. The amount the value changes by *could* be adjusted by other effects.
 
@@ -297,7 +297,7 @@ SMODS.scale_card(card, {
 
 The config of this joker would be defined as `config = {extra = {chips = 5, change = 2}}` for example. It is possible to take your `scalar_value` from a different table, by adding `scalar_table = card.ability.other_table` for example.
 
-#### Blocking Scaling Manipulation
+##### Blocking Scaling Manipulation
 
 As this function allows for scaling detection effects to work, it is recommended to use it instead of doing it manually, but naturally the scaling manipulation can be an undesirable effect in some cases. Therefore, you can block this from happening by adding `block_overrides` to your function call.
 
@@ -338,9 +338,9 @@ operation = function(ref_table, ref_value, initial, change)
 end,
 ```
 
-### Responding to Scaling
+#### Responding to Scaling
 
-#### Detecting Scaling
+##### Detecting Scaling
 
 On the other side of this feature is the ability to detect and manipulate value scaling. This is done using the [scaling_card context](#contextscaling_card).
 
@@ -357,7 +357,7 @@ end
 
 This example will play a message **before** the scaling event, and **after** the scaling event. These tables accept any standard calculation return key. The `context.value` and `context.scalar` values are dynamic, and respect any prior manipulation. Keep in mind that everything passed in the `args` table of `SMODS.scale_card` is available as part of `context`.
 
-#### Manipulating Scaling
+##### Manipulating Scaling
 
 Manipulating scaling uses the same context as detection, but requires specific tables to be returned in the table. It is also possible to modify `context` directly, however this is not recommended because it's fragile.
 ```lua
@@ -376,14 +376,14 @@ return {
 }
 ```
 
-## Resetting values
+### Resetting values
 
 *(Added in (RELEASE))*
 A different kind of modification to a card's values is resetting a value back to its default state. `SMODS.reset_card` handles this operation much like `SMODS.scale_card` handles scaling.
 
-### Using `SMODS.reset_card` 
+#### Using `SMODS.reset_card` 
 
-#### Basic Structure 
+##### Basic Structure 
 
 This example code will reset the `x_mult` value of the card to `1`. It will display a `"Reset"` message with a `G.C.FILTER` background. The amount the value resets to *could* be adjusted by other effects.
 
@@ -397,7 +397,7 @@ SMODS.reset_card(card, {
 
 The config of this joker would be defined as `config = {extra = {xmult = 1, change = 0.2}}` for example, as the `x_mult` value must first be scaled in order to need a reset.
 
-#### Blocking Resetting Manipulation
+##### Blocking Resetting Manipulation
 
 Like with scaling, you may find yourself in a situation where it is undesirable to allow effects to modify your resetting operation. Thus, `block_overrides` is supported in a similar way.
 
@@ -410,11 +410,11 @@ block_overrides = {
 
 This would block all modifications from other cards. You can also use a subset of these if you wish. Note that effects that modify the initial values are not possible, so they need not be blocked.
 
-#### Customising The Resetting
+##### Customising The Resetting
 
 The basic structure example above is for a **static** effect with a `"Reset"` message, but you might want to display something else.
 
-##### Messages
+###### Messages
 
 It is easy to change the message to use any message in `G.localization.misc.dictionary_parsed`. Add `message_key = 'k_eaten_ex'` to change the message to one of these. You can also add `message_colour = G.C.RED` to change the colour displayed. Unlike scaling, these messages can't pass any variables. If you don't want **any** message at all, add `no_message = true`.
 You can also provide your own custom message, much like returning a message from a calculate function.
@@ -426,7 +426,7 @@ scaling_message = {
 }
 ```
 
-##### Scaling
+##### Reset Operations
 
 By default, this function will simply overwrite the existing value with the `reset_value`. If you need more control over this step, you can define an `operation` function. Here is an example where the value is not fully reset, but instead divided by the `reset_value`.
 
@@ -436,9 +436,9 @@ operation = function(ref_table, ref_value, initial_value, reset_value)
 end,
 ```
 
-### Responding to Resetting
+#### Responding to Resetting
 
-#### Detecting Resetting
+##### Detecting Resetting
 
 On the other side of this feature is the ability to detect and manipulate value resetting. This is done using the [resetting_card context](#contextresetting_card).
 
@@ -455,7 +455,7 @@ end
 
 This example will play a message **before** the scaling event, and **after** the scaling event. These tables accept any standard calculation return key. The `context.reset_value` value is dynamic, and respects any prior manipulation. Keep in mind that everything passed in the `args` table of `SMODS.reset_card` is available as part of `context`.
 
-#### Manipulating Resetting
+##### Manipulating Resetting
 
 Manipulating resetting uses the same context as detection, but requires specific tables to be returned in the table.
 ```lua
@@ -472,6 +472,8 @@ return {
 	-- other calculation return keys here will be evaluated BEFORE the resetting event
 }
 ```
+
+### Using Probability
 
 There are times where you may wish to code an effect that only has a **chance** to trigger, similar to Bloodstone from the vanilla game. Whilst you can use a random number and check it is within your bounds manually, there are some helper functions provided to ensure that other probability modifying effects are respected. These functions can be used to provide the values you display in your description, and also to be used in a conditional check for whether to trigger your effect or not. It is important to use the `SMODS.pseudorandom_probability` function such that effects that are based on probability rolls succeeding or failing can be triggered correctly.
 
