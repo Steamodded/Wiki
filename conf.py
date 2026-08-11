@@ -38,6 +38,7 @@ html_theme_options = {
             "icon": "simple-icons:github",
         }
     ],
+    "og_image_url": "https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png",
 }
 html_logo = "icon.png"
 html_context = {
