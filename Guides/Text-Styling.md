@@ -59,34 +59,18 @@ Valid style modifiers are as follows:
 <table>
  <tr>
   <td>
-   <a href="#defined-text-colour-modifier-c"><b>Defined text colour</a>
+   <a href="#text-colour-modifiers-cv"><b>Text colour</a>
   </td>
   <td>
-   <code>{C:<i>colour-key</i>}</code>
-  </td>
- </tr>
- <tr>
-  <td>
-   <a href="#defined-background-colour-modifier-x"><b>Defined background colour</a>
-  </td>
-  <td>
-   <code>{X:<i>colour-key</i>}</code>
+   <code>{C:<i>colour</i>}</code>/<code>{V:<i>colour</i>}</code>
   </td>
  </tr>
  <tr>
   <td>
-   <a href="#variablecustom-text-colour-modifier-v"><b>Variable/custom text colour</a>
+   <a href="#background-colour-modifiers-xb"><b>Background colour</a>
   </td>
   <td>
-   <code>{V:<i>colour-index</i>}</code>
-  </td>
- </tr>
- <tr>
-  <td>
-   <a href="#variablecustom-background-colour-modifier-b"><b>Variable/custom background colour</a>
-  </td>
-  <td>
-   <code>{B:<i>colour-index</i>}</code>
+   <code>{X:<i>colour</i>}</code>/<code>{B:<i>colour</i>}</code>
   </td>
  </tr>
  <tr>
@@ -115,21 +99,37 @@ Valid style modifiers are as follows:
  </tr>
  <tr>
   <td>
-   <a href="#text-underline-modifier-u"><b>Text underline</a>
+   <a href="#text-underline-strikethrough-and-overline-modifiers-ustov"><b>Text underline</a>
   </td>
   <td>
-   <code>{u:<i>colour-key</i>}</code>
+   <code>{u:<i>colour</i>}</code>
   </td>
  </tr>
  <tr>
   <td>
-   <a href="#text-strikethrough-modifier-st"><b>Text strikethrough</a>
+   <a href="#text-underline-strikethrough-and-overline-modifiers-ustov"><b>Text strikethrough</a>
   </td>
   <td>
-   <code>{st:<i>colour-key</i>}</code>
+   <code>{st:<i>colour</i>}</code>
   </td>
  </tr>
-  <tr>
+ <tr>
+  <td>
+   <a href="#text-underline-strikethrough-and-overline-modifiers-ustov"><b>Text overline</a>
+  </td>
+  <td>
+   <code>{ov:<i>colour</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-outline-modifier-o"><b>Text overline</a>
+  </td>
+  <td>
+   <code>{O:<i>colour</i>}</code>
+  </td>
+ </tr>
+ <tr>
   <td>
    <a href="#text-font-modifier-f"><b>Font</a>
   </td>
@@ -297,7 +297,7 @@ Valid style modifiers are as follows:
 
 ## Background colour modifiers `{X:}`/`{B:}`
 
-<code>{X:<i>colour</i>}</code> or <code>{B:<i>colour</i>}</code> sets the background color of the text, where *`colour-key`* is one of the following:
+<code>{X:<i>colour</i>}</code> or <code>{B:<i>colour</i>}</code> sets the background color of the text, where *`colour`* is one of the following:
 
 - the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table),
 
@@ -1557,4 +1557,4 @@ Steamodded automatically adds additional entries to `LOC_COLOURS` for all custom
 - [SMODS.ConsumableType](https://docs.smods.dev/Game%20Objects/SMODS.Center/SMODS.Consumable)
 - [SMODS.Suit](https://docs.smods.dev/Game%20Objects/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit)
 
-which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://docs.smods.dev/API%20Documentation/Mod-Metadata#metadata).
+which can be used as colour keys in the same way by `{C:}`/`{V:}` and `{X:}`/`{B:}`. When referring to custom Rarity, Gradient or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://docs.smods.dev/API%20Documentation/Mod-Metadata#metadata).
