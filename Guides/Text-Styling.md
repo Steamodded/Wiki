@@ -123,7 +123,7 @@ Valid style modifiers are as follows:
  </tr>
  <tr>
   <td>
-   <a href="#text-outline-modifier-o"><b>Text overline</a>
+   <a href="#text-outline-modifier-o"><b>Text outline</a>
   </td>
   <td>
    <code>{O:<i>colour</i>}</code>
