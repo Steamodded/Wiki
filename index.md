@@ -51,6 +51,7 @@ API Documentation/Mod-Metadata
 API Documentation/The-Mod-Object
 API Documentation/Calculate-Functions
 API Documentation/Localization
+API Documentation/Animated-Sprites
 Guides/Text-Styling
 API Documentation/Perma-bonuses
 API Documentation/Weight-System
