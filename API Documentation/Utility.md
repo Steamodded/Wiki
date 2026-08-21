@@ -348,9 +348,11 @@ This function checks whether a poker hand is visible in the poker hands menu.
 - `handname` - string of poker hand name
 *(Calls to `get_current_pool` will add an `args` table of `{source = _append}` where `_append` is the 4th argument of `get_current_pool`)*
 
-#### `SMODS.create_sprite(x, y, width, height, atlas_key, pos) -> Sprite|AnimatedSprite`
+#### `SMODS.create_sprite(x, y, width, height, atlas_key, pos, sprite_args) -> Sprite|AnimatedSprite|StateSprite`
 
 *(Added in 1221a)* Handles creation of `Sprite` objects with the correct atlas type.
+
+*(Added in [version])* `sprite_args` is passed to `Animated/StateSprite`s and mostly specifies behaviour related to animation.
 
 #### `SMODS.is_active_blind(key, ignore_disabled) -> boolean`
 
