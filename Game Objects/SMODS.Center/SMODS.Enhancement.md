@@ -45,7 +45,7 @@
   - `shatters`: If `true`, enhanced card breaks on destruction like a Glass Card.
   - `always_scores`: If `true`, enhanced card always counts in scoring.
   - `never_scores`: If `true`, enhanced card never counts in scoring (supersedes `always_scores`).
-    - `weight`: The weighting of the enhancement, follows same rules as other weighted objects *(default weight is 5)*.
+  - `weight`: The weighting of the enhancement, follows same rules as other weighted objects *(default weight is 5)*.
 
 ## API methods
 
@@ -104,9 +104,4 @@
   - `Card:calculate_joker` is called for each joker with `context = { check_enhancement = true, other_card = card }`, expecting return tables in the same format to add extra enhancements. No other ways to give a card multiple enhancements are currently supported.
   - If `extra_only == true`, the card's base enhancement is excluded.
 - `SMODS.has_enhancement(card, key)`: Returns `true` if the given card has the specified enhancement, either as its natural enhancement or an extra enhancement from jokers.
-- `SMODS.has_no_suit(card)`: Returns true if a card doesn't have any suit due to its enhancements (e.g., Stone Cards).
-- `SMODS.has_any_suit(card)`: Returns true if a card can be used as any suit due to its enhancements (e.g., Wild Cards).
-  - Cards with enhancement effects both for having no suit and for having any suit can be used as any suit.
-- `SMODS.has_no_rank(card)`: Returns true if a card doesn't have any rank due to its enhancements (e.g., Stone Cards).
-- `SMODS.always_scores(card)`: Returns true if a card always scores due to its enhancements (e.g., Stone Cards).
-- `SMODS.never_scores(card)`: Returns true if the card cannot be scored.
+- Utility functions for playing card properties [(reference)](https://docs.smods.dev/API%20Documentation/Utility/#playing-card-properties)

@@ -44,6 +44,11 @@
   - `disable_base_shader = false`: Whether the base shader should be applied (`booster` for Booster packs and Spectral cards, `voucher` for Vouchers and Invisible Joker, `dissolve` otherwise). Enable this if your shader modifies card transparency or shape in any way. Example:<br/>![image](https://github.com/user-attachments/assets/c7b32385-e486-40c2-9a83-c8a09a67185c)
   - `always_scores`: If `true`, editioned card always counts in scoring.
   - `never_scores`: If `true`, editioned card never counts in scoring (supersedes `always_scores`).
+  - `replace_base_card`: If `true`, don't draw base card sprite or give base card chips. *(added in (RELEASE))*
+  - `no_rank`: If `true`, editioned card has no rank. *(added in (RELEASE))*
+  - `no_suit`: If `true`, editioned card has no suit. *(added in (RELEASE))*
+  - `any_suit`: If `true`, editioned card counts as any suit. *(added in (RELEASE))*
+  - `shatters`: If `true`, editioned card breaks on destruction like a Glass Card. *(added in (RELEASE))*
 
 ## API methods
 
