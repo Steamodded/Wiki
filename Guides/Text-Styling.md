@@ -59,34 +59,18 @@ Valid style modifiers are as follows:
 <table>
  <tr>
   <td>
-   <a href="#defined-text-colour-modifier-c"><b>Defined text colour</a>
+   <a href="#text-colour-modifiers-cv"><b>Text colour</a>
   </td>
   <td>
-   <code>{C:<i>colour-key</i>}</code>
-  </td>
- </tr>
- <tr>
-  <td>
-   <a href="#defined-background-colour-modifier-x"><b>Defined background colour</a>
-  </td>
-  <td>
-   <code>{X:<i>colour-key</i>}</code>
+   <code>{C:<i>colour</i>}</code>/<code>{V:<i>colour</i>}</code>
   </td>
  </tr>
  <tr>
   <td>
-   <a href="#variablecustom-text-colour-modifier-v"><b>Variable/custom text colour</a>
+   <a href="#background-colour-modifiers-xb"><b>Background colour</a>
   </td>
   <td>
-   <code>{V:<i>colour-index</i>}</code>
-  </td>
- </tr>
- <tr>
-  <td>
-   <a href="#variablecustom-background-colour-modifier-b"><b>Variable/custom background colour</a>
-  </td>
-  <td>
-   <code>{B:<i>colour-index</i>}</code>
+   <code>{X:<i>colour</i>}</code>/<code>{B:<i>colour</i>}</code>
   </td>
  </tr>
  <tr>
@@ -115,21 +99,37 @@ Valid style modifiers are as follows:
  </tr>
  <tr>
   <td>
-   <a href="#text-underline-modifier-u"><b>Text underline</a>
+   <a href="#text-underline-strikethrough-and-overline-modifiers-ustov"><b>Text underline</a>
   </td>
   <td>
-   <code>{u:<i>colour-key</i>}</code>
+   <code>{u:<i>colour</i>}</code>
   </td>
  </tr>
  <tr>
   <td>
-   <a href="#text-strikethrough-modifier-st"><b>Text strikethrough</a>
+   <a href="#text-underline-strikethrough-and-overline-modifiers-ustov"><b>Text strikethrough</a>
   </td>
   <td>
-   <code>{st:<i>colour-key</i>}</code>
+   <code>{st:<i>colour</i>}</code>
   </td>
  </tr>
-  <tr>
+ <tr>
+  <td>
+   <a href="#text-underline-strikethrough-and-overline-modifiers-ustov"><b>Text overline</a>
+  </td>
+  <td>
+   <code>{ov:<i>colour</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-outline-modifier-o"><b>Text outline</a>
+  </td>
+  <td>
+   <code>{O:<i>colour</i>}</code>
+  </td>
+ </tr>
+ <tr>
   <td>
    <a href="#text-font-modifier-f"><b>Font</a>
   </td>
@@ -168,9 +168,18 @@ Valid style modifiers are as follows:
 
 ---
 
-## Defined text colour modifier `{C:}`
+## Text colour modifiers `{C:}`/`{V:}`
 
-<code>{C:<i>colour-key</i>}</code> changes the color of the text, where *`colour-key`* is the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table).
+<code>{C:<i>colour</i>}</code> or <code>{V:<i>colour</i>}</code> changes the color of the text, where *`colour`* is one of the following:
+
+- the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table),
+
+- a 6-digit **RGB hex code** or an 8-digit **RGBA hex code**, or
+
+- the index of a custom colour provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.colours` table. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
+
+> [!NOTE]
+> This functionality was added by Steamodded in (RELEASE). In older versions and in vanilla Balatro, `{C:}` only supports the first option, and `{V:}` only supports the third option.
 
 ### Examples
 
@@ -200,7 +209,7 @@ Valid style modifiers are as follows:
   <td colspan=2>
 
 ```pas
-{C:attention}1{} free {C:green}Reroll{}
+{C:attention}1{} free {V:green}Reroll{}
 ```
 
   </td>
@@ -237,18 +246,74 @@ Valid style modifiers are as follows:
    </picture>
   </td>
  </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td colspan=2>
+
+   ```pas
+   {C:ff00ff}FF00FF{}
+   ```
+
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_FF00FF.svg" height=32 width=128 alt="FF00FF">
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td>
+
+   ```pas
+   {V:2}#2#{} suit{}
+   ```
+
+  </td>
+  <td>
+
+   ```lua
+   vars = {
+     'Spade',
+     'Heart',
+     'Club',
+     'Diamond',
+     colours = {
+       G.C.SUITS.Spades,
+       G.C.SUITS.Hearts,
+       G.C.SUITS.Clubs,
+       G.C.SUITS.Diamonds
+     }
+   }
+   ```
+
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Heart_suit_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_Heart_suit_light.svg" height=32 width=128 alt="Heart suit">
+   </picture>
+  </td>
+ </tr>
 </table>
 
-## Defined background colour modifier `{X:}`
+## Background colour modifiers `{X:}`/`{B:}`
 
-<code>{X:<i>colour-key</i>}</code> sets the background color of the text, where *`colour-key`* is the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table).
+<code>{X:<i>colour</i>}</code> or <code>{B:<i>colour</i>}</code> sets the background color of the text, where *`colour`* is one of the following:
 
-This modifier is usually combined with the text colour modifier to make <picture>
+- the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table),
+
+- a 6-digit **RGB hex code** or an 8-digit **RGBA hex code**, or
+
+- the index of a custom colour provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.colours` table. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
+
+> [!NOTE]
+> This functionality was added by Steamodded in (RELEASE). In older versions and in vanilla Balatro, `{X:}` only supports the first option. `{B:}` is not supported by vanilla Balatro; in older Steamodded versions, it only supports the third option.
+
+These modifiers are usually combined with a text colour modifier to make <picture>
     <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_X3_Mult_dark.svg">
     <img src="/_static/Assets/Text-Styling/example_X3_Mult_light.svg" height=24 width=128 alt="X3 Mult" align="center">
 </picture> labels.
 
-This modifier uniquely strips all whitespace from the styled text, so text like <code>{X:gold}&nbsp;W&nbsp;I&nbsp;D&nbsp;E&nbsp;{}</code> is rendered as <img src="/_static/Assets/Text-Styling/example_WIDE.svg" height=24 width=128 alt="WIDE" align="center">. This can be helpful for improving the readability of otherwise dense strings.
+The `{X:}` modifier uniquely strips all whitespace from the styled text, so text like <code>{X:gold}&nbsp;W&nbsp;I&nbsp;D&nbsp;E&nbsp;{}</code> is rendered as <img src="/_static/Assets/Text-Styling/example_WIDE.svg" height=24 width=128 alt="WIDE" align="center">. This can be helpful for improving the readability of otherwise dense strings. The `{B:}` modifier instead leaves the styled text's whitespace unmodified.
 
 ### Examples
 
@@ -260,7 +325,7 @@ This modifier uniquely strips all whitespace from the styled text, so text like 
   <td colspan=2>
 
    ```pas
-   {X:mult,C:white}X3{} Mult{}
+   {B:mult,C:white}X3{} Mult{}
    ```
 
   </td>
@@ -309,108 +374,12 @@ This modifier uniquely strips all whitespace from the styled text, so text like 
    <img src="/_static/Assets/Text-Styling/example_X0.5.svg" height=32 width=128 alt="X0.5">
   </td>
  </tr>
-</table>
-
-## Variable/custom text colour modifier `{V:}`
-
-<code>{V:<i>index</i>}</code> changes the colour of the text to a custom colour provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.colours` table. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
-
-*`index`* is the array index of the colour entry in the `vars.colours` table.
-
-### Examples
-
-<table>
- <tr>
-  <td> Text string </td> <td> <code>loc_vars</code> </td> <td> Result </td>
- </tr>
- <tr>
-  <td>
-
-   ```pas
-   {V:1}FF00FF{}
-   ```
-
-  </td>
-  <td>
-
-   ```lua
-   vars = {
-     colours = { HEX('FF00FF') }
-   }
-   ```
-
-  </td>
-  <td align="center">
-   <img src="/_static/Assets/Text-Styling/example_FF00FF.svg" height=32 width=128 alt="FF00FF">
-  </td>
- </tr>
  <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
  <tr>
-  <td>
+  <td colspan=2>
 
    ```pas
-   {V:2}#2#{} suit{}
-   ```
-
-  </td>
-  <td>
-
-   ```lua
-   vars = {
-     'Spade',
-     'Heart',
-     'Club',
-     'Diamond',
-     colours = {
-       G.C.SUITS.Spades,
-       G.C.SUITS.Hearts,
-       G.C.SUITS.Clubs,
-       G.C.SUITS.Diamonds
-     }
-   }
-   ```
-
-  </td>
-  <td align="center">
-   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Heart_suit_dark.svg">
-    <img src="/_static/Assets/Text-Styling/example_Heart_suit_light.svg" height=32 width=128 alt="Heart suit">
-   </picture>
-  </td>
- </tr>
-</table>
-
-## Variable/custom background colour modifier `{B:}`
->
-> [!NOTE]
-> This modifier is added by Steamodded and is not supported by vanilla Balatro.
-
-<code>{B:<i>index</i>}</code> changes the colour of the background to a custom colour provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.colours` table. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
-
-*`index`* is the array index of the colour entry in the `vars.colours` table.
-
-Unlike the similar [Defined background modifier `{X:}`](#defined-background-colour-modifier-x), `{B:}` does **not** remove or change the whitespace of styled text, so displayed contents will remain the same as their input string.
-
-### Examples
-
-<table>
- <tr>
-  <td> Text string </td> <td> <code>loc_vars</code> </td> <td> Result </td>
- </tr>
- <tr>
-  <td>
-
-   ```pas
-   {B:1}00FF00{}
-   ```
-
-  </td>
-  <td>
-
-   ```lua
-   vars = {
-     colours = { HEX('00FF00') }
-   }
+   {B:00ff00}00FF00{}
    ```
 
   </td>
@@ -451,7 +420,7 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
   <td>
 
    ```pas
-   {B:1,V:2}#1#{B:2,V:1}#2#{}
+   {B:1,V:2}#1#{B:2,C:1}#2#{}
    ```
 
   </td>
@@ -475,13 +444,14 @@ Unlike the similar [Defined background modifier `{X:}`](#defined-background-colo
  </tr>
 </table>
 
+
 ## Text motion modifier `{E:}`
 
 `{E:1}` applies a pop-in effect when the text is first displayed, and a floating animation to each letter in the text.
 
 `{E:2}` applies a bumping animation to each letter in sequence.
 
-`{E:}` is incompatible with background modifiers `{X:}` and `{B:}`. If background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored.
+`{E:}` is fully compatible with background modifiers `{X:}` and `{B:}` *(Added by Steamodded)*. In vanilla Balatro, if background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored.
 
 You can also apply a custom effect using [SMODS.DynaTextEffect](https://docs.smods.dev/Game%20Objects/SMODS.DynaTextEffect), in that case the modifier should be `{E:modprefix_key}`.
 
@@ -536,7 +506,10 @@ You can also apply a custom effect using [SMODS.DynaTextEffect](https://docs.smo
 
 ## Text hover tooltip modifier `{T:}`
 
-<code>{T:<i>tooltip-key</i>}</code> adds tooltip functionality to the text, which displays a small tooltip UI above the text when the text is hovered over. If `tooltip-key` can be the name of a key found in either `G.P_CENTERS` or `G.P_TAGS` or a description found in `G.localization.descriptions.Other`. *(Added in 1814a)* You can additionally use `T_set:set-key` to specify a set in `G.localization.descriptions` to pull from, and `T_vars:var1;var2;...` to replace any localizarion variables in the text.
+<code>{T:<i>tooltip-key</i>}</code> adds tooltip functionality to the text, which displays a small tooltip UI above the text when the text is hovered over. If `tooltip-key` can be the name of a key found in either `G.P_CENTERS` or `G.P_TAGS` or a description found in `G.localization.descriptions.Other` *(Added in 1814a)*. In the latter case, you can supply additional information as follows: <code>{T:[key=<i>tooltip-key</i>;set=<i>set-key</i>;1=<i>var1</i>;2=<i>var2</i>;...]}</code> *(Added in (RELEASE))*. The *set-key* is used to specify a set in `G.localization.descriptions` to pull from, and the variables *var1*, *var2*, etc. are used to supply any localization variables in the text.
+
+> [!NOTE]
+> The same effect can be achieved using <code>{T:<i>tooltip-key</i>,T_set:<i>set-key</i>,T_vars=<i>var1</i>;<i>var2</i>;...}</code> *(added in 1814a)*.
 
 ### Examples
 
@@ -562,7 +535,7 @@ You can also apply a custom effect using [SMODS.DynaTextEffect](https://docs.smo
    <br><br>
 
    ```pas
-   "Shop can have {C:perishable,T:perishable,T_vars:5;5}Perishable{} Jokers"
+   "Shop can have {C:perishable,T:[key=perishable;1=5;2=5]}Perishable{} Jokers"
    ```
 
   </td>
@@ -575,7 +548,7 @@ You can also apply a custom effect using [SMODS.DynaTextEffect](https://docs.smo
    <br><br>
 
    ```pas
-   "{T_set:Blind,T:bl_arm}The Arm{}"
+   "{T:[key=bl_arm;set=Blind]}The Arm{}"
    ```
 
   </td>
@@ -619,17 +592,29 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
  </tr>
 </table>
 
-## Text underline modifier `{u:}`
+## Text underline, strikethrough and overline modifiers `{u:}`/`{st:}`/`{ov:}`
 >
 > [!NOTE]
-> This modifier is added by Steamodded and is not supported by vanilla Balatro.
+> These modifiers are added by Steamodded and are not supported by vanilla Balatro.
+> *(Added in (RELEASE))*
 
 > [!IMPORTANT]
-> This modifier requires the **lowercase** `u`, unlike other modifiers which must be UPPERCASE.
+> These modifiers must be **lowercase**, unlike other modifiers which must be UPPERCASE.
 
-<code>{u:<i>colour-key</i>}</code> adds an underline under the text.
+### Basic usage
 
-*`colour-key`* sets the colour of the underline, where *`colour-key`* is the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table).
+<code>{u:<i>colour</i>}</code>, <code>{st:<i>colour</i>}</code> and <code>{ov:<i>colour</i>}</code> respectively add an underline, strikethrough, or underline to the text. The width of the line is 10% of the text's height.
+
+*`colour`* sets the colour of the line, where *`colour`* is one of the following:
+- the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table),
+
+- a 6-digit **RGB hex code** or an 8-digit **RGBA hex code**, or
+
+- the index of a custom colour provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.colours` table. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
+
+### Advanced usage
+
+By supplying a table to the text modifier, it is possible to customize the lines further: <code>{u:[c=<i>colour</i>;s=<i>size</i>]}</code>. *size* is a decimal value with a default of `0.1`. It indicates the thickness of the line relative to the height of the text. It is **required** to specify a *colour*.
 
 ### Examples
 
@@ -649,20 +634,55 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
    TBD
   </td>
  </tr>
+ <tr></tr>
+ <tr>
+  <td>
+
+  ```pas
+  {st:[c=green;s=0.2]}Thick strikethrough text!
+  ```
+
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+ <tr></tr>
+ <tr>
+  <td>
+
+  ```pas
+  {ov:[c=blue;s=0.05]}Thin overlined text!
+  ```
+
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
 </table>
 
-## Text strikethrough modifier `{st:}`
+## Text outline modifier `{O:}`
 >
 > [!NOTE]
 > This modifier is added by Steamodded and is not supported by vanilla Balatro.
-> *(Added in 1531zeebee)*
+> *(Added in (RELEASE))*
 
-> [!IMPORTANT]
-> This modifier requires the **lowercase** `st`, unlike other modifiers which must be UPPERCASE.
+### Basic usage
 
-<code>{st:<i>colour-key</i>}</code> adds a strikethrough line through the text.
+<code>{O:<i>colour</i>} adds an outline to the text.
 
-*`colour-key`* sets the colour of the underline, where *`colour-key`* is the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table).
+*`colour`* sets the colour of the line, where *`colour`* is one of the following:
+
+- the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table),
+
+- a 6-digit **RGB hex code** or an 8-digit **RGBA hex code**, or
+
+- the index of a custom colour provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.colours` table. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
+
+### Advanced usage
+
+By supplying a table to the text modifier, it is possible to customize the outline further: <code>{O:[c=<i>colour</i>;s=<i>size</i>]}</code>. *size* is a decimal value with a default of `1.0`. It indicates the thickness of the outline. **Due to implementation constraints, large *size* values may lead to unexpected results.** It is **required** to specify a *colour*.
 
 ### Examples
 
@@ -674,7 +694,20 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
   <td>
 
   ```pas
-  {st:red}Strikethrough text!
+  {O:red}Outlined text!
+  ```
+
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+ <tr></tr>
+ <tr>
+  <td>
+
+  ```pas
+  {C:blue,O:[c=green;s=0.6]}Thinner outline!
   ```
 
   </td>
@@ -977,19 +1010,17 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 
 ## Combinations
 
-Some style codes can be combined within one set of curly braces, like `{X:mult,C:white}`.
+Most style codes can be combined within one set of curly braces, like `{X:mult,C:white}`.
 
-- `{T:}`, `{f:}`, `{u:}`, `{button:}` and `{s:}` are compatible with all other modifiers.
-
-- Background modifiers `{X:}` or `{B:}` can be used in conjunction with text colour modifiers `{C:}` or `{V:}`.
-
-- Text motion modifier `{E:}` is incompatible with background modifiers `{X:}` and `{B:}` - if background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored.
+- All combinations that aren't explicitly listed here are valid.
 
 - `{C:}` and `{V:}` are exclusive - if both are used, `{C:}` will be ignored.
 
 - `{X:}` and `{B:}` are exclusive - if both are used, `{X:}` will be ignored.
 
 - `{element:}` does not interact with any other modifiers. Any additional modifiers will function as if `{element:}` wasn't present.
+
+- **In vanilla Balatro only**, the text motion modifier `{E:}` is incompatible with background modifiers `{X:}` and `{B:}` - if background modifiers are set, `{E:1}` will only show a pop-in effect with no motion, and `{E:2}` will be ignored. Modern versions of Steamodded fully lift this restriction.
 
 ### Examples
 
@@ -1526,4 +1557,4 @@ Steamodded automatically adds additional entries to `LOC_COLOURS` for all custom
 - [SMODS.ConsumableType](https://docs.smods.dev/Game%20Objects/SMODS.Center/SMODS.Consumable)
 - [SMODS.Suit](https://docs.smods.dev/Game%20Objects/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit)
 
-which can be used as colour keys in the same way by `{C:}` and `{X:}`. When referring to custom Rarity, Gradient or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://docs.smods.dev/API%20Documentation/Mod-Metadata#metadata).
+which can be used as colour keys in the same way by `{C:}`/`{V:}` and `{X:}`/`{B:}`. When referring to custom Rarity, Gradient or Suit colours added by SMODS, the key must be prefixed with the [mod prefix](https://docs.smods.dev/API%20Documentation/Mod-Metadata#metadata).
