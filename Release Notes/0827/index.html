@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BETA-0827a - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="BETA-0711a" href="../0711a/" /><link rel="prev" title="BETA-1221a" href="../1221a/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="BETA-0827a"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Release Notes</a><ul class="current">
+<li class="toctree-l2 _expand"><a class="reference internal" href="../1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#changes-to-existing-features">Changes to Existing Features</a><ul>
+<li><a class="reference internal" href="#mod-list">Mod List</a></li>
+<li><a class="reference internal" href="#consumabletypes">ConsumableTypes</a></li>
+<li><a class="reference internal" href="#probabilities">Probabilities</a></li>
+<li><a class="reference internal" href="#challenges">Challenges</a></li>
+<li><a class="reference internal" href="#saving-values">Saving Values</a></li>
+<li><a class="reference internal" href="#permanent-bonuses">Permanent Bonuses</a></li>
+<li><a class="reference internal" href="#new-modifiers">New Modifiers</a></li>
+<li><a class="reference internal" href="#text-styling">Text Styling</a></li>
+<li><a class="reference internal" href="#other">Other</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#calculation">Calculation</a><ul>
+<li><a class="reference internal" href="#new-contexts">New Contexts</a><ul>
+<li><a class="reference internal" href="#context-tag-added">context.tag_added</a></li>
+<li><a class="reference internal" href="#context-tag-triggered">context.tag_triggered</a></li>
+<li><a class="reference internal" href="#context-prevent-tag-trigger">context.prevent_tag_trigger</a></li>
+<li><a class="reference internal" href="#context-change-suit-context-change-rank">context.change_suit/context.change_rank</a></li>
+<li><a class="reference internal" href="#context-money-altered">context.money_altered</a></li>
+<li><a class="reference internal" href="#context-modify-ante">context.modify_ante</a></li>
+<li><a class="reference internal" href="#context-ante-change">context.ante_change</a></li>
+<li><a class="reference internal" href="#context-setting-ability">context.setting_ability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#new-features">New Features</a><ul>
+<li><a class="reference internal" href="#smods-jimboquip">SMODS.JimboQuip</a><ul>
+<li><a class="reference internal" href="#basic-structure">Basic Structure</a></li>
+<li><a class="reference internal" href="#customising-your-quips-spawn-rate">Customising Your Quips Spawn Rate</a></li>
+<li><a class="reference internal" href="#customising-your-quips-appearance">Customising Your Quips Appearance</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#smods-scale-card">SMODS.scale_card</a><ul>
+<li><a class="reference internal" href="#id1">Basic Structure</a></li>
+<li><a class="reference internal" href="#blocking-scaling-manipulation">Blocking Scaling Manipulation</a></li>
+<li><a class="reference internal" href="#customising-the-scaling">Customising The Scaling</a><ul>
+<li><a class="reference internal" href="#messages">Messages</a></li>
+<li><a class="reference internal" href="#scaling">Scaling</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#detecting-scaling">Detecting Scaling</a></li>
+<li><a class="reference internal" href="#manipulating-scaling">Manipulating Scaling</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#smods-scoring-parameter">SMODS.Scoring_Parameter</a><ul>
+<li><a class="reference internal" href="#id2">Basic Structure</a></li>
+<li><a class="reference internal" href="#object-calculation-with-your-parameter">Object Calculation With Your Parameter</a></li>
+<li><a class="reference internal" href="#changing-how-your-parameter-is-modified">Changing How Your Parameter is Modified</a></li>
+<li><a class="reference internal" href="#scaling-with-hand-type-levels">Scaling With Hand Type Levels</a></li>
+<li><a class="reference internal" href="#accessing-and-changing-parameters-directly">Accessing and Changing Parameters Directly</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#smods-scoring-calculation">SMODS.Scoring_Calculation</a><ul>
+<li><a class="reference internal" href="#id3">Basic Structure</a></li>
+<li><a class="reference internal" href="#saving-values-to-your-calculation">Saving Values To Your Calculation</a></li>
+<li><a class="reference internal" href="#scoring-calculation-with-additional-parameters">Scoring Calculation with Additional Parameters</a></li>
+<li><a class="reference internal" href="#advanced-ui-changes">Advanced UI Changes</a></li>
+<li><a class="reference internal" href="#setting-the-scoring-calculation">Setting The Scoring Calculation</a></li>
+<li><a class="reference internal" href="#tracking-the-score">Tracking the Score</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#smods-add-to-pool">SMODS.add_to_pool</a></li>
+<li><a class="reference internal" href="#smods-context-stack">SMODS.context_stack</a></li>
+<li><a class="reference internal" href="#card-limit-and-extra-slots-used">card_limit and extra_slots_used</a></li>
+<li><a class="reference internal" href="#smods-scoring-parameter-and-smods-scoring-calculation-example">SMODS.Scoring_Parameter and SMODS.Scoring_Calculation Example</a></li>
+</ul>
+</li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/Release Notes/0827.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../"><span itemprop="name">Release Notes</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">BETA-0827a</strong>
+        <meta itemprop="position" content="3" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="beta-0827a">
+<h1>BETA-0827a<a class="headerlink" href="#beta-0827a" title="Link to this heading">#</a></h1>
+<p>This is a <strong>large</strong> update to the smods framework that adds or modifies a lot of functionality, as well as fixing numerous bugs. This post is designed to detail the changes and document new features - these will be moved across to the wiki in the future. A lot of people have helped contribute to this release, either through writing features, discussing design choices, or by testing them out. I would like to thank them all for their efforts.</p>
+<section id="changes-to-existing-features">
+<h2>Changes to Existing Features<a class="headerlink" href="#changes-to-existing-features" title="Link to this heading">#</a></h2>
+<section id="mod-list">
+<h3>Mod List<a class="headerlink" href="#mod-list" title="Link to this heading">#</a></h3>
+<p>Massive credit is due to Aikoyori for the redesigned mod list page. Mods can be clicked on to access their menu, with a shortcut button to their config. The “List of Activated Mods” remains as a button that opens your Mods folder. A reminder that they are sorted by priority (lowest to high) within these categories:</p>
+<ol class="arabic simple">
+<li><p>enabled mods with config</p></li>
+<li><p>enabled mods</p></li>
+<li><p>disabled mods</p></li>
+</ol>
+<p>I think it looks brilliant, and there are some future plans for further iteration using this design.</p>
+</section>
+<hr class="docutils" />
+<section id="consumabletypes">
+<h3>ConsumableTypes<a class="headerlink" href="#consumabletypes" title="Link to this heading">#</a></h3>
+<p>Custom Consumable Types can now take an optional <code class="docutils literal notranslate"><span class="pre">text_colour</span></code> parameter, similar to <code class="docutils literal notranslate"><span class="pre">primary_colour</span></code> and <code class="docutils literal notranslate"><span class="pre">secondary_colour</span></code>. This parameter controls the colour of the text in the collection and in badges. If you wish to use this colour elsewhere, it is added as <code class="docutils literal notranslate"><span class="pre">G.C.UI[key]</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="probabilities">
+<h3>Probabilities<a class="headerlink" href="#probabilities" title="Link to this heading">#</a></h3>
+<p>Building on the foundations from the last release, there have been a few improvements to the probability functions. <code class="docutils literal notranslate"><span class="pre">SMODS.get_probability_vars</span></code> and <code class="docutils literal notranslate"><span class="pre">SMODS.pseudorandom_probability</span></code>, now take an optional sixth argument - a <strong>boolean</strong>, that will make your probability unable to be modified by other effects when true. This allows other effects to still respond to successful and unsuccessful checks, without changing your chance.</p>
+<p>The calculation contexts for probabilities have been extended to work for card modifiers too, allowing for enhancements, seals, and editions, to modify probabilities. In combination with a new feature, <code class="docutils literal notranslate"><span class="pre">SMODS.context_stack</span></code>, you can fine tune the exact effect you want, for example, a seal that guarantees Bloodstone, and only Bloodstone, will be successful.</p>
+</section>
+<hr class="docutils" />
+<section id="challenges">
+<h3>Challenges<a class="headerlink" href="#challenges" title="Link to this heading">#</a></h3>
+<p>Challenges have had support added for an <code class="docutils literal notranslate"><span class="pre">apply</span></code> function to be defined. This will allow you much more control over what changes you make within your challenge.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- Example usage</span>
+</span><span data-line="2"><span class="n">apply</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+</span><span data-line="3"> <span class="n">G</span><span class="p">.</span><span class="n">GAME</span><span class="p">.</span><span class="n">stake</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1">-- sets the stake to Gold Stake</span>
+</span><span data-line="4"><span class="kr">end</span>
+</span></pre></div>
+</div>
+<p>There is also support for challenges to have a dynamic restriction list by using functions. <code class="docutils literal notranslate"><span class="pre">restrictions.banned_cards</span></code>, <code class="docutils literal notranslate"><span class="pre">restrictions.banned_tags</span></code> and <code class="docutils literal notranslate"><span class="pre">restrictions.banned_other</span></code> can now be functions that return a table with the same structure as you would define originally. This lets you perform logic on your banned cards depending on values that are only accessible after mods are loaded.</p>
+</section>
+<hr class="docutils" />
+<section id="saving-values">
+<h3>Saving Values<a class="headerlink" href="#saving-values" title="Link to this heading">#</a></h3>
+<p>Decks and Blinds are now able to have values saved within them that persist through a reload. Use <code class="docutils literal notranslate"><span class="pre">G.GAME.blind.effect</span></code> and <code class="docutils literal notranslate"><span class="pre">G.GAME.selected_back.effect.config</span></code> to access them.</p>
+<p>In addition to this, custom <strong>Stickers</strong> will now automatically populate their config table when applied. It can be accessed through <code class="docutils literal notranslate"><span class="pre">card.ability[sticker_key][value_key]</span></code>. I would generally recommend that custom stickers <strong>do not</strong> redefine the apply function, and that stickers are applied to cards by using <code class="docutils literal notranslate"><span class="pre">Card:add_sticker(sticker_key,</span> <span class="pre">bypass_check)</span></code>, in preparation for a future update to Sticker functionality.</p>
+</section>
+<hr class="docutils" />
+<section id="permanent-bonuses">
+<h3>Permanent Bonuses<a class="headerlink" href="#permanent-bonuses" title="Link to this heading">#</a></h3>
+<p>Permanent bonuses have had a few new additions in this update.
+Firstly, <code class="docutils literal notranslate"><span class="pre">perma_repetitions</span></code> can be modified to add retriggers to playing cards.
+Secondly, two new properties that affect space in card areas have had functionality added. <code class="docutils literal notranslate"><span class="pre">card_limit</span></code> can be used to increase <em>(or decrease)</em> the card limit of the area that the card is in. <code class="docutils literal notranslate"><span class="pre">extra_slots_used</span></code> can be used to increase <em>(or decrease)</em> the number of slots that the card takes up. These two properties can also be defined within the <code class="docutils literal notranslate"><span class="pre">config</span></code> table of any object, and will be automatically handled. There is a more thorough guide to how this interacts with <strong>Editions</strong> later.</p>
+</section>
+<hr class="docutils" />
+<section id="new-modifiers">
+<h3>New Modifiers<a class="headerlink" href="#new-modifiers" title="Link to this heading">#</a></h3>
+<p>Two new modifiers have been added that allow for finer control over booster packs. By changing <code class="docutils literal notranslate"><span class="pre">G.GAME.modifiers.booster_choice_mod</span></code> you can modify the number of cards you are allowed to choose from a pack - this number cannot be reduced below 1. Changing <code class="docutils literal notranslate"><span class="pre">G.GAME.modifiers.booster_size_mod</span></code> will alter the number of cards that are available in a pack. Changing either of these values will also automatically adjust the tooltips of any booster packs.</p>
+</section>
+<hr class="docutils" />
+<section id="text-styling">
+<h3>Text Styling<a class="headerlink" href="#text-styling" title="Link to this heading">#</a></h3>
+<p>A new property for text styling has been added - underline. To use this add <code class="docutils literal notranslate"><span class="pre">{u:color}</span></code> to your text.
+A new property has also been added to DynaText. Use <code class="docutils literal notranslate"><span class="pre">marquee</span> <span class="pre">=</span> <span class="pre">true</span></code> to allow your text to scroll <em>(can be seen in the new mod menu)</em>. This can be customised with <code class="docutils literal notranslate"><span class="pre">hold</span></code> and <code class="docutils literal notranslate"><span class="pre">scroll_speed</span></code> to define how long to pause and how fast to scroll.</p>
+</section>
+<hr class="docutils" />
+<section id="other">
+<h3>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">SMODS.four_fingers(hand_type)</span></code> can now differentiate between Flushes and Straights, allowing for this type of effect to apply to only one of the hands if required.
+<code class="docutils literal notranslate"><span class="pre">SMODS.create_card</span></code>/<code class="docutils literal notranslate"><span class="pre">SMODS.add_card</span></code> now has a field <code class="docutils literal notranslate"><span class="pre">allow_duplicates</span></code>, which will allow duplicate cards to be created.
+Added <code class="docutils literal notranslate"><span class="pre">Card:is_rarity(rarity)</span></code> to check if a Joker is a certain rarity. Accepts a number for vanilla rarities, or a key as a string for modded rarities.
+<code class="docutils literal notranslate"><span class="pre">SMODS.destroy_cards</span></code> now has a fourth argument <code class="docutils literal notranslate"><span class="pre">no_anim</span></code> that bypasses any animations <em>(used in food jokers in vanilla)</em>
+Hidden achievements can now have custom names and descriptions, accessed in the normal tables with <code class="docutils literal notranslate"><span class="pre">'_hidden'</span></code> added to the key.</p>
+</section>
+</section>
+<section id="calculation">
+<h2>Calculation<a class="headerlink" href="#calculation" title="Link to this heading">#</a></h2>
+<p>There are a lot of updates to calculation within this release.</p>
+<p>Firstly, calculations can no longer run outside of an active game, preventing some crashes.</p>
+<p>Next, calculation support has been added to the following objects:</p>
+<ul class="simple">
+<li><p>challenges <em>(add in your challenge definition as <code class="docutils literal notranslate"><span class="pre">calculate</span> <span class="pre">=</span> <span class="pre">function(self,</span> <span class="pre">context)</span></code>)</em></p></li>
+<li><p>stakes <em>(add in your stake definition as <code class="docutils literal notranslate"><span class="pre">calculate</span> <span class="pre">=</span> <span class="pre">function(self,</span> <span class="pre">context)</span></code>)</em></p></li>
+<li><p>mod objects <em>(add as <code class="docutils literal notranslate"><span class="pre">SMODS.current_mod.calculate</span> <span class="pre">=</span> <span class="pre">function(self,</span> <span class="pre">context)</span></code></em></p></li>
+</ul>
+<p>A new, global, tracker has been added, <code class="docutils literal notranslate"><span class="pre">SMODS.last_hand_oneshot</span></code>, that is true when the last played hand scored <strong>more</strong> than the blind requirement.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">context.main_eval</span></code> flag that is used for Jokers within <code class="docutils literal notranslate"><span class="pre">context.end_of_round</span></code> has also been added for Deck and Blind calculations too.</p>
+<p>When returning <code class="docutils literal notranslate"><span class="pre">saved</span> <span class="pre">=</span> <span class="pre">...</span></code> when a game is lost, you can now return your message directly rather than a localization key.</p>
+<p><code class="docutils literal notranslate"><span class="pre">SMODS.create_card</span></code>/<code class="docutils literal notranslate"><span class="pre">SMODS.add_card</span></code> can now have a <code class="docutils literal notranslate"><span class="pre">force_stickers</span></code> table that will force the stickers to be applied, bypassing all checks.</p>
+<section id="new-contexts">
+<h3>New Contexts<a class="headerlink" href="#new-contexts" title="Link to this heading">#</a></h3>
+<p>A number of new calculation contexts have been added.</p>
+<section id="context-tag-added">
+<h4>context.tag_added<a class="headerlink" href="#context-tag-added" title="Link to this heading">#</a></h4>
+<p>This context is used for effects that happen when a tag is added to your tag area.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">tag_added</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">cardarea</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">tag_added</span> <span class="c1">-- the Tag that has been added</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="context-tag-triggered">
+<h4>context.tag_triggered<a class="headerlink" href="#context-tag-triggered" title="Link to this heading">#</a></h4>
+<p>This context is used for effects that happen <strong>after</strong> a tag is triggered.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">tag_triggered</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">cardarea</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">tag_triggered</span> <span class="c1">-- the Tag that has been triggered</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="context-prevent-tag-trigger">
+<h4>context.prevent_tag_trigger<a class="headerlink" href="#context-prevent-tag-trigger" title="Link to this heading">#</a></h4>
+<p>This context is used to prevent tags from triggering. You can return <code class="docutils literal notranslate"><span class="pre">prevent_trigger</span> <span class="pre">=</span> <span class="pre">true</span></code> to stop the tag from triggering.
+<em>This context could also be used to modify a tag before it is triggered.</em></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">prevent_tag_trigger</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">cardarea</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">prevent_tag_triggger</span> <span class="c1">-- the Tag that is about to trigger</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">other_context</span> <span class="c1">-- the context that has activated the Tag</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="context-change-suit-context-change-rank">
+<h4>context.change_suit/context.change_rank<a class="headerlink" href="#context-change-suit-context-change-rank" title="Link to this heading">#</a></h4>
+<p>This context is used for effects that happen whenever a card changes either suit or rank. These are <em>technically</em> the same context that adapts depending on which properties change.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">change_suit</span> <span class="kr">then</span>
+</span><span data-line="2"><span class="c1">--</span>
+</span><span data-line="3"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">change_rank</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">cardarea</span><span class="p">,</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">other_card</span> <span class="c1">-- the card that has changed</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">change_rank</span> <span class="c1">-- boolean value to flag that the rank has changed</span>
+</span><span data-line="4"><span class="n">context</span><span class="p">.</span><span class="n">new_rank</span> <span class="c1">-- the id of the rank the card has changed to, only present with change_rank</span>
+</span><span data-line="5"><span class="n">context</span><span class="p">.</span><span class="n">old_rank</span> <span class="c1">-- the id of the rank the card has changed from, only present with change_rank</span>
+</span><span data-line="6"><span class="n">context</span><span class="p">.</span><span class="n">rank_increase</span> <span class="c1">-- boolean value to flag whether the rank increased, only present with change_rank</span>
+</span><span data-line="7"><span class="n">context</span><span class="p">.</span><span class="n">change_suit</span> <span class="c1">-- boolean value to flag that the suit has changed</span>
+</span><span data-line="8"><span class="n">context</span><span class="p">.</span><span class="n">new_suit</span> <span class="c1">-- the key of the suit the card has changed to, only present with change_suit</span>
+</span><span data-line="9"><span class="n">context</span><span class="p">.</span><span class="n">old_suit</span> <span class="c1">-- the key of the suit the card has changed from, only present with change_suit</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="context-money-altered">
+<h4>context.money_altered<a class="headerlink" href="#context-money-altered" title="Link to this heading">#</a></h4>
+<p>This context is used for effects that happen whenever your current money changes. This context also tries to work out where the money comes from, though it is not guaranteed to identify every source.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">money_altered</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">cardarea</span><span class="p">,</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">money_altered</span> <span class="c1">-- boolean value to flag this context, always TRUE</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">amount</span> <span class="c1">-- the change in money</span>
+</span><span data-line="4"><span class="n">context</span><span class="p">.</span><span class="n">from_shop</span> <span class="c1">-- boolean value that is true if money is spent in the shop</span>
+</span><span data-line="5"><span class="n">context</span><span class="p">.</span><span class="n">from_consumeable</span> <span class="c1">-- boolean value that is true if money changes when using a consumable</span>
+</span><span data-line="6"><span class="n">context</span><span class="p">.</span><span class="n">from_scoring</span> <span class="c1">-- boolean value that is true if money changes during scoring evaluation</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="context-modify-ante">
+<h4>context.modify_ante<a class="headerlink" href="#context-modify-ante" title="Link to this heading">#</a></h4>
+<p>This context is used to control the amount the ante changes by, before it changes. You can return <code class="docutils literal notranslate"><span class="pre">modify</span> <span class="pre">=</span> <span class="pre">X</span></code> to change the amount by X.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">modify_ante</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">cardarea</span><span class="p">,</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">modify_ante</span> <span class="c1">-- the amount the ante is changing by</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">ante_end</span> <span class="c1">-- boolean value that is true when the change is from reaching the end of the ante</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="context-ante-change">
+<h4>context.ante_change<a class="headerlink" href="#context-ante-change" title="Link to this heading">#</a></h4>
+<p>This context is used for effects after the ante changes.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">ante_change</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">cardarea</span><span class="p">,</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">ante_change</span> <span class="c1">-- the amount the ante has changed by</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">ante_end</span> <span class="c1">-- boolean value that is true when the change is from reaching the end of the ante</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="context-setting-ability">
+<h4>context.setting_ability<a class="headerlink" href="#context-setting-ability" title="Link to this heading">#</a></h4>
+<p>This context is used for effects after a card has had it’s ability set. This includes initial spawning of cards, and when they change enhancement.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">setting_ability</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">cardarea</span><span class="p">,</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">setting_ability</span> <span class="c1">-- boolean value to flag this context, always TRUE</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">other_card</span> <span class="c1">-- reference to the card that has changed</span>
+</span><span data-line="4"><span class="n">context</span><span class="p">.</span><span class="n">old</span> <span class="c1">-- key of what the card was</span>
+</span><span data-line="5"><span class="n">context</span><span class="p">.</span><span class="n">new</span> <span class="c1">-- key of what the card is now</span>
+</span><span data-line="6"><span class="n">context</span><span class="p">.</span><span class="n">unchanged</span> <span class="c1">-- boolean value that is true when context.old is equal to context.new</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="new-features">
+<h2>New Features<a class="headerlink" href="#new-features" title="Link to this heading">#</a></h2>
+<section id="smods-jimboquip">
+<h3>SMODS.JimboQuip<a class="headerlink" href="#smods-jimboquip" title="Link to this heading">#</a></h3>
+<p>JimboQuips are a new feature that allow you to create new pop ups at the end of a run. By default, there are 7 win quips and 10 loss quips, that are selected randomly at the end of a run. Using <code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code> you can define new quips to show up under certain conditions.</p>
+<p><img alt="Example Quip" src="https://i.imgur.com/6rUTbse.png" /></p>
+<section id="basic-structure">
+<h4>Basic Structure<a class="headerlink" href="#basic-structure" title="Link to this heading">#</a></h4>
+<p>The easiest form of a quip simply results in a new message for Jimbo to say. You can set this up using this example.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- in any of your lua files</span>
+</span><span data-line="2"><span class="n">SMODS</span><span class="p">.</span><span class="n">JimboQuip</span><span class="p">({</span>
+</span><span data-line="3"> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;example_quip&#39;</span><span class="p">,</span>
+</span><span data-line="4"> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;win&#39;</span>
+</span><span data-line="5"><span class="p">})</span>
+</span><span data-line="6">
+</span><span data-line="7"><span class="c1">-- in your localization file</span>
+</span><span data-line="8"><span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="9"> <span class="n">misc</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="10">  <span class="n">quips</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="11">   <span class="n">modprefix_example_quip</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="12">    <span class="s1">&#39;This is an&#39;</span><span class="p">,</span>
+</span><span data-line="13">    <span class="s1">&#39;example quip&#39;</span><span class="p">,</span>
+</span><span data-line="14">    <span class="s1">&#39;when you win&#39;</span>
+</span><span data-line="15">   <span class="p">}</span>
+</span><span data-line="16">  <span class="p">}</span>
+</span><span data-line="17"> <span class="p">}</span>
+</span><span data-line="18"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p><img alt="Win Quip" src="https://i.imgur.com/XTD1926.png" /></p>
+<p>This quip will be able to spawn on any run that has been won. Using <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">'loss'</span></code> would spawn on any lost run.</p>
+</section>
+<section id="customising-your-quips-spawn-rate">
+<h4>Customising Your Quips Spawn Rate<a class="headerlink" href="#customising-your-quips-spawn-rate" title="Link to this heading">#</a></h4>
+<p>There may be times where you want to control when your quip can spawn, and the rate at which is can spawn. To do this, you can add a <code class="docutils literal notranslate"><span class="pre">filter</span></code> function to your quip, as shown below, that returns <code class="docutils literal notranslate"><span class="pre">true</span></code> when the quip should be added to the spawn pool.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">filter</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+</span><span data-line="2"> <span class="kr">if</span> <span class="nb">next</span><span class="p">(</span><span class="n">SMODS</span><span class="p">.</span><span class="n">find_card</span><span class="p">(</span><span class="s1">&#39;j_hanging_chad&#39;</span><span class="p">))</span> <span class="kr">then</span>
+</span><span data-line="3">  <span class="kr">return</span> <span class="kc">true</span><span class="p">,</span> <span class="p">{</span><span class="n">weight</span> <span class="o">=</span> <span class="mi">10</span><span class="p">}</span>
+</span><span data-line="4"> <span class="kr">end</span>
+</span><span data-line="5"><span class="kr">end</span>
+</span></pre></div>
+</div>
+<p>From this function, you can also optionally return a table of extra information. <code class="docutils literal notranslate"><span class="pre">weight</span></code> allows you to control the frequency of your quip being the displayed quip <em>(default value is 1)</em>, and <code class="docutils literal notranslate"><span class="pre">override_base_checks</span></code> can be used to stop other quip filters from removing your quip <em>(more on this later)</em>. Advanced usage of this could allow you to have only one quip definition for both win and loss states, and control the output within this function. There is an example showing this later.</p>
+<p>Back and Mod objects can also have a <code class="docutils literal notranslate"><span class="pre">quip_filter</span></code> function defined on them to override the initial <code class="docutils literal notranslate"><span class="pre">filter</span></code> function from the quip. The <code class="docutils literal notranslate"><span class="pre">override_base_checks</span></code> value in the <code class="docutils literal notranslate"><span class="pre">args</span></code> table ignores the results of these <code class="docutils literal notranslate"><span class="pre">quip_filter</span></code> functions.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">quip_filter</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">quip</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+</span><span data-line="2"> <span class="kr">if</span> <span class="n">quip</span><span class="p">.</span><span class="n">mod</span><span class="p">.</span><span class="n">id</span> <span class="o">==</span> <span class="s1">&#39;modid&#39;</span> <span class="kr">then</span>
+</span><span data-line="3">  <span class="kr">return</span> <span class="kc">false</span> <span class="c1">-- removes the quips from a specific mod from the pool</span>
+</span><span data-line="4"> <span class="kr">end</span>
+</span><span data-line="5"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<section id="customising-your-quips-appearance">
+<h4>Customising Your Quips Appearance<a class="headerlink" href="#customising-your-quips-appearance" title="Link to this heading">#</a></h4>
+<p>You can also control the visuals and sounds of your quip. Adding an <code class="docutils literal notranslate"><span class="pre">extra</span></code> table allows for changes to specific things, shown below. <em>(<code class="docutils literal notranslate"><span class="pre">extra</span></code> can also be defined as a function that returns a similar table if you wish)</em></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">extra</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="n">center</span> <span class="o">=</span> <span class="s1">&#39;j_hanging_chad&#39;</span><span class="p">,</span> <span class="c1">-- key of card to show</span>
+</span><span data-line="3"> <span class="n">particle_colours</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">-- table of up to 3 colours for particles</span>
+</span><span data-line="4">  <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GREEN</span><span class="p">,</span>
+</span><span data-line="5">  <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">PURPLE</span><span class="p">,</span>
+</span><span data-line="6">  <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GOLD</span>
+</span><span data-line="7"> <span class="p">},</span>
+</span><span data-line="8"> <span class="n">materialize_colours</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">-- table of up to 3 colours for materialize effect</span>
+</span><span data-line="9">  <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GREEN</span><span class="p">,</span>
+</span><span data-line="10">  <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">PURPLE</span><span class="p">,</span>
+</span><span data-line="11">  <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GOLD</span>
+</span><span data-line="12"> <span class="p">},</span>
+</span><span data-line="13"> <span class="n">text_key</span> <span class="o">=</span> <span class="s1">&#39;modprefix_example_quip_newkey&#39;</span><span class="p">,</span> <span class="c1">-- key override for the quip</span>
+</span><span data-line="14"> <span class="n">times</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="c1">-- number of times to play sounds</span>
+</span><span data-line="15"> <span class="n">pitch</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">-- pitch of sounds</span>
+</span><span data-line="16"> <span class="n">sound</span> <span class="o">=</span> <span class="s1">&#39;voice1&#39;</span><span class="p">,</span> <span class="c1">-- string of sound to play, this can also be a table of strings to play simultaneously,</span>
+</span><span data-line="17"> <span class="n">juice</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">},</span> <span class="c1">-- table of args to pass into card:juice_up</span>
+</span><span data-line="18"> <span class="n">delay</span> <span class="o">=</span> <span class="mf">0.13</span><span class="p">,</span> <span class="c1">-- amount to delay the next loop of sounds</span>
+</span><span data-line="19"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>For more control over sounds, such as playing a sequence of sounds, you can instead define a <code class="docutils literal notranslate"><span class="pre">play_sounds</span></code> function as below. This will override any <code class="docutils literal notranslate"><span class="pre">sounds</span></code> defined in the <code class="docutils literal notranslate"><span class="pre">extra</span></code> table.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">play_sounds</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">times</span><span class="p">)</span>
+</span><span data-line="2"> <span class="c1">-- call play_sound yourself here</span>
+</span><span data-line="3"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h4>
+<p>Here is an example of one quip object appearing in different situations with different messages.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">JimboQuip</span><span class="p">({</span>
+</span><span data-line="2">    <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;black_cat_1&#39;</span><span class="p">,</span>
+</span><span data-line="3">    <span class="n">extra</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="4">        <span class="n">center</span> <span class="o">=</span> <span class="s1">&#39;j_ortalab_black_cat&#39;</span><span class="p">,</span>
+</span><span data-line="5">        <span class="n">particle_colours</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="6">            <span class="n">G</span><span class="p">.</span><span class="n">ARGS</span><span class="p">.</span><span class="n">LOC_COLOURS</span><span class="p">.</span><span class="n">Ortalab</span><span class="p">,</span>
+</span><span data-line="7">            <span class="n">darken</span><span class="p">(</span><span class="n">G</span><span class="p">.</span><span class="n">ARGS</span><span class="p">.</span><span class="n">LOC_COLOURS</span><span class="p">.</span><span class="n">Ortalab</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+</span><span data-line="8">            <span class="n">lighten</span><span class="p">(</span><span class="n">G</span><span class="p">.</span><span class="n">ARGS</span><span class="p">.</span><span class="n">LOC_COLOURS</span><span class="p">.</span><span class="n">Ortalab</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</span><span data-line="9">        <span class="p">}</span>
+</span><span data-line="10">    <span class="p">},</span>
+</span><span data-line="11">    <span class="n">filter</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+</span><span data-line="12">        <span class="kr">if</span> <span class="nb">next</span><span class="p">(</span><span class="n">SMODS</span><span class="p">.</span><span class="n">find_card</span><span class="p">(</span><span class="s1">&#39;j_ortalab_black_cat&#39;</span><span class="p">))</span> <span class="kr">then</span>
+</span><span data-line="13">            <span class="kr">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;win&#39;</span> <span class="kr">then</span>
+</span><span data-line="14">                <span class="n">self</span><span class="p">.</span><span class="n">extra</span><span class="p">.</span><span class="n">text_key</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">key</span><span class="o">..</span><span class="s1">&#39;_win&#39;</span>
+</span><span data-line="15">                <span class="kr">return</span> <span class="kc">true</span><span class="p">,</span> <span class="p">{</span> <span class="n">weight</span> <span class="o">=</span> <span class="mi">10</span> <span class="p">}</span>
+</span><span data-line="16">            <span class="kr">elseif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;loss&#39;</span> <span class="kr">then</span>
+</span><span data-line="17">                <span class="n">self</span><span class="p">.</span><span class="n">extra</span><span class="p">.</span><span class="n">text_key</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">key</span><span class="o">..</span><span class="s1">&#39;_loss&#39;</span>
+</span><span data-line="18">                <span class="kr">return</span> <span class="kc">true</span><span class="p">,</span> <span class="p">{</span> <span class="n">weight</span> <span class="o">=</span> <span class="mi">10</span> <span class="p">}</span>
+</span><span data-line="19">            <span class="kr">end</span>
+</span><span data-line="20">        <span class="kr">end</span>
+</span><span data-line="21">    <span class="kr">end</span>
+</span><span data-line="22"><span class="p">})</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="smods-scale-card">
+<h3>SMODS.scale_card<a class="headerlink" href="#smods-scale-card" title="Link to this heading">#</a></h3>
+<p>Scaling values within cards has always been a simple line of code, but the wish of being able to either detect, or manipulate, these events from other cards has been a requested feature for a while. It is now possible, in an entirely <strong>opt-in</strong> capacity, by using <code class="docutils literal notranslate"><span class="pre">SMODS.scale_card</span></code>. This function will scale your value and display an automatic message, as well as allow other objects to detect your scaling events, and also manipulate them. The function is <strong>entirely</strong> customisable so you can tune it to your exact requirements.</p>
+<section id="id1">
+<h4>Basic Structure<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>This example code will scale the <code class="docutils literal notranslate"><span class="pre">chips</span></code> value of the card by the <code class="docutils literal notranslate"><span class="pre">change</span></code> value. It will display a <code class="docutils literal notranslate"><span class="pre">&quot;Upgrade!&quot;</span></code> message with a <code class="docutils literal notranslate"><span class="pre">G.C.FILTER</span></code> background. The amount the value changes by <em>could</em> be adjusted by other effects.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">scale_card</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="n">ref_table</span> <span class="o">=</span> <span class="n">card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">extra</span><span class="p">,</span> <span class="c1">-- the table that has the value you are changing in</span>
+</span><span data-line="3">    <span class="n">ref_value</span> <span class="o">=</span> <span class="s2">&quot;chips&quot;</span><span class="p">,</span> <span class="c1">-- the key to the value in the ref_table</span>
+</span><span data-line="4"> <span class="n">scalar_value</span> <span class="o">=</span> <span class="s2">&quot;change&quot;</span><span class="p">,</span> <span class="c1">-- the key to the value to scale by, in the ref_table by default</span>
+</span><span data-line="5"><span class="p">})</span>
+</span></pre></div>
+</div>
+<p>The config of this joker would be defined as <code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">=</span> <span class="pre">{extra</span> <span class="pre">=</span> <span class="pre">{chips</span> <span class="pre">=</span> <span class="pre">5,</span> <span class="pre">change</span> <span class="pre">=</span> <span class="pre">2}}</span></code> for example. It is possible to take your <code class="docutils literal notranslate"><span class="pre">scalar_value</span></code> from a different table, by adding <code class="docutils literal notranslate"><span class="pre">scalar_table</span> <span class="pre">=</span> <span class="pre">card.ability.other_table</span></code> for example.</p>
+</section>
+<section id="blocking-scaling-manipulation">
+<h4>Blocking Scaling Manipulation<a class="headerlink" href="#blocking-scaling-manipulation" title="Link to this heading">#</a></h4>
+<p>As this function allows for scaling detection effects to work, I would recommend it’s use over doing it manually, but I understand the scaling manipulation can be an undesirable effect for some people. Therefore, you can block this from happening by adding <code class="docutils literal notranslate"><span class="pre">block_overrides</span></code> to your function call.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">block_overrides</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="n">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- blocks modifications to the ref_value</span>
+</span><span data-line="3"> <span class="n">scalar</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- blocks modifications to the scalar_value</span>
+</span><span data-line="4"> <span class="n">message</span> <span class="o">=</span> <span class="kc">true</span> <span class="c1">-- blocks modifications to the scaling_message</span>
+</span><span data-line="5"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>This would block all modifications from other cards. You can also use a subset of these if you wish.</p>
+</section>
+<section id="customising-the-scaling">
+<h4>Customising The Scaling<a class="headerlink" href="#customising-the-scaling" title="Link to this heading">#</a></h4>
+<p>The basic structure example above is for an <strong>additive</strong> effect with a <code class="docutils literal notranslate"><span class="pre">&quot;Upgrade!&quot;</span></code> message, but you might want to display something else.</p>
+<section id="messages">
+<h5>Messages<a class="headerlink" href="#messages" title="Link to this heading">#</a></h5>
+<p>It is easy to change the message to use any message in <code class="docutils literal notranslate"><span class="pre">G.localization.misc.v_dictionary_parsed</span></code>. Add <code class="docutils literal notranslate"><span class="pre">message_key</span> <span class="pre">=</span> <span class="pre">'a_chips'</span></code> to change the message to one of these. You can also add <code class="docutils literal notranslate"><span class="pre">message_colour</span> <span class="pre">=</span> <span class="pre">G.C.RED</span></code> to change the colour displayed. These messages automatically pass the <code class="docutils literal notranslate"><span class="pre">scalar_value</span></code> as the variable, apart from when using <code class="docutils literal notranslate"><span class="pre">a_xmult</span></code> which passes the new total amount, to match vanilla cases. If you don’t want <strong>any</strong> message at all, add <code class="docutils literal notranslate"><span class="pre">no_message</span> <span class="pre">=</span> <span class="pre">true</span></code>.
+You can also provide your own custom message, much like returning a message from a calculate function.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">scaling_message</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Example message!&quot;</span><span class="p">,</span>
+</span><span data-line="3"> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BLUE</span>
+</span><span data-line="4"><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="scaling">
+<h5>Scaling<a class="headerlink" href="#scaling" title="Link to this heading">#</a></h5>
+<p>By default, this function will automatically handle scaling that uses addition, subtraction, and multiplication. You can switch between these by adding an <code class="docutils literal notranslate"><span class="pre">operation</span></code> to the function call. Valid options are <code class="docutils literal notranslate"><span class="pre">operation</span> <span class="pre">=</span> <span class="pre">'-'</span></code> and <code class="docutils literal notranslate"><span class="pre">operation</span> <span class="pre">=</span> <span class="pre">'X'</span></code> to switch to subtraction or multiplication respectively. If you need an entirely custom scaling function, you can set <code class="docutils literal notranslate"><span class="pre">operation</span></code> to be a function instead. Here is an example of Canio, where <code class="docutils literal notranslate"><span class="pre">face_cards</span></code> is a number defined before the <code class="docutils literal notranslate"><span class="pre">SMODS.scale_card</span></code> function.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">operation</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">ref_table</span><span class="p">,</span> <span class="n">ref_value</span><span class="p">,</span> <span class="n">initial</span><span class="p">,</span> <span class="n">change</span><span class="p">)</span>
+</span><span data-line="2"> <span class="n">ref_table</span><span class="p">[</span><span class="n">ref_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">initial</span> <span class="o">+</span> <span class="n">face_cards</span><span class="o">*</span><span class="n">change</span>
+</span><span data-line="3"><span class="kr">end</span><span class="p">,</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="detecting-scaling">
+<h4>Detecting Scaling<a class="headerlink" href="#detecting-scaling" title="Link to this heading">#</a></h4>
+<p>On the other side of this feature, is the ability to detect and manipulate value scaling. This is done by adding a <code class="docutils literal notranslate"><span class="pre">calc_scaling</span></code> function to your Joker-type card definitions. Within this function you can do any effects you need to do, and return a table of different effects. There is the ability to control timings somewhat with this return which will be explained below.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">calc_scaling</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">card</span><span class="p">,</span> <span class="n">other_card</span><span class="p">,</span> <span class="n">initial_value</span><span class="p">,</span> <span class="n">scalar_value</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+</span><span data-line="2"> <span class="kr">if</span> <span class="n">scalar_value</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="kr">then</span>
+</span><span data-line="3">  <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="4">   <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Pre Scale&#39;</span><span class="p">,</span>
+</span><span data-line="5">   <span class="n">post</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="6">    <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Post Scale&#39;</span>
+</span><span data-line="7">   <span class="p">}</span>
+</span><span data-line="8">  <span class="p">}</span>
+</span><span data-line="9"> <span class="kr">end</span>
+</span><span data-line="10"><span class="kr">end</span>
+</span></pre></div>
+</div>
+<p>This example will play a message <strong>before</strong> the scaling event, and <strong>after</strong> the scaling event. These tables accept any standard calculation return key. The <code class="docutils literal notranslate"><span class="pre">initial_value</span></code> and <code class="docutils literal notranslate"><span class="pre">scalar_value</span></code> values are dynamic, and respect any prior manipulation from other Joker-type cards. The <code class="docutils literal notranslate"><span class="pre">args</span></code> value is the initial table that was passed to <code class="docutils literal notranslate"><span class="pre">SMODS.scale_card</span></code>.</p>
+</section>
+<section id="manipulating-scaling">
+<h4>Manipulating Scaling<a class="headerlink" href="#manipulating-scaling" title="Link to this heading">#</a></h4>
+<p>Manipulating scaling uses the same function as detection, but requires specific tables to be returned in the table.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="n">override_value</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">-- this will override the initial_value</span>
+</span><span data-line="3">  <span class="n">value</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="c1">-- set the initial_value to X</span>
+</span><span data-line="4">  <span class="c1">-- other calculation return keys accepted here, timing is before the scaling event</span>
+</span><span data-line="5"> <span class="p">},</span>
+</span><span data-line="6"> <span class="n">override_scalar_value</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">-- this will override the scalar_value</span>
+</span><span data-line="7">  <span class="n">value</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="c1">-- set the scalar_value to X</span>
+</span><span data-line="8">  <span class="c1">-- other calculation return keys accepted here, timing is before the scaling event</span>
+</span><span data-line="9"> <span class="p">},</span>
+</span><span data-line="10"> <span class="n">override_message</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">-- this will override the scaling_message</span>
+</span><span data-line="11">  <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;override message&#39;</span>
+</span><span data-line="12">  <span class="c1">-- other calculation return keys here will be evaluated WITH the message timing</span>
+</span><span data-line="13"> <span class="p">}</span>
+</span><span data-line="14"><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="smods-scoring-parameter">
+<h3>SMODS.Scoring_Parameter<a class="headerlink" href="#smods-scoring-parameter" title="Link to this heading">#</a></h3>
+<p>A Scoring Parameter is a value that can be used to calculate a hand’s score. The base game provides <strong>chips</strong> and <strong>mult</strong>. By using <code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code> you can create your own to use in new Scoring Calculations <em>(see below)</em>. I have tried to make the process of creating a Scoring Parameter as user friendly as possible, with the opportunity to tweak it to your exact usage if you are more experienced with how Balatro calculation works.</p>
+<p><em>There is a full example of a Scoring Parameter, and a Scoring Calculation that uses it, at the end of this update.</em></p>
+<section id="id2">
+<h4>Basic Structure<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>To create a basic parameter, that will be used in the same way as chips and mult, you can use this example.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">Scoring_Parameter</span><span class="p">({</span>
+</span><span data-line="2"> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;example_parameter&#39;</span><span class="p">,</span>
+</span><span data-line="3"> <span class="n">default_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span data-line="4"> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GREEN</span>
+</span><span data-line="5"><span class="p">})</span>
+</span></pre></div>
+</div>
+<p>This will create a new parameter that can be referenced in Scoring Calculations, that resets to <strong>0</strong> at the end of each played hand. The <code class="docutils literal notranslate"><span class="pre">colour</span></code> field will automatically colour any UI elements using the helper functions, including the scoring flames.</p>
+</section>
+<section id="object-calculation-with-your-parameter">
+<h4>Object Calculation With Your Parameter<a class="headerlink" href="#object-calculation-with-your-parameter" title="Link to this heading">#</a></h4>
+<p>Chips and mult are able to be modified by returning values from the <code class="docutils literal notranslate"><span class="pre">calculate</span></code> functions of various objects in the game. By default, new Scoring Parameters are set up to handle modifying themselves in this way. To create your return keys <em>(equivalent to chips, chip_mod, etc.)</em> add <code class="docutils literal notranslate"><span class="pre">calculation_keys</span> <span class="pre">=</span> <span class="pre">{'example_1',</span> <span class="pre">'example_2'}</span></code>. I would recommend only using one key, unless you want to define different behaviours in a custom <code class="docutils literal notranslate"><span class="pre">calc_effect</span></code> function.</p>
+<p>If you <strong>do</strong> want custom behaviours, define <code class="docutils literal notranslate"><span class="pre">calc_effect</span> <span class="pre">=</span> <span class="pre">function(self,</span> <span class="pre">effect,</span> <span class="pre">scored_card,</span> <span class="pre">key,</span> <span class="pre">amount,</span> <span class="pre">from_edition)</span></code> and write your logic. For examples of what this code might look like, take a look at the chips and mult Scoring Parameters in <code class="docutils literal notranslate"><span class="pre">src/game_object.lua</span></code>, or <code class="docutils literal notranslate"><span class="pre">SMODS.calculate_individual_effect</span></code> in <code class="docutils literal notranslate"><span class="pre">src/utils.lua</span></code>.</p>
+</section>
+<section id="changing-how-your-parameter-is-modified">
+<h4>Changing How Your Parameter is Modified<a class="headerlink" href="#changing-how-your-parameter-is-modified" title="Link to this heading">#</a></h4>
+<p>Be default, each Scoring Parameter comes with a <code class="docutils literal notranslate"><span class="pre">modify(self,</span> <span class="pre">amount)</span></code> function that adds the amount to the current value. By redefining this function, you could add different logic. Do note that this function <strong>also</strong> updates the UI elements, so if you redefine it you should ensure that you keep this functionality. One such example might be having a Parameter that doesn’t reset each hand, as shown here.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">modify</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>
+</span><span data-line="2"> <span class="n">self</span><span class="p">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">current</span> <span class="o">+</span> <span class="n">amount</span> <span class="c1">-- update the current value, used for final score calculation</span>
+</span><span data-line="3"> <span class="n">self</span><span class="p">.</span><span class="n">default_value</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">current</span> <span class="c1">-- update the default value</span>
+</span><span data-line="4"> <span class="n">update_hand_text</span><span class="p">({</span><span class="n">delay</span> <span class="o">=</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{[</span><span class="n">self</span><span class="p">.</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">current</span><span class="p">})</span> <span class="c1">-- update the UI</span>
+</span></pre></div>
+</div>
+</section>
+<section id="scaling-with-hand-type-levels">
+<h4>Scaling With Hand Type Levels<a class="headerlink" href="#scaling-with-hand-type-levels" title="Link to this heading">#</a></h4>
+<p>Scoring Parameters are able to be added to the functionality of hand types and Planet Cards, by defining a <code class="docutils literal notranslate"><span class="pre">hands</span></code> table. This table will insert values into <code class="docutils literal notranslate"><span class="pre">G.GAME.hands</span></code>. This means that you can set different default values per hand type, and that when a hand is levelled up, your base values will scale. Here is an example of what this might look like.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- This parameter is only applied to hands that contain a flush. They all scale the same way</span>
+</span><span data-line="2"><span class="n">hands</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3"> <span class="p">[</span><span class="s2">&quot;Flush Five&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l_modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">s_modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="4"> <span class="p">[</span><span class="s2">&quot;Flush House&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l_modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">s_modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="5"> <span class="p">[</span><span class="s2">&quot;Straight Flush&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l_modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">s_modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="6"> <span class="p">[</span><span class="s2">&quot;Flush&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l_modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">s_modprefix_example_parameter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="7"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>In this table, you must use the keys shown here. <code class="docutils literal notranslate"><span class="pre">modprefix_example_parameter</span></code> is the starting value that is updated when levelled up. <code class="docutils literal notranslate"><span class="pre">s_modprefix_example_parameter</span></code> is the starting value that is used for level up calculations. <code class="docutils literal notranslate"><span class="pre">l_modprefix_example_parameter</span></code> is the amount gained when levelled up. The basic formula to calculate the amount is <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">s_value</span> <span class="pre">+</span> <span class="pre">(level-1)</span> <span class="pre">*</span> <span class="pre">l_value</span></code>.</p>
+<p>If you wish, you can redefine the level up effect for your parameter by adding a function <code class="docutils literal notranslate"><span class="pre">level_up_hand</span></code> to your Scoring Parameter. Here is an example of that.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">level_up_hand</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">handType</span><span class="p">)</span>
+</span><span data-line="2"> <span class="kd">local</span> <span class="n">k</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">key</span>
+</span><span data-line="3"> <span class="n">hand</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">hand</span><span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">hand</span><span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">k</span><span class="p">]</span> <span class="o">^</span> <span class="p">(</span><span class="n">hand</span><span class="p">.</span><span class="n">level</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">-- this multiplies the amount of the parameter by the l_value each level</span>
+</span><span data-line="4"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<section id="accessing-and-changing-parameters-directly">
+<h4>Accessing and Changing Parameters Directly<a class="headerlink" href="#accessing-and-changing-parameters-directly" title="Link to this heading">#</a></h4>
+<p>Currently, to access the values of chips and mult mid scoring, we reference <code class="docutils literal notranslate"><span class="pre">hand_chips</span></code> and <code class="docutils literal notranslate"><span class="pre">mult</span></code>. These values will still be accurate with this system, but if you are modifying them you should either use <code class="docutils literal notranslate"><span class="pre">mod_chips(hand_chips</span> <span class="pre">+</span> <span class="pre">X)</span></code> and <code class="docutils literal notranslate"><span class="pre">mod_mult(mult</span> <span class="pre">+</span> <span class="pre">X)</span></code> or <code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameters.chips:modify(X)</span></code> or <code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameters.mult:modify(X)</span></code>.
+Your custom parameters can by accessed by using <code class="docutils literal notranslate"><span class="pre">SMODS.get_scoring_parameter('modprefix_example_key')</span></code> and changed directly by using <code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameters['modprefix_example_key']:modify(X).</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="smods-scoring-calculation">
+<h3>SMODS.Scoring_Calculation<a class="headerlink" href="#smods-scoring-calculation" title="Link to this heading">#</a></h3>
+<p>The base game scoring uses the formula <strong>chips * mult</strong> to calculate the score of your hand. You can use a custom <code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code> to change this formula into something else. Three basic Scoring Calculations are defined already, <code class="docutils literal notranslate"><span class="pre">multiply</span></code>, <code class="docutils literal notranslate"><span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">exponent</span></code>.</p>
+<section id="id3">
+<h4>Basic Structure<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>To create a basic Scoring Calculation, that subtracts mult from chips, you can use this example.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">Scoring_Calculation</span><span class="p">({</span>
+</span><span data-line="2"> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;minus&#39;</span><span class="p">,</span>
+</span><span data-line="3"> <span class="n">func</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">chips</span><span class="p">,</span> <span class="n">mult</span><span class="p">,</span> <span class="n">flames</span><span class="p">)</span>
+</span><span data-line="4">  <span class="kr">return</span> <span class="n">chips</span> <span class="o">-</span> <span class="n">mult</span>
+</span><span data-line="5"> <span class="kr">end</span><span class="p">,</span>
+</span><span data-line="6"> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="c1">-- controls the UI symbol displayed between the chips and mult box</span>
+</span><span data-line="7"> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BLUE</span> <span class="c1">-- sets the UI symbol to be blue</span>
+</span><span data-line="8"><span class="p">})</span>
+</span></pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">func</span></code> function here is what calculates your score. It is provided with the correct chips and mult values, but if you want to use a custom Scoring Parameter, see Accessing and Changing Parameters Directly.
+<em>Note that the <code class="docutils literal notranslate"><span class="pre">flames</span></code> value is a boolean that is used to control the flames in the scoring UI. It <strong>must</strong> be passed into any calls to <code class="docutils literal notranslate"><span class="pre">SMODS.get_scoring_parameter</span></code> as the second argument.</em></p>
+</section>
+<section id="saving-values-to-your-calculation">
+<h4>Saving Values To Your Calculation<a class="headerlink" href="#saving-values-to-your-calculation" title="Link to this heading">#</a></h4>
+<p>You can optionally add a <code class="docutils literal notranslate"><span class="pre">config</span></code> table to your Scoring Calculation that will persist throughout an entire game. You can access it by using <code class="docutils literal notranslate"><span class="pre">self.config</span></code> in the Scoring Calculation’s functions, or <code class="docutils literal notranslate"><span class="pre">G.GAME.current_scoring_calculation.config</span></code> anywhere else.</p>
+</section>
+<section id="scoring-calculation-with-additional-parameters">
+<h4>Scoring Calculation with Additional Parameters<a class="headerlink" href="#scoring-calculation-with-additional-parameters" title="Link to this heading">#</a></h4>
+<p>To avoid unnecessary calculations, each Scoring Calculation will only allow <code class="docutils literal notranslate"><span class="pre">calculate</span></code> functions to return values for Parameters that are being used. By adding a <code class="docutils literal notranslate"><span class="pre">parameters</span></code> table to your Scoring Calculation, you can set which Parameters you are using. This defaults to using the <code class="docutils literal notranslate"><span class="pre">chips</span></code> and <code class="docutils literal notranslate"><span class="pre">mult</span></code> parameters.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;chips&#39;</span><span class="p">,</span> <span class="s1">&#39;mult&#39;</span><span class="p">,</span> <span class="s1">&#39;modprefix_example_parameter&#39;</span><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="advanced-ui-changes">
+<h4>Advanced UI Changes<a class="headerlink" href="#advanced-ui-changes" title="Link to this heading">#</a></h4>
+<p>It is possible to modify the UI further than just the symbol between the two displays. By using <code class="docutils literal notranslate"><span class="pre">replace_ui</span></code> and <code class="docutils literal notranslate"><span class="pre">update_ui</span></code> functions, you can create a completely custom display.</p>
+<p><img alt="Advanced UI" src="https://i.imgur.com/bxMI2Ne.png" /></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">replace_ui</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+</span><span data-line="2"> <span class="c1">-- build your UI here</span>
+</span><span data-line="3"> <span class="kr">return</span> <span class="n">UINODES</span>
+</span><span data-line="4"><span class="kr">end</span><span class="p">,</span>
+</span><span data-line="5"><span class="n">update_ui</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="n">chip_display</span><span class="p">,</span> <span class="n">mult_display</span><span class="p">,</span> <span class="n">operator</span><span class="p">)</span>
+</span><span data-line="6"> <span class="c1">-- the values passed to this function try to identify the main components of the display,</span>
+</span><span data-line="7"> <span class="c1">-- container will always be the outer shell, and can be used solely to control its child elements</span>
+</span><span data-line="8"> <span class="c1">-- chip_display and mult_display are the boxes for chips and mult</span>
+</span><span data-line="9"> <span class="c1">-- operator is the text between the chips and mult displays</span>
+</span><span data-line="10">
+</span><span data-line="11"> <span class="c1">-- modify stuff here</span>
+</span><span data-line="12"> <span class="n">operator</span><span class="p">.</span><span class="n">UIBox</span><span class="p">:</span><span class="n">recalculate</span><span class="p">()</span> <span class="c1">-- this line actually updates the UI</span>
+</span><span data-line="13"><span class="kr">end</span>
+</span></pre></div>
+</div>
+<p>To assist you in this process, there are a number of helper functions that will build components of the scoring UI for you. They can be found in <code class="docutils literal notranslate"><span class="pre">src/ui.lua</span></code> and have names such as <code class="docutils literal notranslate"><span class="pre">SMODS.GUI.hand_score_display_ui()</span></code>, <code class="docutils literal notranslate"><span class="pre">SMODS.GUI.hand_chips_container()</span></code> and <code class="docutils literal notranslate"><span class="pre">SMODS.GUI.score_container()</span></code>. I do not have time to document these functions, but you can read them and look at examples of their use in an effort to understand them. I am always free for messages if you need further clarification.</p>
+</section>
+<section id="setting-the-scoring-calculation">
+<h4>Setting The Scoring Calculation<a class="headerlink" href="#setting-the-scoring-calculation" title="Link to this heading">#</a></h4>
+<p>To switch to a different Scoring Calculation during a game, use the function <code class="docutils literal notranslate"><span class="pre">SMODS.set_scoring_calculation('modprefix_minus')</span></code>, for example.</p>
+</section>
+<section id="tracking-the-score">
+<h4>Tracking the Score<a class="headerlink" href="#tracking-the-score" title="Link to this heading">#</a></h4>
+<p>You might currently use <code class="docutils literal notranslate"><span class="pre">hand_chips</span> <span class="pre">*</span> <span class="pre">mult</span></code> in your code to see how many chips the hand has scored. This will continue to work for the default Scoring Calculation, but once it has been changed will give a false result. To get around this, use <code class="docutils literal notranslate"><span class="pre">SMODS.calculate_round_score()</span></code>, which will give you an equivalent value at that time.
+In addition, you may no longer need to do this at all if you are looking for hands that ‘one-shot’ the blind, as you can use <code class="docutils literal notranslate"><span class="pre">SMODS.last_hand_oneshot</span></code> to check for this.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="smods-add-to-pool">
+<h3>SMODS.add_to_pool<a class="headerlink" href="#smods-add-to-pool" title="Link to this heading">#</a></h3>
+<p>It is now easier to manipulate which objects appear in a pool by hooking the new function <code class="docutils literal notranslate"><span class="pre">SMODS.add_to_pool(object,</span> <span class="pre">args)</span></code>. This function handles the <code class="docutils literal notranslate"><span class="pre">in_pool</span></code> call to each object when creating a pool, and if it returns <code class="docutils literal notranslate"><span class="pre">true</span></code> the object is added to the pool. The <code class="docutils literal notranslate"><span class="pre">args</span></code> table is optional, and I would recommend searching in your IDE for the function to see the different <code class="docutils literal notranslate"><span class="pre">args</span></code> tables.
+<em>(Calls to <code class="docutils literal notranslate"><span class="pre">get_current_pool</span></code> will add an <code class="docutils literal notranslate"><span class="pre">args</span></code> table of <code class="docutils literal notranslate"><span class="pre">{source</span> <span class="pre">=</span> <span class="pre">_append}</span></code> where <code class="docutils literal notranslate"><span class="pre">_append</span></code> is the 4th argument of <code class="docutils literal notranslate"><span class="pre">get_current_pool</span></code>)</em></p>
+</section>
+<hr class="docutils" />
+<section id="smods-context-stack">
+<h3>SMODS.context_stack<a class="headerlink" href="#smods-context-stack" title="Link to this heading">#</a></h3>
+<p>A context stack has been added such that calculations can look at previous contexts to determine more advanced effects <em>(this is particularly useful when using the probability contexts)</em>. You can use <code class="docutils literal notranslate"><span class="pre">SMODS.get_previous_context()</span></code> to get the context table of the previous context. Here is a basic example for a seal that guarantees Bloodstone triggers on the card it is applied to.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">fix_probability</span> <span class="ow">and</span> <span class="n">context</span><span class="p">.</span><span class="n">identifier</span> <span class="o">==</span> <span class="s1">&#39;bloodstone&#39;</span> <span class="kr">then</span>
+</span><span data-line="2"> <span class="kd">local</span> <span class="n">previous_context</span> <span class="o">=</span> <span class="n">SMODS</span><span class="p">.</span><span class="n">get_previous_context</span><span class="p">()</span>
+</span><span data-line="3"> <span class="kr">if</span> <span class="n">previous_context</span> <span class="ow">and</span> <span class="n">previous_context</span><span class="p">.</span><span class="n">other_card</span> <span class="o">==</span> <span class="n">card</span> <span class="kr">then</span>
+</span><span data-line="4">  <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="5">   <span class="n">numerator</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="n">denominator</span><span class="p">,</span>
+</span><span data-line="6">   <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Fix!&#39;</span>
+</span><span data-line="7">  <span class="p">}</span>
+</span><span data-line="8"> <span class="kr">end</span>
+</span><span data-line="9"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="card-limit-and-extra-slots-used">
+<h3>card_limit and extra_slots_used<a class="headerlink" href="#card-limit-and-extra-slots-used" title="Link to this heading">#</a></h3>
+<p>These parameters have been added to all centers, meaning that cards can naturally modify the card limit of an area, or take up more than the normal 1 slot. To make use of this feature, add <code class="docutils literal notranslate"><span class="pre">card_limit</span> <span class="pre">=</span> <span class="pre">X</span></code> or <code class="docutils literal notranslate"><span class="pre">extra_slots_used</span> <span class="pre">=</span> <span class="pre">X</span></code> to the <code class="docutils literal notranslate"><span class="pre">config</span></code> table of your object. The values of the CardArea that your object is in will automatically be updated to take these into account.</p>
+<p>If you are creating a new CardArea, this feature will automatically apply to any CardArea with a <code class="docutils literal notranslate"><span class="pre">type</span></code> that is either <code class="docutils literal notranslate"><span class="pre">'joker'</span></code> or <code class="docutils literal notranslate"><span class="pre">'hand'</span></code>. If you want to disable this on your CardArea, add <code class="docutils literal notranslate"><span class="pre">fixed_limit</span> <span class="pre">=</span> <span class="pre">true</span></code> to the CardArea config. <code class="docutils literal notranslate"><span class="pre">SMODS.should_handle_limit(area)</span></code> can be hooked to allow different types of areas to access the automatic changes.</p>
+<p>Due to the Negative edition having a dynamic tooltip based on area, other editions can have their tooltip update automatically too. Add localization entries for these keys to use this. <em>(if an entry is missing, it will default to the standard edition entry)</em></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="s1">&#39;e_modprefix_editionkey&#39;</span> <span class="c1">-- When in the joker area or on a joker in the shop</span>
+</span><span data-line="2"><span class="s1">&#39;e_modprefix_editionkey_consumable&#39;</span> <span class="c1">-- When in the consumable area or on a consumable in the shop</span>
+</span><span data-line="3"><span class="s1">&#39;e_modprefix_editionkey_playing_card&#39;</span> <span class="c1">-- When in the hand or on a playing card in the shop</span>
+</span><span data-line="4"><span class="s1">&#39;e_modprefix_editionkey_generic&#39;</span> <span class="c1">-- In any area without a key or other objects in the shop</span>
+</span></pre></div>
+</div>
+<p>If you have added a new CardArea and want it to use these tooltips, add <code class="docutils literal notranslate"><span class="pre">'negative_info</span> <span class="pre">=</span> <span class="pre">'string'</span></code>, (default options are <code class="docutils literal notranslate"><span class="pre">'joker',</span> <span class="pre">'consumable',</span> <span class="pre">'playing_card',</span> <span class="pre">'generic')</span></code>. You could hook <code class="docutils literal notranslate"><span class="pre">SMODS.Edition.get_card_limit_key(card)</span></code>, and add the respective localization entries, if you want to add a new category of tooltip. <em>(Keys returned from this function must end with <code class="docutils literal notranslate"><span class="pre">&quot;_SMODS_INTERNAL&quot;</span></code> for the system to work with them)</em></p>
+</section>
+<hr class="docutils" />
+<section id="smods-scoring-parameter-and-smods-scoring-calculation-example">
+<h3>SMODS.Scoring_Parameter and SMODS.Scoring_Calculation Example<a class="headerlink" href="#smods-scoring-parameter-and-smods-scoring-calculation-example" title="Link to this heading">#</a></h3>
+<p>This code adds a new parameter, <strong>juice</strong>, and a calculation method that uses it in the formula <code class="docutils literal notranslate"><span class="pre">chips</span> <span class="pre">*</span> <span class="pre">mult</span> <span class="pre">*</span> <span class="pre">juice</span></code>. You can copy it into your files and experiment to see how it works.</p>
+<p><img alt="Juice Scoring Parameter" src="https://i.imgur.com/96SRCzs.png" /></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">Scoring_Parameter</span><span class="p">({</span>
+</span><span data-line="2">  <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;juice&#39;</span><span class="p">,</span>
+</span><span data-line="3">  <span class="n">default_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span data-line="4">  <span class="n">colour</span> <span class="o">=</span> <span class="n">mix_colours</span><span class="p">(</span><span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">PURPLE</span><span class="p">,</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">YELLOW</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+</span><span data-line="5">  <span class="n">calculation_keys</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;juice&#39;</span><span class="p">,</span> <span class="s1">&#39;xjuice&#39;</span><span class="p">},</span>
+</span><span data-line="6">  <span class="n">hands</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="7">        <span class="p">[</span><span class="s1">&#39;Pair&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">},</span>
+</span><span data-line="8">        <span class="p">[</span><span class="s1">&#39;Four of a Kind&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">},</span>
+</span><span data-line="9">        <span class="p">[</span><span class="s2">&quot;Flush Five&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="10">        <span class="p">[</span><span class="s2">&quot;Flush House&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="11">        <span class="p">[</span><span class="s2">&quot;Five of a Kind&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="12">        <span class="p">[</span><span class="s2">&quot;Straight Flush&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="13">        <span class="p">[</span><span class="s2">&quot;Full House&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="14">        <span class="p">[</span><span class="s2">&quot;Flush&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="15">        <span class="p">[</span><span class="s2">&quot;Straight&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="16">        <span class="p">[</span><span class="s2">&quot;Three of a Kind&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="17">        <span class="p">[</span><span class="s2">&quot;Two Pair&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="18">        <span class="p">[</span><span class="s2">&quot;High Card&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{[</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;s_&#39;</span><span class="o">..</span><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">},</span>
+</span><span data-line="19">    <span class="p">},</span>
+</span><span data-line="20">    <span class="n">calc_effect</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">effect</span><span class="p">,</span> <span class="n">scored_card</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">from_edition</span><span class="p">)</span>
+</span><span data-line="21">  <span class="kr">if</span> <span class="ow">not</span> <span class="n">SMODS</span><span class="p">.</span><span class="n">Calculation_Controls</span><span class="p">.</span><span class="n">chips</span> <span class="kr">then</span> <span class="kr">return</span> <span class="kr">end</span>
+</span><span data-line="22">     <span class="kr">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;juice&#39;</span> <span class="ow">and</span> <span class="n">amount</span> <span class="kr">then</span>
+</span><span data-line="23">         <span class="kr">if</span> <span class="n">effect</span><span class="p">.</span><span class="n">card</span> <span class="ow">and</span> <span class="n">effect</span><span class="p">.</span><span class="n">card</span> <span class="o">~=</span> <span class="n">scored_card</span> <span class="kr">then</span> <span class="n">juice_card</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">card</span><span class="p">)</span> <span class="kr">end</span>
+</span><span data-line="24">         <span class="n">self</span><span class="p">:</span><span class="n">modify</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</span><span data-line="25">         <span class="n">card_eval_status_text</span><span class="p">(</span><span class="n">scored_card</span><span class="p">,</span> <span class="s1">&#39;extra&#39;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">percent</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span>
+</span><span data-line="26">             <span class="p">{</span><span class="n">message</span> <span class="o">=</span> <span class="n">localize</span><span class="p">{</span><span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;variable&#39;</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s1">&#39;a_chips&#39;</span> <span class="ow">or</span> <span class="s1">&#39;a_chips_minus&#39;</span><span class="p">,</span> <span class="n">vars</span> <span class="o">=</span> <span class="p">{</span><span class="n">amount</span><span class="p">}},</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">colour</span><span class="p">})</span>
+</span><span data-line="27">         <span class="kr">return</span> <span class="kc">true</span>
+</span><span data-line="28">        <span class="kr">end</span>
+</span><span data-line="29">        <span class="kr">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;xjuice&#39;</span> <span class="ow">and</span> <span class="n">amount</span> <span class="kr">then</span>
+</span><span data-line="30">            <span class="kr">if</span> <span class="n">effect</span><span class="p">.</span><span class="n">card</span> <span class="ow">and</span> <span class="n">effect</span><span class="p">.</span><span class="n">card</span> <span class="o">~=</span> <span class="n">scored_card</span> <span class="kr">then</span> <span class="n">juice_card</span><span class="p">(</span><span class="n">effect</span><span class="p">.</span><span class="n">card</span><span class="p">)</span> <span class="kr">end</span>
+</span><span data-line="31">            <span class="n">self</span><span class="p">:</span><span class="n">modify</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">current</span> <span class="o">*</span> <span class="p">(</span><span class="n">amount</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</span><span data-line="32">            <span class="n">card_eval_status_text</span><span class="p">(</span><span class="n">scored_card</span><span class="p">,</span> <span class="s1">&#39;extra&#39;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">percent</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span>
+</span><span data-line="33">                <span class="p">{</span><span class="n">message</span> <span class="o">=</span> <span class="n">localize</span><span class="p">{</span><span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;variable&#39;</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s1">&#39;a_chips&#39;</span> <span class="ow">or</span> <span class="s1">&#39;a_chips_minus&#39;</span><span class="p">,</span> <span class="n">vars</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;X&#39;</span><span class="o">..</span><span class="n">amount</span><span class="p">}},</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">colour</span><span class="p">})</span>
+</span><span data-line="34">            <span class="kr">return</span> <span class="kc">true</span>
+</span><span data-line="35">        <span class="kr">end</span>
+</span><span data-line="36">    <span class="kr">end</span>
+</span><span data-line="37"><span class="p">})</span>
+</span><span data-line="38">
+</span><span data-line="39"><span class="n">SMODS</span><span class="p">.</span><span class="n">Scoring_Calculation</span><span class="p">({</span>
+</span><span data-line="40">    <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;juice&quot;</span><span class="p">,</span>
+</span><span data-line="41">    <span class="n">func</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">chips</span><span class="p">,</span> <span class="n">mult</span><span class="p">,</span> <span class="n">flames</span><span class="p">)</span>
+</span><span data-line="42">     <span class="kr">return</span> <span class="n">chips</span> <span class="o">*</span> <span class="n">mult</span> <span class="o">*</span> <span class="n">SMODS</span><span class="p">.</span><span class="n">get_scoring_parameter</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">,</span> <span class="n">flames</span><span class="p">)</span>
+</span><span data-line="43"> <span class="kr">end</span><span class="p">,</span>
+</span><span data-line="44">    <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;chips&#39;</span><span class="p">,</span> <span class="s1">&#39;mult&#39;</span><span class="p">,</span> <span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">prefix</span><span class="o">..</span><span class="s1">&#39;_juice&#39;</span><span class="p">},</span>
+</span><span data-line="45">    <span class="n">replace_ui</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+</span><span data-line="46">        <span class="kd">local</span> <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.3</span>
+</span><span data-line="47">  <span class="kr">return</span>
+</span><span data-line="48">  <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">,</span> <span class="n">minh</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="49">   <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;cm&#39;</span><span class="p">,</span> <span class="n">id</span> <span class="o">=</span> <span class="s1">&#39;hand_chips&#39;</span><span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="50">    <span class="n">SMODS</span><span class="p">.</span><span class="n">GUI</span><span class="p">.</span><span class="n">score_container</span><span class="p">({</span>
+</span><span data-line="51">     <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;chips&#39;</span><span class="p">,</span>
+</span><span data-line="52">     <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;chip_text&#39;</span><span class="p">,</span>
+</span><span data-line="53">     <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;cr&#39;</span><span class="p">,</span>
+</span><span data-line="54">     <span class="n">w</span> <span class="o">=</span> <span class="mf">1.1</span><span class="p">,</span>
+</span><span data-line="55">     <span class="n">scale</span> <span class="o">=</span> <span class="n">scale</span>
+</span><span data-line="56">    <span class="p">})</span>
+</span><span data-line="57">   <span class="p">}},</span>
+</span><span data-line="58">   <span class="n">SMODS</span><span class="p">.</span><span class="n">GUI</span><span class="p">.</span><span class="n">operator</span><span class="p">(</span><span class="n">scale</span><span class="o">*</span><span class="mf">0.75</span><span class="p">),</span>
+</span><span data-line="59">   <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;cm&#39;</span><span class="p">,</span> <span class="n">id</span> <span class="o">=</span> <span class="s1">&#39;hand_mult&#39;</span><span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="60">    <span class="n">SMODS</span><span class="p">.</span><span class="n">GUI</span><span class="p">.</span><span class="n">score_container</span><span class="p">({</span>
+</span><span data-line="61">     <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;mult&#39;</span><span class="p">,</span>
+</span><span data-line="62">     <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;cm&#39;</span><span class="p">,</span>
+</span><span data-line="63">     <span class="n">w</span> <span class="o">=</span> <span class="mf">1.1</span><span class="p">,</span>
+</span><span data-line="64">     <span class="n">scale</span> <span class="o">=</span> <span class="n">scale</span>
+</span><span data-line="65">    <span class="p">})</span>
+</span><span data-line="66">   <span class="p">}},</span>
+</span><span data-line="67">   <span class="n">SMODS</span><span class="p">.</span><span class="n">GUI</span><span class="p">.</span><span class="n">operator</span><span class="p">(</span><span class="n">scale</span><span class="o">*</span><span class="mf">0.75</span><span class="p">),</span>
+</span><span data-line="68">   <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;cm&#39;</span><span class="p">,</span> <span class="n">id</span> <span class="o">=</span> <span class="s1">&#39;hand_modprefix_juice&#39;</span><span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="69">    <span class="n">SMODS</span><span class="p">.</span><span class="n">GUI</span><span class="p">.</span><span class="n">score_container</span><span class="p">({</span>
+</span><span data-line="70">     <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;modprefix_juice&#39;</span><span class="p">,</span>
+</span><span data-line="71">     <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;cl&#39;</span><span class="p">,</span>
+</span><span data-line="72">     <span class="n">w</span> <span class="o">=</span> <span class="mf">1.1</span><span class="p">,</span>
+</span><span data-line="73">     <span class="n">scale</span> <span class="o">=</span> <span class="n">scale</span>
+</span><span data-line="74">    <span class="p">})</span>
+</span><span data-line="75">   <span class="p">}},</span>
+</span><span data-line="76">  <span class="p">}}</span>
+</span><span data-line="77"> <span class="kr">end</span>
+</span><span data-line="78"><span class="p">})</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../1221a/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">BETA-1221a</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../0711a/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">BETA-0711a</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

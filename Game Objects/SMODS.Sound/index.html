@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SMODS.Sound - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="SMODS.Stake" href="../SMODS.Stake/" /><link rel="prev" title="SMODS.Shader" href="../SMODS.Shader-and-SMODS.ScreenShader/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="SMODS.Sound"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Logging/">Logging</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../API-Documentation/">Game Objects</a><ul class="current">
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#api-methods">API methods</a></li>
+<li><a class="reference internal" href="#utility-functions">Utility functions</a></li>
+<li><a class="reference internal" href="#playing-sounds">Playing sounds</a></li>
+<li><a class="reference internal" href="#vanilla-music-tracks">Vanilla music tracks</a></li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/Game Objects/SMODS.Sound.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../API-Documentation/"><span itemprop="name">Game Objects</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></strong>
+        <meta itemprop="position" content="3" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="smods-sound">
+<h1><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code><a class="headerlink" href="#smods-sound" title="Link to this heading">#</a></h1>
+<p>This class allows you to play custom sounds and music tracks or replace existing ones. Your mod must be located in its own subdirectory of the <code class="docutils literal notranslate"><span class="pre">Mods</span></code> folder. The file structure should look something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">Mods
+</span><span data-line="2">└──Cryptid
+</span><span data-line="3"><span class="w"> </span>├──<span class="w"> </span>Cryptid.lua
+</span><span data-line="4"><span class="w"> </span>└──<span class="w"> </span>assets
+</span><span data-line="5"><span class="w">  </span>└──<span class="w"> </span>sounds
+</span><span data-line="6"><span class="w">   </span>├──<span class="w"> </span>e_mosaic.ogg
+</span><span data-line="7"><span class="w">   </span>├──<span class="w"> </span>music_big.ogg
+</span><span data-line="8"><span class="w">   </span>└──<span class="w"> </span>music_jimball.ogg
+</span></pre></div>
+</div>
+<ul>
+<li><p><strong>Required parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: The sound file’s name, including the extension (e.g. <code class="docutils literal notranslate"><span class="pre">'music_jimball.ogg'</span></code>).</p>
+<ul>
+<li><p>Supported file types include <code class="docutils literal notranslate"><span class="pre">*.ogg</span></code>, <code class="docutils literal notranslate"><span class="pre">*.wav</span></code> and <code class="docutils literal notranslate"><span class="pre">*.mp3</span></code>. It is not recommended to use MP3 files.</p></li>
+<li><p>If you want to use different sound files depending on the selected language, you can also provide a table:</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">path</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;my_sound.ogg&#39;</span><span class="p">,</span>
+</span><span data-line="3"> <span class="p">[</span><span class="s1">&#39;nl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;my_sound-nl.ogg&#39;</span><span class="p">,</span>
+</span><span data-line="4"> <span class="p">[</span><span class="s1">&#39;pl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;my_sound_pl.ogg&#39;</span><span class="p">,</span>
+</span><span data-line="5"><span class="p">}</span>
+</span></pre></div>
+</div>
+</li>
+<li><p><strong>Optional parameters</strong> <em>(defaults)</em>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">prefix_config,</span> <span class="pre">dependencies</span></code> <a class="reference external" href="https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters">(reference)</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pitch</span> <span class="pre">=</span> <span class="pre">0.7</span></code>: Specify a custom pitch shift for music tracks.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">volume</span> <span class="pre">=</span> <span class="pre">0.6</span></code>: Specify a custom volume for music tracks.</p>
+<ul>
+<li><p>These modifiers do not apply to regularly played sounds. Specify them as arguments to <code class="docutils literal notranslate"><span class="pre">play_sound</span></code> instead.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace</span></code>: Replace the specified sound with this one whenever it is played. Behaves like <code class="docutils literal notranslate"><span class="pre">self:create_replace_sound(replace)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sync</span></code>: For music tracks only - configuration for synchronizing different music tracks.</p>
+<ul>
+<li><p>Default behavior: sync with all tracks that aren’t configured otherwise.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sync</span> <span class="pre">=</span> <span class="pre">false</span></code>: Do not sync with anything.</p></li>
+<li><p>If provided a table, only try to sync with keys that correspond to a true value, e.g.:</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">sync</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="p">[</span><span class="s1">&#39;mymusic1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span data-line="3"> <span class="p">[</span><span class="s1">&#39;mymusic2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span data-line="4"><span class="p">}</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li><p>You can use metatables to exclude certain tracks but include everything else:</p></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">sync</span> <span class="o">=</span> <span class="nb">setmetatable</span><span class="p">({</span>
+</span><span data-line="2"> <span class="p">[</span><span class="s1">&#39;somemusic1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+</span><span data-line="3"> <span class="p">[</span><span class="s1">&#39;somemusic2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+</span><span data-line="4"> <span class="p">[</span><span class="s1">&#39;somemusic3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+</span><span data-line="5"><span class="p">},</span> <span class="p">{</span> <span class="n">__index</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span> <span class="kr">return</span> <span class="kc">true</span> <span class="kr">end</span> <span class="p">})</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li><p>In any case, syncing is only possible when both tracks agree on it. It is recommended synced tracks have the same length</p></li>
+</ul>
+</li>
+</ul>
+<section id="api-methods">
+<h2>API methods<a class="headerlink" href="#api-methods" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">select_music_track(self)</span> <span class="pre">-&gt;</span> <span class="pre">number</span></code></p>
+<ul>
+<li><p>This function is called each frame to decide what music to play. Return values that are not <code class="docutils literal notranslate"><span class="pre">nil</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code> or a number are converted to zero. The music track that returned the highest value is to be played.</p>
+<ul>
+<li><p>Your track’s key must contain the string <code class="docutils literal notranslate"><span class="pre">music</span></code> if you are using this.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="utility-functions">
+<h2>Utility functions<a class="headerlink" href="#utility-functions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">create_replace_sound(self,</span> <span class="pre">replace)</span></code></p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">replace</span></code> is a string, indefinitely replace it with this one until it is replaced again.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">replace</span></code> is a table, the key of the sound being replaced is <code class="docutils literal notranslate"><span class="pre">replace.key</span></code>. Specify a number <code class="docutils literal notranslate"><span class="pre">replace.times</span></code> to temporarily replace it that amount of times. Additional arguments may be passed as <code class="docutils literal notranslate"><span class="pre">replace.args</span></code>.</p></li>
+</ul>
+</li>
+<li><p>[STATIC] <code class="docutils literal notranslate"><span class="pre">SMODS.Sound:create_stop_sound(key,</span> <span class="pre">times)</span></code></p>
+<ul>
+<li><p>Supress sounds with the given sound code <code class="docutils literal notranslate"><span class="pre">times</span></code> amount of times or indefinitely.</p></li>
+</ul>
+</li>
+<li><p>[STATIC] <code class="docutils literal notranslate"><span class="pre">SMODS.Sound:register_global()</span></code></p>
+<ul>
+<li><p>Register all sound files found in the <code class="docutils literal notranslate"><span class="pre">assets/sounds</span></code> directory of the current mod. Use the file names without their extensions as keys.</p></li>
+</ul>
+</li>
+<li><p>[STATIC] <code class="docutils literal notranslate"><span class="pre">SMODS.Sound:get_current_music()</span></code></p>
+<ul>
+<li><p>Polls <code class="docutils literal notranslate"><span class="pre">select_music_track</span></code> on all sound objects that have it, returns the key of the music to play.</p></li>
+<li><p>You may override this function to take full control of the played music.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="playing-sounds">
+<h2>Playing sounds<a class="headerlink" href="#playing-sounds" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">play_sound</span></code> function can be used to play a sound at any time.</p>
+<ul class="simple">
+<li><p>Usage: <code class="docutils literal notranslate"><span class="pre">play_sound(key,</span> <span class="pre">pitch,</span> <span class="pre">volume)</span></code></p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">play_sound('MyMod_MyCoolSound',</span> <span class="pre">0.7,</span> <span class="pre">0.55)</span></code></p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When playing a sound, the game has no context of being called from your mod. Thus, it is always necessary to include your <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Mod-Metadata">mod prefix</a> when accessing your custom sounds.</p>
+</div>
+<p>It is also possible to play a sound with any message returned from a <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Calculate-Functions">calculate function</a> by adding a <code class="docutils literal notranslate"><span class="pre">sound</span></code> field to the effect table.</p>
+<ul class="simple">
+<li><p>Example:</p></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="n">message</span> <span class="o">=</span> <span class="n">localize</span><span class="p">(</span><span class="s1">&#39;k_upgrade_ex&#39;</span><span class="p">),</span>
+</span><span data-line="3"> <span class="n">sound</span> <span class="o">=</span> <span class="s1">&#39;MyMod_UpgradeSound&#39;</span><span class="p">,</span>
+</span><span data-line="4"><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="vanilla-music-tracks">
+<h2>Vanilla music tracks<a class="headerlink" href="#vanilla-music-tracks" title="Link to this heading">#</a></h2>
+<p>The following overview provides a list of music tracks present in the base game and when they play. Custom music with conditions overrides all of these.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">music1</span></code>: default track. Plays when none of the below apply</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">music2</span></code>: booster pack music. Plays for all vanilla boosters except Celestial Packs. Plays for all booster packs that have a sparkles effect or don’t have a meteor effect.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">music3</span></code>: booster pack music. Plays for Celestial Packs and any other packs with the meteor effect (but no sparkles effect).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">music4</span></code>: shop music. Plays in the shop, outside of booster packs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">music5</span></code>: boss music. Plays during Boss Blinds.</p></li>
+</ul>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../SMODS.Shader-and-SMODS.ScreenShader/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../SMODS.Stake/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

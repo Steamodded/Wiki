@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Object Weights - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Utility functions" href="../Utility/" /><link rel="prev" title="Permanent bonuses" href="../Perma-bonuses/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="Object Weights"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#smods-poll-object-args-string-nil"><code class="docutils literal notranslate"><span class="pre">SMODS.poll_object(args)</span> <span class="pre">-&gt;</span> <span class="pre">string|nil</span></code></a></li>
+<li><a class="reference internal" href="#utility">Utility</a><ul>
+<li><a class="reference internal" href="#modifying-weights-through-calculation">Modifying weights through calculation</a><ul>
+<li><a class="reference internal" href="#context-modify-weights">context.modify_weights</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adding-alternate-objects">Adding alternate objects</a></li>
+</ul>
+</li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/API Documentation/Weight-System.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Object Weights</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="object-weights">
+<h1>Object Weights<a class="headerlink" href="#object-weights" title="Link to this heading">#</a></h1>
+<p><em>(Added in 1531zeebee)</em></p>
+<p>With the <strong><code class="docutils literal notranslate"><span class="pre">object_weights</span></code></strong> optional feature enabled, every object in the game is now polled based on a weight value that is assigned to it. By default, this value is <strong>10</strong>. These polls do not mirror seeded values when the feature is not enabled. To assign a non-default weight to any of your objects, add <code class="docutils literal notranslate"><span class="pre">weight</span> <span class="pre">=</span> <span class="pre">X</span></code> to your object definitions. The internal system will then respect this value when deciding which objects to choose in all areas of the game.</p>
+<p>You can also add <code class="docutils literal notranslate"><span class="pre">get_weight</span> <span class="pre">=</span> <span class="pre">function(self,</span> <span class="pre">weight)</span></code> to any of your objects if they have internal ways of modifying their own weight. This function should returned the modified weight value.</p>
+<p>Due to these changes, there is now a new polling function that you <strong>should</strong> use whenever you need to select an object. This will ensure that you are respecting object weights, and any modifications to them that people have made.</p>
+<section id="smods-poll-object-args-string-nil">
+<h2><code class="docutils literal notranslate"><span class="pre">SMODS.poll_object(args)</span> <span class="pre">-&gt;</span> <span class="pre">string|nil</span></code><a class="headerlink" href="#smods-poll-object-args-string-nil" title="Link to this heading">#</a></h2>
+<p>This function returns a key of an object that is appropriate for the <code class="docutils literal notranslate"><span class="pre">args</span></code> that you provide. If there are no matches <em>(for example if a chance roll fails)</em>, it will not return a value. The following arguments are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: specify a single type (or attribute) to poll</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">types</span></code>: Table[string] specify a table of types to poll</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rarities</span></code>: Table[string] specify a table of rarities to include <em>(only for standard object types</em>) <br><br></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pool</span></code>: Table[string] specify a table of object keys to use as the pool instead of having the function generate one <br><br></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter</span></code>: function(pool) -&gt; Table[{key = string, type = string}] specify a function to filter the pool once it has been generated, must return the modified pool</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chance</span></code>: % of success as a decimal value 0-1, editions, enhancements and seals have a default chance internally</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mod</span></code>: multiplier to the base chance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seed</span></code>: specify a seed to use for the poll chance (defaults are available)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type_key</span></code>: a second poll seed if repolling is used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">append</span></code>: appended onto the poll seed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guaranteed</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to override default chance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_negative</span></code>: swaps negative edition to polychrome for vanilla functionality when <code class="docutils literal notranslate"><span class="pre">true</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blind_type</span></code>: can be set to <code class="docutils literal notranslate"><span class="pre">&quot;boss&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;big&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;small&quot;</span></code> to select an appropriate boss <em>(NOTE: currently there is no use of big and small blinds)</em> <br><br></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to display debug messages <em>(useful for understanding your pool)</em>
+<em>Arguments to poll attributes (default behaviour is to find an object that matches all attributes)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attributes</span></code>: Table[string] specify a table of attributes to poll <em>(preferred for attribute polling)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">union</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to switch to join each set rather than find the intersection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rarity</span></code>: attribute polling respects rarity by default. Set this to a rarity key to select a specific rarity, or set to <code class="docutils literal notranslate"><span class="pre">false</span></code> to ignore rarity completely</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">closest_match</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to stop the pool becoming completely empty due to a lack of matching attributes <em>(NOTE: attributes are found in the order they are given)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allow_duplicates</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to allow duplicates to be given</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allow_legendaries</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to allow legendaries to be included <em>(NOTE: if the pool consists of <strong>only</strong> legendary objects, they are always allowed)</em></p></li>
+</ul>
+<p>Example filter:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- Filter cards that are compatible with Eternal</span>
+</span><span data-line="2"><span class="n">filter</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">pool</span><span class="p">)</span>
+</span><span data-line="3">    <span class="kd">local</span> <span class="n">all_unavailable</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span data-line="4">    <span class="kr">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">v</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">pool</span><span class="p">)</span> <span class="kr">do</span>
+</span><span data-line="5">        <span class="kd">local</span> <span class="n">center</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">P_CENTERS</span><span class="p">[</span><span class="n">v</span><span class="p">.</span><span class="n">key</span><span class="p">]</span>
+</span><span data-line="6">        <span class="kr">if</span> <span class="ow">not</span> <span class="n">center</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">center</span><span class="p">.</span><span class="n">eternal_compat</span> <span class="kr">then</span>
+</span><span data-line="7">            <span class="n">v</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;UNAVAILABLE&quot;</span> <span class="c1">-- This is done to preserve RNG</span>
+</span><span data-line="8">        <span class="kr">else</span>
+</span><span data-line="9">            <span class="n">all_unavailable</span> <span class="o">=</span> <span class="kc">false</span>
+</span><span data-line="10">        <span class="kr">end</span>
+</span><span data-line="11">    <span class="kr">end</span>
+</span><span data-line="12">    <span class="kr">if</span> <span class="n">all_unavailable</span> <span class="kr">then</span>
+</span><span data-line="13">        <span class="n">pool</span><span class="p">[</span><span class="o">#</span><span class="n">pool</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;j_joker&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;Joker&quot;</span><span class="p">}</span> <span class="c1">-- Default if the entire pool is unavailable</span>
+</span><span data-line="14">    <span class="kr">end</span>
+</span><span data-line="15">    <span class="kr">return</span> <span class="n">pool</span>
+</span><span data-line="16"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<section id="utility">
+<h2>Utility<a class="headerlink" href="#utility" title="Link to this heading">#</a></h2>
+<section id="modifying-weights-through-calculation">
+<h3>Modifying weights through calculation<a class="headerlink" href="#modifying-weights-through-calculation" title="Link to this heading">#</a></h3>
+<p>A context has been added to adjust any weighted pool when it is being created.</p>
+<section id="context-modify-weights">
+<h4>context.modify_weights<a class="headerlink" href="#context-modify-weights" title="Link to this heading">#</a></h4>
+<p>This context is used to modify weights in <code class="docutils literal notranslate"><span class="pre">SMODS.poll_object</span></code> when the <strong><code class="docutils literal notranslate"><span class="pre">object_weights</span></code></strong> optional feature is enabled.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">modify_weights</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">modify_weights</span> <span class="c1">-- flag to identify this context, always TRUE</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">pool</span> <span class="c1">-- the booster pack center that has ended</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">pool_types</span>
+</span></pre></div>
+</div>
+<p>The pool is structured as a table of tables, where each table is structured as below. Modifying the weight value in this table will affect the final weighted table to be used.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;object_key&#39;</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">number_of_weight</span><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="adding-alternate-objects">
+<h3>Adding alternate objects<a class="headerlink" href="#adding-alternate-objects" title="Link to this heading">#</a></h3>
+<p>New object types should work fine with this system, but may need some extra set up in certain scenarios.</p>
+<ul class="simple">
+<li><p>If your object should only have a chance of being successful, you can set a base chance that will always be used by adding <code class="docutils literal notranslate"><span class="pre">SMODS.base_rate_percentage[type_key]</span> <span class="pre">=</span> <span class="pre">X</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is a number 0-1 that represents the percent chance of generating your object. <em>(for example, editions have 0.04)</em></p></li>
+<li><p>If your object that relies on chance should use the chance roll as it’s poll amount <em>(like Editions)</em>, add <code class="docutils literal notranslate"><span class="pre">SMODS.no_repoll[type_key]</span> <span class="pre">=</span> <span class="pre">true</span></code>.</p></li>
+<li><p>If your object needs to modify the type polling key in a specific way other than default, add <code class="docutils literal notranslate"><span class="pre">SMODS.poll_keys[type_key]</span> <span class="pre">=</span> <span class="pre">{str</span> <span class="pre">=</span> <span class="pre">'new_key',</span> <span class="pre">block_infill</span> <span class="pre">=</span> <span class="pre">true</span> <span class="pre">or</span> <span class="pre">false,</span> <span class="pre">ante</span> <span class="pre">=</span> <span class="pre">true</span> <span class="pre">or</span> <span class="pre">false}</span></code>. You can see how these affect the key by looking at <code class="docutils literal notranslate"><span class="pre">SMODS.get_poll_key</span></code> in <code class="docutils literal notranslate"><span class="pre">src/utils/weights.lua</span></code>.</p></li>
+<li><p>If your object isn’t stored in <code class="docutils literal notranslate"><span class="pre">G.P_CENTERS</span></code>, you can add <code class="docutils literal notranslate"><span class="pre">SMODS.game_table_from_type[type_key]</span></code> that can be either a key in <code class="docutils literal notranslate"><span class="pre">G</span></code> (i.e. G[“P_SEALS”]) or <em>(since 1814a)</em> a table of the form <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">ref_table</span> <span class="pre">=</span> <span class="pre">table,</span> <span class="pre">ref_value</span> <span class="pre">=</span> <span class="pre">key</span> <span class="pre">}</span></code>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../Perma-bonuses/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Permanent bonuses</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../Utility/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Utility functions</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

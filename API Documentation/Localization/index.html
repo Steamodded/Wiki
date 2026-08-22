@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Localization - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Text Styling" href="../../Guides/Text-Styling/" /><link rel="prev" title="​Calculate Functions" href="../Calculate-Functions/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="Localization"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#localization-files-recommended">Localization Files (recommended)</a><ul>
+<li><a class="reference internal" href="#adding-your-descriptions">Adding your descriptions</a></li>
+<li><a class="reference internal" href="#migrating-to-localization-files">Migrating to localization files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#loc-txt"><code class="docutils literal notranslate"><span class="pre">loc_txt</span></code></a></li>
+<li><a class="reference internal" href="#the-following-are-examples-of-valid-loc-txt-tables">The following are examples of valid <code class="docutils literal notranslate"><span class="pre">loc_txt</span></code> tables</a></li>
+<li><a class="reference internal" href="#mod-process-loc-text"><code class="docutils literal notranslate"><span class="pre">mod.process.loc_text</span></code></a></li>
+<li><a class="reference internal" href="#text-formatting">Text Formatting</a></li>
+<li><a class="reference internal" href="#localization-functions">Localization Functions</a><ul>
+<li><a class="reference internal" href="#loc-vars"><code class="docutils literal notranslate"><span class="pre">loc_vars</span></code></a></li>
+<li><a class="reference internal" href="#locked-loc-vars"><code class="docutils literal notranslate"><span class="pre">locked_loc_vars</span></code></a></li>
+<li><a class="reference internal" href="#generate-ui-advanced"><code class="docutils literal notranslate"><span class="pre">generate_ui</span></code> <em>(advanced)</em></a></li>
+<li><a class="reference internal" href="#localize"><code class="docutils literal notranslate"><span class="pre">localize</span></code></a><ul>
+<li><a class="reference internal" href="#localize-key-misc-cat"><code class="docutils literal notranslate"><span class="pre">localize(key,</span> <span class="pre">misc_cat)</span></code></a></li>
+<li><a class="reference internal" href="#localize-args"><code class="docutils literal notranslate"><span class="pre">localize{args}</span></code></a></li>
+<li><a class="reference internal" href="#formatting-ui-nodes-from-localize">Formatting UI nodes from <code class="docutils literal notranslate"><span class="pre">localize</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/API Documentation/Localization.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Localization</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="localization">
+<h1>Localization<a class="headerlink" href="#localization" title="Link to this heading">#</a></h1>
+<p>Steamodded offers multiple ways to load strings for in-game descriptions and other labels into the game. This page offers an overview of each option and when you should use them.</p>
+<section id="localization-files-recommended">
+<h2>Localization Files (recommended)<a class="headerlink" href="#localization-files-recommended" title="Link to this heading">#</a></h2>
+<p>This method follows the ways of the base game: instead of attaching descriptions directly to each object, all localization strings for the same language are combined into one file. Each such file should be found in the location <code class="docutils literal notranslate"><span class="pre">localization/&lt;locale&gt;.lua</span></code> or <code class="docutils literal notranslate"><span class="pre">localization/&lt;locale&gt;.json</span></code> relative to your mod’s root directory. Since 1501a, it is now possible to load sub-folders within the localization folder. Sub-folders can be named as you see fit, but should have files inside named for each language. <code class="docutils literal notranslate"><span class="pre">&lt;locale&gt;</span></code> can be the key of any language found in Balatro itself or added through <a class="reference external" href="https://docs.smods.dev/Game%20Objects/SMODS.Language">SMODS.Language</a>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code>: Used as a fallback when no text was found for the selected language.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">de</span></code>: German</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">en-us</span></code>: English</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">es_419</span></code>: Spanish (Latin America)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">es_ES</span></code>: Spanish (Spain)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fr</span></code>: French</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: Indonesian</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">it</span></code>: Italian</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ja</span></code>: Japanese</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ko</span></code>: Korean</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nl</span></code>: Dutch</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pl</span></code>: Polish</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pt_BR</span></code>: Portuguese</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ru</span></code>: Russian</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zh_CN</span></code>: Chinese (simplified)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zh_TW</span></code>: Chinese (traditional)</p></li>
+</ul>
+<p>The following is a skeleton for the base structure of a localization file. Entries without content may be omitted. Each found localization string is copied into <code class="docutils literal notranslate"><span class="pre">G.localization</span></code> when the languages are matching.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="2">    <span class="n">descriptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3">        <span class="n">Back</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="4">        <span class="n">Blind</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="5">        <span class="n">Edition</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="6">        <span class="n">Enhanced</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="7">        <span class="n">Joker</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="8">        <span class="n">Other</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="9">        <span class="n">Planet</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="10">        <span class="n">Spectral</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="11">        <span class="n">Stake</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="12">        <span class="n">Tag</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="13">        <span class="n">Tarot</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="14">        <span class="n">Voucher</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="15">    <span class="p">},</span>
+</span><span data-line="16">    <span class="n">misc</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="17">        <span class="n">achievement_descriptions</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="18">        <span class="n">achievement_names</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="19">        <span class="n">blind_states</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="20">        <span class="n">challenge_names</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="21">        <span class="n">collabs</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="22">        <span class="n">dictionary</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="23">        <span class="n">high_scores</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="24">        <span class="n">labels</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="25">        <span class="n">poker_hand_descriptions</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="26">        <span class="n">poker_hands</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="27">        <span class="n">quips</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="28">        <span class="n">ranks</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="29">        <span class="n">suits_plural</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="30">        <span class="n">suits_singular</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="31">        <span class="n">tutorial</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="32">        <span class="n">v_dictionary</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="33">        <span class="n">v_text</span><span class="o">=</span><span class="p">{},</span>
+</span><span data-line="34">    <span class="p">},</span>
+</span><span data-line="35"><span class="p">}</span>
+</span></pre></div>
+</div>
+<section id="adding-your-descriptions">
+<h3>Adding your descriptions<a class="headerlink" href="#adding-your-descriptions" title="Link to this heading">#</a></h3>
+<p>A localization file containing a single description may look something like this:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="2">    <span class="n">descriptions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3">        <span class="c1">-- this key should match the set (&quot;object type&quot;) of your object,</span>
+</span><span data-line="4">        <span class="c1">-- e.g. Voucher, Tarot, or the key of a modded consumable type</span>
+</span><span data-line="5">        <span class="n">Joker</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="6">            <span class="c1">-- this should be the full key of your object, including any prefixes</span>
+</span><span data-line="7">            <span class="n">j_mod_joker</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="8">                <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span>
+</span><span data-line="9">                <span class="n">text</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="10">                    <span class="s1">&#39;This is the first line of this description&#39;</span><span class="p">,</span>
+</span><span data-line="11">                    <span class="s1">&#39;This is the second line of this description&#39;</span><span class="p">,</span>
+</span><span data-line="12">                <span class="p">},</span>
+</span><span data-line="13">                <span class="c1">-- only needed when this object is locked by default</span>
+</span><span data-line="14">                <span class="n">unlock</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="15">                    <span class="s1">&#39;This is a condition&#39;</span><span class="p">,</span>
+</span><span data-line="16">                    <span class="s1">&#39;for unlocking this card&#39;</span><span class="p">,</span>
+</span><span data-line="17">                <span class="p">},</span>
+</span><span data-line="18">            <span class="p">},</span>
+</span><span data-line="19">            <span class="c1">-- multiple line name and multiple description box example</span>
+</span><span data-line="20">            <span class="n">j_mod_multi_joker</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="21">                <span class="n">name</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="22">                    <span class="s1">&#39;First line of name&#39;</span><span class="p">,</span>
+</span><span data-line="23">                    <span class="s1">&#39;Second line of name&#39;</span><span class="p">,</span>
+</span><span data-line="24">                <span class="p">},</span>
+</span><span data-line="25">                <span class="n">text</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="26">                    <span class="p">{</span>
+</span><span data-line="27">                       <span class="s1">&#39;First line of box 1&#39;</span><span class="p">,</span>
+</span><span data-line="28">                       <span class="s1">&#39;Second line of box 1&#39;</span><span class="p">,</span>
+</span><span data-line="29">                    <span class="p">},</span>
+</span><span data-line="30">                    <span class="p">{</span>
+</span><span data-line="31">                       <span class="s1">&#39;First line of box 2&#39;</span><span class="p">,</span>
+</span><span data-line="32">                       <span class="s1">&#39;Second line of box 2&#39;</span><span class="p">,</span>
+</span><span data-line="33">                    <span class="p">}</span>
+</span><span data-line="34">  <span class="p">}</span>
+</span><span data-line="35">            <span class="p">},</span>
+</span><span data-line="36">        <span class="p">},</span>
+</span><span data-line="37">    <span class="p">},</span>
+</span><span data-line="38"><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="migrating-to-localization-files">
+<h3>Migrating to localization files<a class="headerlink" href="#migrating-to-localization-files" title="Link to this heading">#</a></h3>
+<p>If you’ve been using <code class="docutils literal notranslate"><span class="pre">loc_txt</span></code> and wish to switch to using localization files, disable as many other mods as possible (if you have cross-mod content, you may wish to reconfigure it so it can load even with the other mod disabled), add <code class="docutils literal notranslate"><span class="pre">&quot;dump_loc&quot;:</span> <span class="pre">true</span></code> to <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Mod-Metadata">your mod’s metadata</a>, and launch Balatro once. Steamodded will create a <code class="docutils literal notranslate"><span class="pre">dump.lua</span></code> file in your mod’s localization folder, containing all modified localization entries. Remove any extraneous entries (e.g. from other mods you couldn’t disable due to being dependencies) and rename this file to <code class="docutils literal notranslate"><span class="pre">en-us.lua</span></code>.</p>
+<p>Remember to remove the <code class="docutils literal notranslate"><span class="pre">dump_loc</span></code> entry when finished!</p>
+</section>
+</section>
+<section id="loc-txt">
+<h2><code class="docutils literal notranslate"><span class="pre">loc_txt</span></code><a class="headerlink" href="#loc-txt" title="Link to this heading">#</a></h2>
+<p>Alternatively, you can define a <code class="docutils literal notranslate"><span class="pre">loc_txt</span></code> table on each object to create its description. This is more limited than localization files because it does not allow creating multiple descriptions for the same object or strings that don’t belong to an object at all. The effort of maintaining translations of your mod while using this method is significantly higher.</p>
+<p>You can provide a single table for every language, or provide a subtable for each language. If the currently selected language isn’t provided, the <code class="docutils literal notranslate"><span class="pre">default</span></code> subtable, the English (<code class="docutils literal notranslate"><span class="pre">'en_us'</span></code>) subtable, or <code class="docutils literal notranslate"><span class="pre">loc_txt</span></code> itself will be used as defaults, in that order. Refer to your object’s documentation for what fields need to go in <code class="docutils literal notranslate"><span class="pre">loc_txt</span></code>.</p>
+</section>
+<section id="the-following-are-examples-of-valid-loc-txt-tables">
+<h2>The following are examples of valid <code class="docutils literal notranslate"><span class="pre">loc_txt</span></code> tables<a class="headerlink" href="#the-following-are-examples-of-valid-loc-txt-tables" title="Link to this heading">#</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;This is example text&#39;</span> <span class="p">}</span> <span class="p">}</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1">    <span class="p">{</span>
+</span><span data-line="2">        <span class="p">[</span><span class="s1">&#39;en-us&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3">            <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span>
+</span><span data-line="4">            <span class="n">text</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;on&#39;</span><span class="p">,</span> <span class="s1">&#39;five&#39;</span><span class="p">,</span> <span class="s1">&#39;lines&#39;</span><span class="p">},</span>
+</span><span data-line="5">        <span class="p">},</span>
+</span><span data-line="6">        <span class="p">[</span><span class="s1">&#39;fr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="7">            <span class="c1">-- French translation</span>
+</span><span data-line="8">        <span class="p">},</span>
+</span><span data-line="9">        <span class="p">[</span><span class="s1">&#39;nl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="10">            <span class="c1">-- Dutch translation</span>
+</span><span data-line="11">        <span class="p">},</span>
+</span><span data-line="12">        <span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="13">            <span class="c1">-- a different default text</span>
+</span><span data-line="14">            <span class="c1">-- leave this empty to allow</span>
+</span><span data-line="15">            <span class="c1">-- custom languages to provide</span>
+</span><span data-line="16">            <span class="c1">-- their own translation</span>
+</span><span data-line="17">        <span class="p">}</span>
+</span><span data-line="18">    <span class="p">}</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span>
+</span><span data-line="2">    <span class="p">[</span><span class="s1">&#39;en-us&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3">        <span class="c1">-- Sometimes, more text is required than just a name and a description</span>
+</span><span data-line="4">        <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Label&#39;</span><span class="p">,</span>
+</span><span data-line="5">        <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span>
+</span><span data-line="6">        <span class="n">text</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;A moderately long&#39;</span><span class="p">,</span> <span class="s1">&#39;description of&#39;</span><span class="p">,</span> <span class="s1">&#39;your effect.&#39;</span> <span class="p">},</span>
+</span><span data-line="7">    <span class="p">}</span>
+</span><span data-line="8"><span class="p">}</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span>
+</span><span data-line="2">    <span class="c1">-- The simplest option: use a single table</span>
+</span><span data-line="3">    <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Label&#39;</span><span class="p">,</span>
+</span><span data-line="4">    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span>
+</span><span data-line="5">    <span class="n">text</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;A moderately long&#39;</span><span class="p">,</span> <span class="s1">&#39;description of&#39;</span><span class="p">,</span> <span class="s1">&#39;your effect.&#39;</span> <span class="p">},</span>
+</span><span data-line="6"><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="mod-process-loc-text">
+<h2><code class="docutils literal notranslate"><span class="pre">mod.process.loc_text</span></code><a class="headerlink" href="#mod-process-loc-text" title="Link to this heading">#</a></h2>
+<p>Finally, it is possible to define additional localization strings even when not using localization files. Because the localization sometimes gets reloaded in-game, this can’t be done by simply adding the strings to <code class="docutils literal notranslate"><span class="pre">G.localization</span></code> upon loading your mod. Instead, you should define a function on your mod object that puts the strings you need into place. It should look something like this:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">process_loc_text</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span data-line="2">    <span class="n">G</span><span class="p">.</span><span class="n">localization</span><span class="p">.</span><span class="n">misc</span><span class="p">.</span><span class="n">labels</span><span class="p">.</span><span class="n">mod_mylabel</span> <span class="o">=</span> <span class="s1">&#39;My Label&#39;</span> <span class="c1">-- assigning to G.localization directly</span>
+</span><span data-line="3">    <span class="n">SMODS</span><span class="p">.</span><span class="n">process_loc_text</span><span class="p">(</span><span class="n">G</span><span class="p">.</span><span class="n">localization</span><span class="p">.</span><span class="n">misc</span><span class="p">.</span><span class="n">labels</span><span class="p">,</span> <span class="s1">&#39;mod_anotherlabel&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="c1">-- Util function to handle multiple languages.</span>
+</span><span data-line="4">        <span class="p">[</span><span class="s1">&#39;en-us&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;English label&#39;</span><span class="p">,</span>
+</span><span data-line="5">        <span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Deutsches Label&#39;</span><span class="p">,</span>
+</span><span data-line="6">        <span class="p">[</span><span class="s1">&#39;it&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Etichetta italiana&#39;</span><span class="p">,</span>
+</span><span data-line="7">    <span class="p">})</span>
+</span><span data-line="8"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<section id="text-formatting">
+<h2>Text Formatting<a class="headerlink" href="#text-formatting" title="Link to this heading">#</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span>
+</span><span data-line="2">    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Example name&#39;</span><span class="p">,</span>
+</span><span data-line="3">    <span class="n">text</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="4">        <span class="s1">&#39;This is {C:attention}coloured{} text&#39;</span><span class="p">,</span>
+</span><span data-line="5">        <span class="s1">&#39;{s:0.8}This is scaled down, {s:1.5}this is scaled up&#39;</span><span class="p">,</span>
+</span><span data-line="6">        <span class="s1">&#39;This text can {V:1}change colours{}!&#39;</span><span class="p">,</span>
+</span><span data-line="7">        <span class="s1">&#39;This is {E:1}floating DynaText&#39;</span><span class="p">,</span>
+</span><span data-line="8">        <span class="s1">&#39;This is {E:2}spaced out DynaText&#39;</span><span class="p">,</span>
+</span><span data-line="9">        <span class="s1">&#39;{X:mult,C:white} X#1# {} Mult&#39;</span><span class="p">,</span>
+</span><span data-line="10">        <span class="s1">&#39;{T:v_telescope}This will display a tooltip when hovered&#39;</span><span class="p">,</span>
+</span><span data-line="11">    <span class="p">},</span>
+</span><span data-line="12"><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="localization-functions">
+<h2>Localization Functions<a class="headerlink" href="#localization-functions" title="Link to this heading">#</a></h2>
+<p>To create dynamic descriptions, you need to create functions that define how they behave.</p>
+<section id="loc-vars">
+<h3><code class="docutils literal notranslate"><span class="pre">loc_vars</span></code><a class="headerlink" href="#loc-vars" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">loc_vars</span></code> functions are a simple to use but versatile tool for any type of description.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">Consumable</span> <span class="p">{</span>
+</span><span data-line="2">    <span class="c1">-- `self`: The object this function is being called on (the card prototype)</span>
+</span><span data-line="3">    <span class="c1">-- `info_queue`: A table that stores tooltips to be displayed alongside the description</span>
+</span><span data-line="4">    <span class="c1">-- `card`: The card being described. If no card is available because this is for a tooltip,</span>
+</span><span data-line="5">    <span class="c1">-- a fake table that looks like a card will be provided (See: duck typing)</span>
+</span><span data-line="6">    <span class="c1">-- NOTE: card may belong to a different class depending on what object this is defined on;</span>
+</span><span data-line="7">    <span class="c1">-- e.g. a `Tag` is passed if this is defined on a `SMODS.Tag` object.</span>
+</span><span data-line="8">    <span class="n">loc_vars</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">info_queue</span><span class="p">,</span> <span class="n">card</span><span class="p">)</span>
+</span><span data-line="9">        <span class="c1">-- Add tooltips by appending to info_queue</span>
+</span><span data-line="10">        <span class="n">info_queue</span><span class="p">[</span><span class="o">#</span><span class="n">info_queue</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">P_CENTERS</span><span class="p">.</span><span class="n">m_stone</span> <span class="c1">-- Add a description of the Stone enhancement</span>
+</span><span data-line="11">        <span class="n">info_queue</span><span class="p">[</span><span class="o">#</span><span class="n">info_queue</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">P_CENTERS</span><span class="p">.</span><span class="n">j_stone</span> <span class="c1">-- Add a description of Stone Joker</span>
+</span><span data-line="12">        <span class="c1">-- all keys in this return table are optional</span>
+</span><span data-line="13">        <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="14">            <span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="15">                <span class="n">card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">extra</span><span class="p">.</span><span class="n">mult</span><span class="p">,</span> <span class="c1">-- replace #1# in the description with this value</span>
+</span><span data-line="16">                <span class="n">card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">extra</span><span class="p">.</span><span class="n">mult_gain</span><span class="p">,</span> <span class="c1">-- replace #2# in the description with this value</span>
+</span><span data-line="17">                <span class="n">colours</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="18">                    <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">SECONDARY_SET</span><span class="p">.</span><span class="n">Tarot</span><span class="p">,</span> <span class="c1">-- colour text formatted with {V:1}</span>
+</span><span data-line="19">                    <span class="n">HEX</span><span class="p">(</span><span class="n">card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">extra</span><span class="p">.</span><span class="n">colour_string</span><span class="p">),</span> <span class="c1">-- colour text formatted with {V:2}</span>
+</span><span data-line="20">                <span class="p">},</span>
+</span><span data-line="21">                <span class="n">box_colours</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">-- Changes the default background colour for each multibox at each index</span>
+</span><span data-line="22">                    <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">SECONDARY_SET</span><span class="p">.</span><span class="n">Tarot</span><span class="p">,</span> <span class="c1">-- colour for the main description&#39;s background</span>
+</span><span data-line="23">                    <span class="n">HEX</span><span class="p">(</span><span class="n">card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">extra</span><span class="p">.</span><span class="n">colour_string</span><span class="p">),</span> <span class="c1">-- colour for the second box&#39;s background</span>
+</span><span data-line="24">                <span class="p">}</span>
+</span><span data-line="25">            <span class="p">},</span>
+</span><span data-line="26">            <span class="n">key</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">key</span><span class="o">..</span><span class="s1">&#39;_alt&#39;</span><span class="p">,</span> <span class="c1">-- Use an alternate description key (pulls from G.localization.descriptions[self.set][key])</span>
+</span><span data-line="27">            <span class="n">set</span> <span class="o">=</span> <span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="c1">-- Use an alternate description set (G.localization.descriptions[set][key or self.key])</span>
+</span><span data-line="28">            <span class="n">scale</span> <span class="o">=</span> <span class="mf">1.2</span><span class="p">,</span> <span class="c1">-- Change the base text scale of the description</span>
+</span><span data-line="29">            <span class="n">text_colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">RED</span><span class="p">,</span> <span class="c1">-- Change the default text colour (when no other colour is being specified)</span>
+</span><span data-line="30">            <span class="n">background_colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BLACK</span><span class="p">,</span> <span class="c1">-- Change the default background colour</span>
+</span><span data-line="31">            <span class="n">main_start</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="c1">-- Table of UIElements inserted before the main description (-&gt; &quot;Building a UI&quot;)</span>
+</span><span data-line="32">            <span class="n">main_end</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="c1">-- Table of UIElements inserted after the main description</span>
+</span><span data-line="33">            <span class="n">box_starts</span>  <span class="o">=</span> <span class="p">{},</span> <span class="c1">-- *(Added in 1531zeebee)* List of tables of UIElements inserted before a multibox description at each index</span>
+</span><span data-line="34">            <span class="n">box_ends</span> <span class="o">=</span> <span class="p">{},</span> <span class="c1">-- *(Added in 1531zeebee)* List of tables of UIElements inserted after a multibox description at each index</span>
+</span><span data-line="35">        <span class="p">}</span>
+</span><span data-line="36">    <span class="kr">end</span><span class="p">,</span>
+</span><span data-line="37"><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="locked-loc-vars">
+<h3><code class="docutils literal notranslate"><span class="pre">locked_loc_vars</span></code><a class="headerlink" href="#locked-loc-vars" title="Link to this heading">#</a></h3>
+<p>This function is called for descriptions of locked cards. It behaves identically to regular <code class="docutils literal notranslate"><span class="pre">loc_vars</span></code>.</p>
+</section>
+<section id="generate-ui-advanced">
+<h3><code class="docutils literal notranslate"><span class="pre">generate_ui</span></code> <em>(advanced)</em><a class="headerlink" href="#generate-ui-advanced" title="Link to this heading">#</a></h3>
+<p>The base implementation of this function acts as a wrapper to <code class="docutils literal notranslate"><span class="pre">loc_vars</span></code>. Overriding it allows you to freely define the UI of a card description. Function signature:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1">    <span class="p">{</span>
+</span><span data-line="2">        <span class="n">generate_ui</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">info_queue</span><span class="p">,</span> <span class="n">card</span><span class="p">,</span> <span class="n">desc_nodes</span><span class="p">,</span> <span class="n">specific_vars</span><span class="p">,</span> <span class="n">full_UI_table</span><span class="p">)</span>
+</span><span data-line="3">            <span class="c1">-- `self`, `info_queue`, `card`: See loc_vars</span>
+</span><span data-line="4">            <span class="c1">-- `desc_nodes`: A table to place UIElements into to be displayed in the current description box</span>
+</span><span data-line="5">            <span class="c1">-- `specific_vars`: Variables passed from outside the current `generate_ui` call. Can be ignored for modded objects</span>
+</span><span data-line="6">            <span class="c1">-- `full_UI_table`: A table representing the main description box.</span>
+</span><span data-line="7">            <span class="c1">-- Mainly used for checking if this is the main description or a tooltip, or manipulating the main description from tooltips.</span>
+</span><span data-line="8">            <span class="c1">-- This function need not return anything, its effects should be applied by modifying desc_nodes</span>
+</span><span data-line="9">        <span class="kr">end</span><span class="p">,</span>
+</span><span data-line="10">    <span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="localize">
+<h3><code class="docutils literal notranslate"><span class="pre">localize</span></code><a class="headerlink" href="#localize" title="Link to this heading">#</a></h3>
+<p>The Balatro function <code class="docutils literal notranslate"><span class="pre">localize</span></code> can be used to extract data from your localization files.
+The function supports the following usages</p>
+<section id="localize-key-misc-cat">
+<h4><code class="docutils literal notranslate"><span class="pre">localize(key,</span> <span class="pre">misc_cat)</span></code><a class="headerlink" href="#localize-key-misc-cat" title="Link to this heading">#</a></h4>
+<p>Fetches text from <code class="docutils literal notranslate"><span class="pre">G.localization.misc</span></code>. Uses <code class="docutils literal notranslate"><span class="pre">G.localization.misc.dictionary[key]</span></code> if only key is provided, and <code class="docutils literal notranslate"><span class="pre">G.localization.misc[misc_cat][key]</span></code> if both are.</p>
+</section>
+<section id="localize-args">
+<h4><code class="docutils literal notranslate"><span class="pre">localize{args}</span></code><a class="headerlink" href="#localize-args" title="Link to this heading">#</a></h4>
+<p>Fetches text and creates UI nodes from <code class="docutils literal notranslate"><span class="pre">G.localization</span></code>. The following arguments are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> (required): determines where data is fetched from and how it is returned</p>
+<ul>
+<li><p>These can be separated into two categories, types that return a <code class="docutils literal notranslate"><span class="pre">string</span></code> and types that generate <a class="reference external" href="https://docs.smods.dev/Guides/UI-Guide">UI nodes</a>.</p></li>
+<li><p>Types that return a <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;name_text&quot;</span></code>: Returns the name of the object found in <code class="docutils literal notranslate"><span class="pre">G.localization.descriptions[args.set][args.key]</span></code> as a <strong>string</strong>. Multiline names are joined with a space and any formatting is removed, and variables are not replaced.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;raw_descriptions&quot;</span></code>: Returns the description of the object found in <code class="docutils literal notranslate"><span class="pre">G.localization.descriptions[args.set][args.key]</span></code>. Multibox descriptions are joined with a blank line.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;variable&quot;</span></code>: Returns the text found in <code class="docutils literal notranslate"><span class="pre">G.localization.misc.v_dictionary[args.key]</span></code> with any variables (e.g. <code class="docutils literal notranslate"><span class="pre">#1#</span></code>) replaced by <code class="docutils literal notranslate"><span class="pre">args.vars</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Types that generate an array of UI nodes. With the exception of <code class="docutils literal notranslate"><span class="pre">&quot;name&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;text&quot;</span></code> they do not return a value but store it in <code class="docutils literal notranslate"><span class="pre">args.nodes</span></code> instead.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;name&quot;</span></code>: Returns the name of the object found in <code class="docutils literal notranslate"><span class="pre">G.localization.descriptions[args.set][args.key]</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;descriptions&quot;</span></code>: Gets the description of the object found in <code class="docutils literal notranslate"><span class="pre">G.localization.descriptions[args.set][args.key]</span></code>. Multiboxes are <em>not</em> obtained.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;other&quot;</span></code>: Gets the description of the object found in <code class="docutils literal notranslate"><span class="pre">G.localization.descriptions.Other[args.key]</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;unlocks&quot;</span></code>: Gets the description for the unlock conditions of the object found in <code class="docutils literal notranslate"><span class="pre">G.localization.descriptions[args.set][args.key]</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;tutorial&quot;</span></code>: Gets the tutorial text found in <code class="docutils literal notranslate"><span class="pre">G.localization.tutorial[args.key]</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;quips&quot;</span></code>: Gets the quip text found in <code class="docutils literal notranslate"><span class="pre">G.localization.quips[args.key]</span></code> as <strong>UI nodes</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;text&quot;</span></code>: Returns the text found in <code class="docutils literal notranslate"><span class="pre">G.localization.v_text[args.key]</span></code> as <strong>UI nodes</strong>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: Used to determine where to grab data from.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set</span></code>: Used by some types to determine where in <code class="docutils literal notranslate"><span class="pre">G.localization.descriptions</span></code> to grab data from.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vars</span></code>: Any information to pass into the text, see <code class="docutils literal notranslate"><span class="pre">loc_vars</span></code> for more information.</p></li>
+<li><p>The following arguments are supported for the UI node types: <em>(defaults)</em></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">nodes</span></code>: Table where the UI for the some types is saved.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale</span> <span class="pre">=</span> <span class="pre">1</span></code>: Scale for any UI text nodes returned. Using <code class="docutils literal notranslate"><span class="pre">{s:}</span></code> in text will override this.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_colour</span> <span class="pre">=</span> <span class="pre">G.C.UI.TEXT_DARK</span></code>: Sets the default text colour.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default_col</span> <span class="pre">=</span> <span class="pre">G.C.UI.TEXT_DARK</span></code>: Same as <code class="docutils literal notranslate"><span class="pre">text_colour</span></code>.</p></li>
+</ul>
+</li>
+<li><p>The following arguments are supported for the <code class="docutils literal notranslate"><span class="pre">&quot;name&quot;</span></code> type: <em>(defaults)</em></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale</span> <span class="pre">=</span> <span class="pre">1</span></code>: Scale for any UI text nodes returned. Using <code class="docutils literal notranslate"><span class="pre">{s:}</span></code> in text will override this.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_colour</span> <span class="pre">=</span> <span class="pre">G.C.UI.TEXT_LIGHT</span></code>: Sets the default text colour.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fixed_scale</span> <span class="pre">=</span> <span class="pre">1</span></code>: Same as <code class="docutils literal notranslate"><span class="pre">scale</span></code>, but combines with <code class="docutils literal notranslate"><span class="pre">{s:}</span></code> instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_bump</span></code>: Removes the DynaText bump effect.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_silent</span></code>: Allows the DynaText to make sound.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_pop_in</span></code>: Removes the DynaText pop in effect.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_shadow</span></code>: Removes the drop shadow. <em><code class="docutils literal notranslate"><span class="pre">&quot;name&quot;</span></code> does not support <code class="docutils literal notranslate"><span class="pre">shadow</span></code></em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_spacing</span></code>: Removes the spacing between letters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop_in</span> <span class="pre">=</span> <span class="pre">0</span></code>: Controls the start time of the pop in effect.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop_in_rate</span> <span class="pre">=</span> <span class="pre">4</span></code>: Controls the speed of the pop in effect (higher = faster).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maxw</span> <span class="pre">=</span> <span class="pre">5</span></code>: Controls the max width of the DynaText.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y_offset</span> <span class="pre">=</span> <span class="pre">-0.6</span></code>: Controls the y offset of the Dynatext.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="formatting-ui-nodes-from-localize">
+<h4>Formatting UI nodes from <code class="docutils literal notranslate"><span class="pre">localize</span></code><a class="headerlink" href="#formatting-ui-nodes-from-localize" title="Link to this heading">#</a></h4>
+<p>The following vanilla functions can be used to format the array of UI nodes obtained from <code class="docutils literal notranslate"><span class="pre">localize</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">transparent_multiline_text(nodes)</span></code> formats the nodes with a transparent background.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name_from_rows(nodes,</span> <span class="pre">background_colour)</span></code> formats the nodes like a card description tooltip’s name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">desc_from_rows(nodes,</span> <span class="pre">empty,</span> <span class="pre">maxw)</span></code> formats the nodes like a card description tooltip. <code class="docutils literal notranslate"><span class="pre">empty</span></code> removes the background colour and embossing. Set <code class="docutils literal notranslate"><span class="pre">nodes.background_colour</span></code> before calling this function to change the background colour.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">info_tip_from_rows(nodes,</span> <span class="pre">name)</span></code> formats the nodes like an <code class="docutils literal notranslate"><span class="pre">info_queue</span></code> tooltip. <code class="docutils literal notranslate"><span class="pre">name</span></code> is a string used for the title of the UI node. Set <code class="docutils literal notranslate"><span class="pre">nodes.background_colour</span></code> before calling this function to change the background colour. Set <code class="docutils literal notranslate"><span class="pre">nodes.name_styled</span></code> to an array of UI nodes to replace the name.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../Calculate-Functions/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">​Calculate Functions</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../../Guides/Text-Styling/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Text Styling</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

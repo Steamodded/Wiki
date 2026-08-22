@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SMODS.Attribute - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="SMODS.Blind" href="../SMODS.Blind/" /><link rel="prev" title="SMODS.Atlas" href="../SMODS.Atlas/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="SMODS.Attribute"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Logging/">Logging</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../API-Documentation/">Game Objects</a><ul class="current">
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#utility-functions">Utility functions</a></li>
+<li><a class="reference internal" href="#provided-attributes">Provided Attributes</a><ul>
+<li><a class="reference internal" href="#smods-attributes">SMODS Attributes</a></li>
+<li><a class="reference internal" href="#vanilla-joker-attributes">Vanilla Joker Attributes</a></li>
+</ul>
+</li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/Game Objects/SMODS.Attributes.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../API-Documentation/"><span itemprop="name">Game Objects</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></strong>
+        <meta itemprop="position" content="3" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="smods-attribute">
+<h1><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code><a class="headerlink" href="#smods-attribute" title="Link to this heading">#</a></h1>
+<p><em>(Added in 1531zeebee)</em></p>
+<p>Attributes are able to assigned to different center objects to allow for more advanced polling and effects that require certain attributes. SMODS provides an initial suite of attributes for the vanilla jokers, as well as a couple of empty ones for some scoring methods that the rest of the API provides.</p>
+<ul class="simple">
+<li><p><strong>Required parameters:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>: <em>does not need to be unique - duplicate keys will be combined</em></p></li>
+</ul>
+</li>
+<li><p><strong>Optional parameters</strong> <em>(defaults)</em>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">keys</span></code>: Provide a table of keys of centers that have this attribute</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alias</span></code>: Provide a table of keys of other <code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code> objects that should be treated as the same attribute</p></li>
+</ul>
+</li>
+</ul>
+<p>If you want to apply attributes in object definitions, add <code class="docutils literal notranslate"><span class="pre">attributes</span> <span class="pre">=</span> <span class="pre">{'key1',</span> <span class="pre">'key2',</span> <span class="pre">...}</span></code> to the definition.</p>
+<section id="utility-functions">
+<h2>Utility functions<a class="headerlink" href="#utility-functions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SMODS.get_attribute_pool(attribute)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></p>
+<ul>
+<li><p>Takes a attribute key and returns a table of keys of centers that have that attribute</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMODS.add_attribute(attribute_key,</span> <span class="pre">object_keys)</span></code></p>
+<ul>
+<li><p>Inserts a table of keys into a pre-existing attribute</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attribute_key</span></code>: key of the attribute to insert into</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">object_keys</span></code>: table of keys of centers to insert into the attribute</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Card:has_attribute(attribute_key)</span></code> <em>(added in 1606b)</em></p>
+<ul>
+<li><p>Checks whether a card has a certain attribute or not *(respects aliases)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attribute_key</span></code>: key of the attribute to check</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="provided-attributes">
+<h2>Provided Attributes<a class="headerlink" href="#provided-attributes" title="Link to this heading">#</a></h2>
+<p>Detailed here is a list of attributes that SMODS provides, along with a criteria for what objects should have them. Below is a list of all vanilla jokers and which attributes they have been assigned.</p>
+<section id="smods-attributes">
+<h3>SMODS Attributes<a class="headerlink" href="#smods-attributes" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Key</p></th>
+<th class="head"><p>When to use</p></th>
+<th class="head"><p>Vanilla Jokers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>mult</strong></p></td>
+<td><p>gives +mult at some point of scoring or causes other cards to do so</p></td>
+<td><p>Joker, Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Jolly Joker, Zany Joker, Crazy Joker, Mad Joker, Droll Joker, Half Joker, Ceremonial Dagger, Mystic Summit, Misprint, Raised Fist, Fibonacci, Abstract Joker, Gros Michel, Even Steven, Scholar, Supernova, Ride the Bus, Green Joker, Red Card, Erosion, Fortune Teller, Flash Card, Popcorn, Spare Trousers, Walkie Talkie, Smiley Face, Swashbuckler, Onyx Agate, Shoot the Moon, Bootstraps</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>chips</strong></p></td>
+<td><p>gives +chips at some point of scoring or causes other cards to do so</p></td>
+<td><p>Sly Joker, Wily Joker, Clever Joker, Devious Joker, Crafty Joker, Banner, Scary Face, Odd Todd, Scholar, Runner, Ice Cream, Blue Joker, Hiker, Square Joker, Stone Joker, Bull, Walkie Talkie, Castle, Arrowhead, Wee Joker, Stuntman</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>xmult</strong></p></td>
+<td><p>gives Xmult at some point of scoring or causes other cards to do so</p></td>
+<td><p>Joker Stencil, Loyalty Card, Steel Joker, Blackboard, Constellation, Cavendish, Card Sharp, Madness, Vampire, Hologram, Baron, Obelisk, Photograph, Lucky Cat, Baseball Card, Ancient Joker, Ramen, Campfire, Acrobat, Throwback, Bloodstone, Glass Joker, Flower Pot, The Idol, Seeing Double, Hit the Road, The Duo, The Trio, The Family, The Order, The Tribe, Driver’s License, Canio, Triboulet, Yorick</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>xchips</strong></p></td>
+<td><p>gives Xchips at some point of scoring or causes other cards to do so</p></td>
+<td><p><em>none</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>score</strong></p></td>
+<td><p>gives +score at some point of scoring or causes other cards to do so</p></td>
+<td><p><em>none</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>xscore</strong></p></td>
+<td><p>gives Xscore at some point of scoring or causes other cards to do so</p></td>
+<td><p><em>none</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>blindsize</strong></p></td>
+<td><p>gives +blindsize at some point of scoring or causes other cards to do so <em>(added in 1606b)</em></p></td>
+<td><p><em>none</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>xblindsize</strong></p></td>
+<td><p>gives Xblindsize at some point of scoring or causes other cards to do so <em>(added in 1606b)</em></p></td>
+<td><p><em>none</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>balance</strong></p></td>
+<td><p>balances mult and chips during scoring or causes other cards to do so <em>(added in 1606b)</em></p></td>
+<td><p><em>none</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>swap</strong></p></td>
+<td><p>swaps mult and chips during scoring or causes other cards to do so <em>(added in 1606b)</em></p></td>
+<td><p><em>none</em></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>retrigger</strong></p></td>
+<td><p>retriggers a card at some point of scoring</p></td>
+<td><p>Mime, Dusk, Hack, Seltzer, Sock and Buskin, Hanging Chad</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>scaling</strong></p></td>
+<td><p>scales a value on a trigger</p></td>
+<td><p>Ceremonial Dagger, Seltzer, Ride the Bus, Egg, Runner, Ice Cream, Constellation, Green Joker, Red Card, Madness, Square Joker, Vampire, Hologram, Rocket, Turtle Bean, Obelisk, Flash Card, Lucky Cat, Popcorn, Spare Trousers, Ramen, Castle, Campfire, Throwback, Glass Joker, Wee Joker, Hit the Road, Canio, Yorick</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>reset</strong></p></td>
+<td><p>has a value that resets</p></td>
+<td><p>Obelisk, Campfire, Hit the Road, Ride the Bus</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>suit</strong></p></td>
+<td><p>trigger is affected by a suit</p></td>
+<td><p>Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Smeared Joker, Castle, Ancient Joker, Seeing Double, Blackboard, Flower Pot, The Idol, Rough Gem, Bloodstone, Arrowhead, Onyx Agate</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>diamonds</strong></p></td>
+<td><p>trigger is affected by diamonds</p></td>
+<td><p>Greedy Joker, Smeared Joker, Rough Gem</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>hearts</strong></p></td>
+<td><p>trigger is affected by hearts</p></td>
+<td><p>Lusty Joker, Smeared Joker, Bloodstone</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>spades</strong></p></td>
+<td><p>trigger is affected by spades</p></td>
+<td><p>Wrathful Joker, Smeared Joker, Arrowhead, Blackboard</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>clubs</strong></p></td>
+<td><p>trigger is affected by clubs</p></td>
+<td><p>Gluttonous Joker, Smeared Joker, Onyx Agate, Seeing Double, Blackboard</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>hand_type</strong></p></td>
+<td><p>trigger is affected by a specific hand type</p></td>
+<td><p>Jolly Joker, Zany Joker, Crazy Joker, Mad Joker, Droll Joker, Sly Joker, Wily Joker, Clever Joker, Devious Joker, Crafty Joker, Four Fingers, Supernova, Runner, Superposition, To Do List, Séance, Shortcut, Obelisk, Spare Trousers, The Duo, The Trio, The Family, The Order, The Tribe, Burnt Joker, Card Sharp, Space Joker</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rank</strong></p></td>
+<td><p>trigger is affected by a specific rank</p></td>
+<td><p>8 Ball, Raised Fist, Fibonacci, Hack, Even Steven, Odd Todd, Scholar, Sixth Sense, Superposition, Cloud 9, Mail-In Rebate, Walkie Talkie, Wee Joker, The Idol, Hit the Road, Baron, Shoot the Moon, Triboulet</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ace</strong></p></td>
+<td><p>trigger is affected by aces</p></td>
+<td><p>Fibonacci, Odd Todd, Scholar, Superposition</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>two</strong></p></td>
+<td><p>trigger is affected by 2s</p></td>
+<td><p>Fibonacci, Hack, Even Steven, Wee Joker</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>three</strong></p></td>
+<td><p>trigger is affected by 3s</p></td>
+<td><p>Fibonacci, Hack, Odd Todd</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>four</strong></p></td>
+<td><p>trigger is affected by 4s</p></td>
+<td><p>Hack, Even Steven, Walkie Talkie</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>five</strong></p></td>
+<td><p>trigger is affected by 5s</p></td>
+<td><p>Fibonacci, Hack, Odd Todd</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>six</strong></p></td>
+<td><p>trigger is affected by 6s</p></td>
+<td><p>Even Steven, Sixth Sense</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>seven</strong></p></td>
+<td><p>trigger is affected by 7s</p></td>
+<td><p>Odd Todd</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>eight</strong></p></td>
+<td><p>trigger is affected by 8s</p></td>
+<td><p>8 Ball, Even Steven, Fibonacci</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>nine</strong></p></td>
+<td><p>trigger is affected by 9s</p></td>
+<td><p>Odd Todd, Cloud 9</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ten</strong></p></td>
+<td><p>trigger is affected by 10s</p></td>
+<td><p>Even Steven, Walkie Talkie</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>jack</strong></p></td>
+<td><p>trigger is affected by Jacks</p></td>
+<td><p>Hit the Road</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>queen</strong></p></td>
+<td><p>trigger is affected by Queens</p></td>
+<td><p>Shoot the Moon, Triboulet</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>king</strong></p></td>
+<td><p>trigger is affected by Kings</p></td>
+<td><p>Baron, Triboulet</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>face</strong></p></td>
+<td><p>trigger is affected by face cards</p></td>
+<td><p>Scary Face, Pareidolia, Business Card, Ride the Bus, Faceless Joker, Midas Mask, Photograph, Reserved Parking, Smiley Face, Sock and Buskin, Canio</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>economy</strong></p></td>
+<td><p>effect is based around money</p></td>
+<td><p>Credit Card, Chaos the Clown, Delayed Gratification, Business Card, Egg, Faceless Joker, To Do List, Cloud 9, Rocket, Gift Card, Reserved Parking, Mail-In Rebate, To the Moon, Golden Joker, Trading Card, Golden Ticket, Rough Gem, Matador, Satellite</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>generation</strong></p></td>
+<td><p>generates another object on a trigger</p></td>
+<td><p>Marble Joker, 8 Ball, DNA, Sixth Sense, Superposition, Séance, Riff-Raff, Vagabond, Hallucination, Diet Cola, Certificate, Invisible Joker, Cartomancer, Perkeo</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>destroy_card</strong></p></td>
+<td><p>destroys another card</p></td>
+<td><p>Ceremonial Dagger, Madness, Trading Card</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>hands</strong></p></td>
+<td><p>effect is based around hands</p></td>
+<td><p>Loyalty Card, Burglar, Troubadour, Dusk, Acrobat, DNA, Vagabond</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>discard</strong></p></td>
+<td><p>effect is based around discards</p></td>
+<td><p>Banner, Mystic Summit, Delayed Gratification, Burglar, Faceless Joker, Green Joker, Mail-In Rebate, Drunkard, Trading Card, Ramen, Castle, Merry Andy, Hit the Road, Burnt Joker, Yorick</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>hand_size</strong></p></td>
+<td><p>effect is based around hand size</p></td>
+<td><p>Juggler, Turtle Bean, Troubadour, Merry Andy, Stuntman</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>chance</strong></p></td>
+<td><p>effect has a chance to happen</p></td>
+<td><p>8 Ball, Gros Michel, Business Card, Space Joker, Cavendish, Hallucination, Reserved Parking, Bloodstone</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>joker_slot</strong></p></td>
+<td><p>related to Joker slots</p></td>
+<td><p>Abstract Joker, Joker Stencil</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>mod_chance</strong></p></td>
+<td><p>affects other chance rolls</p></td>
+<td><p>Oops! All 6s</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>copying</strong></p></td>
+<td><p>copies the effect of another card</p></td>
+<td><p>Blueprint, Brainstorm</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>full_deck</strong></p></td>
+<td><p>effect is based on your full deck</p></td>
+<td><p>Steel Joker, Cloud 9, Erosion, Stone Joker, Driver’s License</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>passive</strong></p></td>
+<td><p>passive bonus from owning the card</p></td>
+<td><p>Four Fingers, Credit Card, Chaos the Clown, Pareidolia, Splash, Shortcut, To the Moon, Juggler, Drunkard, Troubadour, Smeared Joker, Showman, Oops! All 6s, Astronomer</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>joker</strong></p></td>
+<td><p>related to Joker cards</p></td>
+<td><p>Abstract Joker, Riff-Raff, Swashbuckler</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tarot</strong></p></td>
+<td><p>related to Tarot cards</p></td>
+<td><p>8 Ball, Superposition, Vagabond, Hallucination, Fortune Teller, Cartomancer</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>planet</strong></p></td>
+<td><p>related to Planet cards</p></td>
+<td><p>Astronomer, Constellation, Satellite</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>spectral</strong></p></td>
+<td><p>related to Spectral cards</p></td>
+<td><p>Sixth Sense, Séance</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>enhancements</strong></p></td>
+<td><p>related to enhancements</p></td>
+<td><p>Golden Ticket, Marble Joker, Steel Joker, Vampire, Midas Mask, Stone Joker, Lucky Cat, Glass Joker, Driver’s License</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>seals</strong></p></td>
+<td><p>related to seals</p></td>
+<td><p>Certificate</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>editions</strong></p></td>
+<td><p>related to editions <em>(added in 1606b)</em></p></td>
+<td><p><em>none</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>tag</strong></p></td>
+<td><p>related to tags <em>(added in 1606b)</em></p></td>
+<td><p>Diet Cola</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>skip</strong></p></td>
+<td><p>effect linked to skipping blinds <em>(added in 1606b)</em></p></td>
+<td><p>Throwback</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>modify_card</strong></p></td>
+<td><p>modifies playing cards</p></td>
+<td><p>Pareidolia, Hiker, Vampire, Midas Mask</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>perma_bonus</strong></p></td>
+<td><p>permanently modifies the stats of cards <em>(added in 1606b)</em></p></td>
+<td><p>Hiker</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>prevents_death</strong></p></td>
+<td><p>effect prevents losing a run</p></td>
+<td><p>Mr. Bones</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>boss_blind</strong></p></td>
+<td><p>effect linked to boss blinds <em>(added in 1606b)</em></p></td>
+<td><p>Rocket, Luchador, Matador, Campfire, Chicot</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>reroll</strong></p></td>
+<td><p>effect is based around rerolling the shop</p></td>
+<td><p>Chaos the Clown, Flash Card</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>on_sell</strong></p></td>
+<td><p>triggers when card is sold</p></td>
+<td><p>Luchador, Diet Cola, Invisible Joker</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>sell_value</strong></p></td>
+<td><p>effect is based around sell value of a card</p></td>
+<td><p>Egg, Swashbuckler, Ceremonial Dagger, Gift Card</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>food</strong></p></td>
+<td><p>themed on food</p></td>
+<td><p>Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>space</strong></p></td>
+<td><p>themed on space</p></td>
+<td><p>Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="vanilla-joker-attributes">
+<h3>Vanilla Joker Attributes<a class="headerlink" href="#vanilla-joker-attributes" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Joker Name</p></th>
+<th class="head"><p>Attributes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Joker</strong></p></td>
+<td><p>mult</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Greedy Joker</strong></p></td>
+<td><p>mult, suit, diamonds</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Lusty Joker</strong></p></td>
+<td><p>mult, suit, hearts</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wrathful Joker</strong></p></td>
+<td><p>mult, suit, spades</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Gluttonous Joker</strong></p></td>
+<td><p>mult, suit, clubs</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Jolly Joker</strong></p></td>
+<td><p>mult, hand_type</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Zany Joker</strong></p></td>
+<td><p>mult, hand_type</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Mad Joker</strong></p></td>
+<td><p>mult, hand_type</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Crazy Joker</strong></p></td>
+<td><p>mult, hand_type</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Droll Joker</strong></p></td>
+<td><p>mult, hand_type</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Sly Joker</strong></p></td>
+<td><p>hand_type, chips</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wily Joker</strong></p></td>
+<td><p>hand_type, chips</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Clever Joker</strong></p></td>
+<td><p>hand_type, chips</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Devious Joker</strong></p></td>
+<td><p>hand_type, chips</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Crafty Joker</strong></p></td>
+<td><p>hand_type, chips</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Half Joker</strong></p></td>
+<td><p>mult</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Joker Stencil</strong></p></td>
+<td><p>joker_slot, xmult</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Four Fingers</strong></p></td>
+<td><p>hand_type, passive</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mime</strong></p></td>
+<td><p>retrigger</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Credit Card</strong></p></td>
+<td><p>passive, economy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ceremonial Dagger</strong></p></td>
+<td><p>mult, destroy_card, sell_value, scaling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Banner</strong></p></td>
+<td><p>discard, chips</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mystic Summit</strong></p></td>
+<td><p>mult, discard</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Marble Joker</strong></p></td>
+<td><p>enhancements, generation</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Loyalty Card</strong></p></td>
+<td><p>xmult, hands</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>8 Ball</strong></p></td>
+<td><p>chance, eight, tarot, generation, rank</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Misprint</strong></p></td>
+<td><p>mult</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Dusk</strong></p></td>
+<td><p>retrigger, hands</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Raised Fist</strong></p></td>
+<td><p>mult, rank</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Chaos the Clown</strong></p></td>
+<td><p>reroll, passive, economy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Fibonacci</strong></p></td>
+<td><p>three, mult, ace, eight, two, rank, five</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Steel Joker</strong></p></td>
+<td><p>xmult, full_deck, enhancements</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Scary Face</strong></p></td>
+<td><p>chips, face</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Abstract Joker</strong></p></td>
+<td><p>joker_slot, mult, joker</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Delayed Gratification</strong></p></td>
+<td><p>discard, economy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Hack</strong></p></td>
+<td><p>three, retrigger, four, two, rank, five</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Pareidolia</strong></p></td>
+<td><p>modify_card, passive, face</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gros Michel</strong></p></td>
+<td><p>chance, mult, food</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Even Steven</strong></p></td>
+<td><p>mult, ten, four, eight, two, six, rank</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Odd Todd</strong></p></td>
+<td><p>three, ace, seven, chips, nine, rank, five</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Scholar</strong></p></td>
+<td><p>mult, ace, chips, rank</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Business Card</strong></p></td>
+<td><p>chance, face, economy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Supernova</strong></p></td>
+<td><p>mult, hand_type, space</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ride the Bus</strong></p></td>
+<td><p>mult, face, reset, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Space Joker</strong></p></td>
+<td><p>chance, hand_type, space</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Egg</strong></p></td>
+<td><p>food, sell_value, scaling, economy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Burglar</strong></p></td>
+<td><p>discard, hands</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Blackboard</strong></p></td>
+<td><p>xmult, suit, spades, clubs</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Runner</strong></p></td>
+<td><p>hand_type, chips, scaling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ice Cream</strong></p></td>
+<td><p>food, chips, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>DNA</strong></p></td>
+<td><p>generation, hands</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Splash</strong></p></td>
+<td><p>passive</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Blue Joker</strong></p></td>
+<td><p>chips</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Sixth Sense</strong></p></td>
+<td><p>spectral, six, generation, rank</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Constellation</strong></p></td>
+<td><p>xmult, planet, space, scaling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Hiker</strong></p></td>
+<td><p>modify_card, chips, perma_bonus</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Faceless Joker</strong></p></td>
+<td><p>discard, face, economy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Green Joker</strong></p></td>
+<td><p>mult, discard, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Superposition</strong></p></td>
+<td><p>ace, hand_type, tarot, generation, rank</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>To Do List</strong></p></td>
+<td><p>hand_type, economy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cavendish</strong></p></td>
+<td><p>xmult, chance, food</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Card Sharp</strong></p></td>
+<td><p>xmult, hand_type</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Red Card</strong></p></td>
+<td><p>mult, scaling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Madness</strong></p></td>
+<td><p>xmult, destroy_card, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Square Joker</strong></p></td>
+<td><p>chips, scaling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Séance</strong></p></td>
+<td><p>spectral, hand_type, generation</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Riff-Raff</strong></p></td>
+<td><p>joker, generation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Vampire</strong></p></td>
+<td><p>xmult, modify_card, enhancements, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Shortcut</strong></p></td>
+<td><p>hand_type, passive</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Hologram</strong></p></td>
+<td><p>xmult, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Vagabond</strong></p></td>
+<td><p>tarot, generation, hands</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Baron</strong></p></td>
+<td><p>xmult, rank, king</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cloud 9</strong></p></td>
+<td><p>full_deck, nine, rank, economy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rocket</strong></p></td>
+<td><p>space, scaling, economy, boss_blind</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Obelisk</strong></p></td>
+<td><p>xmult, hand_type, reset, scaling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Midas Mask</strong></p></td>
+<td><p>modify_card, enhancements, face</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Luchador</strong></p></td>
+<td><p>on_sell, boss_blind</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Photograph</strong></p></td>
+<td><p>xmult, face</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Gift Card</strong></p></td>
+<td><p>sell_value, economy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Turtle Bean</strong></p></td>
+<td><p>food, hand_size, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Erosion</strong></p></td>
+<td><p>mult, full_deck</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Reserved Parking</strong></p></td>
+<td><p>chance, face, economy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mail-In Rebate</strong></p></td>
+<td><p>discard, rank, economy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>To the Moon</strong></p></td>
+<td><p>passive, economy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Hallucination</strong></p></td>
+<td><p>chance, tarot, generation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Fortune Teller</strong></p></td>
+<td><p>mult, tarot</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Juggler</strong></p></td>
+<td><p>hand_size, passive</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Drunkard</strong></p></td>
+<td><p>discard, passive</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Stone Joker</strong></p></td>
+<td><p>full_deck, enhancements, chips</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Golden Joker</strong></p></td>
+<td><p>economy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Lucky Cat</strong></p></td>
+<td><p>xmult, enhancements, scaling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Baseball Card</strong></p></td>
+<td><p>xmult</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Bull</strong></p></td>
+<td><p>chips</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Diet Cola</strong></p></td>
+<td><p>on_sell, food, generation, tag</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Trading Card</strong></p></td>
+<td><p>destroy_card, discard, economy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Flash Card</strong></p></td>
+<td><p>mult, reroll, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Popcorn</strong></p></td>
+<td><p>mult, food, scaling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Spare Trousers</strong></p></td>
+<td><p>mult, hand_type, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ancient Joker</strong></p></td>
+<td><p>xmult, suit</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ramen</strong></p></td>
+<td><p>xmult, food, discard, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Walkie Talkie</strong></p></td>
+<td><p>mult, ten, four, chips, rank</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Seltzer</strong></p></td>
+<td><p>retrigger, food, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Castle</strong></p></td>
+<td><p>suit, discard, chips, scaling</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Smiley Face</strong></p></td>
+<td><p>mult, face</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Campfire</strong></p></td>
+<td><p>xmult, reset, scaling, boss_blind</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Golden Ticket</strong></p></td>
+<td><p>enhancements, economy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mr. Bones</strong></p></td>
+<td><p>prevents_death</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Acrobat</strong></p></td>
+<td><p>xmult, hands</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Sock and Buskin</strong></p></td>
+<td><p>retrigger, face</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Swashbuckler</strong></p></td>
+<td><p>mult, joker, sell_value</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Troubadour</strong></p></td>
+<td><p>hand_size, passive, hands</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Certificate</strong></p></td>
+<td><p>seals, generation</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Smeared Joker</strong></p></td>
+<td><p>suit, hearts, passive, diamonds, spades, clubs</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Throwback</strong></p></td>
+<td><p>xmult, scaling, skip</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Hanging Chad</strong></p></td>
+<td><p>retrigger</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rough Gem</strong></p></td>
+<td><p>suit, diamonds, economy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Bloodstone</strong></p></td>
+<td><p>xmult, chance, suit, hearts</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Arrowhead</strong></p></td>
+<td><p>suit, chips, spades</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Onyx Agate</strong></p></td>
+<td><p>mult, suit, clubs</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Glass Joker</strong></p></td>
+<td><p>xmult, enhancements, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Showman</strong></p></td>
+<td><p>passive</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Flower Pot</strong></p></td>
+<td><p>xmult, suit</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Blueprint</strong></p></td>
+<td><p>copying</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wee Joker</strong></p></td>
+<td><p>two, chips, rank, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Merry Andy</strong></p></td>
+<td><p>hand_size, discard</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Oops! All 6s</strong></p></td>
+<td><p>mod_chance, passive</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>The Idol</strong></p></td>
+<td><p>xmult, suit, rank</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Seeing Double</strong></p></td>
+<td><p>xmult, suit, clubs</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Matador</strong></p></td>
+<td><p>economy, boss_blind</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Hit the Road</strong></p></td>
+<td><p>xmult, jack, discard, reset, rank, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>The Duo</strong></p></td>
+<td><p>xmult, hand_type</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>The Trio</strong></p></td>
+<td><p>xmult, hand_type</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>The Family</strong></p></td>
+<td><p>xmult, hand_type</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>The Order</strong></p></td>
+<td><p>xmult, hand_type</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>The Tribe</strong></p></td>
+<td><p>xmult, hand_type</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Stuntman</strong></p></td>
+<td><p>hand_size, chips</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Invisible Joker</strong></p></td>
+<td><p>on_sell, generation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Brainstorm</strong></p></td>
+<td><p>copying</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Satellite</strong></p></td>
+<td><p>planet, space, economy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Shoot the Moon</strong></p></td>
+<td><p>mult, rank, queen</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Driver’s License</strong></p></td>
+<td><p>xmult, full_deck, enhancements</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Cartomancer</strong></p></td>
+<td><p>tarot, generation</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Astronomer</strong></p></td>
+<td><p>planet, passive, space</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Burnt Joker</strong></p></td>
+<td><p>hand_type, discard</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Bootstraps</strong></p></td>
+<td><p>mult</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Canio</strong></p></td>
+<td><p>xmult, face, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Triboulet</strong></p></td>
+<td><p>xmult, rank, queen, king</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Yorick</strong></p></td>
+<td><p>xmult, discard, scaling</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Chicot</strong></p></td>
+<td><p>boss_blind</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Perkeo</strong></p></td>
+<td><p>generation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../SMODS.Atlas/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../SMODS.Blind/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

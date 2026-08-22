@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Utility functions - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Internal Documentation" href="../Internal-Documentation/" /><link rel="prev" title="Object Weights" href="../Weight-System/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="Utility functions"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#debugging">Debugging</a><ul>
+<li><a class="reference internal" href="#inspect-table-string"><code class="docutils literal notranslate"><span class="pre">inspect(table)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code></a></li>
+<li><a class="reference internal" href="#inspectdepth-table-string"><code class="docutils literal notranslate"><span class="pre">inspectDepth(table)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code></a></li>
+<li><a class="reference internal" href="#inspectfunction-func-string"><code class="docutils literal notranslate"><span class="pre">inspectFunction(func)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code></a></li>
+<li><a class="reference internal" href="#serialize-t-indent-string"><code class="docutils literal notranslate"><span class="pre">serialize(t,</span> <span class="pre">indent)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code></a></li>
+<li><a class="reference internal" href="#serialize-string-s-string"><code class="docutils literal notranslate"><span class="pre">serialize_string(s)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code></a></li>
+<li><a class="reference internal" href="#tprint-t-indent-string"><code class="docutils literal notranslate"><span class="pre">tprint(t,</span> <span class="pre">indent)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code></a></li>
+<li><a class="reference internal" href="#smods-deepfind-tbl-val-mode-immediate-table"><code class="docutils literal notranslate"><span class="pre">SMODS.deepfind(tbl,</span> <span class="pre">val,</span> <span class="pre">mode,</span> <span class="pre">immediate)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></a></li>
+<li><a class="reference internal" href="#smods-debug-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.debug_calculation()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#number-formatting">Number Formatting</a><ul>
+<li><a class="reference internal" href="#round-number-num-precision-number"><code class="docutils literal notranslate"><span class="pre">round_number(num,</span> <span class="pre">precision)</span> <span class="pre">-&gt;</span> <span class="pre">number</span></code></a></li>
+<li><a class="reference internal" href="#format-ui-value-value-string"><code class="docutils literal notranslate"><span class="pre">format_ui_value(value)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#randomness">Randomness</a><ul>
+<li><a class="reference internal" href="#smods-poll-rarity-pool-key-rand-key-string-number"><code class="docutils literal notranslate"><span class="pre">SMODS.poll_rarity(_pool_key,</span> <span class="pre">_rand_key)</span> <span class="pre">-&gt;</span> <span class="pre">string|number</span></code></a></li>
+<li><a class="reference internal" href="#smods-poll-seal-args-string"><code class="docutils literal notranslate"><span class="pre">SMODS.poll_seal(args)</span> <span class="pre">-&gt;</span> <span class="pre">string?</span></code></a></li>
+<li><a class="reference internal" href="#smods-poll-enhancement-args-string"><code class="docutils literal notranslate"><span class="pre">SMODS.poll_enhancement(args)</span> <span class="pre">-&gt;</span> <span class="pre">string?</span></code></a></li>
+<li><a class="reference internal" href="#smods-poll-edition-args-string"><code class="docutils literal notranslate"><span class="pre">SMODS.poll_edition(args)</span> <span class="pre">-&gt;</span> <span class="pre">string?</span></code></a></li>
+<li><a class="reference internal" href="#smods-poll-object-args-string"><code class="docutils literal notranslate"><span class="pre">SMODS.poll_object(args)</span> <span class="pre">-&gt;</span> <span class="pre">string?</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mod-facing-utilities">Mod-facing Utilities</a><ul>
+<li><a class="reference internal" href="#smods-find-mod-id-table"><code class="docutils literal notranslate"><span class="pre">SMODS.find_mod(id)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></a></li>
+<li><a class="reference internal" href="#smods-load-file-path-id-function"><code class="docutils literal notranslate"><span class="pre">SMODS.load_file(path,</span> <span class="pre">id)</span> <span class="pre">-&gt;</span> <span class="pre">function</span></code></a></li>
+<li><a class="reference internal" href="#smods-juice-up-blind"><code class="docutils literal notranslate"><span class="pre">SMODS.juice_up_blind()</span></code></a></li>
+<li><a class="reference internal" href="#smods-change-base-card-suit-rank-manual-sprites-card-string"><code class="docutils literal notranslate"><span class="pre">SMODS.change_base(card,</span> <span class="pre">suit,</span> <span class="pre">rank,</span> <span class="pre">manual_sprites)</span> <span class="pre">-&gt;</span> <span class="pre">Card?,</span> <span class="pre">string?</span></code></a></li>
+<li><a class="reference internal" href="#smods-modify-rank-card-amount-manual-sprites-card-string"><code class="docutils literal notranslate"><span class="pre">SMODS.modify_rank(card,</span> <span class="pre">amount,</span> <span class="pre">manual_sprites)</span> <span class="pre">-&gt;</span> <span class="pre">Card?,</span> <span class="pre">string?</span></code></a></li>
+<li><a class="reference internal" href="#smods-find-card-key-count-debuffed-table"><code class="docutils literal notranslate"><span class="pre">SMODS.find_card(key,</span> <span class="pre">count_debuffed)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></a></li>
+<li><a class="reference internal" href="#smods-add-card-t-card"><code class="docutils literal notranslate"><span class="pre">SMODS.add_card(t)</span> <span class="pre">-&gt;</span> <span class="pre">Card</span></code></a></li>
+<li><a class="reference internal" href="#smods-create-card-t-card"><code class="docutils literal notranslate"><span class="pre">SMODS.create_card(t)</span> <span class="pre">-&gt;</span> <span class="pre">Card</span></code></a></li>
+<li><a class="reference internal" href="#smods-add-to-deck-card-args"><code class="docutils literal notranslate"><span class="pre">SMODS.add_to_deck(card,</span> <span class="pre">args)</span></code></a></li>
+<li><a class="reference internal" href="#smods-copy-card-card-args"><code class="docutils literal notranslate"><span class="pre">SMODS.copy_card(card,</span> <span class="pre">args)</span></code></a></li>
+<li><a class="reference internal" href="#smods-debuff-card-card-debuff-source"><code class="docutils literal notranslate"><span class="pre">SMODS.debuff_card(card,</span> <span class="pre">debuff,</span> <span class="pre">source)</span></code></a></li>
+<li><a class="reference internal" href="#smods-recalc-debuff-card"><code class="docutils literal notranslate"><span class="pre">SMODS.recalc_debuff(card)</span></code></a></li>
+<li><a class="reference internal" href="#smods-merge-lists-table"><code class="docutils literal notranslate"><span class="pre">SMODS.merge_lists(...)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></a></li>
+<li><a class="reference internal" href="#smods-get-blind-amount-ante-number"><code class="docutils literal notranslate"><span class="pre">SMODS.get_blind_amount(ante)</span> <span class="pre">-&gt;</span> <span class="pre">number</span></code></a></li>
+<li><a class="reference internal" href="#smods-stake-from-index-index-string"><code class="docutils literal notranslate"><span class="pre">SMODS.stake_from_index(index)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code></a></li>
+<li><a class="reference internal" href="#smods-upgrade-poker-hands-args"><code class="docutils literal notranslate"><span class="pre">SMODS.upgrade_poker_hands(args)</span></code></a></li>
+<li><a class="reference internal" href="#smods-smart-level-up-hand-card-hand-instant-amount"><code class="docutils literal notranslate"><span class="pre">SMODS.smart_level_up_hand(card,</span> <span class="pre">hand,</span> <span class="pre">instant,</span> <span class="pre">amount)</span></code></a></li>
+<li><a class="reference internal" href="#smods-blueprint-effect-copier-copied-card-context-table"><code class="docutils literal notranslate"><span class="pre">SMODS.blueprint_effect(copier,</span> <span class="pre">copied_card,</span> <span class="pre">context)</span> <span class="pre">-&gt;</span> <span class="pre">table?</span></code></a></li>
+<li><a class="reference internal" href="#smods-merge-effects-table"><code class="docutils literal notranslate"><span class="pre">SMODS.merge_effects(...)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></a></li>
+<li><a class="reference internal" href="#smods-has-enhancement-card-key-bool"><code class="docutils literal notranslate"><span class="pre">SMODS.has_enhancement(card,</span> <span class="pre">key)</span> <span class="pre">-&gt;</span> <span class="pre">bool</span></code></a></li>
+<li><a class="reference internal" href="#smods-is-eternal-card-trigger-bool"><code class="docutils literal notranslate"><span class="pre">SMODS.is_eternal(card,</span> <span class="pre">trigger)</span> <span class="pre">-&gt;</span> <span class="pre">bool</span></code></a></li>
+<li><a class="reference internal" href="#smods-shallow-copy-t-table"><code class="docutils literal notranslate"><span class="pre">SMODS.shallow_copy(t)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></a></li>
+<li><a class="reference internal" href="#time-func-number"><code class="docutils literal notranslate"><span class="pre">time(func,</span> <span class="pre">...)</span> <span class="pre">-&gt;</span> <span class="pre">number</span></code></a></li>
+<li><a class="reference internal" href="#smods-is-playing-card-card-boolean"><code class="docutils literal notranslate"><span class="pre">SMODS.is_playing_card(card)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+<li><a class="reference internal" href="#smods-destroy-cards-cards-args-table"><code class="docutils literal notranslate"><span class="pre">SMODS.destroy_cards(cards,</span> <span class="pre">args)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></a></li>
+<li><a class="reference internal" href="#smods-add-voucher-to-shop-key-smods-add-booster-to-shop-key"><code class="docutils literal notranslate"><span class="pre">SMODS.add_voucher_to_shop(key)</span></code>/<code class="docutils literal notranslate"><span class="pre">SMODS.add_booster_to_shop(key)</span></code></a></li>
+<li><a class="reference internal" href="#smods-change-voucher-limit-mod-smods-change-booster-limit-mod"><code class="docutils literal notranslate"><span class="pre">SMODS.change_voucher_limit(mod)</span></code>/<code class="docutils literal notranslate"><span class="pre">SMODS.change_booster_limit(mod)</span></code></a></li>
+<li><a class="reference internal" href="#smods-change-free-rerolls-mod"><code class="docutils literal notranslate"><span class="pre">SMODS.change_free_rerolls(mod)</span></code></a></li>
+<li><a class="reference internal" href="#smods-change-play-limit-mod-smods-change-discard-limit-mod"><code class="docutils literal notranslate"><span class="pre">SMODS.change_play_limit(mod)</span></code>/<code class="docutils literal notranslate"><span class="pre">SMODS.change_discard_limit(mod)</span></code></a></li>
+<li><a class="reference internal" href="#smods-draw-cards-hand-space"><code class="docutils literal notranslate"><span class="pre">SMODS.draw_cards(hand_space)</span></code></a></li>
+<li><a class="reference internal" href="#smods-is-poker-hand-visible-handname-boolean"><code class="docutils literal notranslate"><span class="pre">SMODS.is_poker_hand_visible(handname)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+<li><a class="reference internal" href="#smods-create-sprite-x-y-width-height-atlas-key-pos-sprite-animatedsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.create_sprite(x,</span> <span class="pre">y,</span> <span class="pre">width,</span> <span class="pre">height,</span> <span class="pre">atlas_key,</span> <span class="pre">pos)</span> <span class="pre">-&gt;</span> <span class="pre">Sprite|AnimatedSprite</span></code></a></li>
+<li><a class="reference internal" href="#smods-is-active-blind-key-ignore-disabled-boolean"><code class="docutils literal notranslate"><span class="pre">SMODS.is_active_blind(key,</span> <span class="pre">ignore_disabled)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+<li><a class="reference internal" href="#smods-get-clean-pool-type-rarity-legendary-append"><code class="docutils literal notranslate"><span class="pre">SMODS.get_clean_pool(_type,</span> <span class="pre">_rarity,</span> <span class="pre">_legendary,</span> <span class="pre">_append)</span></code></a></li>
+<li><a class="reference internal" href="#smods-size-of-pool-pool-integer"><code class="docutils literal notranslate"><span class="pre">SMODS.size_of_pool(pool)</span> <span class="pre">-&gt;</span> <span class="pre">integer</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#joker-effects">Joker Effects</a><ul>
+<li><a class="reference internal" href="#smods-smeared-check-card-suit-boolean"><code class="docutils literal notranslate"><span class="pre">SMODS.smeared_check(card,</span> <span class="pre">suit)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+<li><a class="reference internal" href="#smods-seeing-double-check-hand-suit-boolean"><code class="docutils literal notranslate"><span class="pre">SMODS.seeing_double_check(hand,</span> <span class="pre">suit)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+<li><a class="reference internal" href="#smods-showman-card-key-boolean"><code class="docutils literal notranslate"><span class="pre">SMODS.showman(card_key)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+<li><a class="reference internal" href="#smods-four-fingers-hand-type-number"><code class="docutils literal notranslate"><span class="pre">SMODS.four_fingers(hand_type)</span> <span class="pre">-&gt;</span> <span class="pre">number</span></code></a></li>
+<li><a class="reference internal" href="#smods-shortcut-boolean"><code class="docutils literal notranslate"><span class="pre">SMODS.shortcut()</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+<li><a class="reference internal" href="#smods-wrap-around-straight-boolean"><code class="docutils literal notranslate"><span class="pre">SMODS.wrap_around_straight()</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#card-methods">Card Methods</a><ul>
+<li><a class="reference internal" href="#card-should-hide-front-boolean"><code class="docutils literal notranslate"><span class="pre">Card:should_hide_front()</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+<li><a class="reference internal" href="#card-is-rarity-rarity-boolean"><code class="docutils literal notranslate"><span class="pre">Card:is_rarity(rarity)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+<li><a class="reference internal" href="#card-can-calculate-ignore-debuff-ignore-sliced-boolean"><code class="docutils literal notranslate"><span class="pre">Card:can_calculate(ignore_debuff,</span> <span class="pre">ignore_sliced)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/API Documentation/Utility.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Utility functions</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="utility-functions">
+<h1>Utility functions<a class="headerlink" href="#utility-functions" title="Link to this heading">#</a></h1>
+<p>Steamodded provides utility functions that extend or replace vanilla functionality or provide other useful tools you may need when making your mod. This page contains information on these functions. Check out <code class="docutils literal notranslate"><span class="pre">src/utils.lua</span></code> if you’d like to learn more about a function’s implementation.</p>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<section id="inspect-table-string">
+<h3><code class="docutils literal notranslate"><span class="pre">inspect(table)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code><a class="headerlink" href="#inspect-table-string" title="Link to this heading">#</a></h3>
+<p>Given an input table, outputs a shallow mapping of keys to values as a string. Gives no further information on subtables.</p>
+</section>
+<section id="inspectdepth-table-string">
+<h3><code class="docutils literal notranslate"><span class="pre">inspectDepth(table)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code><a class="headerlink" href="#inspectdepth-table-string" title="Link to this heading">#</a></h3>
+<p>Given an input table, recursively creates a string representation up to a depth of 5.</p>
+</section>
+<section id="inspectfunction-func-string">
+<h3><code class="docutils literal notranslate"><span class="pre">inspectFunction(func)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code><a class="headerlink" href="#inspectfunction-func-string" title="Link to this heading">#</a></h3>
+<p>Given an input function, outputs details on its name, source, line of definition and number of upvalues.</p>
+</section>
+<section id="serialize-t-indent-string">
+<h3><code class="docutils literal notranslate"><span class="pre">serialize(t,</span> <span class="pre">indent)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code><a class="headerlink" href="#serialize-t-indent-string" title="Link to this heading">#</a></h3>
+<p>Given an input table, creates a string containing Lua code that evaluates to the serializable part of <code class="docutils literal notranslate"><span class="pre">t</span></code>. Information may be lost, and circular references are not resolved.</p>
+</section>
+<section id="serialize-string-s-string">
+<h3><code class="docutils literal notranslate"><span class="pre">serialize_string(s)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code><a class="headerlink" href="#serialize-string-s-string" title="Link to this heading">#</a></h3>
+<p>Serializes the provided string.</p>
+</section>
+<section id="tprint-t-indent-string">
+<h3><code class="docutils literal notranslate"><span class="pre">tprint(t,</span> <span class="pre">indent)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code><a class="headerlink" href="#tprint-t-indent-string" title="Link to this heading">#</a></h3>
+<p>Recursively stringifies an input table into pseudo-valid Lua code, leaving non-serializable values and tables above a depth of 5 into their default string representations.</p>
+</section>
+<section id="smods-deepfind-tbl-val-mode-immediate-table">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.deepfind(tbl,</span> <span class="pre">val,</span> <span class="pre">mode,</span> <span class="pre">immediate)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code><a class="headerlink" href="#smods-deepfind-tbl-val-mode-immediate-table" title="Link to this heading">#</a></h3>
+<p>Searches for provided <code class="docutils literal notranslate"><span class="pre">val</span></code> anywhere deep within the provided <code class="docutils literal notranslate"><span class="pre">tbl</span></code>. Returns a table of finds.
+<code class="docutils literal notranslate"><span class="pre">mode</span></code> - <code class="docutils literal notranslate"><span class="pre">&quot;index&quot;</span></code>/<code class="docutils literal notranslate"><span class="pre">&quot;i&quot;</span></code> will have <code class="docutils literal notranslate"><span class="pre">val</span></code> compared to the indexes in the tables. <code class="docutils literal notranslate"><span class="pre">&quot;value&quot;</span></code>/<code class="docutils literal notranslate"><span class="pre">&quot;v&quot;</span></code> will have <code class="docutils literal notranslate"><span class="pre">val</span></code> compared to the values in the tables.
+<code class="docutils literal notranslate"><span class="pre">immediate</span></code> - Will return immediately after finding the value the first time.</p>
+</section>
+<section id="smods-debug-calculation">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.debug_calculation()</span></code><a class="headerlink" href="#smods-debug-calculation" title="Link to this heading">#</a></h3>
+<p>Enables debugging of Joker calculations.
+Every time that <code class="docutils literal notranslate"><span class="pre">Card:calculate_joker()</span></code> is called, <code class="docutils literal notranslate"><span class="pre">G.contexts</span></code> is updated for every value within <code class="docutils literal notranslate"><span class="pre">context</span></code>.</p>
+</section>
+</section>
+<section id="number-formatting">
+<h2>Number Formatting<a class="headerlink" href="#number-formatting" title="Link to this heading">#</a></h2>
+<section id="round-number-num-precision-number">
+<h3><code class="docutils literal notranslate"><span class="pre">round_number(num,</span> <span class="pre">precision)</span> <span class="pre">-&gt;</span> <span class="pre">number</span></code><a class="headerlink" href="#round-number-num-precision-number" title="Link to this heading">#</a></h3>
+<p>Rounds the input number to a given amount of decimal places.</p>
+</section>
+<section id="format-ui-value-value-string">
+<h3><code class="docutils literal notranslate"><span class="pre">format_ui_value(value)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code><a class="headerlink" href="#format-ui-value-value-string" title="Link to this heading">#</a></h3>
+<p>Stringifies the input if it is not a number. Otherwise return the number as it should be displayed in the UI (e.g. scientific notation).</p>
+</section>
+</section>
+<section id="randomness">
+<h2>Randomness<a class="headerlink" href="#randomness" title="Link to this heading">#</a></h2>
+<section id="smods-poll-rarity-pool-key-rand-key-string-number">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.poll_rarity(_pool_key,</span> <span class="pre">_rand_key)</span> <span class="pre">-&gt;</span> <span class="pre">string|number</span></code><a class="headerlink" href="#smods-poll-rarity-pool-key-rand-key-string-number" title="Link to this heading">#</a></h3>
+<p>Generates a random rarity for the given pool (the only vanilla pool that supports rarities is <code class="docutils literal notranslate"><span class="pre">'Joker'</span></code>). If <code class="docutils literal notranslate"><span class="pre">_rand_key</span></code> is present, use it as a seed.</p>
+</section>
+<section id="smods-poll-seal-args-string">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.poll_seal(args)</span> <span class="pre">-&gt;</span> <span class="pre">string?</span></code><a class="headerlink" href="#smods-poll-seal-args-string" title="Link to this heading">#</a></h3>
+<p>Checks if a seal should be generated, and generates one according to the specified arguments if so. The following arguments are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code> - Randomness seed for the check whether to generate a seal, defaults to <code class="docutils literal notranslate"><span class="pre">'stdseal'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mod</span></code> - Multiplier to the base rate at which seals appear.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guaranteed</span></code> - If this is <code class="docutils literal notranslate"><span class="pre">true</span></code>, always generate a seal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> - A table of possible seals to generate. Defaults to all available seals.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type_key</span></code> - Randomness seed for the roll which seal to generate.</p></li>
+</ul>
+</section>
+<section id="smods-poll-enhancement-args-string">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.poll_enhancement(args)</span> <span class="pre">-&gt;</span> <span class="pre">string?</span></code><a class="headerlink" href="#smods-poll-enhancement-args-string" title="Link to this heading">#</a></h3>
+<p>Checks if an enhancement should be generated, and generates one according to the specified arguments if so. The following arguments are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code> - Randomness seed for the check whether to generate an enhancement, defaults to <code class="docutils literal notranslate"><span class="pre">'std_enhance'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mod</span></code> - Multiplier to the base rate at which enhancements appear.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guaranteed</span></code> - If this is <code class="docutils literal notranslate"><span class="pre">true</span></code>, always generate an enhancement.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> - A table of possible enhancements to generate. Defaults to all available enhancements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type_key</span></code> - Randomness seed for the roll which enhancement to generate.</p></li>
+</ul>
+</section>
+<section id="smods-poll-edition-args-string">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.poll_edition(args)</span> <span class="pre">-&gt;</span> <span class="pre">string?</span></code><a class="headerlink" href="#smods-poll-edition-args-string" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Checks if an edition should be generated, and generates one according to the specified arguments if so. The following arguments are supported:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code> - Randomness seed for the check whether to generate an edition, defaults to <code class="docutils literal notranslate"><span class="pre">'edition_generic'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mod</span></code> - Multiplier to the base rate at which editions appear.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_negative</span></code> - Disables negative edition chance <em>(chance is added to polychrome)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guaranteed</span></code> - If this is <code class="docutils literal notranslate"><span class="pre">true</span></code>, disables base card and always generates an edition.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code> - A table of possible editions to generate. Defaults to all editions marked <code class="docutils literal notranslate"><span class="pre">in_shop</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="smods-poll-object-args-string">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.poll_object(args)</span> <span class="pre">-&gt;</span> <span class="pre">string?</span></code><a class="headerlink" href="#smods-poll-object-args-string" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Polls objects, respecting object weights if enabled. <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Weight-System#smodspoll_objectargs---stringnil">Further info on the Weights page.</a></p></li>
+</ul>
+</section>
+</section>
+<section id="mod-facing-utilities">
+<h2>Mod-facing Utilities<a class="headerlink" href="#mod-facing-utilities" title="Link to this heading">#</a></h2>
+<p>These functions facilitate specific tasks that many mods may use but may be harder to achieve when implemented individually. Some replace base game functions to create a more usable interface.</p>
+<section id="smods-find-mod-id-table">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.find_mod(id)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code><a class="headerlink" href="#smods-find-mod-id-table" title="Link to this heading">#</a></h3>
+<p>Returns a list of mods that either match the given mod ID or provide it, and are enabled and loaded.
+The result of <code class="docutils literal notranslate"><span class="pre">next(SMODS.find_mod(id))</span></code> can be used to determine if a mod is present, akin to finding cards with <code class="docutils literal notranslate"><span class="pre">SMODS.find_card</span></code>.</p>
+</section>
+<section id="smods-load-file-path-id-function">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.load_file(path,</span> <span class="pre">id)</span> <span class="pre">-&gt;</span> <span class="pre">function</span></code><a class="headerlink" href="#smods-load-file-path-id-function" title="Link to this heading">#</a></h3>
+<p>Given a path to a file in the context of the mod currently being loaded, loads the file contents and returns them as a function. If this function is called after the mod loading stage, a mod’s <code class="docutils literal notranslate"><span class="pre">id</span></code> must be specified in order to find the correct file.
+Return type is the same as <a class="reference external" href="https://love2d.org/wiki/love.filesystem.load">love.filesystem.load</a> and <a class="reference external" href="https://www.lua.org/manual/5.1/manual.html#pdf-loadfile">loadfile</a>.</p>
+<ul class="simple">
+<li><p>Example usage: <code class="docutils literal notranslate"><span class="pre">assert(SMODS.load_file('jokers.lua'))()</span></code></p></li>
+</ul>
+</section>
+<section id="smods-juice-up-blind">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.juice_up_blind()</span></code><a class="headerlink" href="#smods-juice-up-blind" title="Link to this heading">#</a></h3>
+<p>Plays a ‘juice up’ animation on the Blind chip.</p>
+</section>
+<section id="smods-change-base-card-suit-rank-manual-sprites-card-string">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.change_base(card,</span> <span class="pre">suit,</span> <span class="pre">rank,</span> <span class="pre">manual_sprites)</span> <span class="pre">-&gt;</span> <span class="pre">Card?,</span> <span class="pre">string?</span></code><a class="headerlink" href="#smods-change-base-card-suit-rank-manual-sprites-card-string" title="Link to this heading">#</a></h3>
+<p>Given a <code class="docutils literal notranslate"><span class="pre">Card</span></code> representing a playing card, changes the card’s suit, rank, or both. Either argument may be omitted to retain the original suit or rank.
+This function returns <code class="docutils literal notranslate"><span class="pre">nil</span></code> if it fails, with the second argument being a string with an error message. It is recommended to always wrap calls to it in <code class="docutils literal notranslate"><span class="pre">assert</span></code> so errors don’t go unnoticed.</p>
+<ul class="simple">
+<li><p>Examples: <code class="docutils literal notranslate"><span class="pre">assert(SMODS.change_base(card,</span> <span class="pre">'Hearts'))</span></code> converts a card into Hearts. <code class="docutils literal notranslate"><span class="pre">assert(SMODS.change_base(card,</span> <span class="pre">nil,</span> <span class="pre">'Ace'))</span></code> converts a card into an Ace. <code class="docutils literal notranslate"><span class="pre">assert(SMODS.change_base(card,</span> <span class="pre">'Hearts',</span> <span class="pre">'Ace'))</span></code> converts a card into an Ace of Hearts.
+Use <code class="docutils literal notranslate"><span class="pre">manual_sprites</span></code> if you want better control of the timing of the conversion. For a general use case during scoring, you can use the following snippet for the visuals to update at the correct timing.</p></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- Converts a card to a Jack with the correct animation timing</span>
+</span><span data-line="2"><span class="nb">assert</span><span class="p">(</span><span class="n">SMODS</span><span class="p">.</span><span class="n">change_base</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">))</span>
+</span><span data-line="3"><span class="n">G</span><span class="p">.</span><span class="n">E_MANAGER</span><span class="p">:</span><span class="n">add_event</span><span class="p">(</span><span class="n">Event</span><span class="p">({</span>
+</span><span data-line="4">    <span class="n">func</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span data-line="5">        <span class="n">card</span><span class="p">:</span><span class="n">set_sprites</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="n">card</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">card</span><span class="p">)</span>
+</span><span data-line="6">        <span class="kr">return</span> <span class="kc">true</span>
+</span><span data-line="7">    <span class="kr">end</span>
+</span><span data-line="8"><span class="p">}))</span>
+</span></pre></div>
+</div>
+</section>
+<section id="smods-modify-rank-card-amount-manual-sprites-card-string">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.modify_rank(card,</span> <span class="pre">amount,</span> <span class="pre">manual_sprites)</span> <span class="pre">-&gt;</span> <span class="pre">Card?,</span> <span class="pre">string?</span></code><a class="headerlink" href="#smods-modify-rank-card-amount-manual-sprites-card-string" title="Link to this heading">#</a></h3>
+<p>Given a <code class="docutils literal notranslate"><span class="pre">Card</span></code> representing a playing card, increases or decreases the card’s rank by the specified <code class="docutils literal notranslate"><span class="pre">amount</span></code>. The rank is increased if <code class="docutils literal notranslate"><span class="pre">amount</span></code> is positive and decreased if it is negative.
+This function returns <code class="docutils literal notranslate"><span class="pre">nil</span></code> if it fails, with the second argument being a string with an error message. It is recommended to always wrap calls to it in <code class="docutils literal notranslate"><span class="pre">assert</span></code> so errors don’t go unnoticed.</p>
+<ul class="simple">
+<li><p>Examples: <code class="docutils literal notranslate"><span class="pre">assert(SMODS.modify_rank(card,</span> <span class="pre">1))</span></code> increases a card’s rank by one, like the Strength Tarot. <code class="docutils literal notranslate"><span class="pre">assert(SMODS.modify_rank(card,</span> <span class="pre">-2))</span></code> decreases a card’s rank by two.
+Use <code class="docutils literal notranslate"><span class="pre">manual_sprites</span></code> if you want better control of the timing of the conversion. For a general use case during scoring, you can use the following snippet for the visuals to update at the correct timing.</p></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- Increases a card&#39;s rank by 1 with the correct animation timing</span>
+</span><span data-line="2"><span class="nb">assert</span><span class="p">(</span><span class="n">SMODS</span><span class="p">.</span><span class="n">modify_rank</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">))</span>
+</span><span data-line="3"><span class="n">G</span><span class="p">.</span><span class="n">E_MANAGER</span><span class="p">:</span><span class="n">add_event</span><span class="p">(</span><span class="n">Event</span><span class="p">({</span>
+</span><span data-line="4">    <span class="n">func</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span data-line="5">        <span class="n">card</span><span class="p">:</span><span class="n">set_sprites</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="n">card</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">card</span><span class="p">)</span>
+</span><span data-line="6">        <span class="kr">return</span> <span class="kc">true</span>
+</span><span data-line="7">    <span class="kr">end</span>
+</span><span data-line="8"><span class="p">}))</span>
+</span></pre></div>
+</div>
+</section>
+<section id="smods-find-card-key-count-debuffed-table">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.find_card(key,</span> <span class="pre">count_debuffed)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code><a class="headerlink" href="#smods-find-card-key-count-debuffed-table" title="Link to this heading">#</a></h3>
+<p>This function replaces <code class="docutils literal notranslate"><span class="pre">find_joker</span></code>. It operates using keys instead of names, which avoids overlap between mods.
+Returns an array of all jokers or consumables in the player’s possession with the given key. Debuffed cards count only if <code class="docutils literal notranslate"><span class="pre">count_debuffed</span></code> is true.
+This function finds cards in the joker areas returned by <code class="docutils literal notranslate"><span class="pre">SMODS.get_card_areas</span></code>. <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Calculate-Functions#adding-calculation-zones">This page</a> explains how to add your own.</p>
+</section>
+<section id="smods-add-card-t-card">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.add_card(t)</span> <span class="pre">-&gt;</span> <span class="pre">Card</span></code><a class="headerlink" href="#smods-add-card-t-card" title="Link to this heading">#</a></h3>
+<p>This function replaces <code class="docutils literal notranslate"><span class="pre">add_joker</span></code>. It takes the same input parameters as <code class="docutils literal notranslate"><span class="pre">SMODS.create_card</span></code> (below) and additionally emplaces the generated card into its area and evaluates <code class="docutils literal notranslate"><span class="pre">add_to_deck</span></code> effects.</p>
+</section>
+<section id="smods-create-card-t-card">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.create_card(t)</span> <span class="pre">-&gt;</span> <span class="pre">Card</span></code><a class="headerlink" href="#smods-create-card-t-card" title="Link to this heading">#</a></h3>
+<p>This function replaces <code class="docutils literal notranslate"><span class="pre">create_card</span></code>. It provides a cleaner interface to the same functionality. The argument to this function should always be a table. The following fields are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">set</span></code> - The card type to be generated, e.g. <code class="docutils literal notranslate"><span class="pre">'Joker'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Tarot'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Spectral'</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'Playing</span> <span class="pre">Card'</span></code> can be used for a random pick between <code class="docutils literal notranslate"><span class="pre">'Base'</span></code> and <code class="docutils literal notranslate"><span class="pre">'Enhanced'</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">area</span></code> - The card area this will be emplaced into, e.g. <code class="docutils literal notranslate"><span class="pre">G.jokers</span></code>, <code class="docutils literal notranslate"><span class="pre">G.consumeables</span></code>. Default values are determined based on <code class="docutils literal notranslate"><span class="pre">set</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">legendary</span></code> - Set this to <code class="docutils literal notranslate"><span class="pre">true</span></code> to generate a card of Legendary rarity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rarity</span></code> - If this is specified, skip rarity polling and use this instead of a chance roll between 0 and 1.</p>
+<ul>
+<li><p>Under vanilla conditions, values up to 0.7 indicate “Common” rarity, values above 0.7 and up to 0.95 indicate “Uncommon” rarity, and values above 0.95 indicate “Rare” rarity.</p></li>
+<li><p>This can also be the key of a modded rarity or <code class="docutils literal notranslate"><span class="pre">'Common'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Uncommon'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Rare'</span></code> or <code class="docutils literal notranslate"><span class="pre">'Legendary'</span></code> for vanilla rarities.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skip_materialize</span></code> - If this is <code class="docutils literal notranslate"><span class="pre">true</span></code>, a <code class="docutils literal notranslate"><span class="pre">start_materialize</span></code> animation will not be shown.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">soulable</span></code> - If this is <code class="docutils literal notranslate"><span class="pre">true</span></code>, hidden Soul-type cards are allowed to replace the generated card. Usually, this is the case for cards generated for booster packs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code> - If this is specified, generate a card with the given key instead of the random one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key_append</span></code> - An additional RNG seeding string. This should be used to put different sources of card generation on different queues.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_edition</span></code> - If this is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the generated card is guaranteed to have no randomly generated edition.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">edition</span></code>, <code class="docutils literal notranslate"><span class="pre">enhancement</span></code>, <code class="docutils literal notranslate"><span class="pre">seal</span></code> - Applies the specified modifier to the card.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stickers</span></code>, <code class="docutils literal notranslate"><span class="pre">force_stickers</span></code> - This should be an array of sticker keys. Applies all specified stickers to the card. <code class="docutils literal notranslate"><span class="pre">force_stickers</span></code> bypasses all checks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">front</span></code> - Front of the playing card, takes the playing card’s key (e.g. <code class="docutils literal notranslate"><span class="pre">H_A</span></code>). Ignores <code class="docutils literal notranslate"><span class="pre">rank</span></code> and <code class="docutils literal notranslate"><span class="pre">suit</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rank</span></code> - Rank of the playing card. Can be the <code class="docutils literal notranslate"><span class="pre">key</span></code> or the <code class="docutils literal notranslate"><span class="pre">card_key</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">'Ace'</span></code> or <code class="docutils literal notranslate"><span class="pre">'A'</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">suit</span></code> - Suit of the playing card. Can be the <code class="docutils literal notranslate"><span class="pre">key</span></code> or the <code class="docutils literal notranslate"><span class="pre">card_key</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">'Hearts'</span></code> or <code class="docutils literal notranslate"><span class="pre">'H'</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enhanced_poll</span></code> - Chance to pick <code class="docutils literal notranslate"><span class="pre">'Base'</span></code> over <code class="docutils literal notranslate"><span class="pre">'Enhanced'</span></code> with set <code class="docutils literal notranslate"><span class="pre">'Playing</span> <span class="pre">Card'</span></code>. Default: 0.6</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allow_duplicates</span></code> - Allows duplicates of created cards (when a <code class="docutils literal notranslate"><span class="pre">key</span></code> is not specified) as if Showman was owned.</p></li>
+</ul>
+</section>
+<section id="smods-add-to-deck-card-args">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.add_to_deck(card,</span> <span class="pre">args)</span></code><a class="headerlink" href="#smods-add-to-deck-card-args" title="Link to this heading">#</a></h3>
+<p><em>(Added in 1814a)</em>
+Adds <code class="docutils literal notranslate"><span class="pre">card</span></code> to the player’s owned cards, doing all the necessary operations (calling add_to_deck, emplacing the card, etc.). The following <code class="docutils literal notranslate"><span class="pre">args</span></code> are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">area</span></code> - Area the card should be added to, if not specified it will be inferred from the card.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">playing_card</span></code> - Sets the card’s playing card value. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, the value is not set. If no value is specified, it sets it to the next G.playing_card (only if <code class="docutils literal notranslate"><span class="pre">card</span></code> is a playing card)</p></li>
+</ul>
+</section>
+<section id="smods-copy-card-card-args">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.copy_card(card,</span> <span class="pre">args)</span></code><a class="headerlink" href="#smods-copy-card-card-args" title="Link to this heading">#</a></h3>
+<p><em>(Added in 1814a)</em>
+This function replaces <code class="docutils literal notranslate"><span class="pre">copy_card</span></code>. <code class="docutils literal notranslate"><span class="pre">card</span></code> is the card being copied. The following <code class="docutils literal notranslate"><span class="pre">args</span></code> are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">new_card</span></code> - Copies the card into <code class="docutils literal notranslate"><span class="pre">new_card</span></code> instead of creating a new card (like the Death tarot)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">card_scale</span></code> - Multiplier for the copy’s scale</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strip_edition</span></code> - Strips the edition from the copy</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_add</span></code> - Skips adding the copy to deck</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">area</span></code> - Area the new copy should be added to, if not specified it will be inferred from the card.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">playing_card</span></code> - Sets the copy’s playing card value. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, the value is not set. If no value is specified, it sets it to the next G.playing_card (only if <code class="docutils literal notranslate"><span class="pre">card</span></code> is a playing card)</p></li>
+</ul>
+</section>
+<section id="smods-debuff-card-card-debuff-source">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.debuff_card(card,</span> <span class="pre">debuff,</span> <span class="pre">source)</span></code><a class="headerlink" href="#smods-debuff-card-card-debuff-source" title="Link to this heading">#</a></h3>
+<p>Allows manually setting and removing debuffs from cards.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code> should be a unique identifier string. You must use the same source to remove a previously set debuff.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">debuff</span></code> is the string <code class="docutils literal notranslate"><span class="pre">'prevent_debuff'</span></code>, blocks all possible debuffs on the card until removed.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">debuff</span></code> is another truthy value, set a debuff on the card.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">debuff</span></code> is a falsy values, remove this debuff.</p></li>
+</ul>
+</section>
+<section id="smods-recalc-debuff-card">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.recalc_debuff(card)</span></code><a class="headerlink" href="#smods-recalc-debuff-card" title="Link to this heading">#</a></h3>
+<p>Recalculates the debuff state of a card.</p>
+</section>
+<section id="smods-merge-lists-table">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.merge_lists(...)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code><a class="headerlink" href="#smods-merge-lists-table" title="Link to this heading">#</a></h3>
+<p>Takes any number of 2D arrays. Flattens the input into a 1D array that contains all elements once in the order they first appear and removes any duplicates.
+This can be used to merge results from poker hand evaluation to create a combined hand.</p>
+</section>
+<section id="smods-get-blind-amount-ante-number">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.get_blind_amount(ante)</span> <span class="pre">-&gt;</span> <span class="pre">number</span></code><a class="headerlink" href="#smods-get-blind-amount-ante-number" title="Link to this heading">#</a></h3>
+<p>Provides score requirements for higher stages of ante scaling. If you want to implement your own scaling rules, you should modify this function.</p>
+</section>
+<section id="smods-stake-from-index-index-string">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.stake_from_index(index)</span> <span class="pre">-&gt;</span> <span class="pre">string</span></code><a class="headerlink" href="#smods-stake-from-index-index-string" title="Link to this heading">#</a></h3>
+<p>Given an index from the Stake pool, return the corresponding key, or <code class="docutils literal notranslate"><span class="pre">'error'</span></code> if it doesn’t exist.</p>
+</section>
+<section id="smods-upgrade-poker-hands-args">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.upgrade_poker_hands(args)</span></code><a class="headerlink" href="#smods-upgrade-poker-hands-args" title="Link to this heading">#</a></h3>
+<p><em>(Added in 1221a)</em> This function levels up or upgrades poker hands. This allows permanent modifications to the chips and mult <em>(and other parameters if defined)</em> for each poker hand that will not be removed when a standard level up happens. The argument to this function should always be a table. The following fields are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hands</span></code> : table of strings or a single string of hand names to level up <em>(if left blank defaults to all Poker Hands)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parameters</span></code> : table of strings of keys of <code class="docutils literal notranslate"><span class="pre">Scoring_Parameters</span></code> to upgrade <em>(if left blank defaults to all Scoring Parameters)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">level_up</span></code> : increases the level of the hand by amount passed <em>(NOTE: this can be used to level up a hand by more than one level)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code> : pass a custom function <code class="docutils literal notranslate"><span class="pre">function(current,</span> <span class="pre">base,</span> <span class="pre">parameter,</span> <span class="pre">level_up)</span></code> for custom modifications to the parameters in a Poker Hand <em>(if left blank defaults to normal level up method)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span></code> : the Object that is doing the upgrading, will <code class="docutils literal notranslate"><span class="pre">juice_up</span></code> during animations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instant</span></code> : boolean that disables animations</p></li>
+</ul>
+</section>
+<section id="smods-smart-level-up-hand-card-hand-instant-amount">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.smart_level_up_hand(card,</span> <span class="pre">hand,</span> <span class="pre">instant,</span> <span class="pre">amount)</span></code><a class="headerlink" href="#smods-smart-level-up-hand-card-hand-instant-amount" title="Link to this heading">#</a></h3>
+<p><strong>DEPRECATED IN 1221a IN FAVOR OF <code class="docutils literal notranslate"><span class="pre">SMODS.upgrade_poker_hands(args)</span></code></strong></p>
+<p>Akin to vanilla’s <code class="docutils literal notranslate"><span class="pre">level_up_hand()</span></code>, but avoids uneccessary calling of <code class="docutils literal notranslate"><span class="pre">update_hand_text()</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">card</span></code> - If included, juices up this card during the animation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hand</span></code> - Key to the hand being leveled up.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instant</span></code> - Skips the level up animations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amount</span></code> - How much the poker hand is leveled. Defaults to 1.</p></li>
+</ul>
+</section>
+<section id="smods-blueprint-effect-copier-copied-card-context-table">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.blueprint_effect(copier,</span> <span class="pre">copied_card,</span> <span class="pre">context)</span> <span class="pre">-&gt;</span> <span class="pre">table?</span></code><a class="headerlink" href="#smods-blueprint-effect-copier-copied-card-context-table" title="Link to this heading">#</a></h3>
+<p>Helper function to copy the ability of another joker, akin to Blueprint/Brainstorm.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">copier</span></code> is the card that will be copying the effect of <code class="docutils literal notranslate"><span class="pre">copied_card</span></code>, using the provided <code class="docutils literal notranslate"><span class="pre">context</span></code> table.</p></li>
+<li><p>The returned table is the calculated effect of <code class="docutils literal notranslate"><span class="pre">copied_card</span></code>, with the display card set to <code class="docutils literal notranslate"><span class="pre">copier</span></code>.</p></li>
+<li><p>Example:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">calculate</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">card</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</span><span data-line="2">    <span class="c1">-- This is an implementation of Brainstorm</span>
+</span><span data-line="3">    <span class="kd">local</span> <span class="n">other_joker</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">jokers</span><span class="p">.</span><span class="n">cards</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span data-line="4">    <span class="kd">local</span> <span class="n">other_joker_ret</span> <span class="o">=</span> <span class="n">SMODS</span><span class="p">.</span><span class="n">blueprint_effect</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="n">other_joker</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</span><span data-line="5">
+</span><span data-line="6">    <span class="kr">if</span> <span class="n">other_joker_ret</span> <span class="kr">then</span>
+</span><span data-line="7">        <span class="kr">return</span> <span class="n">other_joker_ret</span>
+</span><span data-line="8">    <span class="kr">end</span>
+</span><span data-line="9"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="smods-merge-effects-table">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.merge_effects(...)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code><a class="headerlink" href="#smods-merge-effects-table" title="Link to this heading">#</a></h3>
+<p>Takes any number of 2D arrays. Flattens given calculation returns into one, utilising <code class="docutils literal notranslate"><span class="pre">extra</span></code> tables.</p>
+<ul class="simple">
+<li><p>This can be used to merge returns from <code class="docutils literal notranslate"><span class="pre">SMODS.blueprint_effect</span></code>.</p></li>
+</ul>
+</section>
+<section id="smods-has-enhancement-card-key-bool">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.has_enhancement(card,</span> <span class="pre">key)</span> <span class="pre">-&gt;</span> <span class="pre">bool</span></code><a class="headerlink" href="#smods-has-enhancement-card-key-bool" title="Link to this heading">#</a></h3>
+<p>Returns true if the provided <code class="docutils literal notranslate"><span class="pre">card</span></code> has a specific enhancement.</p>
+</section>
+<section id="smods-is-eternal-card-trigger-bool">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.is_eternal(card,</span> <span class="pre">trigger)</span> <span class="pre">-&gt;</span> <span class="pre">bool</span></code><a class="headerlink" href="#smods-is-eternal-card-trigger-bool" title="Link to this heading">#</a></h3>
+<p>Returns true if the card is cosidered to be “eternal” (cannot be destroyed).</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">card</span></code> - the card that is being checked</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trigger</span></code> - generally should be a reference to the object that is doing the check. If the check is being done by a general function, it is recommended to supply an identifying table such as <code class="docutils literal notranslate"><span class="pre">{destroying_cards</span> <span class="pre">=</span> <span class="pre">true}</span></code></p></li>
+</ul>
+</section>
+<section id="smods-shallow-copy-t-table">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.shallow_copy(t)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code><a class="headerlink" href="#smods-shallow-copy-t-table" title="Link to this heading">#</a></h3>
+<p>Returns a shallow copy of the provided table.</p>
+</section>
+<section id="time-func-number">
+<h3><code class="docutils literal notranslate"><span class="pre">time(func,</span> <span class="pre">...)</span> <span class="pre">-&gt;</span> <span class="pre">number</span></code><a class="headerlink" href="#time-func-number" title="Link to this heading">#</a></h3>
+<p>Calls an input function with any given additional arguments: <code class="docutils literal notranslate"><span class="pre">func(...)</span></code> and returns the time the function took to execute in milliseconds. The return value from <code class="docutils literal notranslate"><span class="pre">func</span></code> is lost.</p>
+</section>
+<section id="smods-is-playing-card-card-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.is_playing_card(card)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#smods-is-playing-card-card-boolean" title="Link to this heading">#</a></h3>
+<p><em>(Added in 1814a)</em> Checks if <code class="docutils literal notranslate"><span class="pre">card</span></code> is a playing card.</p>
+</section>
+<section id="smods-destroy-cards-cards-args-table">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.destroy_cards(cards,</span> <span class="pre">args)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code><a class="headerlink" href="#smods-destroy-cards-cards-args-table" title="Link to this heading">#</a></h3>
+<p>Destroys any type of cards given to the function appropriately, with respect to further calculations if called during the scoring loop. Returns the cards to be destroyed.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cards</span></code> - Can be an individual <code class="docutils literal notranslate"><span class="pre">Card</span></code> object, or a table of <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects.</p></li>
+<li><p><em>(Added in 1814a)</em> <code class="docutils literal notranslate"><span class="pre">args</span></code> is a table that can have the following fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">bypass_eternal</span></code> - Destroys cards even if they’re Eternal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">immediate</span></code> - Destroys the cards immediately not creating an event (Note: Card.start_dissolve and Card.shatter internally still create an event)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pinch_anim</span></code> - Destroys the cards with the vanilla food Joker animation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">colours</span></code> - Replaces the colours used by <code class="docutils literal notranslate"><span class="pre">start_dissolve</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delay</span></code> - Adds a delay to the event.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">destroy_func</span></code> - Replaces the destroy function used (i.e. replaces <code class="docutils literal notranslate"><span class="pre">Card.start_dissolve</span></code> or <code class="docutils literal notranslate"><span class="pre">Card.shatter</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skip_anim</span></code> - Skips the normal animation and changes it to that of food jokers.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="smods-add-voucher-to-shop-key-smods-add-booster-to-shop-key">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.add_voucher_to_shop(key)</span></code>/<code class="docutils literal notranslate"><span class="pre">SMODS.add_booster_to_shop(key)</span></code><a class="headerlink" href="#smods-add-voucher-to-shop-key-smods-add-booster-to-shop-key" title="Link to this heading">#</a></h3>
+<p>Adds a <code class="docutils literal notranslate"><span class="pre">Voucher</span></code> or a <code class="docutils literal notranslate"><span class="pre">Booster</span></code> to the current shop.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code> - the key of the object to be added. If no key is provided, the next seeded object will be used</p></li>
+</ul>
+</section>
+<section id="smods-change-voucher-limit-mod-smods-change-booster-limit-mod">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.change_voucher_limit(mod)</span></code>/<code class="docutils literal notranslate"><span class="pre">SMODS.change_booster_limit(mod)</span></code><a class="headerlink" href="#smods-change-voucher-limit-mod-smods-change-booster-limit-mod" title="Link to this heading">#</a></h3>
+<p>Modify the number of <code class="docutils literal notranslate"><span class="pre">Voucher</span></code>/<code class="docutils literal notranslate"><span class="pre">Booster</span></code> objects that appear in the shop</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mod</span></code> - number to change limit by <em>(if this limit is increased whilst in a shop, a new object will be created automatically)</em></p></li>
+</ul>
+</section>
+<section id="smods-change-free-rerolls-mod">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.change_free_rerolls(mod)</span></code><a class="headerlink" href="#smods-change-free-rerolls-mod" title="Link to this heading">#</a></h3>
+<p>Modify the number of free rerolls per shop</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mod</span></code> - number to change the amount by <em>(applies instantly if within a shop)</em></p></li>
+</ul>
+</section>
+<section id="smods-change-play-limit-mod-smods-change-discard-limit-mod">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.change_play_limit(mod)</span></code>/<code class="docutils literal notranslate"><span class="pre">SMODS.change_discard_limit(mod)</span></code><a class="headerlink" href="#smods-change-play-limit-mod-smods-change-discard-limit-mod" title="Link to this heading">#</a></h3>
+<p>Used to change the number of cards that can be played/discarded at one time. Play limit has a lower limit of <strong>1</strong>, and discard has a lower limit of <strong>0</strong>. <em>(Note: values can go below these limits, but will have no effect)</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mod</span></code> - number to change the limit by</p></li>
+</ul>
+</section>
+<section id="smods-draw-cards-hand-space">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.draw_cards(hand_space)</span></code><a class="headerlink" href="#smods-draw-cards-hand-space" title="Link to this heading">#</a></h3>
+<p>Function to draw a certain number of cards to hand, calling the relevant calculation contexts</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hand_space</span></code> - the number of cards to draw</p></li>
+</ul>
+</section>
+<section id="smods-is-poker-hand-visible-handname-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.is_poker_hand_visible(handname)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#smods-is-poker-hand-visible-handname-boolean" title="Link to this heading">#</a></h3>
+<p>This function checks whether a poker hand is visible in the poker hands menu.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">handname</span></code> - string of poker hand name
+<em>(Calls to <code class="docutils literal notranslate"><span class="pre">get_current_pool</span></code> will add an <code class="docutils literal notranslate"><span class="pre">args</span></code> table of <code class="docutils literal notranslate"><span class="pre">{source</span> <span class="pre">=</span> <span class="pre">_append}</span></code> where <code class="docutils literal notranslate"><span class="pre">_append</span></code> is the 4th argument of <code class="docutils literal notranslate"><span class="pre">get_current_pool</span></code>)</em></p></li>
+</ul>
+</section>
+<section id="smods-create-sprite-x-y-width-height-atlas-key-pos-sprite-animatedsprite">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.create_sprite(x,</span> <span class="pre">y,</span> <span class="pre">width,</span> <span class="pre">height,</span> <span class="pre">atlas_key,</span> <span class="pre">pos)</span> <span class="pre">-&gt;</span> <span class="pre">Sprite|AnimatedSprite</span></code><a class="headerlink" href="#smods-create-sprite-x-y-width-height-atlas-key-pos-sprite-animatedsprite" title="Link to this heading">#</a></h3>
+<p><em>(Added in 1221a)</em> Handles creation of <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> objects with the correct atlas type.</p>
+</section>
+<section id="smods-is-active-blind-key-ignore-disabled-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.is_active_blind(key,</span> <span class="pre">ignore_disabled)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#smods-is-active-blind-key-ignore-disabled-boolean" title="Link to this heading">#</a></h3>
+<p><em>(Added in 1221a)</em> Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> when the current blind matches the inputted <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
+</section>
+<section id="smods-get-clean-pool-type-rarity-legendary-append">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.get_clean_pool(_type,</span> <span class="pre">_rarity,</span> <span class="pre">_legendary,</span> <span class="pre">_append)</span></code><a class="headerlink" href="#smods-get-clean-pool-type-rarity-legendary-append" title="Link to this heading">#</a></h3>
+<p><em>(Added in 1501a)</em> Wrapper for <code class="docutils literal notranslate"><span class="pre">get_current_pool</span></code> that will exclude any <code class="docutils literal notranslate"><span class="pre">&quot;UNAVAILABLE&quot;</span></code> values in the pool, therefore giving a list of valid keys only.</p>
+</section>
+<section id="smods-size-of-pool-pool-integer">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.size_of_pool(pool)</span> <span class="pre">-&gt;</span> <span class="pre">integer</span></code><a class="headerlink" href="#smods-size-of-pool-pool-integer" title="Link to this heading">#</a></h3>
+<p>Returns the number of valid keys in a pool obtained with <code class="docutils literal notranslate"><span class="pre">get_current_pool</span></code>.</p>
+</section>
+</section>
+<section id="joker-effects">
+<h2>Joker Effects<a class="headerlink" href="#joker-effects" title="Link to this heading">#</a></h2>
+<section id="smods-smeared-check-card-suit-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.smeared_check(card,</span> <span class="pre">suit)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#smods-smeared-check-card-suit-boolean" title="Link to this heading">#</a></h3>
+<p>Checks if the base suit of <code class="docutils literal notranslate"><span class="pre">card</span></code> counts as <code class="docutils literal notranslate"><span class="pre">suit</span></code> for effects similar to Smeared Joker.</p>
+</section>
+<section id="smods-seeing-double-check-hand-suit-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.seeing_double_check(hand,</span> <span class="pre">suit)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#smods-seeing-double-check-hand-suit-boolean" title="Link to this heading">#</a></h3>
+<p>Checks if <code class="docutils literal notranslate"><span class="pre">hand</span></code> fulfills the conditions for Seeing Double but for <code class="docutils literal notranslate"><span class="pre">suit</span></code>.</p>
+</section>
+<section id="smods-showman-card-key-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.showman(card_key)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#smods-showman-card-key-boolean" title="Link to this heading">#</a></h3>
+<p>Checks if <code class="docutils literal notranslate"><span class="pre">card_key</span></code> can spawn even if the player has duplicates for effects similar to Showman.</p>
+</section>
+<section id="smods-four-fingers-hand-type-number">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.four_fingers(hand_type)</span> <span class="pre">-&gt;</span> <span class="pre">number</span></code><a class="headerlink" href="#smods-four-fingers-hand-type-number" title="Link to this heading">#</a></h3>
+<p>Returns how many cards are necessary to make a Flush or a Straight for effects similar to Four Fingers. <code class="docutils literal notranslate"><span class="pre">hand_type</span></code> will be <code class="docutils literal notranslate"><span class="pre">flush</span></code> or <code class="docutils literal notranslate"><span class="pre">straight</span></code>.</p>
+</section>
+<section id="smods-shortcut-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.shortcut()</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#smods-shortcut-boolean" title="Link to this heading">#</a></h3>
+<p>Checks if the effects of Shortcut are applying (i.e. if Straights can be made with gaps of one rank).</p>
+</section>
+<section id="smods-wrap-around-straight-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">SMODS.wrap_around_straight()</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#smods-wrap-around-straight-boolean" title="Link to this heading">#</a></h3>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if Straights can wrap around.</p>
+</section>
+</section>
+<section id="card-methods">
+<h2>Card Methods<a class="headerlink" href="#card-methods" title="Link to this heading">#</a></h2>
+<section id="card-should-hide-front-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">Card:should_hide_front()</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#card-should-hide-front-boolean" title="Link to this heading">#</a></h3>
+<p>This function checks whether a card object should display the front sprite or not. Currently only checks for Stone cards and cards with <code class="docutils literal notranslate"><span class="pre">overrides_base_rank</span> <span class="pre">=</span> <span class="pre">true</span></code> defined on the Center, but can be <strong>hooked</strong> to provide additional functionality as required.</p>
+</section>
+<section id="card-is-rarity-rarity-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">Card:is_rarity(rarity)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#card-is-rarity-rarity-boolean" title="Link to this heading">#</a></h3>
+<p>This function checks if a Joker is a certain rarity. Accepts a number for vanilla rarities, or a key as a string for modded rarities.</p>
+</section>
+<section id="card-can-calculate-ignore-debuff-ignore-sliced-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">Card:can_calculate(ignore_debuff,</span> <span class="pre">ignore_sliced)</span> <span class="pre">-&gt;</span> <span class="pre">boolean</span></code><a class="headerlink" href="#card-can-calculate-ignore-debuff-ignore-sliced-boolean" title="Link to this heading">#</a></h3>
+<p>This function checks whether a card can run its <code class="docutils literal notranslate"><span class="pre">calculate</span></code> function.</p>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../Weight-System/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Object Weights</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../Internal-Documentation/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Internal Documentation</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>
