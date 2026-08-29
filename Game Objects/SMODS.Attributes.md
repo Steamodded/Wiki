@@ -283,6 +283,8 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 
 ## Vanilla Consumable Attributes
 
+*(added in 26.829.0)*
+
 | Tarot Name | Attributes |
 | ---------- | ---------- |
 | **The Fool** | generation, tarot, planet, consumable |
@@ -337,6 +339,8 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 
 ## Vanilla Booster Pack Attributes
 
+*(added in 26.829.0)*
+
 | Booster Pack Name | Attributes |
 | ----------------- | ---------- |
 | **Arcana Pack** | tarot |
@@ -346,6 +350,8 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Spectral Pack** | spectral |
 
 ## Vanilla Voucher Attributes
+
+*(added in 26.829.0)*
 
 | Voucher Name | Attributes |
 | ------------ | ---------- |
@@ -384,6 +390,8 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 
 ## Vanilla Tag Attributes
 
+*(added in 26.829.0)*
+
 | Tag Name | Attributes |
 | -------- | ---------- |
 | **Uncommon Tag** | generation, joker, rarity |
@@ -413,6 +421,8 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 
 ## Vanilla card modifier Attributes
 
+*(added in 26.829.0)*
+
 | Enhancement Name | Attributes |
 | ---------------- | ---------- |
 | **Bonus Card** | chips |
@@ -439,6 +449,8 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Purple Seal** | generation, tarot, consumable, discard |
 
 ## Vanilla Blind Attributes
+
+*(added in 26.829.0)*
 
 | Blind Name | Attributes |
 | ---------- | ---------- |
