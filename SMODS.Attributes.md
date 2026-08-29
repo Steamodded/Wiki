@@ -1,28 +1,32 @@
 # API Documentation: SMODS.Attribute
+
 *(Added in 1531zeebee)*
 
 Attributes are able to assigned to different center objects to allow for more advanced polling and effects that require certain attributes. SMODS provides an initial suite of attributes for the vanilla jokers, as well as a couple of empty ones for some scoring methods that the rest of the API provides.
+
 - **Required parameters:**
-	- `key`: *does not need to be unique - duplicate keys will be combined*
+ 	- `key`: *does not need to be unique - duplicate keys will be combined*
 - **Optional parameters** *(defaults)*:
-    - `keys`: Provide a table of keys of centers that have this attribute
-    - `alias`: Provide a table of keys of other `SMODS.Attribute` objects that should be treated as the same attribute
+  - `keys`: Provide a table of keys of centers that have this attribute
+  - `alias`: Provide a table of keys of other `SMODS.Attribute` objects that should be treated as the same attribute
 
 If you want to apply attributes in object definitions, add `attributes = {'key1', 'key2', ...}` to the definition.
 
 ## Utility functions
+
 - `SMODS.get_attribute_pool(attribute) -> table`
-    - Takes a attribute key and returns a table of keys of centers that have that attribute
+  - Takes a attribute key and returns a table of keys of centers that have that attribute
 - `SMODS.add_attribute(attribute_key, object_keys)`
-    - Inserts a table of keys into a pre-existing attribute
-    - `attribute_key`: key of the attribute to insert into
-    - `object_keys`: table of keys of centers to insert into the attribute
+  - Inserts a table of keys into a pre-existing attribute
+  - `attribute_key`: key of the attribute to insert into
+  - `object_keys`: table of keys of centers to insert into the attribute
 
 # Provided Attributes
 
 Detailed here is a list of attributes that SMODS provides, along with a criteria for what objects should have them. Below is a list of all vanilla jokers and which attributes they have been assigned.
 
 ## SMODS Attributes
+
 | Attribute Key | When to use | Vanilla Jokers |
 | ------------- | ----------- | -------------- |
 | **mult** | gives +mult at some point of scoring | Joker, Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Jolly Joker, Zany Joker, Crazy Joker, Mad Joker, Droll Joker, Half Joker, Ceremonial Dagger, Mystic Summit, Misprint, Raised Fist, Fibonacci, Abstract Joker, Gros Michel, Even Steven, Scholar, Supernova, Ride the Bus, Green Joker, Red Card, Erosion, Fortune Teller, Flash Card, Popcorn, Spare Trousers, Walkie Talkie, Smiley Face, Swashbuckler, Onyx Agate, Shoot the Moon, Bootstraps, Bicycle |
@@ -31,13 +35,13 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **xchips** | gives Xchips at some point of scoring | *none* |
 | **score** | gives +score at some point of scoring | *none* |
 | **xscore** | gives Xscore at some point of scoring | *none* |
-| **blindsize** | gives +blindsize at some point of scoring | *none* |
-| **xblindsize** | gives Xblindsize at some point of scoring | *none* |
-| **balance** | balances chips and mult at some point of scoring | *none* |
-| **swap** | swaps chips and mult at some point of scoring | *none* |
+| **blindsize** | *added in version 26.829.0* gives +blindsize at some point of scoring | *none* |
+| **xblindsize** | *added in version 26.829.0* gives Xblindsize at some point of scoring | *none* |
+| **balance** | *added in version 26.829.0* balances chips and mult at some point of scoring | *none* |
+| **swap** | *added in version 26.829.0* swaps chips and mult at some point of scoring | *none* |
 | **retrigger** | retriggers a card at some point of scoring | Mime, Dusk, Hack, Seltzer, Sock and Buskin, Hanging Chad |
 | **scaling** | scales a value on a trigger | Ceremonial Dagger, Seltzer, Ride the Bus, Egg, Runner, Ice Cream, Constellation, Hiker, Green Joker, Red Card, Madness, Square Joker, Vampire, Hologram, Rocket, Turtle Bean, Obelisk, Gift Card, Flash Card, Lucky Cat, Popcorn, Spare Trousers, Ramen, Castle, Campfire, Throwback, Glass Joker, Wee Joker, Hit the Road, Canio, Yorick |
-| **perma_bonus** | grants any perma bonus on a trigger | *none* |
+| **perma_bonus** | *added in version 26.829.0* grants any perma bonus on a trigger | *none* |
 | **reset** | has a value that resets | Obelisk, Campfire, Hit the Road, Ride the Bus |
 | **suit** | trigger is affected by a suit | Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Smeared Joker, Castle, Ancient Joker, Seeing Double, Blackboard, Flower Pot, The Idol, Rough Gem, Bloodstone, Arrowhead, Onyx Agate |
 | **diamonds** | trigger is affected by diamonds | Greedy Joker, Smeared Joker, Rough Gem |
@@ -68,30 +72,29 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **hand_size** | effect is based around hand size | Juggler, Turtle Bean, Troubadour, Merry Andy, Stuntman |
 | **chance** | effect has a chance to happen | 8 Ball, Gros Michel, Business Card, Space Joker, Cavendish, Hallucination, Reserved Parking, Bloodstone |
 | **joker_slot** | related to Joker slots | Abstract Joker, Joker Stencil |
-| **consumeable_slot** | related to Consumeable slots | *none* |
+| **consumable_slot** | *added in version 26.829.0* related to Consumable slots | *none* |
 | **mod_chance** | affects other chance rolls | Oops! All 6s |
 | **copying** | copies the effect of another card | Blueprint, Brainstorm |
 | **full_deck** | effect is based on your full deck | Steel Joker, Cloud 9, Erosion, Stone Joker, Driver's License |
 | **passive** | passive bonus from owning the card | Four Fingers, Credit Card, Chaos the Clown, Pareidolia, Splash, Shortcut, To the Moon, Juggler, Drunkard, Troubadour, Smeared Joker, Showman, Oops! All 6s, Astronomer |
 | **joker** | related to Joker cards | Abstract Joker, Riff-Raff, Swashbuckler |
-| **consumeable** | related to Consumeable cards | 8 Ball, Superposition, Vagabond, Hallucination, Fortune Teller, Cartomancer, Astronomer, Constellation, Satellite, Sixth Sense, Séance, Perkeo |
+| **consumable** | *added in version 26.829.0* related to Consumable cards | 8 Ball, Superposition, Vagabond, Hallucination, Fortune Teller, Cartomancer, Astronomer, Constellation, Satellite, Sixth Sense, Séance, Perkeo |
 | **tarot** | related to Tarot cards | 8 Ball, Superposition, Vagabond, Hallucination, Fortune Teller, Cartomancer |
 | **planet** | related to Planet cards | Astronomer, Constellation, Satellite |
 | **spectral** | related to Spectral cards | Sixth Sense, Séance |
 | **enhancements** | related to enhancements | Golden Ticket, Marble Joker, Steel Joker, Vampire, Midas Mask, Stone Joker, Lucky Cat, Glass Joker, Driver's License |
-| **editions** | related to editions | *none* |
-| **stickers** | related to stickers | *none* |
+| **editions** | *added in version 26.829.0* related to editions | *none* |
 | **seals** | related to seals | Certificate |
 | **modify_card** | modifies playing cards | Pareidolia, Hiker, Vampire, Midas Mask |
 | **prevents_death** | effect prevents losing a run | Mr. Bones |
 | **reroll** | effect is based around rerolling the shop | Chaos the Clown, Flash Card |
 | **on_sell** | triggers when card is sold | Luchador, Diet Cola, Invisible Joker |
 | **sell_value** | effect is based around sell value of a card | Egg, Swashbuckler, Ceremonial Dagger, Gift Card |
-| **skip** |  effect is based around skipping a blind | Throwback |
-| **tag** |  effect is based around tags | Diet Cola |
-| **debuff** |  effect is based around debuffing cards | *none* |
-| **position** |  effect is based around card positioning | Blueprint, Brainstorm, Ceremonial Dagger, Photograph, Hanging Chad |
-| **boss_blind** | effect is based around boss blinds | Rocket, Luchador, Matador, Campfire, Chicot |
+| **skip** | *added in version 26.829.0*  effect is based around skipping a blind | Throwback |
+| **tag** | *added in version 26.829.0*  effect is based around tags | Diet Cola |
+| **debuff** | *added in version 26.829.0*  effect is based around debuffing cards | *none* |
+| **position** | *added in version 26.829.0*  effect is based around card positioning | Blueprint, Brainstorm, Ceremonial Dagger, Photograph, Hanging Chad |
+| **boss_blind** | *added in version 26.829.0* effect is based around boss blinds | Rocket, Luchador, Matador, Campfire, Chicot |
 | **food** | themed on food | Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola |
 | **space** | themed on space | Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 
@@ -124,7 +127,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Mystic Summit** | mult, discard |
 | **Marble Joker** | enhancements, generation |
 | **Loyalty Card** | xmult, hands |
-| **8 Ball** | chance, eight, tarot, consumeable, generation, rank |
+| **8 Ball** | chance, eight, tarot, consumable, generation, rank |
 | **Misprint** | mult |
 | **Dusk** | retrigger, hands |
 | **Raised Fist** | mult, rank |
@@ -152,24 +155,24 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **DNA** | generation, hands |
 | **Splash** | passive |
 | **Blue Joker** | chips |
-| **Sixth Sense** | spectral, consumeable, six, generation, rank |
-| **Constellation** | xmult, planet, consumeable, space, scaling |
+| **Sixth Sense** | spectral, consumable, six, generation, rank |
+| **Constellation** | xmult, planet, consumable, space, scaling |
 | **Hiker** | modify_card, chips, perma_bonus |
 | **Faceless Joker** | discard, face, economy |
 | **Green Joker** | mult, discard, scaling, hands |
-| **Superposition** | ace, hand_type, tarot, consumeable, generation, rank |
+| **Superposition** | ace, hand_type, tarot, consumable, generation, rank |
 | **To Do List** | hand_type, economy |
 | **Cavendish** | xmult, chance, food |
 | **Card Sharp** | xmult, hand_type |
 | **Red Card** | mult, scaling |
 | **Madness** | xmult, destroy_card, scaling |
 | **Square Joker** | chips, scaling, hands |
-| **Séance** | spectral, consumeable, hand_type, generation |
+| **Séance** | spectral, consumable, hand_type, generation |
 | **Riff-Raff** | joker, generation |
 | **Vampire** | xmult, modify_card, enhancements, scaling |
 | **Shortcut** | hand_type, passive |
 | **Hologram** | xmult, scaling |
-| **Vagabond** | tarot, consumeable, generation, hands |
+| **Vagabond** | tarot, consumable, generation, hands |
 | **Baron** | xmult, rank, king |
 | **Cloud 9** | full_deck, nine, rank, economy |
 | **Rocket** | space, scaling, economy, boss_blind |
@@ -183,7 +186,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Reserved Parking** | chance, face, economy |
 | **Mail-In Rebate** | discard, rank, economy |
 | **To the Moon** | passive, economy |
-| **Hallucination** | chance, tarot, consumeable, generation |
+| **Hallucination** | chance, tarot, consumable, generation |
 | **Fortune Teller** | mult, tarot |
 | **Juggler** | hand_size, passive |
 | **Drunkard** | discard, passive |
@@ -211,7 +214,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Swashbuckler** | mult, joker, sell_value |
 | **Troubadour** | hand_size, passive, hands |
 | **Certificate** | seals, generation |
-| **Smeared Joker** | suit, hearts, passive, diamonds, spades, clubs|
+| **Smeared Joker** | suit, hearts, passive, diamonds, spades, clubs |
 | **Throwback** | xmult, scaling, skip |
 | **Hanging Chad** | retrigger, position |
 | **Rough Gem** | suit, diamonds, economy |
@@ -237,15 +240,15 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Stuntman** | hand_size, chips |
 | **Invisible Joker** | on_sell, generation |
 | **Brainstorm** | copying, position |
-| **Satellite** | planet, consumeable, space, economy |
+| **Satellite** | planet, consumable, space, economy |
 | **Shoot the Moon** | mult, rank, queen |
 | **Driver's License** | xmult, full_deck, enhancements |
-| **Cartomancer** | tarot, consumeable, generation |
-| **Astronomer** | planet, consumeable, passive, space |
+| **Cartomancer** | tarot, consumable, generation |
+| **Astronomer** | planet, consumable, passive, space |
 | **Burnt Joker** | hand_type, discard |
 | **Bootstraps** | mult |
 | **Canio** | xmult, face, scaling |
 | **Triboulet** | xmult, rank, queen, king |
 | **Yorick** | xmult, discard, scaling |
-| **Chicot** | boss_blind | 
-| **Perkeo** | generation, consumeable | 
+| **Chicot** | boss_blind |
+| **Perkeo** | generation, consumable |
