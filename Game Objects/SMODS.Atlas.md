@@ -19,7 +19,7 @@ Mods
 
 > [!NOTE]
 > Due to Balatro's pixel smoothing setting, it requires both a single and double resolution image file.
-> Since version [version] SMODS generates the missing assets automatically if provided, so only one of the resolutions is needed (keeping 1x is recommended).
+> Since version 26.829.0 SMODS generates the missing assets automatically if provided, so only one of the resolutions is needed (keeping 1x is recommended).
 > Note that older versions of SMODS might crash if the file for the mod's icon is not found in both folders.
 
 - **Required parameters:**
