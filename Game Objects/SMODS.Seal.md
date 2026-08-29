@@ -16,11 +16,11 @@
     - `vol`: The volume at which the sound should be played.
   - `always_scores`: If `true`, cards with this seal always count in scoring.
   - `never_scores`: If `true`, cards with this seal never count in scoring (supersedes `always_scores`).
-  - `replace_base_card`: If `true`, don't draw base card sprite or give base card chips. *(added in (RELEASE))*
-  - `no_rank`: If `true`, cards with this seal have no rank. *(added in (RELEASE))*
-  - `no_suit`: If `true`, cards with this seal have no suit. *(added in (RELEASE))*
-  - `any_suit`: If `true`, cards with this seal count as any suit. *(added in (RELEASE))*
-  - `shatters`: If `true`, cards with this seal break on destruction like a Glass Card. *(added in (RELEASE))*
+  - `replace_base_card`: If `true`, don't draw base card sprite or give base card chips. *(added in 26.829.0)*
+  - `no_rank`: If `true`, cards with this seal have no rank. *(added in 26.829.0)*
+  - `no_suit`: If `true`, cards with this seal have no suit. *(added in 26.829.0)*
+  - `any_suit`: If `true`, cards with this seal count as any suit. *(added in 26.829.0)*
+  - `shatters`: If `true`, cards with this seal break on destruction like a Glass Card. *(added in 26.829.0)*
 
 ## API methods
 
@@ -38,5 +38,5 @@
 - `Card:set_seal(seal, immediate, silent)`
   - Use this function to set the seal of a card
     - `seal` - `key` of seal as a string, `nil` to remove the seal
-    - `immediate` - if `true` applies the seal immediately not creating an event 
+    - `immediate` - if `true` applies the seal immediately not creating an event
     - `silent` - if `true` removes sounds

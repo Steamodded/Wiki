@@ -394,7 +394,7 @@ Returns `true` if Straights can wrap around.
 
 #### `SMODS.has_playing_card_property(card, key) -> boolean`
 
-Checks if an enhancement, edition, seal, sticker, etc. of a playing card has a property matching the specified `key`. The functions that follow in this section are use cases of this function.
+*(Added in 26.829.0)* Checks if an enhancement, edition, seal, sticker, etc. of a playing card has a property matching the specified `key`. The functions that follow in this section are use cases of this function.
 
 #### `SMODS.has_no_suit(card) -> boolean`
 

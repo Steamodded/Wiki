@@ -21,15 +21,15 @@
   }
  ```
 
-  - `rate = 0.3`: Chance of the sticker applying on an eligible card
-  - `needs_enable_flag`: If set to `true`, this sticker requires `G.GAME.modifiers['enable_'..self.key]` to be `true` before it can be applied.
-  - `always_scores`: If `true`, cards with this sticker always count in scoring.
-  - `never_scores`: If `true`, cards with this sticker never count in scoring (supersedes `always_scores`).
-  - `replace_base_card`: If `true`, don't draw base card sprite or give base card chips. *(added in (RELEASE))*
-  - `no_rank`: If `true`, cards with this sticker have no rank. *(added in (RELEASE))*
-  - `no_suit`: If `true`, cards with this sticker have no suit. *(added in (RELEASE))*
-  - `any_suit`: If `true`, cards with this sticker count as any suit. *(added in (RELEASE))*
-  - `shatters`: If `true`, cards with this sticker break on destruction like a Glass Card. *(added in (RELEASE))*
+- `rate = 0.3`: Chance of the sticker applying on an eligible card
+- `needs_enable_flag`: If set to `true`, this sticker requires `G.GAME.modifiers['enable_'..self.key]` to be `true` before it can be applied.
+- `always_scores`: If `true`, cards with this sticker always count in scoring.
+- `never_scores`: If `true`, cards with this sticker never count in scoring (supersedes `always_scores`).
+- `replace_base_card`: If `true`, don't draw base card sprite or give base card chips. *(added in 26.829.0)*
+- `no_rank`: If `true`, cards with this sticker have no rank. *(added in 26.829.0)*
+- `no_suit`: If `true`, cards with this sticker have no suit. *(added in 26.829.0)*
+- `any_suit`: If `true`, cards with this sticker count as any suit. *(added in 26.829.0)*
+- `shatters`: If `true`, cards with this sticker break on destruction like a Glass Card. *(added in 26.829.0)*
 
 ## API methods
 
