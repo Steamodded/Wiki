@@ -20,12 +20,15 @@ If you want to apply attributes in object definitions, add `attributes = {'key1'
   - Inserts a table of keys into a pre-existing attribute
   - `attribute_key`: key of the attribute to insert into
   - `object_keys`: table of keys of centers to insert into the attribute
+- `Card:has_attribute(attribute_key)` *(added in 1606b)*
+  - Checks whether a card has a certain attribute or not *(respects aliases)
+  - `attribute_key`: key of the attribute to check
 
 ## Provided Attributes
 
 Detailed here is a list of attributes that SMODS provides, along with a criteria for what objects should have them. Below is a list of all vanilla jokers and which attributes they have been assigned.
 
-## SMODS Attributes
+### SMODS Attributes
 
 | Attribute Key | When to use | Vanilla Jokers |
 | ------------- | ----------- | -------------- |
