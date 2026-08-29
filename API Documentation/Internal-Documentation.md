@@ -205,11 +205,11 @@ Modifies current scored chips. Arguments:
 
 #### `SMODS.can_context_retrigger(context) -> bool`
 
-Returns whether or not the given context can retrigger (by checking `SMODS.CONTEXT_RETRIGGER_BLACKLIST`)
+*added in 26.829.0* Returns whether or not the given context can retrigger (by checking `SMODS.CONTEXT_RETRIGGER_BLACKLIST`)
 
 #### `SMODS.can_context_post_trigger(context) -> bool`
 
-Returns whether or not the given context can post_trigger (by checking `SMODS.CONTEXT_POST_TRIGGER_BLACKLIST`)
+*added in 26.829.0* Returns whether or not the given context can post_trigger (by checking `SMODS.CONTEXT_POST_TRIGGER_BLACKLIST`)
 
 ## Misc
 
