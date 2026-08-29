@@ -2,16 +2,6 @@
 
 Steamodded provides utility functions that extend or replace vanilla functionality or provide other useful tools you may need when making your mod. This page contains information on these functions. Check out `src/utils.lua` if you'd like to learn more about a function's implementation.
 
-- [Debugging](#debugging)
-- [Number Formatting](#number-formatting)
-- [Randomness](#randomness)
-- [Mod-facing Utilities](#mod-facing-utilities)
-- [Joker Effects](#joker-effects)
-- [Card Methods](#card-methods)
-- [Miscellaneous](#miscellaneous)
-
-***
-
 ## Debugging
 
 #### `inspect(table) -> string`
