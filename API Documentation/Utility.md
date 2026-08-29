@@ -396,11 +396,45 @@ Checks if the effects of Shortcut are applying (i.e. if Straights can be made wi
 
 Returns `true` if Straights can wrap around.
 
+## Playing card properties
+
+#### `SMODS.has_playing_card_property(card, key) -> boolean`
+
+*(Added in 26.829.0)* Checks if an enhancement, edition, seal, sticker, etc. of a playing card has a property matching the specified `key`. The functions that follow in this section are use cases of this function.
+
+#### `SMODS.has_no_suit(card) -> boolean`
+
+Checks if a card has no suit due to an enhancement/edition/seal/sticker/etc. (e.g., Stone Cards).
+
+#### `SMODS.has_any_suit(card) -> boolean`
+
+Checks if a card can be used as any suit due to an enhancement/edition/seal/sticker/etc. (e.g., Wild Cards).
+> [!NOTE]
+> A card may have effects for counting as both no suit and any suit. In this case, the card will be able to be used as any suit.
+
+#### `SMODS.has_no_rank(card) -> boolean`
+
+Checks if a card has no rank due to an enhancement/edition/seal/sticker/etc. (e.g., Stone Cards).
+
+#### `SMODS.always_scores(card) -> boolean`
+
+Checks if a card always scores due to an enhancement/edition/seal/sticker/etc. (e.g., Stone Cards).
+
+#### `SMODS.never_scores(card) -> boolean`
+
+Checks if a card cannot be scored due to an enhancement/edition/seal/sticker/etc.
+> [!NOTE]
+> A card may have effects for both always scoring and never scoring. In this case, the card will not score.
+
+#### `SMODS.shatters(card) -> boolean`
+
+Checks if a card should on destruction like a Glass Card.
+
 ## Card Methods
 
 #### `Card:should_hide_front() -> boolean`
 
-This function checks whether a card object should display the front sprite or not. Currently only checks for Stone cards and cards with `overrides_base_rank = true` defined on the Center, but can be **hooked** to provide additional functionality as required.
+This function checks whether a card object should display the front sprite or not. Currently only checks for Stone cards and other cards with `overrides_base_rank = true` defined on an enhancement, edition, seal or sticker, but can be **hooked** to provide additional functionality as required.
 
 #### `Card:is_rarity(rarity) -> boolean`
 
