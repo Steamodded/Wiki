@@ -179,7 +179,7 @@ Valid style modifiers are as follows:
 - the index of a custom colour provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.colours` table. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
 
 > [!NOTE]
-> This functionality was added by Steamodded in (RELEASE). In older versions and in vanilla Balatro, `{C:}` only supports the first option, and `{V:}` only supports the third option.
+> This functionality was added by Steamodded in 26.829.0. In older versions and in vanilla Balatro, `{C:}` only supports the first option, and `{V:}` only supports the third option.
 
 ### Examples
 
@@ -306,7 +306,7 @@ Valid style modifiers are as follows:
 - the index of a custom colour provided as an entry in the [`loc_vars`](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) `vars.colours` table. See [Localization](https://docs.smods.dev/API%20Documentation/Localization#loc_vars) for more details.
 
 > [!NOTE]
-> This functionality was added by Steamodded in (RELEASE). In older versions and in vanilla Balatro, `{X:}` only supports the first option. `{B:}` is not supported by vanilla Balatro; in older Steamodded versions, it only supports the third option.
+> This functionality was added by Steamodded in 26.829.0. In older versions and in vanilla Balatro, `{X:}` only supports the first option. `{B:}` is not supported by vanilla Balatro; in older Steamodded versions, it only supports the third option.
 
 These modifiers are usually combined with a text colour modifier to make <picture>
     <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_X3_Mult_dark.svg">
@@ -444,7 +444,6 @@ The `{X:}` modifier uniquely strips all whitespace from the styled text, so text
  </tr>
 </table>
 
-
 ## Text motion modifier `{E:}`
 
 `{E:1}` applies a pop-in effect when the text is first displayed, and a floating animation to each letter in the text.
@@ -506,7 +505,7 @@ You can also apply a custom effect using [SMODS.DynaTextEffect](https://docs.smo
 
 ## Text hover tooltip modifier `{T:}`
 
-<code>{T:<i>tooltip-key</i>}</code> adds tooltip functionality to the text, which displays a small tooltip UI above the text when the text is hovered over. If `tooltip-key` can be the name of a key found in either `G.P_CENTERS` or `G.P_TAGS` or a description found in `G.localization.descriptions.Other` *(Added in 1814a)*. In the latter case, you can supply additional information as follows: <code>{T:[key=<i>tooltip-key</i>;set=<i>set-key</i>;1=<i>var1</i>;2=<i>var2</i>;...]}</code> *(Added in (RELEASE))*. The *set-key* is used to specify a set in `G.localization.descriptions` to pull from, and the variables *var1*, *var2*, etc. are used to supply any localization variables in the text.
+<code>{T:<i>tooltip-key</i>}</code> adds tooltip functionality to the text, which displays a small tooltip UI above the text when the text is hovered over. If `tooltip-key` can be the name of a key found in either `G.P_CENTERS` or `G.P_TAGS` or a description found in `G.localization.descriptions.Other` *(Added in 1814a)*. In the latter case, you can supply additional information as follows: <code>{T:[key=<i>tooltip-key</i>;set=<i>set-key</i>;1=<i>var1</i>;2=<i>var2</i>;...]}</code> *(Added in 26.829.0)*. The *set-key* is used to specify a set in `G.localization.descriptions` to pull from, and the variables *var1*, *var2*, etc. are used to supply any localization variables in the text.
 
 > [!NOTE]
 > The same effect can be achieved using <code>{T:<i>tooltip-key</i>,T_set:<i>set-key</i>,T_vars=<i>var1</i>;<i>var2</i>;...}</code> *(added in 1814a)*.
@@ -596,7 +595,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 >
 > [!NOTE]
 > These modifiers are added by Steamodded and are not supported by vanilla Balatro.
-> *(Added in (RELEASE))*
+> *(Added in 26.829.0)*
 
 > [!IMPORTANT]
 > These modifiers must be **lowercase**, unlike other modifiers which must be UPPERCASE.
@@ -606,6 +605,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 <code>{u:<i>colour</i>}</code>, <code>{st:<i>colour</i>}</code> and <code>{ov:<i>colour</i>}</code> respectively add an underline, strikethrough, or underline to the text. The width of the line is 10% of the text's height.
 
 *`colour`* sets the colour of the line, where *`colour`* is one of the following:
+
 - the **key** of a colour defined in [`G.ARGS.LOC_COLOURS`](#loc_colours-table),
 
 - a 6-digit **RGB hex code** or an 8-digit **RGBA hex code**, or
@@ -666,7 +666,7 @@ By supplying a table to the text modifier, it is possible to customize the lines
 >
 > [!NOTE]
 > This modifier is added by Steamodded and is not supported by vanilla Balatro.
-> *(Added in (RELEASE))*
+> *(Added in 26.829.0)*
 
 ### Basic usage
 
