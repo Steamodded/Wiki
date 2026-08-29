@@ -1333,11 +1333,11 @@ if context.money_altered then
 ```lua
 context.money_altered -- flag to identify this context, always TRUE
 context.amount -- the amount that money has changed by
-context.initial -- the amount of money before the change
+context.initial -- the amount of money before the change *added in 26.829.0* 
 context.from_shop -- true if the money changed while in the shop
 context.from_tarot -- true if the money changed from using a consumeable
 context.from_scoring -- true if the money changed while scoring
-context.from_cashout -- true if the money changed from cashing out
+context.from_cashout -- true if the money changed from cashing out *added in 26.829.0* 
 ```
 
   >[!NOTE]
