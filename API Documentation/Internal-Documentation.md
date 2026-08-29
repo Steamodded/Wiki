@@ -190,7 +190,7 @@ Pushes `context` into `SMODS.context_stack`.
 
 Pops a `context` from `SMODS.context_stack`.
 
-#### `SMODS.get_previous_context()`
+#### `SMODS.get_previous_context() -> table`
 
 Returns the second to last context from `SMODS.context_stack`
 
@@ -202,6 +202,14 @@ Modifies current scored chips. Arguments:
     - `card`: Card responsible for score modification action, crucial for score display to work properly
     - `effect`: Table of effects that were calculated
     - `from_edition`: If `true` the effect comes from an Edition
+
+#### `SMODS.can_context_retrigger(context) -> bool`
+
+*added in 26.829.0* Returns whether or not the given context can retrigger (by checking `SMODS.CONTEXT_RETRIGGER_BLACKLIST`)
+
+#### `SMODS.can_context_post_trigger(context) -> bool`
+
+*added in 26.829.0* Returns whether or not the given context can post_trigger (by checking `SMODS.CONTEXT_POST_TRIGGER_BLACKLIST`)
 
 ## Misc
 
