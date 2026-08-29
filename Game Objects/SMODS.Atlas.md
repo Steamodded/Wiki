@@ -1,6 +1,6 @@
 # `SMODS.Atlas`
 
-This class allows you to use custom spritesheets ("Atlases") or replace existing ones. Your mod must be located in its own subdirectory of the `Mods` folder. Due to Balatro's pixel smoothing setting, it is required to provide both a single and double resolution image file. The file structure should look something like this:
+This class allows you to use custom spritesheets ("Atlases") or replace existing ones. Your mod must be located in its own subdirectory of the `Mods` folder. The file structure should look something like this:
 
 ```bash
 Mods
@@ -16,6 +16,11 @@ Mods
    ├── Jokers-negate.png
    └── boosters-negate.png
 ```
+
+> [!NOTE]
+> Due to Balatro's pixel smoothing setting, it requires both a single and double resolution image file.
+> Since version 26.829.0 SMODS generates the missing assets automatically if provided, so only one of the resolutions is needed (keeping 1x is recommended).
+> Note that older versions of SMODS might crash if the file for the mod's icon is not found in both folders.
 
 - **Required parameters:**
   - `key`
