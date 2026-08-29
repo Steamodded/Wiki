@@ -314,7 +314,7 @@ end
 
 You can optionally remove the initial card from the menu by including `remove_original = true` to your return table, and you can also define a `func = function() ...` that will be run after all mods have added their cards to the menu. `G.title_top` is the `CardArea` that holds these cards.
 ### `mod.set_mod_badge(obj) -> table`
-Allows you to modify the mod's badge per object. Check `SMODS.create_mod_badges` in `utils.lua` for the default implementation.
+*added in 26.829.0* Allows you to modify the mod's badge per object. Check `SMODS.create_mod_badges` in `utils.lua` for the default implementation.
 
 ```lua
 SMODS.current_mod.set_mod_badge = function(obj)
