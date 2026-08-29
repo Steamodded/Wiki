@@ -38,8 +38,8 @@
   - `hc_atlas = 'cards_2'`: Atlas to use when high-contrast cards are enabled.
   - `lc_ui_atlas = 'ui_1'`: Atlas for miniature suit symbols when high-contrast cards are disabled.
   - `hc_ui_atlas = 'ui_2'`: Atlas for miniature suit symbols when high-contrast cards are enabled.
-  - `lc_colour = [white]`: Text colour when high-contrast cards are disabled.
-  - `hc_colour = [white]`: Text colour when high-contrast cards are enabled.
+  - `lc_colour = HEX('000000')` (white): Text colour when high-contrast cards are disabled. It can be a colour table or a hex code string.
+  - `hc_colour = HEX('000000')` (white): Text colour when high-contrast cards are enabled. It can be a colour table or a hex code string.
 
 ## API methods
 

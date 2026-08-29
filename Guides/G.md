@@ -177,7 +177,7 @@ G.hand_text_area = {
 - `G.GAME.joker_rate` is a weight for jokers spawning in the shop.
 - `G.GAME.tarot_rate` is a weight for tarot cards spawning in the shop.
 - `G.GAME.planet_rate` is a weight for planets spawning in the shop.
-- `G.GAME.spectral_weight` is a weight for spectral cards spawning in the shop.
+- `G.GAME.spectral_rate` is a weight for spectral cards spawning in the shop.
 - `G.GAME.playing_card_rate` is a weight for playing cards spawning in the shop.
 - `G.GAME.consumeable_buffer` is used during calculation to prevent too many consumables from being spawned.
 - `G.GAME.joker_buffer` is used during calculation by Riff-Raff to prevent too many jokers from being spawned.
