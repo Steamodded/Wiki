@@ -225,6 +225,12 @@ Helper function to check if an object can be added into a pool,
 
 - If `prototype_obj.in_pool` is defined, returns the result of `in_pool`, otherwise returns `true`.
 
+#### `SMODS.hide_from_collection(prototype_obj, args) -> bool?`
+
+*(Added in 26.829.0)* Helper function to check whether an object should be hidden from the collection.
+
+- If `prototype_obj.no_collection` is defined, returns the result of `no_collection`, otherwise returns `false`.
+
 #### `SMODS.pinch_and_remove(card)`
 
 *(Added in 1814a)*
