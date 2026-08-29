@@ -307,13 +307,13 @@ Destroys any type of cards given to the function appropriately, with respect to 
   - `immediate` - Destroys the cards immediately not creating an event (Note: Card.start_dissolve and Card.shatter internally still create an event)
   - `pinch_anim` - Destroys the cards with the vanilla food Joker animation.
   - `colours` - Replaces the colours used by `start_dissolve`.
-  - `dissolve_time_fac` - *added in (RELEASE)* Multiplies the dissolve time of `start_dissolve` by this number.
+  - `dissolve_time_fac` - *added in 26.829.0* Multiplies the dissolve time of `start_dissolve` by this number.
   - `delay` - Adds a delay to the event.
   - `destroy_func` - Replaces the destroy function used (i.e. replaces `Card.start_dissolve` or `Card.shatter`)
   - `skip_anim` - Skips the normal animation and changes it to that of food jokers.
-  - `silent` - *added in (RELEASE)* Skips playing any sounds.
-  - `no_juice` - *added in (RELEASE)* Skips juice up animations.
-  - `skip_calc` - *added in (RELEASE)* Skips any `SMODS.calculate_context` calls (like `joker_type_destroyed`)
+  - `silent` - *added in 26.829.0* Skips playing any sounds.
+  - `no_juice` - *added in 26.829.0* Skips juice up animations.
+  - `skip_calc` - *added in 26.829.0* Skips any `SMODS.calculate_context` calls (like `joker_type_destroyed`)
 
 #### `SMODS.add_voucher_to_shop(key)`/`SMODS.add_booster_to_shop(key)`
 
