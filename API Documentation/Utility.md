@@ -403,3 +403,12 @@ This function checks if a Joker is a certain rarity. Accepts a number for vanill
 #### `Card:can_calculate(ignore_debuff, ignore_sliced) -> boolean`
 
 This function checks whether a card can run its `calculate` function.
+
+## Miscellaneous
+
+#### `SMODS.card_to_image(card, scale, filename)`
+
+*added in 26.829.0* Renders one card to a `.png` file, saved to your save directory (the folder above the Mods folder).
+    - `card` - Card to save as an image
+    - `scale` Scale to render the card at (default = `G.SETTINGS.GRAPHICS.texture_scaling`)
+    - `filename` - Name of the file (default = `card.config.center.key`)
