@@ -14,6 +14,7 @@ The (new) standard way to specify your mod's metadata is in a separate JSON file
  "priority": -20, // [default: 0] ! Mods are loaded in order from lowest to highest priority value.
  "badge_colour": "FF230A", // [default: 666665] ! Background colour for your mod badge. Must be a valid hex color with 6 or 8 digits (RRGGBB or RRGGBBAA)
  "badge_text_colour": "ABC123", // [default: FFFFFF] ! Text colour for your mod badge.
+ "badge_shader": "modprefix_shaderkey", // ! Key to the SMODS.Shader to use for the badge if any *(Added in 26.829.0)*
  "display_name": "YM", // [default: <name>] ! Displayed text on your mod badge.
  "no_marquee": true, // ! [default: false] Disable the marquee scrolling effect on your mod badge and display the whole text at once.
  "icon_path": "path.png", // ! Path to the mod's icon in the Mods menu. Must be located in both assets/1x and assets/2x. *(Added in 1531zeebee)*
@@ -67,16 +68,16 @@ Using the legacy file header system is still supported, though switching to meta
 Your mod can also contain the following lines. These lines describe information about your mod and how Steamodded should load it.
 
 - Required:
- 	- `--- MOD_NAME: Example Mod`
- 	- `--- MOD_ID: ExampleMod` (**Must be unique and without spaces**)
- 	- `--- MOD_AUTHOR: [You, AnotherDev, AnotherOtherDev]` (**Brackets are required**)
- 	- `--- MOD_DESCRIPTION: A description of your mod.` (**No line breaks, text is wrapped automatically.**)
+  - `--- MOD_NAME: Example Mod`
+  - `--- MOD_ID: ExampleMod` (**Must be unique and without spaces**)
+  - `--- MOD_AUTHOR: [You, AnotherDev, AnotherOtherDev]` (**Brackets are required**)
+  - `--- MOD_DESCRIPTION: A description of your mod.` (**No line breaks, text is wrapped automatically.**)
 - Optional:
- 	- `--- PRIORITY: -100` (**Negative values go first, positive values go last**)
- 	- `--- BADGE_COLOR: 123456` or `--- BADGE_COLOUR: ABCDEF`
- 	- `--- DISPLAY_NAME: Example` (**Shown on mod badges instead of your mod's name**)
- 	- `--- DEPENDENCIES: [Steamodded>=1.0.0~BETA, Mod1, Mod2>=1.0.0, Mod3<=1.7.5, Mod4>=1.0.0<=2.0]`
- 	- `--- CONFLICTS: [Mod5, Mod6<=0.9.9, Mod7>=0.6.2, Mod8<=1.0>=0.3.7]`
- 	- `--- PREFIX: example` (**Must be unique. Defaults to the first 4 letters, lowercase, of your mod's ID.**)
- 	- `--- VERSION: 1.0.0`
+  - `--- PRIORITY: -100` (**Negative values go first, positive values go last**)
+  - `--- BADGE_COLOR: 123456` or `--- BADGE_COLOUR: ABCDEF`
+  - `--- DISPLAY_NAME: Example` (**Shown on mod badges instead of your mod's name**)
+  - `--- DEPENDENCIES: [Steamodded>=1.0.0~BETA, Mod1, Mod2>=1.0.0, Mod3<=1.7.5, Mod4>=1.0.0<=2.0]`
+  - `--- CONFLICTS: [Mod5, Mod6<=0.9.9, Mod7>=0.6.2, Mod8<=1.0>=0.3.7]`
+  - `--- PREFIX: example` (**Must be unique. Defaults to the first 4 letters, lowercase, of your mod's ID.**)
+  - `--- VERSION: 1.0.0`
 These lines can be specified in any order.
