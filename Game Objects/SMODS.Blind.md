@@ -86,7 +86,7 @@ refer to the current blind. (The base game uses `self` to refer to the current b
 
 - `Blind:is_type(type)`
 
-  - Returns true if the blind is the submitted type (valid types: `'Boss', 'Big', 'Small'`)
+  - *(Added in 26.829.0)* Returns true if the blind is the submitted type (valid types: `'Boss', 'Big', 'Small'`)
 
 - `Blind:get_type()`
 
@@ -94,4 +94,4 @@ refer to the current blind. (The base game uses `self` to refer to the current b
 
 - `SMODS.get_new_blind(type)`
 
-  - Returns the key of a blind of the specified type (type defaults to Boss if not submitted) and adds it to the used table
+  - *(Added in 26.829.0)* Returns the key of a blind of the specified type (type defaults to Boss if not submitted) and adds it to the used table
