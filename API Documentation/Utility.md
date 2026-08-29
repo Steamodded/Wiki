@@ -352,7 +352,7 @@ This function checks whether a poker hand is visible in the poker hands menu.
 
 *(Added in 1221a)* Handles creation of `Sprite` objects with the correct atlas type.
 
-*(Added in [version])* `sprite_args` is passed to `Animated/StateSprite`s and mostly specifies behaviour related to animation.
+*(Added in 26.829.0)* `sprite_args` is passed to `Animated/StateSprite`s and mostly specifies behaviour related to animation.
 
 #### `SMODS.is_active_blind(key, ignore_disabled) -> boolean`
 

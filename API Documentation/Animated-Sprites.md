@@ -20,7 +20,7 @@ This is the structure of the `sprite_args` table:
 
 ## StateSprite
 
-*Added by SMODS in version [version]*. For `StateSprite`s, most of the above holds, except its `sprite_args` contains a `states` field, which defines a table of states by key:
+*Added by SMODS in version 26.829.0*. For `StateSprite`s, most of the above holds, except its `sprite_args` contains a `states` field, which defines a table of states by key:
 
 - *all of the above, behaving as defaults*
 - `default_state: [state_key]`, the default state a sprite should start with.
