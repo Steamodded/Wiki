@@ -378,7 +378,7 @@ return {
 
 ### Resetting values
 
-*(Added in (RELEASE))*
+*(Added in 26.829.0)*
 A different kind of modification to a card's values is resetting a value back to its default state. `SMODS.reset_card` handles this operation much like `SMODS.scale_card` handles scaling.
 
 #### Using `SMODS.reset_card` 
@@ -1605,7 +1605,7 @@ context.unchanged -- true if the new key is the same as the old key
 
 #### context.scaling_card
 
-*(Added in (RELEASE))*
+*(Added in 26.829.0)*
 This context is used when a card's values are being scaled using [`SMODS.scale_card`](#scaling-values). See [here](#responding-to-scaling) for return values specific to this context.
 ```lua
 if context.scaling_card then
@@ -1624,7 +1624,7 @@ context.scalar_factor -- a multiplier for the scalar.
 
 #### context.resetting_card
 
-*(Added in (RELEASE))*
+*(Added in 26.829.0)*
 This context is used when a card's values are being reset using [`SMODS.reset_card`](#resetting-values). See [here](#responding-to-resetting) for return values specific to this context.
 ```lua
 context.resetting_card -- flag to identify this context, always TRUE
