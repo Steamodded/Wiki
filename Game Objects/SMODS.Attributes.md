@@ -69,6 +69,8 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **face** | trigger is affected by face cards | Scary Face, Pareidolia, Business Card, Ride the Bus, Faceless Joker, Midas Mask, Photograph, Reserved Parking, Smiley Face, Sock and Buskin, Canio |
 | **economy** | effect is based around money | Credit Card, Chaos the Clown, Delayed Gratification, Business Card, Egg, Faceless Joker, To Do List, Cloud 9, Rocket, Gift Card, Reserved Parking, Mail-In Rebate, To the Moon, Golden Joker, Trading Card, Golden Ticket, Rough Gem, Matador, Satellite |
 | **generation** | generates another object on a trigger | Marble Joker, 8 Ball, DNA, Sixth Sense, Superposition, Séance, Riff-Raff, Vagabond, Hallucination, Diet Cola, Certificate, Invisible Joker, Cartomancer, Perkeo |
+| **shop** | effect is based around the shop *(added in 26.829.0)* | Chaos the Clown, Flash Card, Astronomer |
+| **booster** | effect is based around booster packs *(added in 26.829.0)* | Red Card, Hallucination, Astronomer |
 | **destroy_card** | destroys another card | Ceremonial Dagger, Madness, Trading Card |
 | **hands** | effect is based around hands | Loyalty Card, Burglar, Troubadour, Dusk, Acrobat, DNA, Vagabond |
 | **discard** | effect is based around discards | Banner, Mystic Summit, Delayed Gratification, Burglar, Faceless Joker, Green Joker, Mail-In Rebate, Drunkard, Trading Card, Ramen, Castle, Merry Andy, Hit the Road, Burnt Joker, Yorick |
@@ -94,6 +96,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **perma_bonus** | permanently modifies the stats of cards *(added in 1606b)* | Hiker |
 | **prevents_death** | effect prevents losing a run | Mr. Bones |
 | **boss_blind** | effect linked to boss blinds *(added in 1606b)* | Rocket, Luchador, Matador, Campfire, Chicot |
+| **hand_level** | affects the level of poker hands *(added in 26.829.0)* | Space Joker, Burnt Joker |
 | **reroll** | effect is based around rerolling the shop | Chaos the Clown, Flash Card |
 | **on_sell** | triggers when card is sold | Luchador, Diet Cola, Invisible Joker |
 | **sell_value** | effect is based around sell value of a card | Egg, Swashbuckler, Ceremonial Dagger, Gift Card |
