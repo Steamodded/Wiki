@@ -48,6 +48,7 @@ Mods
   - `raw_key`: Set this to `true` to prevent the loader from adding your mod prefix to the `key`. Useful for replacing sprites from the base game or other mods.
   - `language`: Restrict your atlas to a specific locale. Useful for introducing localized sprites while leaving other languages intact.
   - `disable_mipmap`: Disable mipmap being applied to this texture. Might remove artifacts on smaller textures.
+  - `force_pixel`: *(Added in 26.829.0)* Always load the 1x sprite and force pixel smoothing off for this atlas. Useful for lower resolution pixel art that looks odd with smoothing enabled.
 
 ## Applying textures to cards
 
