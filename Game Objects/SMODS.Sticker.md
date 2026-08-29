@@ -8,7 +8,6 @@
   - `atlas = 'stickers', pos = { x = 0, y = 0 }` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
   - `config = {}, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - `config` values will be saved to `card.ability[sticker_key]`
-  - `badge_colour`: Colour of this sticker's badge.
   - `hide_badge`: If set to `true`, no badge is shown for this sticker.
     - `default_compat`: Default compatibility with cards. If `true`, all cards can have this sticker unless otherwise specified.
     - `compat_exceptions`: Array of keys of centers that have non-default compatibility with this sticker.

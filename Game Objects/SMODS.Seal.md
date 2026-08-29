@@ -37,6 +37,6 @@
 
 - `Card:set_seal(seal, immediate, silent)`
   - Use this function to set the seal of a card
-    - `edition`, `nil` removes seal, `key` of seal as a string
-    - `immediate`, *boolean*
-    - `silent`, *boolean*
+    - `seal` - `key` of seal as a string, `nil` to remove the seal
+    - `immediate` - if `true` applies the seal immediately not creating an event 
+    - `silent` - if `true` removes sounds

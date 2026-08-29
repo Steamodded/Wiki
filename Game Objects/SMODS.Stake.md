@@ -22,7 +22,8 @@
   - `hide_from_run_info`: *(added in 1531zeebee)* If `true` hides the stake from the Run Info screen during a run.
 
 > [!NOTE]
-> Key prefixing is applied to `applied_stakes` and `above_stake` by default. If you want your stake above a stake from the base game or other mods, this can be adjusted by using `prefix_config`. [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
+> Key prefixing is applied to `applied_stakes` and `above_stake` by default. If you want your stake above a stake from the base game or other mods, this can be adjusted by using `prefix_config`. [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters).
+> For example: `applied_stakes = { "white" }, prefix_config = { applied_stakes = { mod = false } }` will apply the base game White stake.
 
 ## API methods
 
