@@ -279,11 +279,11 @@ Turning these card areas on allows every calculation call to iterate over the ca
 
 ### Scaling Values
 
-Scaling values within cards can be a simple line of code as shown in the above examples, but the by opting in to using `SMODS.scale_card` you can now allow other effects to detect, respond to, or manipulate, your scaling. This function will handle scaling your value and display an automatic message. The function is **entirely** customisable so you can tune it to your exact requirements.
+Scaling values within cards can be a simple line of code as shown in the above examples, but by opting in to using `SMODS.scale_card` you can now allow other effects to detect, respond to, or manipulate, your scaling. This function will handle scaling your value and display an automatic message. The function is **entirely** customisable so you can tune it to your exact requirements.
 
-### Using `SMODS.scale_card`
+#### Using `SMODS.scale_card`
 
-#### Basic Structure
+##### Basic Structure
 
 This example code will scale the `chips` value of the card by the `change` value. It will display a `"Upgrade!"` message with a `G.C.FILTER` background. The amount the value changes by *could* be adjusted by other effects.
 
@@ -299,7 +299,8 @@ The config of this joker would be defined as `config = {extra = {chips = 5, chan
 
 ##### Blocking Scaling Manipulation
 
-As this function allows for scaling detection effects to work, I would recommend it's use over doing it manually, but I understand the scaling manipulation can be an undesirable effect for some people. Therefore, you can block this from happening by adding `block_overrides` to your function call.
+As this function allows for scaling detection effects to work, it is recommended to use it instead of doing it manually, but naturally the scaling manipulation can be an undesirable effect in some cases. Therefore, you can block this from happening by adding `block_overrides` to your function call.
+
 
 ```lua
 block_overrides = {
@@ -341,41 +342,134 @@ end,
 
 ##### Detecting Scaling
 
-On the other side of this feature, is the ability to detect and manipulate value scaling. This is done by adding a `calc_scaling` function to your Joker-type card definitions. Within this function you can do any effects you need to do, and return a table of different effects. There is the ability to control timings somewhat with this return which will be explained below.
+On the other side of this feature is the ability to detect and manipulate value scaling. This is done using the [scaling_card context](#contextscaling_card).
 
 ```lua
-calc_scaling = function(self, card, other_card, initial_value, scalar_value, args)
- if scalar_value > 0 then
-  return {
-   message = 'Pre Scale',
-   post = {
-    message = 'Post Scale'
-   }
-  }
- end
+if context.scaling_card and context.scalar > 0 then
+	return {
+		message = 'Pre Scale', 
+		post = {
+			message = 'Post Scale'
+		}
+	}
 end
 ```
 
-This example will play a message **before** the scaling event, and **after** the scaling event. These tables accept any standard calculation return key. The `initial_value` and `scalar_value` values are dynamic, and respect any prior manipulation from other Joker-type cards. The `args` value is the initial table that was passed to `SMODS.scale_card`.
+This example will play a message **before** the scaling event, and **after** the scaling event. These tables accept any standard calculation return key. The `context.value` and `context.scalar` values are dynamic, and respect any prior manipulation. Keep in mind that everything passed in the `args` table of `SMODS.scale_card` is available as part of `context`.
 
 ##### Manipulating Scaling
 
-Manipulating scaling uses the same function as detection, but requires specific tables to be returned in the table.
-
+Manipulating scaling uses the same context as detection, but requires specific tables to be returned in the table. It is also possible to modify `context` directly, however this is not recommended because it's fragile.
 ```lua
 return {
- override_value = { -- this will override the initial_value
-  value = X, -- set the initial_value to X
-  -- other calculation return keys accepted here, timing is before the scaling event
- },
- override_scalar_value = { -- this will override the scalar_value
-  value = X, -- set the scalar_value to X
-  -- other calculation return keys accepted here, timing is before the scaling event
- },
- override_message = { -- this will override the scaling_message
-  message = 'override message'
-  -- other calculation return keys here will be evaluated WITH the message timing
- }
+	override_value = X, -- this will override `context.value` with X
+	override_scalar = X, -- this will override `context.scalar` with X
+	override_message = { -- this will override the scaling_message
+		message = 'override message'
+		-- other calculation return keys here will be evaluated WITH the message timing
+		-- missing keys will be kept from the previous scaling_message table
+	},
+	post = {
+		-- other calculation return keys here will be evaluated AFTER the scaling event
+	},
+	-- other calculation return keys here will be evaluated BEFORE the scaling event
+}
+```
+
+### Resetting values
+
+*(Added in 26.829.0)*
+A different kind of modification to a card's values is resetting a value back to its default state. `SMODS.reset_card` handles this operation much like `SMODS.scale_card` handles scaling.
+
+#### Using `SMODS.reset_card` 
+
+##### Basic Structure 
+
+This example code will reset the `x_mult` value of the card to `1`. It will display a `"Reset"` message with a `G.C.FILTER` background. The amount the value resets to *could* be adjusted by other effects.
+
+```lua
+SMODS.reset_card(card, {
+	ref_table = card.ability.extra, -- the table that has the value you are changing in
+    ref_value = "x_mult", -- the key to the value in the ref_table
+	reset_value = 1, -- the target value of the reset. If the reset value is mutable, use a separate config value for it.
+})
+```
+
+The config of this joker would be defined as `config = {extra = {xmult = 1, change = 0.2}}` for example, as the `x_mult` value must first be scaled in order to need a reset.
+
+##### Blocking Resetting Manipulation
+
+Like with scaling, you may find yourself in a situation where it is undesirable to allow effects to modify your resetting operation. Thus, `block_overrides` is supported in a similar way.
+
+```lua
+block_overrides = {
+	value = true, -- blocks modifications to the reset_value
+	message = true -- blocks modifications to the reset_message
+}
+```
+
+This would block all modifications from other cards. You can also use a subset of these if you wish. Note that effects that modify the initial values are not possible, so they need not be blocked.
+
+##### Customising The Resetting
+
+The basic structure example above is for a **static** effect with a `"Reset"` message, but you might want to display something else.
+
+###### Messages
+
+It is easy to change the message to use any message in `G.localization.misc.dictionary_parsed`. Add `message_key = 'k_eaten_ex'` to change the message to one of these. You can also add `message_colour = G.C.RED` to change the colour displayed. Unlike scaling, these messages can't pass any variables. If you don't want **any** message at all, add `no_message = true`.
+You can also provide your own custom message, much like returning a message from a calculate function.
+
+```lua
+scaling_message = {
+	message = "Example message!",
+	colour = G.C.BLUE
+}
+```
+
+##### Reset Operations
+
+By default, this function will simply overwrite the existing value with the `reset_value`. If you need more control over this step, you can define an `operation` function. Here is an example where the value is not fully reset, but instead divided by the `reset_value`.
+
+```lua
+operation = function(ref_table, ref_value, initial_value, reset_value)
+	ref_table[ref_value] = initial_value / reset_value
+end,
+```
+
+#### Responding to Resetting
+
+##### Detecting Resetting
+
+On the other side of this feature is the ability to detect and manipulate value resetting. This is done using the [resetting_card context](#contextresetting_card).
+
+```lua
+if context.resetting_card then
+	return {
+		message = 'Pre Reset', 
+		post = {
+			message = 'Post Reset'
+		}
+	}
+end
+```
+
+This example will play a message **before** the scaling event, and **after** the scaling event. These tables accept any standard calculation return key. The `context.reset_value` value is dynamic, and respects any prior manipulation. Keep in mind that everything passed in the `args` table of `SMODS.reset_card` is available as part of `context`.
+
+##### Manipulating Resetting
+
+Manipulating resetting uses the same context as detection, but requires specific tables to be returned in the table.
+```lua
+return {
+	override_value = X, -- this will override `context.reset_value` with X
+	override_message = { -- this will override the scaling_message
+		message = 'override message'
+		-- other calculation return keys here will be evaluated WITH the message timing
+		-- missing keys will be kept from the previous reset_message table
+	},
+	post = {
+		-- other calculation return keys here will be evaluated AFTER the resetting event
+	},
+	-- other calculation return keys here will be evaluated BEFORE the resetting event
 }
 ```
 
@@ -1505,6 +1599,39 @@ context.other_card -- the card that is setting the ability
 context.new -- the key for the newly set ability
 context.old -- the key for the card's previous ability
 context.unchanged -- true if the new key is the same as the old key
+```
+
+---
+
+#### context.scaling_card
+
+*(Added in 26.829.0)*
+This context is used when a card's values are being scaled using [`SMODS.scale_card`](#scaling-values). See [here](#responding-to-scaling) for return values specific to this context.
+```lua
+if context.scaling_card then
+```
+
+```lua
+context.scaling_card -- flag to identify this context, always TRUE
+context.card -- the card being scaled
+context.value -- the unscaled (initial) value before being scaled. May be modified with the `override_value` return key unless blocked.
+context.scalar -- the value being scaled by. May be modified with `override_scalar` unless blocked.
+context.scalar_factor -- a multiplier for the scalar.
+... -- `context` additionally contains all values passed through the `args` parameter of `SMODS.scale_card`, e.g.: ref_table, ref_value, block_overrides, no_message...
+```
+
+---
+
+#### context.resetting_card
+
+*(Added in 26.829.0)*
+This context is used when a card's values are being reset using [`SMODS.reset_card`](#resetting-values). See [here](#responding-to-resetting) for return values specific to this context.
+```lua
+context.resetting_card -- flag to identify this context, always TRUE
+context.card -- the card being reset
+context.initial_value -- the initial value before being scaled. May not be modified using calculation return keys.
+context.reset_value -- the target value for the reset operation. May be modified with `override_value` unless blocked.
+... -- `context` additionally contains all values passed through the `args` parameter of `SMODS.reset_card`, e.g.: ref_table, ref_value, block_overrides, no_message...
 ```
 
 ---
