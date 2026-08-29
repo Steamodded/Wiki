@@ -141,7 +141,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Misprint** | mult |
 | **Dusk** | retrigger, hands |
 | **Raised Fist** | mult, rank |
-| **Chaos the Clown** | reroll, passive, economy |
+| **Chaos the Clown** | reroll, passive, economy, shop |
 | **Fibonacci** | three, mult, ace, eight, two, rank, five |
 | **Steel Joker** | xmult, full_deck, enhancements |
 | **Scary Face** | chips, face |
@@ -156,7 +156,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Business Card** | chance, face, economy |
 | **Supernova** | mult, hand_type, space |
 | **Ride the Bus** | mult, face, reset, scaling |
-| **Space Joker** | chance, hand_type, space |
+| **Space Joker** | chance, hand_type, hand_level, space |
 | **Egg** | food, sell_value, scaling, economy |
 | **Burglar** | discard, hands |
 | **Blackboard** | xmult, suit, spades, clubs |
@@ -174,7 +174,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **To Do List** | hand_type, economy |
 | **Cavendish** | xmult, chance, food |
 | **Card Sharp** | xmult, hand_type |
-| **Red Card** | mult, scaling |
+| **Red Card** | mult, scaling, booster |
 | **Madness** | xmult, destroy_card, scaling |
 | **Square Joker** | chips, scaling, hands |
 | **Séance** | spectral, consumable, hand_type, generation |
@@ -201,7 +201,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Reserved Parking** | chance, face, economy |
 | **Mail-In Rebate** | discard, rank, economy |
 | **To the Moon** | passive, economy |
-| **Hallucination** | chance, tarot, consumable, generation |
+| **Hallucination** | chance, tarot, consumable, generation, booster |
 | **Fortune Teller** | mult, tarot |
 | **Juggler** | hand_size, passive |
 | **Drunkard** | discard, passive |
@@ -212,7 +212,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Bull** | chips |
 | **Diet Cola** | on_sell, food, generation, tag |
 | **Trading Card** | destroy_card, discard, economy |
-| **Flash Card** | mult, reroll, scaling |
+| **Flash Card** | mult, reroll, shop, scaling |
 | **Popcorn** | mult, food, scaling |
 | **Spare Trousers** | mult, hand_type, scaling |
 | **Ancient Joker** | xmult, suit |
@@ -259,8 +259,8 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Shoot the Moon** | mult, rank, queen |
 | **Driver's License** | xmult, full_deck, enhancements |
 | **Cartomancer** | tarot, consumable, generation |
-| **Astronomer** | planet, consumable, passive, space |
-| **Burnt Joker** | hand_type, discard |
+| **Astronomer** | planet, booster, consumable, passive, shop, space |
+| **Burnt Joker** | hand_type, discard, hand_level |
 | **Bootstraps** | mult |
 | **Canio** | xmult, face, scaling |
 | **Triboulet** | xmult, rank, queen, king |
