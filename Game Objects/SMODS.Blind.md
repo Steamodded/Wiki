@@ -12,9 +12,13 @@
     - `config` values are saved under `G.GAME.blind.effect`.
   - `dollars = 5`: Amount of money obtained when defeated.
   - `mult = 2`: Required score relative to the Ante's Base score.
-  - `boss`: Marks this Blind as a Boss Blind and specifies on which Antes it can appear (`{ min = 1, max = 10 }`). `max` is an artifact and not functional. Use `in_pool` instead for advanced conditions.
-    - `boss.showdown`: Marks this Blind as a Final Boss Blind that shows up on every multiple of the winning Ante. `min` is ignored, use `in_pool` to restrict spawning.
+  - `boss = { min = 1, max = 10 }`: Marks this Blind as a Boss Blind and specifies on which Antes it can appear.  Use `in_pool` instead for advanced spawning conditions.
+    - `boss.showdown`: Marks this Blind as a Final Boss Blind that shows up on every multiple of the winning Ante. Still respects `min` and `max` values.
+  - `big = { min = 1, max = 10 }`/`small = { min = 1, max = 10 }`: Marks this Blind as a Big or Small Blind and specifies on which Antes it can appear. *(Added in 26.829.0)*
+    - `big.allow_duplicates`: Marks this Blind to ignore the standard spawning restriction of emptying the pool before repeating
+    - `big.allow_others`: Marks this Blind as being able to treat each slot it can appear in as an independent pool
   - `boss_colour`: Sets the background colour to use while playing this Blind (e.g. `HEX('56789A')`)
+  - `unskippable`: Marks this Blind as being unable to be skipped
   - `debuff = {}`: Configure vanilla Blind effects with these fields:
     - Disallowing hands in full:
       - `hand = { ['Hand Type'] = true}` for a specific set of hands,
@@ -77,3 +81,17 @@ refer to the current blind. (The base game uses `self` to refer to the current b
   - Unless `ignore_showdown_check` is set, this function will not be evaluated in the following cases:
     - A showdown Boss Blind should appear, but this Blind is a regular Boss Blind.
     - A regular Boss Blind should appear, but this Blind is a showdown Boss Blind.
+
+## Utility Functions
+
+- `Blind:is_type(type)`
+
+  - *(Added in 26.829.0)* Returns true if the blind is the submitted type (valid types: `'Boss', 'Big', 'Small'`)
+
+- `Blind:get_type()`
+
+  - Returns the type of the blind
+
+- `SMODS.get_new_blind(type)`
+
+  - *(Added in 26.829.0)* Returns the key of a blind of the specified type (type defaults to Boss if not submitted) and adds it to the used table
