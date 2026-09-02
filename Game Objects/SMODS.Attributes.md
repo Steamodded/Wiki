@@ -21,7 +21,9 @@ If you want to apply attributes in object definitions, add `attributes = {'key1'
   - `attribute_key`: key of the attribute to insert into
   - `object_keys`: table of keys of centers to insert into the attribute
 - `Card:has_attribute(attribute_key)` *(added in 1606b)*
-  - Checks whether a card has a certain attribute or not *(respects aliases)
+- `Blind:has_attribute(attribute_key)` *(added in 26.829.0)*
+- `Tag:has_attribute(attribute_key)` *(added in 26.829.0)*
+  - Checks whether the object has a certain attribute or not *(respects aliases)
   - `attribute_key`: key of the attribute to check
 
 ## Provided Attributes
@@ -30,7 +32,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 
 ### SMODS Attributes
 
-| Attribute Key | When to use | Vanilla Jokers |
+| Attribute Key | When to use | Vanilla Objects |
 | ------------- | ----------- | -------------- |
 | **mult** | gives +mult at some point of scoring or causes other cards to do so | **Jokers**<br>Joker, Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Jolly Joker, Zany Joker, Crazy Joker, Mad Joker, Droll Joker, Half Joker, Ceremonial Dagger, Mystic Summit, Misprint, Raised Fist, Fibonacci, Abstract Joker, Gros Michel, Even Steven, Scholar, Supernova, Ride the Bus, Green Joker, Red Card, Erosion, Fortune Teller, Flash Card, Popcorn, Spare Trousers, Walkie Talkie, Smiley Face, Swashbuckler, Onyx Agate, Shoot the Moon, Bootstraps<br><br>**Enhancements**<br>Mult Cards, Bonus Cards<br><br>**Editions**<br>Holographic |
 | **chips** | gives +chips at some point of scoring or causes other cards to do so | **Jokers**<br>Sly Joker, Wily Joker, Clever Joker, Devious Joker, Crafty Joker, Banner, Scary Face, Odd Todd, Scholar, Runner, Ice Cream, Blue Joker, Hiker, Square Joker, Stone Joker, Bull, Walkie Talkie, Castle, Arrowhead, Wee Joker, Stuntman<br><br>**Enhancements**<br>Bonus Cards, Stone Cards<br><br>**Editions**<br>Foil |
@@ -44,7 +46,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **swap** | swaps mult and chips during scoring or causes other cards to do so *(added in 1606b)* | *none* |
 | **retrigger** | retriggers a card at some point of scoring | **Jokers**<br>Mime, Dusk, Hack, Seltzer, Sock and Buskin, Hanging Chad<br><br>**Seals**<br>Red Seal |
 | **scaling** | scales a value on a trigger | **Jokers**<br>Ceremonial Dagger, Seltzer, Ride the Bus, Egg, Runner, Ice Cream, Constellation, Green Joker, Red Card, Madness, Square Joker, Vampire, Hologram, Rocket, Turtle Bean, Obelisk, Flash Card, Lucky Cat, Popcorn, Spare Trousers, Ramen, Castle, Campfire, Throwback, Glass Joker, Wee Joker, Hit the Road, Canio, Yorick |
-| **perma_bonus** | grants any perma bonus on a trigger *(added in 26.829.0)* | *none* |
+| **perma_bonus** | grants any perma bonus on a trigger *(added in 26.829.0)* | Hiker |
 | **reset** | has a value that resets | **Jokers**<br>Obelisk, Campfire, Hit the Road, Ride the Bus |
 | **suit** | trigger is affected by a suit | **Jokers**<br>Greedy Joker, Lusty Joker, Wrathful Joker, Gluttonous Joker, Smeared Joker, Castle, Ancient Joker, Seeing Double, Blackboard, Flower Pot, The Idol, Rough Gem, Bloodstone, Arrowhead, Onyx Agate<br><br>**Consumables**<br>The Star, The Moon, The Sun, The World, Sigil<br><br>**Enhancements**<br>Wild Cards<br><br>**Boss Blinds**<br>The Club, The Goad, The Head, The Window |
 | **diamonds** | trigger is affected by diamonds | **Jokers**<br>Greedy Joker, Smeared Joker, Rough Gem<br><br>**Consumables**<br>The Star<br><br>**Boss Blinds**<br>The Window |
@@ -121,7 +123,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **food** | themed on food | **Jokers**<br>Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola |
 | **space** | themed on space | **Jokers**<br>Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 
-### Vanilla Joker Attributes
+### Vanilla Object Attributes
 
 | Joker Name | Attributes |
 | ---------- | ---------- |
