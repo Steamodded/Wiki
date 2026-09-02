@@ -123,7 +123,9 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **food** | themed on food | **Jokers**<br>Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola |
 | **space** | themed on space | **Jokers**<br>Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 
-### Vanilla Object Attributes
+## Vanilla Joker Attributes
+
+### Vanilla Joker Attributes
 
 | Joker Name | Attributes |
 | ---------- | ---------- |
@@ -283,7 +285,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Chicot** | boss_blind |
 | **Perkeo** | generation, consumable |
 
-## Vanilla Consumable Attributes
+### Vanilla Consumable Attributes
 
 *(added in 26.829.0)*
 
@@ -339,7 +341,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 
 *(The Soul and Black Hole don't have attributes yet because the system doesn't yet support soulable objects.)*
 
-## Vanilla Booster Pack Attributes
+### Vanilla Booster Pack Attributes
 
 *(added in 26.829.0)*
 
@@ -351,7 +353,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Buffoon Pack** | joker |
 | **Spectral Pack** | spectral |
 
-## Vanilla Voucher Attributes
+### Vanilla Voucher Attributes
 
 *(added in 26.829.0)*
 
@@ -390,7 +392,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Paint Brush** | hand_size |
 | **Palette** | hand_size |
 
-## Vanilla Tag Attributes
+### Vanilla Tag Attributes
 
 *(added in 26.829.0)*
 
@@ -421,7 +423,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Orbital Tag** | hand_level |
 | **Economy Tag** | economy |
 
-## Vanilla card modifier Attributes
+### Vanilla card modifier Attributes
 
 *(added in 26.829.0)*
 
