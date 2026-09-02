@@ -9,6 +9,7 @@
   - `atlas = 'Joker', pos = { x = 0, y = 0 }` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
   - `config = {}, discovered = false, no_collection, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - Values in `config` are copied to `card.ability.seal` when the seal is applied to `card`.
+  - `attributes`: *(Added in 26.829.0)* Array of Attributes this seal has [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/)
   - `badge_colour = HEX('FFFFFF')`
   - `sound = { sound = 'gold_seal', per = 1.2, vol = 0.4 }`: The sound that should play when the seal is applied to a card.
     - `sound`: The key of the sound to play.

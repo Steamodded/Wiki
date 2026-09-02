@@ -8,7 +8,8 @@
 - **Optional parameters** *(defaults)*:
   - `atlas = 'Voucher', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
   - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
-    - `pools`: List of keys to ObjectTypes this center should be injected into
+  - `attributes`: *(Added in 26.829.0)* Array of Attributes this voucher has [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/)
+  - `pools`: List of keys to ObjectTypes this center should be injected into
       - Expects a list of keys like this:
 
   ```lua

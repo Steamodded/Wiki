@@ -11,7 +11,8 @@
     - `rarity = 1`
     - The base game rarities are `"Common"`, `"Uncommon"`, `"Rare"` or `"Legendary"`, or the numbers `1` = Common, `2` = Uncommon, `3` = Rare, `4` = Legendary.
     - [Modded rarities](https://docs.smods.dev/Game%20Objects/SMODS.Rarity) are specified using their key (including your mod prefix)
-    - `pools`: List of keys to ObjectTypes this center should be injected into
+  - `attributes`: *(Added in 1531zeebee)* Array of Attributes this joker has [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/)
+  - `pools`: List of keys to ObjectTypes this center should be injected into
       - Expects a list of keys like this:
 
   ```lua

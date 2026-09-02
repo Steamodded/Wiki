@@ -123,7 +123,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **food** | themed on food | **Jokers**<br>Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola |
 | **space** | themed on space | **Jokers**<br>Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 
-## Vanilla Joker Attributes
+## Vanilla Object Attributes
 
 ### Vanilla Joker Attributes
 
@@ -452,7 +452,7 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **Gold Seal** | economy |
 | **Purple Seal** | generation, tarot, consumable, discard |
 
-## Vanilla Blind Attributes
+### Vanilla Blind Attributes
 
 *(added in 26.829.0)*
 

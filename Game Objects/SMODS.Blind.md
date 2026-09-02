@@ -10,6 +10,7 @@
     - To have an animated sprite like vanilla Blinds set `atlas_table = 'ANIMATION_ATLAS'`. The `y` value determines the row to use for the animation. The `x` value is ignored and cycles through each frame of the animation.
   - `config = {}, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - `config` values are saved under `G.GAME.blind.effect`.
+  - `attributes`: *(Added in 26.829.0)* Array of Attributes this blind has [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/)
   - `dollars = 5`: Amount of money obtained when defeated.
   - `mult = 2`: Required score relative to the Ante's Base score.
   - `boss = { min = 1, max = 10 }`: Marks this Blind as a Boss Blind and specifies on which Antes it can appear.  Use `in_pool` instead for advanced spawning conditions.

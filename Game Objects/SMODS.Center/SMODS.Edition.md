@@ -24,6 +24,7 @@
    }
   ```
 
+  - `attributes`: *(Added in 26.829.0)* Array of Attributes this edition has [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/)
   - `pools`: List of keys to ObjectTypes this center should be injected into
   - Expects a list of keys like this:
 
