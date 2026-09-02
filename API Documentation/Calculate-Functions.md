@@ -1466,6 +1466,12 @@ This context is used when a Blind is skipped.
 if context.skip_blind then
 ```
 
+```lua
+context.skipped_blind -- Key of the blind that was just skipped
+context.skip_to -- Key of the new blind after skipping
+```
+
+
 ---
 
 #### context.tag_added
