@@ -188,7 +188,7 @@ Adds `card` to the player's owned cards, doing all the necessary operations (cal
 - `area` - Area the card should be added to, if not specified it will be inferred from the card.
 - `playing_card` - Sets the card's playing card value. If `false`, the value is not set. If no value is specified, it sets it to the next G.playing_card (only if `card` is a playing card)
 
-#### `SMODS.copy_card(card, args)`
+#### `SMODS.copy_card(card, args) -> Card`
 
 *(Added in 1814a)*
 This function replaces `copy_card`. `card` is the card being copied. The following `args` are supported:
