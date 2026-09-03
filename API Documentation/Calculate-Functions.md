@@ -1416,6 +1416,24 @@ context.index -- The index of the card added (i.e. its position in the booster a
 
 ---
 
+#### context.booster_select_card
+
+*(Added in [RELEASE])*
+This context is used when a card is selected from a booster to be added to the deck (not when used).
+
+```lua
+if context.booster_select_card then
+```
+
+```lua
+context.booster_select_card -- flag to identify this context, always TRUE
+context.booster -- The booster object
+context.card -- The card that has been added to the deck
+context.cardarea -- The area the card has been added to
+```
+
+---
+
 #### context.money_altered
 
 This context is used whenever money is gained or lost.
