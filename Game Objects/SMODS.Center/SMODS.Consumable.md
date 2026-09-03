@@ -41,6 +41,8 @@
   - Determines whether a consumable is currently able to be used.
 - `keep_on_use(self, card) -> bool`
   - Allows a used card to stay where it is or be moved to the consumables area from a booster pack instead of getting destroyed.
+- `on_select(self, card)`
+  - Called when the consumable is selected from a booster pack to be kept (not used). Only possible normally using `select_card`.
 - `calc_dollar_bonus(self, card) -> number, table`
   - For awarding money at the end of the round (e.g. Delayed Gratification, Cloud Nine)
   - *(Added in 1531zeebee)* Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:
