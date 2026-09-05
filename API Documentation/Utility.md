@@ -154,7 +154,7 @@ This function finds cards in the joker areas returned by `SMODS.get_card_areas`.
 
 #### `SMODS.add_card(t) -> Card`
 
-This function replaces `add_joker`. It takes the same input parameters as `SMODS.create_card` (below) and additionally emplaces the generated card into its area and evaluates `add_to_deck` effects.
+This function replaces `add_joker`. It takes the same input parameters as `SMODS.create_card` and `SMODS.add_to_deck` (below) and additionally emplaces the generated card into its area and evaluates `add_to_deck` effects.
 
 #### `SMODS.create_card(t) -> Card`
 
@@ -174,11 +174,13 @@ This function replaces `create_card`. It provides a cleaner interface to the sam
 - `no_edition` - If this is `true`, the generated card is guaranteed to have no randomly generated edition.
 - `edition`, `enhancement`, `seal` - Applies the specified modifier to the card.
 - `stickers`, `force_stickers` - This should be an array of sticker keys. Applies all specified stickers to the card. `force_stickers` bypasses all checks.
+- `silent` - Applies edition and/or seal silently
 - `front` - Front of the playing card, takes the playing card's key (e.g. `H_A`). Ignores `rank` and `suit`.
 - `rank` - Rank of the playing card. Can be the `key` or the `card_key` (e.g. `'Ace'` or `'A'`).
 - `suit` - Suit of the playing card. Can be the `key` or the `card_key` (e.g. `'Hearts'` or `'H'`).
 - `enhanced_poll` - Chance to pick `'Base'` over `'Enhanced'` with set `'Playing Card'`. Default: 0.6
 - `allow_duplicates` - Allows duplicates of created cards (when a `key` is not specified) as if Showman was owned.
+- `attributes` - Creates a card with these [attributes](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/). All other arguments will be passed to `SMODS.poll_object`.
 
 #### `SMODS.add_to_deck(card, args)`
 
