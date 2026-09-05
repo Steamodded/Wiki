@@ -174,13 +174,13 @@ This function replaces `create_card`. It provides a cleaner interface to the sam
 - `no_edition` - If this is `true`, the generated card is guaranteed to have no randomly generated edition.
 - `edition`, `enhancement`, `seal` - Applies the specified modifier to the card.
 - `stickers`, `force_stickers` - This should be an array of sticker keys. Applies all specified stickers to the card. `force_stickers` bypasses all checks.
-- `silent` - Applies edition and/or seal silently
+- `silent` - Applies edition and/or seal silently *(Added in 26.829.0)*
 - `front` - Front of the playing card, takes the playing card's key (e.g. `H_A`). Ignores `rank` and `suit`.
 - `rank` - Rank of the playing card. Can be the `key` or the `card_key` (e.g. `'Ace'` or `'A'`).
 - `suit` - Suit of the playing card. Can be the `key` or the `card_key` (e.g. `'Hearts'` or `'H'`).
 - `enhanced_poll` - Chance to pick `'Base'` over `'Enhanced'` with set `'Playing Card'`. Default: 0.6
 - `allow_duplicates` - Allows duplicates of created cards (when a `key` is not specified) as if Showman was owned.
-- `attributes` - Creates a card with these [attributes](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/). All other arguments will be passed to `SMODS.poll_object`.
+- `attributes` - Creates a card with these [attributes](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/). All other arguments will be passed to `SMODS.poll_object`. *(Added in 1531zeebee)*
 
 #### `SMODS.add_to_deck(card, args)`
 
@@ -210,7 +210,7 @@ Allows manually setting and removing debuffs from cards.
 - If `debuff` is the string `'prevent_debuff'`, blocks all possible debuffs on the card until removed.
 - If `debuff` is another truthy value, set a debuff on the card.
 - If `debuff` is a falsy values, remove this debuff.
-- If `delay` is truthy it delays the visual effect of the debuff, for effects during scoring.
+- *(Added in 26.829.0)* If `delay` is truthy it delays the visual effect of the debuff, for effects during scoring.
 
 #### `SMODS.recalc_debuff(card)`
 
