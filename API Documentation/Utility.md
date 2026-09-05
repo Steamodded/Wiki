@@ -202,7 +202,7 @@ This function replaces `copy_card`. `card` is the card being copied. The followi
 - `area` - Area the new copy should be added to, if not specified it will be inferred from the card.
 - `playing_card` - Sets the copy's playing card value. If `false`, the value is not set. If no value is specified, it sets it to the next G.playing_card (only if `card` is a playing card)
 
-#### `SMODS.debuff_card(card, debuff, source)`
+#### `SMODS.debuff_card(card, debuff, source, delay)`
 
 Allows manually setting and removing debuffs from cards.
 
@@ -210,6 +210,7 @@ Allows manually setting and removing debuffs from cards.
 - If `debuff` is the string `'prevent_debuff'`, blocks all possible debuffs on the card until removed.
 - If `debuff` is another truthy value, set a debuff on the card.
 - If `debuff` is a falsy values, remove this debuff.
+- If `delay` is truthy it delays the visual effect of the debuff, for effects during scoring.
 
 #### `SMODS.recalc_debuff(card)`
 
