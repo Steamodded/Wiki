@@ -74,4 +74,5 @@ Game Objects/API-Documentation.md
 Guides/G
 Guides/Event-Manager
 Guides/UI-Guide
+Guides/Thunderstore
 ```
