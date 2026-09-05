@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SMODS.Rank - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="SMODS.Rarity" href="../SMODS.Rarity/" /><link rel="prev" title="SMODS.PokerHand" href="../SMODS.PokerHand/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="SMODS.Rank"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/2608290/">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Logging/">Logging</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../API-Documentation/">Game Objects</a><ul class="current">
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li><a class="reference internal" href="#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a><ul>
+<li><a class="reference internal" href="#api-methods">API methods</a></li>
+<li><a class="reference internal" href="#utility-pools-and-randomness">Utility: pools and randomness</a></li>
+</ul>
+</li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/Game Objects/SMODS.Rank-and-SMODS.Suit.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../API-Documentation/"><span itemprop="name">Game Objects</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></strong>
+        <meta itemprop="position" content="3" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="smods-rank">
+<h1><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code><a class="headerlink" href="#smods-rank" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Required parameters:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">card_key</span></code>: Used to create keys for playing cards, formatted like <code class="docutils literal notranslate"><span class="pre">S_R</span></code>, where <code class="docutils literal notranslate"><span class="pre">S</span></code> is the suit’s and <code class="docutils literal notranslate"><span class="pre">R</span></code> is the rank’s card key. Your mod prefix gets prepended by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pos</span></code>: This is a partial <code class="docutils literal notranslate"><span class="pre">pos</span></code> table that only needs an <code class="docutils literal notranslate"><span class="pre">x</span></code> coordinate. As such, your atlas should organize ranks in columns.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nominal</span></code>: The amount of chips this rank should score.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loc_txt</span></code> or localization entry <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization">(reference)</a></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">loc_txt</span></code> should contain only a <code class="docutils literal notranslate"><span class="pre">name</span></code> string. For localization files, place this string in <code class="docutils literal notranslate"><span class="pre">misc.ranks[key]</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Optional parameters</strong> <em>(defaults)</em>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">prefix_config,</span> <span class="pre">dependencies</span></code> <a class="reference external" href="https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters">(reference)</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lc_atlas</span> <span class="pre">=</span> <span class="pre">'cards_1',</span> <span class="pre">hc_atlas</span> <span class="pre">=</span> <span class="pre">'cards_2'</span></code>: Atlas to use for low-contrast and high-contrast settings respectively. Use the same atlas key if you don’t have separate high contrast textures. <a class="reference external" href="https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards">(reference)</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shorthand</span> <span class="pre">=</span> <span class="pre">key</span></code>: Short descriptor used in deck preview.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">face_nominal</span></code>: Numeric value (normally between 0 and 1) that determines the displayed order of ranks with the same nominal value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">face</span> <span class="pre">=</span> <span class="pre">false</span></code>: whether this rank counts as a face card.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">next</span> <span class="pre">=</span> <span class="pre">{}</span></code>: The keys contained in the <code class="docutils literal notranslate"><span class="pre">next</span></code> table are considered to come after this card, e.g. for the purpose of evaluating straights.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strength_effect</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">fixed</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">}</span></code>: Determines how cards of this rank behave when Strength is used.</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">strength_effect.fixed</span></code> is a numeric value and <code class="docutils literal notranslate"><span class="pre">next</span></code> indexed at that value is a valid rank’s key, always convert into that rank.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">strength_effect.random</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, choose a random rank from <code class="docutils literal notranslate"><span class="pre">next</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">strength_effect.ignore</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code> or none of the above apply, do nothing.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">straight_edge</span> <span class="pre">=</span> <span class="pre">false</span></code>: If this is <code class="docutils literal notranslate"><span class="pre">true</span></code>, this card behaves like an Ace in straights, i.e., it can only be used as the lowest- or highest-order card in the hand.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">suit_map</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">Hearts</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">Clubs</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">Diamonds</span> <span class="pre">=</span> <span class="pre">2,</span> <span class="pre">Spades</span> <span class="pre">=</span> <span class="pre">3</span> <span class="pre">}</span></code></p>
+<ul>
+<li><p>For any suit keys present as keys in <code class="docutils literal notranslate"><span class="pre">suit_map</span></code>, prefer using this rank’s atlas over the suit’s atlas. The value at the suit’s key will be used as each sprite’s <code class="docutils literal notranslate"><span class="pre">x</span></code> position instead of the one specified by the suit.</p></li>
+<li><p>This indicates that you provide sprites for certain suits with your rank. Combinations of suits and ranks where neither side supports the other, blank sprites are used instead.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="smods-suit">
+<h1><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code><a class="headerlink" href="#smods-suit" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Required parameters:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">card_key</span></code>: Used to create keys for playing cards, formatted like <code class="docutils literal notranslate"><span class="pre">S_R</span></code>, where <code class="docutils literal notranslate"><span class="pre">S</span></code> is the suit’s and <code class="docutils literal notranslate"><span class="pre">R</span></code> is the rank’s card key. Your mod prefix gets prepended by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pos</span></code>: This is a partial <code class="docutils literal notranslate"><span class="pre">pos</span></code> table that only needs a <code class="docutils literal notranslate"><span class="pre">y</span></code> coordinate. As such, your atlas should organize suits in rows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ui_pos</span></code>: Sprite position of the miniature suit symbol used in deck view.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loc_txt</span></code> or localization entry <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization">(reference)</a></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">loc_txt</span></code> should contain a <code class="docutils literal notranslate"><span class="pre">singular</span></code> and <code class="docutils literal notranslate"><span class="pre">plural</span></code> string only. When using localization files, assign to <code class="docutils literal notranslate"><span class="pre">misc.suits_singular[key]</span></code> and <code class="docutils literal notranslate"><span class="pre">misc.suits_plural[key]</span></code> respectively.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Optional parameters</strong> <em>(defaults)</em>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">prefix_config,</span> <span class="pre">dependencies</span></code> <a class="reference external" href="https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters">(reference)</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lc_atlas</span> <span class="pre">=</span> <span class="pre">'cards_1'</span></code>: Atlas to use when high-contrast cards are disabled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hc_atlas</span> <span class="pre">=</span> <span class="pre">'cards_2'</span></code>: Atlas to use when high-contrast cards are enabled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lc_ui_atlas</span> <span class="pre">=</span> <span class="pre">'ui_1'</span></code>: Atlas for miniature suit symbols when high-contrast cards are disabled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hc_ui_atlas</span> <span class="pre">=</span> <span class="pre">'ui_2'</span></code>: Atlas for miniature suit symbols when high-contrast cards are enabled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lc_colour</span> <span class="pre">=</span> <span class="pre">HEX('000000')</span></code> (white): Text colour when high-contrast cards are disabled. It can be a colour table or a hex code string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hc_colour</span> <span class="pre">=</span> <span class="pre">HEX('000000')</span></code> (white): Text colour when high-contrast cards are enabled. It can be a colour table or a hex code string.</p></li>
+</ul>
+</li>
+</ul>
+<section id="api-methods">
+<h2>API methods<a class="headerlink" href="#api-methods" title="Link to this heading">#</a></h2>
+<p>These methods are available for both suits and ranks.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">loc_vars</span></code> <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#Localization-functions">(reference)</a></p>
+<ul>
+<li><p>This method provides very limited functionality compared to its counterpart on other classes. It has no support for any return values, but it does allow you to add tooltips to <code class="docutils literal notranslate"><span class="pre">info_queue</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">draw(self,</span> <span class="pre">card,</span> <span class="pre">layer)</span></code></p>
+<ul>
+<li><p>Draws additional sprites or shaders on cards.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="utility-pools-and-randomness">
+<h2>Utility: pools and randomness<a class="headerlink" href="#utility-pools-and-randomness" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Suits and Ranks have special support for <code class="docutils literal notranslate"><span class="pre">in_pool</span></code> with an extended argument signature: <code class="docutils literal notranslate"><span class="pre">in_pool(self,</span> <span class="pre">args)</span></code>. <code class="docutils literal notranslate"><span class="pre">args.initial_deck</span></code> indicates when a starting deck is being generated. This can be used to set rules for when your cards should be added to starting decks independently of whether they can show up in other places.</p></li>
+<li><p>Even though <code class="docutils literal notranslate"><span class="pre">SMODS.Suits</span></code> and <code class="docutils literal notranslate"><span class="pre">SMODS.Ranks</span></code> are unordered tables, it is possible to feed them directly into <code class="docutils literal notranslate"><span class="pre">pseudorandom_element</span></code> to get a random suit or rank while respecting <code class="docutils literal notranslate"><span class="pre">in_pool</span></code>. Example: <code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">rank</span> <span class="pre">=</span> <span class="pre">pseudorandom_element(SMODS.Ranks,</span> <span class="pre">pseudoseed('myrank'))</span></code>.</p></li>
+</ul>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../SMODS.PokerHand/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../SMODS.Rarity/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

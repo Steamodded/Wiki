@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Animated Sprites - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Text Styling" href="../../Guides/Text-Styling/" /><link rel="prev" title="Localization" href="../Localization/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="Animated Sprites"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/2608290/">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Localization/">Localization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#animatedsprite">AnimatedSprite</a></li>
+<li><a class="reference internal" href="#statesprite">StateSprite</a></li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/API Documentation/Animated-Sprites.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Animated Sprites</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="animated-sprites">
+<h1>Animated Sprites<a class="headerlink" href="#animated-sprites" title="Link to this heading">#</a></h1>
+<p>Most <code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code> objects, such as <a class="reference external" href="https://github.com/Steamodded/smods/wiki/SMODS.Joker">SMODS.Joker</a>, define an <code class="docutils literal notranslate"><span class="pre">atlas</span></code> field with the key to the <a class="reference external" href="https://github.com/Steamodded/smods/wiki/SMODS.Atlas">SMODS.Atlas</a> that holds its texture (at the xy position defined in the object’s <code class="docutils literal notranslate"><span class="pre">pos</span></code> field).
+An object can define an <em>animated</em> texture by using an <code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code> that defines <code class="docutils literal notranslate"><span class="pre">atlas_table</span> <span class="pre">=</span> <span class="pre">&quot;ANIMATION_ATLAS&quot;|&quot;STATE_ATLAS&quot;</span></code>, respectively creating an <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code> or a <code class="docutils literal notranslate"><span class="pre">StateSprite</span></code>.</p>
+<section id="animatedsprite">
+<h2>AnimatedSprite<a class="headerlink" href="#animatedsprite" title="Link to this heading">#</a></h2>
+<p>An <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code> functions like a regular <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>, except its <code class="docutils literal notranslate"><span class="pre">:animate()</span></code> method is called each frame. This allows it to change its texture after some time has elapsed, thus animating it.
+By default, an <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code> takes on the <code class="docutils literal notranslate"><span class="pre">frames</span></code> and <code class="docutils literal notranslate"><span class="pre">fps</span></code> arguments defined in its <code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code>’ <code class="docutils literal notranslate"><span class="pre">sprite_args</span></code> field, but defining <code class="docutils literal notranslate"><span class="pre">sprite_args</span></code> on an object such as a <code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code> allows overriding those default values.</p>
+<p>This is the structure of the <code class="docutils literal notranslate"><span class="pre">sprite_args</span></code> table:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start_pos:</span> <span class="pre">xy</span> <span class="pre">position</span></code>, the start xy position of the animation. (defaults to object’s <code class="docutils literal notranslate"><span class="pre">pos</span></code> field)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frames:</span> <span class="pre">number</span></code>, or <code class="docutils literal notranslate"><span class="pre">end_pos:</span> <span class="pre">xy</span> <span class="pre">position</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">{x=1,y=3}</span></code>. (frames may wrap between rows in the texture) (defaults to object’s <code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code>’ <code class="docutils literal notranslate"><span class="pre">frames</span></code> field)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flipped_h/v:</span> <span class="pre">boolean</span></code>, whether the sprite should be drawn flipped <em>horizontally</em> or <em>vertically</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fps:</span> <span class="pre">number</span></code>, <em>frames per second</em> of the animation. (defaults to object’s <code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code>’ <code class="docutils literal notranslate"><span class="pre">fps</span></code> field, or <code class="docutils literal notranslate"><span class="pre">10</span></code> (<code class="docutils literal notranslate"><span class="pre">G.ANIMATION_FPS</span></code>))</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frame_duration:</span> <span class="pre">number</span></code>, default frame duration, inverse of <code class="docutils literal notranslate"><span class="pre">fps</span></code>, as in; if <code class="docutils literal notranslate"><span class="pre">fps</span> <span class="pre">=</span> <span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">frame_duration</span> <span class="pre">=</span> <span class="pre">2</span></code>, each frame takes <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">second</span> <span class="pre">/</span> <span class="pre">10</span> <span class="pre">(fps)</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">(frame_duration)</span> <span class="pre">=</span> <span class="pre">0.2</span> <span class="pre">seconds</span></code>, for an effective <code class="docutils literal notranslate"><span class="pre">5</span></code> fps. (defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frame_durations:</span> <span class="pre">table</span></code>, a table of <em>per-frame</em> frame duration by index, e.g. <code class="docutils literal notranslate"><span class="pre">{[2]</span> <span class="pre">=</span> <span class="pre">3}</span></code> would make the second frame last three times as long.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frame_order:</span> <span class="pre">string|fun(sprite):integer</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;random&quot;</span></code>, or a table defining which frame appears at which index, e.g. <code class="docutils literal notranslate"><span class="pre">{[1]</span> <span class="pre">=</span> <span class="pre">3,</span> <span class="pre">[2]</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">[3]</span> <span class="pre">=</span> <span class="pre">2}</span></code> (third frame -&gt; first frame -&gt; second frame), or a function returning the frame. (defaults to <code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code>)</p></li>
+</ul>
+</section>
+<section id="statesprite">
+<h2>StateSprite<a class="headerlink" href="#statesprite" title="Link to this heading">#</a></h2>
+<p><em>Added by SMODS in version 26.829.0</em>. For <code class="docutils literal notranslate"><span class="pre">StateSprite</span></code>s, most of the above holds, except its <code class="docutils literal notranslate"><span class="pre">sprite_args</span></code> contains a <code class="docutils literal notranslate"><span class="pre">states</span></code> field, which defines a table of states by key:</p>
+<ul class="simple">
+<li><p><em>all of the above, behaving as defaults</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default_state:</span> <span class="pre">[state_key]</span></code>, the default state a sprite should start with.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">states_offset:</span> <span class="pre">xy</span> <span class="pre">offset</span></code>, applied to the start and end positions of a state’s animation. (allows reusing state tables for other objects that share the fundamental state structure)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">states</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">[state_key</span> <span class="pre">1]</span></code>: (the arbitrary name of the state, e.g. <code class="docutils literal notranslate"><span class="pre">moving</span></code>)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">start_pos:</span> <span class="pre">xy</span> <span class="pre">position</span></code>, same as for <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code>, for this state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frames:</span> <span class="pre">number</span></code>, or <code class="docutils literal notranslate"><span class="pre">end_pos:</span> <span class="pre">xy</span> <span class="pre">position</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">{x=1,y=3}</span></code>, same as for <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code>, for this state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flipped_h/v:</span> <span class="pre">boolean</span></code>, same as for <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code>, for this state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fps:</span> <span class="pre">number</span></code>, same as for <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code>, for this state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frame_duration:</span> <span class="pre">number</span></code>, same as for <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code>, for this state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frame_durations:</span> <span class="pre">table</span></code>, same as for <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code>, for this state.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frame_order:</span> <span class="pre">string|fun(sprite):integer</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code>, same as for <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code>, for this state.</p></li>
+<li><p><em>optional</em> <code class="docutils literal notranslate"><span class="pre">exit_to:</span> <span class="pre">[state_key]|function(state_table,</span> <span class="pre">sprite):</span> <span class="pre">[state_key]</span></code>: if defined, the <code class="docutils literal notranslate"><span class="pre">StateSprite</span></code> automatically changes state to the <code class="docutils literal notranslate"><span class="pre">state_key</span></code> after one iteration.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[state_key</span> <span class="pre">2]</span></code>: (the arbitrary name of a second state, e.g. <code class="docutils literal notranslate"><span class="pre">jumping</span></code>)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Each state may define the regular <code class="docutils literal notranslate"><span class="pre">sprite_args</span></code> arguments, taking priority over any values also present in the <code class="docutils literal notranslate"><span class="pre">sprite_args</span></code> table. A <code class="docutils literal notranslate"><span class="pre">StateSprite</span></code>’s state can be changed by calling <code class="docutils literal notranslate"><span class="pre">:set_state()</span></code> on it directly, or <code class="docutils literal notranslate"><span class="pre">Card:set_sprite_state()</span></code> on a card that has a <code class="docutils literal notranslate"><span class="pre">StateSprite</span></code> as its <code class="docutils literal notranslate"><span class="pre">self.children.center</span></code> sprite.</p>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../Localization/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Localization</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../../Guides/Text-Styling/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Text Styling</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

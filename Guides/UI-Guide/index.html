@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>UI Guide - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Packaging on Thunderstore" href="../Thunderstore/" /><link rel="prev" title="Event Guide" href="../Event-Manager/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="UI Guide"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/2608290/">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#basic-structure">Basic Structure</a><ul>
+<li><a class="reference internal" href="#node-types">Node Types</a></li>
+<li><a class="reference internal" href="#node-configuration">Node Configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-build-ui">How to Build UI</a><ul>
+<li><a class="reference internal" href="#the-basics">The Basics</a></li>
+<li><a class="reference internal" href="#creating-a-uibox">Creating a <code class="docutils literal notranslate"><span class="pre">UIBox</span></code></a></li>
+<li><a class="reference internal" href="#interaction">Interaction</a></li>
+<li><a class="reference internal" href="#helper-functions">Helper Functions</a></li>
+<li><a class="reference internal" href="#the-details">The Details</a></li>
+</ul>
+</li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/Guides/UI-Guide.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">UI Guide</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="ui-guide">
+<h1>UI Guide<a class="headerlink" href="#ui-guide" title="Link to this heading">#</a></h1>
+<section id="basic-structure">
+<h2>Basic Structure<a class="headerlink" href="#basic-structure" title="Link to this heading">#</a></h2>
+<p>The user interface of Balatro most closely resembles the CSS <code class="docutils literal notranslate"><span class="pre">flexbox</span></code> layout, albeit with fewer features.
+In Balatro, the basic building block of the UI is <code class="docutils literal notranslate"><span class="pre">UIElement</span></code> (aka. node), which is a table with the following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: stands for ‘node (type)’ and determines how the element will handle its contents</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config</span></code>: the properties of the node, akin to CSS properties</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nodes</span></code>: the nodes <em>inside</em> this node (aka. children nodes)</p></li>
+</ul>
+<p>A basic example looks like this:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- Example node:</span>
+</span><span data-line="2"><span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3">   <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">T</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">TEXT_LIGHT</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">}}</span>
+</span><span data-line="4"><span class="p">}}</span>
+</span></pre></div>
+</div>
+<p>Now, these <code class="docutils literal notranslate"><span class="pre">UIElement</span></code> objects would be very finicky to render and update one-by-one.
+Therefore, they are packaged into <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> objects.
+Each <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> is a complete UI feature like a menu, or a button.
+Note that a <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> can have other <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> objects inside it – a <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> for a menu will usually contain some <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> objects for buttons (among many <code class="docutils literal notranslate"><span class="pre">UIElement</span></code> objects).
+Hopefully, all of this will become more clear as this guide continues.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>As a metaphor, you can think of <code class="docutils literal notranslate"><span class="pre">UIElement</span></code> as a function, and <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> as a class.<br>
+In reality, both of them are objects, but the structure/hierarchy between them is similar.</p>
+</div>
+<section id="node-types">
+<h3>Node Types<a class="headerlink" href="#node-types" title="Link to this heading">#</a></h3>
+<p>The only values that the <code class="docutils literal notranslate"><span class="pre">n</span></code> field can take:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G.UIT.ROOT</span></code>: the top-level node of <em>every</em> <code class="docutils literal notranslate"><span class="pre">UIBox</span></code>; there’s exactly one of these per <code class="docutils literal notranslate"><span class="pre">UIBox</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.UIT.R</span></code>: a <strong>Row</strong> node, which arranges its child nodes <em>horizontally</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.UIT.C</span></code>: a <strong>Column</strong> node, which arranges its child nodes <em>vertically</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.UIT.T</span></code>: a <strong>Text</strong> node, which displays text.<br>
+This node must contain <code class="docutils literal notranslate"><span class="pre">text</span></code>, <code class="docutils literal notranslate"><span class="pre">colour</span></code>, and <code class="docutils literal notranslate"><span class="pre">scale</span></code> in its <code class="docutils literal notranslate"><span class="pre">config</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.UIT.O</span></code>: an <strong>Object</strong> node, which displays a special game object.<br>
+Game objects include <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>, <code class="docutils literal notranslate"><span class="pre">Card</span></code>, <code class="docutils literal notranslate"><span class="pre">CardArea</span></code>, <code class="docutils literal notranslate"><span class="pre">DynaText</span></code> (ie. dynamic text), and more.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.UIT.B</span></code>: a <strong>Box</strong> node, which is used as a spacer; it <em>ignores any child nodes</em>.
+This node must contain <code class="docutils literal notranslate"><span class="pre">h</span></code> and <code class="docutils literal notranslate"><span class="pre">w</span></code> in its <code class="docutils literal notranslate"><span class="pre">config</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.UIT.S</span></code>: a <strong>Slider</strong> node, which contains a slider input.<br>
+You should probably use <code class="docutils literal notranslate"><span class="pre">create_slider(..)</span></code> instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.UIT.I</span></code>: a text <strong>Input</strong> node, which contains text input.<br>
+Never used, use <code class="docutils literal notranslate"><span class="pre">create_text_input(..)</span></code> instead.</p></li>
+</ul>
+<p><em>Example</em>
+The following code uses a combination of columns and rows to build up the basic structure of the UI. It can then have other elements added to add content.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">ROOT</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">r</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">minw</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">minh</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;tm&quot;</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BLACK</span><span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">minw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">minh</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">MONEY</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3">  <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">minw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">minh</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">RED</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="4">   <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">minw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minh</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BLUE</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">}},</span>
+</span><span data-line="5">   <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">minw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minh</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BLUE</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">}}</span>
+</span><span data-line="6">  <span class="p">}},</span>
+</span><span data-line="7">
+</span><span data-line="8">  <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">minw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">minh</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">RED</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="9">   <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">minw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minh</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BLUE</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">}},</span>
+</span><span data-line="10">   <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">minw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minh</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BLUE</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">}}</span>
+</span><span data-line="11">  <span class="p">}}</span>
+</span><span data-line="12"> <span class="p">}}</span>
+</span><span data-line="13"><span class="p">}}</span>
+</span></pre></div>
+</div>
+<p><img alt="UI Example" src="https://i.imgur.com/0HMQObb.png" /></p>
+</section>
+<section id="node-configuration">
+<h3>Node Configuration<a class="headerlink" href="#node-configuration" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">config</span></code> field expects a table of configuration entries.
+There are <em>a lot</em> of different keys that the game recognises in different contexts, but there are only a few that you need to know in order to build working UIs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">align</span></code>: where the child nodes are placed within the current node; it always consists of <em>exactly two letters</em>:<br>
+the first letter is for <em>vertical</em> alignment: either <code class="docutils literal notranslate"><span class="pre">t</span></code> for Top, <code class="docutils literal notranslate"><span class="pre">c</span></code> for Center, or <code class="docutils literal notranslate"><span class="pre">b</span></code> for Bottom;<br>
+the second letter is for <em>horizontal</em> alignment: either <code class="docutils literal notranslate"><span class="pre">l</span></code> for Left, <code class="docutils literal notranslate"><span class="pre">m</span></code> for Middle, or <code class="docutils literal notranslate"><span class="pre">r</span></code> for Right.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">minh</span></code>, <code class="docutils literal notranslate"><span class="pre">maxh</span></code>: the Height of this node (either fixed, minimum, or maximum)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w</span></code>, <code class="docutils literal notranslate"><span class="pre">minw</span></code>, <code class="docutils literal notranslate"><span class="pre">maxw</span></code>: the Width of this node (either fixed, minimum, or maximum)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">padding</span></code>: the extra space inside the edges of the current node.<br>
+Standard values are <code class="docutils literal notranslate"><span class="pre">0.05</span></code> or <code class="docutils literal notranslate"><span class="pre">0.1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code>: the Roundness of corners of the current node.<br>
+Standard value is <code class="docutils literal notranslate"><span class="pre">0.1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">colour</span></code>: the fill colour of the current node.<br>
+Standard values are stored in the <code class="docutils literal notranslate"><span class="pre">G.C</span></code> table; fully custom values can be used with <code class="docutils literal notranslate"><span class="pre">HEX(&quot;00000000&quot;)</span></code> (taking RGBA values).<br>
+The British spelling is important!</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_fill</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> for no fill.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outline</span></code>: the thickness of the outline of the current node.<br>
+Standard value is <code class="docutils literal notranslate"><span class="pre">???</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outline_colour</span></code>: the colour of the outline of the current node.<br>
+See <code class="docutils literal notranslate"><span class="pre">colour</span></code> for possible values, above.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emboss</span></code>: how much the current node is <em>raised</em> out of its parent node.<br>
+Standard value is <code class="docutils literal notranslate"><span class="pre">0.05</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hover</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to render the current node as hovering <em>above</em> its parent node.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shadow</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to render the shadow of the current node; only shows-up under hovering nodes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">juice</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to apply the <code class="docutils literal notranslate"><span class="pre">juice_up</span></code> animation to the current node once it loads in.</p></li>
+</ul>
+<p>Some advanced configuration keys include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: set a custom ID to the current node.<br>
+This will allow you to find this specific node via <code class="docutils literal notranslate"><span class="pre">[UIBOX]:get_UIE_by_ID([ID])</span></code>;
+note that you must already know some <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> element that <em>contains</em> this node.<br>
+This is only useful in very specific cases, and for simple UIs you should not need to use this.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance_type</span></code>: set the layer that the current node is drawn on, either:<br>
+<code class="docutils literal notranslate"><span class="pre">NODE</span></code>, <code class="docutils literal notranslate"><span class="pre">MOVEABLE</span></code>, <code class="docutils literal notranslate"><span class="pre">UIBOX</span></code> (w/o <code class="docutils literal notranslate"><span class="pre">attention_text</span></code>), <code class="docutils literal notranslate"><span class="pre">CARDAREA</span></code>, <code class="docutils literal notranslate"><span class="pre">CARD</span></code>, <code class="docutils literal notranslate"><span class="pre">UI_BOX</span></code> (w/ <code class="docutils literal notranslate"><span class="pre">attention_text</span></code>), <code class="docutils literal notranslate"><span class="pre">ALERT</span></code>, or <code class="docutils literal notranslate"><span class="pre">POPUP</span></code><br>
+These are ordered from lowest to highest layer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ref_table</span></code>: a table containing some data that is relevant to the current node.<br>
+This is used to pass data to UI nodes or between UI-related functions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ref_value</span></code>: a string corresponding to a key in the current node’s <code class="docutils literal notranslate"><span class="pre">ref_table</span></code>.<br>
+This is always used in conjunction with <code class="docutils literal notranslate"><span class="pre">ref_table</span></code> to access the relevant value by key.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: set a function that will be called when the current node is being drawn.<br>
+Its value is a string of the function name; the function itself must be stored in <code class="docutils literal notranslate"><span class="pre">G.FUNCS</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">button</span></code>: set a function that will be called when the current node is clicked on.<br>
+Its value is a string of the function name; the function itself must be stored in <code class="docutils literal notranslate"><span class="pre">G.FUNCS</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tooltip</span></code>: add a tooltip when the current node is hovered over by a mouse/controller.<br>
+Its value is a table: <code class="docutils literal notranslate"><span class="pre">{title</span> <span class="pre">=</span> <span class="pre">&quot;&quot;,</span> <span class="pre">text</span> <span class="pre">=</span> <span class="pre">{&quot;Line1&quot;,</span> <span class="pre">&quot;Line2&quot;}}</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">detailed_tooltip</span></code>: similar to tooltip above</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">ref_table</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">ref_value</span></code></strong> fields are extremely custom.
+Therefore, whenever you encounter them, you must manually trace what data they access and how it is used.</p>
+</div>
+<p>Configuration options for Text nodes (ie. <code class="docutils literal notranslate"><span class="pre">G.UIT.T</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code>: set the string to display.<br>
+Alternatively, you can set text via the <code class="docutils literal notranslate"><span class="pre">ref_table</span></code> and <code class="docutils literal notranslate"><span class="pre">ref_value</span></code> combination; for example:<br>
+<code class="docutils literal notranslate"><span class="pre">{n=G.UIT.T,</span> <span class="pre">config={ref_table</span> <span class="pre">=</span> <span class="pre">G.GAME.current_round,</span> <span class="pre">ref_value</span> <span class="pre">=</span> <span class="pre">&quot;reroll_cost&quot;,</span> <span class="pre">scale</span> <span class="pre">=</span> <span class="pre">0.75,</span> <span class="pre">colour</span> <span class="pre">=</span> <span class="pre">G.C.WHITE}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: set a multiplier to text size.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">colour</span></code>: set the text colour.<br>
+Standard values are <code class="docutils literal notranslate"><span class="pre">G.C.UI.TEXT_LIGHT</span></code>, <code class="docutils literal notranslate"><span class="pre">G.C.UI.TEXT_DARK</span></code>, and <code class="docutils literal notranslate"><span class="pre">G.C.UI.TEXT_INACTIVE</span></code>,<br>
+but all values applicable to <code class="docutils literal notranslate"><span class="pre">colour</span></code> can also go here (see above).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vert</span></code>: set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to draw the text vertically (ie. sideways).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">font</span></code>: set the text font.<br>
+Must be a font object found within either <code class="docutils literal notranslate"><span class="pre">G.FONTS</span></code> for vanilla fonts or <code class="docutils literal notranslate"><span class="pre">SMODS.Fonts</span></code> for modded fonts.<br>
+The key needed is the same as the number or string you would provide in <code class="docutils literal notranslate"><span class="pre">{f:}</span></code> during <a class="reference external" href="https://docs.smods.dev/Guides/Text-Styling#text-font-modifier-f">localization</a></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to change the text contents of a <code class="docutils literal notranslate"><span class="pre">G.UIT.T</span></code> interactively, use arguments <code class="docutils literal notranslate"><span class="pre">ref_table</span></code> and <code class="docutils literal notranslate"><span class="pre">ref_value</span></code> instead of <code class="docutils literal notranslate"><span class="pre">text</span></code>. Its text will be updated whenever <code class="docutils literal notranslate"><span class="pre">ref_table[ref_value]</span></code> changes.
+If you want animated text, use <code class="docutils literal notranslate"><span class="pre">G.UIT.O</span></code> with <code class="docutils literal notranslate"><span class="pre">DynaText</span></code>.</p>
+</div>
+<p>Configuration optoins for Object nodes (ie. <code class="docutils literal notranslate"><span class="pre">G.UIT.O</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">object</span></code>: set the object to render.<br>
+This is a literal game object, like <code class="docutils literal notranslate"><span class="pre">CardArea</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">role</span></code>: set the relationship of the object to the UI.<br>
+Its value is a table containing at least: <code class="docutils literal notranslate"><span class="pre">{role_type</span> <span class="pre">=</span> <span class="pre">[TYPE]}</span></code> where type is either <code class="docutils literal notranslate"><span class="pre">&quot;Major&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Minor&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;Glued&quot;</span></code>.<br>
+You probably don’t need to use this.</p></li>
+</ul>
+</section>
+</section>
+<section id="how-to-build-ui">
+<h2>How to Build UI<a class="headerlink" href="#how-to-build-ui" title="Link to this heading">#</a></h2>
+<p>At this point, you should have a general idea about the structure of Balatro’s UI.
+Here are a few tips to actually making changes to it.</p>
+<section id="the-basics">
+<h3>The Basics<a class="headerlink" href="#the-basics" title="Link to this heading">#</a></h3>
+<p>The most important thing to understand is the parent-child relationship between nodes.
+A parent Row/Column node will arrange <em>all of its direct children</em> in Rows/Columns.
+The children will be equally distributed (unless any specific width/height configuration is specified).</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>      <span class="c1">-- 0</span>
+</span><span data-line="2">  <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cr&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{}},</span> <span class="c1">-- 1</span>
+</span><span data-line="3">  <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{}},</span> <span class="c1">-- 2</span>
+</span><span data-line="4">  <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cl&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{}}</span>  <span class="c1">-- 3</span>
+</span><span data-line="5"><span class="p">}}</span>
+</span><span data-line="6">
+</span><span data-line="7"><span class="c1">-- Result:</span>
+</span><span data-line="8"><span class="c1">--   ------------</span>
+</span><span data-line="9"><span class="c1">--   |        1 |</span>
+</span><span data-line="10"><span class="c1">--   ------------</span>
+</span><span data-line="11"><span class="c1">--   |     2    |</span>
+</span><span data-line="12"><span class="c1">--   ------------</span>
+</span><span data-line="13"><span class="c1">--   | 3        |</span>
+</span><span data-line="14"><span class="c1">--   ------------</span>
+</span><span data-line="15"><span class="c1">-- The WHOLE box containing 1,2,3 is Element 0</span>
+</span><span data-line="16"><span class="c1">-- The contents of Elements 1,2,3 will go inside their respective small boxes.</span>
+</span><span data-line="17"><span class="c1">-- The contents of Elements 1/3 will be right/left aligned, due to configuration.</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>    <span class="c1">-- 0</span>
+</span><span data-line="2">  <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{}},</span> <span class="c1">-- 1</span>
+</span><span data-line="3">  <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>    <span class="c1">-- 2</span>
+</span><span data-line="4">    <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{}},</span> <span class="c1">-- 3</span>
+</span><span data-line="5">    <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{}}</span>  <span class="c1">-- 4</span>
+</span><span data-line="6">  <span class="p">}}</span>
+</span><span data-line="7"><span class="p">}}</span>
+</span><span data-line="8">
+</span><span data-line="9"><span class="c1">-- Result:</span>
+</span><span data-line="10"><span class="c1">--   -------------</span>
+</span><span data-line="11"><span class="c1">--   |     |  3  |</span>
+</span><span data-line="12"><span class="c1">--   |  1  |-----|</span>
+</span><span data-line="13"><span class="c1">--   |     |  4  |</span>
+</span><span data-line="14"><span class="c1">--   -------------</span>
+</span><span data-line="15"><span class="c1">-- The WHOLE box is Element 0</span>
+</span><span data-line="16"><span class="c1">-- The row containing 3,4 is Element 2</span>
+</span></pre></div>
+</div>
+<p>The biggest tip with regards to making a UI is to always <strong>alternate Row nodes and Column nodes for each UI ‘level’</strong>.
+The way that the UI is drawn, similar to CSS <code class="docutils literal notranslate"><span class="pre">flexbox</span></code>, stretches each UI element either in the Row direction or the Column direction.
+Therefore, to make everything center-aligned, you need to stretch UI elements in both directions.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- Always alternate Row and Column nodes between UI &#39;levels&#39; (to keep center alignment):</span>
+</span><span data-line="2"><span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="3">  <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="4">    <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{...}},</span>
+</span><span data-line="5">    <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{...}}</span>
+</span><span data-line="6">  <span class="p">}},</span>
+</span><span data-line="7">  <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{...}},</span>
+</span><span data-line="8">  <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="9">    <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="10">      <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{...}},</span>
+</span><span data-line="11">      <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{...}},</span>
+</span><span data-line="12">    <span class="p">}}</span>
+</span><span data-line="13">  <span class="p">}}</span>
+</span><span data-line="14"><span class="p">}}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="creating-a-uibox">
+<h3>Creating a <code class="docutils literal notranslate"><span class="pre">UIBox</span></code><a class="headerlink" href="#creating-a-uibox" title="Link to this heading">#</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> is a very useful tool if you need to create <strong>interactive UIs</strong>,
+because a <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> can be updated by deleting it and creating a new <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> with updated values.
+This is how Balatro’s menus are updated.</p>
+<p>It is created via a constructor and then used as a UI Object:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- A simple UIBox being created:</span>
+</span><span data-line="2"><span class="kd">local</span> <span class="n">my_menu</span> <span class="o">=</span> <span class="n">UIBox</span><span class="p">({</span>
+</span><span data-line="3">   <span class="n">definition</span> <span class="o">=</span> <span class="n">my_menu_function</span><span class="p">(...),</span>
+</span><span data-line="4">   <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">,</span> <span class="p">...}</span>
+</span><span data-line="5"><span class="p">})</span>
+</span><span data-line="6">
+</span><span data-line="7"><span class="c1">-- A UIBox must be placed in an Object node!</span>
+</span><span data-line="8"><span class="kd">local</span> <span class="n">my_menu_node</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">O</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">object</span> <span class="o">=</span> <span class="n">my_menu</span><span class="p">}}</span>
+</span></pre></div>
+</div>
+<p>The vital part of creating a <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> is providing a <strong>definition function</strong>.
+This function must simply <strong>return a Root node</strong> (ie. <code class="docutils literal notranslate"><span class="pre">G.UIT.ROOT</span></code>),
+although it will most likely contain at least a few child nodes that hold some content.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">function</span> <span class="nf">my_menu_function</span><span class="p">(</span><span class="n">menu_name</span><span class="p">)</span>
+</span><span data-line="2">   <span class="kr">return</span> <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">ROOT</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="3">      <span class="c1">-- Use a Row node to arrange the contents in rows:</span>
+</span><span data-line="4">      <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="5">         <span class="c1">-- Use a wrapper Column node to hold the menu name:</span>
+</span><span data-line="6">         <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="7">            <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">T</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="n">menu_name</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">TEXT_LIGHT</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">}}</span>
+</span><span data-line="8">         <span class="p">}},</span>
+</span><span data-line="9">         <span class="c1">-- Use a wrapper Column node to hold the first menu row:</span>
+</span><span data-line="10">         <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="11">            <span class="c1">-- Menu Row 1 contents...</span>
+</span><span data-line="12">         <span class="p">}},</span>
+</span><span data-line="13">         <span class="c1">-- Use a wrapper Column node to hold the second menu row:</span>
+</span><span data-line="14">         <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">align</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="15">            <span class="c1">-- Menu Row 2 contents...</span>
+</span><span data-line="16">         <span class="p">}},</span>
+</span><span data-line="17">         <span class="c1">-- Etc...</span>
+</span><span data-line="18">      <span class="p">}}</span>
+</span><span data-line="19">   <span class="p">}}</span>
+</span><span data-line="20"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<section id="interaction">
+<h3>Interaction<a class="headerlink" href="#interaction" title="Link to this heading">#</a></h3>
+<p>The last vital component of Balatro’s UI is interaction, and it is governed by buttons.
+Consider the following button element:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">C</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">button</span> <span class="o">=</span> <span class="s2">&quot;my_button&quot;</span><span class="p">,</span> <span class="n">my_data</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="2">  <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">T</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Press Me!&quot;</span><span class="p">,</span> <span class="p">...}}</span>
+</span><span data-line="3"><span class="p">}}</span>
+</span></pre></div>
+</div>
+<p>Once this button is pressed, the game will call <code class="docutils literal notranslate"><span class="pre">G.FUNCS.my_button(e)</span></code>, where <code class="docutils literal notranslate"><span class="pre">e</span></code> is the whole button UI Element. That means you can access <code class="docutils literal notranslate"><span class="pre">e.config.my_data</span></code>, <code class="docutils literal notranslate"><span class="pre">e.nodes</span></code>, etc.</p>
+<p>As a last example, here is one possible pattern to update the contents of a <code class="docutils literal notranslate"><span class="pre">UIBox</span></code>:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">function</span> <span class="nc">G</span><span class="p">.</span><span class="nc">FUNCS</span><span class="p">.</span><span class="nf">my_update_menu</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</span><span data-line="2">  <span class="c1">-- Get the menu UIBox object:</span>
+</span><span data-line="3">  <span class="kd">local</span> <span class="n">my_menu_uibox</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">my_data</span><span class="p">.</span><span class="n">menu_uibox</span>
+</span><span data-line="4">  <span class="c1">-- Get the parent of the menu UIBox, because we want to delete and re-create the menu:</span>
+</span><span data-line="5">  <span class="kd">local</span> <span class="n">menu_wrap</span> <span class="o">=</span> <span class="n">my_menu_uibox</span><span class="p">.</span><span class="n">parent</span>
+</span><span data-line="6">
+</span><span data-line="7">  <span class="c1">-- Delete the current menu UIBox:</span>
+</span><span data-line="8">  <span class="n">menu_wrap</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">object</span><span class="p">:</span><span class="n">remove</span><span class="p">()</span>
+</span><span data-line="9">  <span class="c1">-- Create the new menu UIBox:</span>
+</span><span data-line="10">  <span class="n">menu_wrap</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">UIBox</span><span class="p">({</span>
+</span><span data-line="11">    <span class="n">definition</span> <span class="o">=</span> <span class="n">my_menu_function</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">my_data</span><span class="p">),</span>
+</span><span data-line="12">    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="n">parent</span> <span class="o">=</span> <span class="n">menu_wrap</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span><span class="p">}</span> <span class="c1">-- You MUST specify parent!</span>
+</span><span data-line="13">  <span class="p">})</span>
+</span><span data-line="14">  <span class="c1">-- Update the UI:</span>
+</span><span data-line="15">  <span class="n">menu_wrap</span><span class="p">.</span><span class="n">UIBox</span><span class="p">:</span><span class="n">recalculate</span><span class="p">()</span>
+</span><span data-line="16"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<section id="helper-functions">
+<h3>Helper Functions<a class="headerlink" href="#helper-functions" title="Link to this heading">#</a></h3>
+<p>The game’s UI elements should ideally be consistent, which is why there are a few helper functions that
+create and/or organise <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> elements from templates.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">UIBox_button</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</span><span data-line="2"><span class="n">create_toggle</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</span><span data-line="3"><span class="n">create_slider</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</span><span data-line="4"><span class="n">create_text_input</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</span><span data-line="5"><span class="n">simple_text_container</span><span class="p">(</span><span class="n">_loc</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+</span><span data-line="6"><span class="n">create_UIBox_generic_options</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</span><span data-line="7"><span class="n">create_option_cycle</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>These are not exhaustive, and you will have to figure out exactly how to use them by yourself.
+This is meant to be an introductory guide, not Balatro’s UI API documentation.</p>
+</section>
+<section id="the-details">
+<h3>The Details<a class="headerlink" href="#the-details" title="Link to this heading">#</a></h3>
+<p>The last couple sections may already seem quite complex.
+It took hours of exploring the game’s UI and experimenting with custom UIs to truly understand the dynamics of it all.
+Unfortunately, there are a lot of different functions, tables, keys, and values that are used sporadically,
+so the best anyone can do is to try different things and find patterns.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In reality, the best way to learn Balatro’s UI is to <strong>copy its existing UI elements</strong>.
+Everything you could ever need to design/change already exists in the game – you just need to find where it is defined and then explore how/why it works.</p>
+</div>
+<p>Once again, two good places to get a feel for building UI are <a class="reference external" href="https://github.com/DivvyCr/Balatro-Preview/blob/main/src/Interface.lua">Divvy’s Preview</a> and <a class="reference external" href="https://github.com/DivvyCr/Balatro-History/tree/main/src/UI">Divvy’s History</a> mods.</p>
+<hr class="docutils" />
+<p><em>Guide written by DivvyC, original notes by Eremel</em></p>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../Event-Manager/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Event Guide</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../Thunderstore/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Packaging on Thunderstore</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

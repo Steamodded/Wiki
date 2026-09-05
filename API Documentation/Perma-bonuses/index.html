@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Permanent bonuses - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Object Weights" href="../Weight-System/" /><link rel="prev" title="Text Styling" href="../../Guides/Text-Styling/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="Permanent bonuses"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/2608290/">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#list-of-all-perma-bonusess">List of all perma-bonusess</a></li>
+<li><a class="reference internal" href="#re-implementation-of-hiker">Re-implementation of Hiker</a></li>
+<li><a class="reference internal" href="#implementation-details">Implementation Details</a></li>
+<li><a class="reference internal" href="#localization">Localization</a></li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/API Documentation/Perma-bonuses.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Permanent bonuses</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="permanent-bonuses">
+<h1>Permanent bonuses<a class="headerlink" href="#permanent-bonuses" title="Link to this heading">#</a></h1>
+<p>Card objects can be given permanent permanent bonuses that allow them to add or subtract score, similar to the vanilla Hiker joker. These are only considered on <strong>playing cards</strong> during the scoring phases. These will not be changed by applying enhancements, copying the card, or similar. Steamodded by default handles all the UI elements for this. These were added in <code class="docutils literal notranslate"><span class="pre">1.0.0~ALPHA-1428c</span></code>. *Blind Size and Score related bonuses were added in <code class="docutils literal notranslate"><span class="pre">1.0.0~BETA-1531zeebee</span></code>*s</p>
+<section id="list-of-all-perma-bonusess">
+<h2>List of all perma-bonusess<a class="headerlink" href="#list-of-all-perma-bonusess" title="Link to this heading">#</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">perma_bonus</span><span class="p">,</span>      <span class="c1">-- permanent chips, from vanilla</span>
+</span><span data-line="2"><span class="n">perma_mult</span><span class="p">,</span>
+</span><span data-line="3"><span class="n">perma_x_chips</span><span class="p">,</span>
+</span><span data-line="4"><span class="n">perma_x_mult</span><span class="p">,</span>
+</span><span data-line="5">
+</span><span data-line="6"><span class="n">perma_h_chips</span><span class="p">,</span>
+</span><span data-line="7"><span class="n">perma_h_mult</span><span class="p">,</span>
+</span><span data-line="8"><span class="n">perma_h_x_chips</span><span class="p">,</span>
+</span><span data-line="9"><span class="n">perma_h_x_mult</span><span class="p">,</span>
+</span><span data-line="10">
+</span><span data-line="11"><span class="n">perma_p_dollars</span><span class="p">,</span>  <span class="c1">-- money on scoring</span>
+</span><span data-line="12"><span class="n">perma_h_dollars</span><span class="p">,</span>  <span class="c1">-- money on held at end of round (like gold cards)</span>
+</span><span data-line="13">
+</span><span data-line="14"><span class="n">perma_score</span><span class="p">,</span> <span class="c1">-- adds to current chips scored</span>
+</span><span data-line="15"><span class="n">perma_x_score</span><span class="p">,</span> <span class="c1">-- multiplies current chips scored</span>
+</span><span data-line="16"><span class="n">perma_h_score</span><span class="p">,</span> <span class="c1">-- adds to current chips scored when held</span>
+</span><span data-line="17"><span class="n">perma_h_x_score</span> <span class="c1">-- multiplies current chips scored when held</span>
+</span><span data-line="18">
+</span><span data-line="19"><span class="n">perma_blind_size</span><span class="p">,</span> <span class="c1">-- adds to current blind_size</span>
+</span><span data-line="20"><span class="n">perma_x_blind_size</span><span class="p">,</span> <span class="c1">-- multiplies current blind_size</span>
+</span><span data-line="21"><span class="n">perma_h_blind_size</span><span class="p">,</span> <span class="c1">-- adds to current blind_size when held</span>
+</span><span data-line="22"><span class="n">perma_h_x_blind_size</span> <span class="c1">-- multiplies current blind_size when held</span>
+</span><span data-line="23">
+</span><span data-line="24"><span class="n">perma_repetitions</span><span class="p">,</span> <span class="c1">-- retriggers in any context</span>
+</span></pre></div>
+</div>
+</section>
+<section id="re-implementation-of-hiker">
+<h2>Re-implementation of Hiker<a class="headerlink" href="#re-implementation-of-hiker" title="Link to this heading">#</a></h2>
+<p>This function is an example of how to use perma-bonuses in smods, based on the vanilla Hiker joker. See <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Calculate-Functions">Calculate Functions</a> for more information about <code class="docutils literal notranslate"><span class="pre">calculate</span></code>.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">Joker</span><span class="p">{</span>
+</span><span data-line="2">    <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;hiker2&quot;</span><span class="p">,</span>
+</span><span data-line="3">    <span class="p">...,</span>
+</span><span data-line="4">    <span class="n">calculate</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">card</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</span><span data-line="5">        <span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">individual</span> <span class="ow">and</span> <span class="n">context</span><span class="p">.</span><span class="n">cardarea</span> <span class="o">==</span> <span class="n">G</span><span class="p">.</span><span class="n">play</span> <span class="kr">then</span>
+</span><span data-line="6">            <span class="n">context</span><span class="p">.</span><span class="n">other_card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">perma_bonus</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="n">other_card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">perma_bonus</span> <span class="ow">or</span> <span class="mi">0</span>
+</span><span data-line="7">            <span class="n">context</span><span class="p">.</span><span class="n">other_card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">perma_bonus</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="n">other_card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">perma_bonus</span> <span class="o">+</span> <span class="n">card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">extra</span>
+</span><span data-line="8">            <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="9">                <span class="n">message</span> <span class="o">=</span> <span class="n">localize</span><span class="p">(</span><span class="s1">&#39;k_upgrade_ex&#39;</span><span class="p">),</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">CHIPS</span>
+</span><span data-line="10">            <span class="p">}</span>
+</span><span data-line="11">        <span class="kr">end</span>
+</span><span data-line="12">    <span class="kr">end</span>
+</span><span data-line="13"><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="implementation-details">
+<h2>Implementation Details<a class="headerlink" href="#implementation-details" title="Link to this heading">#</a></h2>
+<p>Permanent bonuses get added when the playing card gets scored. They happen at the same time as base chips and enhancements, before any edition effects. Permanent bonuses do not change when the player applies enhancements, copies the card, or similar.</p>
+<p>Permanent bonuses are scored in the following order:</p>
+<ol class="arabic simple">
+<li><p>chips (base + enhancement + permanent)</p></li>
+<li><p>mult (enhancement + permanent)</p></li>
+<li><p>xchips (enhancement * permanent)</p></li>
+<li><p>xmult (enhancement * permanent)</p></li>
+<li><p>dollars (seals + permanent)</p></li>
+<li><p>score (permanent, enhancement)</p></li>
+<li><p>xscore (permanent, enhancement)</p></li>
+<li><p>blindsize (permanent, enhancement)</p></li>
+<li><p>xblindsize (permanent, enhancement)</p></li>
+<li><p>all edition effects</p></li>
+<li><p>all joker effects</p></li>
+</ol>
+<p>Permanent (held) chips get scored at the same time as a playing card’s base chips and chips from enhancements. They also show up as a combined number with bonus chips from enhancements in the UI. This is inherited vanilla behaviour. Supports negative values.</p>
+<p>Permanent (held) mult gets scored at the same time as a playing card’s regular mult and bonus mult from enhancements. It also shows up as a combined number with bonus mult from enhancements. Supports negative values.</p>
+<p>Permanent (held) xchips get multiplied with enhancement xchips, showing as a single multiplied number during scoring. Does not support final negative xchips, and will do nothing if end result is negative.</p>
+<p>Permanent xmult gets multiplied with enhancement xmult such as glass when scoring, showing as a single multiplied number during scoring. It does show up as a seperate number in the UI when hovering over the card. Does not support final negative xmult, and will do nothing if end result is negative.</p>
+<p>Permanent held xmult gets multiplied with enhancement held xmult such as steel when scoring, showing as a single multiplied number during scoring. It does show up as a seperate number in the UI when hovering over the card. It does not support negative values, and will do nothing if scored.</p>
+<p>Permanent (held) score gets scored before the enhancement. It does show up as a seperate number in the UI when hovering over the card. Supports negative values.</p>
+<p>Permanent (held) xscore gets scored before the enhancement. It does show up as a seperate number in the UI when hovering over the card. Does not support final negative xscore, and will do nothing if end result is negative.
+Permanent (held) blindsize get scored before the enhancement. It does show up as a seperate number in the UI when hovering over the card. Supports negative values.</p>
+<p>Permanent (held) xblindsize get scored before the enhancement. It does show up as a seperate number in the UI when hovering over the card. Does not support final negative xblindsize, and will do nothing if end result is negative.</p>
+<p>Permanent held dollars only give money on end of round, similar to the gold enhancement.</p>
+<p>Permanent repetitions retrigger the card in any context, both when scored or when in hand (Gold cards, Blue seals, etc.).</p>
+</section>
+<section id="localization">
+<h2>Localization<a class="headerlink" href="#localization" title="Link to this heading">#</a></h2>
+<p>Steamodded by default handles the localization of all perma-bonuses described on this page. These can be overwritten (or translated) by defining:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">card_extra_chips</span><span class="p">,</span>
+</span><span data-line="2"><span class="n">card_extra_mult</span><span class="p">,</span>
+</span><span data-line="3"><span class="n">card_extra_x_chips</span><span class="p">,</span>
+</span><span data-line="4"><span class="n">card_extra_x_mult</span><span class="p">,</span>
+</span><span data-line="5">
+</span><span data-line="6"><span class="n">card_extra_h_chips</span><span class="p">,</span>
+</span><span data-line="7"><span class="n">card_extra_h_mult</span><span class="p">,</span>
+</span><span data-line="8"><span class="n">card_extra_h_x_chips</span><span class="p">,</span>
+</span><span data-line="9"><span class="n">card_extra_h_x_mult</span><span class="p">,</span>
+</span><span data-line="10">
+</span><span data-line="11"><span class="n">card_extra_score</span><span class="p">,</span>
+</span><span data-line="12"><span class="n">card_extra_x_score</span><span class="p">,</span>
+</span><span data-line="13"><span class="n">card_extra_h_score</span><span class="p">,</span>
+</span><span data-line="14"><span class="n">card_extra_h_x_score</span><span class="p">,</span>
+</span><span data-line="15">
+</span><span data-line="16"><span class="n">card_extra_blind_size</span><span class="p">,</span>
+</span><span data-line="17"><span class="n">card_extra_x_blind_size</span><span class="p">,</span>
+</span><span data-line="18"><span class="n">card_extra_h_blind_size</span><span class="p">,</span>
+</span><span data-line="19"><span class="n">card_extra_h_x_blind_size</span><span class="p">,</span>
+</span><span data-line="20">
+</span><span data-line="21"><span class="n">card_extra_p_dollars</span><span class="p">,</span>
+</span><span data-line="22"><span class="n">card_extra_h_dollars</span><span class="p">,</span>
+</span><span data-line="23">
+</span><span data-line="24"><span class="n">card_extra_repetitions</span><span class="p">,</span>
+</span></pre></div>
+</div>
+<p>Simplify define an entry under <code class="docutils literal notranslate"><span class="pre">descriptions.Other</span></code> (see <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization">Localization</a> for more information) such as:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1">            <span class="n">card_extra_chips</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="2">                <span class="n">text</span><span class="o">=</span><span class="p">{</span>
+</span><span data-line="3">                    <span class="s2">&quot;{C:chips}#1#{} extra chips&quot;</span><span class="p">,</span>
+</span><span data-line="4">                <span class="p">},</span>
+</span><span data-line="5">            <span class="p">},</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../../Guides/Text-Styling/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Text Styling</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../Weight-System/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Object Weights</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

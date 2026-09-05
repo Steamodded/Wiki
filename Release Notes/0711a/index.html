@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BETA-0711a - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Making Your First Mod" href="../../Guides/Your-First-Mod/" /><link rel="prev" title="BETA-0827a" href="../0827/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="BETA-0711a"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Release Notes</a><ul class="current">
+<li class="toctree-l2 _expand"><a class="reference internal" href="../2608290/">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../0827/">BETA-0827a</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#main-notes">Main Notes</a></li>
+<li><a class="reference internal" href="#probability-changes">Probability Changes</a><ul>
+<li><a class="reference internal" href="#updating-probability-chances">Updating Probability Chances</a><ul>
+<li><a class="reference internal" href="#step-1-replace-your-loc-vars">Step 1 - Replace your loc_vars</a></li>
+<li><a class="reference internal" href="#step-2-replace-your-probability-checks">Step 2 - Replace your probability checks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modifying-probability">Modifying Probability</a><ul>
+<li><a class="reference internal" href="#context-mod-probability">context.mod_probability</a></li>
+<li><a class="reference internal" href="#context-fix-probability">context.fix_probability</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#responding-to-probability-rolls">Responding to probability rolls</a><ul>
+<li><a class="reference internal" href="#context-pseudorandom-result">context.pseudorandom_result</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-changes">Other Changes</a><ul>
+<li><a class="reference internal" href="#new-contexts">New Contexts</a><ul>
+<li><a class="reference internal" href="#context-initial-scoring-step">context.initial_scoring_step</a></li>
+<li><a class="reference internal" href="#context-joker-type-destroyed">context.joker_type_destroyed</a></li>
+<li><a class="reference internal" href="#context-evaluate-poker-hand">context.evaluate_poker_hand</a></li>
+<li><a class="reference internal" href="#context-check-eternal">context.check_eternal</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#new-functions">New Functions</a><ul>
+<li><a class="reference internal" href="#smods-is-eternal-card-trigger">SMODS.is_eternal(card, trigger)</a></li>
+<li><a class="reference internal" href="#card-should-hide-front">Card:should_hide_front()</a></li>
+<li><a class="reference internal" href="#smods-is-poker-hand-visible-handname">SMODS.is_poker_hand_visible(handname)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-s-changed">What&#8217;s Changed</a></li>
+<li><a class="reference internal" href="#new-contributors">New Contributors</a></li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/Release Notes/0711a.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../"><span itemprop="name">Release Notes</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">BETA-0711a</strong>
+        <meta itemprop="position" content="3" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="beta-0711a">
+<h1>BETA-0711a<a class="headerlink" href="#beta-0711a" title="Link to this heading">#</a></h1>
+<section id="main-notes">
+<h2>Main Notes<a class="headerlink" href="#main-notes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Added SMODS probability functions</p></li>
+<li><p>Poker Hands <code class="docutils literal notranslate"><span class="pre">visible</span></code> property adjustments</p></li>
+<li><p>Animation adjustments</p>
+<ul>
+<li><p>certificate/marble</p></li>
+<li><p>card juicing on conditional upgrades</p></li>
+<li><p>level not updating when levelling up a different hand</p></li>
+</ul>
+</li>
+<li><p>Discard effects on debuffed cards fixed</p></li>
+<li><p>Blueprint effects no longer copy debuffed jokers</p></li>
+<li><p>Blind debuff text can now be updated after it has been created</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">context.initial_scoring_step</span></code></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">context.joker_type_destroyed</span></code></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">context.evaluate_poker_hand</span></code></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">context.check_eternal</span></code></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">SMODS.is_eternal</span></code></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Card:should_hide_front</span></code></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">context.beat_boss</span></code> to <code class="docutils literal notranslate"><span class="pre">context.end_of_round</span></code> to signify if a boss was defeated</p></li>
+</ul>
+</section>
+<section id="probability-changes">
+<h2>Probability Changes<a class="headerlink" href="#probability-changes" title="Link to this heading">#</a></h2>
+<p>Probability has had it’s functionality changed to allow for more granular control of it, and to allow for effects to happen based on probability rolls. Unfortunately, this requires updating older mods to be able to function properly with the new changes. There are two steps to do this.</p>
+<section id="updating-probability-chances">
+<h3>Updating Probability Chances<a class="headerlink" href="#updating-probability-chances" title="Link to this heading">#</a></h3>
+<section id="step-1-replace-your-loc-vars">
+<h4>Step 1 - Replace your loc_vars<a class="headerlink" href="#step-1-replace-your-loc-vars" title="Link to this heading">#</a></h4>
+<p>Any item descriptions that contain a chance roll should be updated to use the new functionality. If your code looked like this before,</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">return</span> <span class="p">{</span><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span><span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span><span class="p">,</span> <span class="n">other_value</span><span class="p">}}</span>
+</span></pre></div>
+</div>
+<p>then it should be changed to</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kd">local</span> <span class="n">new_numerator</span><span class="p">,</span> <span class="n">new_denominator</span> <span class="o">=</span> <span class="n">SMODS</span><span class="p">.</span><span class="n">get_probability_vars</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="n">numerator</span><span class="p">,</span> <span class="n">demoninator</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">)</span> <span class="c1">-- it is suggested to use an identifier so that effects that modify probabilities can target specific values</span>
+</span><span data-line="2"><span class="kr">return</span> <span class="p">{</span><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span><span class="n">new_numerator</span><span class="p">,</span> <span class="n">new_denominator</span><span class="p">,</span> <span class="n">other_value</span><span class="p">}}</span>
+</span></pre></div>
+</div>
+<p>This will allow your item description to dynamically update based on probability altering effects.</p>
+</section>
+<section id="step-2-replace-your-probability-checks">
+<h4>Step 2 - Replace your probability checks<a class="headerlink" href="#step-2-replace-your-probability-checks" title="Link to this heading">#</a></h4>
+<p>The probability check will also need to be adjusted. If your code look like this before,</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">pseudorandom</span><span class="p">(</span><span class="s1">&#39;seed&#39;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">G</span><span class="p">.</span><span class="n">GAME</span><span class="p">.</span><span class="n">probabilities</span><span class="p">.</span><span class="n">normal</span> <span class="o">*</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<p>then it should be changed to</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">SMODS</span><span class="p">.</span><span class="n">pseudorandom_probability</span><span class="p">(</span><span class="n">card</span><span class="p">,</span> <span class="s1">&#39;seed&#39;</span><span class="p">,</span> <span class="n">numerator</span><span class="p">,</span> <span class="n">denominator</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">)</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<p>This will allow your random chance effect to be based on probability altering effects.</p>
+</section>
+</section>
+<section id="modifying-probability">
+<h3>Modifying Probability<a class="headerlink" href="#modifying-probability" title="Link to this heading">#</a></h3>
+<p>It is now possible to modify probability in two ways. By using new calculation contexts, you can modify both the numerator and denominator of a chance based effect, with respect to joker order, or you can set it to a fixed value. Both of these new contexts have <code class="docutils literal notranslate"><span class="pre">context.numerator</span></code> and <code class="docutils literal notranslate"><span class="pre">context.denominator</span></code> which are the current values of the numerator and denominator, taking into account modifications from previous jokers. They also have <code class="docutils literal notranslate"><span class="pre">context.trigger_obj</span></code> and <code class="docutils literal notranslate"><span class="pre">context.identifier</span></code> which can be used to identify the source of the chance roll.</p>
+<p><code class="docutils literal notranslate"><span class="pre">fix_probability</span> <span class="pre">=</span> <span class="pre">true,</span> <span class="pre">from_roll</span> <span class="pre">=</span> <span class="pre">from_roll,</span> <span class="pre">trigger_obj</span> <span class="pre">=</span> <span class="pre">trigger_obj,</span> <span class="pre">identifier</span> <span class="pre">=</span> <span class="pre">identifier,</span> <span class="pre">numerator</span> <span class="pre">=</span> <span class="pre">additive.numerator</span> <span class="pre">or</span> <span class="pre">base_numerator,</span> <span class="pre">denominator</span> <span class="pre">=</span> <span class="pre">additive.denominator</span> <span class="pre">or</span> <span class="pre">base_denominator</span></code></p>
+<section id="context-mod-probability">
+<h4>context.mod_probability<a class="headerlink" href="#context-mod-probability" title="Link to this heading">#</a></h4>
+<p>This context should be used for any additive or multiplicative modifications to the probability.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">mod_probability</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">numerator</span> <span class="c1">-- current numerator</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">denominator</span> <span class="c1">-- current denominator</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">mod_probability</span> <span class="c1">-- boolean value to flag this context, always TRUE</span>
+</span><span data-line="4"><span class="n">context</span><span class="p">.</span><span class="n">trigger_obj</span> <span class="c1">-- the object that the roll comes from (note: The Wheel blind switches between the blind object and the blind prototype object)</span>
+</span><span data-line="5"><span class="n">context</span><span class="p">.</span><span class="n">identifier</span> <span class="c1">-- a string value to identify the source of the roll</span>
+</span><span data-line="6"><span class="n">context</span><span class="p">.</span><span class="n">from_roll</span> <span class="c1">-- internal value used to only trigger certain return values when the roll is made rather than a tooltip update</span>
+</span></pre></div>
+</div>
+<p>For example, Oops All 6s! would use this check:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">mod_probability</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">context</span><span class="p">.</span><span class="n">blueprint</span> <span class="kr">then</span>
+</span><span data-line="2"> <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="3">  <span class="n">numerator</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="n">numerator</span> <span class="o">*</span> <span class="mi">2</span>
+</span><span data-line="4"> <span class="p">}</span>
+</span><span data-line="5"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="context-fix-probability">
+<h4>context.fix_probability<a class="headerlink" href="#context-fix-probability" title="Link to this heading">#</a></h4>
+<p>This context should be used for setting either the numerator or the denominator.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">fix_probability</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">numerator</span> <span class="c1">-- current numerator</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">denominator</span> <span class="c1">-- current denominator</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">fix_probability</span> <span class="c1">-- boolean value to flag this context, always TRUE</span>
+</span><span data-line="4"><span class="n">context</span><span class="p">.</span><span class="n">trigger_obj</span> <span class="c1">-- the object that the roll comes from (note: The Wheel blind switches between the blind object and the blind prototype object)</span>
+</span><span data-line="5"><span class="n">context</span><span class="p">.</span><span class="n">identifier</span> <span class="c1">-- a string value to identify the source of the roll</span>
+</span><span data-line="6"><span class="n">context</span><span class="p">.</span><span class="n">from_roll</span> <span class="c1">-- internal value used to only trigger certain return values when the roll is made rather than a tooltip update</span>
+</span></pre></div>
+</div>
+<p>For example, a joker that sets every chance based effect to a 1 in 2 would use this check:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">fix_probability</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">context</span><span class="p">.</span><span class="n">blueprint</span> <span class="kr">then</span>
+</span><span data-line="2"> <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="3">  <span class="n">numerator</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</span><span data-line="4">  <span class="n">denominator</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span data-line="5"> <span class="p">}</span>
+</span><span data-line="6"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="responding-to-probability-rolls">
+<h3>Responding to probability rolls<a class="headerlink" href="#responding-to-probability-rolls" title="Link to this heading">#</a></h3>
+<p>It is also possible to trigger effects based on the outcomes of probability rolls, using another new context.
+<em>Some return values may appear misordered here. Please report any such occurances then we can continue to improve SMODS.</em></p>
+<section id="context-pseudorandom-result">
+<h4>context.pseudorandom_result<a class="headerlink" href="#context-pseudorandom-result" title="Link to this heading">#</a></h4>
+<p>This context should be used for setting either the numerator or the denominator.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">pseudorandom_result</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">pseudorandom_result</span> <span class="c1">-- boolean value to flag this context, always TRUE</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">result</span> <span class="c1">-- the result of the chance roll</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">numerator</span> <span class="c1">-- the numerator used for the chance</span>
+</span><span data-line="4"><span class="n">context</span><span class="p">.</span><span class="n">denominator</span> <span class="c1">-- the denominator used for the chance</span>
+</span><span data-line="5"><span class="n">context</span><span class="p">.</span><span class="n">trigger_obj</span> <span class="c1">-- the object that the roll comes from (note: The Wheel blind switches between the blind object and the blind prototype object)</span>
+</span><span data-line="6"><span class="n">context</span><span class="p">.</span><span class="n">identifier</span> <span class="c1">-- a string value to identify the source of the roll</span>
+</span></pre></div>
+</div>
+<p>For example, a joker that triggers a message when a chance roll fails would look like this:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">pseudorandom_result</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">context</span><span class="p">.</span><span class="n">result</span> <span class="kr">then</span>
+</span><span data-line="2"> <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="3">  <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Chance failed!&#39;</span>
+</span><span data-line="4"> <span class="p">}</span>
+</span><span data-line="5"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="other-changes">
+<h2>Other Changes<a class="headerlink" href="#other-changes" title="Link to this heading">#</a></h2>
+<section id="new-contexts">
+<h3>New Contexts<a class="headerlink" href="#new-contexts" title="Link to this heading">#</a></h3>
+<section id="context-initial-scoring-step">
+<h4>context.initial_scoring_step<a class="headerlink" href="#context-initial-scoring-step" title="Link to this heading">#</a></h4>
+<p>This context is used for scoring effects that happen before playing cards are scored.
+<em>Note: This happens after context.before</em></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">initial_scoring_step</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">cardarea</span><span class="p">,</span> <span class="n">context</span><span class="p">.</span><span class="n">full_hand</span><span class="p">,</span> <span class="n">context</span><span class="p">.</span><span class="n">scoring_hand</span><span class="p">,</span> <span class="n">context</span><span class="p">.</span><span class="n">scoring_name</span><span class="p">,</span> <span class="n">context</span><span class="p">.</span><span class="n">poker_hands</span><span class="p">,</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">initial_scoring_step</span> <span class="c1">-- boolean value to flag this context, always TRUE</span>
+</span></pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="context-joker-type-destroyed">
+<h4>context.joker_type_destroyed<a class="headerlink" href="#context-joker-type-destroyed" title="Link to this heading">#</a></h4>
+<p>This context is used when a non-playing card is destroyed.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">joker_type_destroyed</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">joker_type_destroyed</span> <span class="c1">-- boolean value to flag this context, always TRUE</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">card</span> <span class="c1">-- the card object that has been destroyed</span>
+</span></pre></div>
+</div>
+<blockquote>
+<div><p>[!NOTE]
+You can return <code class="docutils literal notranslate"><span class="pre">no_destroy</span> <span class="pre">=</span> <span class="pre">true</span></code> within this context to block the destruction event.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="context-evaluate-poker-hand">
+<h4>context.evaluate_poker_hand<a class="headerlink" href="#context-evaluate-poker-hand" title="Link to this heading">#</a></h4>
+<p>This context is used to make modifications to the evaluation of poker hands, or to display custom hand names.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">evaluate_poker_hand</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">evaluate_poker_hand</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">cardarea</span><span class="p">,</span> <span class="n">context</span><span class="p">.</span><span class="n">full_hand</span><span class="p">,</span> <span class="n">context</span><span class="p">.</span><span class="n">scoring_hand</span><span class="p">,</span> <span class="n">context</span><span class="p">.</span><span class="n">scoring_name</span><span class="p">,</span> <span class="n">context</span><span class="p">.</span><span class="n">poker_hands</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">evaluate_poker_hand</span> <span class="c1">-- boolean value to flag this context, always TRUE</span>
+</span><span data-line="4"><span class="n">context</span><span class="p">.</span><span class="n">display_name</span> <span class="c1">-- the current text that is displayed</span>
+</span></pre></div>
+</div>
+<p>Valid return values to make modifications within this context are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">replace_scoring_name</span> <span class="pre">=</span> <span class="pre">&quot;Hand</span> <span class="pre">Type&quot;</span></code> used to change which poker hand is used to score</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace_display_name</span> <span class="pre">=</span> <span class="pre">&quot;String&quot;</span></code> used to change the displayed text <em>(also accepts a loc_key for a string stored in the <code class="docutils literal notranslate"><span class="pre">poker_hands</span></code> loc_table)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace_poker_hands</span> <span class="pre">=</span> <span class="pre">table</span></code> used to modify the poker hands table <em>(this is fairly advanced and should only be used if you know what you are doing)</em></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="context-check-eternal">
+<h4>context.check_eternal<a class="headerlink" href="#context-check-eternal" title="Link to this heading">#</a></h4>
+<p>This context is used to apply the eternal effect without the sticker being applied.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">check_eternal</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">check_eternal</span> <span class="c1">-- boolean value to flag this context, always TRUE</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">other_card</span> <span class="c1">-- the card object that is being checked</span>
+</span><span data-line="3"><span class="n">context</span><span class="p">.</span><span class="n">trigger</span> <span class="c1">-- the source of the check (this is an empty table if it has not been provided)</span>
+</span></pre></div>
+</div>
+<blockquote>
+<div><p>[!NOTE]
+You can return <code class="docutils literal notranslate"><span class="pre">no_destroy</span> <span class="pre">=</span> <span class="pre">true</span></code> within this context to add the eternal effect to a card. Returning <code class="docutils literal notranslate"><span class="pre">no_destroy</span> <span class="pre">=</span> <span class="pre">{override_compat</span> <span class="pre">=</span> <span class="pre">true}</span></code> will apply the effect to cards that are marked as <code class="docutils literal notranslate"><span class="pre">eternal_compat</span> <span class="pre">=</span> <span class="pre">false</span></code>.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="new-functions">
+<h3>New Functions<a class="headerlink" href="#new-functions" title="Link to this heading">#</a></h3>
+<section id="smods-is-eternal-card-trigger">
+<h4>SMODS.is_eternal(card, trigger)<a class="headerlink" href="#smods-is-eternal-card-trigger" title="Link to this heading">#</a></h4>
+<p>This function is used for checking whether a card object has an <strong>eternal</strong> property, provided either through the Eternal sticker, or other means.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">card</span></code> - the card that is being checked</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trigger</span></code> - generally should be a reference to the object that is doing the check. If the check is being done by a general function, it is recommended to supply an identifying table such as <code class="docutils literal notranslate"><span class="pre">{destroying_cards</span> <span class="pre">=</span> <span class="pre">true}</span></code></p></li>
+</ul>
+</section>
+<section id="card-should-hide-front">
+<h4>Card:should_hide_front()<a class="headerlink" href="#card-should-hide-front" title="Link to this heading">#</a></h4>
+<p>This function checks whether a card object should display the front sprite or not. Currently only checks for Stone cards and cards with <code class="docutils literal notranslate"><span class="pre">overrides_base_rank</span> <span class="pre">=</span> <span class="pre">true</span></code> defined on the Center, but can be <strong>hooked</strong> to provide additional functionality as required.</p>
+</section>
+<section id="smods-is-poker-hand-visible-handname">
+<h4>SMODS.is_poker_hand_visible(handname)<a class="headerlink" href="#smods-is-poker-hand-visible-handname" title="Link to this heading">#</a></h4>
+<p>This function checks whether a poker hand is visible in the poker hands menu.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">handname</span></code> - string of poker hand name</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="what-s-changed">
+<h2>What’s Changed<a class="headerlink" href="#what-s-changed" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix DeckSkin Credit UI breaking modded languages by &#64;HuyTheKiller in <a class="reference external" href="https://github.com/Steamodded/smods/pull/751">https://github.com/Steamodded/smods/pull/751</a></p></li>
+</ul>
+<ul class="simple">
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">smart_level_up</span></code> not updating level in scoring by &#64;nh6574 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/755">https://github.com/Steamodded/smods/pull/755</a></p></li>
+<li><p>Dedicated functions for listed probabilities by &#64;TamerSoup625 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/661">https://github.com/Steamodded/smods/pull/661</a></p></li>
+<li><p>Better calc individual juice fix (Issue #711) by &#64;Gloompashcy in <a class="reference external" href="https://github.com/Steamodded/smods/pull/737">https://github.com/Steamodded/smods/pull/737</a></p></li>
+<li><p>SMODS.PokerHand function to control visibility by &#64;nh6574 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/764">https://github.com/Steamodded/smods/pull/764</a></p></li>
+<li><p>Blind debuff text can now update if provided a new message by &#64;VivianGiacobbi in <a class="reference external" href="https://github.com/Steamodded/smods/pull/769">https://github.com/Steamodded/smods/pull/769</a></p></li>
+<li><p>Fixed post_trigger effects not working on retrigger jokers by &#64;Git-i in <a class="reference external" href="https://github.com/Steamodded/smods/pull/761">https://github.com/Steamodded/smods/pull/761</a></p></li>
+<li><p>Front Hiding Revamp by &#64;Numbuh214 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/773">https://github.com/Steamodded/smods/pull/773</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">context.evaluate_poker_hand</span></code> by &#64;nh6574 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/777">https://github.com/Steamodded/smods/pull/777</a></p></li>
+<li><p>Fix build achi tab not using hidden_pos by &#64;justamirror in <a class="reference external" href="https://github.com/Steamodded/smods/pull/780">https://github.com/Steamodded/smods/pull/780</a></p></li>
+<li><p>Changes to <code class="docutils literal notranslate"><span class="pre">SMODS.destroy_cards</span></code> by &#64;nh6574 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/784">https://github.com/Steamodded/smods/pull/784</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMODS.is_eternal</span></code> by &#64;Gloompashcy in <a class="reference external" href="https://github.com/Steamodded/smods/pull/794">https://github.com/Steamodded/smods/pull/794</a></p></li>
+<li><p>Fix vanilla playing card rng with <code class="docutils literal notranslate"><span class="pre">SMODS.create_card</span></code> by &#64;nh6574 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/793">https://github.com/Steamodded/smods/pull/793</a></p></li>
+<li><p>Add beat_boss to context.end_of_round by &#64;Gloompashcy in <a class="reference external" href="https://github.com/Steamodded/smods/pull/786">https://github.com/Steamodded/smods/pull/786</a></p></li>
+<li><p>Pseudorandom Updates by &#64;VivianGiacobbi in <a class="reference external" href="https://github.com/Steamodded/smods/pull/785">https://github.com/Steamodded/smods/pull/785</a></p></li>
+<li><p>Type check in <code class="docutils literal notranslate"><span class="pre">SMODS.merge_effects</span></code> by &#64;nh6574 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/791">https://github.com/Steamodded/smods/pull/791</a></p></li>
+<li><p>Added ‘manual’ delayed sprites to Card:set_ability() and Card:set_base() by &#64;VivianGiacobbi in <a class="reference external" href="https://github.com/Steamodded/smods/pull/797">https://github.com/Steamodded/smods/pull/797</a></p></li>
+<li><p>Made Joker Retrigger Juice optional by &#64;VivianGiacobbi in <a class="reference external" href="https://github.com/Steamodded/smods/pull/796">https://github.com/Steamodded/smods/pull/796</a></p></li>
+<li><p>Remove unnecessary patch from seal.toml by &#64;Gloompashcy in <a class="reference external" href="https://github.com/Steamodded/smods/pull/790">https://github.com/Steamodded/smods/pull/790</a></p></li>
+<li><p>Make blind’s tag object accessible outside of skipping by &#64;the-Astra in <a class="reference external" href="https://github.com/Steamodded/smods/pull/779">https://github.com/Steamodded/smods/pull/779</a></p></li>
+<li><p>Include numerator and denominator in context.pseudorandom_result by &#64;JustOsquo in <a class="reference external" href="https://github.com/Steamodded/smods/pull/802">https://github.com/Steamodded/smods/pull/802</a></p></li>
+<li><p>Avoid crashes in SMODS.is_pokerhand_visible and add assert by &#64;larswijn in <a class="reference external" href="https://github.com/Steamodded/smods/pull/801">https://github.com/Steamodded/smods/pull/801</a></p></li>
+<li><p>pseudorandom_result context handling by &#64;the-Astra in <a class="reference external" href="https://github.com/Steamodded/smods/pull/803">https://github.com/Steamodded/smods/pull/803</a></p></li>
+</ul>
+</section>
+<section id="new-contributors">
+<h2>New Contributors<a class="headerlink" href="#new-contributors" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>&#64;HuyTheKiller made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/751">https://github.com/Steamodded/smods/pull/751</a></p></li>
+</ul>
+<ul class="simple">
+<li><p>&#64;TamerSoup625 made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/661">https://github.com/Steamodded/smods/pull/661</a></p></li>
+<li><p>&#64;Gloompashcy made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/737">https://github.com/Steamodded/smods/pull/737</a></p></li>
+<li><p>&#64;Git-i made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/761">https://github.com/Steamodded/smods/pull/761</a></p></li>
+<li><p>&#64;Numbuh214 made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/773">https://github.com/Steamodded/smods/pull/773</a></p></li>
+<li><p>&#64;justamirror made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/780">https://github.com/Steamodded/smods/pull/780</a></p></li>
+<li><p>&#64;the-Astra made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/779">https://github.com/Steamodded/smods/pull/779</a></p></li>
+<li><p>&#64;JustOsquo made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/802">https://github.com/Steamodded/smods/pull/802</a></p></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a class="reference external" href="https://github.com/Steamodded/smods/compare/1.0.0-beta-0614a...1.0.0-beta-0711a">https://github.com/Steamodded/smods/compare/1.0.0-beta-0614a…1.0.0-beta-0711a</a></p>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../0827/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">BETA-0827a</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../../Guides/Your-First-Mod/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Making Your First Mod</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

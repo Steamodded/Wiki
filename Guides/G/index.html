@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The G Variable - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Event Guide" href="../Event-Manager/" /><link rel="prev" title="SMODS.https" href="../../Game Objects/SMODS.https/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="The G Variable"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/2608290/">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#the-highlights">The Highlights</a></li>
+<li><a class="reference internal" href="#everything">Everything</a><ul>
+<li><a class="reference internal" href="#cardareas">CardAreas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#g-game"><code class="docutils literal notranslate"><span class="pre">G.GAME</span></code></a></li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/Guides/G.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="the-g-variable">
+<h1>The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable<a class="headerlink" href="#the-g-variable" title="Link to this heading">#</a></h1>
+<p>Balatro has a global variable <code class="docutils literal notranslate"><span class="pre">G</span></code> which is the singleton instance of the <code class="docutils literal notranslate"><span class="pre">Game</span></code> class. This list is not comprehensive.</p>
+<section id="the-highlights">
+<h2>The Highlights<a class="headerlink" href="#the-highlights" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G.E_MANAGER</span></code> is the <a class="reference external" href="https://docs.smods.dev/Guides/Event-Manager">event manager</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.P_CENTERS</span></code> holds the game’s center objects (prototypes for jokers, consumables, vouchers, decks, enhancements, editions, and boosters). It is indexed with the object’s key. For example, <code class="docutils literal notranslate"><span class="pre">G.P_CENTERS.c_strength</span></code> is the center for Strength.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:update(dt)</span></code> is called once per frame. This uses <code class="docutils literal notranslate"><span class="pre">G.STATE</span></code> and <code class="docutils literal notranslate"><span class="pre">G.STATE_COMPLETE</span></code> to run a state machine.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.C</span></code> holds colors.</p></li>
+<li><p><a class="reference external" href="https://docs.smods.dev/Guides/G#GGAME"><code class="docutils literal notranslate"><span class="pre">G.GAME</span></code></a></p></li>
+</ul>
+</section>
+<section id="everything">
+<h2>Everything<a class="headerlink" href="#everything" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G.E_MANAGER</span></code> is the <a class="reference external" href="https://docs.smods.dev/Guides/Event-Manager">event manager</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.P_SEALS</span></code> holds the seal prototypes, much like <code class="docutils literal notranslate"><span class="pre">G.P_CENTERS</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.P_TAGS</span></code> holds the tag prototypes, much like <code class="docutils literal notranslate"><span class="pre">G.P_CENTERS</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.P_STAKES</span></code> holds the stake prototypes, much like <code class="docutils literal notranslate"><span class="pre">G.P_CENTERS</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.P_BLINDS</span></code> holds the blind prototypes, much like <code class="docutils literal notranslate"><span class="pre">G.P_CENTERS</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.P_CARDS</span></code> holds the playing card prototypes, much like <code class="docutils literal notranslate"><span class="pre">G.P_CENTERS</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.P_CENTERS</span></code> holds the game’s center objects (prototypes for jokers, consumables, vouchers, decks, enhancements, editions, and boosters). It is indexed with the object’s key. For example, <code class="docutils literal notranslate"><span class="pre">G.P_CENTERS.c_strength</span></code> is the center for Strength.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.P_CENTER_POOLS</span></code> holds definitions for objects grouped by pool, indexed by numbers. For example, <code class="docutils literal notranslate"><span class="pre">G.P_CENTER_POOLS.Tag</span></code> holds the tags, and <code class="docutils literal notranslate"><span class="pre">G.P_CENTER_POOLS.Tag[1]</span></code> is a specific tag.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.P_JOKER_RARITY_POOLS</span></code> is like <code class="docutils literal notranslate"><span class="pre">G.P_CENTER_POOLS</span></code> but for specific joker rarities.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.P_LOCKED</span></code> holds every locked object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.ASSET_ATLAS</span></code> and <code class="docutils literal notranslate"><span class="pre">G.ANIMATION_ATLAS</span></code> hold sprite atlases that look like the following:</p></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span>
+</span><span data-line="2">    <span class="n">name</span> <span class="o">=</span> <span class="n">string</span><span class="p">,</span>
+</span><span data-line="3">    <span class="n">image</span> <span class="o">=</span> <span class="n">love_image</span><span class="p">,</span>
+</span><span data-line="4">    <span class="nb">type</span> <span class="o">=</span> <span class="n">string</span><span class="p">,</span>
+</span><span data-line="5">    <span class="n">px</span> <span class="o">=</span> <span class="n">number</span><span class="p">,</span>
+</span><span data-line="6">    <span class="n">py</span> <span class="o">=</span> <span class="n">number</span>
+</span><span data-line="7"><span class="p">}</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G.STATE_COMPLETE</span></code> is set to true once the most recent transition in <code class="docutils literal notranslate"><span class="pre">G.STATE</span></code> has been run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.STATE</span></code> holds the current interaction state in the game’s state machine.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.STATES</span></code> names every possible interaction state in the game’s state machine.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.SPEEDFACTOR</span></code> is the speed at which <code class="docutils literal notranslate"><span class="pre">G.TIMERS.TOTAL</span></code> runs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.STEAM</span></code> is used to interact with the Steam API.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.DEBUG</span></code> can be set to true to view debugging information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.FILE_HANDLER</span></code> manages saving the game every 10 seconds.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.VERSION</span></code> is the version string for the current build of the game.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.TIMERS</span></code> has various timers that run at different rates and reset at different times. The <a class="reference external" href="https://docs.smods.dev/Guides/Event-Manager">event manager</a> uses these, as well as many animations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.FRAMES.MOVE</span></code> holds the current physics frame number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.FRAMES.DRAW</span></code> holds the current frame number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.SETTINGS</span></code> holds the various configuration options:</p></li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.SETTINGS.language</span></code> has the current language code.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.SETTINGS.GAMESPEED</span></code> has the current gamespeed option.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.SETTINGS.paused</span></code> is set to true when the game is paused.</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.SETTINGS.CUSTOM_DECK</span></code> holds collab selections.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.COLLABS</span></code> is where collabs are defined.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.METRICS</span></code> holds player stats:</p></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">G</span><span class="p">.</span><span class="n">METRICS</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">    <span class="n">cards</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3">        <span class="n">used</span> <span class="o">=</span> <span class="p">{},</span>
+</span><span data-line="4">        <span class="n">bought</span> <span class="o">=</span> <span class="p">{},</span>
+</span><span data-line="5">        <span class="n">appeared</span> <span class="o">=</span> <span class="p">{},</span>
+</span><span data-line="6">    <span class="p">},</span>
+</span><span data-line="7">    <span class="n">decks</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="8">        <span class="n">chosen</span> <span class="o">=</span> <span class="p">{},</span>
+</span><span data-line="9">        <span class="n">win</span> <span class="o">=</span> <span class="p">{},</span>
+</span><span data-line="10">        <span class="n">lose</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span data-line="11">    <span class="p">},</span>
+</span><span data-line="12">    <span class="n">bosses</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="13">        <span class="n">faced</span> <span class="o">=</span> <span class="p">{},</span>
+</span><span data-line="14">        <span class="n">win</span> <span class="o">=</span> <span class="p">{},</span>
+</span><span data-line="15">        <span class="n">lose</span> <span class="o">=</span> <span class="p">{},</span>
+</span><span data-line="16">    <span class="p">}</span>
+</span><span data-line="17"><span class="p">}</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G.PROFILES</span></code> holds the save profiles. Typically only <code class="docutils literal notranslate"><span class="pre">G.PROFILES[G.SETTINGS.profile]</span></code> is relevant.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.CARD_W</span></code> holds the width of a standard card.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.CARD_H</span></code> holds the height of a standard card.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.STAGE</span></code> holds the current game screen (menu vs. gameplay).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.STAGE_OBJECTS</span></code> tracks which objects belong to the current stage so they can be deleted correctly.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.STAGES</span></code> names every possible game screen.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.TAROT_INTERRUPT</span></code> holds the state to return to after the current tarot card is done processing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.ARGS</span></code> is used to move data around the game. It does a lot of miscellaneous things.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.FUNCS</span></code> primarily holds functions used as callbacks from within UI definitions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.I</span></code> holds every object the engine needs to generically process.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.I.NODE</span></code> holds every <code class="docutils literal notranslate"><span class="pre">Node</span></code>, but no subclasses.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.I.MOVEABLE</span></code> holds every <code class="docutils literal notranslate"><span class="pre">Moveable</span></code>, but no subclasses.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.I.SPRITE</span></code> holds every <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> and <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code>, but no subclasses.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.I.UIBOX</span></code> holds every <code class="docutils literal notranslate"><span class="pre">UIBox</span></code>, but no subclasses.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.I.POPUP</span></code> holds every drag popup. This appears to be unused.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.I.CARD</span></code> holds every <code class="docutils literal notranslate"><span class="pre">Card</span></code>, <code class="docutils literal notranslate"><span class="pre">Blind</span></code>, and <code class="docutils literal notranslate"><span class="pre">Card_Character</span></code>, but no subclasses.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.I.CARDAREA</span></code> holds every <code class="docutils literal notranslate"><span class="pre">CardArea</span></code>, but no subclasses.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.I.ALERT</span></code> is unused.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.MOVEABLES</span></code> holds every moveable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.ANIMATIONS</span></code> holds every <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.C</span></code> holds colors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.UIT</span></code> names every possible type of <a class="reference external" href="https://docs.smods.dev/Guides/UI-Guide#node-types">UI node</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.handlist</span></code> orders the pokers hands from best to worst.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.ROOM</span></code> is the UI node for the entire window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.ROOM_ATTACH</span></code> is the moveable for <code class="docutils literal notranslate"><span class="pre">G.ROOM</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.CONTROLLER</span></code> is the singleton <code class="docutils literal notranslate"><span class="pre">Controller</span></code> object which handles input.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.playing_cards</span></code> contains every spawned in playing card, regardless of area.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.HUD</span></code> is the HUD’s <code class="docutils literal notranslate"><span class="pre">UIBox</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.HUD_blind</span></code> is the <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> for the blind’s information when facing it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.HUD_tags</span></code> is the <code class="docutils literal notranslate"><span class="pre">UIBox</span></code> for tags.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.hand_text_area</span></code> is a collection of convenience accessors into <code class="docutils literal notranslate"><span class="pre">G.HUD</span></code>.</p></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">G</span><span class="p">.</span><span class="n">hand_text_area</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">    <span class="n">chips</span> <span class="o">=</span> <span class="p">...,</span>
+</span><span data-line="3">    <span class="n">mult</span> <span class="o">=</span> <span class="p">...,</span>
+</span><span data-line="4">    <span class="n">ante</span> <span class="o">=</span> <span class="p">...,</span>
+</span><span data-line="5">    <span class="n">round</span> <span class="o">=</span> <span class="p">...,</span>
+</span><span data-line="6">    <span class="n">chip_total</span> <span class="o">=</span> <span class="p">...,</span>
+</span><span data-line="7">    <span class="n">handname</span> <span class="o">=</span> <span class="p">...,</span>
+</span><span data-line="8">    <span class="n">hand_level</span> <span class="o">=</span> <span class="p">...,</span>
+</span><span data-line="9">    <span class="n">game_chips</span> <span class="o">=</span> <span class="p">...,</span>
+</span><span data-line="10">    <span class="n">blind_chips</span> <span class="o">=</span> <span class="p">...,</span>
+</span><span data-line="11">    <span class="n">blind_spacer</span> <span class="o">=</span> <span class="p">...</span>
+</span><span data-line="12"><span class="p">}</span>
+</span></pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G.MAJORS</span></code> appears to be unused.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.MINORS</span></code> appears to be unused.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.CANVAS</span></code> is the Love canvas the game gets rendered to.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.SEED</span></code> is largely inconsequential. You want <code class="docutils literal notranslate"><span class="pre">G.GAME.pseudorandom.seed</span></code> instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:save_progress()</span></code> saves the unlocked/discovered/alerted badge state of centers, blinds, tags, and seals.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:save_notify()</span></code> saves unlock notifications.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:save_settings()</span></code> save <code class="docutils literal notranslate"><span class="pre">G.SETTINGS</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:save_metrics()</span></code> save <code class="docutils literal notranslate"><span class="pre">G.METRICS</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:prep_stage(...)</span></code> sets up <code class="docutils literal notranslate"><span class="pre">G.ROOM</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:splash_screen()</span></code> shows the intro animation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:main_menu(...)</span></code> shows the main menu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:load_profile(_profile)</span></code> selects one of the profiles.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:start_run(...)</span></code> starts a new run or continues a run in progress. Additionally, it creates the various <code class="docutils literal notranslate"><span class="pre">CardArea</span></code>s needed in game, as well as the UI elements in the HUD.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:init_game_object()</span></code> return the initial state of <code class="docutils literal notranslate"><span class="pre">G.GAME</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:set_language()</span></code> initializes localization information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:set_globals()</span></code> initializes many globals within <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:update(dt)</span></code> is called once per frame. This uses <code class="docutils literal notranslate"><span class="pre">G.STATE</span></code> and <code class="docutils literal notranslate"><span class="pre">G.STATE_COMPLETE</span></code> to run a state machine.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G:draw()</span></code> draws everything in the game.</p></li>
+</ul>
+<section id="cardareas">
+<h3>CardAreas<a class="headerlink" href="#cardareas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G.jokers</span></code> Main Joker area.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.consumeables</span></code> Main consumable area.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.hand</span></code> Area for playing cards held in hand.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.play</span></code> Area for playing cards played. Also used for some animations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.deck</span></code> Area for playing cards currently in the deck.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.discard</span></code> Invisible area playing cards go after being played or discarded. Also used for some animations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.vouchers</span></code> Voucher area. Added by SMODS.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.shop_jokers</span></code> Main shop area for Jokers, Consumables, Playing Cards, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.shop_booster</span></code> Shop area for Booster packs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.shop_vouchers</span></code> Shop area for Vouchers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.pack_cards</span></code> Area for cards in a booster.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.title_top</span></code> Title screen area.</p></li>
+</ul>
+</section>
+</section>
+<section id="g-game">
+<h2><code class="docutils literal notranslate"><span class="pre">G.GAME</span></code><a class="headerlink" href="#g-game" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">G.GAME</span></code> holds game state for the current run. This is reset when starting a new run. Note that it is serialized when saving and reloading the game.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.won</span></code> is true if this run was won.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.round_scores</span></code> holds statistics for the end screen.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.joker_usage</span></code> appears to be unused.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.consumeable_usage</span></code> holds statistics for effects like Fortune Teller and Satellite.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.hand_usage</span></code> holds statistics for effects like Obelisk.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.last_tarot_planet</span></code> holds the Fool card.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.win_ante</span></code> holds the ante at which finisher blinds will appear.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.stake</span></code> holds the currently applied stake.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.modifiers</span></code> holds game rules. These are usually set by stakes or challenges.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.starting_params</span></code> holds the standard variables set by decks, stakes, and challenges. These are copied elsewhere in <code class="docutils literal notranslate"><span class="pre">G.GAME</span></code> when starting the game.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.banned_keys</span></code> holds keys of objects that aren’t allowed to spawn.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.round</span></code> holds the current round number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.probabilities.normal</span></code> holds the 1 for any 1 in x odds.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.bosses_used</span></code> holds the boss blinds encountered this run to prevent them from spawning again too quickly.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.pseudorandom</span></code> holds the RNG state for the game.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.pseudorandom.seed</span></code> holds the game seed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.starting_deck_size</span></code> holds the starting deck size used by Erosion.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.ecto_minus</span></code> holds the hand size decrease on Ectoplasm.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.pack_size</span></code> is used to pass a booster’s size to the function that creates it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.skips</span></code> counts the number of skipped blinds.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.STOP_USE</span></code> is set to a number greater than 0 when no inputs should be processed,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.edition_rate</span></code> is a multiplier to the 4% rate of editions spawning.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.joker_rate</span></code> is a weight for jokers spawning in the shop.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.tarot_rate</span></code> is a weight for tarot cards spawning in the shop.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.planet_rate</span></code> is a weight for planets spawning in the shop.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.spectral_rate</span></code> is a weight for spectral cards spawning in the shop.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.playing_card_rate</span></code> is a weight for playing cards spawning in the shop.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.consumeable_buffer</span></code> is used during calculation to prevent too many consumables from being spawned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.joker_buffer</span></code> is used during calculation by Riff-Raff to prevent too many jokers from being spawned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.discount_percent</span></code> is set by Clearance Sale and Liquidation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.interest_cap</span></code> is the amount of money needed to get max interest.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.interest_amount</span></code> is the amount of interest earned per $5.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.inflation</span></code> is used in the Inflation challenge.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.hands_played</span></code> counts played hands.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.unused_discards</span></code> counts unused discards.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.perishable_rounds</span></code> determines how quickly perishable cards perish.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.rental_rate</span></code> determines how expensive rental cards are at the end of a round.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.blind</span></code> is the blind currently being faced off against.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.chips</span></code> is the current total round chips.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.chips_text</span></code> is <code class="docutils literal notranslate"><span class="pre">G.GAME.chips</span></code> as a readable string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.voucher_text</span></code> appears to be unused.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.dollars</span></code> is the current money amount.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.max_jokers</span></code> tracks Invisible Joker’s unlock condition.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.bankrupt_at</span></code> is set to -20 by Credit Card.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.current_boss_streak</span></code> tracks the “most bosses in a row” statistic.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.base_reroll_cost</span></code> is lowered by Reroll Surplus and Reroll Glut.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.blind_on_deck</span></code> is the type of the “up next” blind (“Small”, “Big”, or “Boss”).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.sort</span></code> is the selected hand sorting method.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.previous_round</span></code> appears to be unused.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.previous_round.dollars</span></code> appears to be unused, but tracks the amount of money after the most recent cash out.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.tags</span></code> holds the current tags.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.tag_tally</span></code> is used to give each tag a unique ID number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.pool_flags</span></code> is used for Gros Michel/Cavendish.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.used_jokers</span></code> holds currently spawned centers to avoid spawning duplicates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.used_vouchers</span></code> holds vouchers redeemed this run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.current_round</span></code> holds various transient numbers that rapidly change during gameplay.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.round_resets</span></code> is used to reset <code class="docutils literal notranslate"><span class="pre">G.GAME.current_round</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.round_resets.blind_states</span></code> holds the skip status of each blind.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.round_bonus</span></code> gives extra hands and discards for one round. Unused in vanilla.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.shop.joker_max</span></code> holds the number of card slots in the shop.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.cards_played</span></code> tracks playing card statistics.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.GAME.hands</span></code> holds poker hand levels and their chip/mult values.</p></li>
+</ul>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../../Game Objects/SMODS.https/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../Event-Manager/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Event Guide</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

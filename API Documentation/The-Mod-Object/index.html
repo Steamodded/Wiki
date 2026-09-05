@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Mod Object - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="​Calculate Functions" href="../Calculate-Functions/" /><link rel="prev" title="Mod Metadata" href="../Mod-Metadata/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="The Mod Object"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/2608290/">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#mod-fields">Mod Fields</a><ul>
+<li><a class="reference internal" href="#lovely-mods">&#8220;Lovely&#8221; Mods</a></li>
+<li><a class="reference internal" href="#meta-mods">&#8220;Meta&#8221; Mods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mod-config">Mod Config</a><ul>
+<li><a class="reference internal" href="#setting-up-your-config">Setting Up Your Config</a></li>
+<li><a class="reference internal" href="#mod-save-mod-config-mod"><code class="docutils literal notranslate"><span class="pre">mod.save_mod_config(mod)</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optional-features">Optional Features</a><ul>
+<li><a class="reference internal" href="#available-features">Available Features</a></li>
+<li><a class="reference internal" href="#mod-optional-features"><code class="docutils literal notranslate"><span class="pre">mod.optional_features</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customizing-mod-page-ui">Customizing Mod Page UI</a><ul>
+<li><a class="reference internal" href="#mod-description">Mod Description</a><ul>
+<li><a class="reference internal" href="#mod-ui-config"><code class="docutils literal notranslate"><span class="pre">mod.ui_config</span></code></a></li>
+<li><a class="reference internal" href="#mod-description-loc-vars"><code class="docutils literal notranslate"><span class="pre">mod.description_loc_vars</span></code></a></li>
+<li><a class="reference internal" href="#mod-custom-ui"><code class="docutils literal notranslate"><span class="pre">mod.custom_ui</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#additional-tabs">Additional Tabs</a><ul>
+<li><a class="reference internal" href="#creating-a-config-tab">Creating a Config Tab</a></li>
+<li><a class="reference internal" href="#mod-custom-collection-tabs"><code class="docutils literal notranslate"><span class="pre">mod.custom_collection_tabs</span></code></a></li>
+<li><a class="reference internal" href="#mod-extra-tabs"><code class="docutils literal notranslate"><span class="pre">mod.extra_tabs</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#in-game-functionality">In-game Functionality</a><ul>
+<li><a class="reference internal" href="#mod-reset-game-globals-run-start"><code class="docutils literal notranslate"><span class="pre">mod.reset_game_globals(run_start)</span></code></a></li>
+<li><a class="reference internal" href="#mod-set-ability-reset-keys-table"><code class="docutils literal notranslate"><span class="pre">mod.set_ability_reset_keys()</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></a></li>
+<li><a class="reference internal" href="#mod-set-debuff-card-boolean-prevent-debuff"><code class="docutils literal notranslate"><span class="pre">mod.set_debuff(card)</span> <span class="pre">-&gt;</span> <span class="pre">boolean|"prevent_debuff"</span></code></a></li>
+<li><a class="reference internal" href="#mod-quip-filter-smods-jimboquip-string-boolean-table"><code class="docutils literal notranslate"><span class="pre">mod.quip_filter(SMODS.JimboQuip,</span> <span class="pre">string)</span> <span class="pre">-&gt;</span> <span class="pre">boolean,</span> <span class="pre">table</span></code></a></li>
+<li><a class="reference internal" href="#mod-calculate-self-table-table-boolean"><code class="docutils literal notranslate"><span class="pre">mod.calculate(self,</span> <span class="pre">table)</span> <span class="pre">-&gt;</span> <span class="pre">table,</span> <span class="pre">boolean</span></code></a></li>
+<li><a class="reference internal" href="#mod-custom-card-areas-game"><code class="docutils literal notranslate"><span class="pre">mod.custom_card_areas(game)</span></code></a></li>
+<li><a class="reference internal" href="#mod-calc-dollar-bonus-self-number-table"><code class="docutils literal notranslate"><span class="pre">mod.calc_dollar_bonus(self)</span> <span class="pre">-&gt;</span> <span class="pre">number,</span> <span class="pre">table</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other">Other</a><ul>
+<li><a class="reference internal" href="#mod-debug-info"><code class="docutils literal notranslate"><span class="pre">mod.debug_info</span></code></a></li>
+<li><a class="reference internal" href="#mod-menu-cards-table"><code class="docutils literal notranslate"><span class="pre">mod.menu_cards()</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></a></li>
+<li><a class="reference internal" href="#mod-set-mod-badge-obj-table"><code class="docutils literal notranslate"><span class="pre">mod.set_mod_badge(obj)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/API Documentation/The-Mod-Object.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">The Mod Object</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="the-mod-object">
+<h1>The Mod Object<a class="headerlink" href="#the-mod-object" title="Link to this heading">#</a></h1>
+<p>Every mod that’s found and registered by Steamodded is converted into a “Mod” object during the loading process. These are tables containing metadata and additional information that can be accessed and modified through the <code class="docutils literal notranslate"><span class="pre">SMODS.Mods</span></code> table, or by <code class="docutils literal notranslate"><span class="pre">SMODS.current_mod</span></code> when your mod is being loaded.</p>
+<section id="mod-fields">
+<h2>Mod Fields<a class="headerlink" href="#mod-fields" title="Link to this heading">#</a></h2>
+<p>These are the values that can be created from the mod’s metadata:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> - The mod’s ID. Accessing this mod through <code class="docutils literal notranslate"><span class="pre">SMODS.Mods</span></code> or from calling <code class="docutils literal notranslate"><span class="pre">SMODS.find_mod</span></code> requires knowing the mod’s ID.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> - The mod’s name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">display_name</span></code> - The mod’s display name. This is the text used for the mod badge.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code> - The mod’s description.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">priority</span></code> - Priority of the mod. Mods are sorted by this value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">badge_colour</span></code> - HEX color of the mod badge.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">badge_text_colour</span></code> - HEX color of the text within the mod badge.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prefix</span></code> - The mod’s prefix.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code> - The mod’s version.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main_file</span></code> - The entry file of the mod.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config_file</span></code> - The config file of this mod. By default set to <code class="docutils literal notranslate"><span class="pre">&quot;config.lua&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">author</span></code> - List of mod authors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dump_loc</span></code> - Flag that indicate for SMODS to dump all localization changes into a file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dependencies</span></code> - Table of the mod’s dependencies.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conflicts</span></code> - Table of the mod’s conflicts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">provides</span></code> - Table of the mods that this mod can provide.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lovely</span></code> - Mods that have a <code class="docutils literal notranslate"><span class="pre">lovely.toml</span></code> file or a <code class="docutils literal notranslate"><span class="pre">lovely</span></code> folder in their directory have this flag enabled. You can use this to verify if your mod was able to load lovely patches</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">can_load</span></code> - <code class="docutils literal notranslate"><span class="pre">true</span></code> if the mod is able to load. This is useful for checking if another mod has loaded successfully.</p></li>
+</ul>
+<section id="lovely-mods">
+<h3>“Lovely” Mods<a class="headerlink" href="#lovely-mods" title="Link to this heading">#</a></h3>
+<p>Folders within the mod directiry that have a <code class="docutils literal notranslate"><span class="pre">lovely.toml</span></code> file or a <code class="docutils literal notranslate"><span class="pre">lovely</span></code> folder are considered “Lovely” mods. These are registered as regular mods, with default information set up and a <code class="docutils literal notranslate"><span class="pre">lovely_only</span></code> flag.</p>
+</section>
+<section id="meta-mods">
+<h3>“Meta” Mods<a class="headerlink" href="#meta-mods" title="Link to this heading">#</a></h3>
+<p>Meta mods are created by Steamodded manually, as they are not a mod. These have the <code class="docutils literal notranslate"><span class="pre">&quot;meta_mod&quot;</span></code> flag set to <code class="docutils literal notranslate"><span class="pre">true</span></code>. These are used to allow targeting certain versions of Lovely or Balatro.</p>
+<p>The current list of meta mods are Steamodded, Lovely, and Balatro.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="mod-config">
+<h2>Mod Config<a class="headerlink" href="#mod-config" title="Link to this heading">#</a></h2>
+<p>Your mod can have an optional config table and a page to modify it, accessible through the Mods menu.</p>
+<section id="setting-up-your-config">
+<h3>Setting Up Your Config<a class="headerlink" href="#setting-up-your-config" title="Link to this heading">#</a></h3>
+<p>Create the structure of your config in a file named <code class="docutils literal notranslate"><span class="pre">config.lua</span></code> stored in your mod directory. SMODS will take this and assign it as the config for your mod, handling modifications and reloading internally. Your <code class="docutils literal notranslate"><span class="pre">config.lua</span></code> file should follow a structure like this:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="p">[</span><span class="s2">&quot;setting_1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span data-line="3"> <span class="p">[</span><span class="s2">&quot;setting_2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="4">  <span class="p">[</span><span class="s2">&quot;option_1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+</span><span data-line="5">  <span class="p">[</span><span class="s2">&quot;option_2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+</span><span data-line="6">  <span class="p">[</span><span class="s2">&quot;option_3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+</span><span data-line="7"> <span class="p">}</span>
+</span><span data-line="8"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>You can access your config inside your mod by using this set up <code class="docutils literal notranslate"><span class="pre">local</span> <span class="pre">config</span> <span class="pre">=</span> <span class="pre">SMODS.current_mod.config</span></code>. Following this, using <code class="docutils literal notranslate"><span class="pre">config.setting_1</span></code> would give you the value of setting_1 in your config.</p>
+</section>
+<section id="mod-save-mod-config-mod">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.save_mod_config(mod)</span></code><a class="headerlink" href="#mod-save-mod-config-mod" title="Link to this heading">#</a></h3>
+<p>If you want the mod config to be handled differently from how SMODS saves mod configs, you can define this function. It will be called when SMODS goes to save your mod’s config rather than the default <code class="docutils literal notranslate"><span class="pre">SMODS.save_mod_config</span></code> function.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="optional-features">
+<h2>Optional Features<a class="headerlink" href="#optional-features" title="Link to this heading">#</a></h2>
+<p>Steamodded comes with additional opt-in features that requires mods to manually turn them on.</p>
+<section id="available-features">
+<h3>Available Features<a class="headerlink" href="#available-features" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">quantum_enhancements</span></code></strong> - Enables “Quantum Enhancement” contexts. Cards can count as having multiple enhancements at once.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">retrigger_joker</span></code></strong> - Enables “Joker Retrigger” contexts. Jokers can be retriggered by other jokers or effects.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">post_trigger</span></code></strong> - Enables “Post Trigger” contexts. Allows calculating effects after a Joker has been calculated.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cardareas</span></code></strong> - Table of features that would add</p>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">deck</span></code></strong> - Adds <code class="docutils literal notranslate"><span class="pre">G.deck</span></code> to CardArea checks, allowing cards within the deck to be included in calculation.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">discard</span></code></strong> - Adds <code class="docutils literal notranslate"><span class="pre">G.discard</span></code> to CardArea checks, allowing discarded cards to be included in calculation.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">object_weights</span></code></strong> - Enables “Weight System” feature - this feature will break vanilla seed consistency. <em>(Added in 1531zeebee)</em></p></li>
+</ul>
+</section>
+<section id="mod-optional-features">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.optional_features</span></code><a class="headerlink" href="#mod-optional-features" title="Link to this heading">#</a></h3>
+<p>To enable any of the optional features, you can define <code class="docutils literal notranslate"><span class="pre">optional_features</span></code> for your mod</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- optional features enabled via table</span>
+</span><span data-line="2"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">optional_features</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3"> <span class="n">quantum_enhancements</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">-- will enable &quot;Quantum Enhancement&quot;</span>
+</span><span data-line="4"> <span class="c1">-- Add any other features to enable here.</span>
+</span><span data-line="5"> <span class="n">cardareas</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span data-line="6"><span class="p">}</span>
+</span><span data-line="7">
+</span><span data-line="8"><span class="c1">-- optional features enabled via table</span>
+</span><span data-line="9"><span class="c1">-- Returns a table of features to enable.</span>
+</span><span data-line="10"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">optional_features</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span data-line="11"> <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="12">  <span class="n">quantum_enhancements</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span data-line="13">  <span class="c1">-- ...</span>
+</span><span data-line="14">  <span class="n">cardareas</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span data-line="15"> <span class="p">}</span>
+</span><span data-line="16"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="customizing-mod-page-ui">
+<h2>Customizing Mod Page UI<a class="headerlink" href="#customizing-mod-page-ui" title="Link to this heading">#</a></h2>
+<p>The UI elements within on your mod page can be individually customized.</p>
+<section id="mod-description">
+<h3>Mod Description<a class="headerlink" href="#mod-description" title="Link to this heading">#</a></h3>
+<p>Default mod descriptions defined within your mod’s metadata supports basic text wrapping, but no further formatting like changing the colour and scale of text or inserting variables, as well as localization. By using <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#localization-files-recommended">Localization files</a>, you can create a description for your mods with support for all the formatting of other descriptions. Your description should be placed in <code class="docutils literal notranslate"><span class="pre">G.localization.descriptions.Mod[mod_id]</span></code>.</p>
+<section id="mod-ui-config">
+<h4><code class="docutils literal notranslate"><span class="pre">mod.ui_config</span></code><a class="headerlink" href="#mod-ui-config" title="Link to this heading">#</a></h4>
+<p>Allows configuring the mod menu’s ui elements via custom values in a table.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">ui_config</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2"> <span class="n">colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">L_BLACK</span><span class="p">,</span> <span class="c1">-- Colour of the mod menu</span>
+</span><span data-line="3"> <span class="n">author_colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BLUE</span><span class="p">,</span> <span class="c1">-- Colour of the text displaying the mod authors</span>
+</span><span data-line="4"> <span class="n">bg_colour</span> <span class="o">=</span> <span class="p">{</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GREY</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GREY</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GREY</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mf">0.5</span> <span class="p">},</span> <span class="c1">-- Colour of the area behind the mod menu.</span>
+</span><span data-line="5"> <span class="n">back_colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">ORANGE</span><span class="p">,</span> <span class="c1">-- Colour of the &quot;Back&quot; button</span>
+</span><span data-line="6"> <span class="n">tab_button_colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BOOSTER</span><span class="p">,</span> <span class="c1">-- Colour of the tab buttons</span>
+</span><span data-line="7"> <span class="n">collection_colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">L_BLACK</span><span class="p">,</span> <span class="c1">-- Colour of the collections menu. Defaults to `colour` if not provided.</span>
+</span><span data-line="8"> <span class="n">collection_bg_colour</span> <span class="o">=</span> <span class="p">{</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GREY</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GREY</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">GREY</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mf">0.5</span> <span class="p">},</span> <span class="c1">-- Colour of the area behind the collections menu. Defaults to `bg_colour` if not provided.</span>
+</span><span data-line="9"> <span class="n">collection_back_colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">ORANGE</span><span class="p">,</span> <span class="c1">-- Colour of the &quot;Back&quot; button in the collections menu. Defaults to `back_colour` if not provided.</span>
+</span><span data-line="10"> <span class="n">collection_option_cycle_colour</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">RED</span> <span class="c1">-- Colour of the option cycle in the collection</span>
+</span><span data-line="11"><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="mod-description-loc-vars">
+<h4><code class="docutils literal notranslate"><span class="pre">mod.description_loc_vars</span></code><a class="headerlink" href="#mod-description-loc-vars" title="Link to this heading">#</a></h4>
+<p>To change your description dynamically through variables and alternate keys or specify a default text colour and scale, you can define this function on your mod object. This function behaves like <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars"><code class="docutils literal notranslate"><span class="pre">loc_vars</span></code></a> on other objects.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">description_loc_vars</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+</span><span data-line="2"> <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="3">  <span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="4">   <span class="s1">&#39;some var&#39;</span><span class="p">,</span> <span class="c1">-- text variables (e.g. #1#)</span>
+</span><span data-line="5">   <span class="n">colours</span> <span class="o">=</span> <span class="p">{</span> <span class="n">HEX</span><span class="p">(</span><span class="s1">&#39;123ABC&#39;</span><span class="p">)</span> <span class="p">}</span> <span class="c1">-- colour variables (e.g. {V:1})</span>
+</span><span data-line="6">  <span class="p">},</span>
+</span><span data-line="7">  <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;alternate_key&#39;</span><span class="p">,</span> <span class="c1">-- Get description from G.localization.descriptions.Mod[key] instead</span>
+</span><span data-line="8">  <span class="n">scale</span> <span class="o">=</span> <span class="mf">1.1</span><span class="p">,</span> <span class="c1">-- Change text scale, default 1</span>
+</span><span data-line="9">  <span class="n">text_colour</span> <span class="o">=</span> <span class="n">HEX</span><span class="p">(</span><span class="s1">&#39;1A2B3C&#39;</span><span class="p">),</span> <span class="c1">-- Default text colour if no colour control is active</span>
+</span><span data-line="10">  <span class="n">background_colour</span> <span class="o">=</span> <span class="n">HEX</span><span class="p">(</span><span class="s1">&#39;9876547F&#39;</span><span class="p">)</span>
+</span><span data-line="11"> <span class="p">}</span>
+</span><span data-line="12"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<section id="mod-custom-ui">
+<h4><code class="docutils literal notranslate"><span class="pre">mod.custom_ui</span></code><a class="headerlink" href="#mod-custom-ui" title="Link to this heading">#</a></h4>
+<p>This function can be used to manipulate your mod’s description tab arbitarily. It receives a table of nodes as an argument, you can modify this table to insert additional elements or modify existing ones. See also: <a class="reference external" href="https://docs.smods.dev/Guides/UI-Guide">Building a UI</a>.</p>
+</section>
+</section>
+<section id="additional-tabs">
+<h3>Additional Tabs<a class="headerlink" href="#additional-tabs" title="Link to this heading">#</a></h3>
+<p>You can also create additional tabs to to display in your Mod’s menu.</p>
+<section id="creating-a-config-tab">
+<h4>Creating a Config Tab<a class="headerlink" href="#creating-a-config-tab" title="Link to this heading">#</a></h4>
+<p>To create a <strong>config tab</strong>, use this block of code. This will add a tab with the displayed name “Config”.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">config_tab</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span data-line="2"> <span class="kr">return</span> <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">ROOT</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3">  <span class="c1">-- config values here, see &#39;Building a UI&#39; page</span>
+</span><span data-line="4"> <span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="5">  <span class="c1">-- work your UI wizardry here, see &#39;Building a UI&#39; page</span>
+</span><span data-line="6"> <span class="p">}}</span>
+</span><span data-line="7"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<section id="mod-custom-collection-tabs">
+<h4><code class="docutils literal notranslate"><span class="pre">mod.custom_collection_tabs</span></code><a class="headerlink" href="#mod-custom-collection-tabs" title="Link to this heading">#</a></h4>
+<p>This sets up additional collection pages to be accessed through the ‘Other’ button.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">custom_collection_tabs</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span data-line="2"> <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="3">  <span class="p">{</span>
+</span><span data-line="4">   <span class="n">button</span> <span class="o">=</span> <span class="n">UIBox_button</span><span class="p">({</span>
+</span><span data-line="5">    <span class="c1">-- calls `G.FUNCS.your_collection_something` when pressed, define accordingly</span>
+</span><span data-line="6">    <span class="n">button</span> <span class="o">=</span> <span class="s1">&#39;your_collection_something&#39;</span><span class="p">,</span>
+</span><span data-line="7">    <span class="n">id</span> <span class="o">=</span> <span class="s1">&#39;your_collection_something&#39;</span><span class="p">,</span>
+</span><span data-line="8">    <span class="c1">-- Displayed label on the button (using non-localized strings also works)</span>
+</span><span data-line="9">    <span class="n">label</span> <span class="o">=</span> <span class="p">{</span><span class="n">localize</span><span class="p">(</span><span class="s1">&#39;b_your_label&#39;</span><span class="p">)},</span>
+</span><span data-line="10">    <span class="c1">-- optional; should have numeric &#39;tally&#39; and &#39;of&#39; values (for discovery counts)</span>
+</span><span data-line="11">    <span class="n">count</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">DISCOVER_TALLIES</span><span class="p">[</span><span class="s1">&#39;something&#39;</span><span class="p">],</span>
+</span><span data-line="12">    <span class="c1">-- optional; minimum width of your button</span>
+</span><span data-line="13">    <span class="n">minw</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+</span><span data-line="14">   <span class="p">})</span>
+</span><span data-line="15">  <span class="p">},</span>
+</span><span data-line="16">  <span class="c1">-- add more buttons here</span>
+</span><span data-line="17"> <span class="p">}</span>
+</span><span data-line="18"><span class="kr">end</span>
+</span><span data-line="19"><span class="n">G</span><span class="p">.</span><span class="n">FUNCS</span><span class="p">.</span><span class="n">your_collection_something</span><span class="p">()</span>
+</span><span data-line="20"> <span class="n">G</span><span class="p">.</span><span class="n">SETTINGS</span><span class="p">.</span><span class="n">paused</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span data-line="21">   <span class="n">G</span><span class="p">.</span><span class="n">FUNCS</span><span class="p">.</span><span class="n">overlay_menu</span><span class="p">{</span>
+</span><span data-line="22">     <span class="n">definition</span> <span class="o">=</span> <span class="n">create_UIBox_your_collection_something</span><span class="p">(),</span> <span class="c1">-- this is the actual UI definition function</span>
+</span><span data-line="23">   <span class="p">}</span>
+</span><span data-line="24"><span class="kr">end</span>
+</span><span data-line="25"><span class="c1">-- define `create_UIBox_your_collection_something()` to create the collection, see &#39;Building a UI&#39;</span>
+</span></pre></div>
+</div>
+</section>
+<section id="mod-extra-tabs">
+<h4><code class="docutils literal notranslate"><span class="pre">mod.extra_tabs</span></code><a class="headerlink" href="#mod-extra-tabs" title="Link to this heading">#</a></h4>
+<p>To create <strong>additional tabs</strong>, use this block of code.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">extra_tabs</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span data-line="2"> <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="3">  <span class="p">{</span>
+</span><span data-line="4">   <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;My Label&#39;</span><span class="p">,</span>
+</span><span data-line="5">   <span class="n">tab_definition_function</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span data-line="6">    <span class="c1">-- works in the same way as mod.config_tab</span>
+</span><span data-line="7">    <span class="kr">return</span> <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">ROOT</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="8">     <span class="c1">-- config values here, see &#39;Building a UI&#39; page</span>
+</span><span data-line="9">    <span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="10">     <span class="c1">-- work your UI wizardry here, see &#39;Building a UI&#39; page</span>
+</span><span data-line="11">    <span class="p">}}</span>
+</span><span data-line="12">   <span class="kr">end</span><span class="p">,</span>
+</span><span data-line="13">  <span class="p">},</span>
+</span><span data-line="14">  <span class="c1">-- insert more tables with the same structure here</span>
+</span><span data-line="15"> <span class="p">}</span>
+</span><span data-line="16"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="in-game-functionality">
+<h2>In-game Functionality<a class="headerlink" href="#in-game-functionality" title="Link to this heading">#</a></h2>
+<p>You may want to have some functionality happen with your mod installed independently of some other object being present. For cases like this, defining these mod-scope functions is a good alternative to destructively modifying the underlying vanilla function and helps preserve compatibility with other mods.</p>
+<section id="mod-reset-game-globals-run-start">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.reset_game_globals(run_start)</span></code><a class="headerlink" href="#mod-reset-game-globals-run-start" title="Link to this heading">#</a></h3>
+<p>Set up global game values that reset each round, similar to vanilla jokers like Castle, The Idol, Ancient Joker, and Mail-In Rebate. <code class="docutils literal notranslate"><span class="pre">run_start</span></code> indicates if the function is being called at the start of the run.</p>
+</section>
+<section id="mod-set-ability-reset-keys-table">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.set_ability_reset_keys()</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code><a class="headerlink" href="#mod-set-ability-reset-keys-table" title="Link to this heading">#</a></h3>
+<p>When a card’s <code class="docutils literal notranslate"><span class="pre">ability</span></code> table is changed (such as calling <code class="docutils literal notranslate"><span class="pre">Card:set_ability()</span></code> on it), all previous fields are transferred from the previous <code class="docutils literal notranslate"><span class="pre">ability</span></code> table with set exceptions; by default those exceptions are <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">effect</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">extra</span></code>, <code class="docutils literal notranslate"><span class="pre">played_this_ante</span></code>, and <code class="docutils literal notranslate"><span class="pre">perma_debuff</span></code>. This function returns a table of strings corresponding to fields to be added to that list (there is currently no way to remove an exception).</p>
+</section>
+<section id="mod-set-debuff-card-boolean-prevent-debuff">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.set_debuff(card)</span> <span class="pre">-&gt;</span> <span class="pre">boolean|&quot;prevent_debuff&quot;</span></code><a class="headerlink" href="#mod-set-debuff-card-boolean-prevent-debuff" title="Link to this heading">#</a></h3>
+<p>This function is called when a card is being checked for if it should be debuffed.</p>
+<ul class="simple">
+<li><p>Returning <code class="docutils literal notranslate"><span class="pre">false</span></code> or <code class="docutils literal notranslate"><span class="pre">nil</span></code> will not debuff the card.</p></li>
+<li><p>Returning <code class="docutils literal notranslate"><span class="pre">true</span></code> will debuff the card.</p></li>
+<li><p>Returning <code class="docutils literal notranslate"><span class="pre">&quot;prevent_debuff&quot;</span></code> will force to card to not be debuffed, and all other effects that would normally debuff this card are ignored.</p></li>
+</ul>
+</section>
+<section id="mod-quip-filter-smods-jimboquip-string-boolean-table">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.quip_filter(SMODS.JimboQuip,</span> <span class="pre">string)</span> <span class="pre">-&gt;</span> <span class="pre">boolean,</span> <span class="pre">table</span></code><a class="headerlink" href="#mod-quip-filter-smods-jimboquip-string-boolean-table" title="Link to this heading">#</a></h3>
+<p>Allows configuring if a quip is allowed to appear.</p>
+</section>
+<section id="mod-calculate-self-table-table-boolean">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.calculate(self,</span> <span class="pre">table)</span> <span class="pre">-&gt;</span> <span class="pre">table,</span> <span class="pre">boolean</span></code><a class="headerlink" href="#mod-calculate-self-table-table-boolean" title="Link to this heading">#</a></h3>
+<p>Equivalent to a calculate function on a GameObject.
+See <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Calculate-Functions">SMODS calculation</a> docs for details.</p>
+</section>
+<section id="mod-custom-card-areas-game">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.custom_card_areas(game)</span></code><a class="headerlink" href="#mod-custom-card-areas-game" title="Link to this heading">#</a></h3>
+<p><em>(Added in 1221a)</em>
+Creates a custom <code class="docutils literal notranslate"><span class="pre">CardArea</span></code> at the correct point of the run start sequence. This means that any loading will be done correctly.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">custom_card_areas</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">game</span><span class="p">)</span>
+</span><span data-line="2"> <span class="n">game</span><span class="p">.</span><span class="n">my_area</span> <span class="o">=</span> <span class="n">CardArea</span><span class="p">(</span>
+</span><span data-line="3">  <span class="n">game</span><span class="p">.</span><span class="n">jokers</span><span class="p">.</span><span class="n">T</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">game</span><span class="p">.</span><span class="n">jokers</span><span class="p">.</span><span class="n">T</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span>
+</span><span data-line="4">        <span class="n">game</span><span class="p">.</span><span class="n">jokers</span><span class="p">.</span><span class="n">T</span><span class="p">.</span><span class="n">w</span><span class="p">,</span> <span class="n">game</span><span class="p">.</span><span class="n">jokers</span><span class="p">.</span><span class="n">T</span><span class="p">.</span><span class="n">h</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+</span><span data-line="5">        <span class="p">{</span> <span class="n">card_limit</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;joker&#39;</span><span class="p">,</span> <span class="n">highlight_limit</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">}</span>
+</span><span data-line="6"> <span class="p">)</span>
+</span><span data-line="7"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+<section id="mod-calc-dollar-bonus-self-number-table">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.calc_dollar_bonus(self)</span> <span class="pre">-&gt;</span> <span class="pre">number,</span> <span class="pre">table</span></code><a class="headerlink" href="#mod-calc-dollar-bonus-self-number-table" title="Link to this heading">#</a></h3>
+<p><em>(Added in 1531zeebee)</em>
+Equivalent to a calc_dollar_bonus function on a GameObject.
+Optionally, you can return a table as the second value to modify the text in the round evaluation screen with any of the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code>: Replaces the default name text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>: Allows changing the key and/or set of the name in the localization (ignored if <code class="docutils literal notranslate"><span class="pre">text</span></code> is set)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_colour</span></code>, <code class="docutils literal notranslate"><span class="pre">scale</span></code>: Allows changing the colour and scale of the text respectively</p></li>
+</ul>
+</section>
+</section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h2>
+<section id="mod-debug-info">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.debug_info</span></code><a class="headerlink" href="#mod-debug-info" title="Link to this heading">#</a></h3>
+<p>This is a property that can be set by mods to display debug information on the crash screen.</p>
+<ul class="simple">
+<li><p>Setting this to a string will display that string under your mod in the crash screen.</p></li>
+<li><p>Setting this to a table of strings will display a list with each key and its value under your mod in the crash screen.</p></li>
+</ul>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">-- Will display &quot;Foo&quot; under your mod</span>
+</span><span data-line="2"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">debug_info</span> <span class="o">=</span> <span class="s2">&quot;Foo&quot;</span>
+</span><span data-line="3">
+</span><span data-line="4"><span class="c1">-- Will display &quot;Bar: Baz&quot; under your mod</span>
+</span><span data-line="5"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">debug_info</span> <span class="o">=</span> <span class="p">{</span><span class="n">Bar</span> <span class="o">=</span> <span class="s2">&quot;Baz&quot;</span><span class="p">}</span>
+</span></pre></div>
+</div>
+</section>
+<section id="mod-menu-cards-table">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.menu_cards()</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code><a class="headerlink" href="#mod-menu-cards-table" title="Link to this heading">#</a></h3>
+<p><em>(Added in 1501a)</em>
+This function allows you to easily add cards to the main menu of the game, or to adjust the card that is already there. It can be used to add a single card, or a group of cards, by providing tables of inputs to <code class="docutils literal notranslate"><span class="pre">SMODS.create_card</span></code>. <em>(If you are adding a single card, you can treat the entire return table as the input to <code class="docutils literal notranslate"><span class="pre">SMODS.create_card</span></code>)</em></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">menu_cards</span> <span class="o">=</span> <span class="kr">function</span><span class="p">()</span>
+</span><span data-line="2"> <span class="kr">return</span> <span class="p">{</span>
+</span><span data-line="3">  <span class="p">{</span><span class="n">set</span> <span class="o">=</span> <span class="s1">&#39;Tarot&#39;</span><span class="p">},</span> <span class="c1">-- adds a random Tarot to the menu</span>
+</span><span data-line="4">  <span class="p">{</span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;j_perkeo&#39;</span><span class="p">},</span> <span class="c1">-- adds Perkeo to the menu</span>
+</span><span data-line="5"> <span class="p">}</span>
+</span><span data-line="6"><span class="kr">end</span>
+</span></pre></div>
+</div>
+<p>You can optionally remove the initial card from the menu by including <code class="docutils literal notranslate"><span class="pre">remove_original</span> <span class="pre">=</span> <span class="pre">true</span></code> to your return table, and you can also define a <code class="docutils literal notranslate"><span class="pre">func</span> <span class="pre">=</span> <span class="pre">function()</span> <span class="pre">...</span></code> that will be run after all mods have added their cards to the menu. <code class="docutils literal notranslate"><span class="pre">G.title_top</span></code> is the <code class="docutils literal notranslate"><span class="pre">CardArea</span></code> that holds these cards.</p>
+</section>
+<section id="mod-set-mod-badge-obj-table">
+<h3><code class="docutils literal notranslate"><span class="pre">mod.set_mod_badge(obj)</span> <span class="pre">-&gt;</span> <span class="pre">table</span></code><a class="headerlink" href="#mod-set-mod-badge-obj-table" title="Link to this heading">#</a></h3>
+<p><em>added in 26.829.0</em> Allows you to modify the mod’s badge per object. Check <code class="docutils literal notranslate"><span class="pre">SMODS.create_mod_badges</span></code> in <code class="docutils literal notranslate"><span class="pre">utils.lua</span></code> for the default implementation.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">SMODS</span><span class="p">.</span><span class="n">current_mod</span><span class="p">.</span><span class="n">set_mod_badge</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</span><span data-line="2">    <span class="kr">return</span> <span class="n">create_badge</span><span class="p">(</span><span class="n">localize</span><span class="p">(</span><span class="s1">&#39;k_your_string&#39;</span><span class="p">),</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">RED</span><span class="p">,</span> <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">BLACK</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
+</span><span data-line="3"><span class="kr">end</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../Mod-Metadata/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Mod Metadata</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../Calculate-Functions/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">​Calculate Functions</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

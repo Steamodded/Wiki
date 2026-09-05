@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>26.829.0 - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="BETA-1814a" href="../1814a/" /><link rel="prev" title="Release Notes" href="../" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="26.829.0"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Release Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#new-features-and-adjustments">New Features and Adjustments</a></li>
+<li><a class="reference internal" href="#fixes">Fixes</a></li>
+<li><a class="reference internal" href="#new-contributors">New Contributors</a></li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/Release Notes/2608290.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../"><span itemprop="name">Release Notes</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">26.829.0</strong>
+        <meta itemprop="position" content="3" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="id1">
+<h1>26.829.0<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>This release sees a change in how we version the API, due to updating our Thunderstore upload (you can find that <a class="reference external" href="https://thunderstore.io/c/balatro/p/Steamodded/Steamodded/">here</a>). If you are interested on putting your mod on Thunderstore, checkout <a class="reference external" href="https://docs.smods.dev/Guides/Thunderstore">our guide</a>.</p>
+<p>We also have a new and improved wiki site, which has documentation for a lot of these new additions, with more to come as they are completed. You can find that here <a class="reference external" href="https://docs.smods.dev">https://docs.smods.dev</a>.</p>
+<p>To distribute this release easily, you can use <a class="reference external" href="https://release.smods.dev">https://release.smods.dev</a> or <a class="reference external" href="https://download.smods.dev">https://download.smods.dev</a></p>
+<section id="new-features-and-adjustments">
+<h2>New Features and Adjustments<a class="headerlink" href="#new-features-and-adjustments" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Custom Small/Big Blinds by &#64;Eremel in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1366">https://github.com/Steamodded/smods/pull/1366</a></p></li>
+<li><p>Implement attributes for all non-Joker objects by &#64;vitellaryjr in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1371">https://github.com/Steamodded/smods/pull/1371</a></p></li>
+<li><p>Suit shades by &#64;MetaNite64 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1403">https://github.com/Steamodded/smods/pull/1403</a></p></li>
+<li><p>SMODS.scale_card scalar_factor by &#64;vitellaryjr in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1329">https://github.com/Steamodded/smods/pull/1329</a></p></li>
+<li><p>SMODS.reset_card by &#64;vitellaryjr in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1377">https://github.com/Steamodded/smods/pull/1377</a></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">SMODS.RunSelectPage</span></code> by &#64;Eremel in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1409">https://github.com/Steamodded/smods/pull/1409</a></p></li>
+<li><p>from_cashout and initial fields for money_altered by &#64;vitellaryjr in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1436">https://github.com/Steamodded/smods/pull/1436</a></p></li>
+<li><p>Added support for <code class="docutils literal notranslate"><span class="pre">badge_shader</span></code> field in <code class="docutils literal notranslate"><span class="pre">mod.json</span></code>. by &#64;AllUniversal in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1432">https://github.com/Steamodded/smods/pull/1432</a></p></li>
+<li><p>For atlases, if 2x images not found, load 1x and scale it by &#64;VMan-2002 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1454">https://github.com/Steamodded/smods/pull/1454</a></p></li>
+<li><p>Feat(nativefs): normalize file paths by &#64;Aurelius7309 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1461">https://github.com/Steamodded/smods/pull/1461</a></p></li>
+<li><p>Implement text outlines for UIElements by &#64;ThunderEdge73 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1449">https://github.com/Steamodded/smods/pull/1449</a></p></li>
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">SMODS.hide_from_collection</span></code> by &#64;wingedcatgirl in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1459">https://github.com/Steamodded/smods/pull/1459</a></p></li>
+<li><p>Booster size attributes  by &#64;Evgast in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1425">https://github.com/Steamodded/smods/pull/1425</a></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">SMODS.can_context_retrigger()</span></code> and <code class="docutils literal notranslate"><span class="pre">SMODS.can_context_post_trigger()</span></code> util functions by &#64;AllUniversal in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1391">https://github.com/Steamodded/smods/pull/1391</a></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">SMODS.card_to_image()</span></code> Util function by &#64;AllUniversal in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1389">https://github.com/Steamodded/smods/pull/1389</a></p></li>
+<li><p>Better text styling by &#64;Aurelius7309 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1464">https://github.com/Steamodded/smods/pull/1464</a></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">StateSprite</span></code> for state-dependent <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code>s and expanded <code class="docutils literal notranslate"><span class="pre">AnimatedSprite</span></code> functionality by &#64;AllUniversal in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1327">https://github.com/Steamodded/smods/pull/1327</a></p></li>
+<li><p>Port <code class="docutils literal notranslate"><span class="pre">calc_scaling</span></code> and <code class="docutils literal notranslate"><span class="pre">calc_resetting</span></code> to <code class="docutils literal notranslate"><span class="pre">calculate</span></code> by &#64;Aurelius7309 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1468">https://github.com/Steamodded/smods/pull/1468</a></p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">SMODS.SpriteParticle</span></code> by &#64;AllUniversal in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1404">https://github.com/Steamodded/smods/pull/1404</a></p></li>
+<li><p>Use depthstencil for storing stencil buffer by &#64;SleepyG11 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1481">https://github.com/Steamodded/smods/pull/1481</a></p></li>
+<li><p>Element as function in loc_vars by &#64;SleepyG11 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1490">https://github.com/Steamodded/smods/pull/1490</a></p></li>
+<li><p>feat: force pixel by &#64;WilsontheWolf in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1503">https://github.com/Steamodded/smods/pull/1503</a></p></li>
+<li><p>implement no_replace for poll_object by &#64;vitellaryjr in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1514">https://github.com/Steamodded/smods/pull/1514</a></p></li>
+</ul>
+</section>
+<section id="fixes">
+<h2>Fixes<a class="headerlink" href="#fixes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fix stake wins vanilla compatibility by &#64;Aurelius7309 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1394">https://github.com/Steamodded/smods/pull/1394</a></p></li>
+<li><p>Fix for cards with negative <code class="docutils literal notranslate"><span class="pre">card_limit</span></code> drawing ghost cards by &#64;Oinite12 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1418">https://github.com/Steamodded/smods/pull/1418</a></p></li>
+<li><p>fix mods being loaded when disabled by &#64;frostice482 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1434">https://github.com/Steamodded/smods/pull/1434</a></p></li>
+<li><p>Only call Blind in_pool for matching blind types by &#64;mleaf233 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1431">https://github.com/Steamodded/smods/pull/1431</a></p></li>
+<li><p>Fix bosses_used compatibility on save load by &#64;mleaf233 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1430">https://github.com/Steamodded/smods/pull/1430</a></p></li>
+<li><p>One more stake order fix by &#64;MetaNite64 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1429">https://github.com/Steamodded/smods/pull/1429</a></p></li>
+<li><p>Prevent <code class="docutils literal notranslate"><span class="pre">false</span></code> from enabling an optional feature by &#64;wingedcatgirl in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1428">https://github.com/Steamodded/smods/pull/1428</a></p></li>
+<li><p>The Psychic, The Eye, and The Mouth scoring bugfix by &#64;lilaclila in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1441">https://github.com/Steamodded/smods/pull/1441</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ease_dollars</span></code> hook fix by &#64;ThunderEdge73 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1447">https://github.com/Steamodded/smods/pull/1447</a></p></li>
+<li><p>Fix: quick start tooltip now respects page order by &#64;larswijn in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1460">https://github.com/Steamodded/smods/pull/1460</a></p></li>
+<li><p>Fix: Crash when creating a joker by &#64;Foo54 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1455">https://github.com/Steamodded/smods/pull/1455</a></p></li>
+<li><p>Fix: calc_dollar_bonus now works with custom text argument by &#64;larswijn in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1463">https://github.com/Steamodded/smods/pull/1463</a></p></li>
+<li><p>Controller fixes for scrollbars, dropdowns and UIScrollBoxes by &#64;ThunderEdge73 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1479">https://github.com/Steamodded/smods/pull/1479</a></p></li>
+<li><p>Made it so the currently used consumable still gets calculated. by &#64;AllUniversal in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1467">https://github.com/Steamodded/smods/pull/1467</a></p></li>
+<li><p>Adjust Mr. Bones by &#64;TheHamester in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1477">https://github.com/Steamodded/smods/pull/1477</a></p></li>
+<li><p>Minor <code class="docutils literal notranslate"><span class="pre">CardArea</span></code> unhighlight logic fix by &#64;HuyTheKiller in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1487">https://github.com/Steamodded/smods/pull/1487</a></p></li>
+<li><p>Remove hardcoded checks for vanilla enhancements by &#64;Aurelius7309 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1489">https://github.com/Steamodded/smods/pull/1489</a></p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">G.FUNCS.reroll_boss</span></code> reverting blind progress by &#64;Eremel in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1493">https://github.com/Steamodded/smods/pull/1493</a></p></li>
+<li><p>fix vouchers being duplicated by &#64;vitellaryjr in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1497">https://github.com/Steamodded/smods/pull/1497</a></p></li>
+<li><p>Fix for <code class="docutils literal notranslate"><span class="pre">simple</span></code> param in <code class="docutils literal notranslate"><span class="pre">create_UIBox_current_hands</span></code> not persisting between pages by &#64;Oinite12 in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1495">https://github.com/Steamodded/smods/pull/1495</a></p></li>
+</ul>
+</section>
+<section id="new-contributors">
+<h2>New Contributors<a class="headerlink" href="#new-contributors" title="Link to this heading">#</a></h2>
+<p>Thank you to these people who have helped contribute to this project for the first time!</p>
+<ul class="simple">
+<li><p>&#64;Oinite12 made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1418">https://github.com/Steamodded/smods/pull/1418</a></p></li>
+<li><p>&#64;lilaclila made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1441">https://github.com/Steamodded/smods/pull/1441</a></p></li>
+<li><p>&#64;VMan-2002 made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1454">https://github.com/Steamodded/smods/pull/1454</a></p></li>
+<li><p>&#64;TheHamester made their first contribution in <a class="reference external" href="https://github.com/Steamodded/smods/pull/1477">https://github.com/Steamodded/smods/pull/1477</a></p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Full Changelog</strong>: <a class="reference external" href="https://github.com/Steamodded/smods/compare/1.0.0-beta-1814a...26.829.0">https://github.com/Steamodded/smods/compare/1.0.0-beta-1814a…26.829.0</a></p>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Release Notes</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../1814a/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">BETA-1814a</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

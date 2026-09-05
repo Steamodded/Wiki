@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BETA-1814a - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="BETA-1501a" href="../1501a/" /><link rel="prev" title="26.829.0" href="../2608290/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="BETA-1814a"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Release Notes</a><ul class="current">
+<li class="toctree-l2 _expand"><a class="reference internal" href="../2608290/">26.829.0</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#changelog">Changelog</a></li>
+<li><a class="reference internal" href="#detailed-changes">Detailed Changes</a><ul>
+<li><a class="reference internal" href="#copying-cards">Copying Cards</a></li>
+<li><a class="reference internal" href="#controlling-ability-to-sell">Controlling Ability to Sell</a></li>
+<li><a class="reference internal" href="#objecttype-changes">ObjectType Changes</a><ul>
+<li><a class="reference internal" href="#badges">Badges</a></li>
+<li><a class="reference internal" href="#undiscovered-sprites">Undiscovered Sprites</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#destroying-cards">Destroying Cards</a></li>
+<li><a class="reference internal" href="#calculation-changes">Calculation Changes</a><ul>
+<li><a class="reference internal" href="#context-modify-final-cashout">context.modify_final_cashout</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#coming-soon">Coming Soon</a></li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/Release Notes/1814a.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../"><span itemprop="name">Release Notes</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="2" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">BETA-1814a</strong>
+        <meta itemprop="position" content="3" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="beta-1814a">
+<h1>BETA-1814a<a class="headerlink" href="#beta-1814a" title="Link to this heading">#</a></h1>
+<p>This release version contains a whole suite of bug fixes and adjustments to internal functions, as well as a few new useful tools for you to use.</p>
+<section id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SMODS.copy_card</span></code> has been added to make copying cards easier</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMODS.is_playing_card</span></code> has been added to check whether a card is a playing card or not</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Card:can_sell()</span></code> function added to control whether a card is able to sold easier</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">{T:key}</span></code> option of text formatting has been expanded to accept <code class="docutils literal notranslate"><span class="pre">{T_set:set_key}</span></code> and <code class="docutils literal notranslate"><span class="pre">{T_vars:var1;var2;var3}</span></code> to direct the tooltip to be drawn from outside of the <code class="docutils literal notranslate"><span class="pre">Other</span></code> localization table</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">select_card</span></code> has had some adjustments to allow for <strong>both</strong> select and use buttons to be displayed simultaneously. Returning a second truthy value <em>(i.e. <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">'jokers',</span> <span class="pre">true</span></code>)</em> will enable both buttons</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_collection</span></code> can now be a function that returns <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> to control the behaviour</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMODS.create_card</span></code>/<code class="docutils literal notranslate"><span class="pre">SMODS.add_card</span></code> now support some additional arguments:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">silent</span></code> that disables seal and edition application sounds</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code> that accepts a table of <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">h</span></code> to modify the size of the card</p></li>
+</ul>
+</li>
+<li><p>It is now possible to create a badge for a custom <code class="docutils literal notranslate"><span class="pre">ObjectType</span></code></p></li>
+<li><p>When creating a custom <code class="docutils literal notranslate"><span class="pre">ObjectType</span></code>, you can now better control the undiscovered behaviour</p></li>
+<li><p>Issues caused by shaders when playing on mobile have been addressed, and the experience should be a lot smoother now!</p></li>
+<li><p>Optional features that are enabled are now displayed on crash reports to aid with debugging for mod developers.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">name_text</span></code> type in <code class="docutils literal notranslate"><span class="pre">localize</span></code> now correctly supports variables.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMODS.destroy_cards</span></code> has had it’s format adjusted, and now takes a table of arguments to control it’s behaviour. See below for more information.</p></li>
+<li><p>The shop crash when redeeming the Illusion voucher when playing with object weights has been fixed</p></li>
+<li><p>Naneinf scores when chips or mult individually reach infinity once again work correctly</p></li>
+</ul>
+</section>
+<section id="detailed-changes">
+<h2>Detailed Changes<a class="headerlink" href="#detailed-changes" title="Link to this heading">#</a></h2>
+<section id="copying-cards">
+<h3>Copying Cards<a class="headerlink" href="#copying-cards" title="Link to this heading">#</a></h3>
+<p>Copying cards has been made easier to do correctly by using the new function <code class="docutils literal notranslate"><span class="pre">SMODS.copy_card(card,</span> <span class="pre">args)</span></code>, where <code class="docutils literal notranslate"><span class="pre">card</span></code> is the card being copied and <code class="docutils literal notranslate"><span class="pre">args</span></code> is a table to further control the function’s behaviour. The following <code class="docutils literal notranslate"><span class="pre">args</span></code> are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">new_card</span></code> - Copies the card into <code class="docutils literal notranslate"><span class="pre">new_card</span></code> instead of creating a new card (like the Death tarot)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">card_scale</span></code> - Multiplier for the copy’s scale</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strip_edition</span></code> - Strips the edition from the copy</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_add</span></code> - Skips adding the copy to deck</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">area</span></code> - Area the new copy should be added to, if not specified it will be inferred from the card.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">playing_card</span></code> - Sets the copy’s playing card value. If <code class="docutils literal notranslate"><span class="pre">false</span></code>, the value is not set. If no value is specified, it sets it to the next G.playing_card (only if <code class="docutils literal notranslate"><span class="pre">card</span></code> is a playing card)</p></li>
+</ul>
+<p>This function comes along with another util function, <code class="docutils literal notranslate"><span class="pre">SMODS.add_to_deck</span></code>, which correctly calls all the relevant functions when adding something new to the players control. Further info on this function can be found on the <em>Utility</em> page of the wiki.</p>
+</section>
+<section id="controlling-ability-to-sell">
+<h3>Controlling Ability to Sell<a class="headerlink" href="#controlling-ability-to-sell" title="Link to this heading">#</a></h3>
+<p>Centers can now have a <code class="docutils literal notranslate"><span class="pre">can_sell</span></code> function defined on them to control whether the card is sellable or not. For example, this function would prevent a card from being able to be sold.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">can_sell</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">card</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</span><span data-line="2">    <span class="kr">return</span> <span class="kc">false</span>
+</span><span data-line="3"><span class="kr">end</span><span class="p">,</span>
+</span></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">context</span></code> in this function is not provided by default, but could be present if you need to perform your own custom checks on whether cards can be sold.</p>
+</div>
+</section>
+<section id="objecttype-changes">
+<h3>ObjectType Changes<a class="headerlink" href="#objecttype-changes" title="Link to this heading">#</a></h3>
+<section id="badges">
+<h4>Badges<a class="headerlink" href="#badges" title="Link to this heading">#</a></h4>
+<p>It is now possible to add a <code class="docutils literal notranslate"><span class="pre">set_badges</span></code> function on a custom <code class="docutils literal notranslate"><span class="pre">ObjectType</span></code>. This function works in the same way as on other objects.</p>
+</section>
+<section id="undiscovered-sprites">
+<h4>Undiscovered Sprites<a class="headerlink" href="#undiscovered-sprites" title="Link to this heading">#</a></h4>
+<p>Previously, when creating a custom <code class="docutils literal notranslate"><span class="pre">ObjectType</span></code>, it required a lovely patch to enable custom undiscovered sprites. You can now add your <code class="docutils literal notranslate"><span class="pre">ObjectType</span></code> key to <code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredCompat</span></code> to make your custom sprites work. If you find any other inconsistencies with undiscovered behaviour with custom types, please report it.</p>
+</section>
+</section>
+<section id="destroying-cards">
+<h3>Destroying Cards<a class="headerlink" href="#destroying-cards" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">SMODS.destroy_cards</span></code> has existed for a while now, but has recently been reworked to better control the behaviour. This also allows for custom colours to be passed to the dissolve function.
+You should now use <code class="docutils literal notranslate"><span class="pre">SMODS.destroy_cards(cards,</span> <span class="pre">args)</span></code>,  where <code class="docutils literal notranslate"><span class="pre">cards</span></code> can be an individual <code class="docutils literal notranslate"><span class="pre">Card</span></code> object, or a table of <code class="docutils literal notranslate"><span class="pre">Card</span></code> objects, and <code class="docutils literal notranslate"><span class="pre">args</span></code> is a table that can have the following fields:
+- <code class="docutils literal notranslate"><span class="pre">bypass_eternal</span></code> - Destroys cards even if they’re Eternal.
+- <code class="docutils literal notranslate"><span class="pre">immediate</span></code> - Destroys the cards immediately not creating an event <em>(Note: <code class="docutils literal notranslate"><span class="pre">Card.start_dissolve</span></code> and <code class="docutils literal notranslate"><span class="pre">Card.shatter</span></code> internally still create an event)</em>
+- <code class="docutils literal notranslate"><span class="pre">pinch_anim</span></code> - Destroys the cards with the vanilla food Joker animation.
+- <code class="docutils literal notranslate"><span class="pre">colours</span></code> - Replaces the colours used by <code class="docutils literal notranslate"><span class="pre">start_dissolve</span></code>.
+- <code class="docutils literal notranslate"><span class="pre">delay</span></code> - Adds a delay to the event.
+- <code class="docutils literal notranslate"><span class="pre">destroy_func</span></code> - Replaces the destroy function used (i.e. replaces <code class="docutils literal notranslate"><span class="pre">Card.start_dissolve</span></code> or <code class="docutils literal notranslate"><span class="pre">Card.shatter</span></code>)
+This function will return a table of cards that are set to be destroyed.</p>
+</section>
+<section id="calculation-changes">
+<h3>Calculation Changes<a class="headerlink" href="#calculation-changes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>It is now possible to return a <code class="docutils literal notranslate"><span class="pre">font</span></code> key in all calculations to customise the font of any message</p></li>
+<li><p>When returning <code class="docutils literal notranslate"><span class="pre">dollars</span></code>, you can add <code class="docutils literal notranslate"><span class="pre">instant</span> <span class="pre">=</span> <span class="pre">true</span></code> to add the dollars instantly instead of in line with animations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SMODS.last_hand_score</span></code> tracks the total score of the last played hand</p></li>
+<li><p>A new context has been added to modify the cashout after defeating a blind.</p></li>
+</ul>
+<section id="context-modify-final-cashout">
+<h4>context.modify_final_cashout<a class="headerlink" href="#context-modify-final-cashout" title="Link to this heading">#</a></h4>
+<p>This context is used to adjust the total value of the cashout. Returning <code class="docutils literal notranslate"><span class="pre">modify</span> <span class="pre">=</span> <span class="pre">X</span></code> will add your value to the total cashout.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kr">if</span> <span class="n">context</span><span class="p">.</span><span class="n">modify_final_cashout</span> <span class="kr">then</span>
+</span></pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">context</span><span class="p">.</span><span class="n">modify_final_cashout</span> <span class="c1">-- boolean value to flag this context, always TRUE</span>
+</span><span data-line="2"><span class="n">context</span><span class="p">.</span><span class="n">amount</span> <span class="c1">-- the current value of the cashout</span>
+</span></pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">cashout_row</span> <span class="pre">=</span> <span class="pre">{}</span></code> will allow you to provide your own arguments to the cashout row function. The amount and pitch are automatically populated for you. For example,
+<code class="docutils literal notranslate"><span class="pre">cashout_row</span> <span class="pre">=</span> <span class="pre">{name='custom',</span> <span class="pre">text</span> <span class="pre">=</span> <span class="pre">'I'm</span> <span class="pre">custom!',</span> <span class="pre">text_colour</span> <span class="pre">=</span> <span class="pre">G.C.BLUE}</span></code></p>
+</div>
+</section>
+</section>
+</section>
+<section id="coming-soon">
+<h2>Coming Soon<a class="headerlink" href="#coming-soon" title="Link to this heading">#</a></h2>
+<p>Over the next couple of weeks, I am hopeful that there will be a number of new features merged into the dev branch ready for wider testing, and work will begin/continue on other features too! If any of these are of interest to you, please try them out once they are merged and give us some feedback on them, so that we can have them functioning in the best state they can before the next release! If you’re interested in contributing or working on your own ideas for features, please get involved on the discord (or any other servers where we are active) and see what you can do!</p>
+<ul class="simple">
+<li><p>More Blind control - ability to create custom Small and Big blinds supported by default, as well as blinds that can appear in multiple slots. We’re looking into how this can be further expanded to allow for entirely custom antes and game paths</p></li>
+<li><p>Run Select Pages - if you are familiar with the mod Galdur, I have worked on incorporating it into SMODS in an improved form</p></li>
+<li><p>More attributes - attributes will be extended across <strong>all</strong> objects and the polling functions will have some tweaks to support this</p></li>
+<li><p>Card images - it will be possible to have the game create images of cards in their current state (including editions) at the press of a button</p></li>
+<li><p>Backgrounds - similar to ScreenShaders, we’re looking to make altering the background of the game a lot easier</p></li>
+<li><p>Sprite Particles - this feature will allow animated sprites to be used as particles on cards at a timing of your design</p></li>
+<li><p>Modifiers - it is planned to make creating new modifiers for cards (similar to enhancement, editions and seals) easier and work has been started on this</p></li>
+<li><p>Perma Bonuses - we’re also looking into how we can ease the process of adding custom permanent bonuses to cards</p></li>
+<li><p>Card Buttons - this is a longer term goal, but I’m beginning to work on custom buttons being applied to cards in a seamless manner (along with controller support 🤞)</p></li>
+</ul>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../2608290/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">26.829.0</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../1501a/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">BETA-1501a</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

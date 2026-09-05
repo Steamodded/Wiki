@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mod Metadata - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="The Mod Object" href="../The-Mod-Object/" /><link rel="prev" title="Making Your First Mod" href="../../Guides/Your-First-Mod/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="Mod Metadata"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/2608290/">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#file-header-outdated">File header (outdated)</a></li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/API Documentation/Mod-Metadata.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Mod Metadata</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="mod-metadata">
+<h1>Mod Metadata<a class="headerlink" href="#mod-metadata" title="Link to this heading">#</a></h1>
+<p>The (new) standard way to specify your mod’s metadata is in a separate JSON file in your mod folder, as per the following specification:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">// Mods/your_mod/your_mod.json</span>
+</span><span data-line="2"><span class="p">{</span>
+</span><span data-line="3"><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your_mod&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// [required] ! Must be unique. &quot;Steamodded&quot;, &quot;Lovely&quot; and &quot;Balatro&quot; are disallowed.</span>
+</span><span data-line="4"><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Your Mod&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// [required]</span>
+</span><span data-line="5"><span class="w"> </span><span class="s2">&quot;author&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;You&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Someone else&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// [required]</span>
+</span><span data-line="6"><span class="w"> </span><span class="s2">&quot;description&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;A description of your mod.&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// [required] ! To use more advanced typesetting, specify your description as a localization entry at G.localization.descriptions.Mod[id]</span>
+</span><span data-line="7"><span class="w"> </span><span class="s2">&quot;prefix&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;prefix&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// [required] ! Must be unique. This prefix is added to the keys of all objects your mod registers. UNLIKE LEGACY HEADERS, THERE IS NO DEFAULT VALUE.</span>
+</span><span data-line="8"><span class="w"> </span><span class="s2">&quot;main_file&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;main.lua&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// [required] ! This is the entry point of your mod. The specified file (including .lua extension) will be executed when your mod is loaded.</span>
+</span><span data-line="9"><span class="w"> </span><span class="s2">&quot;priority&quot;</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="c1">// [default: 0] ! Mods are loaded in order from lowest to highest priority value.</span>
+</span><span data-line="10"><span class="w"> </span><span class="s2">&quot;badge_colour&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;FF230A&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// [default: 666665] ! Background colour for your mod badge. Must be a valid hex color with 6 or 8 digits (RRGGBB or RRGGBBAA)</span>
+</span><span data-line="11"><span class="w"> </span><span class="s2">&quot;badge_text_colour&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// [default: FFFFFF] ! Text colour for your mod badge.</span>
+</span><span data-line="12"><span class="w"> </span><span class="s2">&quot;badge_shader&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;modprefix_shaderkey&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ! Key to the SMODS.Shader to use for the badge if any *(Added in 26.829.0)*</span>
+</span><span data-line="13"><span class="w"> </span><span class="s2">&quot;display_name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;YM&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// [default: &lt;name&gt;] ! Displayed text on your mod badge.</span>
+</span><span data-line="14"><span class="w"> </span><span class="s2">&quot;no_marquee&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// ! [default: false] Disable the marquee scrolling effect on your mod badge and display the whole text at once.</span>
+</span><span data-line="15"><span class="w"> </span><span class="s2">&quot;icon_path&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;path.png&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ! Path to the mod&#39;s icon in the Mods menu. Must be located in both assets/1x and assets/2x. *(Added in 1531zeebee)*</span>
+</span><span data-line="16"><span class="w"> </span><span class="s2">&quot;icon_width&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">34</span><span class="p">,</span><span class="w"> </span><span class="c1">// ! Automatically calculated by default. Can be used to specify the width of a frame for an animated icon. *(Added in 1531zeebee)*</span>
+</span><span data-line="17"><span class="w"> </span><span class="s2">&quot;icon_fps&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="c1">// ! FPS of your animated icon. *(Added in 1531zeebee)*</span>
+</span><span data-line="18"><span class="w"> </span><span class="s2">&quot;version&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// ! Must follow a version format of (major).(minor).(patch)(rev). rev starting with ~ indicates a beta/pre-release version.</span>
+</span><span data-line="19"><span class="w"> </span><span class="s2">&quot;dependencies&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span data-line="20"><span class="w">  </span><span class="s2">&quot;Steamodded (&gt;=1.*)&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Allows any version past a 1.0.0 stable version (but disallows 1.0.0 beta versions)</span>
+</span><span data-line="21"><span class="w">  </span><span class="s2">&quot;Lovely (&gt;=0.6)&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Allows all versions past 0.6.0 stable, including future beta versions and major version breaks</span>
+</span><span data-line="22"><span class="w">  </span><span class="s2">&quot;SomeMod (==1.0.*)&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Allows all versions past 1.0.0 stable that are 1.0.x (1.1 and later are disallowed)</span>
+</span><span data-line="23"><span class="w">  </span><span class="s2">&quot;SomeOtherMod (==1.0.0~)&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Allows 1.0.0 versions of any revision, beta or not.</span>
+</span><span data-line="24"><span class="w">  </span><span class="s2">&quot;Balatro (==1.0.1m)&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Allows only the specified version and revision.</span>
+</span><span data-line="25"><span class="w">  </span><span class="s2">&quot;OneMoreMod (&gt;&gt;1.0~g) (&lt;&lt;2~)&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// &lt;&lt; and &gt;&gt; are used for versions strictly less/greater than the specified one.</span>
+</span><span data-line="26"><span class="w">  </span><span class="c1">// NOTE: The &lt;&lt; operator should be used in combination with the ~ beta wildcard in order to exclude pre-release major version changes.</span>
+</span><span data-line="27"><span class="w">  </span><span class="s2">&quot;IRanOutOfIdeas (==1.*~)&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Combination of wildcard symbols. All 1.x versions are allowed, including beta.</span>
+</span><span data-line="28"><span class="w">  </span><span class="s2">&quot;Talisman | TalismanReplacement&quot;</span><span class="w"> </span><span class="c1">// Multiple different mods can be used to fulfill this dependency. May want to use `provides` instead</span>
+</span><span data-line="29"><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="c1">// ! All mods in the list must be installed and loaded (and must fulfill version requirements), else this mod will not load.</span>
+</span><span data-line="30"><span class="w"> </span><span class="s2">&quot;conflicts&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span data-line="31"><span class="w">  </span><span class="s2">&quot;Talisman (&gt;=1.1) (&lt;&lt;2~)&quot;</span><span class="w"> </span><span class="c1">// Same format as for dependencies, except alternatives (|) are disallowed.</span>
+</span><span data-line="32"><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="c1">// ! No mods in the list (that fulfill version restrictions) may be installed, else this mod will not load.</span>
+</span><span data-line="33"><span class="w"> </span><span class="s2">&quot;provides&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span data-line="34"><span class="w">  </span><span class="s2">&quot;SomeAPIMod (1.0)&quot;</span>
+</span><span data-line="35"><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="c1">// ! Use this if your mod is able to stand in for a different mod and fulfill dependencies on it. This allows the usage of a different ID so both mods can coexist. If you don&#39;t specify a valid version, your mod&#39;s version is used instead.</span>
+</span><span data-line="36"><span class="w"> </span><span class="s2">&quot;dump_loc&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">// !! Not for use in distributions. Writes all localization changes made on startup to a file, for conversion from a legacy system.</span>
+</span><span data-line="37"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>Template for copying:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span>
+</span><span data-line="2"><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span data-line="3"><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span data-line="4"><span class="w"> </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span data-line="5"><span class="w"> </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">],</span>
+</span><span data-line="6"><span class="w"> </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span data-line="7"><span class="w"> </span><span class="nt">&quot;prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span data-line="8"><span class="w"> </span><span class="nt">&quot;main_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span data-line="9"><span class="w"> </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span data-line="10"><span class="w"> </span><span class="nt">&quot;badge_colour&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span data-line="11"><span class="w"> </span><span class="nt">&quot;badge_text_colour&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span data-line="12"><span class="w"> </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span data-line="13"><span class="w"> </span><span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span data-line="14"><span class="p">}</span>
+</span></pre></div>
+</div>
+<section id="file-header-outdated">
+<h2>File header (outdated)<a class="headerlink" href="#file-header-outdated" title="Link to this heading">#</a></h2>
+<p>Using the legacy file header system is still supported, though switching to metadata files is encouraged. Steamodded will recognize your mod in this system only if the first line in your mod file is EXACTLY <code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">STEAMODDED</span> <span class="pre">HEADER</span></code>. If you are transitioning away from using this method, make sure to remove the header to prevent Steamodded from trying to load your mod twice.</p>
+<p>Your mod can also contain the following lines. These lines describe information about your mod and how Steamodded should load it.</p>
+<ul class="simple">
+<li><p>Required:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">MOD_NAME:</span> <span class="pre">Example</span> <span class="pre">Mod</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">MOD_ID:</span> <span class="pre">ExampleMod</span></code> (<strong>Must be unique and without spaces</strong>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">MOD_AUTHOR:</span> <span class="pre">[You,</span> <span class="pre">AnotherDev,</span> <span class="pre">AnotherOtherDev]</span></code> (<strong>Brackets are required</strong>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">MOD_DESCRIPTION:</span> <span class="pre">A</span> <span class="pre">description</span> <span class="pre">of</span> <span class="pre">your</span> <span class="pre">mod.</span></code> (<strong>No line breaks, text is wrapped automatically.</strong>)</p></li>
+</ul>
+</li>
+<li><p>Optional:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">PRIORITY:</span> <span class="pre">-100</span></code> (<strong>Negative values go first, positive values go last</strong>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">BADGE_COLOR:</span> <span class="pre">123456</span></code> or <code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">BADGE_COLOUR:</span> <span class="pre">ABCDEF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">DISPLAY_NAME:</span> <span class="pre">Example</span></code> (<strong>Shown on mod badges instead of your mod’s name</strong>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">DEPENDENCIES:</span> <span class="pre">[Steamodded&gt;=1.0.0~BETA,</span> <span class="pre">Mod1,</span> <span class="pre">Mod2&gt;=1.0.0,</span> <span class="pre">Mod3&lt;=1.7.5,</span> <span class="pre">Mod4&gt;=1.0.0&lt;=2.0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">CONFLICTS:</span> <span class="pre">[Mod5,</span> <span class="pre">Mod6&lt;=0.9.9,</span> <span class="pre">Mod7&gt;=0.6.2,</span> <span class="pre">Mod8&lt;=1.0&gt;=0.3.7]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">PREFIX:</span> <span class="pre">example</span></code> (<strong>Must be unique. Defaults to the first 4 letters, lowercase, of your mod’s ID.</strong>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span> <span class="pre">VERSION:</span> <span class="pre">1.0.0</span></code>
+These lines can be specified in any order.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../../Guides/Your-First-Mod/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Making Your First Mod</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../The-Mod-Object/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">The Mod Object</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Text Styling - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Permanent bonuses" href="../../API Documentation/Perma-bonuses/" /><link rel="prev" title="Animated Sprites" href="../../API Documentation/Animated-Sprites/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="Text Styling"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/2608290/">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../API Documentation/Logging/">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#text-colour-modifiers-c-v">Text colour modifiers <code class="docutils literal notranslate"><span class="pre">{C:}</span></code>/<code class="docutils literal notranslate"><span class="pre">{V:}</span></code></a><ul>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#background-colour-modifiers-x-b">Background colour modifiers <code class="docutils literal notranslate"><span class="pre">{X:}</span></code>/<code class="docutils literal notranslate"><span class="pre">{B:}</span></code></a><ul>
+<li><a class="reference internal" href="#id1">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#text-motion-modifier-e">Text motion modifier <code class="docutils literal notranslate"><span class="pre">{E:}</span></code></a><ul>
+<li><a class="reference internal" href="#id2">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#text-hover-tooltip-modifier-t">Text hover tooltip modifier <code class="docutils literal notranslate"><span class="pre">{T:}</span></code></a><ul>
+<li><a class="reference internal" href="#id3">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#text-scale-modifier-s">Text scale modifier <code class="docutils literal notranslate"><span class="pre">{s:}</span></code></a><ul>
+<li><a class="reference internal" href="#id4">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#text-underline-strikethrough-and-overline-modifiers-u-st-ov">Text underline, strikethrough and overline modifiers <code class="docutils literal notranslate"><span class="pre">{u:}</span></code>/<code class="docutils literal notranslate"><span class="pre">{st:}</span></code>/<code class="docutils literal notranslate"><span class="pre">{ov:}</span></code></a><ul>
+<li><a class="reference internal" href="#basic-usage">Basic usage</a></li>
+<li><a class="reference internal" href="#advanced-usage">Advanced usage</a></li>
+<li><a class="reference internal" href="#id5">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#text-outline-modifier-o">Text outline modifier <code class="docutils literal notranslate"><span class="pre">{O:}</span></code></a><ul>
+<li><a class="reference internal" href="#id6">Basic usage</a></li>
+<li><a class="reference internal" href="#id7">Advanced usage</a></li>
+<li><a class="reference internal" href="#id8">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#text-font-modifier-f">Text font modifier <code class="docutils literal notranslate"><span class="pre">{f:}</span></code></a><ul>
+<li><a class="reference internal" href="#id9">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#text-button-modifier-button">Text button modifier <code class="docutils literal notranslate"><span class="pre">{button:}</span></code></a><ul>
+<li><a class="reference internal" href="#id10">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ui-element-insertion-element">UI element insertion <code class="docutils literal notranslate"><span class="pre">{element:}</span></code></a><ul>
+<li><a class="reference internal" href="#id11">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#combinations">Combinations</a><ul>
+<li><a class="reference internal" href="#id12">Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#named-colours-dictionary-g-args-loc-colours">Named colours dictionary (<code class="docutils literal notranslate"><span class="pre">G.ARGS.LOC_COLOURS</span></code>)</a></li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/Guides/Text-Styling.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Text Styling</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="text-styling">
+<h1>Text Styling<a class="headerlink" href="#text-styling" title="Link to this heading">#</a></h1>
+<p>Balatro includes a very basic formatting syntax for styling and formatting displayed text in-game. Where supported, text can be styled with the use of <em>style modifier codes</em> included within the text string. For example, the text string:</p>
+<table>
+ <tr> </tr> <!-- Empty row to manipulate the background colour of the next table row -->
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{C:blue}</span><span class="o">+</span><span class="mi">1</span><span class="cm">{}</span><span class="w"> </span><span class="n">hand</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+<p>produces
+<br></p>
+  </td>
+  <td>
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_+1_hand_dark.svg">
+    <img  height=32 width=128 alt="+1 hand" src="/_static/Assets/Text-Styling/example_+1_hand_light.svg">
+   </picture>
+   <br>
+  </td>
+ </tr>
+</table>
+<p>Most SMODS objects that display description text will parse and style text strings automatically when loading from <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#localization-files-recommended">localization files</a> or <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_txt"><code class="docutils literal notranslate"><span class="pre">loc_txt</span></code></a>. This includes the text strings of descriptions for Achievements, Consumables, Decks, Jokers, Vouchers, and more.</p>
+<p>Style modifiers are not additive - text will only be styled by the modifiers contained within the previous set of curly braces. Using empty braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> will reset text styling for text after it.</p>
+<p>Additionally, multiple modifiers can be <a class="reference internal" href="#combinations"><span class="xref myst">combined</span></a> in a single set of curly braces. For example, the text string:</p>
+<table>
+ <tr> </tr> <!-- Empty row to manipulate the background colour of the next table row -->
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{X:mult,C:white}</span><span class="n">X0</span><span class="o">.</span><span class="mi">5</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+<p>produces
+<br></p>
+  </td>
+  <td>
+   <img src="/_static/Assets/Text-Styling/example_X0.5.svg" height=32 width=128 alt="X0.5">
+   <br>
+  </td>
+ </tr>
+</table>
+<p>Valid style modifiers are as follows:</p>
+<table>
+ <tr>
+  <td>
+   <a href="#text-colour-modifiers-cv"><b>Text colour</a>
+  </td>
+  <td>
+   <code>{C:<i>colour</i>}</code>/<code>{V:<i>colour</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#background-colour-modifiers-xb"><b>Background colour</a>
+  </td>
+  <td>
+   <code>{X:<i>colour</i>}</code>/<code>{B:<i>colour</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-motion-modifier-e"><b>Text motion</a>
+  </td>
+  <td>
+   <code>{E:<i>motion-index</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-hover-tooltip-modifier-t"><b>Text hover tooltip</a>
+  </td>
+  <td>
+   <code>{T:<i>tooltip-key</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-scale-modifier-s"><b>Text scale</a>
+  </td>
+  <td>
+   <code>{s:<i>scale</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-underline-strikethrough-and-overline-modifiers-ustov"><b>Text underline</a>
+  </td>
+  <td>
+   <code>{u:<i>colour</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-underline-strikethrough-and-overline-modifiers-ustov"><b>Text strikethrough</a>
+  </td>
+  <td>
+   <code>{st:<i>colour</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-underline-strikethrough-and-overline-modifiers-ustov"><b>Text overline</a>
+  </td>
+  <td>
+   <code>{ov:<i>colour</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-outline-modifier-o"><b>Text outline</a>
+  </td>
+  <td>
+   <code>{O:<i>colour</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-font-modifier-f"><b>Font</a>
+  </td>
+  <td>
+   <code>{f:<i>font</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#text-button-modifier-button"><b>Button</a>
+  </td>
+  <td>
+   <code>{button:<i>function-key</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <a href="#ui-element-insertion-element"><b>UI Element</a>
+  </td>
+  <td>
+   <code>{element:<i>element-index</i>}</code>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <b>No modifiers</b> (use default styling)
+  </td>
+  <td>
+   <code>{}</code>
+  </td>
+ </tr>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Modifiers are <strong>case sensitive</strong> - make sure to refer to this list for the appropriate capitalization.</p>
+</div>
+<hr class="docutils" />
+<section id="text-colour-modifiers-c-v">
+<h2>Text colour modifiers <code class="docutils literal notranslate"><span class="pre">{C:}</span></code>/<code class="docutils literal notranslate"><span class="pre">{V:}</span></code><a class="headerlink" href="#text-colour-modifiers-c-v" title="Link to this heading">#</a></h2>
+<p><code>{C:<i>colour</i>}</code> or <code>{V:<i>colour</i>}</code> changes the color of the text, where <em><code class="docutils literal notranslate"><span class="pre">colour</span></code></em> is one of the following:</p>
+<ul class="simple">
+<li><p>the <strong>key</strong> of a colour defined in <a class="reference internal" href="#loc_colours-table"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">G.ARGS.LOC_COLOURS</span></code></span></a>,</p></li>
+<li><p>a 6-digit <strong>RGB hex code</strong> or an 8-digit <strong>RGBA hex code</strong>, or</p></li>
+<li><p>the index of a custom colour provided as an entry in the <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars"><code class="docutils literal notranslate"><span class="pre">loc_vars</span></code></a> <code class="docutils literal notranslate"><span class="pre">vars.colours</span></code> table. See <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars">Localization</a> for more details.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This functionality was added by Steamodded in 26.829.0. In older versions and in vanilla Balatro, <code class="docutils literal notranslate"><span class="pre">{C:}</span></code> only supports the first option, and <code class="docutils literal notranslate"><span class="pre">{V:}</span></code> only supports the third option.</p>
+</div>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<!--- Single-indented table is necessary for code blocks to function properly -->
+<table>
+ <tr>
+  <td> Text string </td> <td> <code>loc_vars</code> </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+<!-- Code blocks require a preceding empty line when inside HTML tables -->
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{C:mult}</span><span class="o">+</span><span class="mi">4</span><span class="cm">{}</span><span class="w"> </span><span class="n">Mult</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_+4_Mult_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_+4_Mult_light.svg" height=32 width=128 alt="+4 Mult">
+   </picture>
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td colspan=2>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{C:attention}</span><span class="mi">1</span><span class="cm">{}</span><span class="w"> </span><span class="n">free</span><span class="w"> </span><span class="cm">{V:green}</span><span class="n">Reroll</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_1_free_Reroll_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_1_free_Reroll_light.svg" height=32 width=128 alt="1 free Reroll">
+   </picture>
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{C:green}</span><span class="sc">#1</span><span class="err">#</span><span class="w"> </span><span class="err">і</span><span class="n">n</span><span class="w"> </span><span class="sc">#2</span><span class="err">#</span><span class="cm">{}</span><span class="w"> </span><span class="n">chance</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">  <span class="n">G</span><span class="p">.</span><span class="n">GAME</span><span class="p">.</span><span class="n">probabilities</span><span class="p">.</span><span class="n">normal</span><span class="p">,</span> <span class="c1">-- 1</span>
+</span><span data-line="3">  <span class="n">card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">extra</span><span class="p">.</span><span class="n">odds</span>      <span class="c1">-- 6</span>
+</span><span data-line="4"><span class="p">}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_1_in_6_chance_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_1_in_6_chance_light.svg" height=32 width=128 alt="1 in 6 chance">
+   </picture>
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td colspan=2>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{C:ff00ff}</span><span class="n">FF00FF</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_FF00FF.svg" height=32 width=128 alt="FF00FF">
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{V:2}</span><span class="sc">#2</span><span class="err">#</span><span class="cm">{}</span><span class="w"> </span><span class="n">suit</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">  <span class="s1">&#39;Spade&#39;</span><span class="p">,</span>
+</span><span data-line="3">  <span class="s1">&#39;Heart&#39;</span><span class="p">,</span>
+</span><span data-line="4">  <span class="s1">&#39;Club&#39;</span><span class="p">,</span>
+</span><span data-line="5">  <span class="s1">&#39;Diamond&#39;</span><span class="p">,</span>
+</span><span data-line="6">  <span class="n">colours</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="7">    <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">SUITS</span><span class="p">.</span><span class="n">Spades</span><span class="p">,</span>
+</span><span data-line="8">    <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">SUITS</span><span class="p">.</span><span class="n">Hearts</span><span class="p">,</span>
+</span><span data-line="9">    <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">SUITS</span><span class="p">.</span><span class="n">Clubs</span><span class="p">,</span>
+</span><span data-line="10">    <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">SUITS</span><span class="p">.</span><span class="n">Diamonds</span>
+</span><span data-line="11">  <span class="p">}</span>
+</span><span data-line="12"><span class="p">}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Heart_suit_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_Heart_suit_light.svg" height=32 width=128 alt="Heart suit">
+   </picture>
+  </td>
+ </tr>
+</table>
+</section>
+</section>
+<section id="background-colour-modifiers-x-b">
+<h2>Background colour modifiers <code class="docutils literal notranslate"><span class="pre">{X:}</span></code>/<code class="docutils literal notranslate"><span class="pre">{B:}</span></code><a class="headerlink" href="#background-colour-modifiers-x-b" title="Link to this heading">#</a></h2>
+<p><code>{X:<i>colour</i>}</code> or <code>{B:<i>colour</i>}</code> sets the background color of the text, where <em><code class="docutils literal notranslate"><span class="pre">colour</span></code></em> is one of the following:</p>
+<ul class="simple">
+<li><p>the <strong>key</strong> of a colour defined in <a class="reference internal" href="#loc_colours-table"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">G.ARGS.LOC_COLOURS</span></code></span></a>,</p></li>
+<li><p>a 6-digit <strong>RGB hex code</strong> or an 8-digit <strong>RGBA hex code</strong>, or</p></li>
+<li><p>the index of a custom colour provided as an entry in the <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars"><code class="docutils literal notranslate"><span class="pre">loc_vars</span></code></a> <code class="docutils literal notranslate"><span class="pre">vars.colours</span></code> table. See <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars">Localization</a> for more details.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This functionality was added by Steamodded in 26.829.0. In older versions and in vanilla Balatro, <code class="docutils literal notranslate"><span class="pre">{X:}</span></code> only supports the first option. <code class="docutils literal notranslate"><span class="pre">{B:}</span></code> is not supported by vanilla Balatro; in older Steamodded versions, it only supports the third option.</p>
+</div>
+<p>These modifiers are usually combined with a text colour modifier to make <picture>
+<source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_X3_Mult_dark.svg">
+<a class="reference internal" href="../../_images/example_X3_Mult_light.svg"><img alt="X3 Mult" class="align-center" height="24" src="../../_images/example_X3_Mult_light.svg" width="128" /></a>
+</picture> labels.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">{X:}</span></code> modifier uniquely strips all whitespace from the styled text, so text like <code>{X:gold} W I D E {}</code> is rendered as <a class="reference internal" href="../../_images/example_WIDE.svg"><img alt="WIDE" class="align-center" height="24" src="../../_images/example_WIDE.svg" width="128" /></a>. This can be helpful for improving the readability of otherwise dense strings. The <code class="docutils literal notranslate"><span class="pre">{B:}</span></code> modifier instead leaves the styled text’s whitespace unmodified.</p>
+<section id="id1">
+<h3>Examples<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<table>
+ <tr>
+  <td> Text string </td> <td> <code>loc_vars</code> </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{B:mult,C:white}</span><span class="n">X3</span><span class="cm">{}</span><span class="w"> </span><span class="n">Mult</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_X3_Mult_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_X3_Mult_light.svg" height=32 width=128 alt="X3 Mult">
+   </picture>
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td colspan=2>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{X:chips,C:white}</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="cm">{}</span><span class="w"> </span><span class="n">Chips</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_X1.5_Chips_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_X1.5_Chips_light.svg" height=32 width=128 alt="X1.5 Chips">
+   </picture>
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{X:mult,C:white}</span><span class="w"> </span><span class="n">X</span><span class="sc">#1</span><span class="err">#</span><span class="w"> </span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">  <span class="n">card</span><span class="p">.</span><span class="n">ability</span><span class="p">.</span><span class="n">extra</span><span class="p">.</span><span class="n">xmult</span> <span class="c1">-- 0.5</span>
+</span><span data-line="3"><span class="p">}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_X0.5.svg" height=32 width=128 alt="X0.5">
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td colspan=2>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{B:00ff00}</span><span class="mi">00</span><span class="n">FF00</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_00FF00.svg" height=32 width=128 alt="00FF00">
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{B:1,V:2}</span><span class="n">Oh</span><span class="w"> </span><span class="n">no</span><span class="err">!</span><span class="cm">{}</span><span class="w"> </span><span class="n">Anyway</span><span class="o">...</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">  <span class="n">colours</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3">    <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="c1">--#FF0000</span>
+</span><span data-line="4">    <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>  <span class="c1">--#000000</span>
+</span><span data-line="5">  <span class="p">}</span>
+</span><span data-line="6"><span class="p">}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Oh_no_Anyway_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_Oh_no_Anyway_light.svg" height=32 width=128 alt="Oh no! Anyway...">
+   </picture>
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{B:1,V:2}</span><span class="sc">#1</span><span class="err">#</span><span class="cm">{B:2,C:1}</span><span class="sc">#2</span><span class="err">#</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">  <span class="s1">&#39;Spa&#39;</span><span class="p">,</span>
+</span><span data-line="3">  <span class="s1">&#39;rts&#39;</span><span class="p">,</span>
+</span><span data-line="4">  <span class="n">colours</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="5">    <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">SUITS</span><span class="p">.</span><span class="n">Spades</span><span class="p">,</span>
+</span><span data-line="6">    <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">SUITS</span><span class="p">.</span><span class="n">Hearts</span><span class="p">,</span>
+</span><span data-line="7">  <span class="p">}</span>
+</span><span data-line="8"><span class="p">}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_Spa-rts.svg" height=32 width=128 alt="Sparts">
+  </td>
+ </tr>
+</table>
+</section>
+</section>
+<section id="text-motion-modifier-e">
+<h2>Text motion modifier <code class="docutils literal notranslate"><span class="pre">{E:}</span></code><a class="headerlink" href="#text-motion-modifier-e" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">{E:1}</span></code> applies a pop-in effect when the text is first displayed, and a floating animation to each letter in the text.</p>
+<p><code class="docutils literal notranslate"><span class="pre">{E:2}</span></code> applies a bumping animation to each letter in sequence.</p>
+<p><code class="docutils literal notranslate"><span class="pre">{E:}</span></code> is fully compatible with background modifiers <code class="docutils literal notranslate"><span class="pre">{X:}</span></code> and <code class="docutils literal notranslate"><span class="pre">{B:}</span></code> <em>(Added by Steamodded)</em>. In vanilla Balatro, if background modifiers are set, <code class="docutils literal notranslate"><span class="pre">{E:1}</span></code> will only show a pop-in effect with no motion, and <code class="docutils literal notranslate"><span class="pre">{E:2}</span></code> will be ignored.</p>
+<p>You can also apply a custom effect using <a class="reference external" href="https://docs.smods.dev/Game%20Objects/SMODS.DynaTextEffect">SMODS.DynaTextEffect</a>, in that case the modifier should be <code class="docutils literal notranslate"><span class="pre">{E:modprefix_key}</span></code>.</p>
+<section id="id2">
+<h3>Examples<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{C:green,E:1}</span><span class="n">probabilities</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_probabilities.svg" height=32 width=128 alt="probabilities">
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{E:2}</span><span class="n">Joker</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Joker_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_Joker_light.svg" height=32 width=128 alt="Joker">
+   </picture>
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{C:red,E:2}</span><span class="k">self</span><span class="w"> </span><span class="n">destructs</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_self_destructs.svg" height=32 width=128 alt="self destructs">
+  </td>
+ </tr>
+</table>
+</section>
+</section>
+<section id="text-hover-tooltip-modifier-t">
+<h2>Text hover tooltip modifier <code class="docutils literal notranslate"><span class="pre">{T:}</span></code><a class="headerlink" href="#text-hover-tooltip-modifier-t" title="Link to this heading">#</a></h2>
+<p><code>{T:<i>tooltip-key</i>}</code> adds tooltip functionality to the text, which displays a small tooltip UI above the text when the text is hovered over. If <code class="docutils literal notranslate"><span class="pre">tooltip-key</span></code> can be the name of a key found in either <code class="docutils literal notranslate"><span class="pre">G.P_CENTERS</span></code> or <code class="docutils literal notranslate"><span class="pre">G.P_TAGS</span></code> or a description found in <code class="docutils literal notranslate"><span class="pre">G.localization.descriptions.Other</span></code> <em>(Added in 1814a)</em>. In the latter case, you can supply additional information as follows: <code>{T:[key=<i>tooltip-key</i>;set=<i>set-key</i>;1=<i>var1</i>;2=<i>var2</i>;…]}</code> <em>(Added in 26.829.0)</em>. The <em>set-key</em> is used to specify a set in <code class="docutils literal notranslate"><span class="pre">G.localization.descriptions</span></code> to pull from, and the variables <em>var1</em>, <em>var2</em>, etc. are used to supply any localization variables in the text.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The same effect can be achieved using <code>{T:<i>tooltip-key</i>,T_set:<i>set-key</i>,T_vars=<i>var1</i>;<i>var2</i>;…}</code> <em>(added in 1814a)</em>.</p>
+</div>
+<section id="id3">
+<h3>Examples<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+   <br><br>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{C:tarot,T:v_crystal_ball}</span><span class="n">Crystal</span><span class="w"> </span><span class="n">Ball</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_Crystal_Ball_animated.svg" height=15 width=1280 alt="Crystal Ball with Tooltip Animation">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <br><br>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="err">&quot;</span><span class="n">Shop</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="cm">{C:perishable,T:[key=perishable;1=5;2=5]}</span><span class="n">Perishable</span><span class="cm">{}</span><span class="w"> </span><span class="n">Jokers</span><span class="err">&quot;</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+   TBD
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <br><br>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="err">&quot;</span><span class="cm">{T:[key=bl_arm;set=Blind]}</span><span class="n">The</span><span class="w"> </span><span class="n">Arm</span><span class="cm">{}</span><span class="err">&quot;</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+   TBD
+  </td>
+ </tr>
+</table>
+</section>
+</section>
+<section id="text-scale-modifier-s">
+<h2>Text scale modifier <code class="docutils literal notranslate"><span class="pre">{s:}</span></code><a class="headerlink" href="#text-scale-modifier-s" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>[!IMPORTANT]
+This modifier requires the <strong>lowercase</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code>, unlike other modifiers which must be UPPERCASE.</p>
+</div></blockquote>
+<p><code>{s:<i>scale</i>}</code> changes the size of the text.</p>
+<p><em><code class="docutils literal notranslate"><span class="pre">scale</span></code></em> is a decimal value where the default size is 1.0.</p>
+<p>Vanilla Balatro only uses <code class="docutils literal notranslate"><span class="pre">s:0.8</span></code>, <code class="docutils literal notranslate"><span class="pre">s:0.85</span></code> and <code class="docutils literal notranslate"><span class="pre">s:1.1</span></code> text scales.</p>
+<section id="id4">
+<h3>Examples<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{s:0.8}</span><span class="mf">0.8</span><span class="w"> </span><span class="cm">{s:1.0}</span><span class="mf">1.0</span><span class="w"> </span><span class="cm">{s:1.1}</span><span class="mf">1.1</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_0.8_1.0_1.1_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_0.8_1.0_1.1_light.svg" height=35 width=128.2 alt="0.8 1.0 1.1">
+   </picture>
+  </td>
+ </tr>
+</table>
+</section>
+</section>
+<section id="text-underline-strikethrough-and-overline-modifiers-u-st-ov">
+<h2>Text underline, strikethrough and overline modifiers <code class="docutils literal notranslate"><span class="pre">{u:}</span></code>/<code class="docutils literal notranslate"><span class="pre">{st:}</span></code>/<code class="docutils literal notranslate"><span class="pre">{ov:}</span></code><a class="headerlink" href="#text-underline-strikethrough-and-overline-modifiers-u-st-ov" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>[!NOTE]
+These modifiers are added by Steamodded and are not supported by vanilla Balatro.
+<em>(Added in 26.829.0)</em></p>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These modifiers must be <strong>lowercase</strong>, unlike other modifiers which must be UPPERCASE.</p>
+</div>
+<section id="basic-usage">
+<h3>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h3>
+<p><code>{u:<i>colour</i>}</code>, <code>{st:<i>colour</i>}</code> and <code>{ov:<i>colour</i>}</code> respectively add an underline, strikethrough, or underline to the text. The width of the line is 10% of the text’s height.</p>
+<p><em><code class="docutils literal notranslate"><span class="pre">colour</span></code></em> sets the colour of the line, where <em><code class="docutils literal notranslate"><span class="pre">colour</span></code></em> is one of the following:</p>
+<ul class="simple">
+<li><p>the <strong>key</strong> of a colour defined in <a class="reference internal" href="#loc_colours-table"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">G.ARGS.LOC_COLOURS</span></code></span></a>,</p></li>
+<li><p>a 6-digit <strong>RGB hex code</strong> or an 8-digit <strong>RGBA hex code</strong>, or</p></li>
+<li><p>the index of a custom colour provided as an entry in the <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars"><code class="docutils literal notranslate"><span class="pre">loc_vars</span></code></a> <code class="docutils literal notranslate"><span class="pre">vars.colours</span></code> table. See <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars">Localization</a> for more details.</p></li>
+</ul>
+</section>
+<section id="advanced-usage">
+<h3>Advanced usage<a class="headerlink" href="#advanced-usage" title="Link to this heading">#</a></h3>
+<p>By supplying a table to the text modifier, it is possible to customize the lines further: <code>{u:[c=<i>colour</i>;s=<i>size</i>]}</code>. <em>size</em> is a decimal value with a default of <code class="docutils literal notranslate"><span class="pre">0.1</span></code>. It indicates the thickness of the line relative to the height of the text. It is <strong>required</strong> to specify a <em>colour</em>.</p>
+</section>
+<section id="id5">
+<h3>Examples<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{u:red}</span><span class="n">Underlined</span><span class="w"> </span><span class="n">text</span><span class="err">!</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+ <tr></tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{st:[c=green;s=0.2]}</span><span class="n">Thick</span><span class="w"> </span><span class="n">strikethrough</span><span class="w"> </span><span class="n">text</span><span class="err">!</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+ <tr></tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{ov:[c=blue;s=0.05]}</span><span class="n">Thin</span><span class="w"> </span><span class="n">overlined</span><span class="w"> </span><span class="n">text</span><span class="err">!</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+</section>
+</section>
+<section id="text-outline-modifier-o">
+<h2>Text outline modifier <code class="docutils literal notranslate"><span class="pre">{O:}</span></code><a class="headerlink" href="#text-outline-modifier-o" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>[!NOTE]
+This modifier is added by Steamodded and is not supported by vanilla Balatro.
+<em>(Added in 26.829.0)</em></p>
+</div></blockquote>
+<section id="id6">
+<h3>Basic usage<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p><code>{O:<i>colour</i>} adds an outline to the text.</p>
+<p><em><code class="docutils literal notranslate"><span class="pre">colour</span></code></em> sets the colour of the line, where <em><code class="docutils literal notranslate"><span class="pre">colour</span></code></em> is one of the following:</p>
+<ul class="simple">
+<li><p>the <strong>key</strong> of a colour defined in <a class="reference internal" href="#loc_colours-table"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">G.ARGS.LOC_COLOURS</span></code></span></a>,</p></li>
+<li><p>a 6-digit <strong>RGB hex code</strong> or an 8-digit <strong>RGBA hex code</strong>, or</p></li>
+<li><p>the index of a custom colour provided as an entry in the <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars"><code class="docutils literal notranslate"><span class="pre">loc_vars</span></code></a> <code class="docutils literal notranslate"><span class="pre">vars.colours</span></code> table. See <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars">Localization</a> for more details.</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>Advanced usage<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>By supplying a table to the text modifier, it is possible to customize the outline further: <code>{O:[c=<i>colour</i>;s=<i>size</i>]}</code>. <em>size</em> is a decimal value with a default of <code class="docutils literal notranslate"><span class="pre">1.0</span></code>. It indicates the thickness of the outline. <strong>Due to implementation constraints, large <em>size</em> values may lead to unexpected results.</strong> It is <strong>required</strong> to specify a <em>colour</em>.</p>
+</section>
+<section id="id8">
+<h3>Examples<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{O:red}</span><span class="n">Outlined</span><span class="w"> </span><span class="n">text</span><span class="err">!</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+ <tr></tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{C:blue,O:[c=green;s=0.6]}</span><span class="n">Thinner</span><span class="w"> </span><span class="n">outline</span><span class="err">!</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+</section>
+</section>
+<section id="text-font-modifier-f">
+<h2>Text font modifier <code class="docutils literal notranslate"><span class="pre">{f:}</span></code><a class="headerlink" href="#text-font-modifier-f" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>[!NOTE]
+This modifier is added by Steamodded and is not supported by vanilla Balatro.</p>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This modifier requires the <strong>lowercase</strong> <code class="docutils literal notranslate"><span class="pre">f</span></code>, unlike other modifiers which must be UPPERCASE.</p>
+</div>
+<p><code>{f:<i>font</i>}</code> changes the font of the text.</p>
+<p><em><code class="docutils literal notranslate"><span class="pre">font</span></code></em> is a f value ranging from <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code> in vanilla, to add <a class="reference external" href="https://docs.smods.dev/Game%20Objects/SMODS.Font">custom fonts</a> you need to set the value as the font’s full key (<code class="docutils literal notranslate"><span class="pre">modname_font</span></code>).</p>
+<section id="id9">
+<h3>Examples<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<table>
+ <tr>
+  <td>Text string</td>
+  <td>Font Name</td>
+  <td>Assigned Language</td>
+  <td>Result</td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{f:1}</span><span class="n">Hello</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>m6x11 plus</td>
+  <td>Default</td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_font_hello_1_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_font_hello_1_light.svg" height=35 width=128.2 alt="Hello">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{f:2}</span><span class="n">Hello</span><span class="o">,</span><span class="w"> </span><span class="err">你好</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>Noto Sans SC Bold</td>
+  <td>Simplified Chinese</td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_font_hello_2_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_font_hello_2_light.svg" height=35 width=128.2 alt="Hello, 你好">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{f:3}</span><span class="n">Hello</span><span class="o">,</span><span class="w"> </span><span class="err">您好</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>Noto Sans TC Bold</td>
+  <td>Traditional Chinese</td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_font_hello_3_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_font_hello_3_light.svg" height=35 width=128.2 alt="Hello, 您好">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{f:4}</span><span class="n">Hello</span><span class="o">,</span><span class="w"> </span><span class="err">안녕하세요</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>Noto Sans KR Bold</td>
+  <td>Korean</td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_font_hello_4_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_font_hello_4_light.svg" height=35 width=128.2 alt="Hello, 안녕하세요">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{f:5}</span><span class="err">こんにちは</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>Noto Sans JP Bold</td>
+  <td>Japanese</td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_font_hello_5_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_font_hello_5_light.svg" height=35 width=128.2 alt="こんにちは">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{f:6}</span><span class="n">Hello</span><span class="o">,</span><span class="w"> </span><span class="err">Здравствуйте</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>Noto Sans Bold</td>
+  <td>Russian</td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_font_hello_6_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_font_hello_6_light.svg" height=35 width=128.2 alt="Hello, Здравствуйте">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{f:7}</span><span class="n">Hello</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>m6x11 plus</td>
+  <td>None*</td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_font_hello_7_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_font_hello_7_light.svg" height=35 width=128.2 alt="Hello">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{f:8}</span><span class="n">Hello</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>Go Noto Current Bold</td>
+  <td>All1**</td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_font_hello_8_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_font_hello_8_light.svg" height=35 width=128.2 alt="Hello">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{f:9}</span><span class="n">Hello</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+</td>
+  <td>Go Noto CJK Core</td>
+  <td>All2**</td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_font_hello_9_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_font_hello_9_light.svg" height=35 width=128.2 alt="Hello">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{f:modprefix_fontkey}</span><span class="n">Hello</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td><a href="https://docs.smods.dev/Game%20Objects/SMODS.Font">Custom Font</a> (example: Comic Sans MS)</td>
+  <td>Custom</td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_font_hello_10_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_font_hello_10_light.svg" height=35 width=128.2 alt="Hello">
+   </picture>
+  </td>
+ </tr>
+</table>
+<p>*It differs from the default font from the parameters <code class="docutils literal notranslate"><span class="pre">TEXT_HEIGHT_SCALE</span> <span class="pre">=</span> <span class="pre">0.9</span></code> and <code class="docutils literal notranslate"><span class="pre">TEXT_OFFSET</span> <span class="pre">=</span> <span class="pre">{x=10,y=15}</span></code></p>
+<p>**These are the language names given in the original <code class="docutils literal notranslate"><span class="pre">game.lua</span></code> file.</p>
+</section>
+</section>
+<section id="text-button-modifier-button">
+<h2>Text button modifier <code class="docutils literal notranslate"><span class="pre">{button:}</span></code><a class="headerlink" href="#text-button-modifier-button" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>[!NOTE]
+This modifier is added by Steamodded and is not supported by vanilla Balatro.
+<em>(Added in 1501a)</em></p>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This modifier requires the <strong>lowercase</strong> <code class="docutils literal notranslate"><span class="pre">button</span></code>, unlike other modifiers which must be UPPERCASE.</p>
+</div>
+<p><code>{button:<i>function-key</i>}</code> allows text to be clickable.</p>
+<p><em><code class="docutils literal notranslate"><span class="pre">function-key</span></code></em> is the key of the callback function for the button. The function will be under <code class="docutils literal notranslate"><span class="pre">G.FUNCS['function-key']</span></code>.</p>
+<section id="id10">
+<h3>Examples<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<table>
+ <tr>
+  <td> Text string </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{button:modprefix_function}</span><span class="n">Click</span><span class="w"> </span><span class="n">me</span><span class="err">!</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+</section>
+</section>
+<section id="ui-element-insertion-element">
+<h2>UI element insertion <code class="docutils literal notranslate"><span class="pre">{element:}</span></code><a class="headerlink" href="#ui-element-insertion-element" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>[!NOTE]
+This modifier is added by Steamodded and is not supported by vanilla Balatro.
+<em>(Added in 1531zeebee)</em></p>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This modifier requires the <strong>lowercase</strong> <code class="docutils literal notranslate"><span class="pre">element</span></code>, unlike other modifiers which must be UPPERCASE.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Unlike other modifiers, this modifier does not affect the text string after it. Instead, the UI element is inserted directly <strong>at</strong> the position of the modifier.</p>
+</div>
+<p><code>{element:<i>index</i>}</code> inserts a <a class="reference external" href="https://docs.smods.dev/Guides/UI-Guide">UI element</a>  provided as an entry in the <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars"><code class="docutils literal notranslate"><span class="pre">loc_vars</span></code></a> <code class="docutils literal notranslate"><span class="pre">vars.elements</span></code> table. Instances of <code class="docutils literal notranslate"><span class="pre">Node</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">CardArea</span></code>, <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>, <code class="docutils literal notranslate"><span class="pre">UIBox</span></code>) are automatically wrapped in an object node. See <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Localization#loc_vars">Localization</a> for more details.</p>
+<p><em><code class="docutils literal notranslate"><span class="pre">index</span></code></em> is the array index of the element entry in the <code class="docutils literal notranslate"><span class="pre">vars.elements</span></code> table.</p>
+<section id="id11">
+<h3>Examples<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<!--- Single-indented table is necessary for code blocks to function properly -->
+<table>
+ <tr>
+  <td> Text string </td> <td> <code>loc_vars</code> </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{element:1}</span><span class="w"> </span><span class="o">&lt;--</span><span class="w"> </span><span class="n">Cool</span><span class="w"> </span><span class="n">sprite</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">  <span class="n">elements</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="3">    <span class="p">{</span> <span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">R</span><span class="p">,</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;cm&quot;</span> <span class="p">},</span> <span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="4">     <span class="p">{</span> <span class="n">n</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">UIT</span><span class="p">.</span><span class="n">O</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span> <span class="p">{</span> <span class="n">object</span> <span class="o">=</span>
+</span><span data-line="5">         <span class="n">SMODS</span><span class="p">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;modprefix_atlaskey&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">})</span>
+</span><span data-line="6">     <span class="p">}</span> <span class="p">}</span>
+</span><span data-line="7">   <span class="p">}</span> <span class="p">},</span>
+</span><span data-line="8">  <span class="p">}</span>
+</span><span data-line="9"><span class="p">}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   TBD
+  </td>
+ </tr>
+</table>
+</section>
+</section>
+<section id="combinations">
+<h2>Combinations<a class="headerlink" href="#combinations" title="Link to this heading">#</a></h2>
+<p>Most style codes can be combined within one set of curly braces, like <code class="docutils literal notranslate"><span class="pre">{X:mult,C:white}</span></code>.</p>
+<ul class="simple">
+<li><p>All combinations that aren’t explicitly listed here are valid.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{C:}</span></code> and <code class="docutils literal notranslate"><span class="pre">{V:}</span></code> are exclusive - if both are used, <code class="docutils literal notranslate"><span class="pre">{C:}</span></code> will be ignored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{X:}</span></code> and <code class="docutils literal notranslate"><span class="pre">{B:}</span></code> are exclusive - if both are used, <code class="docutils literal notranslate"><span class="pre">{X:}</span></code> will be ignored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{element:}</span></code> does not interact with any other modifiers. Any additional modifiers will function as if <code class="docutils literal notranslate"><span class="pre">{element:}</span></code> wasn’t present.</p></li>
+<li><p><strong>In vanilla Balatro only</strong>, the text motion modifier <code class="docutils literal notranslate"><span class="pre">{E:}</span></code> is incompatible with background modifiers <code class="docutils literal notranslate"><span class="pre">{X:}</span></code> and <code class="docutils literal notranslate"><span class="pre">{B:}</span></code> - if background modifiers are set, <code class="docutils literal notranslate"><span class="pre">{E:1}</span></code> will only show a pop-in effect with no motion, and <code class="docutils literal notranslate"><span class="pre">{E:2}</span></code> will be ignored. Modern versions of Steamodded fully lift this restriction.</p></li>
+</ul>
+<section id="id12">
+<h3>Examples<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<table>
+ <tr>
+  <td> Text string </td> <td> <code>loc_vars</code> </td> <td> Result </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{X:mult,C:white}</span><span class="n">X0</span><span class="o">.</span><span class="mi">5</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_X0.5.svg" height=32 width=128 alt="X0.5" align="center">
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td colspan=2>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{C:edition,E:1,s:2}</span><span class="n">YOU</span><span class="w"> </span><span class="n">WIN</span><span class="err">!</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_YOU_WIN!.svg" height=48 width=256 alt="YOU WIN!">
+  </td>
+ </tr>
+ <tr> </tr> <!--- Empty row to ensure all codeblock rows have the same background colour -->
+ <tr>
+  <td>
+<div class="highlight-pas notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cm">{s:0.8}</span><span class="p">(</span><span class="cm">{V:1,s:0.8}</span><span class="n">lvl</span><span class="o">.</span><span class="sc">#1</span><span class="err">#</span>
+</span><span data-line="2"><span class="cm">{s:0.8}</span><span class="p">)</span><span class="cm">{}</span><span class="w"> </span><span class="n">Level</span><span class="w"> </span><span class="n">up</span><span class="cm">{}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">vars</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="2">  <span class="n">G</span><span class="p">.</span><span class="n">GAME</span><span class="p">.</span><span class="n">hands</span><span class="p">[</span><span class="n">card</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">hand_type</span><span class="p">].</span><span class="n">level</span><span class="p">,</span>
+</span><span data-line="3">  <span class="n">colours</span> <span class="o">=</span> <span class="p">{</span>
+</span><span data-line="4">    <span class="n">G</span><span class="p">.</span><span class="n">C</span><span class="p">.</span><span class="n">HAND_LEVELS</span><span class="p">[</span><span class="nb">math.min</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span>
+</span><span data-line="5">      <span class="n">G</span><span class="p">.</span><span class="n">GAME</span><span class="p">.</span><span class="n">hands</span><span class="p">[</span><span class="n">card</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">hand_type</span><span class="p">].</span><span class="n">level</span>
+</span><span data-line="6">    <span class="p">)]</span>
+</span><span data-line="7">  <span class="p">}</span>
+</span><span data-line="8"><span class="p">}</span>
+</span></pre></div>
+</div>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_lvl.2_Level_up_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_lvl.2_Level_up_light.svg" height=32 width=256 alt="(lvl.2) Level up)">
+   </picture>
+  </td>
+ </tr>
+</table>
+</section>
+</section>
+<section id="named-colours-dictionary-g-args-loc-colours">
+<h2>Named colours dictionary (<code class="docutils literal notranslate"><span class="pre">G.ARGS.LOC_COLOURS</span></code>)<a class="headerlink" href="#named-colours-dictionary-g-args-loc-colours" title="Link to this heading">#</a></h2>
+<p><a name="loc_colours"></a></p>
+<p><a name="loc_colours-table"></a></p>
+<table>
+ <tr>
+  <td><b> Colour </td> <td><b> Key </td> <td><b> Value </td> <td align="center"><b> Example </td> <td align="center"><b> Note </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.RED.svg" height=32 width=32 alt="#FE5F55FF">
+  </td>
+  <td>
+   <code><b>red</code>
+  </td>
+  <td>
+   <code>G.C.RED</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_+1_discard_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_+1_discard_light.svg" height=24 width=128 alt="+1 discard">
+   </picture>
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.MULT.svg" height=32 width=32 alt="#FE5F55FF">
+  </td>
+  <td>
+   <code><b>mult</code>
+  </td>
+  <td>
+   <code>G.C.MULT</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_+4_Mult_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_+4_Mult_light.svg" height=24 width=128 alt="+4 Mult">
+   </picture>
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.BLUE.svg" height=32 width=32 alt="#009DFFFF">
+  </td>
+  <td>
+   <code><b>blue</code>
+  </td>
+  <td>
+   <code>G.C.BLUE</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_+1_hand_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_+1_hand_light.svg" height=24 width=128 alt="+1 hand">
+   </picture>
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.CHIPS.svg" height=32 width=32 alt="#009DFFFF">
+  </td>
+  <td>
+   <code><b>chips</code>
+  </td>
+  <td>
+   <code>G.C.CHIPS</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_+50_Chips_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_+50_Chips_light.svg" height=24 width=128 alt="+50 Chips">
+   </picture>
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.GREEN.svg" height=32 width=32 alt="#4BC292FF">
+  </td>
+  <td>
+   <code><b>green</code>
+  </td>
+  <td>
+   <code>G.C.GREEN</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_1_in_6_chance_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_1_in_6_chance_light.svg" height=24 width=128 alt="1 in 6 chance">
+   </picture>
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.MONEY.svg" height=32 width=32 alt="#F3B958FF">
+  </td>
+  <td>
+   <code><b>money</code>
+  </td>
+  <td>
+   <code>G.C.MONEY</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Earn_$4_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_Earn_$4_light.svg" height=24 width=128 alt="Earn $4">
+   </picture>
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.GOLD.svg" height=32 width=32 alt="#EAC058FF">
+  </td>
+  <td>
+   <code><b>gold</code>
+  </td>
+  <td>
+   <code>G.C.GOLD</code>
+  </td>
+  <td align="center">
+  <img src="/_static/Assets/Text-Styling/example_Android.svg" height=24 width=128 alt="Earn $4">
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.FILTER.svg" height=32 width=32 alt="#FF9A00FF">
+  </td>
+  <td>
+   <code><b>attention</code>
+  </td>
+  <td>
+   <code>G.C.FILTER</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_+1_hand_size_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_+1_hand_size_light.svg" height=24 width=128 alt="+1 hand size">
+   </picture>
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.PURPLE.svg" height=32 width=32 alt="#8867A5FF">
+  </td>
+  <td>
+   <code><b>purple</code>
+  </td>
+  <td>
+   <code>G.C.PURPLE</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_Purple_Seal.svg" height=24 width=128 alt="Purple Seal">
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.WHITE.svg" height=32 width=32 alt="#FFFFFFFF">
+  </td>
+  <td>
+   <code><b>white</code>
+  </td>
+  <td>
+   <code>G.C.WHITE</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_Joker_dark.svg" height=24 width=128 alt="Joker">
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.UI.TEXT_INACTIVE.svg" height=32 width=32 alt="#88888899">
+  </td>
+  <td>
+   <code><b>inactive</code>
+  </td>
+  <td>
+   <code>G.C.UI.TEXT_INACTIVE</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_Must_have_room.svg" height=24 width=128 alt="(Must have room)">
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.SUITS.Spades.svg" height=32 width=32 alt="#403995FF/#4F31B9FF">
+  </td>
+  <td>
+   <code><b>spades</code>
+  </td>
+  <td>
+   <code>G.C.SUITS.Spades</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_suit_Spades.svg" height=24 width=128 alt="Spades">
+  </td>
+  <td align="center" rowspan=4>
+   Suit colours<br>affected by<br>High Contrast<br>setting
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.SUITS.Hearts.svg" height=32 width=32 alt="#F03464FF/#F83B2FFF">
+  </td>
+  <td>
+   <code><b>hearts</code>
+  </td>
+  <td>
+   <code>G.C.SUITS.Hearts</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_suit_Hearts.svg" height=24 width=128 alt="Hearts">
+  </td>
+ </tr>
+  <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.SUITS.Clubs.svg" height=32 width=32 alt="#235955FF/#008EE6FF">
+  </td>
+  <td>
+   <code><b>clubs</code>
+  </td>
+  <td>
+   <code>G.C.SUITS.Clubs</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_suit_Clubs.svg" height=24 width=128 alt="Clubs">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.SUITS.Diamonds.svg" height=32 width=32 alt="#F06B3FFF/#E29000FF">
+  </td>
+  <td>
+   <code><b>diamonds</code>
+  </td>
+  <td>
+   <code>G.C.SUITS.Diamonds</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_suit_Diamonds.svg" height=24 width=128 alt="Diamonds">
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.SECONDARY_SET.Tarot.svg" height=32 width=32 alt="#A782D1FF">
+  </td>
+  <td>
+   <code><b>tarot</code>
+  </td>
+  <td>
+   <code>G.C.SECONDARY_SET.Tarot</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Tarot_card_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_Tarot_card_light.svg" height=24 width=128 alt="Tarot card">
+   </picture>
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.SECONDARY_SET.Planet.svg" height=32 width=32 alt="#13AFCEFF">
+  </td>
+  <td>
+   <code><b>planet</code>
+  </td>
+  <td>
+   <code>G.C.SECONDARY_SET.Planet</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Planet_card_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_Planet_card_light.svg" height=24 width=128 alt="Planet card">
+   </picture>
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.SECONDARY_SET.Spectral.svg" height=32 width=32 alt="#4584FAFF">
+  </td>
+  <td>
+   <code><b>spectral</code>
+  </td>
+  <td>
+   <code>G.C.SECONDARY_SET.Spectral</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Spectral_card_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_Spectral_card_light.svg" height=24 width=128 alt="Spectral card">
+   </picture>
+  </td>
+  <td> </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.EDITION.svg" height=32 width=32 alt="EDITION">
+  </td>
+  <td>
+   <code><b>edition</code>
+  </td>
+  <td>
+   <code>G.C.EDITION</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_YOU_WIN!.svg" height=24 width=128 alt="YOU WIN!">
+  </td>
+  <td align="center" rowspan=2>
+   Animated colours
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.DARK_EDITION.svg" height=32 width=32 alt="DARK EDITION">
+  </td>
+  <td>
+   <code><b>dark_edition</code>
+  </td>
+  <td>
+   <code>G.C.DARK_EDITION</code>
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Add_Negative_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_Add_Negative_light.svg" height=24 width=128 alt="Add Negative">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.RARITY.Common.svg" height=32 width=32 alt="#009DFFFF">
+  </td>
+  <td>
+   <code><b>common</code>
+  </td>
+  <td>
+   <code>G.C.RARITY.Common</code>
+  </td>
+  <td align="center">
+   <picture>
+    <img src="/_static/Assets/Text-Styling/example_common_light.svg" height=16 width=128 alt="Common">
+   </picture>
+  </td>
+  <td align="center" rowspan=3>
+   Added by<br>Steamodded
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.RARITY.Uncommon.svg" height=32 width=32 alt="#4BC292FF">
+  </td>
+  <td>
+   <code><b>uncommon</code>
+  </td>
+  <td>
+   <code>G.C.RARITY.Uncommon</code>
+  </td>
+  <td align="center">
+   <picture>
+    <img src="/_static/Assets/Text-Styling/example_uncommon_light.svg" height=16 width=128 alt="Uncommon">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.RARITY.Rare.svg" height=32 width=32 alt="#FE5F55FF">
+  </td>
+  <td>
+   <code><b>rare</code>
+  </td>
+  <td>
+   <code>G.C.RARITY.Rare</code>
+  </td>
+  <td align="center">
+   <picture>
+    <img src="/_static/Assets/Text-Styling/example_rare_light.svg" height=16 width=128 alt="Rare">
+   </picture>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.RARITY.Legendary.svg" height=32 width=32 alt="#B26CBBFF">
+  </td>
+  <td>
+   <code><b>legendary</code>
+  </td>
+  <td>
+   <code>G.C.RARITY[4]</code> (vanilla)<br> <code>G.C.RARITY.Legendary</code> (SMODS)
+  </td>
+  <td align="center">
+   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/_static/Assets/Text-Styling/example_Legendary_Joker_dark.svg">
+    <img src="/_static/Assets/Text-Styling/example_Legendary_Joker_light.svg" height=24 width=128 alt="Legendary Joker">
+   </picture>
+  </td>
+  <td>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.SECONDARY_SET.Enhanced.svg" height=32 width=32 alt="#8389DDFF">
+  </td>
+  <td>
+   <code><b>enhanced</code>
+  </td>
+  <td>
+   <code>G.C.SECONDARY_SET.Enhanced</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_Enhancement.svg" height=24 width=128 alt="Enhancement">
+  </td>
+  <td>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.UI.TEXT_DARK.svg" height=32 width=32 alt="#4F6367FF">
+  </td>
+  <td>
+   <b>default
+  </td>
+  <td>
+ <code>G.C.UI.TEXT_DARK</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_Joker_light.svg" height=24 width=128 alt="Joker">
+  </td>
+  <td> </td>
+ <tr>
+  <td>
+   <img src="/_static/Assets/Colour-Icons/G.C.DYN_UI.DARK-none.svg" height=32 width=32 alt="#1E2B2DFF"><br><img src="/_static/Assets/Colour-Icons/G.C.DYN_UI.DARK-cerulean.svg" height=32 width=32 alt="#055481FF">
+  </td>
+  <td>
+   <b>blind
+  </td>
+  <td>
+ <code>G.C.DYN_UI.DARK</code>
+  </td>
+  <td align="center">
+   <img src="/_static/Assets/Text-Styling/example_blind_none_light.svg" height=16 width=128 alt="No Blind"><br><img src="/_static/Assets/Text-Styling/example_blind_cerulean_light.svg" height=16 width=128 alt="Cerulean Bell">
+  </td>
+  <td align="center">
+   Added by<br>Steamodded<br>
+   since <code>1.0.0~BETA-1531zeebee</code>
+  </td>
+ </tr>
+</table>
+<p>This dictionary is initially assigned by the <code class="docutils literal notranslate"><span class="pre">loc_colour</span></code> function in <code class="docutils literal notranslate"><span class="pre">functions/misc_functions.lua</span></code>.</p>
+<p>Steamodded automatically adds additional entries to <code class="docutils literal notranslate"><span class="pre">LOC_COLOURS</span></code> for all custom objects in:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.smods.dev/Game%20Objects/SMODS.Rarity">SMODS.Rarity</a></p></li>
+<li><p><a class="reference external" href="https://docs.smods.dev/Game%20Objects/SMODS.Gradient">SMODS.Gradient</a></p></li>
+<li><p><a class="reference external" href="https://docs.smods.dev/Game%20Objects/SMODS.Center/SMODS.Consumable">SMODS.ConsumableType</a></p></li>
+<li><p><a class="reference external" href="https://docs.smods.dev/Game%20Objects/SMODS.Rank-and-SMODS.Suit#api-documentation-smodssuit">SMODS.Suit</a></p></li>
+</ul>
+<p>which can be used as colour keys in the same way by <code class="docutils literal notranslate"><span class="pre">{C:}</span></code>/<code class="docutils literal notranslate"><span class="pre">{V:}</span></code> and <code class="docutils literal notranslate"><span class="pre">{X:}</span></code>/<code class="docutils literal notranslate"><span class="pre">{B:}</span></code>. When referring to custom Rarity, Gradient or Suit colours added by SMODS, the key must be prefixed with the <a class="reference external" href="https://docs.smods.dev/API%20Documentation/Mod-Metadata#metadata">mod prefix</a>.</p>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../../API Documentation/Animated-Sprites/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Animated Sprites</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../../API Documentation/Perma-bonuses/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Permanent bonuses</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>

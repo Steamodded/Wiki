@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" data-accent-color="orange" data-content_root="../../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Logging - SMODS Documentation</title><link rel="shortcut icon" href="../../_static/icon.png"/><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Game Objects" href="../../Game Objects/API-Documentation/" /><link rel="prev" title="Internal Documentation" href="../Internal-Documentation/" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1c6635e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=2ceb65ce" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/scroll.css?v=847ea786" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    
+  <meta property="og:type" content="website"/><meta property="og:title" content="Logging"/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Steamodded/Wiki/refs/heads/master/icon.png"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../../">
+      <img class="light-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <img class="dark-logo" src="../../_static/icon.png" alt="SMODS Documentation" height="28" loading="lazy" />
+      <strong>SMODS Documentation</strong>
+    </a>
+    <div class="sy-head-nav" id="head-nav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../../search/" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="Switch to light color mode"
+data-aria-light="Switch to dark color mode"
+data-aria-dark="Switch to auto color mode">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6"><div class="sidebar-links">
+  <ul>
+    <li>
+      <a class="icon-link" href="https://github.com/Steamodded/smods">
+        <span class="icon">
+          <img
+            height="32"
+            width="32"
+            src="https://cdn.simpleicons.org/github/white"
+          />
+        </span>
+        <span class="text">GitHub Repository</span>
+      </a>
+    </li>
+  </ul>
+</div>
+        <div class="globaltoc" data-expand-depth="2"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../">Home</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Installation/">Installation</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded windows/">Windows</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded linux/">Linux</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mac/">Mac</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Installation/Installing Steamodded mobile/">Android/iOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Release Notes/">Release Notes</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/2608290/">26.829.0</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1814a/">BETA-1814a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1501a/">BETA-1501a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/1221a/">BETA-1221a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0827/">BETA-0827a</a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Release Notes/0711a/">BETA-0711a</a></li>
+</ul>
+</li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Your-First-Mod/">Making Your First Mod</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Mod-Metadata/">Mod Metadata</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../The-Mod-Object/">The Mod Object</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Calculate-Functions/">&#8203;Calculate Functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Localization/">Localization</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Animated-Sprites/">Animated Sprites</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Text-Styling/">Text Styling</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Perma-bonuses/">Permanent bonuses</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Weight-System/">Object Weights</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Utility/">Utility functions</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../Internal-Documentation/">Internal Documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Logging</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Game Objects/API-Documentation/">Game Objects</a><ul>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Achievement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Achievement</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Atlas/"><code class="docutils literal notranslate"><span class="pre">SMODS.Atlas</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Attributes/"><code class="docutils literal notranslate"><span class="pre">SMODS.Attribute</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Blind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Blind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.CanvasSprite/"><code class="docutils literal notranslate"><span class="pre">SMODS.CanvasSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Center/"><code class="docutils literal notranslate"><span class="pre">SMODS.Center</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Back/"><code class="docutils literal notranslate"><span class="pre">SMODS.Back</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Booster/"><code class="docutils literal notranslate"><span class="pre">SMODS.Booster</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Consumable/"><code class="docutils literal notranslate"><span class="pre">SMODS.Consumable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Edition/"><code class="docutils literal notranslate"><span class="pre">SMODS.Edition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Enhancement/"><code class="docutils literal notranslate"><span class="pre">SMODS.Enhancement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Joker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Joker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Game Objects/SMODS.Center/SMODS.Voucher/"><code class="docutils literal notranslate"><span class="pre">SMODS.Voucher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Challenge/"><code class="docutils literal notranslate"><span class="pre">SMODS.Challenge</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DeckSkin/"><code class="docutils literal notranslate"><span class="pre">SMODS.DeckSkin</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DrawStep/"><code class="docutils literal notranslate"><span class="pre">SMODS.DrawStep</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.DynaTextEffect/"><code class="docutils literal notranslate"><span class="pre">SMODS.DynaTextEffect</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Font/"><code class="docutils literal notranslate"><span class="pre">SMODS.Font</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Gradient/"><code class="docutils literal notranslate"><span class="pre">SMODS.Gradient</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.JimboQuip/"><code class="docutils literal notranslate"><span class="pre">SMODS.JimboQuip</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Keybind/"><code class="docutils literal notranslate"><span class="pre">SMODS.Keybind</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Language/"><code class="docutils literal notranslate"><span class="pre">SMODS.Language</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/"><code class="docutils literal notranslate"><span class="pre">SMODS.ObjectType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-consumabletype"><code class="docutils literal notranslate"><span class="pre">SMODS.ConsumableType</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.ObjectType/#smods-undiscoveredsprite"><code class="docutils literal notranslate"><span class="pre">SMODS.UndiscoveredSprite</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHand</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.PokerHand/#smods-pokerhandpart"><code class="docutils literal notranslate"><span class="pre">SMODS.PokerHandPart</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rank</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rank-and-SMODS.Suit/#smods-suit"><code class="docutils literal notranslate"><span class="pre">SMODS.Suit</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Rarity/"><code class="docutils literal notranslate"><span class="pre">SMODS.Rarity</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Parameter</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Scoring_Parameter-and-SMODS.Scoring_Calculation/#smods-scoring-calculation"><code class="docutils literal notranslate"><span class="pre">SMODS.Scoring_Calculation</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Seal/"><code class="docutils literal notranslate"><span class="pre">SMODS.Seal</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/"><code class="docutils literal notranslate"><span class="pre">SMODS.Shader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Shader-and-SMODS.ScreenShader/#smods-screenshader"><code class="docutils literal notranslate"><span class="pre">SMODS.ScreenShader</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sound/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sound</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Stake/"><code class="docutils literal notranslate"><span class="pre">SMODS.Stake</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Sticker/"><code class="docutils literal notranslate"><span class="pre">SMODS.Sticker</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.Tag/"><code class="docutils literal notranslate"><span class="pre">SMODS.Tag</span></code></a></li>
+<li class="toctree-l2 _expand"><a class="reference internal" href="../../Game Objects/SMODS.https/"><code class="docutils literal notranslate"><span class="pre">SMODS.https</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/G/">The <code class="docutils literal notranslate"><span class="pre">G</span></code> Variable</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Event-Manager/">Event Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/UI-Guide/">UI Guide</a></li>
+<li class="toctree-l1 _expand"><a class="reference internal" href="../../Guides/Thunderstore/">Packaging on Thunderstore</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>On this page</h3><ul>
+<li><a class="reference internal" href="#log-levels">Log Levels</a></li>
+<li><a class="reference internal" href="#viewing-logs">Viewing Logs</a></li>
+<li><a class="reference internal" href="#logging-usage">Logging Usage</a><ul>
+<li><a class="reference internal" href="#trace">Trace</a><ul>
+<li><a class="reference internal" href="#lua">Lua</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debug">Debug</a><ul>
+<li><a class="reference internal" href="#id1">Lua</a></li>
+<li><a class="reference internal" href="#id2">Output</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#info">Info</a><ul>
+<li><a class="reference internal" href="#id3">Lua</a></li>
+<li><a class="reference internal" href="#id4">Output</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#warn">Warn</a><ul>
+<li><a class="reference internal" href="#id5">Lua</a></li>
+<li><a class="reference internal" href="#id6">Output</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#error">Error</a><ul>
+<li><a class="reference internal" href="#id7">Lua</a></li>
+<li><a class="reference internal" href="#id8">Output</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fatal">Fatal</a><ul>
+<li><a class="reference internal" href="#id9">Lua</a></li>
+<li><a class="reference internal" href="#id10">Output</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#additional-notes">Additional Notes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debug-console">Debug Console</a><ul>
+<li><a class="reference internal" href="#opening-the-debug-console">Opening the Debug Console</a></li>
+<li><a class="reference internal" href="#using-the-debug-console">Using the Debug Console</a></li>
+<li><a class="reference internal" href="#cli-args">CLI Args</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#shortcuts">Shortcuts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#issues">Issues</a></li>
+</ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/Steamodded/smods"
+  data-type="github" data-user="Steamodded" data-repo="smods">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    
+    
+      <span>Steamodded/smods</span>
+    
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/Steamodded/Wiki/blob/master/API Documentation/Logging.md">Edit this page</a>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+<div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../../"><span itemprop="name">SMODS Documentation</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Logging</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <article class="yue" role="main">
+          <section id="logging">
+<h1>Logging<a class="headerlink" href="#logging" title="Link to this heading">#</a></h1>
+<section id="log-levels">
+<h2>Log Levels<a class="headerlink" href="#log-levels" title="Link to this heading">#</a></h2>
+<p>Steamodded implements 6 levels of logging, each with a different purpose. The levels are as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TRACE</span></code>: Very detailed information, typically of interest only when diagnosing problems.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>: Detailed information, typically of interest only when diagnosing problems.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INFO</span></code>: Confirmation that things are working as expected.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WARN</span></code>: An indication that something unexpected happened, or indicative of some problem in the near future. The
+software is still working as expected.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ERROR</span></code>: Due to a more serious problem, the software has not been able to perform some function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FATAL</span></code>: A serious error, indicating that the program itself may be unable to continue running.</p></li>
+</ul>
+</section>
+<section id="viewing-logs">
+<h2>Viewing Logs<a class="headerlink" href="#viewing-logs" title="Link to this heading">#</a></h2>
+<p>There a few different methods of viewing logs, with their own pros and cons. Below is a list of them, sorted by ease of use:</p>
+<ul class="simple">
+<li><p>Lovely Console (or the terminal on MacOS)</p>
+<ul>
+<li><p>Lovely prints all logs received to the console while the game is running. This is the simplest method to view the logs as it’s already running in normal SMODS installs.</p></li>
+</ul>
+</li>
+<li><p>Lovely log files</p>
+<ul>
+<li><p>Lovely writes the contents of the logs to log files in the <code class="docutils literal notranslate"><span class="pre">Mods/lovely/log</span></code> folder in your Balatro config folder. This is useful for sharing logs with others and checking logs after the game has been closed.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/WilsontheWolf">DebugPlus</a></p>
+<ul>
+<li><p>DebugPlus is a mod to help with debugging. One of the features it implements is an in game console. Logged messages will show up for a few seconds when logged in game, and you can open the console with <code class="docutils literal notranslate"><span class="pre">/</span></code> to view all logs.</p></li>
+<li><p>By default DebugPlus hides Debug and Trace logs. To view these logs, you will need to switch the log level in it’s config to DEBUG (Mods &gt; DebugPlus &gt; Console)</p></li>
+</ul>
+</li>
+<li><p>SMODS Debug Console</p>
+<ul>
+<li><p>SMODS includes a console window that can be used with it. If you have python installed you can run it on <a class="reference external" href="https://github.com/Steamodded/smods/blob/main/tk_debug_window.py">tk_debug_window.py</a>. This console has some more advanced features such as searching/filtering the logs.</p></li>
+<li><p>To get logs, you need to launch the console before launching the game.</p></li>
+<li><p>This method does not work when using <code class="docutils literal notranslate"><span class="pre">print</span></code> to log, unlike the other methods listed.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="logging-usage">
+<h2>Logging Usage<a class="headerlink" href="#logging-usage" title="Link to this heading">#</a></h2>
+<p>All logging functions follow the same pattern, with the first argument being the message, and the second argument being
+the logger name. This argument order is consistent across all logging functions. The logger name is optional and will
+default to <code class="docutils literal notranslate"><span class="pre">DefaultLogger</span></code> but it is strongly recommended that you use it for clarity purposes.</p>
+<section id="trace">
+<h3>Trace<a class="headerlink" href="#trace" title="Link to this heading">#</a></h3>
+<section id="lua">
+<h4>Lua<a class="headerlink" href="#lua" title="Link to this heading">#</a></h4>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">sendTraceMessage</span><span class="p">(</span><span class="s2">&quot;This is a trace message&quot;</span><span class="p">,</span> <span class="s2">&quot;MyTraceLogger&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</section>
+<section id="output">
+<h4>Output<a class="headerlink" href="#output" title="Link to this heading">#</a></h4>
+<div class="highlight-log notranslate"><div class="highlight"><pre><span></span><span data-line="1">2024-04-04 22:58:45 :: TRACE :: MyTraceLogger :: This is a trace message
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="debug">
+<h3>Debug<a class="headerlink" href="#debug" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>Lua<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">sendDebugMessage</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">,</span> <span class="s2">&quot;MyDebugLogger&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</section>
+<section id="id2">
+<h4>Output<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<div class="highlight-log notranslate"><div class="highlight"><pre><span></span><span data-line="1">2024-04-04 22:58:45 :: TRACE :: MyDebugLogger :: This is a debug message
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="info">
+<h3>Info<a class="headerlink" href="#info" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>Lua<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">sendInfoMessage</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">,</span> <span class="s2">&quot;MyInfoLogger&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</section>
+<section id="id4">
+<h4>Output<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<div class="highlight-log notranslate"><div class="highlight"><pre><span></span><span data-line="1">2024-04-04 22:58:45 :: INFO  :: MyInfoLogger :: This is an info message
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="warn">
+<h3>Warn<a class="headerlink" href="#warn" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h4>Lua<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">sendWarnMessage</span><span class="p">(</span><span class="s2">&quot;This is a warn message&quot;</span><span class="p">,</span> <span class="s2">&quot;MyWarnLogger&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</section>
+<section id="id6">
+<h4>Output<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<div class="highlight-log notranslate"><div class="highlight"><pre><span></span><span data-line="1">2024-04-04 22:58:45 :: WARN  :: MyWarnLogger :: This is a warn message
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="error">
+<h3>Error<a class="headerlink" href="#error" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h4>Lua<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">sendErrorMessage</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">,</span> <span class="s2">&quot;MyErrorLogger&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</section>
+<section id="id8">
+<h4>Output<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<div class="highlight-log notranslate"><div class="highlight"><pre><span></span><span data-line="1">2024-04-04 22:58:45 :: ERROR :: MyErrorLogger :: This is an error message
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="fatal">
+<h3>Fatal<a class="headerlink" href="#fatal" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h4>Lua<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">sendFatalMessage</span><span class="p">(</span><span class="s2">&quot;This is a fatal message&quot;</span><span class="p">,</span> <span class="s2">&quot;MyFatalLogger&quot;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+</section>
+<section id="id10">
+<h4>Output<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<div class="highlight-log notranslate"><div class="highlight"><pre><span></span><span data-line="1">2024-04-04 22:58:45 :: FATAL :: MyFatalLogger :: This is a fatal message
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="additional-notes">
+<h3>Additional Notes<a class="headerlink" href="#additional-notes" title="Link to this heading">#</a></h3>
+<p>A logger name can be any string, but it is recommended to use a descriptive name to make it easier to identify where
+the log message is coming from.</p>
+<p>An additional function <code class="docutils literal notranslate"><span class="pre">sendMessageToConsole</span></code> is available to send a log message with a custom log level. This function
+is not recommended for general use.</p>
+<p>You can, with this function, implements your own log levels, but it is not recommended to do so, as the debug console do
+not support custom log levels by default. You will have to modify the debug console by yourself to support custom log
+levels. If you want to do so, you’ll find the function signature in
+the <a class="reference external" href="https://github.com/Steamodded/smods/blob/main/src/logging.lua#L39-L49">debug.lua</a> file, and the log
+supported in the console on
+the <a class="reference external" href="https://github.com/Steamodded/smods/blob/main/tk_debug_window.py#L9-L16">tk_debug_window.py</a> file.</p>
+<p>Keep in mind that other people may not have the same modifications as you, so it is recommended to use the default log
+levels.</p>
+</section>
+</section>
+<section id="debug-console">
+<h2>Debug Console<a class="headerlink" href="#debug-console" title="Link to this heading">#</a></h2>
+<p>The debug console is a tool that allows you to see the logs in real-time, filter them, and search for specific strings
+within the logs. It is a very useful tool for debugging and diagnosing problems.</p>
+<section id="opening-the-debug-console">
+<h3>Opening the Debug Console<a class="headerlink" href="#opening-the-debug-console" title="Link to this heading">#</a></h3>
+<p>The debug console requires python 3.6+ to be installed on your system. To open the debug console,
+execute <code class="docutils literal notranslate"><span class="pre">tk_debug_window.py</span></code> in <a class="reference external" href="https://github.com/Steamodded/smods/blob/main/tk_debug_window.py">the steamodded repo</a>.</p>
+<p>The debug console was not tested with python 3.6, but it <em>should</em> work with it. It is recommended to use the latest
+python release.</p>
+</section>
+<section id="using-the-debug-console">
+<h3>Using the Debug Console<a class="headerlink" href="#using-the-debug-console" title="Link to this heading">#</a></h3>
+<p>You need to have the debug console open before you start the game. The console will show all logs in real-time.</p>
+</section>
+<section id="cli-args">
+<h3>CLI Args<a class="headerlink" href="#cli-args" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-s</span></code> or <code class="docutils literal notranslate"><span class="pre">--scale</span></code> to control the font scale of console.</p></li>
+</ul>
+</section>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>You can filter logs by logger name.</p></li>
+<li><p>You can filter logs by log level (only a single level, or the level selected and above).</p></li>
+<li><p>You can search for a specific string within the logs shown.</p></li>
+<li><p>You can save the logs to a file using the top left dropdown.</p></li>
+<li><p>You can clear the logs all the logs received from the console.</p></li>
+</ul>
+</section>
+<section id="shortcuts">
+<h3>Shortcuts<a class="headerlink" href="#shortcuts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">F</span></code>: Focus the search bar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Enter</span></code> when focused on the search bar: Go to the next search result.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code> when focused on the search bar or the logger filter: Focus back into the logs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> when focused on the search bar: Go to the previous search result.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">S</span></code>: Save all logs to a file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">S</span></code>: Save filtered logs to a file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">D</span></code>: Clear all logs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">L</span></code>: Focus the logger filter.</p></li>
+</ul>
+</section>
+</section>
+<section id="issues">
+<h2>Issues<a class="headerlink" href="#issues" title="Link to this heading">#</a></h2>
+<p>Please open an issue on the <a class="reference external" href="https://github.com/Steamodded/smods/issues/new">GitHub repository</a> if you encounter
+any problems with the debug console.</p>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>Back to top</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="../Internal-Documentation/">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>Previous</span><div class="title">Internal Documentation</div></div>
+    </a>
+  </div><div class="navigation-next">
+    <a href="../../Game Objects/API-Documentation/">
+      <div class="page-info">
+        <span>Next</span>
+        <div class="title">Game Objects</div>
+      </div>
+      <i class="i-lucide chevron-right"></i>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>SMODS Team</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials">
+  <a href="https://github.com/Steamodded/smods" aria-label="GitHub">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </a></div>
+    </div>
+  </div>
+</footer>
+      <script src="../../_static/documentation_options.js?v=19645805"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/shibuya.js?v=50760d75"></script>
+      <script src="../../_static/js/search-phrase.js?v=3ff04ca2"></script></body>
+</html>
