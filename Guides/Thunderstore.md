@@ -11,7 +11,7 @@ Thunderstore has a set of rules that mods must follow. You can view them at [Glo
 Make sure to read all the rules.
 
 ## Manifest
-Thunderstore packages have a file, manifest.json, which is documented on the [Thunderstore wiki](https://wiki.thunderstore.io/mods/creating-a-package#manifest). This is different than Steamodded's [metadata](https://docs.smods.dev/API%20Documentation/Mod-Metadata/). Keep in mind that these 2 systems are completely seperate, Steamodded doesn't use Thunderstore manifests and Thunderstore doesn't use Steamodded metadata.
+Thunderstore packages have a file, manifest.json, which is documented on the [Thunderstore wiki](https://wiki.thunderstore.io/mods/creating-a-package#manifest). This is different than Steamodded's [metadata](https://docs.smods.dev/API%20Documentation/Mod-Metadata/). Keep in mind that these 2 systems are completely seperate, Steamodded doesn't use Thunderstore manifests and Thunderstore doesn't use Steamodded metadata, but both .json files can live in the same directory.
 
 ### Versioning
 Thunderstore has a different versioning system than Steamodded does. In Thunderstore, the versions are in the format x.y.z where x, y and z are all numbers. This more restrictive versioning scheme may not be compatible with how you have been versioning you're mod in the past. In the case your version is not compatible, here are your course of actions:
