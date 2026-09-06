@@ -11,14 +11,14 @@ Thunderstore has a set of rules that mods must follow. You can view them at [Glo
 Make sure to read all the rules.
 
 ## Manifest
-Thunderstore packages have a file, manifest.json, which is documented on the [Thunderstore wiki](https://wiki.thunderstore.io/mods/creating-a-package#manifest). This is different than Steamodded's [metadata](https://docs.smods.dev/API%20Documentation/Mod-Metadata/). Keep in mind that these 2 systems are completely seperate, Steamodded doesn't use Thunderstore manifests and Thunderstore doesn't use Steamodded metadata, but both .json files can live in the same directory.
+Thunderstore packages have a file, manifest.json, which is documented on the [Thunderstore wiki](https://wiki.thunderstore.io/mods/creating-a-package#manifest). This is different than Steamodded's [metadata](https://docs.smods.dev/API%20Documentation/Mod-Metadata/). Keep in mind that these 2 systems are completely separate, Steamodded doesn't use Thunderstore manifests and Thunderstore doesn't use Steamodded metadata, but both .json files can live in the same directory.
 
 ### Versioning
 Thunderstore has a different versioning system than Steamodded does. In Thunderstore, the versions are in the format x.y.z where x, y and z are all numbers. This more restrictive versioning scheme may not be compatible with how you have been versioning you're mod in the past. In the case your version is not compatible, here are your course of actions:
 - Switch to using a versioning compatible with Thunderstore (Recommended)
   - This prevents confusion with versions, when people are using one system or the other.
-  - Make sure you don't accidetnally make older versions of your mod considered higher when changing the version number.
-- Use a seperate version for Thunderstore and Steamodded.
+  - Make sure you don't accidentally make older versions of your mod considered higher when changing the version number.
+- Use a separate version for Thunderstore and Steamodded.
   - If you do this, it's recommended that the version is based on your Steamodded version to make it easier to switch between.
 
 ### Dependancies
@@ -59,5 +59,5 @@ v26.829.0 and higher are the same on both Thunderstore and Steamodded.
 
 </details>
 
-## Immutabile Packages
-For reliability and stability, once a specific version of a package is successfully uploaded to thunderstore, it cannot be modifed (including README edits). Any changes after that point need a new version.
+## Immutable Packages
+For reliability and stability, once a specific version of a package is successfully uploaded to Thunderstore, it cannot be modified (including README edits). Any changes after that point need a new version.
