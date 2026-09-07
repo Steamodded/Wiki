@@ -59,5 +59,30 @@ v26.829.0 and higher are the same on both Thunderstore and Steamodded.
 
 </details>
 
+## Package Structure
+When making a zip for thunderstore, the file structure somewhat matters. 
+- Thunderstore files (`manifest.json`, `README.md`, `icon.png`, etc.) must be in the root of the zip file.
+- Lovely files (`lovely.toml`, the `lovely` folder) must be in the root of the zip file.
+- Steamodded's manifest may be at any layer, but is recommended at the root of the zip file.
+  - Whatever folder the metadata is located, the other smods files (such as `assets` and `localization`) must also be located.
+This shouldn't require changes for most mods, you just have to add the thunderstore files.
+
+An example file structure is seen below:
+```c
+MyMod.zip
+|-README.md
+|-icon.png
+|-manifest.json // Thunderstore manifest
+|-smods.json // Steamodded metadata, can be named anything
+|-main.lua // Main file, set in metadata
+|-assets // Steamodded assets
+||-1x
+|||-jokers.png
+|-lovely.toml // lovely.toml patch
+|-lovely // lovely patch folder
+||-patch.toml
+```
+
 ## Immutable Packages
 For reliability and stability, once a specific version of a package is successfully uploaded to Thunderstore, it cannot be modified (including README edits). Any changes after that point need a new version.
+
