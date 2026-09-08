@@ -170,6 +170,20 @@ SMODS.current_mod.config_tab = function()
 end
 ```
 
+#### `mod.credits_tab`
+
+Similar to `mod.config_tab`. Adds a tab with the name "Credits".
+
+```lua
+SMODS.current_mod.credits_tab = function()
+ return {n = G.UIT.ROOT, config = {
+  -- credits here, see 'Building a UI' page
+ }, nodes = {
+  -- work your UI wizardry here, see 'Building a UI' page
+ }}
+end
+```
+
 #### `mod.custom_collection_tabs`
 
 This sets up additional collection pages to be accessed through the 'Other' button.
