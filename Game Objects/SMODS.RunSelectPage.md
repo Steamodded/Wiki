@@ -1,4 +1,4 @@
-# API Documentation: SMODS.RunSelectPage
+# `SMODS.RunSelectPage`
 *(Added in 26.829)*
 
 Run Select is an integration of the mod Galdur within SMODS itself. This allows for easier customisation of runs before they begin, letting users choose different things that will affect the run. Deck and Stake choice are added by default, but more pages can be added easily.
