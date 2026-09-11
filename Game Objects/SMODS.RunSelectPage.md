@@ -28,9 +28,9 @@ Run Select is an integration of the mod Galdur within SMODS itself. This allows 
 	- Control what the page has selected when it is first encountered in a session (defaults to last choice)
 - `selected_text(self, selection) -> string`
 	- Control the text that is displayed in the automatic preview UI
-- `quick_start_text() -> string`
-	- Control the text that is displayed in the quick start tooltip
-	- Use `G.PROFILES[G.SETTINGS.profile].last_choices.modprefix_key` to access the last choice
+- `quick_start_text(self, choice) -> string`
+	- Control the text that is displayed in the tooltips
+    - The quick start button calls this function with the last choice, and the play button calls this function with the current selection
 - `start_run(self, choice)`
 	- Execute code after the run is started
 - `can_continue(self) -> boolean`
