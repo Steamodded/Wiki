@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="87.375" height="34.4375"
+    viewBox="0 -25.3125 87.375 34.4375">
+
+    <g transform="translate(3,3.5)"
+       fill="black" opacity="0.3">
+        <g transform="translate(0,0) scale(0.048828125,-0.0439453125)"><path d="M0 576H128V320H256V576H384V-128H256V192H128V-128H0Z" /></g><g transform="translate(21.875,0) scale(0.048828125,-0.0439453125)"><path d="M64 384H320V320H384V64H128V0H384V-128H64V-64H0V320H64ZM128 256V192H256V256Z" /></g><g transform="translate(43.75,0) scale(0.048828125,-0.0439453125)"><path d="M0 576H128V-128H0Z" /></g><g transform="translate(53.125,0) scale(0.048828125,-0.0439453125)"><path d="M0 576H128V-128H0Z" /></g><g transform="translate(62.5,0) scale(0.048828125,-0.0439453125)"><path d="M64 384H320V320H384V-64H320V-128H64V-64H0V320H64ZM128 256V0H256V256Z" /></g>
+    </g>
+
+    <g fill="white">
+        <g transform="translate(0,0) scale(0.048828125,-0.0439453125)"><path d="M0 576H128V320H256V576H384V-128H256V192H128V-128H0Z" /></g><g transform="translate(21.875,0) scale(0.048828125,-0.0439453125)"><path d="M64 384H320V320H384V64H128V0H384V-128H64V-64H0V320H64ZM128 256V192H256V256Z" /></g><g transform="translate(43.75,0) scale(0.048828125,-0.0439453125)"><path d="M0 576H128V-128H0Z" /></g><g transform="translate(53.125,0) scale(0.048828125,-0.0439453125)"><path d="M0 576H128V-128H0Z" /></g><g transform="translate(62.5,0) scale(0.048828125,-0.0439453125)"><path d="M64 384H320V320H384V-64H320V-128H64V-64H0V320H64ZM128 256V0H256V256Z" /></g>
+    </g>
+
+</svg>
