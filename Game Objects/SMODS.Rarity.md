@@ -3,7 +3,7 @@
 - **Required parameters:**
   - `key`
   - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
-    - The only supported field is `name`. In localization files, it must be set as both `misc.labels['k_'..key:lower()]` and `misc.dictionary['k_'..key:lower()]`.
+    - The only supported field is `name`. In localization files, it must be set as both `misc.labels[key:lower()]` and `misc.dictionary['k_'..key:lower()]`.
 - **Optional parameters** *(defaults)*:
   - `pools`: Table with a list of ObjectType keys to add this rarity to. Skeleton:
 
