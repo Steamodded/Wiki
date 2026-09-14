@@ -1010,7 +1010,7 @@ if context.press_play then
 
 #### context.evaluate_poker_hand
 
-This context is used to alter the poker hand that the played hand counts as. It can also provide cosmetic alterations too. For example, `replace_scoring_name = "Full House"` would make the hand score as a Full House, whilst `replace_display_name = "Fullest House"` would only change the text shown in the UI.
+This context is used to alter the poker hand that the played hand counts as. It can also provide cosmetic alterations too. For example, `replace_scoring_name = "Full House"` would make the hand score as a Full House, whilst `replace_display_name = "Fullest House"` would only change the text shown in the UI (this last return can also be a localization key placed in `misc.poker_hands[key]`).
 
 >[!CAUTION]
 > As an advanced use, you can return `replace_poker_hands = {}` to provide a new updated poker hands table. It is only recommend you do this if you fully understand how this table should be structured.

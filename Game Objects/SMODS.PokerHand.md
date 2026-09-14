@@ -36,7 +36,7 @@
     - `{}` if the cards don't contain this hand.
 - `modify_display_text(self, cards, scoring_hand) -> string?`
   - Changes the displayed name of the poker hand.
-  - Returns the key to the new display name that gets localized (placed inside of `misc.poker_hands[key]`).
+  - Returns a string with the key to the new display name that gets localized (placed inside of `misc.poker_hands[key]`) or the text to display if no localization key is found.
 - `visible(self) -> bool?`
   - Used for more precise control over hand visibility in the poker hands menu.
 
