@@ -8,7 +8,7 @@
 - **Optional parameters** *(defaults)*
   - `atlas = 'blind_chips', pos = { x = 0, y = 0 }` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
     - To have an animated sprite like vanilla Blinds set `atlas_table = 'ANIMATION_ATLAS'`. The `y` value determines the row to use for the animation. The `x` value is ignored and cycles through each frame of the animation.
-  - `config = {}, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
+  - `config = {}, discovered = false, no_collection, prefix_config, dependencies, no_mod_badges` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - `config` values are saved under `G.GAME.blind.effect`.
   - `attributes`: *(Added in 26.829.0)* Array of Attributes this blind has [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/)
   - `dollars = 5`: Amount of money obtained when defeated.

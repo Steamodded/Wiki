@@ -15,7 +15,7 @@
 - **Optional parameters** *(defaults)*:
   - `atlas = 'chips', pos = { x = 0, y = 0 }` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
   - `sticker_atlas, sticker_pos`: The atlas and position to use for this stake's win sticker.
-  - `unlocked = false, prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
+  - `unlocked = false, prefix_config, dependencies, no_mod_badges` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - If `unlocked` is set to `false`, the stake is unlocked by first winning a run on each of the `applied_stakes`.
   - `colour = [white]`: The colour used for this stake in the stake selection column.
   - `above_stake`: The stake's key that this stake should appear directly above in the list. By default, your stake will be placed at the top of the list.

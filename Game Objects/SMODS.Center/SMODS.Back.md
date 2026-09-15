@@ -7,7 +7,7 @@
   - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
 - **Optional parameters** *(defaults)*:
   - `atlas = 'centers', pos = { x = 0, y = 0 }` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
-  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
+  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, no_mod_badges` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - `config` values will be saved under `G.GAME.selected_back.effect.config`
   - `initial_deck`: *(Added in 1501a)* Allows for easier customisation of your starting deck.
     - `ranks`, `suits`: A list of ranks and suits to include/exclude.

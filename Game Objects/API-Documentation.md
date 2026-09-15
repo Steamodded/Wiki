@@ -107,6 +107,10 @@ Changes how large the sprite of this card is considered, useful for smaller spri
 
 Changes the color of the card type's badge background and text (i.e. the set for Consumables, the rarity for Jokers, etc.). On `SMODS.Center` (except Editions) text colour can be changed with `badge_text_colour`, while on everything else you can use `text_colour`.
 
+### `no_mod_badges`
+
+Disables mod badges for this object.
+
 ## Taking Ownership
 
 You may need to modify vanilla objects or objects from another mod. Use the `take_ownership` function to modify an existing object; then, you can use all of Steamodded's API functions on it. Each key-value pair of the provided table overwrites the object's value, while the rest of the object is left intact. Objects you take ownership of have your mod's badge added to them, unless you suppress this with the `silent` argument.

@@ -11,7 +11,7 @@
 - **Optional parameters** *(defaults)*:
   - `atlas = 'Joker', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
     - This defines the card to draw the edition on in the collection.
-  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
+  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, badge_colour, text_colour, no_mod_badges` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - The following base values for `config` are supported and will be applied/scored automatically:
 
   ```lua
@@ -62,9 +62,9 @@
 - `on_remove(card) -> void`
   - Used to modify Card when edition is removed
 - ~~`calc_scaling(self, card, other_card, initial_value, scalar_value, args) -> table` [(reference)](https://github.com/Steamodded/smods/wiki/Calculate-Functions#scaling-values)~~
-	- **DEPRECATED.** Use `context.scaling_card` with `calculate` instead. ~~*(Added in 1531zeebee)*~~
-	- ~~Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.~~
-	- ~~This only affects the card with the Edition~~
+ 	- **DEPRECATED.** Use `context.scaling_card` with `calculate` instead. ~~*(Added in 1531zeebee)*~~
+ 	- ~~Called by `SMODS.scale_card`. Allows detection and modification of cards when scaling values.~~
+ 	- ~~This only affects the card with the Edition~~
 - `on_load(card) -> void`
   - Used to modify Card with edition when it is loaded from save file.
 - `draw(self, card, layer)`

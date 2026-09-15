@@ -7,13 +7,13 @@
   - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
 - **Optional parameters** *(defaults)*:
   - `atlas = 'Joker', pos = { x = 0, y = 0 }, soul_pos, soul_atlas` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
-  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
+  - `config = {}, unlocked = true, discovered = false, no_collection, prefix_config, dependencies, display_size, pixel_size, badge_colour, badge_text_colour, no_mod_badges` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
     - `rarity = 1`
     - The base game rarities are `"Common"`, `"Uncommon"`, `"Rare"` or `"Legendary"`, or the numbers `1` = Common, `2` = Uncommon, `3` = Rare, `4` = Legendary.
     - [Modded rarities](https://docs.smods.dev/Game%20Objects/SMODS.Rarity) are specified using their key (including your mod prefix)
   - `attributes`: *(Added in 1531zeebee)* Array of Attributes this joker has [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/)
   - `pools`: List of keys to ObjectTypes this center should be injected into
-      - Expects a list of keys like this:
+    - Expects a list of keys like this:
 
   ```lua
    {

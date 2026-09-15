@@ -7,7 +7,7 @@
   - `loc_txt` or localization entry [(reference)](https://docs.smods.dev/API%20Documentation/Localization)
 - **Optional parameters** *(defaults)*:
   - `atlas = 'tags', pos = { x = 0, y = 0 }` [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Atlas#applying-textures-to-cards)
-  - `config = {}, discovered = false, no_collection, prefix_config, dependencies` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
+  - `config = {}, discovered = false, no_collection, prefix_config, dependencies, no_mod_badges` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
   - `attributes`: *(Added in 26.829.0)* Array of Attributes this tag has [(reference)](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/)
   - `min_ante`: Minimum ante needed for this tag to appear. Use in_pool for more advanced spawn restrictions instead.
 
