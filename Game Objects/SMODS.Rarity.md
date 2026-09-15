@@ -15,6 +15,14 @@
     ```
 
   - `prefix_config, dependencies, badge_colour, text_colour` [(reference)](https://docs.smods.dev/Game%20Objects/API-Documentation#common-parameters)
+  - `default`: Fallback card when rarity pool is empty (if it doesn't exist it falls back to the set's default). It can be a string or a table with a list of ObjectType for each rarity. Example:
+     ```lua
+    {
+        ["Joker"] = "j_hiker",
+        ["Tarot"] = "c_pluto", -- doesn't need to be the same set
+        ["Planet"] = nil, -- if it doesn't exist if falls back to the set's default
+    }
+    ```
   - `default_weight`: Setting a numerical value for `default_weight` enables cards with this rarity to appear in the shop at the specified weight.
     - This sets a default weight, which can be modified by accessing `G.GAME[key:lower() .. '_mod']` during a run.
   - `disable_if_empty`: *(Added in 1221a)* Removes the rarity from the pool of available rarities if the pool has no valid objects.
