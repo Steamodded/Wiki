@@ -640,6 +640,9 @@ context.individual -- boolean value to flag this context, always TRUE
 context.other_card -- the playing card to apply the effect to
 ```
 
+> [!NOTE]
+> `context.other_card.repetition_trigger` can be checked in this context to determine how many times the card has been retriggered (e.g. `context.other_card.repetition_trigger == 1` for the first retrigger, `== 2` for the second, etc.). `repetition_trigger` will be `nil` if the card has not been retriggered.
+
 ---
 
 #### context.repetition
