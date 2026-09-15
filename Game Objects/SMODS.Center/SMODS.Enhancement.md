@@ -55,7 +55,7 @@
 - `get_weight(self) -> number`
   - Returns weight. Use for finer control over the enhancement's weight.
 - `on_select(self, card)`
-  - Called when the playing card is selected from a booster pack to be added to the deck. Currently only when using `select_card`.
+  - Called when the playing card is selected from a booster pack to be added to the deck.
 - `set_ability(self, card, initial, delay_sprites)`
   - Set up initial ability values or manipulate sprites in an advanced way.
 - `in_pool(self, args) -> bool, { allow_duplicates = bool }`
