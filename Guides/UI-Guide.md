@@ -138,7 +138,7 @@ Configuration options for Text nodes (ie. `G.UIT.T`):
  > If you want to change the text contents of a `G.UIT.T` interactively, use arguments `ref_table` and `ref_value` instead of `text`. Its text will be updated whenever `ref_table[ref_value]` changes.
  > If you want animated text, use `G.UIT.O` with `DynaText`.
 
-Configuration optoins for Object nodes (ie. `G.UIT.O`):
+Configuration options for Object nodes (ie. `G.UIT.O`):
 
 - `object`: set the object to render.<br>
    This is a literal game object, like `CardArea`.
