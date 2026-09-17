@@ -275,7 +275,7 @@ The pool is structured as a table of tables, where each table is structured as b
 
 #### Card Areas
 
-Turning these card areas on allows every calculation call to iterate over the cards currently in the deck, and the cards currently in the discard pile. They can be specifically accessed by checking for either `context.card_area == G.deck` or `context.cardarea == G.discard`.
+Turning these card areas on allows every calculation call to iterate over the cards currently in the deck, and the cards currently in the discard pile. They can be specifically accessed by checking for either `context.cardarea == G.deck` or `context.cardarea == G.discard`.
 
 ### Scaling Values
 
