@@ -175,6 +175,7 @@ This function replaces `create_card`. It provides a cleaner interface to the sam
 - `edition`, `enhancement`, `seal` - Applies the specified modifier to the card.
 - `stickers`, `force_stickers` - This should be an array of sticker keys. Applies all specified stickers to the card. `force_stickers` bypasses all checks.
 - `silent` - Applies edition and/or seal silently *(Added in 26.829.0)*
+- `immediate` - Applies edition and/or seal immediately (skipping events) *(Added in [RELEASE])*
 - `front` - Front of the playing card, takes the playing card's key (e.g. `H_A`). Ignores `rank` and `suit`.
 - `rank` - Rank of the playing card. Can be the `key` or the `card_key` (e.g. `'Ace'` or `'A'`).
 - `suit` - Suit of the playing card. Can be the `key` or the `card_key` (e.g. `'Hearts'` or `'H'`).
