@@ -301,6 +301,7 @@ The config of this joker would be defined as `config = {extra = {chips = 5, chan
 
 As this function allows for scaling detection effects to work, it is recommended to use it instead of doing it manually, but naturally the scaling manipulation can be an undesirable effect in some cases. Therefore, you can block this from happening by adding `block_overrides` to your function call.
 
+
 ```lua
 block_overrides = {
  value = true, -- blocks modifications to the ref_value
@@ -345,12 +346,12 @@ On the other side of this feature is the ability to detect and manipulate value 
 
 ```lua
 if context.scaling_card and context.scalar > 0 then
- return {
-  message = 'Pre Scale',
-  post = {
-   message = 'Post Scale'
-  }
- }
+	return {
+		message = 'Pre Scale', 
+		post = {
+			message = 'Post Scale'
+		}
+	}
 end
 ```
 
@@ -359,20 +360,19 @@ This example will play a message **before** the scaling event, and **after** the
 ##### Manipulating Scaling
 
 Manipulating scaling uses the same context as detection, but requires specific tables to be returned in the table. It is also possible to modify `context` directly, however this is not recommended because it's fragile.
-
 ```lua
 return {
- override_value = X, -- this will override `context.value` with X
- override_scalar = X, -- this will override `context.scalar` with X
- override_message = { -- this will override the scaling_message
-  message = 'override message'
-  -- other calculation return keys here will be evaluated WITH the message timing
-  -- missing keys will be kept from the previous scaling_message table
- },
- post = {
-  -- other calculation return keys here will be evaluated AFTER the scaling event
- },
- -- other calculation return keys here will be evaluated BEFORE the scaling event
+	override_value = X, -- this will override `context.value` with X
+	override_scalar = X, -- this will override `context.scalar` with X
+	override_message = { -- this will override the scaling_message
+		message = 'override message'
+		-- other calculation return keys here will be evaluated WITH the message timing
+		-- missing keys will be kept from the previous scaling_message table
+	},
+	post = {
+		-- other calculation return keys here will be evaluated AFTER the scaling event
+	},
+	-- other calculation return keys here will be evaluated BEFORE the scaling event
 }
 ```
 
@@ -381,17 +381,17 @@ return {
 *(Added in 26.829.0)*
 A different kind of modification to a card's values is resetting a value back to its default state. `SMODS.reset_card` handles this operation much like `SMODS.scale_card` handles scaling.
 
-#### Using `SMODS.reset_card`
+#### Using `SMODS.reset_card` 
 
-##### Basic Structure
+##### Basic Structure 
 
 This example code will reset the `x_mult` value of the card to `1`. It will display a `"Reset"` message with a `G.C.FILTER` background. The amount the value resets to *could* be adjusted by other effects.
 
 ```lua
 SMODS.reset_card(card, {
- ref_table = card.ability.extra, -- the table that has the value you are changing in
+	ref_table = card.ability.extra, -- the table that has the value you are changing in
     ref_value = "x_mult", -- the key to the value in the ref_table
- reset_value = 1, -- the target value of the reset. If the reset value is mutable, use a separate config value for it.
+	reset_value = 1, -- the target value of the reset. If the reset value is mutable, use a separate config value for it.
 })
 ```
 
@@ -403,8 +403,8 @@ Like with scaling, you may find yourself in a situation where it is undesirable 
 
 ```lua
 block_overrides = {
- value = true, -- blocks modifications to the reset_value
- message = true -- blocks modifications to the reset_message
+	value = true, -- blocks modifications to the reset_value
+	message = true -- blocks modifications to the reset_message
 }
 ```
 
@@ -421,8 +421,8 @@ You can also provide your own custom message, much like returning a message from
 
 ```lua
 scaling_message = {
- message = "Example message!",
- colour = G.C.BLUE
+	message = "Example message!",
+	colour = G.C.BLUE
 }
 ```
 
@@ -432,7 +432,7 @@ By default, this function will simply overwrite the existing value with the `res
 
 ```lua
 operation = function(ref_table, ref_value, initial_value, reset_value)
- ref_table[ref_value] = initial_value / reset_value
+	ref_table[ref_value] = initial_value / reset_value
 end,
 ```
 
@@ -444,12 +444,12 @@ On the other side of this feature is the ability to detect and manipulate value 
 
 ```lua
 if context.resetting_card then
- return {
-  message = 'Pre Reset',
-  post = {
-   message = 'Post Reset'
-  }
- }
+	return {
+		message = 'Pre Reset', 
+		post = {
+			message = 'Post Reset'
+		}
+	}
 end
 ```
 
@@ -458,19 +458,18 @@ This example will play a message **before** the scaling event, and **after** the
 ##### Manipulating Resetting
 
 Manipulating resetting uses the same context as detection, but requires specific tables to be returned in the table.
-
 ```lua
 return {
- override_value = X, -- this will override `context.reset_value` with X
- override_message = { -- this will override the scaling_message
-  message = 'override message'
-  -- other calculation return keys here will be evaluated WITH the message timing
-  -- missing keys will be kept from the previous reset_message table
- },
- post = {
-  -- other calculation return keys here will be evaluated AFTER the resetting event
- },
- -- other calculation return keys here will be evaluated BEFORE the resetting event
+	override_value = X, -- this will override `context.reset_value` with X
+	override_message = { -- this will override the scaling_message
+		message = 'override message'
+		-- other calculation return keys here will be evaluated WITH the message timing
+		-- missing keys will be kept from the previous reset_message table
+	},
+	post = {
+		-- other calculation return keys here will be evaluated AFTER the resetting event
+	},
+	-- other calculation return keys here will be evaluated BEFORE the resetting event
 }
 ```
 
@@ -1003,7 +1002,6 @@ context.full_hand -- the list of all cards that are being discarded
 ---
 
 #### context.drawing_to_play_area
-
 This context is used when determining which cards in the selected hand should be added to the play area for scoring. Each card held in hand passes through the context, and returning `add_to_hand = true` or `remove_from_hand = true` will do the according action *(removing has a higher priority than adding)*. Unlike `context.modify_scoring_hand`, cards removed will stay held in hand. Returning `return_to_hand = true` will additionally return that card to hand instead of discarding it after scoring similar to (and superceded by) `context.stay_flipped`.
 
 ```lua
@@ -1453,11 +1451,11 @@ if context.money_altered then
 ```lua
 context.money_altered -- flag to identify this context, always TRUE
 context.amount -- the amount that money has changed by
-context.initial -- the amount of money before the change *added in 26.829.0*
+context.initial -- the amount of money before the change *added in 26.829.0* 
 context.from_shop -- true if the money changed while in the shop
 context.from_tarot -- true if the money changed from using a consumeable
 context.from_scoring -- true if the money changed while scoring
-context.from_cashout -- true if the money changed from cashing out *added in 26.829.0*
+context.from_cashout -- true if the money changed from cashing out *added in 26.829.0* 
 ```
 
   >[!NOTE]
@@ -1635,7 +1633,6 @@ context.unchanged -- true if the new key is the same as the old key
 
 *(Added in 26.829.0)*
 This context is used when a card's values are being scaled using [`SMODS.scale_card`](#scaling-values). See [here](#responding-to-scaling) for return values specific to this context.
-
 ```lua
 if context.scaling_card then
 ```
@@ -1655,7 +1652,6 @@ context.scalar_factor -- a multiplier for the scalar.
 
 *(Added in 26.829.0)*
 This context is used when a card's values are being reset using [`SMODS.reset_card`](#resetting-values). See [here](#responding-to-resetting) for return values specific to this context.
-
 ```lua
 context.resetting_card -- flag to identify this context, always TRUE
 context.card -- the card being reset
