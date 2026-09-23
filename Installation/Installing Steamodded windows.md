@@ -1,6 +1,6 @@
 # How to install Steamodded on Windows
 
-Steamodded currently only works with the Steam version of Balatro. The Microsoft Store and Epic Games Store versions is unsupported as of now.
+Steamodded currently only works with the Steam version of Balatro. The Microsoft Store and Epic Games Store versions are unsupported as of now.
 
 ## Step 1: Anti-virus setup
 Steamodded uses a runtime injector called Lovely to modify Balatro's code. Since it behaves similarly to a Trojan, some antivirus software may **incorrectly** flag it as malware. Lovely is **not malicious**, is [open source](https://github.com/ethangreen-dev/lovely-injector), and can even be built from source.
