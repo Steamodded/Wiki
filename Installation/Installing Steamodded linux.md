@@ -6,8 +6,10 @@ This guide is for Linux users running the Windows version of Balatro through Ste
 You can follow Lovely's general instructions [here](https://github.com/ethangreen-dev/lovely-injector?tab=readme-ov-file#manual-installation), or instead follow these specific install steps for Balatro (recommended):
 1. Download the [latest Lovely release](https://github.com/ethangreen-dev/lovely-injector/releases/latest) for Windows (yes, seriously). This will be `lovely-x86_64-pc-windows-msvc.zip`. If your browser is blocking your download, use Firefox instead.
 2. Navigate to your Balatro game directory in your file explorer. This can easily be done by right-clicking the game in Steam, hovering "Manage", and selecting "Browse local files".
-3. Open the .zip archive, and extract Lovely's `version.dll` from the archive into the game directory.
-4. Set your game's launch options in Steam to `WINEDLLOVERRIDES="version=n,b" %command%`.
+3. Open the .zip archive, and extract Lovely's `winmm.dll` from the archive into the game directory.
+4. Set your game's launch options in Steam to `WINEDLLOVERRIDES="winmm=n,b" %command%`.
+    > [!IMPORTANT]
+    > If you're updating Lovely from version 0.9.0 or lower you wiil need to delete `version.dll` and update the launch options.
 5. Launch Balatro through Steam and you should see a second window pop up alongside the game named something like `Lovely x.x.x`. If it does, you have installed Lovely correctly and are ready to proceed to the next section. If it does not, please make sure you have followed the previous steps correctly.
 
 ## Step 2: Installing Steamodded
@@ -33,8 +35,12 @@ Try a different browser. Firefox is known to work. You might need to right click
 <details><summary>A second window does not appear when I launch Balatro</summary>
 
 It sounds like Lovely has not been installed correctly. Make sure that:
-- Lovely's `version.dll` is in the right folder (it should be in the same folder as the Balatro executable).
-- The Balatro launch options in Steam have been set correctly to `WINEDLLOVERRIDES="version=n,b" %command%`.
+- Lovely's `winmm.dll` is in the right folder (it should be in the same folder as the Balatro executable).
+- The Balatro launch options in Steam have been set correctly to `WINEDLLOVERRIDES="winmm=n,b" %command%`. Make sure the options have been updated if upgrading from older Lovely versions.
+</details>
+<details><summary>"An old lovely installation was detected."</summary>
+
+Delete `version.dll` from the folder where `winmm.dll` is located.
 </details>
 <details><summary>The second window appears, but the mods button does not show up in-game</summary>
 
@@ -58,4 +64,4 @@ If you'd like to update Steamodded in the future. Note that you do not need to u
 - Follow the instructions on how to install Steamodded in step 2.
 
 ## Uninstalling Steamodded
-Delete the `version.dll` file from Balatro's game directory. This will prevent Steamodded and any other mods from loading.
+Delete the `winmm.dll` file from Balatro's game directory (or `version.dll` on older Lovely versions). This will prevent Steamodded and any other mods from loading.
