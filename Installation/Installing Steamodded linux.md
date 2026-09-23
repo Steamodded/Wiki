@@ -9,7 +9,7 @@ You can follow Lovely's general instructions [here](https://github.com/ethangree
 3. Open the .zip archive, and extract Lovely's `winmm.dll` from the archive into the game directory.
 4. Set your game's launch options in Steam to `WINEDLLOVERRIDES="winmm=n,b" %command%`.
     > [!IMPORTANT]
-    > If you're updating Lovely from version 0.9.0 or lower you wiil need to delete `version.dll` and update the launch options.
+    > If you're updating Lovely from version 0.9.0 or lower you will need to delete `version.dll` and update the launch options.
 5. Launch Balatro through Steam and you should see a second window pop up alongside the game named something like `Lovely x.x.x`. If it does, you have installed Lovely correctly and are ready to proceed to the next section. If it does not, please make sure you have followed the previous steps correctly.
 
 ## Step 2: Installing Steamodded
