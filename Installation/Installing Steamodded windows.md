@@ -20,7 +20,7 @@ You're now ready to install the **Lovely injector**. You can follow Lovely's gen
 2. Navigate to your Balatro game directory in your file explorer. This can easily be done by right-clicking the game in Steam, hovering "Manage", and selecting "Browse local files".
 3. Open the .zip archive, and extract Lovely's `winmm.dll` from the archive into the game directory.
     > [!IMPORTANT]
-    > If you're updating Lovely from version 0.9.0 or lower you wiil need to delete `version.dll` from that folder.
+    > If you're updating Lovely from version 0.9.0 or lower you will need to delete `version.dll` from that folder.
 4. Launch Balatro through Steam and you should see a second window pop up alongside the game named something like `Lovely x.x.x`. If it does, you have installed Lovely correctly and are ready to proceed to the next section. If it does not, please make sure you have followed the previous steps correctly.
 
 ## Step 3: Installing Steamodded
