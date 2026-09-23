@@ -23,7 +23,7 @@
   ```
 
   - `cost = 3`,
-  - `blueprint_compat = false` - If `false` Blueprint effects won't copy this Joker,
+  - `blueprint_compat = true` - If `false` Blueprint effects won't copy this Joker,
   - `eternal_compat = true`,
   - `perishable_compat = true`,
   - `<sticker>_compat` for any modded stickers
