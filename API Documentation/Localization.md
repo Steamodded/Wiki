@@ -206,6 +206,8 @@ end
 }
 ```
 
+You can find more information in the [text styling documentation](https://docs.smods.dev/Guides/Text-Styling/).
+
 ## Localization Functions
 
 To create dynamic descriptions, you need to create functions that define how they behave.
@@ -242,6 +244,9 @@ SMODS.Consumable {
             },
             key = self.key..'_alt', -- Use an alternate description key (pulls from G.localization.descriptions[self.set][key])
             set = 'Spectral', -- Use an alternate description set (G.localization.descriptions[set][key or self.key])
+            name_key = self.key..'_alt', -- Like `key` but only replaces the name.
+            name_set = "Joker", -- Like `set` but only for the name.
+            name_vars = {},  -- Like `vars` but only for the name.
             scale = 1.2, -- Change the base text scale of the description
             text_colour = G.C.RED, -- Change the default text colour (when no other colour is being specified)
             background_colour = G.C.BLACK, -- Change the default background colour
