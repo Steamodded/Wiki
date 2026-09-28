@@ -207,7 +207,7 @@ SMODS.current_mod.custom_collection_tabs = function()
   -- add more buttons here
  }
 end
-G.FUNCS.your_collection_something()
+G.FUNCS.your_collection_something = function()
  G.SETTINGS.paused = true
    G.FUNCS.overlay_menu{
      definition = create_UIBox_your_collection_something(), -- this is the actual UI definition function
