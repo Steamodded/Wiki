@@ -1003,7 +1003,7 @@ context.full_hand -- the list of all cards that are being discarded
 
 #### context.drawing_to_play_area
 
-*Added in [RELEASE]*
+*Added in 26.1002.0*
 
 This context is used when determining which cards in the selected hand should be added to the play area for scoring. Each card held in hand passes through the context, and returning `add_to_hand = true` or `remove_from_hand = true` will do the according action *(removing has a higher priority than adding)*. Unlike `context.modify_scoring_hand`, cards removed will stay held in hand. Returning `return_to_hand = true` will additionally return that card to hand instead of discarding it after scoring similar to (and superceded by) `context.stay_flipped`.
 
@@ -1495,8 +1495,8 @@ if context.skip_blind then
 
 ```lua
 context.skip_blind -- flag to identify this context, always TRUE
-context.skipped_blind -- Key of the blind that was just skipped *added in [RELEASE]*
-context.skip_to -- Key of the new blind after skipping *added in [RELEASE]*
+context.skipped_blind -- Key of the blind that was just skipped *added in 26.1002.0*
+context.skip_to -- Key of the new blind after skipping *added in 26.1002.0*
 ```
 
 
