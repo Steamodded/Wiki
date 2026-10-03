@@ -182,7 +182,7 @@ This function replaces `create_card`. It provides a cleaner interface to the sam
 - `enhanced_poll` - Chance to pick `'Base'` over `'Enhanced'` with set `'Playing Card'`. Default: 0.6
 - `allow_duplicates` - Allows duplicates of created cards (when a `key` is not specified) as if Showman was owned.
 - `attributes` - Creates a card with these [attributes](https://docs.smods.dev/Game%20Objects/SMODS.Attributes/). All other arguments will be passed to `SMODS.poll_object`. *(Added in 1531zeebee)*
-- `scale` - Creates a card scaled by these width and height multipliers, each optional and defaults to 1, in the form `{ w = number, h = number }`.
+- `scale` - Creates a card scaled by these width and height multipliers, each optional and defaults to 1, in the form `{ w = number, h = number }`. *(Added in 1814a)*
 
 #### `SMODS.add_to_deck(card, args)`
 
