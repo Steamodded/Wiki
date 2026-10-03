@@ -9,7 +9,7 @@ You can follow Lovely's general instructions [here](https://github.com/ethangree
 
 ## Step 2: Installing Steamodded
 Once you have installed Lovely, you can install Steamodded:
-1. Download the [latest Steamodded release](https://github.com/Steamodded/smods/releases/latest) by clicking "Source code (zip)" at the bottom of the page.
+1. Download the [latest Steamodded release](https://release.smods.dev) by clicking "Source code (zip)" at the bottom of the page.
 2. Extract the downloaded zip file.
 3. In Finder, navigate to Balatro's save directory: `~/Library/Application Support/Balatro`. If you can't find this folder, try pressing Shift-Command-Period to show hidden files.
 4. Create a folder named `Mods` if it doesn't already exist. Open your `Mods` folder.

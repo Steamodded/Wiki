@@ -25,7 +25,7 @@ You're now ready to install the **Lovely injector**. You can follow Lovely's gen
 
 ## Step 3: Installing Steamodded
 Once you have installed Lovely correctly, you can install Steamodded:
-1. Download the [latest Steamodded release](https://github.com/Steamodded/smods/releases/latest) by clicking "Source code (zip)" at the bottom of the page.
+1. Download the [latest Steamodded release](https://release.smods.dev) by clicking "Source code (zip)" at the bottom of the page.
 2. Extract the downloaded zip file.
 3. In your file explorer, navigate to Balatro's save directory: `%AppData%/Balatro`
   > [!IMPORTANT]

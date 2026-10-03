@@ -1,7 +1,7 @@
 # How to install Steamodded on Android/iOS
 
 > [!WARNING]
-> The official Balatro Discord has a longstanding rule against the discussion of modding non-desktop platforms. If you need support with your installation on Android or iOS, please ask on the [Steamodded Discord](https://discord.gg/kU8cqCqwy3) server instead.
+> The official Balatro Discord has a longstanding rule against the discussion of modding non-desktop platforms. If you need support with your installation on Android or iOS, please ask on the [Steamodded Discord](https://discord.smods.dev) server instead.
 
 > [!IMPORTANT]
 > In order to play with mods on Android or iOS, you must own and have access to the **Steam version** of Balatro. The versions of the game available on the Google Play Store and the Apple App Store **are not and will never be supported** by Steamodded.
@@ -13,7 +13,7 @@
 
 ## Step 2: Installing Steamodded
 Once you've used Lovely Mobile Maker and installed the app on your mobile device, you can install Steamodded.
-1. Download the [latest Steamodded release](https://github.com/Steamodded/smods/releases/latest) by clicking "Source code (zip)" at the bottom of the page.
+1. Download the [latest Steamodded release](https://release.smods.dev) by clicking "Source code (zip)" at the bottom of the page.
 2. Extract the downloaded zip file.
 3. In your file explorer, navigate to your mods folder.
   <details><summary>Mods folder on Android</summary>
@@ -55,7 +55,7 @@ There is a variety of reasons this can happen. Some of the more common reasons a
 </details>
 <details><summary>When I launch the game, it is mostly covered in black!</summary>
 
-- This is a common issue mostly observed on Google Pixel devices. Starting on version *1620a*, Steamodded comes with a fix for this included. If you are not running Steamodded or are using version *1224a* or earlier, you can also install [Mobile Patches](https://github.com/WilsontheWolf/MobilePatches/archive/refs/heads/master.zip). If you must run a version between those two, there is currently no ready-made working solution, but you can apply the changes made to your own installation. Please contact us on the [Steamodded Discord](https://discord.gg/kU8cqCqwy3) if you need help with this and can't switch to a more recent version.
+- This is a common issue mostly observed on Google Pixel devices. Starting on version *1620a*, Steamodded comes with a fix for this included. If you are not running Steamodded or are using version *1224a* or earlier, you can also install [Mobile Patches](https://github.com/WilsontheWolf/MobilePatches/archive/refs/heads/master.zip). If you must run a version between those two, there is currently no ready-made working solution, but you can apply the changes made to your own installation. Please contact us on the [Steamodded Discord](https://discord.smods.dev) if you need help with this and can't switch to a more recent version.
 </details>
 
 ## Updating Steamodded

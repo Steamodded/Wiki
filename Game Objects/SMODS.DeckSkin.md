@@ -75,4 +75,4 @@ generate_ds_card_ui = function(card, deckskin, palette, info_queue, desc_nodes, 
 end
 ```
 
-![Visual example of the default crediting format used in the above code, seen in Balatro: Cardsauce](https://images-ext-1.discordapp.net/external/GKGG7ScABo6P6EzBX4Ih1VePDVXKMkhXhSPbGbIExss/https/i.imgur.com/pZ1XIP2.jpg?format=webp&width=1592&height=1291)
+![Visual example of the default crediting format used in the above code, seen in Balatro: Cardsauce](https://i.imgur.com/pZ1XIP2.jpg?format=webp&width=1592&height=1291)
