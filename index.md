@@ -37,9 +37,10 @@ If you're planning to create your own mods using steamodded, please follow the t
 
 - [GitHub](https://smods.dev)
 - [Latest release](https://release.smods.dev)
-- [Documentation](https://docs.smods.dev)
-- [Discord](https://discord.smods.dev)
 - [Direct download to latest release](https://download.smods.dev)
+- [Documentation](https://docs.smods.dev)
+- [Examples](https://examples.smods.dev)
+- [Discord](https://discord.smods.dev)
 - [Direct download to latest development version](https://latest.smods.dev)
 - [Documentation for the latest development version](https://dev-docs.smods.dev/)
 
