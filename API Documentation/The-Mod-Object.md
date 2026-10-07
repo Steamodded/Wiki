@@ -294,6 +294,7 @@ Optionally, you can return a table as the second value to modify the text in the
 - `text`: Replaces the default name text.
 - `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
 - `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
+- `no_eval_row`: removes the row completely
 
 ## Other
 
