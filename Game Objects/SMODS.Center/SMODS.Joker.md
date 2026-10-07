@@ -58,7 +58,7 @@
   - Define additional custom logic for when your card is allowed to be sold. By default, the card is usually prevented from being sold during scoring or if it is eternal. If defined, can_sell is then also checked afterwards and if it returns false, the card can't be sold.
   - `context` is not a calculation context and is not provided by default, but could be present if you need to perform your own custom checks on whether cards can be sold.
 - `on_select(self, card)`
-  - Called when the joker is selected from a booster pack to be added to the joker slots. Currently only when using `select_card`.
+  - Called when the joker is selected from a booster pack to be added to the joker slots.
 - `update(self, card, dt)`
   - For actions that happen every frame.
 - `set_sprites(self, card, front)`
