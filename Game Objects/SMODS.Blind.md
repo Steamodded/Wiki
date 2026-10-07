@@ -52,6 +52,7 @@ refer to the current blind. (The base game uses `self` to refer to the current b
     - `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
     - `vars`: *(Added in 1814a)* Replaces the variables (e.g. `#1#`) in names sourced from the localization.
     - `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
+    - `no_eval_row`: removes the row completely
 - `disable(self)`
   - Reverting effects when this Blind gets disabled
 - `defeat(self)`

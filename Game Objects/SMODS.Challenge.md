@@ -69,5 +69,6 @@
     - `key`, `set`: Allows changing the key and/or set of the name in the localization (ignored if `text` is set)
     - `vars`: *(Added in 1814a)* Replaces the variables (e.g. `#1#`) in names sourced from the localization.
     - `text_colour`, `scale`: Allows changing the colour and scale of the text respectively
+    - `no_eval_row`: removes the row completely
 - `unlocked(self) -> bool`
   - Defines when the challenge should be unlocked (or not).
