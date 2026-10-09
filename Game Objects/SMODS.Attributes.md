@@ -80,21 +80,19 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **discard** | effect is based around discards | **Jokers**<br>Banner, Mystic Summit, Delayed Gratification, Burglar, Faceless Joker, Green Joker, Mail-In Rebate, Drunkard, Trading Card, Ramen, Castle, Merry Andy, Hit the Road, Burnt Joker, Yorick<br><br>**Vouchers**<br>Wasteful, Recyclomancy, Petroglyph<br><br>**Tags**<br>Garbage Tag<br><br>**Boss Blinds**<br>The Hook, The Water<br><br>**Seals**<br>Purple Seal |
 | **hand_size** | effect is based around hand size | **Jokers**<br>Juggler, Turtle Bean, Troubadour, Merry Andy, Stuntman<br><br>**Consumables**<br>Ouija, Ectoplasm<br><br>**Vouchers**<br>Paint Brush, Palette<br><br>**Tags**<br>Juggle Tag<br><br>**Boss Blinds**<br>The Manacle |
 | **chance** | effect has a chance to happen | **Jokers**<br>8 Ball, Gros Michel, Business Card, Space Joker, Cavendish, Hallucination, Reserved Parking, Bloodstone<br><br>**Consumables**<br>The Wheel of Fortune<br><br>**Enhancements**<br>Glass Cards, Lucky Cards<br><br>**Boss Blinds**<br>The Wheel |
-| **consumable_slot** | related to Consumable slots *(added in 26.829.0)* | *none* |
 | **mod_chance** | affects other chance rolls | **Jokers**<br>Oops! All 6s |
 | **copying** | copies the effect of another card | **Jokers**<br>Blueprint, Brainstorm |
 | **full_deck** | effect is based on your full deck | **Jokers**<br>Steel Joker, Cloud 9, Erosion, Stone Joker, Driver's License |
 | **passive** | passive bonus from owning the card | **Jokers**<br>Four Fingers, Credit Card, Chaos the Clown, Pareidolia, Splash, Shortcut, To the Moon, Juggler, Drunkard, Troubadour, Smeared Joker, Showman, Oops! All 6s, Astronomer |
 | **joker** | related to Joker cards | **Jokers**<br>Abstract Joker, Riff-Raff, Swashbuckler, Invisible Joker, Gift Card<br><br>**Consumables**<br>The Wheel of Fortune, Temperance, Judgement, Ectoplasm, Ankh, Hex<br><br>**Booster Packs**<br>Buffoon Packs<br><br>**Tags**<br>Uncommon Tag, Rare Tag, Negative Tag, Foil Tag, Holographic Tag, Polychrome Tag, Top-up Tag<br><br>**Boss Blinds**<br>Crimson Heart |
-| **consumable** | related to Consumable cards  *(added in 26.829.0)* | 8 Ball, Superposition, Vagabond, Hallucination, Fortune Teller, Cartomancer, Astronomer, Constellation, Satellite, Sixth Sense, Séance, Perkeo |
 | **joker_slot** | related to Joker slots | **Jokers**<br>Joker Stencil<br><br>**Vouchers**<br>Antimatter<br><br>**Editions**<br>Negative |
 | **rarity** | related to specific Joker rarities | **Jokers**<br>Riff-Raff, Baseball Card<br><br>**Consumables**<br>Wraith<br><br>**Tags**<br>Uncommon Tag, Rare Tag, Top-up Tag |
 | **position** | affected by the position of cards | **Jokers**<br>Blueprint, Ceremonial Dagger, Brainstorm, Hanging Chad, Photograph<br><br>**Consumables**<br>Death |
 | **tarot** | related to Tarot cards | **Jokers**<br>8 Ball, Superposition, Vagabond, Hallucination, Fortune Teller, Cartomancer<br><br>**Consumables**<br>The Fool, The Emperor<br><br>**Vouchers**<br>Tarot Merchant, Tarot Tycoon<br><br>**Booster Packs**<br>Arcana Packs<br><br>**Seals**<br>Purple Seal |
 | **planet** | related to Planet cards | **Jokers**<br>Astronomer, Constellation, Satellite<br><br>**Consumables**<br>The Fool, The High Priestess<br><br>**Vouchers**<br>Telescope, Observatory, Planet Merchant, Planet Tycoon<br><br>**Booster Packs**<br>Celestial Packs<br><br>**Seals**<br>Blue Seal |
 | **spectral** | related to Spectral cards | **Jokers**<br>Sixth Sense, Séance<br><br>**Vouchers**<br>Omen Globe<br><br>**Booster Packs**<br>Spectral Packs |
-| **consumable** | related to any consumables | **Jokers**<br>8 Ball, Sixth Sense, Constellation, Superposition, Séance, Vagabond, Gift Card, Hallucination, Fortune Teller, Satellite, Cartomancer, Astronomer, Perkeo<br><br>**Consumables**<br>The Fool, The High Priestess, The Emperor<br><br>**Vouchers**<br>Tarot Merchant, Tarot Tycoon, Planet Merchant, Planet Tycoon<br><br>**Seals**<br>Blue Seal, Purple Seal |
-| **consumable_slot** | related to consumable slots | **Vouchers**<br>Crystal Ball |
+| **consumable** | related to any consumables *(added in 26.829.0)* | **Jokers**<br>8 Ball, Sixth Sense, Constellation, Superposition, Séance, Vagabond, Gift Card, Hallucination, Fortune Teller, Satellite, Cartomancer, Astronomer, Perkeo<br><br>**Consumables**<br>The Fool, The High Priestess, The Emperor<br><br>**Vouchers**<br>Tarot Merchant, Tarot Tycoon, Planet Merchant, Planet Tycoon<br><br>**Seals**<br>Blue Seal, Purple Seal |
+| **consumable_slot** | related to consumable slots *(added in 26.829.0)* | **Vouchers**<br>Crystal Ball |
 | **playing_card** | effect adds playing cards to the deck | **Jokers**Marble Joker, DNA, Certificate<br><br>**Consumables**<br>Familiar, Grim, Incantation, Cryptid<br><br>**Vouchers**<br>Magic Trick, Illusion<br><br>**Booster Packs**<br>Standard Packs |
 | **enhancements** | related to enhancements | **Jokers**<br>Golden Ticket, Marble Joker, Steel Joker, Vampire, Midas Mask, Stone Joker, Lucky Cat, Glass Joker, Driver's License<br><br>**Consumables**<br>The Magician, The Empress, The Hierophant, The Lovers, The Chariot, Justice, The Devil, The Tower, Familiar, Grim, Incantation<br><br>**Vouchers**<br>Illusion |
 | **seals** | related to seals | **Jokers**<br>Certificate<br><br>**Consumables**<br>Talisman, Deja Vu, Trance, Medium |
@@ -119,7 +117,6 @@ Detailed here is a list of attributes that SMODS provides, along with a criteria
 | **tag** | effect is based around tags *(added in 26.829.0)* | Diet Cola |
 | **debuff** | effect is based around debuffing cards *(added in 26.829.0)* | *none* |
 | **position** | effect is based around card positioning  *(added in 26.829.0)* | Blueprint, Brainstorm, Ceremonial Dagger, Photograph, Hanging Chad |
-| **boss_blind** | effect is based around boss blinds *(added in 26.829.0)* | Rocket, Luchador, Matador, Campfire, Chicot |
 | **food** | themed on food | **Jokers**<br>Gros Michel, Cavendish, Ice Cream, Ramen, Turtle Bean, Popcorn, Seltzer, Egg, Diet Cola |
 | **space** | themed on space | **Jokers**<br>Supernova, Space Joker, Constellation, Rocket, Satellite, Astronomer |
 
