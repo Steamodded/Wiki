@@ -1,0 +1,68 @@
+# 26.829.0
+
+This release sees a change in how we version the API, due to updating our Thunderstore upload (you can find that [here](https://thunderstore.io/c/balatro/p/Steamodded/Steamodded/)). If you are interested on putting your mod on Thunderstore, checkout [our guide](https://docs.smods.dev/Guides/Thunderstore).
+
+We also have a new and improved wiki site, which has documentation for a lot of these new additions, with more to come as they are completed. You can find that here [https://docs.smods.dev](https://docs.smods.dev).
+
+To distribute this release easily, you can use [https://release.smods.dev](https://release.smods.dev) or [https://download.smods.dev](https://download.smods.dev)
+
+## New Features and Adjustments
+
+* Custom Small/Big Blinds by @Eremel in <https://github.com/Steamodded/smods/pull/1366>
+* Implement attributes for all non-Joker objects by @vitellaryjr in <https://github.com/Steamodded/smods/pull/1371>
+* Suit shades by @MetaNite64 in <https://github.com/Steamodded/smods/pull/1403>
+* SMODS.scale_card scalar_factor by @vitellaryjr in <https://github.com/Steamodded/smods/pull/1329>
+* SMODS.reset_card by @vitellaryjr in <https://github.com/Steamodded/smods/pull/1377>
+* Add `SMODS.RunSelectPage` by @Eremel in <https://github.com/Steamodded/smods/pull/1409>
+* from_cashout and initial fields for money_altered by @vitellaryjr in <https://github.com/Steamodded/smods/pull/1436>
+* Added support for `badge_shader` field in `mod.json`. by @AllUniversal in <https://github.com/Steamodded/smods/pull/1432>
+* For atlases, if 2x images not found, load 1x and scale it by @VMan-2002 in <https://github.com/Steamodded/smods/pull/1454>
+* Feat(nativefs): normalize file paths by @Aurelius7309 in <https://github.com/Steamodded/smods/pull/1461>
+* Implement text outlines for UIElements by @ThunderEdge73 in <https://github.com/Steamodded/smods/pull/1449>
+* Create `SMODS.hide_from_collection` by @wingedcatgirl in <https://github.com/Steamodded/smods/pull/1459>
+* Booster size attributes  by @Evgast in <https://github.com/Steamodded/smods/pull/1425>
+* Added `SMODS.can_context_retrigger()` and `SMODS.can_context_post_trigger()` util functions by @AllUniversal in <https://github.com/Steamodded/smods/pull/1391>
+* Added `SMODS.card_to_image()` Util function by @AllUniversal in <https://github.com/Steamodded/smods/pull/1389>
+* Better text styling by @Aurelius7309 in <https://github.com/Steamodded/smods/pull/1464>
+* Added `StateSprite` for state-dependent `AnimatedSprite`s and expanded `AnimatedSprite` functionality by @AllUniversal in <https://github.com/Steamodded/smods/pull/1327>
+* Port `calc_scaling` and `calc_resetting` to `calculate` by @Aurelius7309 in <https://github.com/Steamodded/smods/pull/1468>
+* Added `SMODS.SpriteParticle` by @AllUniversal in <https://github.com/Steamodded/smods/pull/1404>
+* Use depthstencil for storing stencil buffer by @SleepyG11 in <https://github.com/Steamodded/smods/pull/1481>
+* Element as function in loc_vars by @SleepyG11 in <https://github.com/Steamodded/smods/pull/1490>
+* feat: force pixel by @WilsontheWolf in <https://github.com/Steamodded/smods/pull/1503>
+* implement no_replace for poll_object by @vitellaryjr in <https://github.com/Steamodded/smods/pull/1514>
+
+## Fixes
+
+* Fix stake wins vanilla compatibility by @Aurelius7309 in <https://github.com/Steamodded/smods/pull/1394>
+* Fix for cards with negative `card_limit` drawing ghost cards by @Oinite12 in <https://github.com/Steamodded/smods/pull/1418>
+* fix mods being loaded when disabled by @frostice482 in <https://github.com/Steamodded/smods/pull/1434>
+* Only call Blind in_pool for matching blind types by @mleaf233 in <https://github.com/Steamodded/smods/pull/1431>
+* Fix bosses_used compatibility on save load by @mleaf233 in <https://github.com/Steamodded/smods/pull/1430>
+* One more stake order fix by @MetaNite64 in <https://github.com/Steamodded/smods/pull/1429>
+* Prevent `false` from enabling an optional feature by @wingedcatgirl in <https://github.com/Steamodded/smods/pull/1428>
+* The Psychic, The Eye, and The Mouth scoring bugfix by @lilaclila in <https://github.com/Steamodded/smods/pull/1441>
+* `ease_dollars` hook fix by @ThunderEdge73 in <https://github.com/Steamodded/smods/pull/1447>
+* Fix: quick start tooltip now respects page order by @larswijn in <https://github.com/Steamodded/smods/pull/1460>
+* Fix: Crash when creating a joker by @Foo54 in <https://github.com/Steamodded/smods/pull/1455>
+* Fix: calc_dollar_bonus now works with custom text argument by @larswijn in <https://github.com/Steamodded/smods/pull/1463>
+* Controller fixes for scrollbars, dropdowns and UIScrollBoxes by @ThunderEdge73 in <https://github.com/Steamodded/smods/pull/1479>
+* Made it so the currently used consumable still gets calculated. by @AllUniversal in <https://github.com/Steamodded/smods/pull/1467>
+* Adjust Mr. Bones by @TheHamester in <https://github.com/Steamodded/smods/pull/1477>
+* Minor `CardArea` unhighlight logic fix by @HuyTheKiller in <https://github.com/Steamodded/smods/pull/1487>
+* Remove hardcoded checks for vanilla enhancements by @Aurelius7309 in <https://github.com/Steamodded/smods/pull/1489>
+* Fix `G.FUNCS.reroll_boss` reverting blind progress by @Eremel in <https://github.com/Steamodded/smods/pull/1493>
+* fix vouchers being duplicated by @vitellaryjr in <https://github.com/Steamodded/smods/pull/1497>
+* Fix for `simple` param in `create_UIBox_current_hands` not persisting between pages by @Oinite12 in <https://github.com/Steamodded/smods/pull/1495>
+
+## New Contributors
+
+Thank you to these people who have helped contribute to this project for the first time!
+
+* @Oinite12 made their first contribution in <https://github.com/Steamodded/smods/pull/1418>
+* @lilaclila made their first contribution in <https://github.com/Steamodded/smods/pull/1441>
+* @VMan-2002 made their first contribution in <https://github.com/Steamodded/smods/pull/1454>
+* @TheHamester made their first contribution in <https://github.com/Steamodded/smods/pull/1477>
+
+---
+**Full Changelog**: <https://github.com/Steamodded/smods/compare/1.0.0-beta-1814a...26.829.0>
