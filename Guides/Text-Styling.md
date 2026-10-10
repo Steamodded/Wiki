@@ -558,7 +558,7 @@ You can also apply a custom effect using [SMODS.DynaTextEffect](https://docs.smo
 </table>
 
 ## Text scale modifier `{s:}`
->
+
 > [!IMPORTANT]
 > This modifier requires the **lowercase** `s`, unlike other modifiers which must be UPPERCASE.
 
@@ -592,7 +592,7 @@ Vanilla Balatro only uses `s:0.8`, `s:0.85` and `s:1.1` text scales.
 </table>
 
 ## Text underline, strikethrough and overline modifiers `{u:}`/`{st:}`/`{ov:}`
->
+
 > [!NOTE]
 > These modifiers are added by Steamodded and are not supported by vanilla Balatro.
 > *(Added in 26.829.0)*
@@ -718,7 +718,7 @@ By supplying a table to the text modifier, it is possible to customize the outli
 </table>
 
 ## Text font modifier `{f:}`
->
+
 > [!NOTE]
 > This modifier is added by Steamodded and is not supported by vanilla Balatro.
 
@@ -925,7 +925,7 @@ By supplying a table to the text modifier, it is possible to customize the outli
 **These are the language names given in the original `game.lua` file.
 
 ## Text button modifier `{button:}`
->
+
 > [!NOTE]
 > This modifier is added by Steamodded and is not supported by vanilla Balatro.
 > *(Added in 1501a)*
@@ -958,7 +958,7 @@ By supplying a table to the text modifier, it is possible to customize the outli
 </table>
 
 ## UI element insertion `{element:}`
->
+
 > [!NOTE]
 > This modifier is added by Steamodded and is not supported by vanilla Balatro.
 > *(Added in 1531zeebee)*
