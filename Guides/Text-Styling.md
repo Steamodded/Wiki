@@ -1519,7 +1519,7 @@ Most style codes can be combined within one set of curly braces, like `{X:mult,C
    <img src="/_static/Assets/Colour-Icons/G.C.UI.TEXT_DARK.svg" height=32 width=32 alt="#4F6367FF">
   </td>
   <td>
-   <b>default
+   <code><b>default</code>
   </td>
   <td>
  <code>G.C.UI.TEXT_DARK</code>
@@ -1533,7 +1533,7 @@ Most style codes can be combined within one set of curly braces, like `{X:mult,C
    <img src="/_static/Assets/Colour-Icons/G.C.DYN_UI.DARK-none.svg" height=32 width=32 alt="#1E2B2DFF"><br><img src="/_static/Assets/Colour-Icons/G.C.DYN_UI.DARK-cerulean.svg" height=32 width=32 alt="#055481FF">
   </td>
   <td>
-   <b>blind
+   <code><b>blind</code>
   </td>
   <td>
  <code>G.C.DYN_UI.DARK</code>
