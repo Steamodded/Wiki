@@ -670,7 +670,7 @@ By supplying a table to the text modifier, it is possible to customize the lines
 
 ### Basic usage
 
-<code>{O:<i>colour</i>} adds an outline to the text.
+<code>{O:<i>colour</i>}</code> adds an outline to the text.
 
 *`colour`* sets the colour of the line, where *`colour`* is one of the following:
 
