@@ -67,7 +67,8 @@ if context.modify_weights then
 ```lua
 context.modify_weights -- flag to identify this context, always TRUE
 context.pool -- the booster pack center that has ended
-context.pool_types
+context.pool_types -- types of objects polled
+context.args -- arguments for the SMODS.poll_object call *[ONLY IN DEVELOPMENT VERSIONS]*
 ```
 
 The pool is structured as a table of tables, where each table is structured as below. Modifying the weight value in this table will affect the final weighted table to be used.
