@@ -39,6 +39,10 @@ Searches for provided `val` anywhere deep within the provided `tbl`. Returns a t
 Enables debugging of Joker calculations.
 Every time that `Card:calculate_joker()` is called, `G.contexts` is updated for every value within `context`.
 
+#### `SMODS.table_size(tbl)`
+
+Returns the size of `tbl`.
+
 ## Number Formatting
 
 #### `round_number(num, precision) -> number`
@@ -48,6 +52,12 @@ Rounds the input number to a given amount of decimal places.
 #### `format_ui_value(value) -> string`
 
 Stringifies the input if it is not a number. Otherwise return the number as it should be displayed in the UI (e.g. scientific notation).
+
+## String formatting
+
+#### `SMODS.split_string(string, parts) -> table`
+
+Splits the string into a number of lines equal to `parts` based on its words.
 
 ## Randomness
 
