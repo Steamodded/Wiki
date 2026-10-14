@@ -214,6 +214,22 @@ This function replaces `copy_card`. `card` is the card being copied. The followi
 - `area` - Area the new copy should be added to, if not specified it will be inferred from the card.
 - `playing_card` - Sets the copy's playing card value. If `false`, the value is not set. If no value is specified, it sets it to the next G.playing_card (only if `card` is a playing card)
 
+#### `SMODS.create_tag(args)`
+
+*[ONLY IN DEVELOPMENT VERSIONS]*
+
+Creates and adds a tag. Returns the tag object.
+
+The following `args` are supported:
+
+- `key` - If this is specified, generate a tag with the given key instead of the random one.
+- `seed` - An additional RNG seeding string.
+- `collection` - If the tag is created for the collection.
+- `blind_type` - Blind type this tag is a reward for, if any.
+- `immediate` - Adds the tag immediately instead of using an event.
+- `silent` - Adds the tag silently.
+- `sound` - Function that runs instead of playing the regular sounds.
+
 #### `SMODS.debuff_card(card, debuff, source, delay)`
 
 Allows manually setting and removing debuffs from cards.

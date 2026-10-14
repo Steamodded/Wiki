@@ -243,3 +243,9 @@ Helper function to check if an object can be added into a pool,
 
 *(Added in 1814a)*
 Destroys the card with the vanilla food Joker animations. In most cases you should use [`SMODS.destroy_cards()`](https://docs.smods.dev/API%20Documentation/Utility) instead.
+
+#### `SMODS.should_use_debuffed_description(args) -> bool`
+
+*[ONLY IN DEVELOPMENT VERSIONS]*
+
+Checks if the card should display its description even if debuffed. `args` can have `vars`, a `center` or a `card` field that determines if it should based on `no_debuffed_description` in `loc_vars` (or the provided `vars`).

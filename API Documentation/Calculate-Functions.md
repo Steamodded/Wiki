@@ -619,7 +619,8 @@ if context.main_scoring and context.cardarea == G.play then
 
 ```lua
 context.cardarea, context.full_hand, context.scoring_hand, context.scoring_name, context.poker_hands
-context.main_scoring -- boolean value to flag this context, always TRUE
+context.main_scoring -- boolean value to flag this context, TRUE if the card is not debuffed
+context.debuffed_main_scoring -- boolean value to flag this context, TRUE if the card is debuffed *[ONLY IN DEVELOPMENT VERSIONS]*
 ```
 
 > [!NOTE]
@@ -636,7 +637,8 @@ if context.individual and context.cardarea == G.play then
 
 ```lua
 context.cardarea, context.full_hand, context.scoring_hand, context.scoring_name, context.poker_hands
-context.individual -- boolean value to flag this context, always TRUE
+context.individual -- boolean value to flag this context, TRUE if the card is not debuffed
+context.debuffed_individual -- boolean value to flag this context, TRUE if the card is debuffed *[ONLY IN DEVELOPMENT VERSIONS]*
 context.other_card -- the playing card to apply the effect to
 ```
 
@@ -655,7 +657,8 @@ if context.repetition and context.cardarea == G.play then
 
 ```lua
 context.cardarea, context.full_hand, context.scoring_hand, context.scoring_name, context.poker_hands
-context.repetition -- boolean value to flag this context, always TRUE
+context.repetition -- boolean value to flag this context, always TRUE if the card is not debuffed
+context.debuffed_repetition -- boolean value to flag this context, TRUE if the card is debuffed *[ONLY IN DEVELOPMENT VERSIONS]*
 context.repetition_only -- boolean value set to true within calculate functions on playing card modifiers
 context.card_effects -- this is a table of effects that has been calculated during context.main_scoring
 ```
@@ -762,7 +765,7 @@ context.final_scoring_step -- boolean value to flag this context, always TRUE
 
 #### context.destroy_card
 
-This context is used for marking cards to be destroyed after a hand has been played. To destroy the card you must add `remove = true` to your return table.
+This context is used for marking cards to be destroyed after a hand has been played. To destroy the card you must add `remove = true` to your return table. *[ONLY IN DEVELOPMENT VERSIONS]* `remove` can also be a table with the arguments for [`SMODS.destroy_cards`](https://docs.smods.dev/API%20Documentation/Utility/#smods-destroy-cards-cards-args-table)
 
 ```lua
 if context.destroy_card and context.cardarea == G.play then
@@ -1445,7 +1448,8 @@ context.index -- The index of the card added (i.e. its position in the booster a
 
 #### context.booster_select_card
 
-*(Added in [RELEASE])*
+*[ONLY IN DEVELOPMENT VERSIONS]*
+
 This context is used when a card is selected from a booster to be added to the deck (not when used).
 
 ```lua
