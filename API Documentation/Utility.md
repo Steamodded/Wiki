@@ -330,11 +330,12 @@ Destroys any type of cards given to the function appropriately, with respect to 
   - `no_juice` - *added in 26.829.0* Skips juice up animations.
   - `skip_calc` - *added in 26.829.0* Skips any `SMODS.calculate_context` calls (like `joker_type_destroyed`)
 
-#### `SMODS.add_voucher_to_shop(key)`/`SMODS.add_booster_to_shop(key)`
+#### `SMODS.add_voucher_to_shop(key, dont_save)`/`SMODS.add_booster_to_shop(key)`
 
 Adds a `Voucher` or a `Booster` to the current shop.
 
 - `key` - the key of the object to be added. If no key is provided, the next seeded object will be used
+- `dont_save` - For vouchers. If `true` it will only be added for this shop and won't appear in the next.
 
 #### `SMODS.change_voucher_limit(mod)`/`SMODS.change_booster_limit(mod)`
 
