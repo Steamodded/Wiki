@@ -169,8 +169,8 @@ SMODS.current_mod.optional_features = function()
         post_trigger = true,
         retrigger_joker = true,
         quantum_enhancements = true,
-  object_weights = true,
-  cardareas = {
+        object_weights = true,
+        cardareas = {
             discard = true,
             deck = true
         }
@@ -194,7 +194,6 @@ context.retrigger_joker_check -- flag to identify this context, always TRUE
 context.other_card -- a reference to the card being retriggered
 context.other_context -- the context table that the joker triggered in
 context.other_ret -- the return table from the joker trigger
-}
 ```
 
 Using this, you can narrow down specific situations in which to retrigger jokers. Return `repetitions = 1` to retrigger the joker.
@@ -513,9 +512,25 @@ Modifying and responding to probability checks is explained in the relevant cont
 
 ### Adding Calculation Zones
 
-By default, calculations operate over each of these areas: the cards that have been played *(G.play)*, the cards held in hand *(G.hand)*, the jokers and consumables *(G.jokers)*, the vouchers you have redeemed *(G.vouchers)*, the selected deck *(G.GAME.selected_back)*, and the current blind *(G.GAME.blind)*, as well as the optional areas mentioned above.
+By default, calculations operate over each of these types ofobjects:
 
-It is possible to add your own custom areas to the calculate process by hooking, or injecting into, `SMODS.get_card_areas`. This function can be found in `src/utils.lua` in the **smods** folder.
+- Playing card areas
+  - Cards that have been played *(G.play)*
+  - Cards held in hand *(G.hand)*
+  - Cards remaining in deck *(G.deck)* (See optional areas above)
+  - Cards discarded *(G.deck)* (See optional areas above)
+- Joker-type areas
+  - Jokers *(G.jokers)*
+  - Consumables *(G.consumeables)*
+  - Vouchers redeemed *(G.vouchers)*
+- Individual objects
+  - The selected deck *(G.GAME.selected_back)*
+  - The current blind *(G.GAME.blind)*
+  - The selected challenge
+  - The applied stakes
+  - Mod objects
+
+It is possible to add your own custom areas or objects to the calculate process by hooking, or injecting into, `SMODS.get_card_areas`. This function can be found in `src/utils.lua` in the **smods** folder.
 
 If you prefer to inject your code using a lovely patch, there are target lines provided for each type of area. An example patch to do this is below.
 
@@ -628,7 +643,7 @@ context.main_scoring -- boolean value to flag this context, always TRUE
 
 #### context.individual
 
-This context is used for triggering joker effects on playing cards. It iterates over the cards in each area one by one. Change the `cardarea` you are checking to apply effects to cards in different areas.
+This context is used for triggering effects on playing cards. It iterates over the cards in each area one by one. Change the `cardarea` you are checking to apply effects to cards in different areas.
 
 ```lua
 if context.individual and context.cardarea == G.play then
@@ -680,7 +695,7 @@ context.pre_joker -- boolean value to flag this context, always TRUE
 
 #### context.joker_main
 
-This context is used for triggering normal scoring effects on **jokers**.
+This context is used for triggering normal scoring effects on joker-types (i.e. Jokers, Consumables and Vouchers).
 
 ```lua
 if context.joker_main then
@@ -695,7 +710,7 @@ context.joker_main -- boolean value to flag this context, always TRUE
 
 #### context.other_joker
 
-This context is used for triggering joker effects from other jokers. It will pass each other 'Joker' style object to your calculate function
+This context is used for triggering joker effects from other jokers. It will pass each other Joker-like object to your calculate function
 
 ```lua
 if context.other_joker then
@@ -726,7 +741,7 @@ context.post_joker -- boolean value to flag this context, always TRUE
 
 ---
 
-#### context.main_scoring (individual)
+#### context.main_scoring (individual objects)
 
 *(Added in 1531zeebee)*
 This context is used for the effects from Blinds, Decks, Challenges, Stakes and Mod objects (or any other 'individual' objects) when the score.
@@ -852,7 +867,7 @@ if context.end_of_round and context.main_eval then
 ```lua
 context.cardarea -- Note that G.play/unscored are not valid here
 context.end_of_round -- boolean value to flag this context, always TRUE
-context.main_eval -- boolean value to flag this context within a joker-type object, always TRUE
+context.main_eval -- boolean value to flag this context within a joker-type or individual object, always TRUE
 context.game_over -- boolean value to flag whether the game is over or not
 context.beat_boss -- boolean value to flag whether a Boss Blind is active
 ```
@@ -860,7 +875,7 @@ context.beat_boss -- boolean value to flag whether a Boss Blind is active
 > [!NOTE]
 > You can return `saved = true` or `saved = 'loc_key'` to prevent a game loss. The loc_key will allow for a custom message to be displayed, otherwise it will default to `Saved by Mr. Bones`
 
-*For an effect on playing cards from a joker-type object.*
+*For an effect on playing cards from a joker-type or individual object.*
 
 ```lua
 if context.end_of_round and context.individual and context.cardarea == G.hand then
@@ -874,7 +889,7 @@ context.other_card -- the playing card to apply the effect to
 context.beat_boss -- boolean value to flag whether a Boss Blind is active
 ```
 
-*For a repetition on playing cards from a joker-type object.*
+*For a repetition on playing cards from a joker-type or individual object.*
 
 ```lua
 if context.end_of_round and context.repetition and context.cardarea == G.hand then
@@ -987,7 +1002,7 @@ context.hook -- true if the cards are being discarded by The Hook (may be used b
 
 #### context.discard
 
-This context is used on individual cards as they are discarded.
+This context is used on each card as they are discarded.
 
 ```lua
 if context.discard then
