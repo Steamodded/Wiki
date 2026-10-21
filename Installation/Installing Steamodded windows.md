@@ -38,6 +38,7 @@ Once you have installed Lovely correctly, you can install Steamodded:
   > </details>
 4. Create a folder named `Mods` if it doesn't already exist. Open your `Mods` folder.
 5. Inside the extracted zip file, you should find a single directory. Move this interior folder into your `Mods` folder. After moving, it should look like `Mods/smods/<files>`, not `Mods/smods/smods/<files>` or `Mods/<files>`.
+6. We recommend you also backup your saves by copying the `1`, `2` and/or `3` folders from `%AppData%/Balatro` somewhere else.
 
 You can now install other mods by placing them into the `Mods` folder next to the Steamodded/smods folder. Make sure each mod is in its own subfolder.
 
