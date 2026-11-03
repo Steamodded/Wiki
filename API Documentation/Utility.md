@@ -361,6 +361,12 @@ Function to draw a certain number of cards to hand, calling the relevant calcula
 
 - `hand_space` - the number of cards to draw
 
+#### `SMODS.scale_card(card, args) -> number, number`
+Increases values in `card` based on the arguments in `args`, returning the new number and the amount by which it has changed. Full details [on the Calculate Context page](https://docs.smods.dev/API%20Documentation/Calculate-Functions/#using-smods-scale-card).
+
+#### `SMODS.reset_card(card, args)`
+Resets the values in `card` to an initial state, based on the arguments in `args`. Full details [on the Calculate Context page](https://docs.smods.dev/API%20Documentation/Calculate-Functions/#resetting-values).
+
 #### `SMODS.is_poker_hand_visible(handname) -> boolean`
 
 This function checks whether a poker hand is visible in the poker hands menu.
