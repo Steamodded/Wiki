@@ -329,7 +329,9 @@ scaling_message = {
 
 ###### Scaling
 
-By default, this function will automatically handle scaling that uses addition, subtraction, and multiplication. You can switch between these by adding an `operation` to the function call. Valid options are `operation = '-'` and `operation = 'X'` to switch to subtraction or multiplication respectively. If you need an entirely custom scaling function, you can set `operation` to be a function instead. Here is an example of Canio, where `face_cards` is a number defined before the `SMODS.scale_card` function.
+By default, this function will automatically handle scaling that uses addition, subtraction, and multiplication. You can switch between these by adding an `operation` to the function call. Valid options are `operation = '-'` and `operation = 'X'` to switch to subtraction or multiplication respectively. To multiply the `scalar_value` by some number, a `scalar_factor` can be included. 
+
+If you need an entirely custom scaling function, you can set `operation` to be a function instead. Here is an example of Canio, where `face_cards` is a number defined before the `SMODS.scale_card` function.
 
 ```lua
 operation = function(ref_table, ref_value, initial, change)
