@@ -25,6 +25,7 @@ This is the structure of the `sprite_args` table:
 - *all of the above, behaving as defaults*
 - `default_state: [state_key]`, the default state a sprite should start with.
 - `states_offset: xy offset`, applied to the start and end positions of a state's animation. (allows reusing state tables for other objects that share the fundamental state structure)
+- `update_func: fun(self, dt):nil`, called in `StateSprite.update` if present.
 - `states`:
   - `[state_key 1]`: (the arbitrary name of the state, e.g. `moving`)
     - `start_pos: xy position`, same as for `AnimatedSprite`, for this state.
@@ -38,4 +39,4 @@ This is the structure of the `sprite_args` table:
   - `[state_key 2]`: (the arbitrary name of a second state, e.g. `jumping`)
     - `...`
 
-Each state may define the regular `sprite_args` arguments, taking priority over any values also present in the `sprite_args` table. A `StateSprite`'s state can be changed by calling `:set_state()` on it directly, or `Card:set_sprite_state()` on a card that has a `StateSprite` as its `self.children.center` sprite.
+Each state may define the regular `sprite_args` arguments, taking priority over any values also present in the `sprite_args` table. A `StateSprite`'s state can be changed by calling `:set_state()` on it directly, or `Card:set_sprite_state(state, child_name)` on a card that has a `StateSprite` as its `self.children[child_name]` sprite (default = `self.children.center`).
