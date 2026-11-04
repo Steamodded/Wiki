@@ -67,6 +67,8 @@ There are a range of different keys that you can return in this table. These key
 - `blindsize`, `xblindsize` - adds or multiplies the current blind size, respectively *(automatically adds a message to the card that is being scored)*
 - `swap` - swaps current chips and mult values with each other
 - `balance` - balances the current chips and mult values *(plasma deck effect)*
+  - Passing a number balances by a percentage. Use the key `balance_points` to use percentage points (i.e. 100 = plasma deck effect, 50 = half that), or `balance_raw` to use a decimal (i.e. 1, 0.5).
+  - Balancing over 100% creates creates the excess ex nihilo; include `balance_cap` to prevent this behavior, or `overbalance_penalty` to move the excess amount instead.
 - `level_up` - levels up the played hand by the number returned *(You can specify a different hand to be levelled up by using `level_up_hand`)*
 - `saved` - used during `context.end_of_round` to prevent game over
 - `message` - used to return a custom message
