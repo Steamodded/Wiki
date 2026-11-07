@@ -1,0 +1,19 @@
+# 26.1002.0
+
+This release is a small, bugfix release before some larger in scope PRs and features are added soon. Here's a summary of what's changed.
+
+- Reordered `StateSprite`'s handling of `exit_to` to fix frame flicker
+- Populate attributes for blinds
+- `context.drawing_to_play_area`
+- `context.skip_blind` now contains blind key
+- StateSprite and AnimatedSprite fixes
+- Run Select fixes and changes
+  - Selection Limit can now be a function
+  - Play button now displays the tooltip of the current selections
+  - `double_click_advance` added to advance pages when an item is double clicked
+- Stop debuffs from `SMODS.debuff_card` being removed when a card changes enhancement
+- Fixes to object weights and their interaction with custom ObjectTypes
+- Stake/Sticker progress is no longer lost after reloading a profile
+- Fixes a variety of crashes and inconsistencies with vanilla
+- `badge_text_no_shadow` metadata property added
+- Custom sets are handled better in the `info_queue`
