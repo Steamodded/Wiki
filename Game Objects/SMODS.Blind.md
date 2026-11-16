@@ -78,8 +78,8 @@ refer to the current blind. (The base game uses `self` to refer to the current b
   - Due to various constraints, the functionality of `loc_vars` on blinds is very limited. Only `vars`, `set` and `key` returns are supported, and no `info_queue` exists.
 - `collection_loc_vars(self) -> { vars ?= table, key ?= string }`
   - Used for passing variables to Blind descriptions when viewing the collection. If not defined, the game will use the `vars` field on your object.
-- `in_pool(self) -> bool`
-  - For implementing advanced restrictions on when a Blind may appear in a run. This puts `boss.min` and `boss.max` restrictions out of effect.
+- `in_pool(self, args) -> bool`
+  - For implementing advanced restrictions on when a Blind may appear in a run. `args.blind_type` (`small`, `big`, or `boss`) is most likely to be relevant if mods haven't added anything new, though the `small`, `big`, and `boss` fields on the blind will be evaluated before any `in_pool` method.
   - Unless `ignore_showdown_check` is set, this function will not be evaluated in the following cases:
     - A showdown Boss Blind should appear, but this Blind is a regular Boss Blind.
     - A regular Boss Blind should appear, but this Blind is a showdown Boss Blind.
