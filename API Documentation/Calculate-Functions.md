@@ -1616,6 +1616,9 @@ context.card_added -- flag to identify this context, always TRUE
 context.card -- the card that was added
 ```
 
+>[!TIP]
+>`context.card.area` will be `nil` when `context.card_added` is triggered for a card that is bought-and-used without being added to any card area (e.g., with the Hermit Tarot card). `if context.card_added and context.card.area then` can therefore be used to check specifically when a card is added to a slot in a card area (and remains there).
+
 ---
 
 #### context.joker_type_destroyed
