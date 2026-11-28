@@ -1,0 +1,111 @@
+# BETA-1814a
+
+This release version contains a whole suite of bug fixes and adjustments to internal functions, as well as a few new useful tools for you to use.
+
+## Changelog
+
+- `SMODS.copy_card` has been added to make copying cards easier
+- `SMODS.is_playing_card` has been added to check whether a card is a playing card or not
+- `Card:can_sell()` function added to control whether a card is able to sold easier
+- The `{T:key}` option of text formatting has been expanded to accept `{T_set:set_key}` and `{T_vars:var1;var2;var3}` to direct the tooltip to be drawn from outside of the `Other` localization table
+- `select_card` has had some adjustments to allow for **both** select and use buttons to be displayed simultaneously. Returning a second truthy value *(i.e. `return 'jokers', true`)* will enable both buttons
+- `no_collection` can now be a function that returns `true` or `false` to control the behaviour
+- `SMODS.create_card`/`SMODS.add_card` now support some additional arguments:
+ 	- `silent` that disables seal and edition application sounds
+ 	- `scale` that accepts a table of `w` and `h` to modify the size of the card
+- It is now possible to create a badge for a custom `ObjectType`
+- When creating a custom `ObjectType`, you can now better control the undiscovered behaviour
+- Issues caused by shaders when playing on mobile have been addressed, and the experience should be a lot smoother now!
+- Optional features that are enabled are now displayed on crash reports to aid with debugging for mod developers.
+- The `name_text` type in `localize` now correctly supports variables.
+- `SMODS.destroy_cards` has had it's format adjusted, and now takes a table of arguments to control it's behaviour. See below for more information.
+- The shop crash when redeeming the Illusion voucher when playing with object weights has been fixed
+- Naneinf scores when chips or mult individually reach infinity once again work correctly
+
+## Detailed Changes
+
+### Copying Cards
+
+Copying cards has been made easier to do correctly by using the new function `SMODS.copy_card(card, args)`, where `card` is the card being copied and `args` is a table to further control the function's behaviour. The following `args` are supported:
+
+- `new_card` - Copies the card into `new_card` instead of creating a new card (like the Death tarot)
+- `card_scale` - Multiplier for the copy's scale
+- `strip_edition` - Strips the edition from the copy
+- `no_add` - Skips adding the copy to deck
+- `area` - Area the new copy should be added to, if not specified it will be inferred from the card.
+- `playing_card` - Sets the copy's playing card value. If `false`, the value is not set. If no value is specified, it sets it to the next G.playing_card (only if `card` is a playing card)
+
+This function comes along with another util function, `SMODS.add_to_deck`, which correctly calls all the relevant functions when adding something new to the players control. Further info on this function can be found on the *Utility* page of the wiki.
+
+### Controlling Ability to Sell
+
+Centers can now have a `can_sell` function defined on them to control whether the card is sellable or not. For example, this function would prevent a card from being able to be sold.
+
+```lua
+can_sell = function(self, card, context)
+    return false
+end,
+```
+
+> [!NOTE]
+> `context` in this function is not provided by default, but could be present if you need to perform your own custom checks on whether cards can be sold.
+
+### ObjectType Changes
+
+#### Badges
+
+It is now possible to add a `set_badges` function on a custom `ObjectType`. This function works in the same way as on other objects.
+
+#### Undiscovered Sprites
+
+Previously, when creating a custom `ObjectType`, it required a lovely patch to enable custom undiscovered sprites. You can now add your `ObjectType` key to `SMODS.UndiscoveredCompat` to make your custom sprites work. If you find any other inconsistencies with undiscovered behaviour with custom types, please report it.
+
+### Destroying Cards
+
+`SMODS.destroy_cards` has existed for a while now, but has recently been reworked to better control the behaviour. This also allows for custom colours to be passed to the dissolve function.
+You should now use `SMODS.destroy_cards(cards, args)`,  where `cards` can be an individual `Card` object, or a table of `Card` objects, and `args` is a table that can have the following fields:
+    - `bypass_eternal` - Destroys cards even if they're Eternal.
+    - `immediate` - Destroys the cards immediately not creating an event *(Note: `Card.start_dissolve` and `Card.shatter` internally still create an event)*
+    - `pinch_anim` - Destroys the cards with the vanilla food Joker animation.
+    - `colours` - Replaces the colours used by `start_dissolve`.
+    - `delay` - Adds a delay to the event.
+    - `destroy_func` - Replaces the destroy function used (i.e. replaces `Card.start_dissolve` or `Card.shatter`)
+This function will return a table of cards that are set to be destroyed.
+
+### Calculation Changes
+
+- It is now possible to return a `font` key in all calculations to customise the font of any message
+- When returning `dollars`, you can add `instant = true` to add the dollars instantly instead of in line with animations
+- `SMODS.last_hand_score` tracks the total score of the last played hand
+- A new context has been added to modify the cashout after defeating a blind.
+
+#### context.modify_final_cashout
+
+This context is used to adjust the total value of the cashout. Returning `modify = X` will add your value to the total cashout.
+
+```lua
+if context.modify_final_cashout then
+```
+
+```lua
+context.modify_final_cashout -- boolean value to flag this context, always TRUE
+context.amount -- the current value of the cashout
+```
+
+>[!TIP]
+>Setting `cashout_row = {}` will allow you to provide your own arguments to the cashout row function. The amount and pitch are automatically populated for you. For example,
+>`cashout_row = {name='custom', text = 'I'm custom!', text_colour = G.C.BLUE}`
+
+## Coming Soon
+
+Over the next couple of weeks, I am hopeful that there will be a number of new features merged into the dev branch ready for wider testing, and work will begin/continue on other features too! If any of these are of interest to you, please try them out once they are merged and give us some feedback on them, so that we can have them functioning in the best state they can before the next release! If you’re interested in contributing or working on your own ideas for features, please get involved on the discord (or any other servers where we are active) and see what you can do!
+
+- More Blind control - ability to create custom Small and Big blinds supported by default, as well as blinds that can appear in multiple slots. We’re looking into how this can be further expanded to allow for entirely custom antes and game paths
+- Run Select Pages - if you are familiar with the mod Galdur, I have worked on incorporating it into SMODS in an improved form
+- More attributes - attributes will be extended across **all** objects and the polling functions will have some tweaks to support this
+- Card images - it will be possible to have the game create images of cards in their current state (including editions) at the press of a button
+- Backgrounds - similar to ScreenShaders, we’re looking to make altering the background of the game a lot easier
+- Sprite Particles - this feature will allow animated sprites to be used as particles on cards at a timing of your design
+- Modifiers - it is planned to make creating new modifiers for cards (similar to enhancement, editions and seals) easier and work has been started on this
+- Perma Bonuses - we’re also looking into how we can ease the process of adding custom permanent bonuses to cards
+- Card Buttons - this is a longer term goal, but I’m beginning to work on custom buttons being applied to cards in a seamless manner (along with controller support 🤞)
